@@ -1,0 +1,32 @@
+{
+	"development": {
+		"apiURL": "localhost",
+		"apiPort": "3000",
+		"apiProtocol": "http",
+		"websocketProtocol": "ws",
+		"mahisReportURL": "https://mahistest.health.gov.mw/reports/home",
+		"miumUsername": "username",
+		"miumPassword": "password",
+		"miumURL": "https://mahistest.health.gov.mw/memis2/api"
+	},
+	"test": {
+		"apiURL": "mahistest.health.gov.mw",
+		"apiPort": "443",
+		"apiProtocol": "https",
+		"websocketProtocol": "wss",
+		"mahisReportURL": "https://mahistest.health.gov.mw/reports/home",
+		"miumUsername": "username",
+		"miumPassword": "password",
+		"miumURL": "https://mahistest.health.gov.mw/memis2/api"
+	},
+	"production": {
+		"apiURL": "mahis.health.gov.mw",
+		"apiPort": "443",
+		"apiProtocol": "http",
+		"websocketProtocol": "wss",
+		"mahisReportURL": "https://mahistest.health.gov.mw/reports/home",
+		"miumUsername": "username",
+		"miumPassword": "password",
+		"miumURL": "https://mahistest.health.gov.mw/memis2/api"
+	}
+}

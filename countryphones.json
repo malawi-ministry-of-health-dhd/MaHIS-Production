@@ -1,0 +1,1199 @@
+{
+    "countries": [
+      {
+        "name": "Afghanistan",
+        "iso2": "AF",
+        "dialCode": "+93",
+        "examplePhoneNumber": "+93 70 123 4567"
+      },
+      {
+        "name": "Albania",
+        "iso2": "AL",
+        "dialCode": "+355",
+        "examplePhoneNumber": "+355 69 123 4567"
+      },
+      {
+        "name": "Algeria",
+        "iso2": "DZ",
+        "dialCode": "+213",
+        "examplePhoneNumber": "+213 550 123 456"
+      },
+      {
+        "name": "Aland Islands",
+        "iso2": "AX",
+        "dialCode": "+358",
+        "examplePhoneNumber": "+358 18 14 900"
+      },
+      {
+        "name": "Andorra",
+        "iso2": "AD",
+        "dialCode": "+376",
+        "examplePhoneNumber": "+376 123 456"
+      },
+      {
+        "name": "Angola",
+        "iso2": "AO",
+        "dialCode": "+244",
+        "examplePhoneNumber": "+244 912 345 678"
+      },
+      {
+        "name": "Antigua and Barbuda",
+        "iso2": "AG",
+        "dialCode": "+1 268",
+        "examplePhoneNumber": "+1 268 123 4567"
+      },
+      {
+        "name": "Argentina",
+        "iso2": "AR",
+        "dialCode": "+54",
+        "examplePhoneNumber": "+54 11 1234 5678"
+      },
+      {
+        "name": "Armenia",
+        "iso2": "AM",
+        "dialCode": "+374",
+        "examplePhoneNumber": "+374 10 123456"
+      },
+      {
+        "name": "Australia",
+        "iso2": "AU",
+        "dialCode": "+61",
+        "examplePhoneNumber": "+61 2 1234 5678"
+      },
+      {
+        "name": "Austria",
+        "iso2": "AT",
+        "dialCode": "+43",
+        "examplePhoneNumber": "+43 1 23456789"
+      },
+      {
+        "name": "Azerbaijan",
+        "iso2": "AZ",
+        "dialCode": "+994",
+        "examplePhoneNumber": "+994 50 123 4567"
+      },
+      {
+        "name": "American Samoa",
+        "iso2": "AS",
+        "dialCode": "+1",
+        "examplePhoneNumber": "+1 10 77 244"
+      },
+      {
+        "name": "Bahamas",
+        "iso2": "BS",
+        "dialCode": "+1 242",
+        "examplePhoneNumber": "+1 242 123 4567"
+      },
+      {
+        "name": "Bahrain",
+        "iso2": "BH",
+        "dialCode": "+973",
+        "examplePhoneNumber": "+973 1234 5678"
+      },
+      {
+        "name": "Bangladesh",
+        "iso2": "BD",
+        "dialCode": "+880",
+        "examplePhoneNumber": "+880 1 234 567 890"
+      },
+      {
+        "name": "Barbados",
+        "iso2": "BB",
+        "dialCode": "+1 246",
+        "examplePhoneNumber": "+1 246 123 4567"
+      },
+      {
+        "name": "Belarus",
+        "iso2": "BY",
+        "dialCode": "+375",
+        "examplePhoneNumber": "+375 29 123 4567"
+      },
+      {
+        "name": "Belgium",
+        "iso2": "BE",
+        "dialCode": "+32",
+        "examplePhoneNumber": "+32 2 123 4567"
+      },
+      {
+        "name": "Belize",
+        "iso2": "BZ",
+        "dialCode": "+501",
+        "examplePhoneNumber": "+501 123 4567"
+      },
+      {
+        "name": "Benin",
+        "iso2": "BJ",
+        "dialCode": "+229",
+        "examplePhoneNumber": "+229 21 123 456"
+      },
+      {
+        "name": "Bhutan",
+        "iso2": "BT",
+        "dialCode": "+975",
+        "examplePhoneNumber": "+975 2 123 4567"
+      },
+      {
+        "name": "Bolivia",
+        "iso2": "BO",
+        "dialCode": "+591",
+        "examplePhoneNumber": "+591 2 123 4567"
+      },
+      {
+        "name": "Bosnia and Herzegovina",
+        "iso2": "BA",
+        "dialCode": "+387",
+        "examplePhoneNumber": "+387 33 123 456"
+      },
+      {
+        "name": "Botswana",
+        "iso2": "BW",
+        "dialCode": "+267",
+        "examplePhoneNumber": "+267 71 123 456"
+      },
+      {
+        "name": "Brazil",
+        "iso2": "BR",
+        "dialCode": "+55",
+        "examplePhoneNumber": "+55 11 91234 5678"
+      },
+      {
+        "name": "Brunei",
+        "iso2": "BN",
+        "dialCode": "+673",
+        "examplePhoneNumber": "+673 123 4567"
+      },
+      {
+        "name": "Bulgaria",
+        "iso2": "BG",
+        "dialCode": "+359",
+        "examplePhoneNumber": "+359 2 123 4567"
+      },
+      {
+        "name": "Burkina Faso",
+        "iso2": "BF",
+        "dialCode": "+226",
+        "examplePhoneNumber": "+226 70 12 34 56"
+      },
+      {
+        "name": "Burundi",
+        "iso2": "BI",
+        "dialCode": "+257",
+        "examplePhoneNumber": "+257 71 123 456"
+      },
+      {
+        "name": "Cabo Verde",
+        "iso2": "CV",
+        "dialCode": "+238",
+        "examplePhoneNumber": "+238 991 2345"
+      },
+      {
+        "name": "Cambodia",
+        "iso2": "KH",
+        "dialCode": "+855",
+        "examplePhoneNumber": "+855 12 345 678"
+      },
+      {
+        "name": "Cameroon",
+        "iso2": "CM",
+        "dialCode": "+237",
+        "examplePhoneNumber": "+237 6 123 4567"
+      },
+      {
+        "name": "Canada",
+        "iso2": "CA",
+        "dialCode": "+1",
+        "examplePhoneNumber": "+1 416 123 ƒ4567"
+      },
+      {
+        "name": "Central African Republic",
+        "iso2": "CF",
+        "dialCode": "+236",
+        "examplePhoneNumber": "+236 75 123 456"
+      },
+      {
+        "name": "Chad",
+        "iso2": "TD",
+        "dialCode": "+235",
+        "examplePhoneNumber": "+235 66 12 34 56"
+      },
+      {
+        "name": "Chile",
+        "iso2": "CL",
+        "dialCode": "+56",
+        "examplePhoneNumber": "+56 2 1234 5678"
+      },
+      {
+        "name": "China",
+        "iso2": "CN",
+        "dialCode": "+86",
+        "examplePhoneNumber": "+86 10 1234 5678"
+      },
+      {
+        "name": "Colombia",
+        "iso2": "CO",
+        "dialCode": "+57",
+        "examplePhoneNumber": "+57 1 123 4567"
+      },
+      {
+        "name": "Comoros",
+        "iso2": "KM",
+        "dialCode": "+269",
+        "examplePhoneNumber": "+269 773 1234"
+      },
+      {
+        "name": "Congo, Democratic Republic of the",
+        "iso2": "CD",
+        "dialCode": "+243",
+        "examplePhoneNumber": "+243 999 123 456"
+      },
+      {
+        "name": "Congo, Republic of the",
+        "iso2": "CG",
+        "dialCode": "+242",
+        "examplePhoneNumber": "+242 06 123 4567"
+      },
+      {
+        "name": "Costa Rica",
+        "iso2": "CR",
+        "dialCode": "+506",
+        "examplePhoneNumber": "+506 1234 5678"
+      },
+      {
+        "name": "Croatia",
+        "iso2": "HR",
+        "dialCode": "+385",
+        "examplePhoneNumber": "+385 1 234 5678"
+      },
+      {
+        "name": "Cuba",
+        "iso2": "CU",
+        "dialCode": "+53",
+        "examplePhoneNumber": "+53 7 1234567"
+      },
+      {
+        "name": "Cyprus",
+        "iso2": "CY",
+        "dialCode": "+357",
+        "examplePhoneNumber": "+357 22 123456"
+      },
+      {
+        "name": "Czech Republic",
+        "iso2": "CZ",
+        "dialCode": "+420",
+        "examplePhoneNumber": "+420 123 456 789"
+      },
+      {
+        "name": "Denmark",
+        "iso2": "DK",
+        "dialCode": "+45",
+        "examplePhoneNumber": "+45 12 34 56 78"
+      },
+      {
+        "name": "Djibouti",
+        "iso2": "DJ",
+        "dialCode": "+253",
+        "examplePhoneNumber": "+253 21 123 456"
+      },
+      {
+        "name": "Dominica",
+        "iso2": "DM",
+        "dialCode": "+1 767",
+        "examplePhoneNumber": "+1 767 225 1234"
+      },
+      {
+        "name": "Dominican Republic",
+        "iso2": "DO",
+        "dialCode": "+1 809",
+        "examplePhoneNumber": "+1 809 123 4567"
+      },
+      {
+        "name": "Ecuador",
+        "iso2": "EC",
+        "dialCode": "+593",
+        "examplePhoneNumber": "+593 2 123 4567"
+      },
+      {
+        "name": "Egypt",
+        "iso2": "EG",
+        "dialCode": "+20",
+        "examplePhoneNumber": "+20 2 123 4567"
+      },
+      {
+        "name": "El Salvador",
+        "iso2": "SV",
+        "dialCode": "+503",
+        "examplePhoneNumber": "+503 1234 5678"
+      },
+      {
+        "name": "Equatorial Guinea",
+        "iso2": "GQ",
+        "dialCode": "+240",
+        "examplePhoneNumber": "+240 222 123 456"
+      },
+      {
+        "name": "Eritrea",
+        "iso2": "ER",
+        "dialCode": "+291",
+        "examplePhoneNumber": "+291 1 234 567"
+      },
+      {
+        "name": "Estonia",
+        "iso2": "EE",
+        "dialCode": "+372",
+        "examplePhoneNumber": "+372 512 3456"
+      },
+      {
+        "name": "Eswatini",
+        "iso2": "SZ",
+        "dialCode": "+268",
+        "examplePhoneNumber": "+268 76 123 456"
+      },
+      {
+        "name": "Ethiopia",
+        "iso2": "ET",
+        "dialCode": "+251",
+        "examplePhoneNumber": "+251 11 123 4567"
+      },
+      {
+        "name": "Fiji",
+        "iso2": "FJ",
+        "dialCode": "+679",
+        "examplePhoneNumber": "+679 123 4567"
+      },
+      {
+        "name": "Finland",
+        "iso2": "FI",
+        "dialCode": "+358",
+        "examplePhoneNumber": "+358 9 123 4567"
+      },
+      {
+        "name": "France",
+        "iso2": "FR",
+        "dialCode": "+33",
+        "examplePhoneNumber": "+33 1 70 18 99 00"
+      },
+      {
+        "name": "Gabon",
+        "iso2": "GA",
+        "dialCode": "+241",
+        "examplePhoneNumber": "+241 7 123 456"
+      },
+      {
+        "name": "Gambia",
+        "iso2": "GM",
+        "dialCode": "+220",
+        "examplePhoneNumber": "+220 123 4567"
+      },
+      {
+        "name": "Georgia",
+        "iso2": "GE",
+        "dialCode": "+995",
+        "examplePhoneNumber": "+995 32 123 4567"
+      },
+      {
+        "name": "Germany",
+        "iso2": "DE",
+        "dialCode": "+49",
+        "examplePhoneNumber": "+49 30 12345678"
+      },
+      {
+        "name": "Ghana",
+        "iso2": "GH",
+        "dialCode": "+233",
+        "examplePhoneNumber": "+233 24 123 4567"
+      },
+      {
+        "name": "Greece",
+        "iso2": "GR",
+        "dialCode": "+30",
+        "examplePhoneNumber": "+30 21 1234567"
+      },
+      {
+        "name": "Grenada",
+        "iso2": "GD",
+        "dialCode": "+1 473",
+        "examplePhoneNumber": "+1 473 123 4567"
+      },
+      {
+        "name": "Guatemala",
+        "iso2": "GT",
+        "dialCode": "+502",
+        "examplePhoneNumber": "+502 1234 5678"
+      },
+      {
+        "name": "Guinea",
+        "iso2": "GN",
+        "dialCode": "+224",
+        "examplePhoneNumber": "+224 620 12 34 56"
+      },
+      {
+        "name": "Guinea-Bissau",
+        "iso2": "GW",
+        "dialCode": "+245",
+        "examplePhoneNumber": "+245 20 123 456"
+      },
+      {
+        "name": "Guyana",
+        "iso2": "GY",
+        "dialCode": "+592",
+        "examplePhoneNumber": "+592 123 4567"
+      },
+      {
+        "name": "Haiti",
+        "iso2": "HT",
+        "dialCode": "+509",
+        "examplePhoneNumber": "+509 28 123 456"
+      },
+      {
+        "name": "Honduras",
+        "iso2": "HN",
+        "dialCode": "+504",
+        "examplePhoneNumber": "+504 1234 5678"
+      },
+      {
+        "name": "Hungary",
+        "iso2": "HU",
+        "dialCode": "+36",
+        "examplePhoneNumber": "+36 1 234 5678"
+      },
+      {
+        "name": "Iceland",
+        "iso2": "IS",
+        "dialCode": "+354",
+        "examplePhoneNumber": "+354 123 4567"
+      },
+      {
+        "name": "India",
+        "iso2": "IN",
+        "dialCode": "+91",
+        "examplePhoneNumber": "+91 98765 43210"
+      },
+      {
+        "name": "Indonesia",
+        "iso2": "ID",
+        "dialCode": "+62",
+        "examplePhoneNumber": "+62 21 12345678"
+      },
+      {
+        "name": "Iran",
+        "iso2": "IR",
+        "dialCode": "+98",
+        "examplePhoneNumber": "+98 21 12345678"
+      },
+      {
+        "name": "Iraq",
+        "iso2": "IQ",
+        "dialCode": "+964",
+        "examplePhoneNumber": "+964 1 2345678"
+      },
+      {
+        "name": "Ireland",
+        "iso2": "IE",
+        "dialCode": "+353",
+        "examplePhoneNumber": "+353 1 234 5678"
+      },
+      {
+        "name": "Israel",
+        "iso2": "IL",
+        "dialCode": "+972",
+        "examplePhoneNumber": "+972 3 123 4567"
+      },
+      {
+        "name": "Italy",
+        "iso2": "IT",
+        "dialCode": "+39",
+        "examplePhoneNumber": "+39 06 12345678"
+      },
+      {
+        "name": "Jamaica",
+        "iso2": "JM",
+        "dialCode": "+1 876",
+        "examplePhoneNumber": "+1 876 123 4567"
+      },
+      {
+        "name": "Japan",
+        "iso2": "JP",
+        "dialCode": "+81",
+        "examplePhoneNumber": "+81 3 1234 5678"
+      },
+      {
+        "name": "Jordan",
+        "iso2": "JO",
+        "dialCode": "+962",
+        "examplePhoneNumber": "+962 6 1234567"
+      },
+      {
+        "name": "Kazakhstan",
+        "iso2": "KZ",
+        "dialCode": "+7",
+        "examplePhoneNumber": "+7 701 123 4567"
+      },
+      {
+        "name": "Kenya",
+        "iso2": "KE",
+        "dialCode": "+254",
+        "examplePhoneNumber": "+254 701 234 567"
+      },
+      {
+        "name": "Kiribati",
+        "iso2": "KI",
+        "dialCode": "+686",
+        "examplePhoneNumber": "+686 12345"
+      },
+      {
+        "name": "Korea, North",
+        "iso2": "KP",
+        "dialCode": "+850",
+        "examplePhoneNumber": "+850 2 1234567"
+      },
+      {
+        "name": "Korea, South",
+        "iso2": "KR",
+        "dialCode": "+82",
+        "examplePhoneNumber": "+82 2 1234 5678"
+      },
+      {
+        "name": "Kosovo",
+        "iso2": "XK",
+        "dialCode": "+383",
+        "examplePhoneNumber": "+383 38 123 456"
+      },
+      {
+        "name": "Kuwait",
+        "iso2": "KW",
+        "dialCode": "+965",
+        "examplePhoneNumber": "+965 1234 5678"
+      },
+      {
+        "name": "Kyrgyzstan",
+        "iso2": "KG",
+        "dialCode": "+996",
+        "examplePhoneNumber": "+996 312 123 456"
+      },
+      {
+        "name": "Laos",
+        "iso2": "LA",
+        "dialCode": "+856",
+        "examplePhoneNumber": "+856 21 123 456"
+      },
+      {
+        "name": "Latvia",
+        "iso2": "LV",
+        "dialCode": "+371",
+        "examplePhoneNumber": "+371 67 123 456"
+      },
+      {
+        "name": "Lebanon",
+        "iso2": "LB",
+        "dialCode": "+961",
+        "examplePhoneNumber": "+961 1 123 456"
+      },
+      {
+        "name": "Lesotho",
+        "iso2": "LS",
+        "dialCode": "+266",
+        "examplePhoneNumber": "+266 22 123 456"
+      },
+      {
+        "name": "Liberia",
+        "iso2": "LR",
+        "dialCode": "+231",
+        "examplePhoneNumber": "+231 77 123 456"
+      },
+      {
+        "name": "Libya",
+        "iso2": "LY",
+        "dialCode": "+218",
+        "examplePhoneNumber": "+218 21 123 4567"
+      },
+      {
+        "name": "Liechtenstein",
+        "iso2": "LI",
+        "dialCode": "+423",
+        "examplePhoneNumber": "+423 123 456"
+      },
+      {
+        "name": "Lithuania",
+        "iso2": "LT",
+        "dialCode": "+370",
+        "examplePhoneNumber": "+370 5 123 4567"
+      },
+      {
+        "name": "Luxembourg",
+        "iso2": "LU",
+        "dialCode": "+352",
+        "examplePhoneNumber": "+352 123 456"
+      },
+      {
+        "name": "Madagascar",
+        "iso2": "MG",
+        "dialCode": "+261",
+        "examplePhoneNumber": "+261 34 12 34 56"
+      },
+      {
+        "name": "Malawi",
+        "iso2": "MW",
+        "dialCode": "+265",
+        "examplePhoneNumber": "+265 99 123 4564"
+      },
+      {
+        "name": "Malaysia",
+        "iso2": "MY",
+        "dialCode": "+60",
+        "examplePhoneNumber": "+60 3 1234 5678"
+      },
+      {
+        "name": "Maldives",
+        "iso2": "MV",
+        "dialCode": "+960",
+        "examplePhoneNumber": "+960 777 1234"
+      },
+      {
+        "name": "Mali",
+        "iso2": "ML",
+        "dialCode": "+223",
+        "examplePhoneNumber": "+223 76 12 34 56"
+      },
+      {
+        "name": "Malta",
+        "iso2": "MT",
+        "dialCode": "+356",
+        "examplePhoneNumber": "+356 2123 4567"
+      },
+      {
+        "name": "Marshall Islands",
+        "iso2": "MH",
+        "dialCode": "+692",
+        "examplePhoneNumber": "+692 123 4567"
+      },
+      {
+        "name": "Mauritania",
+        "iso2": "MR",
+        "dialCode": "+222",
+        "examplePhoneNumber": "+222 22 123 456"
+      },
+      {
+        "name": "Mauritius",
+        "iso2": "MU",
+        "dialCode": "+230",
+        "examplePhoneNumber": "+230 123 4567"
+      },
+      {
+        "name": "Mexico",
+        "iso2": "MX",
+        "dialCode": "+52",
+        "examplePhoneNumber": "+52 55 1234 5678"
+      },
+      {
+        "name": "Micronesia",
+        "iso2": "FM",
+        "dialCode": "+691",
+        "examplePhoneNumber": "+691 123 4567"
+      },
+      {
+        "name": "Moldova",
+        "iso2": "MD",
+        "dialCode": "+373",
+        "examplePhoneNumber": "+373 22 123 456"
+      },
+      {
+        "name": "Monaco",
+        "iso2": "MC",
+        "dialCode": "+377",
+        "examplePhoneNumber": "+377 97 70 12 34"
+      },
+      {
+        "name": "Mongolia",
+        "iso2": "MN",
+        "dialCode": "+976",
+        "examplePhoneNumber": "+976 11 123456"
+      },
+      {
+        "name": "Montenegro",
+        "iso2": "ME",
+        "dialCode": "+382",
+        "examplePhoneNumber": "+382 20 123 456"
+      },
+      {
+        "name": "Morocco",
+        "iso2": "MA",
+        "dialCode": "+212",
+        "examplePhoneNumber": "+212 5376 12345"
+      },
+      {
+        "name": "Mozambique",
+        "iso2": "MZ",
+        "dialCode": "+258",
+        "examplePhoneNumber": "+258 82 123 4567"
+      },
+      {
+        "name": "Myanmar",
+        "iso2": "MM",
+        "dialCode": "+95",
+        "examplePhoneNumber": "+95 1 234 5678"
+      },
+      {
+        "name": "Namibia",
+        "iso2": "NA",
+        "dialCode": "+264",
+        "examplePhoneNumber": "+264 81 123 4567"
+      },
+      {
+        "name": "Nauru",
+        "iso2": "NR",
+        "dialCode": "+674",
+        "examplePhoneNumber": "+674 123 456"
+      },
+      {
+        "name": "Nepal",
+        "iso2": "NP",
+        "dialCode": "+977",
+        "examplePhoneNumber": "+977 1 1234567"
+      },
+      {
+        "name": "Netherlands",
+        "iso2": "NL",
+        "dialCode": "+31",
+        "examplePhoneNumber": "+31 20 123 4567"
+      },
+      {
+        "name": "New Zealand",
+        "iso2": "NZ",
+        "dialCode": "+64",
+        "examplePhoneNumber": "+64 9 123 4567"
+      },
+      {
+        "name": "Nicaragua",
+        "iso2": "NI",
+        "dialCode": "+505",
+        "examplePhoneNumber": "+505 1234 5678"
+      },
+      {
+        "name": "Niger",
+        "iso2": "NE",
+        "dialCode": "+227",
+        "examplePhoneNumber": "+227 20 12 34 56"
+      },
+      {
+        "name": "Nigeria",
+        "iso2": "NG",
+        "dialCode": "+234",
+        "examplePhoneNumber": "+234 701 234 5678"
+      },
+      {
+        "name": "North Macedonia",
+        "iso2": "MK",
+        "dialCode": "+389",
+        "examplePhoneNumber": "+389 2 123 4567"
+      },
+      {
+        "name": "Norway",
+        "iso2": "NO",
+        "dialCode": "+47",
+        "examplePhoneNumber": "+47 123 45 678"
+      },
+      {
+        "name": "Oman",
+        "iso2": "OM",
+        "dialCode": "+968",
+        "examplePhoneNumber": "+968 24 123 456"
+      },
+      {
+        "name": "Pakistan",
+        "iso2": "PK",
+        "dialCode": "+92",
+        "examplePhoneNumber": "+92 300 1234567"
+      },
+      {
+        "name": "Palau",
+        "iso2": "PW",
+        "dialCode": "+680",
+        "examplePhoneNumber": "+680 123 4567"
+      },
+      {
+        "name": "Palestine",
+        "iso2": "PS",
+        "dialCode": "+970",
+        "examplePhoneNumber": "+970 2 123 4567"
+      },
+      {
+        "name": "Panama",
+        "iso2": "PA",
+        "dialCode": "+507",
+        "examplePhoneNumber": "+507 1234 5678"
+      },
+      {
+        "name": "Papua New Guinea",
+        "iso2": "PG",
+        "dialCode": "+675",
+        "examplePhoneNumber": "+675 123 4567"
+      },
+      {
+        "name": "Paraguay",
+        "iso2": "PY",
+        "dialCode": "+595",
+        "examplePhoneNumber": "+595 21 123 456"
+      },
+      {
+        "name": "Peru",
+        "iso2": "PE",
+        "dialCode": "+51",
+        "examplePhoneNumber": "+51 1 123 4567"
+      },
+      {
+        "name": "Philippines",
+        "iso2": "PH",
+        "dialCode": "+63",
+        "examplePhoneNumber": "+63 2 123 4567"
+      },
+      {
+        "name": "Poland",
+        "iso2": "PL",
+        "dialCode": "+48",
+        "examplePhoneNumber": "+48 12 345 67 89"
+      },
+      {
+        "name": "Portugal",
+        "iso2": "PT",
+        "dialCode": "+351",
+        "examplePhoneNumber": "+351 21 123 4567"
+      },
+      {
+        "name": "Qatar",
+        "iso2": "QA",
+        "dialCode": "+974",
+        "examplePhoneNumber": "+974 1 234 5678"
+      },
+      {
+        "name": "Romania",
+        "iso2": "RO",
+        "dialCode": "+40",
+        "examplePhoneNumber": "+40 21 123 4567"
+      },
+      {
+        "name": "Russia",
+        "iso2": "RU",
+        "dialCode": "+7",
+        "examplePhoneNumber": "+7 495 123 45 67"
+      },
+      {
+        "name": "Rwanda",
+        "iso2": "RW",
+        "dialCode": "+250",
+        "examplePhoneNumber": "+250 78 123 4567"
+      },
+      {
+        "name": "Saint Kitts and Nevis",
+        "iso2": "KN",
+        "dialCode": "+1 869",
+        "examplePhoneNumber": "+1 869 123 4567"
+      },
+      {
+        "name": "Saint Lucia",
+        "iso2": "LC",
+        "dialCode": "+1 758",
+        "examplePhoneNumber": "+1 758 123 4567"
+      },
+      {
+        "name": "Saint Vincent and the Grenadines",
+        "iso2": "VC",
+        "dialCode": "+1 784",
+        "examplePhoneNumber": "+1 784 123 4567"
+      },
+      {
+        "name": "Samoa",
+        "iso2": "WS",
+        "dialCode": "+685",
+        "examplePhoneNumber": "+685 1234"
+      },
+      {
+        "name": "San Marino",
+        "iso2": "SM",
+        "dialCode": "+378",
+        "examplePhoneNumber": "+378 0549 123 456"
+      },
+      {
+        "name": "Sao Tome and Principe",
+        "iso2": "ST",
+        "dialCode": "+239",
+        "examplePhoneNumber": "+239 222 1234"
+      },
+      {
+        "name": "Saudi Arabia",
+        "iso2": "SA",
+        "dialCode": "+966",
+        "examplePhoneNumber": "+966 1 234 5678"
+      },
+      {
+        "name": "Senegal",
+        "iso2": "SN",
+        "dialCode": "+221",
+        "examplePhoneNumber": "+221 77 123 4567"
+      },
+      {
+        "name": "Serbia",
+        "iso2": "RS",
+        "dialCode": "+381",
+        "examplePhoneNumber": "+381 11 1234567"
+      },
+      {
+        "name": "Seychelles",
+        "iso2": "SC",
+        "dialCode": "+248",
+        "examplePhoneNumber": "+248 2 123 456"
+      },
+      {
+        "name": "Sierra Leone",
+        "iso2": "SL",
+        "dialCode": "+232",
+        "examplePhoneNumber": "+232 76 123 456"
+      },
+      {
+        "name": "Singapore",
+        "iso2": "SG",
+        "dialCode": "+65",
+        "examplePhoneNumber": "+65 6123 4567"
+      },
+      {
+        "name": "Sint Maarten",
+        "iso2": "SX",
+        "dialCode": "+1 721",
+        "examplePhoneNumber": "+1 721 123 4567"
+      },
+      {
+        "name": "Slovakia",
+        "iso2": "SK",
+        "dialCode": "+421",
+        "examplePhoneNumber": "+421 2 123 4567"
+      },
+      {
+        "name": "Slovenia",
+        "iso2": "SI",
+        "dialCode": "+386",
+        "examplePhoneNumber": "+386 1 234 5678"
+      },
+      {
+        "name": "Solomon Islands",
+        "iso2": "SB",
+        "dialCode": "+677",
+        "examplePhoneNumber": "+677 12345"
+      },
+      {
+        "name": "Somalia",
+        "iso2": "SO",
+        "dialCode": "+252",
+        "examplePhoneNumber": "+252 1 234 567"
+      },
+      {
+        "name": "South Africa",
+        "iso2": "ZA",
+        "dialCode": "+27",
+        "examplePhoneNumber": "+27 21 123 4567"
+      },
+      {
+        "name": "South Sudan",
+        "iso2": "SS",
+        "dialCode": "+211",
+        "examplePhoneNumber": "+211 912 345 678"
+      },
+      {
+        "name": "Spain",
+        "iso2": "ES",
+        "dialCode": "+34",
+        "examplePhoneNumber": "+34 912 345 678"
+      },
+      {
+        "name": "Sri Lanka",
+        "iso2": "LK",
+        "dialCode": "+94",
+        "examplePhoneNumber": "+94 11 123 4567"
+      },
+      {
+        "name": "Sudan",
+        "iso2": "SD",
+        "dialCode": "+249",
+        "examplePhoneNumber": "+249 912 345 678"
+      },
+      {
+        "name": "Suriname",
+        "iso2": "SR",
+        "dialCode": "+597",
+        "examplePhoneNumber": "+597 123 4567"
+      },
+      {
+        "name": "Sweden",
+        "iso2": "SE",
+        "dialCode": "+46",
+        "examplePhoneNumber": "+46 8 123 4567"
+      },
+      {
+        "name": "Switzerland",
+        "iso2": "CH",
+        "dialCode": "+41",
+        "examplePhoneNumber": "+41 44 123 4567"
+      },
+      {
+        "name": "Syria",
+        "iso2": "SY",
+        "dialCode": "+963",
+        "examplePhoneNumber": "+963 11 123 4567"
+      },
+      {
+        "name": "Taiwan",
+        "iso2": "TW",
+        "dialCode": "+886",
+        "examplePhoneNumber": "+886 2 123 4567"
+      },
+      {
+        "name": "Tajikistan",
+        "iso2": "TJ",
+        "dialCode": "+992",
+        "examplePhoneNumber": "+992 37 123 4567"
+      },
+      {
+        "name": "Tanzania",
+        "iso2": "TZ",
+        "dialCode": "+255",
+        "examplePhoneNumber": "+255 22 123 4567"
+      },
+      {
+        "name": "Thailand",
+        "iso2": "TH",
+        "dialCode": "+66",
+        "examplePhoneNumber": "+66 2 123 4567"
+      },
+      {
+        "name": "Timor-Leste",
+        "iso2": "TL",
+        "dialCode": "+670",
+        "examplePhoneNumber": "+670 123 4567"
+      },
+      {
+        "name": "Togo",
+        "iso2": "TG",
+        "dialCode": "+228",
+        "examplePhoneNumber": "+228 22 123 456"
+      },
+      {
+        "name": "Tonga",
+        "iso2": "TO",
+        "dialCode": "+676",
+        "examplePhoneNumber": "+676 12345"
+      },
+      {
+        "name": "Trinidad and Tobago",
+        "iso2": "TT",
+        "dialCode": "+1 868",
+        "examplePhoneNumber": "+1 868 123 4567"
+      },
+      {
+        "name": "Tunisia",
+        "iso2": "TN",
+        "dialCode": "+216",
+        "examplePhoneNumber": "+216 71 234 567"
+      },
+      {
+        "name": "Turkey",
+        "iso2": "TR",
+        "dialCode": "+90",
+        "examplePhoneNumber": "+90 212 123 4567"
+      },
+      {
+        "name": "Turkmenistan",
+        "iso2": "TM",
+        "dialCode": "+993",
+        "examplePhoneNumber": "+993 12 345 6789"
+      },
+      {
+        "name": "Tuvalu",
+        "iso2": "TV",
+        "dialCode": "+688",
+        "examplePhoneNumber": "+688 1234"
+      },
+      {
+        "name": "Uganda",
+        "iso2": "UG",
+        "dialCode": "+256",
+        "examplePhoneNumber": "+256 41 123 4567"
+      },
+      {
+        "name": "Ukraine",
+        "iso2": "UA",
+        "dialCode": "+380",
+        "examplePhoneNumber": "+380 44 123 4567"
+      },
+      {
+        "name": "United Arab Emirates",
+        "iso2": "AE",
+        "dialCode": "+971",
+        "examplePhoneNumber": "+971 2 123 4567"
+      },
+      {
+        "name": "United Kingdom",
+        "iso2": "GB",
+        "dialCode": "+44",
+        "examplePhoneNumber": "+44 20 7946 0958"
+      },
+      {
+        "name": "United States",
+        "iso2": "US",
+        "dialCode": "+1",
+        "examplePhoneNumber": "+1 202 555 0148"
+      },
+      {
+        "name": "Uruguay",
+        "iso2": "UY",
+        "dialCode": "+598",
+        "examplePhoneNumber": "+598 2 123 4567"
+      },
+      {
+        "name": "Uzbekistan",
+        "iso2": "UZ",
+        "dialCode": "+998",
+        "examplePhoneNumber": "+998 71 123 4567"
+      },
+      {
+        "name": "Vanuatu",
+        "iso2": "VU",
+        "dialCode": "+678",
+        "examplePhoneNumber": "+678 1234"
+      },
+      {
+        "name": "Vatican City",
+        "iso2": "VA",
+        "dialCode": "+379",
+        "examplePhoneNumber": "+379 06 6988 0900"
+      },
+      {
+        "name": "Venezuela",
+        "iso2": "VE",
+        "dialCode": "+58",
+        "examplePhoneNumber": "+58 212 1234567"
+      },
+      {
+        "name": "Vietnam",
+        "iso2": "VN",
+        "dialCode": "+84",
+        "examplePhoneNumber": "+84 24 123 4567"
+      },
+      {
+        "name": "Yemen",
+        "iso2": "YE",
+        "dialCode": "+967",
+        "examplePhoneNumber": "+967 1 234 567"
+      },
+      {
+        "name": "Zambia",
+        "iso2": "ZM",
+        "dialCode": "+260",
+        "examplePhoneNumber": "+260 97 123 4567"
+      },
+      {
+        "name": "Zimbabwe",
+        "iso2": "ZW",
+        "dialCode": "+263",
+        "examplePhoneNumber": "+263 9 123 4567"
+      }
+    ]
+  }
+  
