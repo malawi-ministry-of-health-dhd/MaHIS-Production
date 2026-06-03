@@ -180,6 +180,7 @@ const runStartSyncCommand = async ({ remoteUrl, auth, locationId, deviceId, useL
             await publishLocalStatsBeforeSync(remoteUrl, auth);
             await primeRemoteStatsBeforeSync(remoteUrl, auth, { parallelLimit: 1 });
             await SyncManager.syncPeriodicDde(remoteUrl, syncOptions);
+            SyncManager.watchDirectRemoteChanges(remoteUrl, syncOptions);
             refreshRemoteStatsInBackground(remoteUrl, auth, { parallelLimit: 1 });
         }
 

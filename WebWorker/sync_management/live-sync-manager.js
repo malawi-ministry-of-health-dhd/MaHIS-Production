@@ -142,7 +142,7 @@ const LiveSyncManager = {
         return !!this.syncHandlers[dbName];
     },
 
-    listenToRemoteChanges(dbName, remoteUrl, options = {}) {
+    listenToRemoteChanges(dbName, remoteUrl, options = {}, listenerOptions = {}) {
         const remoteDB = new self.PouchDB(`${remoteUrl}/${dbName}`, {
             skip_setup: true,
             auth: options,
@@ -152,16 +152,27 @@ const LiveSyncManager = {
             this.syncHandlers[dbName].cancel();
             delete this.syncHandlers[dbName];
         }
+        const changeOptions = {
+            live: true, // keep listening
+            retry: true,
+            since: "now", // start from current state
+            include_docs: true, // include the changed docs
+            heartbeat: 30000, // keep the connection alive
+            timeout: 60000,
+        };
+
+        const selector = listenerOptions.selector;
+        if (selector && typeof selector === "object") {
+            changeOptions.selector = selector;
+        }
+
         const handler = remoteDB
-            .changes({
-                live: true, // keep listening
-                since: "now", // start from current state
-                include_docs: true, // include the changed docs
-                heartbeat: 30000, // keep the connection alive
-            })
+            .changes(changeOptions)
             .on("change", async (change) => {
                 console.log(`[REMOTE-CHANGE] ${dbName}:`, change);
-                await DatabaseManager.getStats(remoteUrl, options, dbName);
+                if (listenerOptions.refreshStats !== false) {
+                    await DatabaseManager.getStats(remoteUrl, options, dbName);
+                }
                 self.postMessage({
                     type: "syncChange",
                     dbName: dbName,

@@ -44,6 +44,51 @@ const SyncManager = {
         return this.getPeriodicSyncDirection(dbName) === "bidirectional";
     },
 
+    getLocationChangeSelector(dbName) {
+        const selector = this.getLocationSelector(dbName);
+        if (!selector?.location_id) return null;
+
+        const locationId = selector.location_id;
+        return {
+            $or: [
+                { location_id: locationId },
+                { location_id: Number(locationId) },
+                { deleted_location_id: locationId },
+                { deleted_location_id: Number(locationId) },
+            ],
+        };
+    },
+
+    getRemoteLiveChangeDatabases() {
+        const liveDatabases = this.uniqueDatabaseNames(databaseConfig.liveSyncDatabases);
+        const syncPatientsLocally = self.SYNC_PATIENTS_LOCALLY === true;
+
+        if (!DatabaseManager.useLocalStorage) return liveDatabases;
+        if (syncPatientsLocally) return [];
+
+        return liveDatabases.filter((dbName) => dbName === "patients_records");
+    },
+
+    watchDirectRemoteChanges(remoteBaseUrl, options = {}) {
+        if (!remoteBaseUrl) return;
+
+        const remoteLiveDatabases = this.getRemoteLiveChangeDatabases();
+        remoteLiveDatabases.forEach((dbName) => {
+            LiveSyncManager.listenToRemoteChanges(dbName, remoteBaseUrl, options, {
+                selector: this.getLocationChangeSelector(dbName),
+                refreshStats: false,
+            });
+        });
+
+        if (remoteLiveDatabases.length > 0) {
+            console.log(`[SYNC] Watching remote changes for direct CouchDB mode: ${remoteLiveDatabases.join(", ")}`);
+        }
+    },
+
+    watchDirectPatientRecordChanges(remoteBaseUrl, options = {}) {
+        this.watchDirectRemoteChanges(remoteBaseUrl, options);
+    },
+
     uniqueDatabaseNames(databaseNames = []) {
         return [...new Set(databaseNames.filter(Boolean))];
     },
@@ -103,6 +148,7 @@ const SyncManager = {
         const periodicSyncDatabases = excludePatients(this.uniqueDatabaseNames(databaseConfig.periodicSyncDatabases));
         if (!syncPatientsLocally) {
             console.log("[SYNC] patients_records excluded from sync (sync_patients_locally = false)");
+            this.watchDirectRemoteChanges(remoteBaseUrl, options);
         }
         const syncTasks = [
             ...liveSyncDatabases.map((dbName) => ({ dbName, syncType: "live" })),
@@ -212,6 +258,15 @@ const SyncManager = {
                     : PeriodicSyncManager.isPeriodicSyncActive(dbName)
                     ? "periodic-active"
                     : "inactive",
+            };
+        }
+        if (!status.patients_records && LiveSyncManager.isLiveSyncActive("patients_records")) {
+            status.patients_records = {
+                syncType: "remote-listener",
+                isLiveSyncActive: true,
+                isPeriodicSyncActive: false,
+                initialSyncComplete: true,
+                handler: "remote-change-listener",
             };
         }
         return status;
