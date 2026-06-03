@@ -734,7 +734,7 @@ registerPlugin('App', {
     web: () => __vitePreload(() => import('./web.js'),true              ?[]:void 0).then(m => new m.AppWeb()),
 });
 
-const {useEffect: useEffect$1C} = await importShared('react');
+const {useEffect: useEffect$1D} = await importShared('react');
 
 await importShared('react');
 const RefresherWrapper = ({ onRefresh, children }) => {
@@ -8445,25 +8445,25 @@ const dataSetsInit = async (forceRefresh = false) => {
 };
 
 var define_process_env_default$2 = {};
-const React$V = await importShared('react');
-const {useContext: useContext$H,useEffect: useEffect$1B,useRef: useRef$u,useState: useState$1y,useMemo: useMemo$V,Suspense} = React$V;
+const React$W = await importShared('react');
+const {useContext: useContext$H,useEffect: useEffect$1C,useRef: useRef$w,useState: useState$1z,useMemo: useMemo$V,Suspense} = React$W;
 const MainLayout = ({ menuItems, children }) => {
   const navigate = useNavigate();
-  const [hasAccess, setHasAccess] = useState$1y(null);
+  const [hasAccess, setHasAccess] = useState$1z(null);
   const isApk = Capacitor.isNativePlatform();
   const isMobile = isPlatform("ios") || isPlatform("android");
   const isWeb = isPlatform("mobileweb") || isPlatform("desktop");
-  const [user, setUser] = useState$1y(null);
+  const [user, setUser] = useState$1z(null);
   const { search } = useLocation();
-  const [superuser, setSuperUser] = useState$1y(null);
-  const [showNotifications, setShowNotifications] = useState$1y(false);
-  const [notifications, setNotifications] = useState$1y([]);
-  const [unReadNotifications, setUnReadNotifications] = useState$1y([]);
-  const [messageCount, setMessageCount] = useState$1y(0);
-  const [showDropdown, setShowDropdown] = useState$1y(false);
-  const [userOrgUnit, setUserOrgUnits] = useState$1y("");
-  const notificationsRef = useRef$u(null);
-  const dropdownRef = useRef$u(null);
+  const [superuser, setSuperUser] = useState$1z(null);
+  const [showNotifications, setShowNotifications] = useState$1z(false);
+  const [notifications, setNotifications] = useState$1z([]);
+  const [unReadNotifications, setUnReadNotifications] = useState$1z([]);
+  const [messageCount, setMessageCount] = useState$1z(0);
+  const [showDropdown, setShowDropdown] = useState$1z(false);
+  const [userOrgUnit, setUserOrgUnits] = useState$1z("");
+  const notificationsRef = useRef$w(null);
+  const dropdownRef = useRef$w(null);
   function bridgeNavigate(target) {
     try {
       const d = document;
@@ -8619,7 +8619,7 @@ const MainLayout = ({ menuItems, children }) => {
       console.error("Error handling notification click", err);
     }
   };
-  useEffect$1B(() => {
+  useEffect$1C(() => {
     const handleOutside = (e) => {
       if (notificationsRef.current && !notificationsRef.current.contains(e.target))
         setShowNotifications(false);
@@ -8657,8 +8657,14 @@ const MainLayout = ({ menuItems, children }) => {
       window.location.replace("/memis/login");
     }
   };
-  useEffect$1B(() => {
+  useEffect$1C(() => {
     getUser();
+  }, []);
+  useEffect$1C(() => {
+    const intervalId = setInterval(() => {
+      getMessages();
+    }, 6e4);
+    return () => clearInterval(intervalId);
   }, []);
   async function logoutAndBroadcast() {
     try {
@@ -8684,7 +8690,7 @@ const MainLayout = ({ menuItems, children }) => {
       getMessages()
     ]);
   };
-  useEffect$1B(() => {
+  useEffect$1C(() => {
     const loadUser = async () => {
       try {
         await dataSetsInit();
@@ -8701,11 +8707,11 @@ const MainLayout = ({ menuItems, children }) => {
     };
     loadUser();
   }, []);
-  useEffect$1B(() => {
+  useEffect$1C(() => {
     const loadAccess = async () => {
       try {
         const res = await canAccessSettings();
-        setHasAccess(true);
+        setHasAccess(res);
       } catch (error) {
         setHasAccess(false);
       }
@@ -9013,8 +9019,8 @@ const MainLayout = ({ menuItems, children }) => {
   ] });
 };
 
-const React$U = await importShared('react');
-const {useContext: useContext$G,useEffect: useEffect$1A,useMemo: useMemo$U} = React$U;
+const React$V = await importShared('react');
+const {useContext: useContext$G,useEffect: useEffect$1B,useMemo: useMemo$U} = React$V;
 const WithRoleBasedLayout = () => {
   const { menuModel, loading } = useContext$G(MEMISContext.MenuContext);
   return (
@@ -19360,7 +19366,7 @@ class TimeSeriesScale extends TimeScale {
     }
 }
 
-const {forwardRef: forwardRef$1,useRef: useRef$t,useEffect: useEffect$1z} = await importShared('react');
+const {forwardRef: forwardRef$1,useRef: useRef$v,useEffect: useEffect$1A} = await importShared('react');
 
 const defaultDatasetIdKey = 'label';
 function reforwardRef(ref, value) {
@@ -19407,8 +19413,8 @@ function cloneData(data, datasetIdKey = defaultDatasetIdKey) {
 
 function ChartComponent(props, ref) {
     const { height = 150, width = 300, redraw = false, datasetIdKey, type, data, options, plugins = [], fallbackContent, updateMode, ...canvasProps } = props;
-    const canvasRef = useRef$t(null);
-    const chartRef = useRef$t(null);
+    const canvasRef = useRef$v(null);
+    const chartRef = useRef$v(null);
     const renderChart = ()=>{
         if (!canvasRef.current) return;
         chartRef.current = new Chart$1(canvasRef.current, {
@@ -19428,7 +19434,7 @@ function ChartComponent(props, ref) {
             chartRef.current = null;
         }
     };
-    useEffect$1z(()=>{
+    useEffect$1A(()=>{
         if (!redraw && chartRef.current && options) {
             setOptions(chartRef.current, options);
         }
@@ -19436,7 +19442,7 @@ function ChartComponent(props, ref) {
         redraw,
         options
     ]);
-    useEffect$1z(()=>{
+    useEffect$1A(()=>{
         if (!redraw && chartRef.current) {
             setLabels(chartRef.current.config.data, data.labels);
         }
@@ -19444,7 +19450,7 @@ function ChartComponent(props, ref) {
         redraw,
         data.labels
     ]);
-    useEffect$1z(()=>{
+    useEffect$1A(()=>{
         if (!redraw && chartRef.current && data.datasets) {
             setDatasets(chartRef.current.config.data, data.datasets, datasetIdKey);
         }
@@ -19452,7 +19458,7 @@ function ChartComponent(props, ref) {
         redraw,
         data.datasets
     ]);
-    useEffect$1z(()=>{
+    useEffect$1A(()=>{
         if (!chartRef.current) return;
         if (redraw) {
             destroyChart();
@@ -19467,14 +19473,14 @@ function ChartComponent(props, ref) {
         data.datasets,
         updateMode
     ]);
-    useEffect$1z(()=>{
+    useEffect$1A(()=>{
         if (!chartRef.current) return;
         destroyChart();
         setTimeout(renderChart);
     }, [
         type
     ]);
-    useEffect$1z(()=>{
+    useEffect$1A(()=>{
         renderChart();
         return ()=>destroyChart();
     }, []);
@@ -19502,16 +19508,16 @@ const Doughnut = /* #__PURE__ */ createTypedChart('doughnut', DoughnutController
 await importShared('react');
 Chart$1.register(ArcElement, plugin_tooltip, plugin_legend);
 
+const React$U = await importShared('react');
+const {useContext: useContext$F,useEffect: useEffect$1z,useState: useState$1y} = React$U;
+
 const React$T = await importShared('react');
-const {useContext: useContext$F,useEffect: useEffect$1y,useState: useState$1x} = React$T;
+const {useEffect: useEffect$1y} = React$T;
 
 const React$S = await importShared('react');
-const {useEffect: useEffect$1x} = React$S;
+const {useState: useState$1x,useEffect: useEffect$1x,useMemo: useMemo$T,useCallback: useCallback$s} = React$S;
 
-const React$R = await importShared('react');
-const {useState: useState$1w,useEffect: useEffect$1w,useMemo: useMemo$T,useCallback: useCallback$r} = React$R;
-
-const {createPortal: createPortal$5} = await importShared('react-dom');
+const {createPortal: createPortal$4} = await importShared('react-dom');
 const SearchableSelect = ({
   data = [],
   itemTextField = "name",
@@ -19524,10 +19530,10 @@ const SearchableSelect = ({
   value = null,
   closeOnSignal
 }) => {
-  const [isOpen, setIsOpen] = useState$1w(false);
-  const [searchTerm, setSearchTerm] = useState$1w("");
-  const [selectedItems, setSelectedItems] = useState$1w([]);
-  useEffect$1w(() => {
+  const [isOpen, setIsOpen] = useState$1x(false);
+  const [searchTerm, setSearchTerm] = useState$1x("");
+  const [selectedItems, setSelectedItems] = useState$1x([]);
+  useEffect$1x(() => {
     if (value == null) {
       if (selectedItems?.length > 0) setSelectedItems([]);
       return;
@@ -19545,7 +19551,7 @@ const SearchableSelect = ({
     );
     if (!isEqual) setSelectedItems(newSelected);
   }, [value, multiple, itemValueField, data, selectedItems]);
-  useEffect$1w(() => {
+  useEffect$1x(() => {
     if (closeOnSignal) {
       setIsOpen(false);
       setSearchTerm("");
@@ -19557,13 +19563,13 @@ const SearchableSelect = ({
       (item) => (item[itemTextField] || "").toLowerCase().includes(term)
     );
   }, [data, searchTerm, itemTextField]);
-  const isItemSelected = useCallback$r(
+  const isItemSelected = useCallback$s(
     (item) => selectedItems?.some(
       (sel) => sel[itemValueField] === item[itemValueField]
     ),
     [selectedItems, itemValueField]
   );
-  const handleSelect = useCallback$r(
+  const handleSelect = useCallback$s(
     (item) => {
       let newSelection;
       if (multiple) {
@@ -19684,7 +19690,7 @@ const SearchableSelect = ({
         )
       }
     ),
-    isOpen && createPortal$5(
+    isOpen && createPortal$4(
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "div",
         {
@@ -20072,7 +20078,7 @@ const getDateRangeFromPeriod = (period) => {
   }
 };
 
-const {useEffect: useEffect$1v,useMemo: useMemo$S,useState: useState$1v} = await importShared('react');
+const {useEffect: useEffect$1w,useMemo: useMemo$S,useState: useState$1w} = await importShared('react');
 const RELATIVE_PERIODS = [
   { id: "THIS_MONTH", label: "This Month" },
   { id: "LAST_MONTH", label: "Last Month" },
@@ -20089,17 +20095,17 @@ const FilterFields = ({
   onClear,
   setIsLoading
 }) => {
-  const [departments, setDepartments] = useState$1v([]);
-  const [equipmentList, setEquipmentList] = useState$1v([]);
-  const [showFacilityFility, setShowFacilityFilter] = useState$1v(true);
-  const [showPeriodModal, setShowPeriodModal] = useState$1v(false);
-  const [periodTab, setPeriodTab] = useState$1v("RELATIVE");
-  const [tempPeriod, setTempPeriod] = useState$1v(filters.period);
-  const [tempStartDate, setTempStartDate] = useState$1v(filters.startDate);
-  const [tempEndDate, setTempEndDate] = useState$1v(filters.endDate);
-  const [isMobile, setIsMobile] = useState$1v(window.innerWidth < 768);
-  const [showMobileFilters, setShowMobileFilters] = useState$1v(false);
-  useEffect$1v(() => {
+  const [departments, setDepartments] = useState$1w([]);
+  const [equipmentList, setEquipmentList] = useState$1w([]);
+  const [showFacilityFility, setShowFacilityFilter] = useState$1w(true);
+  const [showPeriodModal, setShowPeriodModal] = useState$1w(false);
+  const [periodTab, setPeriodTab] = useState$1w("RELATIVE");
+  const [tempPeriod, setTempPeriod] = useState$1w(filters.period);
+  const [tempStartDate, setTempStartDate] = useState$1w(filters.startDate);
+  const [tempEndDate, setTempEndDate] = useState$1w(filters.endDate);
+  const [isMobile, setIsMobile] = useState$1w(window.innerWidth < 768);
+  const [showMobileFilters, setShowMobileFilters] = useState$1w(false);
+  useEffect$1w(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -20108,7 +20114,7 @@ const FilterFields = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  useEffect$1v(() => {
+  useEffect$1w(() => {
     const load = async () => {
       const [orgUnits, optionSets] = await Promise.all([
         LocalForageServiceInstance.getItem("userOrganisationUnits", "userOrgUnits"),
@@ -20141,7 +20147,7 @@ const FilterFields = ({
   const hasActiveFilters = useMemo$S(() => {
     return filters.equipment !== "" || filters.department !== defaultDepartment || filters.period !== "THIS_MONTH";
   }, [filters, defaultDepartment]);
-  useEffect$1v(() => {
+  useEffect$1w(() => {
     if (showPeriodModal) {
       setTempPeriod(filters.period);
       setTempStartDate(filters.startDate);
@@ -21015,7 +21021,7 @@ const EquipmentStats = {
   },
 };
 
-const {useContext: useContext$E,useEffect: useEffect$1u,useMemo: useMemo$R,useState: useState$1u} = await importShared('react');
+const {useContext: useContext$E,useEffect: useEffect$1v,useMemo: useMemo$R,useState: useState$1v} = await importShared('react');
 const DEFAULT_FILTERS = {
   startDate: "",
   endDate: "",
@@ -21028,11 +21034,11 @@ const Dashboard = () => {
     MEMISContext.DashboardContext
   );
   const { user } = useContext$E(MEMISContext.UserRolesContext);
-  const [isLoadingFromFilters, setIsLoadingFromFilters] = useState$1u(false);
-  const [defaultDepartment, setDefaultDepartment] = useState$1u("");
-  const [dashboardData, setDashboardData] = useState$1u({});
-  const [selectedFilters, setSelectedFilters] = useState$1u(DEFAULT_FILTERS);
-  useEffect$1u(() => {
+  const [isLoadingFromFilters, setIsLoadingFromFilters] = useState$1v(false);
+  const [defaultDepartment, setDefaultDepartment] = useState$1v("");
+  const [dashboardData, setDashboardData] = useState$1v({});
+  const [selectedFilters, setSelectedFilters] = useState$1v(DEFAULT_FILTERS);
+  useEffect$1v(() => {
     const loadDefaultDepartment = async () => {
       const orgUnits = await LocalForageServiceInstance.getItem(
         "userOrganisationUnits",
@@ -21093,7 +21099,7 @@ const Dashboard = () => {
       )
     );
   }, [dashboardConfigs, user]);
-  useEffect$1u(() => {
+  useEffect$1v(() => {
     setIsLoadingFromFilters(true);
     setTimeout(() => {
       setIsLoadingFromFilters(false);
@@ -21407,7 +21413,7 @@ const Dashboard = () => {
       setIsLoading(false);
     }
   };
-  useEffect$1u(() => {
+  useEffect$1v(() => {
     let startDate;
     let endDate;
     const today = /* @__PURE__ */ new Date();
@@ -21457,8 +21463,8 @@ const Dashboard = () => {
   ] });
 };
 
-const React$Q = await importShared('react');
-const {useEffect: useEffect$1t,useState: useState$1t} = React$Q;
+const React$R = await importShared('react');
+const {useEffect: useEffect$1u,useState: useState$1u} = React$R;
 function OrganisationUnitsWidget({
   programOrgUnits = [],
   selectedOrganisationUnit,
@@ -21473,8 +21479,8 @@ function OrganisationUnitsWidget({
   searchParams.get("q");
   searchParams.get("stage");
   searchParams.get("equipmentId");
-  const [facility, setFacility] = useState$1t("Facility");
-  const [orgUnitName, setOrgUnitName] = useState$1t("");
+  const [facility, setFacility] = useState$1u("Facility");
+  const [orgUnitName, setOrgUnitName] = useState$1u("");
   const getTEI = async (teiOu2) => {
     try {
       await dataStore.get(`tracker/trackedEntities/${teiOu2}`).then(async (res) => {
@@ -21489,7 +21495,7 @@ function OrganisationUnitsWidget({
       console.error("Failed to fetch TEI data:", error);
     }
   };
-  useEffect$1t(() => {
+  useEffect$1u(() => {
     if (!Array.isArray(programOrgUnits) || programOrgUnits?.length === 0 || !dataStoreData) {
       return;
     }
@@ -21686,21 +21692,21 @@ const ComponentsField = ({
   ] });
 };
 
-const {useEffect: useEffect$1s,useMemo: useMemo$Q,useState: useState$1s} = await importShared('react');
+const {useEffect: useEffect$1t,useMemo: useMemo$Q,useState: useState$1t} = await importShared('react');
 
 function useSectionVisibilityConfig(programId) {
-    const [tick, setTick] = useState$1s(0);
-    const [config, setConfig] = useState$1s(null);
+    const [tick, setTick] = useState$1t(0);
+    const [config, setConfig] = useState$1t(null);
 
     // Listen for external updates
-    useEffect$1s(() => {
+    useEffect$1t(() => {
         const onUpdate = () => setTick((n) => n + 1);
         window.addEventListener("memis:sectionVisibility:updated", onUpdate);
         return () => window.removeEventListener("memis:sectionVisibility:updated", onUpdate);
     }, []);
 
     // Fetch data asynchronously
-    useEffect$1s(() => {
+    useEffect$1t(() => {
         let mounted = true;
         const fetchConfig = async () => {
             try {
@@ -21777,7 +21783,7 @@ function useSectionVisibilityConfig(programId) {
 const {useMemo: useMemo$P} = await importShared('react');
 
 
-const A$a = (x) => (Array.isArray(x) ? x : []);
+const A$b = (x) => (Array.isArray(x) ? x : []);
 
 const normalizeText = (value) =>
     typeof value === "string"
@@ -21824,7 +21830,7 @@ const extractVariableNames = (condition) => {
 const buildFieldMetaById = (sections) => {
     const metaMap = {};
     sections.forEach((section) => {
-        A$a(section?.fields).forEach((field) => {
+        A$b(section?.fields).forEach((field) => {
             const node = field?.dataElement || field;
             const id = node?.id || field?.id || field;
             if (id && !metaMap[id]) {
@@ -21838,7 +21844,7 @@ const buildFieldMetaById = (sections) => {
 const resolveOptionLabel = (metaMap, fieldId, rawValue) => {
     if (!fieldId || rawValue == null) return rawValue;
     const meta = metaMap[fieldId];
-    const options = A$a(meta?.optionSet?.options);
+    const options = A$b(meta?.optionSet?.options);
     if (!options.length) return rawValue;
     const target = normalizeText(rawValue);
     const match = options.find((opt) =>
@@ -21868,7 +21874,7 @@ function useProgramRules({
     }, [externalRules, program]);
 
     const programRuleVariables = useMemo$P(
-        () => A$a(program?.programRuleVariables),
+        () => A$b(program?.programRuleVariables),
         [program]
     );
 
@@ -21896,7 +21902,7 @@ function useProgramRules({
         () =>
             programRulesList.find((rule) => {
                 if (!matchesProgram(rule)) return false;
-                return A$a(rule?.programRuleActions).some(
+                return A$b(rule?.programRuleActions).some(
                     (action) =>
                         action?.programRuleActionType === "ASSIGN" &&
                         action?.dataElement?.id
@@ -21967,7 +21973,7 @@ function useProgramRules({
     const assignAction = useMemo$P(() => {
         if (!assignRule) return null;
         return (
-            A$a(assignRule.programRuleActions).find(
+            A$b(assignRule.programRuleActions).find(
                 (action) =>
                     action?.programRuleActionType === "ASSIGN" &&
                     action?.dataElement?.id
@@ -21980,7 +21986,7 @@ function useProgramRules({
     const approvingSectionId = useMemo$P(() => {
         if (!approvingOfficerFieldId) return null;
         for (const section of sections) {
-            const hasField = A$a(section?.fields).some((field) => {
+            const hasField = A$b(section?.fields).some((field) => {
                 const node = field?.dataElement || field;
                 const id = node?.id || field?.id || field;
                 return id === approvingOfficerFieldId;
@@ -22026,7 +22032,7 @@ const DE_TRANSFER_TO_LOCATION = "Hk2JSouuvga";
 const DE_TRANSFER_EQUIPMENT_NAME = "wObkfr29dtK";
 const DE_TRANSFER_EQUIPMENT_TO_BE_TRANSFERRED = "oIEtXbVslFN";
 
-const {useEffect: useEffect$1r,useRef: useRef$s,useState: useState$1r} = await importShared('react');
+const {useEffect: useEffect$1s,useRef: useRef$u,useState: useState$1s} = await importShared('react');
 
 const NO_WARD_ALLOCATED_MESSAGE = "THE USER HAS NO WARD ALLOCATED";
 let facilityOrgUnitsCache = null;
@@ -22075,8 +22081,8 @@ function useTransferDefaults({
     setFormData,
     userOrganisationUnits,
 }) {
-    const transferLocationDefaultAppliedRef = useRef$s(false);
-    const transferToLocationDefaultAppliedRef = useRef$s(false);
+    const transferLocationDefaultAppliedRef = useRef$u(false);
+    const transferToLocationDefaultAppliedRef = useRef$u(false);
 
     const isWardInChargeForTransfer =
         user &&
@@ -22112,7 +22118,7 @@ function useTransferDefaults({
 
     const transferLocationValue = formData?.[DE_TRANSFER_LOCATION_TYPE];
 
-    useEffect$1r(() => {
+    useEffect$1s(() => {
         if (transferLocationDefaultAppliedRef.current) return;
         if (!isWardInChargeForTransfer && !isHospitalAdminForTransfer) return;
         if (isEdit) return;
@@ -22145,7 +22151,7 @@ function useTransferDefaults({
         setFormData,
     ]);
 
-    useEffect$1r(() => {
+    useEffect$1s(() => {
         const shouldPrefill =
             isWardInChargeForTransfer || isHospitalAdminForTransfer;
         if (!shouldPrefill) return;
@@ -22197,16 +22203,16 @@ function useTransferOrganisationUnitOptions({
     isHospitalAdminForTransfer,
     transferLocationValue,
 }) {
-    const [facilityOrgUnits, setFacilityOrgUnits] = useState$1r([]);
-    const [facilityOrgUnitsLoading, setFacilityOrgUnitsLoading] = useState$1r(false);
-    const facilityOrgUnitsLoadedRef = useRef$s(false);
+    const [facilityOrgUnits, setFacilityOrgUnits] = useState$1s([]);
+    const [facilityOrgUnitsLoading, setFacilityOrgUnitsLoading] = useState$1s(false);
+    const facilityOrgUnitsLoadedRef = useRef$u(false);
 
     const shouldUseFacilityGroup =
         isHospitalAdminForTransfer &&
         transferLocationValue &&
         String(transferLocationValue).trim() === OPTION_CODE_OUTSIDE_FACILITY;
 
-    useEffect$1r(() => {
+    useEffect$1s(() => {
         if (!shouldUseFacilityGroup) return;
         if (facilityOrgUnitsLoadedRef.current) return;
 
@@ -22271,7 +22277,7 @@ function useTransferOrganisationUnitOptions({
 /**
  * Utility: normalise collection to array.
  */
-const A$9 = (x) => (Array.isArray(x) ? x : []);
+const A$a = (x) => (Array.isArray(x) ? x : []);
 
 const Block = ({ children, style }) => /* @__PURE__ */ jsxRuntimeExports.jsx(
   "div",
@@ -22626,7 +22632,7 @@ async function getEquipmentListOnTransferOutside(event) {
     }
 }
 
-const {useState: useState$1q,useEffect: useEffect$1q,useRef: useRef$r} = await importShared('react');
+const {useState: useState$1r,useEffect: useEffect$1r,useRef: useRef$t} = await importShared('react');
 
 const ATTR$1 = ATTRIBUTE_FOR_EQUIPMENT_LOOKUP;
 
@@ -22641,9 +22647,9 @@ function useEquipmentOptions(
   selectedOrganisationUnit = null,
   event = null,
 ) {
-  const equipmentCacheRef = useRef$r(new Map());
-  const [equipmentOptions, setEquipmentOptions] = useState$1q([]);
-  const [equipmentLoading, setEquipmentLoading] = useState$1q(false);
+  const equipmentCacheRef = useRef$t(new Map());
+  const [equipmentOptions, setEquipmentOptions] = useState$1r([]);
+  const [equipmentLoading, setEquipmentLoading] = useState$1r(false);
 
   /* ---------------------------------------------------------
        Determine whether outside-facility logic should apply
@@ -22788,7 +22794,7 @@ function useEquipmentOptions(
   /* ---------------------------------------------------------
        Effect trigger
        --------------------------------------------------------- */
-  useEffect$1q(() => {
+  useEffect$1r(() => {
     let active = true;
 
     const run = async () => {
@@ -22819,18 +22825,18 @@ function useEquipmentOptions(
   };
 }
 
-const {useState: useState$1p,useEffect: useEffect$1p,useRef: useRef$q} = await importShared('react');
+const {useState: useState$1q,useEffect: useEffect$1q,useRef: useRef$s} = await importShared('react');
 
 /**
  * Custom hook to manage status field initialization and tracking
  * Encapsulates status-related state logic
  */
 function useStatusField({ programObj, programKey, selectedStageId, isEdit, formData, setFormData }) {
-    const [statusFieldId, setStatusFieldId] = useState$1p(null);
-    const [statusOptionCodes, setStatusOptionCodes] = useState$1p({});
-    const lastApproverNotificationRef = useRef$q(null);
+    const [statusFieldId, setStatusFieldId] = useState$1q(null);
+    const [statusOptionCodes, setStatusOptionCodes] = useState$1q({});
+    const lastApproverNotificationRef = useRef$s(null);
 
-    useEffect$1p(() => {
+    useEffect$1q(() => {
         if (!programObj || isEdit) return;
 
         let statusDE = null;
@@ -22885,7 +22891,7 @@ function useStatusField({ programObj, programKey, selectedStageId, isEdit, formD
     };
 }
 
-const {useState: useState$1o} = await importShared('react');
+const {useState: useState$1p} = await importShared('react');
 
 
 /**
@@ -22893,8 +22899,8 @@ const {useState: useState$1o} = await importShared('react');
  * Consolidates image-related state
  */
 function useImageState() {
-    const [imageUrls, setImageUrls] = useState$1o({});
-    const [imageLoading, setImageLoading] = useState$1o({});
+    const [imageUrls, setImageUrls] = useState$1p({});
+    const [imageLoading, setImageLoading] = useState$1p({});
 
     return {
         imageUrls,
@@ -22904,7 +22910,7 @@ function useImageState() {
     };
 }
 
-const {useState: useState$1n} = await importShared('react');
+const {useState: useState$1o} = await importShared('react');
 
 
 /**
@@ -22912,7 +22918,7 @@ const {useState: useState$1n} = await importShared('react');
  * Consolidates date picker UI state
  */
 function useDateRangePopover() {
-    const [dateRangePopover, setDateRangePopover] = useState$1n({
+    const [dateRangePopover, setDateRangePopover] = useState$1o({
         from: false,
         to: false,
         fieldId: null,
@@ -22948,16 +22954,16 @@ function useSections({ programObj, stageObj, programKey, selectedStageId }) {
 
         // Event program (WITHOUT_REGISTRATION)
         if (isStageObj(stageObj) && (!programObj || programObj.programType === "WITHOUT_REGISTRATION")) {
-            const secs = A$9(stageObj.programStageSections);
+            const secs = A$a(stageObj.programStageSections);
             if (secs.length) {
                 return secs.map((s) => ({
                     id: mapSectionId(s),
                     name: s.formName || s.name,
-                    fields: A$9(s.dataElements),
+                    fields: A$a(s.dataElements),
                 }));
             }
 
-            const flat = A$9(stageObj.programStageDataElements)
+            const flat = A$a(stageObj.programStageDataElements)
                 .map((psde) => psde?.dataElement)
                 .filter(Boolean);
             return [{ id: "default", name: "Form", fields: flat }];
@@ -22965,19 +22971,19 @@ function useSections({ programObj, stageObj, programKey, selectedStageId }) {
 
         // Tracker stage event form (teiEvents)
         if (programKey === "teiEvents" && programObj && selectedStageId) {
-            const st = A$9(programObj.programStages).find((s) => s?.id === selectedStageId);
+            const st = A$a(programObj.programStages).find((s) => s?.id === selectedStageId);
             if (!st) return [];
-            const secs = A$9(st.programStageSections);
+            const secs = A$a(st.programStageSections);
 
             if (secs.length) {
                 return secs.map((s) => ({
                     id: mapSectionId(s),
                     name: s.formName || s.name,
-                    fields: A$9(s.dataElements),
+                    fields: A$a(s.dataElements),
                 }));
             }
 
-            const flat = A$9(st.programStageDataElements)
+            const flat = A$a(st.programStageDataElements)
                 .map((psde) => psde?.dataElement)
                 .filter(Boolean);
             return [{ id: "default", name: "Form", fields: flat }];
@@ -22985,16 +22991,16 @@ function useSections({ programObj, stageObj, programKey, selectedStageId }) {
 
         // Tracker enrollment form (WITH_REGISTRATION)
         if (programObj && programObj.programType === "WITH_REGISTRATION") {
-            const secs = A$9(programObj.programSections);
+            const secs = A$a(programObj.programSections);
             if (secs.length) {
                 return secs.map((s) => ({
                     id: mapSectionId(s),
                     name: s.formName || s.name,
-                    fields: A$9(s.trackedEntityAttributes),
+                    fields: A$a(s.trackedEntityAttributes),
                 }));
             }
 
-            const teas = A$9(programObj.programTrackedEntityAttributes)
+            const teas = A$a(programObj.programTrackedEntityAttributes)
                 .map((a) => a?.trackedEntityAttribute)
                 .filter(Boolean);
 
@@ -23005,7 +23011,7 @@ function useSections({ programObj, stageObj, programKey, selectedStageId }) {
     }, [programObj, stageObj, programKey, selectedStageId]);
 }
 
-const {useMemo: useMemo$M,useEffect: useEffect$1o,useState: useState$1m} = await importShared('react');
+const {useMemo: useMemo$M,useEffect: useEffect$1p,useState: useState$1n} = await importShared('react');
 
 function useSectionsList({
   sections,
@@ -23014,10 +23020,10 @@ function useSectionsList({
   user,
   formData,
 }) {
-  const [sectionAccessMap, setSectionAccessMap] = useState$1m(null);
+  const [sectionAccessMap, setSectionAccessMap] = useState$1n(null);
 
   // 🔹 1. Load section access asynchronously
-  useEffect$1o(() => {
+  useEffect$1p(() => {
 
     if (!sections || !user || !programId) return;
 
@@ -23197,7 +23203,7 @@ const applyOtherFieldRules = ({
   });
 };
 
-const {useState: useState$1l,useEffect: useEffect$1n,useMemo: useMemo$L,useRef: useRef$p} = await importShared('react');
+const {useState: useState$1m,useEffect: useEffect$1o,useMemo: useMemo$L,useRef: useRef$r} = await importShared('react');
 
 /**
  * Hook to manage field visibility based on skip logic and OTHER field rules
@@ -23214,11 +23220,11 @@ function useHiddenFields({
   activeSection,
   setStepIndex,
 }) {
-  const [skipLogicMap, setSkipLogicMap] = useState$1l({});
-  const [defaultHidden, setDefaultHidden] = useState$1l(new Set());
+  const [skipLogicMap, setSkipLogicMap] = useState$1m({});
+  const [defaultHidden, setDefaultHidden] = useState$1m(new Set());
 
   // Load skip logic config from LocalForage whenever programId changes
-  useEffect$1n(() => {
+  useEffect$1o(() => {
     if (!programId) return;
 
     let cancelled = false;
@@ -23252,17 +23258,17 @@ function useHiddenFields({
     return hidden;
   }, [selectedStage, isEdit, otherFieldMappings, defaultHidden]);
 
-  const [hiddenFields, setHiddenFields] = useState$1l(initialHiddenFields);
-  const hiddenFieldsRef = useRef$p(hiddenFields);
+  const [hiddenFields, setHiddenFields] = useState$1m(initialHiddenFields);
+  const hiddenFieldsRef = useRef$r(hiddenFields);
 
   // Re-seed hiddenFields whenever initialHiddenFields changes
-  useEffect$1n(() => {
+  useEffect$1o(() => {
     hiddenFieldsRef.current = initialHiddenFields;
     setHiddenFields(initialHiddenFields);
   }, [initialHiddenFields]);
 
   // Apply skip-logic whenever relevant formData or skipLogicMap changes
-  useEffect$1n(() => {
+  useEffect$1o(() => {
     const newHidden = new Set(defaultHidden);
 
     // Seed with OTHER fields hidden by default in create mode
@@ -23390,7 +23396,7 @@ function useHiddenFields({
   };
 }
 
-const {useState: useState$1k} = await importShared('react');
+const {useState: useState$1l} = await importShared('react');
 
 
 /**
@@ -23398,10 +23404,10 @@ const {useState: useState$1k} = await importShared('react');
  * Handles loading state for task-based form prefilling
  */
 function useTaskPrefill() {
-    const [taskAvailableInQuery, setTaskAvailableInQuery] = useState$1k(null);
-    const [prefilledValues, setPrefilledValues] = useState$1k([]);
-    const [isCheckingRegistration, setIsCheckingRegistration] = useState$1k(false);
-    const [formLoading, setFormLoading] = useState$1k(false);
+    const [taskAvailableInQuery, setTaskAvailableInQuery] = useState$1l(null);
+    const [prefilledValues, setPrefilledValues] = useState$1l([]);
+    const [isCheckingRegistration, setIsCheckingRegistration] = useState$1l(false);
+    const [formLoading, setFormLoading] = useState$1l(false);
 
     return {
         taskAvailableInQuery,
@@ -23415,7 +23421,7 @@ function useTaskPrefill() {
     };
 }
 
-const {useEffect: useEffect$1m} = await importShared('react');
+const {useEffect: useEffect$1n} = await importShared('react');
 
 /**
  * Hook to handle task prefill logic
@@ -23427,7 +23433,7 @@ function useTaskPrefillLogic({
     setFormLoading,
     setFormData,
 }) {
-    useEffect$1m(() => {
+    useEffect$1n(() => {
         const loadTaskPrefill = async () => {
             const taskId = queryParams.get("taskId");
             if (!taskId) return;
@@ -23514,14 +23520,14 @@ function useTaskPrefillLogic({
     }, []);
 }
 
-const {useState: useState$1j} = await importShared('react');
+const {useState: useState$1k} = await importShared('react');
 
 
 /**
  * Hook to manage simple popover visibility state
  */
 function usePopoverState(initialState = false) {
-    const [showPopover, setShowPopover] = useState$1j(initialState);
+    const [showPopover, setShowPopover] = useState$1k(initialState);
 
     return {
         showPopover,
@@ -23529,7 +23535,7 @@ function usePopoverState(initialState = false) {
     };
 }
 
-const {useState: useState$1i,useEffect: useEffect$1l} = await importShared('react');
+const {useState: useState$1j,useEffect: useEffect$1m} = await importShared('react');
 
 
 /**
@@ -23537,14 +23543,14 @@ const {useState: useState$1i,useEffect: useEffect$1l} = await importShared('reac
  */
 function useViewport() {
     // Initialize with actual window width to prevent flash
-    const [isMobile, setIsMobile] = useState$1i(() => {
+    const [isMobile, setIsMobile] = useState$1j(() => {
         if (typeof window !== 'undefined') {
             return window.innerWidth <= 600;
         }
         return false;
     });
 
-    useEffect$1l(() => {
+    useEffect$1m(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 600);
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
@@ -23553,18 +23559,18 @@ function useViewport() {
     return { isMobile };
 }
 
-const {useState: useState$1h,useEffect: useEffect$1k} = await importShared('react');
+const {useState: useState$1i,useEffect: useEffect$1l} = await importShared('react');
 
 /**
  * Hook to manage OTHER field configuration and mappings
  * Handles showing/hiding "Other" text fields based on dropdown selections
  */
 function useOtherFieldLogic({ selectedStageId, programObj }) {
-  const [otherFieldConfig, setOtherFieldConfig] = useState$1h({});
-  const [otherFieldMappings, setOtherFieldMappings] = useState$1h([]);
+  const [otherFieldConfig, setOtherFieldConfig] = useState$1i({});
+  const [otherFieldMappings, setOtherFieldMappings] = useState$1i([]);
 
   // Fetch OTHER field configuration on mount
-  useEffect$1k(() => {
+  useEffect$1l(() => {
     let mounted = true;
 
     const loadConfig = async () => {
@@ -23581,7 +23587,7 @@ function useOtherFieldLogic({ selectedStageId, programObj }) {
   }, []);
 
   // Load OTHER field mappings when stage/program changes
-  useEffect$1k(() => {
+  useEffect$1l(() => {
     const stageIdFromProgram =
       !selectedStageId && Array.isArray(programObj?.programStages) && programObj.programStages.length > 0
         ? programObj.programStages[0]?.id
@@ -23609,9 +23615,9 @@ function useOtherFieldLogic({ selectedStageId, programObj }) {
   };
 }
 
-const {useState: useState$1g,useEffect: useEffect$1j} = await importShared('react');
+const {useState: useState$1h,useEffect: useEffect$1k} = await importShared('react');
 
-const {useEffect: useEffect$1i} = await importShared('react');
+const {useEffect: useEffect$1j} = await importShared('react');
 
 /**
  * Hook to load image URLs for IMAGE type fields when editing
@@ -23660,24 +23666,24 @@ function useImageLoader({
     /**
      * When editing a TEI, load existing IMAGE values for data elements so they can be previewed.
      */
-    useEffect$1i(() => {
+    useEffect$1j(() => {
         const load = async () => {
             if (!trackedEntityUID || !programId) return;
 
             let fields = [];
 
             if (isStageObj(stageObj)) {
-                fields = A$9(stageObj.programStageDataElements)
+                fields = A$a(stageObj.programStageDataElements)
                     .map((x) => x?.dataElement)
                     .filter(Boolean);
             } else if (programObj?.programType === "WITH_REGISTRATION") {
                 if (programKey === "teiEvents" && selectedStageId) {
-                    const st = A$9(programObj.programStages).find((s) => s?.id === selectedStageId);
-                    fields = A$9(st?.programStageDataElements)
+                    const st = A$a(programObj.programStages).find((s) => s?.id === selectedStageId);
+                    fields = A$a(st?.programStageDataElements)
                         .map((x) => x?.dataElement)
                         .filter(Boolean);
                 } else {
-                    fields = A$9(programObj.programTrackedEntityAttributes)
+                    fields = A$a(programObj.programTrackedEntityAttributes)
                         .map((a) => a?.trackedEntityAttribute)
                         .filter(Boolean);
                 }
@@ -23713,7 +23719,7 @@ function useImageLoader({
     }, [trackedEntityUID, programId, programObj, stageObj, selectedStageId]);
 }
 
-const {useState: useState$1f,useEffect: useEffect$1h} = await importShared('react');
+const {useState: useState$1g,useEffect: useEffect$1i} = await importShared('react');
 
 /**
  * Resolves the equipment program ID and stage configs from the datastore cache.
@@ -23738,16 +23744,16 @@ function useEquipmentContext({
   routeEquipmentId,
   resetTrigger,
 }) {
-  const [contextConfig, setContextConfig] = useState$1f(null);
-  const [selectedEquipment, setSelectedEquipment] = useState$1f(null);
-  const [availableEquipment, setAvailableEquipment] = useState$1f([]);
-  const [showEquipmentPicker, setShowEquipmentPicker] = useState$1f(false);
-  const [loading, setLoading] = useState$1f(false);
-  const [error, setError] = useState$1f(null);
-  const [configLoaded, setConfigLoaded] = useState$1f(false);
+  const [contextConfig, setContextConfig] = useState$1g(null);
+  const [selectedEquipment, setSelectedEquipment] = useState$1g(null);
+  const [availableEquipment, setAvailableEquipment] = useState$1g([]);
+  const [showEquipmentPicker, setShowEquipmentPicker] = useState$1g(false);
+  const [loading, setLoading] = useState$1g(false);
+  const [error, setError] = useState$1g(null);
+  const [configLoaded, setConfigLoaded] = useState$1g(false);
 
   // Reset state when stage/program changes OR when resetTrigger changes (new action)
-  useEffect$1h(() => {
+  useEffect$1i(() => {
     setContextConfig(null);
     setSelectedEquipment(null);
     setAvailableEquipment([]);
@@ -24071,20 +24077,20 @@ function useRequiredFields({
         if (programObj?.programType === "WITH_REGISTRATION") {
             if (programKey === "teiEvents" && selectedStageId) {
                 // Tracker stage event: get required fields from stage
-                const st = A$9(programObj.programStages).find((s) => s?.id === selectedStageId);
-                A$9(st?.programStageDataElements).forEach((psde) => {
+                const st = A$a(programObj.programStages).find((s) => s?.id === selectedStageId);
+                A$a(st?.programStageDataElements).forEach((psde) => {
                     const id = psde?.dataElement?.id || psde?.dataElement;
                     if (id && psde?.compulsory) out[id] = true;
                 });
             } else {
                 // Enrollment: get required fields from program attributes
-                A$9(programObj.programTrackedEntityAttributes).forEach((ptea) => {
+                A$a(programObj.programTrackedEntityAttributes).forEach((ptea) => {
                     const id = ptea?.trackedEntityAttribute?.id || ptea?.trackedEntityAttribute;
                     if (id && ptea?.mandatory) out[id] = true;
                 });
 
                 // Also check tracked entity type attributes
-                A$9(programObj.trackedEntityType?.trackedEntityTypeAttributes).forEach(
+                A$a(programObj.trackedEntityType?.trackedEntityTypeAttributes).forEach(
                     (teta) => {
                         const id =
                             teta?.trackedEntityAttribute?.id || teta?.trackedEntityAttribute;
@@ -24094,7 +24100,7 @@ function useRequiredFields({
             }
         } else if (isStageObj(stageObj)) {
             // Event program without registration
-            A$9(stageObj.programStageDataElements).forEach((psde) => {
+            A$a(stageObj.programStageDataElements).forEach((psde) => {
                 const id = psde?.dataElement?.id || psde?.dataElement;
                 if (id && psde?.compulsory) out[id] = true;
             });
@@ -24106,7 +24112,7 @@ function useRequiredFields({
     return { requiredById };
 }
 
-const {useMemo: useMemo$J,useEffect: useEffect$1g,useState: useState$1e} = await importShared('react');
+const {useMemo: useMemo$J,useEffect: useEffect$1h,useState: useState$1f} = await importShared('react');
 
 /**
  * Hook to load custom mandatory fields from datastore and merge with native DHIS2 mandatory
@@ -24125,11 +24131,11 @@ function useCustomMandatoryFields({
     stageObj,
     nativeRequiredById = {},
 }) {
-    const [customConfig, setCustomConfig] = useState$1e([]);
-    const [isLoading, setIsLoading] = useState$1e(true);
+    const [customConfig, setCustomConfig] = useState$1f([]);
+    const [isLoading, setIsLoading] = useState$1f(true);
 
     // Load custom mandatory configuration from datastore
-    useEffect$1g(() => {
+    useEffect$1h(() => {
         let mounted = true;
 
         const loadCustomConfig = async () => {
@@ -24206,7 +24212,7 @@ function useCustomMandatoryFields({
     };
 }
 
-const {useState: useState$1d,useEffect: useEffect$1f,useMemo: useMemo$I} = await importShared('react');
+const {useState: useState$1e,useEffect: useEffect$1g,useMemo: useMemo$I} = await importShared('react');
 
 /**
  * Hook to manage multi-step wizard navigation
@@ -24219,7 +24225,7 @@ function useStepNavigation({
   sectionsList,
   reviewNavigationLocked,
 }) {
-  const [internalStep, setInternalStep] = useState$1d(0);
+  const [internalStep, setInternalStep] = useState$1e(0);
 
   const stepIndex =
     typeof currentStep === "number" ? currentStep : internalStep;
@@ -24268,7 +24274,7 @@ function useStepNavigation({
   };
 
   // Update current section when active section changes
-  useEffect$1f(() => {
+  useEffect$1g(() => {
     if (typeof setCurrentSection === "function" && activeSection) {
       setCurrentSection(activeSection);
     }
@@ -24507,7 +24513,7 @@ const triggerNotifications = async ({
   }
 };
 
-const {useEffect: useEffect$1e} = await importShared('react');
+const {useEffect: useEffect$1f} = await importShared('react');
 
 /**
  * Hook to manage approval officer assignment and notifications
@@ -24564,7 +24570,7 @@ function useApprovalNotifications({
      * Ensure the "approving officer" TEI is set:
      *   - On new forms when navigation is locked for review.
      */
-    useEffect$1e(() => {
+    useEffect$1f(() => {
         if (!isAddFlow || !approvingOfficerFieldId) return;
 
         setFormData((prev) => {
@@ -24600,7 +24606,7 @@ function useApprovalNotifications({
      *   - On new forms when navigation is locked for review.
      *   - On edits when status transitions to "Feedback required".
      */
-    useEffect$1e(() => {
+    useEffect$1f(() => {
         if (!programObj?.id) return;
         if (!assignedApprover || !approvingOfficerFieldId || !approvingSectionId)
             return;
@@ -24670,7 +24676,7 @@ function validateMandatoryFields(formData, requiredById, metadata, hiddenFields 
   const errors = [];
   const { programObj, stageObj } = metadata;
   const findFieldMetadata = (fieldId) => {
-    const ptea = A$9(programObj?.programTrackedEntityAttributes).find(
+    const ptea = A$a(programObj?.programTrackedEntityAttributes).find(
       (attr) => attr?.trackedEntityAttribute?.id === fieldId
     );
     if (ptea) {
@@ -24682,7 +24688,7 @@ function validateMandatoryFields(formData, requiredById, metadata, hiddenFields 
       };
     }
     if (stageObj) {
-      const psde = A$9(stageObj?.programStageDataElements)?.find(
+      const psde = A$a(stageObj?.programStageDataElements)?.find(
         (de) => de?.dataElement?.id === fieldId
       );
       if (psde) {
@@ -24695,8 +24701,8 @@ function validateMandatoryFields(formData, requiredById, metadata, hiddenFields 
       }
     }
     if (programObj?.programStages) {
-      for (const stage of A$9(programObj?.programStages)) {
-        const psde = A$9(stage?.programStageDataElements)?.find(
+      for (const stage of A$a(programObj?.programStages)) {
+        const psde = A$a(stage?.programStageDataElements)?.find(
           (de) => de?.dataElement?.id === fieldId
         );
         if (psde) {
@@ -25194,7 +25200,7 @@ const exportBlobWithHostBridge = async (blob, filename) => {
     });
 };
 
-const {useEffect: useEffect$1d,useState: useState$1c} = await importShared('react');
+const {useEffect: useEffect$1e,useState: useState$1d} = await importShared('react');
 function FilePreviewModal({
   isOpen,
   onClose,
@@ -25207,13 +25213,13 @@ function FilePreviewModal({
   dataElementId,
   programId
 }) {
-  const [loading, setLoading] = useState$1c(true);
-  const [imageUrl, setImageUrl] = useState$1c(null);
-  const [fileData, setFileData] = useState$1c(null);
-  const [error, setError] = useState$1c(null);
-  const [mimeType, setMimeType] = useState$1c("application/octet-stream");
-  const [downloading, setDownloading] = useState$1c(false);
-  useEffect$1d(() => {
+  const [loading, setLoading] = useState$1d(true);
+  const [imageUrl, setImageUrl] = useState$1d(null);
+  const [fileData, setFileData] = useState$1d(null);
+  const [error, setError] = useState$1d(null);
+  const [mimeType, setMimeType] = useState$1d("application/octet-stream");
+  const [downloading, setDownloading] = useState$1d(false);
+  useEffect$1e(() => {
     if (isOpen && fileId && (teiId && attributeId || eventId && dataElementId)) {
       fetchFile();
     } else if (!isOpen) {
@@ -25588,7 +25594,7 @@ function validateProgramField(programId, fieldId, formData = {}, validationConfi
   }, []);
 }
 
-const {useState: useState$1b,useEffect: useEffect$1c} = await importShared('react');
+const {useState: useState$1c,useEffect: useEffect$1d} = await importShared('react');
 
 /**
  * useParticipantsPerWardConfig
@@ -25622,14 +25628,14 @@ const {useState: useState$1b,useEffect: useEffect$1c} = await importShared('reac
  * participantsPerWardField === null.
  */
 function useParticipantsPerWardConfig(programId) {
-    const [config, setConfig] = useState$1b({
+    const [config, setConfig] = useState$1c({
         wardsField: null,
         participantsPerWardField: null,
         totalParticipantsField: null,
         ready: false,
     });
 
-    useEffect$1c(() => {
+    useEffect$1d(() => {
         if (!programId) {
             setConfig({ wardsField: null, participantsPerWardField: null, totalParticipantsField: null, ready: true });
             return;
@@ -25672,7 +25678,7 @@ function useParticipantsPerWardConfig(programId) {
     return config;
 }
 
-const {useState: useState$1a,useEffect: useEffect$1b} = await importShared('react');
+const {useState: useState$1b,useEffect: useEffect$1c} = await importShared('react');
 
 /**
  * useSparePartsQuantityConfig
@@ -25701,14 +25707,14 @@ const {useState: useState$1a,useEffect: useEffect$1b} = await importShared('reac
  * }
  */
 function useSparePartsQuantityConfig(programId) {
-    const [config, setConfig] = useState$1a({
+    const [config, setConfig] = useState$1b({
         sparePartsField: null,
         quantityPerPartField: null,
         totalQuantityField: null,
         ready: false,
     });
 
-    useEffect$1b(() => {
+    useEffect$1c(() => {
         const empty = { sparePartsField: null, quantityPerPartField: null, totalQuantityField: null, ready: true };
 
         if (!programId) {
@@ -25795,7 +25801,7 @@ function getSectionFormNameOverride(dataStoreData, context = {}) {
   return match?.overrideText || null;
 }
 
-const {useEffect: useEffect$1a,useMemo: useMemo$H,useRef: useRef$o} = await importShared('react');
+const {useEffect: useEffect$1b,useMemo: useMemo$H,useRef: useRef$q} = await importShared('react');
 function ParticipantsPerWardField({
   value,
   wards = [],
@@ -25803,7 +25809,7 @@ function ParticipantsPerWardField({
   onTotalChange,
   disabled = false
 }) {
-  const lastEmittedTotal = useRef$o(void 0);
+  const lastEmittedTotal = useRef$q(void 0);
   const parsed = useMemo$H(() => {
     if (!value) return {};
     try {
@@ -25813,7 +25819,7 @@ function ParticipantsPerWardField({
       return {};
     }
   }, [value]);
-  useEffect$1a(() => {
+  useEffect$1b(() => {
     const total2 = wards.reduce((sum, ward) => {
       const n = Number(parsed[ward] ?? 0);
       return sum + (isNaN(n) ? 0 : n);
@@ -25946,7 +25952,7 @@ const styles$2 = {
   }
 };
 
-const {useEffect: useEffect$19,useMemo: useMemo$G,useRef: useRef$n} = await importShared('react');
+const {useEffect: useEffect$1a,useMemo: useMemo$G,useRef: useRef$p} = await importShared('react');
 function SparePartsQuantityField({
   value,
   parts = [],
@@ -25954,7 +25960,7 @@ function SparePartsQuantityField({
   onTotalChange,
   disabled = false
 }) {
-  const lastEmittedTotal = useRef$n(void 0);
+  const lastEmittedTotal = useRef$p(void 0);
   const parsed = useMemo$G(() => {
     if (!value) return {};
     try {
@@ -25964,7 +25970,7 @@ function SparePartsQuantityField({
       return {};
     }
   }, [value]);
-  useEffect$19(() => {
+  useEffect$1a(() => {
     const total2 = parts.reduce((sum, { name }) => {
       const n = Number(parsed[name] ?? 0);
       return sum + (isNaN(n) ? 0 : n);
@@ -26090,7 +26096,7 @@ const styles$1 = {
   }
 };
 
-const {useCallback: useCallback$q,useContext: useContext$D,useEffect: useEffect$18,useMemo: useMemo$F,useState: useState$19} = await importShared('react');
+const {useCallback: useCallback$r,useContext: useContext$D,useEffect: useEffect$19,useMemo: useMemo$F,useState: useState$1a} = await importShared('react');
 function ConfigurableForm({
   handleSubmit,
   handleCancel,
@@ -26124,18 +26130,18 @@ function ConfigurableForm({
   autoFillFacilityLoading = false,
   lockedFields = /* @__PURE__ */ new Set()
 }) {
-  const [wardData, setWardData] = useState$19(null);
+  const [wardData, setWardData] = useState$1a(null);
   const location = useLocation();
   const { userOrganisationUnits } = useContext$D(MEMISContext.UserContext);
   const { user } = useContext$D(MEMISContext.UserRolesContext) || {};
-  const [futureDateFields, setFutureDateFields] = useState$19([]);
-  const [dataStoreData, setDataStoreData] = useState$19({});
-  const [validationErrors, setValidationErrors] = useState$19({});
-  const [firstStageDe, setfirstDE] = useState$19([]);
+  const [futureDateFields, setFutureDateFields] = useState$1a([]);
+  const [dataStoreData, setDataStoreData] = useState$1a({});
+  const [validationErrors, setValidationErrors] = useState$1a({});
+  const [firstStageDe, setfirstDE] = useState$1a([]);
   const validationConfig = dataStoreData?.formValidations;
-  const [canSave, setCanSave] = useState$19(false);
-  const [orgUnitsByLevel, setOrgUnitsByLevel] = useState$19({});
-  useEffect$18(() => {
+  const [canSave, setCanSave] = useState$1a(false);
+  const [orgUnitsByLevel, setOrgUnitsByLevel] = useState$1a({});
+  useEffect$19(() => {
     console.log({ lockedFields });
     const loadOrgUnitGroupFields = async () => {
       try {
@@ -26170,13 +26176,13 @@ function ConfigurableForm({
     };
     loadOrgUnitGroupFields();
   }, [programId]);
-  const [wslConfig, setWslConfig] = useState$19(null);
-  const [componentInputs, setComponentInputs] = useState$19({});
+  const [wslConfig, setWslConfig] = useState$1a(null);
+  const [componentInputs, setComponentInputs] = useState$1a({});
   const { showPopover, setShowPopover } = usePopoverState();
   const { setDateRangePopover } = useDateRangePopover();
   const { imageUrls, setImageUrls, imageLoading, setImageLoading } = useImageState();
   const { isMobile } = useViewport();
-  const [previewModal, setPreviewModal] = useState$19({
+  const [previewModal, setPreviewModal] = useState$1a({
     isOpen: false,
     fileId: null,
     fileName: null,
@@ -26235,7 +26241,7 @@ function ConfigurableForm({
   const { otherFieldMappings } = useOtherFieldLogic({
     selectedStageId,
     programObj});
-  const stageObj = (programKey === "teiEvents" && programObj ? A$9(programObj.programStages).find((s) => s?.id === selectedStageId) : null) || (isStageObj(dataElements) ? dataElements : null);
+  const stageObj = (programKey === "teiEvents" && programObj ? A$a(programObj.programStages).find((s) => s?.id === selectedStageId) : null) || (isStageObj(dataElements) ? dataElements : null);
   const sections = useSections({
     programObj,
     stageObj,
@@ -26603,7 +26609,7 @@ function ConfigurableForm({
           return /* @__PURE__ */ jsxRuntimeExports.jsx(
             SearchableSelect,
             {
-              data: A$9(el?.optionSet?.options),
+              data: A$a(el?.optionSet?.options),
               itemTextField: "name",
               itemValueField: "code",
               multiple: false,
@@ -27283,7 +27289,7 @@ function ConfigurableForm({
         return /* @__PURE__ */ jsxRuntimeExports.jsx(
           SearchableSelect,
           {
-            data: A$9(el?.optionSet?.options),
+            data: A$a(el?.optionSet?.options),
             itemTextField: "name",
             itemValueField: "code",
             multiple: true,
@@ -27481,7 +27487,7 @@ function ConfigurableForm({
     () => sections?.map((s) => s.id).join(","),
     [sections]
   );
-  const getDisplayedSectionName = useCallback$q(
+  const getDisplayedSectionName = useCallback$r(
     (section) => {
       const override = getSectionFormNameOverride(dataStoreData, {
         programId,
@@ -27514,7 +27520,7 @@ function ConfigurableForm({
       console.log({ error });
     }
   };
-  useEffect$18(() => {
+  useEffect$19(() => {
     let cancelled = false;
     const fetchWslConfig = async () => {
       try {
@@ -27539,7 +27545,7 @@ function ConfigurableForm({
       cancelled = true;
     };
   }, [programId, selectedStage]);
-  useEffect$18(() => {
+  useEffect$19(() => {
     const loadTaskPrefill = async () => {
       const taskId = queryParams.get("taskId");
       if (!taskId) return;
@@ -27589,7 +27595,7 @@ function ConfigurableForm({
     loadTaskPrefill();
     prefillWard();
   }, [programObj]);
-  useEffect$18(() => {
+  useEffect$19(() => {
     if (!wardData?.use || !wardData?.field) return;
     const targetId = wardData.field;
     setFormData((prev) => {
@@ -27602,7 +27608,7 @@ function ConfigurableForm({
       };
     });
   }, [wardData, setFormData]);
-  useEffect$18(() => {
+  useEffect$19(() => {
     let mounted = true;
     const loadFutureDateConfig = async () => {
       const dataStore2 = await LocalForageServiceInstance.getItem(
@@ -27617,7 +27623,7 @@ function ConfigurableForm({
       mounted = false;
     };
   }, [programObj, sectionsList]);
-  useEffect$18(() => {
+  useEffect$19(() => {
     let mounted = true;
     const loadFutureDateConfig = async () => {
       const dataStore2 = await LocalForageServiceInstance.getItem(
@@ -27641,7 +27647,7 @@ function ConfigurableForm({
     stageObj,
     activeSection
   ]);
-  useEffect$18(() => {
+  useEffect$19(() => {
     let cancelled = false;
     const loadFutureDateConfig = async () => {
       try {
@@ -27674,7 +27680,7 @@ function ConfigurableForm({
       cancelled = true;
     };
   }, [programId, selectedStage, formData]);
-  useEffect$18(() => {
+  useEffect$19(() => {
     let mounted = true;
     if (mounted) {
       const config = dataStoreData?.reportGenerationDatePrefill?.configurations;
@@ -27716,7 +27722,7 @@ function ConfigurableForm({
     const selectedSection = result?.sections?.find((s) => s.id === actSect);
     setCanSave(selectedSection?.canSave ?? false);
   };
-  useEffect$18(() => {
+  useEffect$19(() => {
     if (!workflow) return;
     const wf = workflow?.workflows?.find((e) => e.value === pM);
     const w = wf?.firstStage;
@@ -27726,7 +27732,7 @@ function ConfigurableForm({
       getDe(j);
     }
   }, [workflow, pM]);
-  useEffect$18(() => {
+  useEffect$19(() => {
     const loadUser = async () => {
       const us = await LocalForageServiceInstance.getItem("userRes", "user");
       const { userShowOrgUnit } = await LocalForageServiceInstance.getItem(
@@ -27751,7 +27757,7 @@ function ConfigurableForm({
     };
     loadUser();
   }, [user, selectedOrganisationUnit]);
-  useEffect$18(() => {
+  useEffect$19(() => {
     if (activeSection?.id) {
       getActiveSectionCanSave(activeSection?.id, programId);
     }
@@ -28267,6 +28273,40 @@ const equipmentAllocation = async (config, options) => {
   }
 };
 
+const unique = (items = []) => [...new Set(items.filter(Boolean))];
+
+async function getUsersForRoles(userRoles = [], orgUnitId) {
+  if (!userRoles?.length || !orgUnitId) return [];
+
+  const ouData = await dataStore.get(
+    `organisationUnits/${orgUnitId}?fields=name,id,parent(id,name)`,
+  );
+  const ou = ouData?.data;
+  const usersId = [];
+
+  for (const role of userRoles) {
+    let targetOrgUnitFilter = "";
+
+    if (role?.facilityLevel === "SAME_ORG_UNIT") {
+      targetOrgUnitFilter = `&filter=organisationUnits.id:eq:${ou?.id}`;
+    } else if (role?.facilityLevel === "NATIONAL_LEVEL") {
+      targetOrgUnitFilter = "";
+    } else {
+      targetOrgUnitFilter = ou?.parent?.id
+        ? `&filter=organisationUnits.id:eq:${ou.parent.id}`
+        : "";
+    }
+
+    const usersResp = await dataStore.get(
+      `users.json?paging=false&fields=id,username,displayName&filter=userRoles.id:eq:${role.id}${targetOrgUnitFilter}`,
+    );
+    const roleUsers = usersResp?.data?.users?.map((u) => u.id) || [];
+    usersId.push(...roleUsers);
+  }
+
+  return unique(usersId);
+}
+
 const equipmentCollectionStatus = async (config, options) => {
   try {
     const data = await dataStore.get(
@@ -28314,30 +28354,21 @@ const equipmentCollectionStatus = async (config, options) => {
       ? `Ward-incharge has acknowledged receipt of the allocated ${equipmentNameText} ${serialNumberText}.`
       : `Acknowledge receipt of the allocated equipment ${serialNumberText}.`;
     let usersId = [];
+    const roleUsers = await getUsersForRoles(
+      config?.userRoles || [],
+      data?.data?.orgUnit,
+    );
 
-    // For EQUIPMENT_COLLECTION_ACKNOWLEDGMENT, notify user roles
-    if (config?.event === "EQUIPMENT_COLLECTION_ACKNOWLEDGMENT" && config?.userRoles) {
-      let ou = null;
-      const ouData = await dataStore.get(
-        `organisationUnits/${data?.data?.orgUnit}?fields=name,id,parent(id,name)`
-      );
-      ou = ouData?.data;
-      for (const role of config.userRoles) {
-        const targetOrgUnitId = role?.facilityLevel === "SAME_ORG_UNIT" ? ou?.id : ou?.parent?.id;
-        const usersResp = await dataStore.get(
-          `users.json?paging=false&fields=id,username,displayName&filter=userRoles.id:eq:${role.id}&filter=organisationUnits.id:eq:${targetOrgUnitId}`
-        );
-        const roleUsers = usersResp?.data?.users?.map((u) => u.id) || [];
-        usersId.push(...roleUsers);
-      }
-      console.log({ place: "inside", usersId });
-
+    if (config?.event === "EQUIPMENT_COLLECTION_ACKNOWLEDGMENT") {
+      usersId = roleUsers;
     } else {
-      // For EQUIPMENT_COLLECTION_STATUS, notify specific receiver
+      // For EQUIPMENT_COLLECTION_STATUS, notify the specific receiver plus configured roles
       const receiverDetails = await dataStore.get(
         `users?filter=username:eq:${receiver?.value}&fields=id,username`
-      );
-      usersId = receiverDetails?.data?.users?.map((user) => user?.id) || [];
+      );      
+      const receiverUsers =
+        receiverDetails?.data?.users?.map((user) => user?.id) || [];
+      usersId = unique([...receiverUsers, ...roleUsers]);
     }
 
     sendNotificationHandler(subject, body, usersId);
@@ -31466,6 +31497,7 @@ async function programWithRegistrationEvent(
   enrollment,
   isEdit = false,
   existingEventId = null,
+  options = {},
 ) {
   try {
     const values = await buildDataItems(formData, fileDataIDs, "dataElement");
@@ -31516,6 +31548,28 @@ async function programWithRegistrationEvent(
         response?.data?.bundleReport?.typeReportMap?.EVENT?.objectReports?.[0]
           ?.uid;
 
+      if (!teiId) {
+        const rawMessage = response?.message || response?.data?.message || "";
+        let parsedMessage = "";
+
+        try {
+          const parsed =
+            typeof rawMessage === "string" ? JSON.parse(rawMessage) : rawMessage;
+          const reports = parsed?.validationReport?.errorReports || [];
+          parsedMessage =
+            reports
+              .map((report) => report?.message || report?.errorCode)
+              .filter(Boolean)
+              .join(", ") || parsed?.message || "";
+        } catch {
+          parsedMessage = typeof rawMessage === "string" ? rawMessage : "";
+        }
+
+        throw new Error(
+          parsedMessage || "Tracker event creation failed on the server.",
+        );
+      }
+
       // If this is an allocation event, mark the equipment as ALLOCATED
       const allocationStageId = await resolveAllocationStageId();
       if (
@@ -31536,30 +31590,33 @@ async function programWithRegistrationEvent(
           "MAINTENANCE",
         );
       }
-      const configData = await getNotificationEvent(
-        program?.id,
-        (importStrategy = "STAGE_CREATE"),
-        programStage,
-      );
+      if (!options?.skipNotifications) {
+        const configData = await getNotificationEvent(
+          program?.id,
+          (importStrategy = "STAGE_CREATE"),
+          programStage,
+        );
 
-      await notificationSendTrigger(configData?.event, {
-        orgUnit: selectedOrgUnit,
-        program: program?.id,
-        event: null,
-        count: 1,
-        teiId,
-        payload,
-        trackedEntity,
-        events:
-          response?.data?.bundleReport?.typeReportMap?.EVENT?.objectReports.map(
-            (b) => b?.uid,
-          ),
-        equipmentDetails: equipmentDetails?.data,
-      });
+        await notificationSendTrigger(configData?.event, {
+          orgUnit: selectedOrgUnit,
+          program: program?.id,
+          event: null,
+          count: 1,
+          teiId,
+          payload,
+          trackedEntity,
+          events:
+            response?.data?.bundleReport?.typeReportMap?.EVENT?.objectReports.map(
+              (b) => b?.uid,
+            ),
+          equipmentDetails: equipmentDetails?.data,
+        });
+      }
     }
     return response;
   } catch (error) {
     console.log({ error });
+    throw error;
   }
 }
 const CreateDataItemsController = {
@@ -31569,9 +31626,9 @@ const CreateDataItemsController = {
   programWithRegistrationEvent,
 };
 
-const React$P = await importShared('react');
-const {useContext: useContext$C,useEffect: useEffect$17,useMemo: useMemo$E,useState: useState$18} = React$P;
-const A$8 = (x) => Array.isArray(x) ? x : [];
+const React$Q = await importShared('react');
+const {useContext: useContext$C,useEffect: useEffect$18,useMemo: useMemo$E,useState: useState$19} = React$Q;
+const A$9 = (x) => Array.isArray(x) ? x : [];
 function MultiEntryForm({
   dataElements = null,
   selectedOrganisationUnit = null,
@@ -31580,15 +31637,15 @@ function MultiEntryForm({
   worklow,
   onClose
 }) {
-  const [numEntries, setNumEntries] = useState$18(2);
-  const [step, setStep] = useState$18("count");
-  const [commonData, setCommonData] = useState$18({});
-  const [entries, setEntries] = useState$18([]);
-  const [loading, setLoading] = useState$18(false);
-  const [selectedCommonFields, setSelectedCommonFields] = useState$18([]);
-  const [showPopover, setShowPopover] = useState$18(false);
-  const [imageUrls, setImageUrls] = useState$18({});
-  const [imageLoading, setImageLoading] = useState$18({});
+  const [numEntries, setNumEntries] = useState$19(2);
+  const [step, setStep] = useState$19("count");
+  const [commonData, setCommonData] = useState$19({});
+  const [entries, setEntries] = useState$19([]);
+  const [loading, setLoading] = useState$19(false);
+  const [selectedCommonFields, setSelectedCommonFields] = useState$19([]);
+  const [showPopover, setShowPopover] = useState$19(false);
+  const [imageUrls, setImageUrls] = useState$19({});
+  const [imageLoading, setImageLoading] = useState$19({});
   const navigate = useNavigate();
   const { userOrganisationUnits } = useContext$C(MEMISContext.UserContext);
   const { user } = useContext$C(MEMISContext.UserRolesContext);
@@ -31675,7 +31732,7 @@ function MultiEntryForm({
       setLoading(false);
     }
   };
-  useEffect$17(() => {
+  useEffect$18(() => {
     console.log(worklow);
   }, []);
   const renderInput = (el, canAddUpdateSection, idx, isCommonField) => {
@@ -31691,7 +31748,7 @@ function MultiEntryForm({
           return /* @__PURE__ */ jsxRuntimeExports.jsx(
             SearchableSelect,
             {
-              data: A$8(el?.optionSet?.options),
+              data: A$9(el?.optionSet?.options),
               itemTextField: "name",
               itemValueField: "code",
               multiple: false,
@@ -31902,7 +31959,7 @@ function MultiEntryForm({
         return /* @__PURE__ */ jsxRuntimeExports.jsx(
           SearchableSelect,
           {
-            data: A$8(el?.optionSet?.options),
+            data: A$9(el?.optionSet?.options),
             itemTextField: "name",
             itemValueField: "code",
             multiple: true,
@@ -32205,7 +32262,7 @@ const calculateDeregistrationAutofill = async (teiAttributes, isolationDate = nu
     return autofillValues;
 };
 
-const {useState: useState$17,useEffect: useEffect$16,useContext: useContext$B,useMemo: useMemo$D,useRef: useRef$m} = await importShared('react');
+const {useState: useState$18,useEffect: useEffect$17,useContext: useContext$B,useMemo: useMemo$D,useRef: useRef$o} = await importShared('react');
 
 /**
  * Hook to automatically fill facility/org unit based on DataStore configuration
@@ -32225,12 +32282,12 @@ function useFacilityAutoFill(
   const { userOrganisationUnits } = useContext$B(MEMISContext.UserContext);
   const { user } = useContext$B(MEMISContext.UserRolesContext) || {};
 
-  const [autoFilledOrgUnit, setAutoFilledOrgUnit] = useState$17(null);
-  const [loading, setLoading] = useState$17(false);
+  const [autoFilledOrgUnit, setAutoFilledOrgUnit] = useState$18(null);
+  const [loading, setLoading] = useState$18(false);
 
   // Track if we've already loaded to prevent re-fetching
-  const hasLoadedRef = useRef$m(false);
-  const configCacheRef = useRef$m(null);
+  const hasLoadedRef = useRef$o(false);
+  const configCacheRef = useRef$o(null);
 
   // Stable reference to user org units
   useMemo$D(() => {
@@ -32242,7 +32299,7 @@ function useFacilityAutoFill(
     return user?.id || "";
   }, [user?.id]);
 
-  useEffect$16(() => {
+  useEffect$17(() => {
     // Skip if we're in edit mode
     if (isEdit) {
       setAutoFilledOrgUnit(null);
@@ -33171,8 +33228,8 @@ const generateUniquePamAssetNumber = async ({
   throw new Error("PAM_GENERATION_EXHAUSTED");
 };
 
-const {useContext: useContext$A,useEffect: useEffect$15,useState: useState$16,useMemo: useMemo$C,useRef: useRef$l} = await importShared('react');
-const A$7 = (x) => Array.isArray(x) ? x : [];
+const {useContext: useContext$A,useEffect: useEffect$16,useState: useState$17,useMemo: useMemo$C,useRef: useRef$n} = await importShared('react');
+const A$8 = (x) => Array.isArray(x) ? x : [];
 function collectBundleUids(value, seen = /* @__PURE__ */ new Set()) {
   if (!value || typeof value !== "object") return [];
   if (seen.has(value)) return [];
@@ -33214,38 +33271,38 @@ function FormComponent({
   editData,
   onSaveSuccess
 }) {
-  const [isMultiple, setIsMultiple] = useState$16(false);
+  const [isMultiple, setIsMultiple] = useState$17(false);
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const [query, setQuery] = useState$16(queryParams.get("query") || "");
-  const [formData, setFormData] = useState$16({});
-  const [maintainanceTye, setMaintenancetype] = useState$16();
-  const [currentSection, setCurrentSection] = useState$16(0);
-  const [fieldMultiText, setFieldMultiText] = useState$16([]);
-  const [lockedFields, setLockedFields] = useState$16(/* @__PURE__ */ new Set());
-  const [pM, setPM] = useState$16();
-  const [ranKey, setKey] = useState$16(
+  const [query, setQuery] = useState$17(queryParams.get("query") || "");
+  const [formData, setFormData] = useState$17({});
+  const [maintainanceTye, setMaintenancetype] = useState$17();
+  const [currentSection, setCurrentSection] = useState$17(0);
+  const [fieldMultiText, setFieldMultiText] = useState$17([]);
+  const [lockedFields, setLockedFields] = useState$17(/* @__PURE__ */ new Set());
+  const [pM, setPM] = useState$17();
+  const [ranKey, setKey] = useState$17(
     Math.random().toString(36).substring(2, 10).toUpperCase()
   );
-  const [triggerAt, setTriggerAt] = useState$16(queryParams.get("triggerAt"));
-  const [loading, setLoading] = useState$16(false);
-  const [eventDate, setEventDate] = useState$16((/* @__PURE__ */ new Date()).toISOString());
+  const [triggerAt, setTriggerAt] = useState$17(queryParams.get("triggerAt"));
+  const [loading, setLoading] = useState$17(false);
+  const [eventDate, setEventDate] = useState$17((/* @__PURE__ */ new Date()).toISOString());
   const navigate = useNavigate();
   const { user } = useContext$A(MEMISContext.UserRolesContext);
-  const [pgRules, setRule] = useState$16([]);
-  const [selectedOrganisationUnit, setSelectedOrganisationUnit] = useState$16(null);
-  const [equip, setEquipment] = useState$16();
-  const [enrollmentDate, setEnrollmentDate] = useState$16(
+  const [pgRules, setRule] = useState$17([]);
+  const [selectedOrganisationUnit, setSelectedOrganisationUnit] = useState$17(null);
+  const [equip, setEquipment] = useState$17();
+  const [enrollmentDate, setEnrollmentDate] = useState$17(
     editData?.enrollmentDate || Date.now()
   );
-  const [incidentDate, setIncidentDate] = useState$16(
+  const [incidentDate, setIncidentDate] = useState$17(
     editData?.incidentDate || Date.now()
   );
-  const [entityId, setEntityId] = useState$16(
+  const [entityId, setEntityId] = useState$17(
     editData?.trackedEntity || editData?.id || null
   );
-  const [ackModalOpen, setAckModalOpen] = useState$16(false);
-  const autoFillFacilityAppliedRef = useRef$l(false);
+  const [ackModalOpen, setAckModalOpen] = useState$17(false);
+  const autoFillFacilityAppliedRef = useRef$n(false);
   const isEditMode = useMemo$C(() => {
     return query === "edit" || !!editData;
   }, [query, editData]);
@@ -33296,7 +33353,7 @@ function FormComponent({
       console.error("Failed to fetch deregistration autofill rules:", error);
     }
   };
-  useEffect$15(() => {
+  useEffect$16(() => {
     if (autoFillFacilityAppliedRef.current) return;
     if (isEditMode) return;
     if (!autoFilledOrgUnit) return;
@@ -33304,7 +33361,7 @@ function FormComponent({
     if (autoFillLoading) return;
     autoFillFacilityAppliedRef.current = true;
   }, [autoFilledOrgUnit, autoFillLoading, isEditMode]);
-  useEffect$15(() => {
+  useEffect$16(() => {
     autoFillFacilityAppliedRef.current = false;
     getRules();
   }, [program?.id]);
@@ -33363,7 +33420,7 @@ function FormComponent({
       console.error("Failed to fetch warrant data:", err);
     }
   };
-  useEffect$15(() => {
+  useEffect$16(() => {
     getRules();
     const q = queryParams.get("triggerAt");
     if (q === "Corrective Maintenance") {
@@ -33486,7 +33543,7 @@ function FormComponent({
       }
     } catch (_) {
     }
-    const reportAttribute = A$7(program?.programTrackedEntityAttributes).map((ptea) => ptea?.trackedEntityAttribute).find((attr) => {
+    const reportAttribute = A$8(program?.programTrackedEntityAttributes).map((ptea) => ptea?.trackedEntityAttribute).find((attr) => {
       const name = String(
         attr?.name || attr?.displayName || ""
       ).toLowerCase();
@@ -33545,10 +33602,10 @@ function FormComponent({
       let reportIdentificationId = null;
       if (program?.programType === "WITHOUT_REGISTRATION") {
         const stage = program?.programStages?.[0];
-        const sectionDEs = A$7(stage?.programStageSections).flatMap(
-          (s) => A$7(s?.dataElements)
+        const sectionDEs = A$8(stage?.programStageSections).flatMap(
+          (s) => A$8(s?.dataElements)
         );
-        const flatDEs = A$7(stage?.programStageDataElements).map((de) => de?.dataElement).filter(Boolean);
+        const flatDEs = A$8(stage?.programStageDataElements).map((de) => de?.dataElement).filter(Boolean);
         const allDEs = sectionDEs.length ? sectionDEs : flatDEs;
         const reportIdDE = allDEs.find((de) => {
           const name = (de?.name || de?.displayName || "").toLowerCase();
@@ -33558,7 +33615,7 @@ function FormComponent({
           reportIdentificationId = reportIdDE.id;
         }
       } else if (program?.programType === "WITH_REGISTRATION") {
-        const attrs = A$7(program?.programTrackedEntityAttributes).map((ptea) => ptea?.trackedEntityAttribute).filter(Boolean);
+        const attrs = A$8(program?.programTrackedEntityAttributes).map((ptea) => ptea?.trackedEntityAttribute).filter(Boolean);
         const reportIdAttr = attrs.find((attr) => {
           const name = (attr?.name || attr?.displayName || "").toLowerCase();
           return name.includes("report identification") || name.includes("report id");
@@ -33600,12 +33657,12 @@ function FormComponent({
       const queryDataAddEdit = queryParams.get("q");
       if (program?.programType === "WITHOUT_REGISTRATION") {
         const stage = program?.programStages?.[0];
-        const sectionDEs = A$7(stage?.programStageSections).flatMap(
-          (s) => A$7(s?.dataElements)
+        const sectionDEs = A$8(stage?.programStageSections).flatMap(
+          (s) => A$8(s?.dataElements)
         );
-        const flatDEs = A$7(stage?.programStageDataElements).map((de) => de?.dataElement).filter(Boolean);
+        const flatDEs = A$8(stage?.programStageDataElements).map((de) => de?.dataElement).filter(Boolean);
         const allDEs = sectionDEs.length ? sectionDEs : flatDEs;
-        const fileDataIds = A$7(allDEs).filter(
+        const fileDataIds = A$8(allDEs).filter(
           (f) => ["IMAGE", "FILE_RESOURCE"].includes(
             String(f?.valueType || "").toUpperCase()
           )
@@ -33805,17 +33862,17 @@ function FormComponent({
     onClose?.();
     navigate(window.location.pathname, { replace: true });
   };
-  useEffect$15(() => {
+  useEffect$16(() => {
     if (editData && Object.keys(editData).length > 0 && program) {
       setQuery("edit");
       const getFieldMetadata = (fieldId) => {
         if (!program) return null;
         if (program?.programType === "WITHOUT_REGISTRATION") {
           const stage = program?.programStages?.[0];
-          const sectionDEs = A$7(stage?.programStageSections).flatMap(
-            (s) => A$7(s?.dataElements)
+          const sectionDEs = A$8(stage?.programStageSections).flatMap(
+            (s) => A$8(s?.dataElements)
           );
-          const flatDEs = A$7(stage?.programStageDataElements).map((psde) => psde?.dataElement).filter(Boolean);
+          const flatDEs = A$8(stage?.programStageDataElements).map((psde) => psde?.dataElement).filter(Boolean);
           const combined = [...sectionDEs, ...flatDEs];
           const allDEs = Array.from(
             new Map(combined.map((de) => [de?.id, de])).values()
@@ -33830,11 +33887,11 @@ function FormComponent({
           const secDEs = stageMeta?.programStageSections?.flatMap(
             (sec) => sec?.dataElements || []
           ) || [];
-          const flatDEs = A$7(stageMeta?.programStageDataElements).map((psde) => psde?.dataElement).filter(Boolean);
+          const flatDEs = A$8(stageMeta?.programStageDataElements).map((psde) => psde?.dataElement).filter(Boolean);
           const allDEs = secDEs.length ? secDEs : flatDEs;
           return allDEs.find((de) => de?.id === fieldId);
         }
-        const attrs = A$7(program?.programTrackedEntityAttributes).map((ptea) => ptea?.trackedEntityAttribute).filter(Boolean);
+        const attrs = A$8(program?.programTrackedEntityAttributes).map((ptea) => ptea?.trackedEntityAttribute).filter(Boolean);
         return attrs.find((attr) => attr?.id === fieldId);
       };
       const transformValue = (key, value, metadata) => {
@@ -33908,7 +33965,7 @@ function FormComponent({
     const name = await resolveEquipmentName(id);
     setEquipment(name);
   };
-  useEffect$15(() => {
+  useEffect$16(() => {
     const queryParams2 = new URLSearchParams(location.search);
     const equipmentId = trackedEntity || queryParams2.get("equipmentId");
     getEquip(equipmentId);
@@ -33954,7 +34011,7 @@ function FormComponent({
       fetchEquipmentDataAndPrefill();
     }
   }, [selectedStage, trackedEntity, program, editData, user, location.search]);
-  useEffect$15(() => {
+  useEffect$16(() => {
     const queryId = queryParams.get("q");
     if (queryId === "add") {
       const taskId = queryParams.get("taskId");
@@ -34005,8 +34062,8 @@ function FormComponent({
           incidentDate,
           setIncidentDate,
           enrollmentDate,
-          organisationUnits: A$7(program?.organisationUnits).filter(
-            (org) => A$7(user?.organisationUnits).some(
+          organisationUnits: A$8(program?.organisationUnits).filter(
+            (org) => A$8(user?.organisationUnits).some(
               (uo) => uo.id === org?.id || uo.id === org?.parent?.id
             )
           ),
@@ -34053,8 +34110,8 @@ function FormComponent({
               incidentDate,
               setIncidentDate,
               enrollmentDate,
-              organisationUnits: A$7(program?.organisationUnits).filter(
-                (org) => A$7(user?.organisationUnits).some(
+              organisationUnits: A$8(program?.organisationUnits).filter(
+                (org) => A$8(user?.organisationUnits).some(
                   (uo) => uo.id === org?.id || uo.id === org?.parent?.id
                 )
               ),
@@ -34522,7 +34579,7 @@ const dateTime = {
     FORMAT_PRESETS,
 };
 
-const {useState: useState$15,useMemo: useMemo$B,useEffect: useEffect$14} = await importShared('react');
+const {useState: useState$16,useMemo: useMemo$B,useEffect: useEffect$15} = await importShared('react');
 const DataTable = ({
   columns,
   rows,
@@ -34549,15 +34606,15 @@ const DataTable = ({
   priorities,
   approvalStatusColors
 }) => {
-  const [localSortKey, setLocalSortKey] = useState$15("");
-  const [localSortOrder, setLocalSortOrder] = useState$15("asc");
-  const [isMobile, setIsMobile] = useState$15(() => {
+  const [localSortKey, setLocalSortKey] = useState$16("");
+  const [localSortOrder, setLocalSortOrder] = useState$16("asc");
+  const [isMobile, setIsMobile] = useState$16(() => {
     if (typeof window !== "undefined") {
       return window.innerWidth < 768;
     }
     return false;
   });
-  const [resolvedRows, setResolvedRows] = useState$15(rows);
+  const [resolvedRows, setResolvedRows] = useState$16(rows);
   const correctedColumns = useMemo$B(() => {
     if (!Array.isArray(columns)) return [];
     const keyCorrections = {
@@ -34583,13 +34640,13 @@ const DataTable = ({
       return correctedKey !== col.key ? { ...col, key: correctedKey } : col;
     });
   }, [columns]);
-  useEffect$14(() => {
+  useEffect$15(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-  useEffect$14(() => {
+  useEffect$15(() => {
     let mounted = true;
     (async () => {
       try {
@@ -35289,7 +35346,7 @@ const DataTable = ({
   ] });
 };
 
-const {useEffect: useEffect$13,useRef: useRef$k} = await importShared('react');
+const {useEffect: useEffect$14,useRef: useRef$m} = await importShared('react');
 
 const GeneralCustomModal = ({
   isOpen,
@@ -35305,7 +35362,7 @@ const GeneralCustomModal = ({
   showCloseButton = true,
   onDidDismiss
 }) => {
-  useEffect$13(() => {
+  useEffect$14(() => {
     const handleClick = (e) => {
       const path = e.composedPath?.() || [];
       for (let el of path) {
@@ -35383,41 +35440,41 @@ const GeneralCustomModal = ({
   );
 };
 
-const React$O = await importShared('react');
-const {useMemo: useMemo$A,useState: useState$14,useEffect: useEffect$12} = React$O;
+const React$P = await importShared('react');
+const {useMemo: useMemo$A,useState: useState$15,useEffect: useEffect$13} = React$P;
 
-const React$N = await importShared('react');
-const {useCallback: useCallback$p,useContext: useContext$z,useEffect: useEffect$11,useRef: useRef$j,useState: useState$13} = React$N;
+const React$O = await importShared('react');
+const {useCallback: useCallback$q,useContext: useContext$z,useEffect: useEffect$12,useRef: useRef$l,useState: useState$14} = React$O;
 function Event({ id }) {
   const { eventsList, reload, isLoading, columns, pagination } = useContext$z(
     MEMISContext.EventsContext
   );
   const { user } = useContext$z(MEMISContext.UserRolesContext) || {};
   const navigate = useNavigate();
-  const [rows, setRows] = useState$13([]);
-  const [searchValue, setSearchValue] = useState$13("");
-  const [search, setSearch] = useState$13("");
-  const [organisationUnits, setOrganisationUnits] = useState$13([]);
-  const [selectedLocation, setSelectedLocation] = useState$13("");
-  const [optionFilters, setOptionFilters] = useState$13([]);
-  const [showSearchField, setShowSearchField] = useState$13(false);
-  const [optionSets, setOptionSets] = useState$13([]);
-  const [filterType, setFilterType] = useState$13([]);
-  const [filterValue, setFilterValue] = useState$13([]);
-  const [filterOpen, setFilterOpen] = useState$13(false);
-  const [filterValueOpen, setFilterValueOpen] = useState$13(null);
-  const [activePicker, setActivePicker] = useState$13(null);
-  const locationRef = useRef$j("");
-  const filterValueRef = useRef$j([]);
-  const filterTypesRef = useRef$j([]);
-  const optionFiltersRef = useRef$j([]);
-  const runQueryRef = useRef$j(null);
-  useEffect$11(() => {
+  const [rows, setRows] = useState$14([]);
+  const [searchValue, setSearchValue] = useState$14("");
+  const [search, setSearch] = useState$14("");
+  const [organisationUnits, setOrganisationUnits] = useState$14([]);
+  const [selectedLocation, setSelectedLocation] = useState$14("");
+  const [optionFilters, setOptionFilters] = useState$14([]);
+  const [showSearchField, setShowSearchField] = useState$14(false);
+  const [optionSets, setOptionSets] = useState$14([]);
+  const [filterType, setFilterType] = useState$14([]);
+  const [filterValue, setFilterValue] = useState$14([]);
+  const [filterOpen, setFilterOpen] = useState$14(false);
+  const [filterValueOpen, setFilterValueOpen] = useState$14(null);
+  const [activePicker, setActivePicker] = useState$14(null);
+  const locationRef = useRef$l("");
+  const filterValueRef = useRef$l([]);
+  const filterTypesRef = useRef$l([]);
+  const optionFiltersRef = useRef$l([]);
+  const runQueryRef = useRef$l(null);
+  useEffect$12(() => {
     filterValueRef.current = filterValue;
     filterTypesRef.current = filterType;
     optionFiltersRef.current = optionFilters;
   }, [filterValue, filterType]);
-  const buildOptions = useCallback$p(
+  const buildOptions = useCallback$q(
     (overrides = {}) => ({
       searchWithSerialNumber: search?.trim() || null,
       orgUnit: selectedLocation || null,
@@ -35426,7 +35483,7 @@ function Event({ id }) {
     }),
     [search, selectedLocation]
   );
-  const runQuery = useCallback$p(
+  const runQuery = useCallback$q(
     (overrides = {}) => {
       reload({
         programId: id,
@@ -35435,10 +35492,10 @@ function Event({ id }) {
     },
     [id, reload, buildOptions]
   );
-  useEffect$11(() => {
+  useEffect$12(() => {
     runQueryRef.current = runQuery;
   }, [runQuery]);
-  useEffect$11(() => {
+  useEffect$12(() => {
     const load = async () => {
       try {
         const orgs = await LocalForageServiceInstance.getItem(
@@ -35453,7 +35510,7 @@ function Event({ id }) {
     };
     load();
   }, []);
-  useEffect$11(() => {
+  useEffect$12(() => {
     if (!user?.userRoles?.length) return;
     const resolveLocation = async () => {
       try {
@@ -35478,7 +35535,7 @@ function Event({ id }) {
     };
     resolveLocation();
   }, [id, user]);
-  useEffect$11(() => {
+  useEffect$12(() => {
     const load = async () => {
       const dataStore = await LocalForageServiceInstance.getItem(
         "dataStore",
@@ -35497,13 +35554,13 @@ function Event({ id }) {
     };
     load();
   }, [id]);
-  useEffect$11(() => {
+  useEffect$12(() => {
     if (id && selectedLocation) runQueryRef.current?.();
   }, [id]);
-  useEffect$11(() => {
+  useEffect$12(() => {
     setRows(eventsList || []);
   }, [eventsList]);
-  useEffect$11(() => {
+  useEffect$12(() => {
     if (!search.trim()) return;
     const timer = setTimeout(() => {
       if (id) runQueryRef.current?.();
@@ -35555,7 +35612,7 @@ function Event({ id }) {
     });
     setFilterOpen(false);
   };
-  useEffect$11(() => {
+  useEffect$12(() => {
     const handleClick = (e) => {
       const path = e.composedPath?.() || [];
       for (let el of path) {
@@ -61950,8 +62007,8 @@ class CapacitorBarcodeScanner {
     }
 }
 
-const React$M = await importShared('react');
-const {useEffect: useEffect$10,useContext: useContext$y,useState: useState$12,useCallback: useCallback$o} = React$M;
+const React$N = await importShared('react');
+const {useEffect: useEffect$11,useContext: useContext$y,useState: useState$13,useCallback: useCallback$p} = React$N;
 const Tracker = ({ id }) => {
   const {
     equipmentList,
@@ -61964,37 +62021,37 @@ const Tracker = ({ id }) => {
   const { user } = useContext$y(MEMISContext.UserRolesContext) || {};
   const location = useLocation();
   const navigate = useNavigate();
-  const [rows, setRows] = useState$12([]);
-  const [search, setSearch] = useState$12("");
-  const [searchValue, setSearchValue] = useState$12("");
-  const [organisationUnits, setOrganisationUnits] = useState$12([]);
-  const [equipmentNamesOptions, setEquipmentNamesOptions] = useState$12([]);
-  const [selectedLocation, setSelectedLocation] = useState$12("");
-  const [optionFilters, setOptionFilters] = useState$12([]);
-  const [searchFilter, setSearchFilter] = useState$12(null);
-  const [filterType, setFilterType] = useState$12("");
-  const [filterValue, setFilterValue] = useState$12("");
-  const [appliedFilter, setAppliedFilter] = useState$12({
+  const [rows, setRows] = useState$13([]);
+  const [search, setSearch] = useState$13("");
+  const [searchValue, setSearchValue] = useState$13("");
+  const [organisationUnits, setOrganisationUnits] = useState$13([]);
+  const [equipmentNamesOptions, setEquipmentNamesOptions] = useState$13([]);
+  const [selectedLocation, setSelectedLocation] = useState$13("");
+  const [optionFilters, setOptionFilters] = useState$13([]);
+  const [searchFilter, setSearchFilter] = useState$13(null);
+  const [filterType, setFilterType] = useState$13("");
+  const [filterValue, setFilterValue] = useState$13("");
+  const [appliedFilter, setAppliedFilter] = useState$13({
     type: null,
     value: null
   });
-  const [filterOpen, setFilterOpen] = useState$12(false);
-  const filterRef = React$M.useRef({
+  const [filterOpen, setFilterOpen] = useState$13(false);
+  const filterRef = React$N.useRef({
     type: "",
     value: ""
   });
-  const filterByLocationRef = React$M.useRef({
+  const filterByLocationRef = React$N.useRef({
     type: "",
     value: ""
   });
-  const optionFiltersRef = React$M.useRef([]);
-  const searchFiltersRef = React$M.useRef([]);
-  const getEquipmentNamesOptions = useCallback$o(async () => {
+  const optionFiltersRef = React$N.useRef([]);
+  const searchFiltersRef = React$N.useRef([]);
+  const getEquipmentNamesOptions = useCallback$p(async () => {
     const options = await LocalForageServiceInstance.getItem("optionSets", "metadata");
     const equipmentOptions = options?.find((opt) => opt?.id === "VuKFOqg584G") || [];
     return equipmentOptions?.options || [];
   });
-  useEffect$10(() => {
+  useEffect$11(() => {
     const loadOptions = async () => {
       const options = await getEquipmentNamesOptions();
       setEquipmentNamesOptions(options || []);
@@ -62021,7 +62078,7 @@ const Tracker = ({ id }) => {
       });
     }
   };
-  const buildOptions = useCallback$o(
+  const buildOptions = useCallback$p(
     (overrides = {}) => {
       const hasValidFilter = appliedFilter.type && appliedFilter.value;
       searchFiltersRef?.current;
@@ -62039,7 +62096,7 @@ const Tracker = ({ id }) => {
     },
     [search, appliedFilter]
   );
-  const runQuery = useCallback$o(
+  const runQuery = useCallback$p(
     (overrides = {}) => {
       reload({
         programId: id,
@@ -62048,11 +62105,11 @@ const Tracker = ({ id }) => {
     },
     [id, reload, buildOptions]
   );
-  const runQueryRef = React$M.useRef(runQuery);
-  useEffect$10(() => {
+  const runQueryRef = React$N.useRef(runQuery);
+  useEffect$11(() => {
     runQueryRef.current = runQuery;
   }, [runQuery]);
-  useEffect$10(() => {
+  useEffect$11(() => {
     const loadOrgUnits = async () => {
       try {
         const orgUnits = await LocalForageServiceInstance.getItem(
@@ -62068,7 +62125,7 @@ const Tracker = ({ id }) => {
     };
     loadOrgUnits();
   }, []);
-  useEffect$10(() => {
+  useEffect$11(() => {
     if (!organisationUnits.length || !user?.userRoles?.length) return;
     const resolveDefaultLocation = async () => {
       try {
@@ -62099,10 +62156,10 @@ const Tracker = ({ id }) => {
     };
     resolveDefaultLocation();
   }, [organisationUnits, id, user]);
-  useEffect$10(() => {
+  useEffect$11(() => {
     setRows(equipmentList || []);
   }, [equipmentList]);
-  useEffect$10(() => {
+  useEffect$11(() => {
     if (!search.trim()) return;
     const timeout = setTimeout(() => {
       if (id) {
@@ -62208,7 +62265,7 @@ const Tracker = ({ id }) => {
       console.error("QR Scan failed:", err);
     }
   };
-  useEffect$10(() => {
+  useEffect$11(() => {
     const load = async () => {
       const programAttributesResult = await LocalForageServiceInstance.getItem(
         "dataStore",
@@ -62227,7 +62284,7 @@ const Tracker = ({ id }) => {
     };
     load();
   }, [id]);
-  useEffect$10(() => {
+  useEffect$11(() => {
     optionFiltersRef.current = optionFilters || [];
     searchFiltersRef.current = searchFilter || null;
   }, [optionFilters, searchFilter]);
@@ -62385,8 +62442,8 @@ const Tracker = ({ id }) => {
   ] });
 };
 
-const React$L = await importShared('react');
-const {useState: useState$11,useEffect: useEffect$$,useMemo: useMemo$z,useRef: useRef$i,useCallback: useCallback$n} = React$L;
+const React$M = await importShared('react');
+const {useState: useState$12,useEffect: useEffect$10,useMemo: useMemo$z,useRef: useRef$k,useCallback: useCallback$o} = React$M;
 const SearchFilterCard = ({
   children,
   searchText,
@@ -62407,48 +62464,48 @@ const SearchFilterCard = ({
   onScanSearch,
   programId
 }) => {
-  const [popoverEvent, setPopoverEvent] = useState$11(null);
-  const [filterPopoverEvent, setFilterPopoverEvent] = useState$11(null);
-  const [localApproval, setLocalApproval] = useState$11(
+  const [popoverEvent, setPopoverEvent] = useState$12(null);
+  const [filterPopoverEvent, setFilterPopoverEvent] = useState$12(null);
+  const [localApproval, setLocalApproval] = useState$12(
     filterOptions?.approval ?? ""
   );
-  const lastExternalApprovalRef = useRef$i(filterOptions?.approval ?? "");
-  const [scanOpen, setScanOpen] = useState$11(false);
-  const [scanError, setScanError] = useState$11("");
-  const videoRef = useRef$i(null);
-  const streamRef = useRef$i(null);
-  const rafRef = useRef$i(null);
-  const detectorRef = useRef$i(null);
-  const [optionFilters, setOptionFilters] = useState$11([]);
-  const [searchFilter, setSearchFilter] = useState$11(null);
-  const [organisationUnits, setOrganisationUnits] = useState$11([]);
-  const [selectedLocation, setSelectedLocation] = useState$11("");
-  const [filterType, setFilterType] = useState$11("");
-  const [filterValue, setFilterValue] = useState$11("");
-  const [appliedFilter, setAppliedFilter] = useState$11({
+  const lastExternalApprovalRef = useRef$k(filterOptions?.approval ?? "");
+  const [scanOpen, setScanOpen] = useState$12(false);
+  const [scanError, setScanError] = useState$12("");
+  const videoRef = useRef$k(null);
+  const streamRef = useRef$k(null);
+  const rafRef = useRef$k(null);
+  const detectorRef = useRef$k(null);
+  const [optionFilters, setOptionFilters] = useState$12([]);
+  const [searchFilter, setSearchFilter] = useState$12(null);
+  const [organisationUnits, setOrganisationUnits] = useState$12([]);
+  const [selectedLocation, setSelectedLocation] = useState$12("");
+  const [filterType, setFilterType] = useState$12("");
+  const [filterValue, setFilterValue] = useState$12("");
+  const [appliedFilter, setAppliedFilter] = useState$12({
     type: null,
     value: null
   });
-  const [filterOpen, setFilterOpen] = useState$11(false);
-  const filterRef = React$L.useRef({
+  const [filterOpen, setFilterOpen] = useState$12(false);
+  const filterRef = React$M.useRef({
     type: "",
     value: ""
   });
-  const filterByLocationRef = React$L.useRef({
+  const filterByLocationRef = React$M.useRef({
     type: "",
     value: ""
   });
-  const optionFiltersRef = React$L.useRef([]);
-  const searchFiltersRef = React$L.useRef([]);
+  const optionFiltersRef = React$M.useRef([]);
+  const searchFiltersRef = React$M.useRef([]);
   const isScanDebug = typeof window !== "undefined" && (window.localStorage?.getItem("memis_qr_scan_debug") === "1" || window.__MEMIS_QR_SCAN_DEBUG__ === true) || false;
-  const scanDebug = useCallback$n(
+  const scanDebug = useCallback$o(
     (...args) => {
       if (!isScanDebug) return;
       console.log("[MEMIS][QR_SCAN]", ...args);
     },
     [isScanDebug]
   );
-  useEffect$$(() => {
+  useEffect$10(() => {
     const onUnhandledRejection = (event) => {
       const reason = String(
         event?.reason?.message || event?.reason || ""
@@ -62482,14 +62539,14 @@ const SearchFilterCard = ({
     const shownWords = labels.slice(0, max).join(", ");
     return `Search by ${shownWords}${labels.length > max ? "..." : ""}`;
   }, [searchPlaceholder, filterColumns]);
-  useEffect$$(() => {
+  useEffect$10(() => {
     const external = filterOptions?.approval ?? "";
     if (lastExternalApprovalRef.current !== external) {
       lastExternalApprovalRef.current = external;
       setLocalApproval(external);
     }
   }, [filterOptions?.approval]);
-  const stopScanner = useCallback$n(() => {
+  const stopScanner = useCallback$o(() => {
     if (rafRef.current) {
       cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
@@ -62503,7 +62560,7 @@ const SearchFilterCard = ({
       videoRef.current.srcObject = null;
     }
   }, []);
-  const waitForVideoReady = useCallback$n(async (videoEl) => {
+  const waitForVideoReady = useCallback$o(async (videoEl) => {
     if (!videoEl) return;
     if (videoEl.readyState >= 2) return;
     await new Promise((resolve) => {
@@ -62520,12 +62577,12 @@ const SearchFilterCard = ({
       setTimeout(finish, 600);
     });
   }, []);
-  useEffect$$(() => {
+  useEffect$10(() => {
     return () => {
       stopScanner();
     };
   }, [stopScanner]);
-  const handleScannedValue = useCallback$n(
+  const handleScannedValue = useCallback$o(
     async (rawValue) => {
       const incoming = String(rawValue || "").trim();
       if (!incoming) return;
@@ -62541,7 +62598,7 @@ const SearchFilterCard = ({
     [onScanSearch, onSearchChange]
   );
   const isNativePlatform = typeof Capacitor?.isNativePlatform === "function" ? Capacitor.isNativePlatform() : ["android", "ios"].includes(Capacitor?.getPlatform?.());
-  const mapScannerError = useCallback$n((error, { native = false } = {}) => {
+  const mapScannerError = useCallback$o((error, { native = false } = {}) => {
     const name = String(error?.name || "").trim();
     const message = String(error?.message || "").toLowerCase();
     if (name === "NotAllowedError" || name === "SecurityError" || message.includes("permission") || message.includes("denied")) {
@@ -62579,7 +62636,7 @@ const SearchFilterCard = ({
       message: native ? "Unable to scan QR code on this device right now." : "Unable to start browser QR scanner right now."
     };
   }, []);
-  const runNativePluginScan = useCallback$n(async () => {
+  const runNativePluginScan = useCallback$o(async () => {
     try {
       scanDebug("path=native-mobile:start");
       const result = await CapacitorBarcodeScanner.scanBarcode({
@@ -62607,7 +62664,7 @@ const SearchFilterCard = ({
       return { ok: false, ...mapped };
     }
   }, [handleScannedValue, mapScannerError, scanDebug]);
-  const openScanner = useCallback$n(async () => {
+  const openScanner = useCallback$o(async () => {
     try {
       if (!enableQrScan) return;
       setScanError("");
@@ -62643,11 +62700,11 @@ const SearchFilterCard = ({
     runNativePluginScan,
     scanDebug
   ]);
-  const closeScanner = useCallback$n(() => {
+  const closeScanner = useCallback$o(() => {
     setScanOpen(false);
     stopScanner();
   }, [stopScanner]);
-  useEffect$$(() => {
+  useEffect$10(() => {
     if (!scanOpen) return;
     let cancelled = false;
     const start = async () => {
@@ -62742,7 +62799,7 @@ const SearchFilterCard = ({
   };
   const resetFilters = () => {
   };
-  useEffect$$(() => {
+  useEffect$10(() => {
     const load = async () => {
       const programAttributesResult = await LocalForageServiceInstance.getItem(
         "dataStore",
@@ -62763,7 +62820,7 @@ const SearchFilterCard = ({
     };
     load();
   }, [programId]);
-  useEffect$$(() => {
+  useEffect$10(() => {
     optionFiltersRef.current = optionFilters || [];
     searchFiltersRef.current = searchFilter || null;
   }, [optionFilters, searchFilter]);
@@ -62981,7 +63038,7 @@ const SearchFilterCard = ({
   ] });
 };
 
-const {useCallback: useCallback$m,useMemo: useMemo$y} = await importShared('react');
+const {useCallback: useCallback$n,useMemo: useMemo$y} = await importShared('react');
 
 const unwrap = (res) => res?.data ?? res;
 
@@ -63029,7 +63086,7 @@ function useTeiSearch(columns = []) {
     return rawValue;
   };
 
-  const search = useCallback$m(
+  const search = useCallback$n(
     async ({ programId, orgUnits, query, attributeUids, pageSize = 25, page = 1 }) => {
       if (!programId || !query || !attributeUids?.length) {
           return {
@@ -63252,7 +63309,7 @@ const eventSearchFilter = async (programId, data) => {
   return { filter: "&filter=" + filterString };
 };
 
-const {useCallback: useCallback$l,useEffect: useEffect$_,useMemo: useMemo$x,useRef: useRef$h,useState: useState$10} = await importShared('react');
+const {useCallback: useCallback$m,useEffect: useEffect$$,useMemo: useMemo$x,useRef: useRef$j,useState: useState$11} = await importShared('react');
 function ItemSearch({
   programId,
   programStageId,
@@ -63266,15 +63323,15 @@ function ItemSearch({
   onResults,
   onLoadingChange
 }) {
-  const [debounced, setDebounced] = useState$10((searchText || "").trim());
-  const [programType, setProgramType] = useState$10(null);
-  const mountedRef = useRef$h(true);
-  const onResultsRef = useRef$h(onResults);
-  const onLoadingRef = useRef$h(onLoadingChange);
-  useEffect$_(() => {
+  const [debounced, setDebounced] = useState$11((searchText || "").trim());
+  const [programType, setProgramType] = useState$11(null);
+  const mountedRef = useRef$j(true);
+  const onResultsRef = useRef$j(onResults);
+  const onLoadingRef = useRef$j(onLoadingChange);
+  useEffect$$(() => {
     onResultsRef.current = onResults;
   }, [onResults]);
-  useEffect$_(() => {
+  useEffect$$(() => {
     onLoadingRef.current = onLoadingChange;
   }, [onLoadingChange]);
   const keySet = useMemo$x(
@@ -63300,11 +63357,11 @@ function ItemSearch({
     () => (orgUnits || []).map((o) => o.id).join(","),
     [orgUnits]
   );
-  const [searchSets, setSearchSets] = useState$10({ equipment: [], spare: [] });
+  const [searchSets, setSearchSets] = useState$11({ equipment: [], spare: [] });
   const EQUIP_SET = useMemo$x(() => searchSets?.equipment || [], [searchSets]);
   const SPARE_SET = useMemo$x(() => searchSets?.spare || [], [searchSets]);
   const teiSearch = useTeiSearch(visibleColumns);
-  const eventFieldMapRef = useRef$h({ key: null, map: /* @__PURE__ */ new Map() });
+  const eventFieldMapRef = useRef$j({ key: null, map: /* @__PURE__ */ new Map() });
   const resolveDisplayValue = (field, rawValue) => {
     if (!field || rawValue == null || rawValue === "") return rawValue;
     const valueType = String(field.valueType || "").toUpperCase();
@@ -63332,7 +63389,7 @@ function ItemSearch({
     }
     return rawValue;
   };
-  const getEventFieldMap = useCallback$l(async () => {
+  const getEventFieldMap = useCallback$m(async () => {
     if (!programId) return /* @__PURE__ */ new Map();
     const cacheKey = `${programId}:${programStageId || ""}`;
     if (eventFieldMapRef.current.key === cacheKey) return eventFieldMapRef.current.map;
@@ -63350,13 +63407,13 @@ function ItemSearch({
     eventFieldMapRef.current = { key: cacheKey, map };
     return map;
   }, [programId, programStageId]);
-  const pickTeiScope = useCallback$l(() => {
+  const pickTeiScope = useCallback$m(() => {
     const hasAny = (uids) => uids.some((u) => keySet.has(u));
     if (hasAny(EQUIP_SET)) return EQUIP_SET;
     if (hasAny(SPARE_SET)) return SPARE_SET;
     return EQUIP_SET;
   }, [keySet, EQUIP_SET, SPARE_SET]);
-  const shapeEventRows = useCallback$l(
+  const shapeEventRows = useCallback$m(
     (events) => {
       const allowed = new Set(colKeys);
       return (events || []).map((ev) => {
@@ -63369,17 +63426,17 @@ function ItemSearch({
     },
     [colKeys]
   );
-  useEffect$_(() => {
+  useEffect$$(() => {
     mountedRef.current = true;
     return () => {
       mountedRef.current = false;
     };
   }, []);
-  useEffect$_(() => {
+  useEffect$$(() => {
     const t = setTimeout(() => setDebounced((searchText || "").trim()), 250);
     return () => clearTimeout(t);
   }, [searchText]);
-  useEffect$_(() => {
+  useEffect$$(() => {
     if (!programId) return;
     const fetchProgramType = async () => {
       try {
@@ -63391,7 +63448,7 @@ function ItemSearch({
     };
     fetchProgramType();
   }, [programId]);
-  useEffect$_(() => {
+  useEffect$$(() => {
     let cancelled = false;
     (async () => {
       const sets = await getSearchAttributeSets(programId);
@@ -63403,7 +63460,7 @@ function ItemSearch({
       cancelled = true;
     };
   }, [programId]);
-  useEffect$_(() => {
+  useEffect$$(() => {
     let cancelled = false;
     const runTei = async () => {
       const attributeUids = pickTeiScope();
@@ -63762,16 +63819,16 @@ const sortRowsByApproval = (rows, approvalFieldKey) => {
   return copy;
 };
 
-const {useEffect: useEffect$Z,useState: useState$$} = await importShared('react');
+const {useEffect: useEffect$_,useState: useState$10} = await importShared('react');
 
 function useQrScanEnabled({
   menuItems,
   currentNavigationId,
   scanProgramId,
 }) {
-  const [qrScanEnabled, setQrScanEnabled] = useState$$(false);
+  const [qrScanEnabled, setQrScanEnabled] = useState$10(false);
 
-  useEffect$Z(() => {
+  useEffect$_(() => {
     let cancelled = false;
 
     (async () => {
@@ -63877,7 +63934,7 @@ function getBlankPlaceholderForDataElement(dataElements = [], deId) {
   );
 }
 
-const {useCallback: useCallback$k,useContext: useContext$x,useEffect: useEffect$Y,useMemo: useMemo$w,useRef: useRef$g,useState: useState$_} = await importShared('react');
+const {useCallback: useCallback$l,useContext: useContext$x,useEffect: useEffect$Z,useMemo: useMemo$w,useRef: useRef$i,useState: useState$$} = await importShared('react');
 function StageEvents({
   id,
   programId: programIdProp,
@@ -63889,19 +63946,19 @@ function StageEvents({
   const location = useLocation();
   const { user } = useContext$x(MEMISContext.UserRolesContext);
   const { menuItems } = useContext$x(MEMISContext.MenuContext);
-  const [rows, setRows] = useState$_([]);
-  const [priorities, setPriorities] = useState$_(null);
-  const [loading, setLoading] = useState$_(false);
-  const [loadingColumns, setLoadingColumns] = useState$_(false);
-  const [loadingRows, setLoadingRows] = useState$_(false);
-  const [searchText, setSearchText] = useState$_("");
-  const [rawRows, setRawRows] = useState$_([]);
-  const [filterOptions, setFilterOptions] = useState$_({ approval: null });
-  const [approvalFieldKey, setApprovalFieldKey] = useState$_(null);
-  const [approvalConfig, setApprovalConfig] = useState$_(null);
-  const orgUnitCacheRef = useRef$g(/* @__PURE__ */ new Map());
-  const [allColumnsOrdered, setAllColumnsOrdered] = useState$_([]);
-  const [visibleColumnKeys, setVisibleColumnKeys] = useState$_(/* @__PURE__ */ new Set());
+  const [rows, setRows] = useState$$([]);
+  const [priorities, setPriorities] = useState$$(null);
+  const [loading, setLoading] = useState$$(false);
+  const [loadingColumns, setLoadingColumns] = useState$$(false);
+  const [loadingRows, setLoadingRows] = useState$$(false);
+  const [searchText, setSearchText] = useState$$("");
+  const [rawRows, setRawRows] = useState$$([]);
+  const [filterOptions, setFilterOptions] = useState$$({ approval: null });
+  const [approvalFieldKey, setApprovalFieldKey] = useState$$(null);
+  const [approvalConfig, setApprovalConfig] = useState$$(null);
+  const orgUnitCacheRef = useRef$i(/* @__PURE__ */ new Map());
+  const [allColumnsOrdered, setAllColumnsOrdered] = useState$$([]);
+  const [visibleColumnKeys, setVisibleColumnKeys] = useState$$(/* @__PURE__ */ new Set());
   const visibleColumns = useMemo$w(
     () => allColumnsOrdered.filter((c) => visibleColumnKeys.has(c.key)),
     [allColumnsOrdered, visibleColumnKeys]
@@ -63913,12 +63970,12 @@ function StageEvents({
     const shown = labels.slice(0, max).join(", ");
     return `Search by ${shown}${labels.length > max ? "..." : ""}`;
   }, [visibleColumns]);
-  const [selectedRow, setSelectedRow] = useState$_(null);
-  const [selectedRowId, setSelectedRowId] = useState$_(null);
-  const [showActions, setShowActions] = useState$_(false);
-  const [pendingDelete, setPendingDelete] = useState$_(null);
-  const [deletingId, setDeletingId] = useState$_(null);
-  const [fallbackStageId, setFallbackStageId] = useState$_(null);
+  const [selectedRow, setSelectedRow] = useState$$(null);
+  const [selectedRowId, setSelectedRowId] = useState$$(null);
+  const [showActions, setShowActions] = useState$$(false);
+  const [pendingDelete, setPendingDelete] = useState$$(null);
+  const [deletingId, setDeletingId] = useState$$(null);
+  const [fallbackStageId, setFallbackStageId] = useState$$(null);
   const getRowId = (row) => row?.id || row?.event || row?.enrollment || row?.trackedEntity || null;
   const { resolvedProgramId, resolvedStageId } = useMemo$w(() => {
     const match = menuItems?.find((m) => m?.id === (stageIdProp || id)) || null;
@@ -63944,10 +64001,10 @@ function StageEvents({
     if (fallbackStageId) return fallbackStageId;
     return rawStage || null;
   }, [stageIdProp, resolvedStageId, fallbackStageId, effectiveProgramId]);
-  useEffect$Y(() => {
+  useEffect$Z(() => {
     setFallbackStageId(null);
   }, [effectiveProgramId, stageIdProp, resolvedStageId]);
-  useEffect$Y(() => {
+  useEffect$Z(() => {
     const needsLookup = !effectiveStageId || effectiveProgramId && effectiveStageId === effectiveProgramId;
     if (!effectiveProgramId || !needsLookup) return;
     (async () => {
@@ -64044,7 +64101,7 @@ function StageEvents({
       setLoadingColumns(false);
     }
   };
-  const [pagination, setPagination] = useState$_({
+  const [pagination, setPagination] = useState$$({
     page: 1,
     pageCount: 1,
     pageSize: 100,
@@ -64271,7 +64328,7 @@ function StageEvents({
     );
     setPriorities(res);
   };
-  useEffect$Y(() => {
+  useEffect$Z(() => {
     setAllColumnsOrdered([]);
     setVisibleColumnKeys(/* @__PURE__ */ new Set());
     setRawRows([]);
@@ -64292,7 +64349,7 @@ function StageEvents({
       setPagination((prev) => ({ ...prev, page: 1 }));
     }
   }, [user, effectiveProgramId, effectiveStageId, location.pathname]);
-  useEffect$Y(() => {
+  useEffect$Z(() => {
     const filtered = filterRowsByApproval(
       rawRows,
       filterOptions.approval,
@@ -64305,7 +64362,7 @@ function StageEvents({
     const v = value || null;
     setFilterOptions((prev) => ({ ...prev, approval: v }));
   };
-  useEffect$Y(() => {
+  useEffect$Z(() => {
     if (!effectiveProgramId || !effectiveStageId || !user?.organisationUnits || allColumnsOrdered.length === 0)
       return;
     if ((searchText ?? "").trim().length < 2) {
@@ -64324,7 +64381,7 @@ function StageEvents({
     allColumnsOrdered
   ]);
   const isLoading = loading || loadingRows || loadingColumns;
-  const handleScanSearch = useCallback$k(
+  const handleScanSearch = useCallback$l(
     async (rawScannedValue) => {
       return resolveQrSearchQuery({
         rawScannedValue,
@@ -64432,7 +64489,7 @@ function StageEvents({
   ] });
 }
 
-const {useCallback: useCallback$j,useContext: useContext$w,useEffect: useEffect$X,useMemo: useMemo$v,useRef: useRef$f,useState: useState$Z} = await importShared('react');
+const {useCallback: useCallback$k,useContext: useContext$w,useEffect: useEffect$Y,useMemo: useMemo$v,useRef: useRef$h,useState: useState$_} = await importShared('react');
 function StageSectionsEvents({
   id,
   programId: programIdProp,
@@ -64445,19 +64502,19 @@ function StageSectionsEvents({
   const { user } = useContext$w(MEMISContext.UserRolesContext);
   const { menuItems } = useContext$w(MEMISContext.MenuContext);
   const queryParams = new URLSearchParams(location.search);
-  const [rows, setRows] = useState$Z([]);
-  const [priorities, setPriorities] = useState$Z(null);
-  const [loading, setLoading] = useState$Z(false);
-  const [loadingColumns, setLoadingColumns] = useState$Z(false);
-  const [loadingRows, setLoadingRows] = useState$Z(false);
-  const [searchText, setSearchText] = useState$Z("");
-  const [rawRows, setRawRows] = useState$Z([]);
-  const [filterOptions, setFilterOptions] = useState$Z({ approval: null });
-  const [approvalFieldKey, setApprovalFieldKey] = useState$Z(null);
-  const [approvalConfig, setApprovalConfig] = useState$Z(null);
-  const orgUnitCacheRef = useRef$f(/* @__PURE__ */ new Map());
-  const [allColumnsOrdered, setAllColumnsOrdered] = useState$Z([]);
-  const [visibleColumnKeys, setVisibleColumnKeys] = useState$Z(/* @__PURE__ */ new Set());
+  const [rows, setRows] = useState$_([]);
+  const [priorities, setPriorities] = useState$_(null);
+  const [loading, setLoading] = useState$_(false);
+  const [loadingColumns, setLoadingColumns] = useState$_(false);
+  const [loadingRows, setLoadingRows] = useState$_(false);
+  const [searchText, setSearchText] = useState$_("");
+  const [rawRows, setRawRows] = useState$_([]);
+  const [filterOptions, setFilterOptions] = useState$_({ approval: null });
+  const [approvalFieldKey, setApprovalFieldKey] = useState$_(null);
+  const [approvalConfig, setApprovalConfig] = useState$_(null);
+  const orgUnitCacheRef = useRef$h(/* @__PURE__ */ new Map());
+  const [allColumnsOrdered, setAllColumnsOrdered] = useState$_([]);
+  const [visibleColumnKeys, setVisibleColumnKeys] = useState$_(/* @__PURE__ */ new Set());
   const visibleColumns = useMemo$v(
     () => allColumnsOrdered?.filter((c) => visibleColumnKeys?.has(c?.key)),
     [allColumnsOrdered, visibleColumnKeys]
@@ -64469,12 +64526,12 @@ function StageSectionsEvents({
     const shown = labels.slice(0, max).join(", ");
     return `Search by ${shown}${labels.length > max ? "..." : ""}`;
   }, [visibleColumns]);
-  const [selectedRow, setSelectedRow] = useState$Z(null);
-  const [selectedRowId, setSelectedRowId] = useState$Z(null);
-  const [showActions, setShowActions] = useState$Z(false);
-  const [pendingDelete, setPendingDelete] = useState$Z(null);
-  const [deletingId, setDeletingId] = useState$Z(null);
-  const [fallbackStageId, setFallbackStageId] = useState$Z(null);
+  const [selectedRow, setSelectedRow] = useState$_(null);
+  const [selectedRowId, setSelectedRowId] = useState$_(null);
+  const [showActions, setShowActions] = useState$_(false);
+  const [pendingDelete, setPendingDelete] = useState$_(null);
+  const [deletingId, setDeletingId] = useState$_(null);
+  const [fallbackStageId, setFallbackStageId] = useState$_(null);
   const getRowId = (row) => row?.id || row?.event || row?.enrollment || row?.trackedEntity || null;
   const { resolvedProgramId, resolvedStageId } = useMemo$v(() => {
     const match = menuItems?.find((m) => m?.id === (stageIdProp || id)) || null;
@@ -64500,10 +64557,10 @@ function StageSectionsEvents({
     if (fallbackStageId) return fallbackStageId;
     return rawStage || null;
   }, [stageIdProp, resolvedStageId, fallbackStageId, effectiveProgramId]);
-  useEffect$X(() => {
+  useEffect$Y(() => {
     setFallbackStageId(null);
   }, [effectiveProgramId, stageIdProp, resolvedStageId]);
-  useEffect$X(() => {
+  useEffect$Y(() => {
     const needsLookup = !effectiveStageId || effectiveProgramId && effectiveStageId === effectiveProgramId;
     if (!effectiveProgramId || !needsLookup) return;
     (async () => {
@@ -64572,7 +64629,7 @@ function StageSectionsEvents({
       setLoadingColumns(false);
     }
   };
-  const [pagination, setPagination] = useState$Z({
+  const [pagination, setPagination] = useState$_({
     page: 1,
     pageCount: 1,
     pageSize: 50,
@@ -64836,7 +64893,7 @@ function StageSectionsEvents({
     );
     setPriorities(res);
   };
-  useEffect$X(() => {
+  useEffect$Y(() => {
     if (effectiveProgramId && effectiveStageId) {
       getProgramDE(effectiveProgramId, effectiveStageId);
       getPriorityColors(effectiveProgramId);
@@ -64855,7 +64912,7 @@ function StageSectionsEvents({
     const v = value || null;
     setFilterOptions((prev) => ({ ...prev, approval: v }));
   };
-  useEffect$X(() => {
+  useEffect$Y(() => {
     if (!effectiveProgramId || !effectiveStageId || !user?.organisationUnits || allColumnsOrdered.length === 0)
       return;
     if ((searchText ?? "").trim().length < 2) {
@@ -64874,7 +64931,7 @@ function StageSectionsEvents({
     allColumnsOrdered
   ]);
   const isLoading = loading || loadingRows || loadingColumns;
-  const handleScanSearch = useCallback$j(
+  const handleScanSearch = useCallback$k(
     async (rawScannedValue) => {
       return resolveQrSearchQuery({
         rawScannedValue,
@@ -64962,10 +65019,10 @@ function StageSectionsEvents({
   ] });
 }
 
-const React$K = await importShared('react');
-const {useState: useState$Y,useMemo: useMemo$u,useEffect: useEffect$W} = React$K;
+const React$L = await importShared('react');
+const {useState: useState$Z,useMemo: useMemo$u,useEffect: useEffect$X} = React$L;
 
-const {createPortal: createPortal$4} = await importShared('react-dom');
+const {createPortal: createPortal$3} = await importShared('react-dom');
 function EquipmentPicker({
   config,
   availableEquipment = [],
@@ -64976,12 +65033,12 @@ function EquipmentPicker({
   loading = false,
   error = null
 }) {
-  const [searchTerm, setSearchTerm] = useState$Y("");
-  const [selectedItem, setSelectedItem] = useState$Y(null);
-  const [wardsList, setWardsList] = useState$Y([]);
-  const [selectedWard, setSelectedWard] = useState$Y(null);
-  const [isLoading, setLoading] = useState$Y(loading);
-  const [avEquipment, setAvailableEquipment] = useState$Y(availableEquipment);
+  const [searchTerm, setSearchTerm] = useState$Z("");
+  const [selectedItem, setSelectedItem] = useState$Z(null);
+  const [wardsList, setWardsList] = useState$Z([]);
+  const [selectedWard, setSelectedWard] = useState$Z(null);
+  const [isLoading, setLoading] = useState$Z(loading);
+  const [avEquipment, setAvailableEquipment] = useState$Z(availableEquipment);
   const filteredEquipment = useMemo$u(() => {
     if (!searchTerm.trim()) return avEquipment;
     const term = searchTerm.toLowerCase();
@@ -64993,16 +65050,21 @@ function EquipmentPicker({
   const handleEquipmentSelect = (equipment) => {
     setSelectedItem(equipment);
   };
+  const sortWardsAlphabetically = (wards = []) => [...wards].sort(
+    (a, b) => String(a?.name || "").localeCompare(String(b?.name || ""), void 0, {
+      sensitivity: "base"
+    })
+  );
   const getWards = () => {
     const firstOu = user?.organisationUnits?.[0];
     if (firstOu?.children?.length > 0) {
-      setWardsList(firstOu.children);
+      setWardsList(sortWardsAlphabetically(firstOu.children));
       return;
     }
     const ou = firstOu?.id;
     if (!ou) return;
     dataStore.get(`/organisationUnits/${ou}?fields=id,name,children[id,name]`).then((res) => {
-      setWardsList(res?.data?.children || []);
+      setWardsList(sortWardsAlphabetically(res?.data?.children || []));
     });
   };
   const handleWardSelect = async (ward) => {
@@ -65106,13 +65168,13 @@ function EquipmentPicker({
       setLoading(false);
     }
   };
-  useEffect$W(() => {
+  useEffect$X(() => {
     getWards();
   }, []);
-  useEffect$W(() => {
+  useEffect$X(() => {
     setLoading(loading);
   }, [loading]);
-  useEffect$W(() => {
+  useEffect$X(() => {
     setAvailableEquipment(availableEquipment);
   }, [availableEquipment]);
   const handleConfirm = () => {
@@ -65121,7 +65183,7 @@ function EquipmentPicker({
     }
   };
   if (isLoading) {
-    return createPortal$4(
+    return createPortal$3(
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "div",
         {
@@ -65175,7 +65237,7 @@ function EquipmentPicker({
     );
   }
   if (error) {
-    return createPortal$4(
+    return createPortal$3(
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "div",
         {
@@ -65236,7 +65298,7 @@ function EquipmentPicker({
       document.body
     );
   }
-  return createPortal$4(
+  return createPortal$3(
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "div",
       {
@@ -65643,9 +65705,9 @@ function EquipmentPicker({
   );
 }
 
-const {useEffect: useEffect$V,useState: useState$X} = await importShared('react');
+const {useEffect: useEffect$W,useState: useState$Y} = await importShared('react');
 
-const A$6 = (x) => Array.isArray(x) ? x : [];
+const A$7 = (x) => Array.isArray(x) ? x : [];
 const RequiredLabel = ({ label, required }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { position: "stacked", className: "ion-text-wrap", children: [
   label,
   " ",
@@ -65656,8 +65718,8 @@ function RenderField({ field, required, missing, formData, handleChange, getVal,
   const type = field?.valueType;
   const value = formData?.[field?.id] || getVal(field?.id) || "";
   const label = field?.formName || field?.name || field?.id;
-  const [options, setOptions] = useState$X([]);
-  useEffect$V(() => {
+  const [options, setOptions] = useState$Y([]);
+  useEffect$W(() => {
     if (!field?.optionSet) return;
     setOptions(field?.optionSet?.options || []);
   }, []);
@@ -65700,7 +65762,7 @@ function RenderField({ field, required, missing, formData, handleChange, getVal,
                 value,
                 placeholder: label,
                 onIonChange: (e) => handleChange(field.id, e.detail.value),
-                children: A$6(options).map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(IonSelectOption, { value: opt?.code, children: opt?.name }, opt?.code))
+                children: A$7(options).map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(IonSelectOption, { value: opt?.code, children: opt?.name }, opt?.code))
               }
             )
           ] }),
@@ -65747,19 +65809,50 @@ function RenderField({ field, required, missing, formData, handleChange, getVal,
   }
 }
 
-const {createPortal: createPortal$3} = await importShared('react-dom');
-const {useEffect: useEffect$U,useState: useState$W} = await importShared('react');
-function MaintenanceEvents({ open, onClose, stage, program, user }) {
-  const [loading, setloading] = useState$W(false);
-  const [events, setEvents] = useState$W([]);
-  const [page, setPage] = useState$W(1);
-  const [rows, setRows] = useState$W([]);
-  const [formData, setFormData] = useState$W();
-  useNavigate();
-  useLocation();
-  const [tei, setTei] = useState$W([]);
-  const [selected, setSelected] = useState$W();
-  const [section, setSection] = useState$W();
+const {useCallback: useCallback$j,useEffect: useEffect$V,useRef: useRef$g,useState: useState$X} = await importShared('react');
+const JOB_CARD_SOURCE_DE_ID = "GeM9XLFWC7d";
+const MAINTENANCE_TYPE_DE_ID = "EbJI5Loxjbl";
+const REQUESTER_DE_ID = "M074NJAYjb6";
+const JOB_CARD_NUMBER_DE_ID = "AnJ695Tt41W";
+const STANDALONE_MAINTENANCE_TYPE = "Corrective_maintenance";
+const JOB_CARD_SECTION_ID = "s8LwpQzWeNc";
+const SERIAL_ATTRIBUTE_ID = "W5SNKqBFLgb";
+function MaintenanceEvents({
+  open,
+  onClose,
+  stage,
+  program,
+  user
+}) {
+  const [loading, setLoading] = useState$X(false);
+  const [loadingMessage, setLoadingMessage] = useState$X(
+    "Fetching maintenance activities"
+  );
+  const [events, setEvents] = useState$X([]);
+  const [page, setPage] = useState$X(1);
+  const [rows, setRows] = useState$X([]);
+  const [formData, setFormData] = useState$X();
+  const [tei, setTei] = useState$X([]);
+  const [selected, setSelected] = useState$X();
+  const [section, setSection] = useState$X();
+  const [programMeta, setProgramMeta] = useState$X({ id: program, name: "" });
+  const [standaloneRequest, setStandaloneRequest] = useState$X(null);
+  const standaloneCreateRef = useRef$g(null);
+  const {
+    contextConfig,
+    selectedEquipment,
+    availableEquipment,
+    showEquipmentPicker,
+    loading: equipmentLoading,
+    error: equipmentError,
+    handleEquipmentSelect,
+    handlePickerCancel
+  } = useEquipmentContext({
+    stageId: standaloneRequest ? stage : null,
+    programId: standaloneRequest ? program : null,
+    routeEquipmentId: null,
+    resetTrigger: standaloneRequest?.timestamp
+  });
   const columns = [
     {
       key: "RiiMQRa0S8v",
@@ -65777,9 +65870,12 @@ function MaintenanceEvents({ open, onClose, stage, program, user }) {
       order: 3
     }
   ];
-  const getEvents = async () => {
-    setloading(true);
-    const sortedOrgUnits = user.organisationUnits?.sort((a, b) => a?.level - b?.level);
+  const getEvents = useCallback$j(async () => {
+    setLoading(true);
+    setLoadingMessage("Fetching maintenance activities");
+    const sortedOrgUnits = user.organisationUnits?.sort(
+      (a, b) => a?.level - b?.level
+    );
     const params = new URLSearchParams({
       program,
       order: "occurredAt:desc",
@@ -65792,40 +65888,113 @@ function MaintenanceEvents({ open, onClose, stage, program, user }) {
     });
     await dataStore.get(`tracker/events?${params}`).then(async (res) => {
       const teiIds = res.data.events.map((ev) => ev.trackedEntity);
-      const filteredEv = res.data.events.filter((e) => e.dataValues.some((dv) => dv.dataElement === "YjhRG2PMTMG") && !e.dataValues.some((dv) => dv.dataElement === "AnJ695Tt41W"));
+      const filteredEv = res.data.events.filter(
+        (e) => e.dataValues.some((dv) => dv.dataElement === "YjhRG2PMTMG") && !e.dataValues.some((dv) => dv.dataElement === JOB_CARD_NUMBER_DE_ID)
+      );
       setEvents(filteredEv);
       const uniq = [...new Set(teiIds)].join(",");
-      await dataStore.get(`tracker/trackedEntities?trackedEntities=${uniq}&fields=trackedEntity,attributes[attribute,value]`).then((re) => {
-        const tei2 = re.data.trackedEntities;
-        setTei(tei2);
-        res.data.events?.filter((e) => e);
+      await dataStore.get(
+        `tracker/trackedEntities?trackedEntities=${uniq}&fields=trackedEntity,attributes[attribute,value]`
+      ).then((re) => {
+        const teiRows = re.data.trackedEntities;
+        setTei(teiRows);
         const results = filteredEv.map((event) => {
-          const entity = tei2.find((e) => e.trackedEntity === event.trackedEntity);
+          const entity = teiRows.find(
+            (entry) => entry.trackedEntity === event.trackedEntity
+          );
           const getValue = (arr, key, keyName) => arr?.find((item) => item[keyName] === key)?.value || null;
           return {
             event: event.event,
-            "RiiMQRa0S8v": getValue(entity?.attributes, "RiiMQRa0S8v", "attribute"),
-            "EbJI5Loxjbl": getValue(event.dataValues, "EbJI5Loxjbl", "dataElement"),
-            "M074NJAYjb6": getValue(event.dataValues, "M074NJAYjb6", "dataElement")
+            RiiMQRa0S8v: getValue(
+              entity?.attributes,
+              "RiiMQRa0S8v",
+              "attribute"
+            ),
+            EbJI5Loxjbl: getValue(
+              event.dataValues,
+              MAINTENANCE_TYPE_DE_ID,
+              "dataElement"
+            ),
+            M074NJAYjb6: getValue(
+              event.dataValues,
+              REQUESTER_DE_ID,
+              "dataElement"
+            )
           };
         });
         setRows(results);
-        setloading(false);
+        setLoading(false);
       });
     });
-  };
-  const getMetadata = async () => {
+  }, [program, stage, user]);
+  const getMetadata = useCallback$j(async () => {
     await dataStore.get(`programStages/${stage}?fields=programStageSections[id,dataElements[*]]`).then((res) => {
-      const section2 = res.data.programStageSections.find((e) => e.id === "s8LwpQzWeNc");
-      setSection(section2);
+      const jobCardSection = res.data.programStageSections.find(
+        (entry) => entry.id === JOB_CARD_SECTION_ID
+      );
+      setSection(jobCardSection);
     });
-  };
+  }, [stage]);
+  const getProgramMeta = useCallback$j(async () => {
+    try {
+      const res = await dataStore.get(`programs/${program}?fields=id,name`);
+      const meta = res?.data || res;
+      if (meta?.id) {
+        setProgramMeta(meta);
+      }
+    } catch {
+      setProgramMeta({ id: program, name: "" });
+    }
+  }, [program]);
+  const buildJobCardNumber = (serialSeed) => `${serialSeed || "Equipment"}-Job-Card-${(/* @__PURE__ */ new Date()).getTime()}`;
+  const resolveStandaloneSourceValue = useCallback$j(async () => {
+    const normalize = (value) => String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    const res = await dataStore.get(
+      `dataElements/${JOB_CARD_SOURCE_DE_ID}?fields=id,optionSet[id,options[id,code,name]]`
+    );
+    const sourceField = res?.data || res;
+    const options = sourceField?.optionSet?.options || [];
+    if (!options.length) {
+      return "standalone_job_card";
+    }
+    const preferredLabels = [
+      "standalone job card",
+      "stand alone job card",
+      "without maintenance activity",
+      "one job card",
+      "job card"
+    ].map(normalize);
+    const exactMatch = options.find((option) => {
+      const code = normalize(option?.code);
+      const name = normalize(option?.name);
+      return preferredLabels.includes(code) || preferredLabels.includes(name);
+    });
+    if (exactMatch) {
+      return exactMatch.code || exactMatch.name;
+    }
+    const partialMatch = options.find((option) => {
+      const code = normalize(option?.code);
+      const name = normalize(option?.name);
+      return code.includes("job card") && !code.includes("maintenance activity") || name.includes("job card") && !name.includes("maintenance activity") || code.includes("without maintenance") || name.includes("without maintenance");
+    });
+    if (partialMatch) {
+      return partialMatch.code || partialMatch.name;
+    }
+    throw new Error(
+      `No matching option code found for ${JOB_CARD_SOURCE_DE_ID}. Available options: ${options.map((option) => option?.code || option?.name).filter(Boolean).join(", ")}`
+    );
+  }, []);
   const handleRowSelect = (row) => {
-    const event = events.find((e) => e.event === row.event);
-    console.log("Selected event:", event);
-    const tr = tei.find((t) => t.trackedEntity === event.trackedEntity);
-    console.log("Serial TEI:", tr.attributes.find((a) => a.attribute === "W5SNKqBFLgb")?.value);
-    setFormData({ "AnJ695Tt41W": `${tr.attributes.find((a) => a.attribute === "W5SNKqBFLgb")?.value}-Job-Card-${(/* @__PURE__ */ new Date()).getTime()}` });
+    const event = events.find((entry) => entry.event === row.event);
+    const trackedEntity = tei.find(
+      (entry) => entry.trackedEntity === event.trackedEntity
+    );
+    const serialNumber = trackedEntity?.attributes?.find(
+      (attribute) => attribute.attribute === SERIAL_ATTRIBUTE_ID
+    )?.value;
+    setFormData({
+      [JOB_CARD_NUMBER_DE_ID]: buildJobCardNumber(serialNumber)
+    });
     setSelected(event);
   };
   const handleChange = (fieldId, value) => {
@@ -65834,11 +66003,104 @@ function MaintenanceEvents({ open, onClose, stage, program, user }) {
       [fieldId]: value
     }));
   };
+  const createStandaloneEvent = useCallback$j(async (equipment) => {
+    const requestKey = standaloneRequest?.timestamp;
+    if (!requestKey || standaloneCreateRef.current === requestKey) {
+      return;
+    }
+    standaloneCreateRef.current = requestKey;
+    const selectedOrgUnit = equipment?.orgUnit || user?.organisationUnits?.[0]?.id;
+    if (!selectedOrgUnit || !equipment?.id) {
+      showToast("Unable to resolve the selected equipment.", "danger");
+      standaloneCreateRef.current = null;
+      return;
+    }
+    setLoading(true);
+    setLoadingMessage("Creating maintenance activity");
+    try {
+      const occurredAt = (/* @__PURE__ */ new Date()).toISOString();
+      const standaloneSourceValue = await resolveStandaloneSourceValue();
+      const seedData = {
+        [JOB_CARD_SOURCE_DE_ID]: standaloneSourceValue,
+        [MAINTENANCE_TYPE_DE_ID]: STANDALONE_MAINTENANCE_TYPE
+      };
+      if (user?.username) {
+        seedData[REQUESTER_DE_ID] = user.username;
+      }
+      const response = await CreateDataItemsController.programWithRegistrationEvent(
+        seedData,
+        [],
+        { id: program },
+        selectedOrgUnit,
+        equipment.id,
+        stage,
+        occurredAt,
+        equipment.enrollment,
+        false,
+        null,
+        { skipNotifications: true }
+      );
+      const createdEventId = response?.data?.bundleReport?.typeReportMap?.EVENT?.objectReports?.[0]?.uid;
+      if (!createdEventId) {
+        throw new Error("Failed to create maintenance activity");
+      }
+      const eventRes = await dataStore.get(
+        `tracker/events/${createdEventId}?fields=event,enrollment,occurredAt,orgUnit,trackedEntity,program,programStage,status,dataValues[dataElement,value]`
+      );
+      const createdEvent = eventRes?.data || eventRes;
+      if (!createdEvent?.event) {
+        throw new Error("Created maintenance activity could not be loaded");
+      }
+      setFormData({
+        [JOB_CARD_NUMBER_DE_ID]: buildJobCardNumber(
+          equipment.serialNumber || equipment.id
+        )
+      });
+      setSelected(createdEvent);
+      showToast("Standalone maintenance activity created.", "success");
+    } catch (error) {
+      console.error(error);
+      showToast(
+        error?.message || "Failed to generate job card without maintenance activity.",
+        "danger"
+      );
+    } finally {
+      standaloneCreateRef.current = null;
+      setLoading(false);
+      setLoadingMessage("Fetching maintenance activities");
+      setStandaloneRequest(null);
+      handlePickerCancel();
+    }
+  }, [
+    handlePickerCancel,
+    program,
+    resolveStandaloneSourceValue,
+    stage,
+    standaloneRequest,
+    user
+  ]);
   const handleSubmit = async () => {
-    setloading(true);
+    setLoading(true);
+    setLoadingMessage("Saving job card");
     try {
       if (!selected) return console.error("Event data missing");
-      const values = formData ? Object.keys(formData).map((key) => ({ dataElement: key, value: formData[key] })) : [];
+      const baseValues = new Map(
+        (selected?.dataValues || []).map((item) => [
+          item.dataElement,
+          item.value
+        ])
+      );
+      if (formData) {
+        Object.keys(formData).forEach((key) => {
+          baseValues.set(key, formData[key]);
+        });
+      }
+      const values = Array.from(baseValues.entries()).map(
+        ([dataElement, value]) => ({
+          dataElement,
+          value
+        })
+      );
       const payload = {
         event: selected?.event,
         enrollment: selected?.enrollment || null,
@@ -65851,127 +66113,209 @@ function MaintenanceEvents({ open, onClose, stage, program, user }) {
         status: "ACTIVE",
         dataValues: values
       };
-      await dataStore.post("tracker?async=false&importStrategy=UPDATE", { events: [payload] }).then(async (res) => {
+      await dataStore.post("tracker?async=false&importStrategy=UPDATE", {
+        events: [payload]
+      }).then(async (res) => {
         if (res?.status === 200) {
           showToast("Saved", "success");
         }
       });
-      {
-        setloading(false);
-        onClose();
-      }
+      setLoading(false);
+      onClose();
     } catch (err) {
       showToast(err.message || "An error occurred", "danger");
-      setloading(false);
+      setLoading(false);
       onClose();
     }
   };
   const getOptions = async (optionSet) => {
-    const opt = await dataStore.query(`optionSets/${optionSet}?fields=options[id,code,name]`);
+    const opt = await dataStore.query(
+      `optionSets/${optionSet}?fields=options[id,code,name]`
+    );
     return opt.options || [];
   };
-  useEffect$U(() => {
-  }, []);
-  useEffect$U(() => {
+  const handleStandaloneJobCard = () => {
+    setStandaloneRequest({ timestamp: Date.now() });
+  };
+  const handleStandaloneCancel = () => {
+    setStandaloneRequest(null);
+    handlePickerCancel();
+  };
+  useEffect$V(() => {
     getMetadata();
     getEvents();
-  }, [page]);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    CustomModal,
-    {
-      isOpen: open,
-      onClose,
-      height: "70%",
-      width: "70%",
-      onSave: () => {
-        if (selected && formData) {
-          handleSubmit();
-        } else {
-          if (!selected) {
+    getProgramMeta();
+  }, [getEvents, getMetadata, getProgramMeta, page]);
+  useEffect$V(() => {
+    if (!selectedEquipment || !standaloneRequest) return;
+    createStandaloneEvent(selectedEquipment);
+  }, [createStandaloneEvent, selectedEquipment, standaloneRequest]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    showEquipmentPicker && standaloneRequest && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      EquipmentPicker,
+      {
+        config: contextConfig,
+        program: programMeta,
+        user,
+        availableEquipment,
+        onSelect: handleEquipmentSelect,
+        onCancel: handleStandaloneCancel,
+        loading: equipmentLoading,
+        error: equipmentError
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CustomModal,
+      {
+        isOpen: open,
+        onClose,
+        height: "70%",
+        width: "70%",
+        showFooter: false,
+        onSave: () => {
+          if (selected && formData) {
+            handleSubmit();
+          } else if (!selected) {
             showToast("Please select a maintenance task to generate job card");
           } else {
             showToast("Data submited is invalid");
           }
-        }
-      },
-      children: loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-        IonContent,
-        {
-          className: "ion-padding",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "div",
-            {
-              style: {
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100%",
-                textAlign: "center"
-              },
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(IonSpinner, { name: "lines-sharp", color: "success" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 8 }, children: "Fetching maintenance activities" })
-              ]
-            }
-          )
-        }
-      ) : selected ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        IonContent,
-        {
-          className: "ion-padding",
-          style: { position: "relative", minHeight: 300 },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Job Card details" }) }),
-            section?.dataElements.map((de) => {
-              return /* @__PURE__ */ jsxRuntimeExports.jsx(
-                RenderField,
+        },
+        children: loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(IonContent, { className: "ion-padding", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            style: {
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100%",
+              textAlign: "center"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(IonSpinner, { name: "lines-sharp", color: "success" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: 8 }, children: loadingMessage })
+            ]
+          }
+        ) }) : selected ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            style: { display: "flex", flexDirection: "column", height: "100%" },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                IonContent,
                 {
-                  field: de,
-                  formData,
-                  handleChange,
-                  getVal: () => {
+                  className: "ion-padding",
+                  style: { position: "relative", minHeight: 300 },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: "Job Card details" }) }),
+                    section?.dataElements?.filter((de) => de.id !== JOB_CARD_SOURCE_DE_ID).map((de) => {
+                      return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        RenderField,
+                        {
+                          field: de,
+                          formData,
+                          handleChange,
+                          getVal: () => {
+                          },
+                          getOptions
+                        },
+                        de.id
+                      );
+                    })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  style: {
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    gap: 12,
+                    marginTop: 16
                   },
-                  getOptions
-                },
-                de.id
-              );
-            })
-          ]
-        }
-      ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "div",
-        {
-          style: {
-            background: "white",
-            borderRadius: 16,
-            maxHeight: "85vh",
-            height: "100%"
-          },
-          onClick: (e) => e.stopPropagation(),
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginBottom: 16 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { style: { margin: 0 }, children: "Select Maintenance activity" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: {
-              flex: 1,
-              overflowY: "auto",
-              overflowX: "hidden",
-              border: "1px solid #eee",
-              // Optional: adds definition
-              borderRadius: "8px"
-            }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              DataTable,
-              {
-                columns,
-                rows,
-                page,
-                rowClick: (r) => handleRowSelect(r)
-              }
-            ) })
-          ]
-        }
-      )
-    }
-  );
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { fill: "clear", color: "medium", onClick: () => setSelected(null), children: "Back" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { onClick: handleSubmit, children: "Submit" })
+                  ]
+                }
+              )
+            ]
+          }
+        ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            style: {
+              background: "white",
+              borderRadius: 16,
+              maxHeight: "85vh",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column"
+            },
+            onClick: (e) => e.stopPropagation(),
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginBottom: 16 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { style: { margin: 0 }, children: "Select Maintenance activity" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  style: {
+                    flex: 1,
+                    overflowY: "auto",
+                    overflowX: "hidden",
+                    border: "1px solid #eee",
+                    borderRadius: "8px"
+                  },
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    DataTable,
+                    {
+                      columns,
+                      rows,
+                      page,
+                      rowClick: (row) => handleRowSelect(row)
+                    }
+                  )
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  style: {
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    gap: 12,
+                    marginTop: 16
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { fill: "clear", color: "medium", onClick: onClose, children: "Cancel" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { fill: "outline", onClick: handleStandaloneJobCard, children: "Generate without maintenance activity" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      IonButton,
+                      {
+                        onClick: () => {
+                          if (selected && formData) {
+                            handleSubmit();
+                          } else if (!selected) {
+                            showToast(
+                              "Please select a maintenance task to generate job card"
+                            );
+                          } else {
+                            showToast("Data submited is invalid");
+                          }
+                        },
+                        children: "Submit"
+                      }
+                    )
+                  ]
+                }
+              )
+            ]
+          }
+        )
+      }
+    )
+  ] });
 }
 
 var browser$4 = {};
@@ -69385,7 +69729,7 @@ function toLowerLabel(label) {
   return raw ? raw.toLowerCase() : DEFAULT_ENTITY_LABEL.toLowerCase();
 }
 
-const {useCallback: useCallback$i,useContext: useContext$v,useEffect: useEffect$T,useMemo: useMemo$t,useState: useState$V} = await importShared('react');
+const {useCallback: useCallback$i,useContext: useContext$v,useEffect: useEffect$U,useMemo: useMemo$t,useState: useState$W} = await importShared('react');
 const BUTTON_ICON_MAP = {
   addCircleOutline,
   removeCircleOutline
@@ -69409,40 +69753,40 @@ function GeneralComponent({ programProp }) {
     MEMISContext.MenuContext
   );
   const { user } = useContext$v(MEMISContext.UserRolesContext);
-  const [workflow, setapplicableDE] = useState$V({});
+  const [workflow, setapplicableDE] = useState$W({});
   const { canModifyProgram } = usePermissions();
-  const [program, setProgram] = useState$V(null);
-  const [formActive, setFormActive] = useState$V(false);
-  const [query, setQuery] = useState$V("");
-  const [itemsData, setItemsData] = useState$V([]);
-  const [editData, setEditData] = useState$V(null);
-  const [crumbs, setCrumbs] = useState$V([]);
-  const [jobCard, setJobCard] = useState$V(false);
-  const [resolutionComplete, setResolutionComplete] = useState$V(false);
-  const [buttonConfig, setButtonConfig] = useState$V(null);
-  const [loadingButtonConfig, setLoadingButtonConfig] = useState$V(true);
-  const [postSaveQrPromptOpen, setPostSaveQrPromptOpen] = useState$V(false);
-  const [postSaveQrPreviewOpen, setPostSaveQrPreviewOpen] = useState$V(false);
-  const [postSaveQrRequest, setPostSaveQrRequest] = useState$V(null);
-  const [postSaveQrData, setPostSaveQrData] = useState$V(null);
-  const [postSaveQrPreviewUrl, setPostSaveQrPreviewUrl] = useState$V(null);
-  const [postSaveQrError, setPostSaveQrError] = useState$V("");
-  const [postSaveQrPreparing, setPostSaveQrPreparing] = useState$V(false);
-  const [qrBusy, setQrBusy] = useState$V(false);
-  const [dataStoreData, setDataStoreData] = useState$V({});
+  const [program, setProgram] = useState$W(null);
+  const [formActive, setFormActive] = useState$W(false);
+  const [query, setQuery] = useState$W("");
+  const [itemsData, setItemsData] = useState$W([]);
+  const [editData, setEditData] = useState$W(null);
+  const [crumbs, setCrumbs] = useState$W([]);
+  const [jobCard, setJobCard] = useState$W(false);
+  const [resolutionComplete, setResolutionComplete] = useState$W(false);
+  const [buttonConfig, setButtonConfig] = useState$W(null);
+  const [loadingButtonConfig, setLoadingButtonConfig] = useState$W(true);
+  const [postSaveQrPromptOpen, setPostSaveQrPromptOpen] = useState$W(false);
+  const [postSaveQrPreviewOpen, setPostSaveQrPreviewOpen] = useState$W(false);
+  const [postSaveQrRequest, setPostSaveQrRequest] = useState$W(null);
+  const [postSaveQrData, setPostSaveQrData] = useState$W(null);
+  const [postSaveQrPreviewUrl, setPostSaveQrPreviewUrl] = useState$W(null);
+  const [postSaveQrError, setPostSaveQrError] = useState$W("");
+  const [postSaveQrPreparing, setPostSaveQrPreparing] = useState$W(false);
+  const [qrBusy, setQrBusy] = useState$W(false);
+  const [dataStoreData, setDataStoreData] = useState$W({});
   const isNativeMobile = Capacitor.getPlatform() === "android" || Capacitor.getPlatform() === "ios";
-  const [isMobileView, setIsMobileView] = useState$V(() => {
+  const [isMobileView, setIsMobileView] = useState$W(() => {
     if (isNativeMobile) return true;
     return typeof window !== "undefined" ? window.innerWidth <= 600 : false;
   });
-  useEffect$T(() => {
+  useEffect$U(() => {
     if (!isNativeMobile) {
       const handleResize = () => setIsMobileView(window.innerWidth <= 600);
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
   }, [isNativeMobile]);
-  useEffect$T(() => {
+  useEffect$U(() => {
     let mounted = true;
     const loadDataStore = async () => {
       const cachedDataStore = await LocalForageServiceInstance.getItem(
@@ -69458,8 +69802,8 @@ function GeneralComponent({ programProp }) {
       mounted = false;
     };
   }, []);
-  const [pendingAction, setPendingAction] = useState$V(null);
-  const [persistedEquipment, setPersistedEquipment] = useState$V(null);
+  const [pendingAction, setPendingAction] = useState$W(null);
+  const [persistedEquipment, setPersistedEquipment] = useState$W(null);
   const {
     contextConfig,
     selectedEquipment,
@@ -69707,7 +70051,7 @@ function GeneralComponent({ programProp }) {
     }
     handleQuery("add", null, extra);
   };
-  useEffect$T(() => {
+  useEffect$U(() => {
     const params2 = new URLSearchParams(location.search);
     const q = params2.get("q");
     const refId = params2.get("ref");
@@ -69858,10 +70202,10 @@ function GeneralComponent({ programProp }) {
     } catch (error) {
     }
   };
-  useEffect$T(() => {
+  useEffect$U(() => {
     resolveProgram();
   }, [resolveProgram]);
-  useEffect$T(() => {
+  useEffect$U(() => {
     const isLoading = menuLoading || programsLoading;
     if (!isLoading && !program && resolutionComplete && menuItems !== void 0 && programs !== void 0 && !formActive) {
       navigate("/", { replace: true });
@@ -69876,7 +70220,7 @@ function GeneralComponent({ programProp }) {
     navigate,
     resolutionComplete
   ]);
-  useEffect$T(() => {
+  useEffect$U(() => {
     getProgramView();
     getWorkflow();
   }, [menuItems, programs, program]);
@@ -69889,7 +70233,7 @@ function GeneralComponent({ programProp }) {
     const key = buttonConfig?.icon;
     return (key && BUTTON_ICON_MAP[key]) ?? addCircleOutline;
   }, [buttonConfig]);
-  useEffect$T(() => {
+  useEffect$U(() => {
     if (selectedEquipment && pendingAction) {
       setPersistedEquipment(selectedEquipment);
       const extraWithEquipment = {
@@ -69983,7 +70327,7 @@ function GeneralComponent({ programProp }) {
     },
     [clearFormRouteState, clearFormUiState]
   );
-  useEffect$T(() => {
+  useEffect$U(() => {
     let cancelled = false;
     if (!postSaveQrPromptOpen || !postSaveQrRequest?.teiId || !postSaveQrRequest?.program?.id) {
       return void 0;
@@ -70452,12 +70796,12 @@ function GeneralComponent({ programProp }) {
   ] });
 }
 
-const React$J = await importShared('react');
-const {useEffect: useEffect$S,useState: useState$U} = React$J;
+const React$K = await importShared('react');
+const {useEffect: useEffect$T,useState: useState$V} = React$K;
 const Login = () => {
-  const [username, setUsername] = useState$U("");
-  const [password, setPassword] = useState$U("");
-  const [loading, setLoading] = useState$U(false);
+  const [username, setUsername] = useState$V("");
+  const [password, setPassword] = useState$V("");
+  const [loading, setLoading] = useState$V(false);
   const navigate = useNavigate();
   const { reload: reloadDataStore } = useDataStore();
   const handleLogin = async (e) => {
@@ -70498,7 +70842,7 @@ const Login = () => {
       setLoading(false);
     }
   };
-  useEffect$S(() => {
+  useEffect$T(() => {
     const userData = localStorage.getItem("memisCredentials");
     const load = async () => {
       if (userData) {
@@ -70636,7 +70980,7 @@ const stageAddButtonAccess = async (programId, stageId, userRoles) => {
   return { access: true };
 };
 
-const {useEffect: useEffect$R,useState: useState$T,useContext: useContext$u} = await importShared('react');
+const {useEffect: useEffect$S,useState: useState$U,useContext: useContext$u} = await importShared('react');
 function DeregistrationStage({
   id,
   program,
@@ -70647,16 +70991,16 @@ function DeregistrationStage({
   refreshEvents
   // Add refresh callback
 }) {
-  const [open, setOpen] = useState$T(false);
-  const [lastEventCount, setLastEventCount] = useState$T(0);
-  const [stage] = useState$T(pgStages);
-  const [evnts, setEvnts] = useState$T([]);
-  const [canAddNew, setCanAddNew] = useState$T(false);
-  const [canApprove, setCanApprove] = useState$T(false);
+  const [open, setOpen] = useState$U(false);
+  const [lastEventCount, setLastEventCount] = useState$U(0);
+  const [stage] = useState$U(pgStages);
+  const [evnts, setEvnts] = useState$U([]);
+  const [canAddNew, setCanAddNew] = useState$U(false);
+  const [canApprove, setCanApprove] = useState$U(false);
   const navigate = useNavigate();
-  const [addButton, setAddButton] = useState$T(false);
+  const [addButton, setAddButton] = useState$U(false);
   const { user } = useContext$u(MEMISContext.UserRolesContext);
-  const [equipmentState, setEquipmentState] = useState$T(null);
+  const [equipmentState, setEquipmentState] = useState$U(null);
   const fetchEquipmentState = async () => {
     try {
       const DataStore = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./index2.js');return { default: __vite_default__ }},true              ?__vite__mapDeps([2,0,1]):void 0)).default;
@@ -70670,7 +71014,7 @@ function DeregistrationStage({
       setEquipmentState(null);
     }
   };
-  useEffect$R(() => {
+  useEffect$S(() => {
     const filteredEvents = (events || [])?.filter((e) => e.programStage === stage.id);
     const sortedEvents = filteredEvents.sort((a, b) => {
       const dateA = new Date(a.occurredAt || a.createdAt);
@@ -70681,12 +71025,12 @@ function DeregistrationStage({
     setEvnts(sortedEvents);
     setLastEventCount(filteredEvents.length);
   }, [stage.id, events, lastEventCount, open]);
-  useEffect$R(() => {
+  useEffect$S(() => {
     if (id && program) {
       fetchEquipmentState();
     }
   }, [id, program, events]);
-  useEffect$R(() => {
+  useEffect$S(() => {
     let intervalId;
     if (open && refreshEvents && typeof refreshEvents === "function") {
       intervalId = setInterval(() => {
@@ -70757,7 +71101,7 @@ function DeregistrationStage({
     const res = await stageAddButtonAccess(program, stage.id, user?.userRoles);
     setAddButton(res?.access || false);
   };
-  useEffect$R(() => {
+  useEffect$S(() => {
     addNewAndApproval();
     showAddButton();
   }, []);
@@ -70848,22 +71192,22 @@ function DeregistrationStage({
   ] });
 }
 
-const {useContext: useContext$t,useEffect: useEffect$Q,useState: useState$S} = await importShared('react');
+const {useContext: useContext$t,useEffect: useEffect$R,useState: useState$T} = await importShared('react');
 function Stages({ id, program, pgStages, events, handleAddEvent, formatDate, refreshEvents }) {
-  const [open, setOpen] = useState$S(false);
-  const [stage] = useState$S(pgStages);
-  const [evnts, setEvnts] = useState$S([]);
-  const [addButton, setAddButton] = useState$S(false);
+  const [open, setOpen] = useState$T(false);
+  const [stage] = useState$T(pgStages);
+  const [evnts, setEvnts] = useState$T([]);
+  const [addButton, setAddButton] = useState$T(false);
   const navigate = useNavigate();
   const { user } = useContext$t(MEMISContext.UserRolesContext);
-  useEffect$Q(() => {
+  useEffect$R(() => {
     setEvnts((events || [])?.filter((e) => e.programStage === stage.id));
   }, [stage.id, events]);
   const showAddButton = async () => {
     const res = await stageAddButtonAccess(program, stage.id, user?.userRoles);
     setAddButton(res?.access || false);
   };
-  useEffect$Q(() => {
+  useEffect$R(() => {
     showAddButton();
   }, [open]);
   if (isDeregistrationStage(stage.id, stage.name)) {
@@ -73219,24 +73563,24 @@ await importShared('react');
 
 const {useContext: useContext$r} = await importShared('react');
 
-const {useState: useState$R,useEffect: useEffect$P,useRef: useRef$e,useDebugValue: useDebugValue$1} = await importShared('react');
+const {useState: useState$S,useEffect: useEffect$Q,useRef: useRef$f,useDebugValue: useDebugValue$1} = await importShared('react');
 
-const {useState: useState$Q,useCallback: useCallback$g,useRef: useRef$d,useEffect: useEffect$O} = await importShared('react');
+const {useState: useState$R,useCallback: useCallback$g,useRef: useRef$e,useEffect: useEffect$P} = await importShared('react');
 
 const {useCallback: useCallback$f} = await importShared('react');
 
-const {useState: useState$P,useRef: useRef$c,useCallback: useCallback$e,useDebugValue} = await importShared('react');
+const {useState: useState$Q,useRef: useRef$d,useCallback: useCallback$e,useDebugValue} = await importShared('react');
 
 await importShared('react');
 
 await importShared('react');
 
-const React$I = await importShared('react');
-const {useState: useState$O} = React$I;
+const React$J = await importShared('react');
+const {useState: useState$P} = React$J;
 
 const {useContext: useContext$q} = await importShared('react');
 
-const {useContext: useContext$p,useRef: useRef$b,useCallback: useCallback$d} = await importShared('react');
+const {useContext: useContext$p,useRef: useRef$c,useCallback: useCallback$d} = await importShared('react');
 
 var propTypes = {exports: {}};
 
@@ -76486,15 +76830,15 @@ function requireIsEqual () {
 
 requireIsEqual();
 
-const React$H = await importShared('react');
-const {useEffect: useEffect$N,useCallback: useCallback$c,useContext: useContext$o,useState: useState$N,useMemo: useMemo$r} = React$H;
+const React$I = await importShared('react');
+const {useEffect: useEffect$O,useCallback: useCallback$c,useContext: useContext$o,useState: useState$O,useMemo: useMemo$r} = React$I;
 ({
   children: PropTypes.node,
   store: PropTypes.shape({})
 });
 
-const React$G = await importShared('react');
-const {createContext,useContext: useContext$n} = React$G;
+const React$H = await importShared('react');
+const {createContext,useContext: useContext$n} = React$H;
 ({
   children: PropTypes.node,
   offlineInterface: PropTypes.shape({
@@ -76502,8 +76846,8 @@ const {createContext,useContext: useContext$n} = React$G;
   })
 });
 
-const React$F = await importShared('react');
-const {useEffect: useEffect$M,useCallback: useCallback$b,useMemo: useMemo$q} = React$F;
+const React$G = await importShared('react');
+const {useEffect: useEffect$N,useCallback: useCallback$b,useMemo: useMemo$q} = React$G;
 ({
   children: PropTypes.node
 });
@@ -93726,14 +94070,14 @@ if (shouldLog) {
 
 const {useCallback: useCallback$a} = await importShared('react');
 
-const React$E = await importShared('react');
-const {useCallback: useCallback$9,useState: useState$M,useRef: useRef$a,useMemo: useMemo$p,useEffect: useEffect$L,useContext: useContext$m} = React$E;
+const React$F = await importShared('react');
+const {useCallback: useCallback$9,useState: useState$N,useRef: useRef$b,useMemo: useMemo$p,useEffect: useEffect$M,useContext: useContext$m} = React$F;
 ({
   children: PropTypes.node
 });
 
-const React$D = await importShared('react');
-const {useContext: useContext$l,useState: useState$L} = React$D;
+const React$E = await importShared('react');
+const {useContext: useContext$l,useState: useState$M} = React$E;
 
 await importShared('react');
 ({
@@ -93743,8 +94087,8 @@ await importShared('react');
   })
 });
 
-const React$C = await importShared('react');
-const {useCallback: useCallback$8,useEffect: useEffect$K,useMemo: useMemo$o} = React$C;
+const React$D = await importShared('react');
+const {useCallback: useCallback$8,useEffect: useEffect$L,useMemo: useMemo$o} = React$D;
 
 const {flushSync} = await importShared('react-dom');
 ({
@@ -94155,48 +94499,48 @@ function requireDebounce () {
 
 requireDebounce();
 
-const {useState: useState$K,useEffect: useEffect$J,useCallback: useCallback$7,useMemo: useMemo$n} = await importShared('react');
+const {useState: useState$L,useEffect: useEffect$K,useCallback: useCallback$7,useMemo: useMemo$n} = await importShared('react');
 
 await importShared('react');
 
-const {useEffect: useEffect$I,useMemo: useMemo$m,useState: useState$J,useRef: useRef$9} = await importShared('react');
+const {useEffect: useEffect$J,useMemo: useMemo$m,useState: useState$K,useRef: useRef$a} = await importShared('react');
 const {createPortal: createPortal$2} = await importShared('react-dom');
 function TrackerPgStages() {
   const { program, id } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
-  const [crumbs, setCrumbs] = useState$J([]);
-  const [showActions, setShowActions] = useState$J(false);
-  const [printOpen, setPrintOpen] = useState$J(false);
-  const canvasRef = useRef$9(null);
-  const [qrBusy, setQrBusy] = useState$J(false);
-  const [qrDataUrl, setQrDataUrl] = useState$J(null);
-  const [ev, setEvents] = useState$J([]);
-  const [tei, setTei] = useState$J({});
-  const [orgUnit, setOrgUnit] = useState$J(null);
-  const [primaryAttr, setPrimaryAttr] = useState$J(null);
-  const [listAttrs, setListAttrs] = useState$J([]);
-  const [pgStages, setPgStages] = useState$J([]);
-  const [attrWithOpt, setWithOpt] = useState$J([]);
-  const [options, setOptions] = useState$J([]);
-  const [qrCodeValuesToDisplay, setQRCodeValuesToDisplay] = useState$J([]);
-  const [showAllAttributes, setShowAllAttributes] = useState$J(false);
-  const [filePreviewOpen, setFilePreviewOpen] = useState$J(false);
-  const [selectedFile, setSelectedFile] = useState$J({
+  const [crumbs, setCrumbs] = useState$K([]);
+  const [showActions, setShowActions] = useState$K(false);
+  const [printOpen, setPrintOpen] = useState$K(false);
+  const canvasRef = useRef$a(null);
+  const [qrBusy, setQrBusy] = useState$K(false);
+  const [qrDataUrl, setQrDataUrl] = useState$K(null);
+  const [ev, setEvents] = useState$K([]);
+  const [tei, setTei] = useState$K({});
+  const [orgUnit, setOrgUnit] = useState$K(null);
+  const [primaryAttr, setPrimaryAttr] = useState$K(null);
+  const [listAttrs, setListAttrs] = useState$K([]);
+  const [pgStages, setPgStages] = useState$K([]);
+  const [attrWithOpt, setWithOpt] = useState$K([]);
+  const [options, setOptions] = useState$K([]);
+  const [qrCodeValuesToDisplay, setQRCodeValuesToDisplay] = useState$K([]);
+  const [showAllAttributes, setShowAllAttributes] = useState$K(false);
+  const [filePreviewOpen, setFilePreviewOpen] = useState$K(false);
+  const [selectedFile, setSelectedFile] = useState$K({
     fileId: null,
     fileName: null,
     valueType: null
   });
-  const [activeEnrollmentId, setActiveEnrollmentId] = useState$J(null);
-  const [pendingDelete, setPendingDelete] = useState$J(false);
-  const [deleting, setDeleting] = useState$J(false);
-  const [selectedStageId, setSelectedStageId] = useState$J("");
-  const [selectedStage, setSelectedStage] = useState$J({});
-  const [selectedProgram, setSelectedProgram] = useState$J({});
-  const [query, setQuery] = useState$J("");
-  const [formActive, setFormActive] = useState$J(false);
-  const [editData, setEditData] = useState$J(null);
-  const [resolvedPamAttributeId, setResolvedPamAttributeId] = useState$J("");
+  const [activeEnrollmentId, setActiveEnrollmentId] = useState$K(null);
+  const [pendingDelete, setPendingDelete] = useState$K(false);
+  const [deleting, setDeleting] = useState$K(false);
+  const [selectedStageId, setSelectedStageId] = useState$K("");
+  const [selectedStage, setSelectedStage] = useState$K({});
+  const [selectedProgram, setSelectedProgram] = useState$K({});
+  const [query, setQuery] = useState$K("");
+  const [formActive, setFormActive] = useState$K(false);
+  const [editData, setEditData] = useState$K(null);
+  const [resolvedPamAttributeId, setResolvedPamAttributeId] = useState$K("");
   const pamAttributeIdFromProgram = useMemo$m(() => {
     const attrs = selectedProgram?.programTrackedEntityAttributes || [];
     const hit = attrs.find((progAttr) => {
@@ -94267,11 +94611,11 @@ function TrackerPgStages() {
     } catch (e) {
     }
   };
-  useEffect$I(() => {
+  useEffect$J(() => {
     getAttr(program);
     getTEI(id, program);
   }, [program, id]);
-  useEffect$I(() => {
+  useEffect$J(() => {
     let cancelled = false;
     (async () => {
       const idFromConfig = await resolvePamAssetAttributeId(program);
@@ -94400,7 +94744,7 @@ function TrackerPgStages() {
     } catch (error) {
     }
   };
-  useEffect$I(() => {
+  useEffect$J(() => {
     const params = new URLSearchParams(location.search);
     const page = params.get("page");
     const stage = params.get("stage");
@@ -94448,7 +94792,7 @@ function TrackerPgStages() {
       setEditData(null);
     }
   }, [location.search, pgStages, ev]);
-  useEffect$I(() => {
+  useEffect$J(() => {
     if (!printOpen) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -94619,7 +94963,7 @@ function TrackerPgStages() {
       return error;
     }
   };
-  useEffect$I(() => {
+  useEffect$J(() => {
     if (!tei?.trackedEntity || !selectedProgram?.id) return;
     const breadcrumbs = buildProgramBreadcrumbs(selectedProgram, [
       {
@@ -95344,8 +95688,8 @@ const loadDataStore = async (key) => {
 
 const loadFlowRules$1 = () => loadDataStore("flowRules");
 
-const React$B = await importShared('react');
-const {useEffect: useEffect$H,useMemo: useMemo$l,useState: useState$I} = React$B;
+const React$C = await importShared('react');
+const {useEffect: useEffect$I,useMemo: useMemo$l,useState: useState$J} = React$C;
 const loadFlowRules = async () => {
   try {
     let data = await LocalForageServiceInstance.getItem("dataStore", "dataStore");
@@ -95372,18 +95716,18 @@ function ApproveModal({
   statusFieldId,
   statusOptions = {}
 }) {
-  const [fields, setFields] = useState$I([]);
-  const [formData, setFormData] = useState$I({});
-  const [loading, setLoading] = useState$I(true);
-  const [saving, setSaving] = useState$I(false);
-  const [error, setError] = useState$I(null);
-  const [openModal, setOpenModal] = useState$I(false);
-  const [visibleFields, setVisibleFields] = useState$I([]);
-  const [hideApprovalButton, setHideApprovalButton] = useState$I(false);
-  const [hideCheckDone, setHideCheckDone] = useState$I(false);
-  const [activeActionConfig, setActiveActionConfig] = useState$I(null);
-  const [equipmentNameOptionMap, setEquipmentNameOptionMap] = useState$I({});
-  useEffect$H(() => {
+  const [fields, setFields] = useState$J([]);
+  const [formData, setFormData] = useState$J({});
+  const [loading, setLoading] = useState$J(true);
+  const [saving, setSaving] = useState$J(false);
+  const [error, setError] = useState$J(null);
+  const [openModal, setOpenModal] = useState$J(false);
+  const [visibleFields, setVisibleFields] = useState$J([]);
+  const [hideApprovalButton, setHideApprovalButton] = useState$J(false);
+  const [hideCheckDone, setHideCheckDone] = useState$J(false);
+  const [activeActionConfig, setActiveActionConfig] = useState$J(null);
+  const [equipmentNameOptionMap, setEquipmentNameOptionMap] = useState$J({});
+  useEffect$I(() => {
     let cancelled = false;
     const loadOptionMap = async () => {
       try {
@@ -95457,6 +95801,8 @@ function ApproveModal({
         (pg) => pg?.programId === program?.id
       );
       const actionConfig = result?.programApprovalActions?.find(
+        (action) => action?.programId === program?.id && action?.type === "MAX_QUANTITY"
+      ) || result?.programApprovalActions?.find(
         (action) => action?.programId === program?.id
       );
       setActiveActionConfig(actionConfig);
@@ -95988,10 +96334,10 @@ function ApproveModal({
     });
     return initial;
   };
-  useEffect$H(() => {
+  useEffect$I(() => {
     getFields();
   }, []);
-  useEffect$H(() => {
+  useEffect$I(() => {
     if (openModal && fields.length > 0) {
       const initial = prefillFromEvent(fields, event);
       const approvedField = fields.find((f) => f.valueType === "BOOLEAN");
@@ -96035,7 +96381,7 @@ function ApproveModal({
     setFormData(nextData);
     setVisibleFields(Array.from(nextVisible));
   };
-  useEffect$H(() => {
+  useEffect$I(() => {
     setHideCheckDone(false);
     evaluateHideApprovalForRequester();
   }, [program?.id, event?.event]);
@@ -96195,7 +96541,7 @@ const getAvailableEquipmentCount = async (event) => {
     }
 };
 
-const {useEffect: useEffect$G,useRef: useRef$8} = await importShared('react');
+const {useEffect: useEffect$H,useRef: useRef$9} = await importShared('react');
 
 const AllocationCustomModal = ({
   isOpen,
@@ -96210,7 +96556,7 @@ const AllocationCustomModal = ({
   showFooter = true,
   showCloseButton = true
 }) => {
-  useEffect$G(() => {
+  useEffect$H(() => {
     const handleClick = (e) => {
       const path = e.composedPath?.() || [];
       for (let el of path) {
@@ -96262,6 +96608,142 @@ const AllocationCustomModal = ({
   );
 };
 
+const React$B = await importShared('react');
+const {useEffect: useEffect$G,useRef: useRef$8,useState: useState$I} = React$B;
+const A$6 = (x) => Array.isArray(x) ? x : [];
+function MultiSelectField({
+  field,
+  equipmentOptions,
+  formData,
+  handleChange,
+  maxSelectQuantity
+}) {
+  const selectRef = useRef$8(null);
+  const selectAllBtnRef = useRef$8(null);
+  const [isRemounting, setIsRemounting] = useState$I(false);
+  const optionsList = equipmentOptions[field?.id] || [];
+  const currentSelected = A$6(formData[field?.id]);
+  const selectableCount = maxSelectQuantity !== null ? Math.min(maxSelectQuantity, optionsList.length) : optionsList.length;
+  const allSelected = optionsList.length > 0 && currentSelected.length === selectableCount && optionsList.slice(0, selectableCount).every((opt) => currentSelected.includes(opt?.trackedEntity));
+  useEffect$G(() => {
+    if (!isRemounting && selectRef.current && currentSelected.length > 0) {
+      selectRef.current.value = [...currentSelected];
+    }
+  }, [isRemounting]);
+  useEffect$G(() => {
+    if (isRemounting) {
+      const t = setTimeout(() => setIsRemounting(false), 0);
+      return () => clearTimeout(t);
+    }
+  }, [isRemounting]);
+  const handleSelectAll = () => {
+    const toSelect = allSelected ? [] : optionsList.slice(0, selectableCount).map((o) => o?.trackedEntity);
+    handleChange(field.id, toSelect);
+    setIsRemounting(true);
+  };
+  useEffect$G(() => {
+    const btn = selectAllBtnRef.current;
+    if (!btn) return;
+    btn.addEventListener("click", handleSelectAll);
+    return () => btn.removeEventListener("click", handleSelectAll);
+  }, [allSelected, optionsList, selectableCount]);
+  const handleManualChange = (newVal) => {
+    let filtered = A$6(newVal).filter((v) => v !== "no-equipment");
+    if (filtered.length > selectableCount) {
+      filtered = filtered.slice(0, selectableCount);
+      showToast(
+        `Maximum ${selectableCount} item${selectableCount > 1 ? "s" : ""} can be selected`,
+        "warning"
+      );
+      handleChange(field.id, filtered);
+      setIsRemounting(true);
+      return;
+    }
+    handleChange(field.id, filtered);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { className: "ion-margin-bottom", position: "stacked", children: [
+        field?.name || field?.id,
+        currentSelected.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "span",
+          {
+            style: {
+              fontWeight: "normal",
+              color: "var(--ion-color-primary)",
+              marginLeft: 8,
+              fontSize: "0.85rem"
+            },
+            children: [
+              "(",
+              currentSelected.length,
+              maxSelectQuantity !== null ? ` / ${selectableCount}` : "",
+              " selected)"
+            ]
+          }
+        )
+      ] }),
+      !isRemounting && /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IonSelect,
+        {
+          ref: selectRef,
+          className: "ion-margin-top",
+          interface: "alert",
+          fill: "outline",
+          value: currentSelected,
+          multiple: true,
+          style: { zIndex: 30 },
+          placeholder: "Select",
+          onIonChange: (e) => handleManualChange(e.detail.value),
+          children: optionsList.length > 0 ? optionsList.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsxs(IonSelectOption, { value: opt?.trackedEntity, children: [
+            opt?.attributes?.find((a) => a?.attribute === field.valueSearchKey)?.value || opt?.trackedEntity,
+            " | ",
+            opt?.attributes?.find((a) => a?.attribute === field?.valueIdentifier)?.value || ""
+          ] }, opt?.trackedEntity)) : /* @__PURE__ */ jsxRuntimeExports.jsx(IonSelectOption, { disabled: true, value: "no-equipment", children: "No registered equipment found, cannot allocate." })
+        }
+      )
+    ] }),
+    optionsList.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        style: {
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
+          padding: "4px 16px"
+        },
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              ref: selectAllBtnRef,
+              type: "button",
+              style: {
+                background: "none",
+                border: "none",
+                color: "var(--ion-color-primary)",
+                cursor: "pointer",
+                fontSize: "0.875rem",
+                fontWeight: "500",
+                padding: "4px 8px",
+                borderRadius: "4px"
+              },
+              children: allSelected ? "Deselect All" : "Select All"
+            }
+          ),
+          maxSelectQuantity !== null && /* @__PURE__ */ jsxRuntimeExports.jsxs(IonText, { color: "medium", style: { fontSize: "0.8rem" }, children: [
+            "(max ",
+            selectableCount,
+            " of ",
+            optionsList.length,
+            " available)"
+          ] })
+        ]
+      }
+    )
+  ] });
+}
+
 const React$A = await importShared('react');
 const {useContext: useContext$k,useEffect: useEffect$F,useState: useState$H} = React$A;
 const A$5 = (x) => Array.isArray(x) ? x : [];
@@ -96291,6 +96773,7 @@ function AllocateEquipmentModal({
   const [targetProgram, setTargetProgram] = useState$H(null);
   const [equipmentOptions, setEquipmentOptions] = useState$H({});
   const [programDataTEI, setProgramDataTEI] = useState$H([]);
+  const [maxSelectQuantity, setMaxSelectQuantity] = useState$H(null);
   const { userOrganisationUnits } = useContext$k(MEMISContext.UserContext);
   _store.fields = fields;
   _store.targetProgram = targetProgram;
@@ -96311,6 +96794,16 @@ function AllocateEquipmentModal({
       const data = result?.allocationProcesses?.programAllocationFields?.find(
         (pg) => pg?.programId === program?.id
       );
+      const selectAllCfg = result?.allocationSelectAll?.allocationSelectAll;
+      if (selectAllCfg?.programId === program?.id && selectAllCfg?.quantityFieldId) {
+        const qtyValue = event?.dataValues?.find(
+          (d) => d?.dataElement === selectAllCfg.quantityFieldId
+        )?.value;
+        const parsed = qtyValue !== void 0 ? Number(qtyValue) : null;
+        setMaxSelectQuantity(!isNaN(parsed) && parsed > 0 ? parsed : null);
+      } else {
+        setMaxSelectQuantity(null);
+      }
       if (data) {
         const equipment = await getAvailableEquipmentCount(event);
         const teis = equipment?.equipment || [];
@@ -96438,6 +96931,7 @@ function AllocateEquipmentModal({
     setEquipmentOptions({});
     setError(null);
     setOpenModal(false);
+    setMaxSelectQuantity(null);
   };
   useEffect$F(() => {
     if (openModal) {
@@ -96446,7 +96940,6 @@ function AllocateEquipmentModal({
   }, [openModal]);
   const renderField = (field) => {
     const type = field?.valueType;
-    const value = _store.formData?.[field?.id] ?? "";
     switch (type) {
       case "BOOLEAN":
         return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ion-w-full", children: [
@@ -96525,39 +97018,18 @@ function AllocateEquipmentModal({
             field?.id
           )
         ] }, field?.id);
-      case "MULTI_TEXT": {
-        const optionsList = equipmentOptions[field?.id] || [];
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { className: "ion-margin-bottom", position: "stacked", children: field?.name || field?.id }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            IonSelect,
-            {
-              className: "ion-margin-top",
-              interface: "alert",
-              fill: "outline",
-              value: A$5(value),
-              multiple: true,
-              style: { zIndex: 30 },
-              placeholder: "Select",
-              onIonChange: (e) => handleChange(field.id, e.detail.value),
-              children: optionsList.length > 0 ? optionsList.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                IonSelectOption,
-                {
-                  value: opt?.trackedEntity,
-                  style: { zIndex: 30 },
-                  children: [
-                    opt?.attributes?.find((a) => a?.attribute === field.valueSearchKey)?.value || opt?.trackedEntity,
-                    " | ",
-                    opt?.attributes?.find((a) => a?.attribute === field?.valueIdentifier)?.value || ""
-                  ]
-                },
-                opt?.trackedEntity
-              )) : /* @__PURE__ */ jsxRuntimeExports.jsx(IonSelectOption, { disabled: true, value: "no-equipment", children: "No registered equipment found, cannot allocate." })
-            },
-            field?.id
-          )
-        ] }, field?.id);
-      }
+      case "MULTI_TEXT":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(
+          MultiSelectField,
+          {
+            field,
+            equipmentOptions,
+            formData,
+            handleChange,
+            maxSelectQuantity
+          },
+          field?.id
+        );
       default:
         return null;
     }
@@ -97513,6 +97985,46 @@ function CollectionModal({
               notificationError
             );
           }
+        }
+        const reqSpares = await LocalForageServiceInstance.getItem(
+          "dataStore",
+          "dataStore"
+        );
+        const now = (/* @__PURE__ */ new Date()).toISOString();
+        const requestedSparePart = reqSpares?.requestedSparePart;
+        if (program?.id === requestedSparePart?.programId) {
+          const selectedSpareParts = payload?.dataValues?.find(
+            (sp) => sp?.dataElement === requestedSparePart?.allocatedSparesFieldId
+          );
+          const programUID = requestedSparePart?.programAllocationId;
+          const selectedSpare = await dataStore.get(
+            `tracker/trackedEntities/${sparePartSelectedId}?program=${programUID}&fields=orgUnit,trackedEntity,attributes,enrollments`
+          );
+          const valuess = [
+            {
+              dataElement: requestedSparePart?.quantityCollected,
+              value: formData[requestedSparePart?.quantityCollected]
+            },
+            {
+              dataElement: requestedSparePart?.dispatcher,
+              value: formData[requestedSparePart?.dispatcher]
+            }
+          ];
+          const sparePartPayload = {
+            enrollment: selectedSpare?.data?.enrollments[0]?.enrollment,
+            programStage: requestedSparePart?.programAllocationStageId,
+            program: programUID,
+            orgUnit: selectedSpare?.data?.orgUnit,
+            eventDate: now,
+            occurredAt: now,
+            trackedEntity: selectedSpare?.data?.trackedEntity,
+            status: "ACTIVE",
+            dataValues: valuess
+          };
+          const result = await dataStore.post(
+            "tracker?async=false&importStrategy=CREATE",
+            { events: [sparePartPayload] }
+          );
         }
         onClose?.();
         await getEventDetails?.(event?.event);
@@ -143299,6 +143811,24 @@ function EventPage() {
     openApprovalButtonWhenInNoFlowRules,
     setOpenApprovalButtonWhenInNoFlowRules
   ] = useState$z(false);
+  const [filePreviewOpen, setFilePreviewOpen] = useState$z(false);
+  const [selectedFile, setSelectedFile] = useState$z({
+    fileId: null,
+    fileName: null,
+    valueType: null,
+    eventId: null,
+    dataElementId: null
+  });
+  const handleFilePreview = (fileId, valueType, dataElementId, fileName) => {
+    setSelectedFile({
+      fileId,
+      fileName: fileName || "File",
+      valueType,
+      eventId,
+      dataElementId
+    });
+    setFilePreviewOpen(true);
+  };
   const getUser = async () => {
     const me = await LocalForageServiceInstance.getItem("userRes", "user");
     setUser(me);
@@ -144373,9 +144903,38 @@ function EventPage() {
                     }
                   } catch {
                   }
+                  const isFileType = de?.valueType === "FILE_RESOURCE" || de?.valueType === "IMAGE";
                   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { marginBottom: 18 }, children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "form-field-label", children: de?.formName || de?.displayName || de?.name || de?.id }),
-                    isWardMap ? /* @__PURE__ */ jsxRuntimeExports.jsx(WardParticipantsDisplay, { value: rawValue }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "form-field-value", children: displayVal$1(rawValue) })
+                    isWardMap ? /* @__PURE__ */ jsxRuntimeExports.jsx(WardParticipantsDisplay, { value: rawValue }) : isFileType && rawValue && rawValue !== "N/A" ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      IonButton,
+                      {
+                        fill: "clear",
+                        size: "small",
+                        onClick: () => handleFilePreview(rawValue, de?.valueType, de?.id, de?.formName || de?.name),
+                        style: {
+                          textTransform: "none",
+                          padding: 0,
+                          margin: 0,
+                          height: "auto",
+                          "--padding-start": "0",
+                          "--padding-end": "0"
+                        },
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "strong",
+                          {
+                            style: {
+                              color: "var(--ion-color-primary)",
+                              textDecoration: "underline"
+                            },
+                            children: [
+                              "View ",
+                              de?.valueType === "IMAGE" ? "Image" : "File"
+                            ]
+                          }
+                        )
+                      }
+                    ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "form-field-value", children: displayVal$1(rawValue) })
                   ] }, de?.id);
                 }),
                 section?.id === allocationSection && allocationsUserRoles?.userRoles?.find(
@@ -144426,7 +144985,20 @@ function EventPage() {
           getEventDetails
         }
       )
-    ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      FilePreviewModal,
+      {
+        isOpen: filePreviewOpen,
+        onClose: () => setFilePreviewOpen(false),
+        fileId: selectedFile.fileId,
+        fileName: selectedFile.fileName,
+        valueType: selectedFile.valueType,
+        eventId: selectedFile.eventId,
+        dataElementId: selectedFile.dataElementId,
+        programId: event?.program
+      }
+    )
   ] });
 }
 
@@ -149127,45 +149699,33 @@ const hideAcknowledgeButton = async (allocationData) => {
   try {
     const data = await LocalForageServiceInstance.getItem("dataStore", "dataStore");
     if (!data || !data?.prefillReceiverNameEquipment)
-      return {
-        showButton: true,
-      };
+      return { showButton: true };
+
     const task = data?.prefillReceiverNameEquipment;
 
     if (allocationData?.program !== task?.programId)
-      return {
-        showButton: true,
-      };
+      return { showButton: true };
 
     const source = allocationData?.dataValues?.find(
-      (f) => f.dataElement === task?.sourceId
+        (f) => f.dataElement === task?.sourceId
     );
 
     const target = allocationData?.dataValues?.find(
-      (f) => f.dataElement === task?.targetId
+        (f) => f.dataElement === task?.targetId
     );
 
-    if (!target)
-      return {
-        showButton: true,
-      };
-    if (
-      target?.value.trim() === "" ||
-      target?.value === null ||
-      target?.value === undefined
-    ) {
-      return {
-        showButton: true,
-      };
-    } else {
-      return {
-        showButton: false,
-      };
-    }
+    // Collection not yet done — hide
+    if (!source?.value || source.value.trim() === "")
+      return { showButton: false };
+
+    // Already acknowledged (target pre-filled) — hide
+    if (target?.value && target.value.trim() !== "")
+      return { showButton: false };
+
+    // Collected but not yet acknowledged — show
+    return { showButton: true };
   } catch (error) {
-    return {
-      showButton: true,
-    };
+    return { showButton: true };
   }
 };
 
@@ -149472,6 +150032,8 @@ function Schedule({
 
 const React$a = await importShared('react');
 const {useContext: useContext$9,useEffect: useEffect$c,useState: useState$d} = React$a;
+const normalizeFieldLabel = (field) => String(field?.formName || field?.name || "").trim().toLowerCase();
+const isFalseLike = (value) => String(value ?? "").trim().toLowerCase() === "false";
 function JobCardGenerate({
   event,
   section,
@@ -149536,6 +150098,19 @@ function JobCardGenerate({
   useEffect$c(() => {
     setDataElements(section?.dataElements.filter((de) => elements.some((el) => el === de.id)));
   }, [openModal]);
+  const shouldRenderField = (field) => {
+    const label = normalizeFieldLabel(field);
+    if (label !== "comments on equipment") return true;
+    const functionField = dataElements.find(
+      (de) => normalizeFieldLabel(de) === "function"
+    );
+    const safetyField = dataElements.find(
+      (de) => normalizeFieldLabel(de) === "safety"
+    );
+    const functionValue = formData?.[functionField?.id] ?? getVal(functionField?.id);
+    const safetyValue = formData?.[safetyField?.id] ?? getVal(safetyField?.id);
+    return isFalseLike(functionValue) || isFalseLike(safetyValue);
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { onClick: () => setOpenModal(true), children: "Generate Job card" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -149559,6 +150134,9 @@ function JobCardGenerate({
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { children: section.name }) }),
               dataElements.map((de) => {
+                if (!shouldRenderField(de)) {
+                  return null;
+                }
                 if (getVal("EbJI5Loxjbl") === "Corrective_maintenance" && de.id === "rq944zY0g89") {
                   return null;
                 }
@@ -264475,9 +265053,9 @@ const MessageView = () => {
   const params = new URLSearchParams(location.search);
   const initialQuery = params.get("q") || "";
   const [search, setSearch] = useState$6(initialQuery);
-  const fetchMessages = async () => {
+  const fetchMessages = async (showLoading = true) => {
     try {
-      setLoading(true);
+      if (showLoading) setLoading(true);
       const data = await dataStore.get(
         `messageConversations?fields=id,subject,messages[id,text,created,sender[id,name]],messageType,read,lastUpdated&filter=messageType:eq:PRIVATE&paging=false`
       );
@@ -264537,6 +265115,12 @@ const MessageView = () => {
   useEffect$5(() => {
     fetchMessages();
   }, [location.search]);
+  useEffect$5(() => {
+    const intervalId = setInterval(() => {
+      fetchMessages(false);
+    }, 6e4);
+    return () => clearInterval(intervalId);
+  }, []);
   useEffect$5(() => {
     const params2 = new URLSearchParams(location.search);
     const q = params2.get("q") || "";
