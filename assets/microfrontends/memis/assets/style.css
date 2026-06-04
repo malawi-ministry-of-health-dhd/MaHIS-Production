@@ -2447,6 +2447,10 @@ body {
 .charts-dashboard:hover{
   background-color: #f2f2f2;
   cursor: pointer;
+}
+.rowCss:hover {
+  cursor: pointer;
+  background-color: rgb(231, 231, 231);
 }.new-btn {
   --background: green;         /* button background color */
   --background-hover: #006400; /* darker green on hover */

@@ -1,6 +1,6 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/LocalForageService.js","assets/_commonjsHelpers.js","assets/index2.js","assets/index.es.js"])))=>i.map(i=>d[i]);
 import { importShared } from './__federation_fn_import.js';
-import { u as useLocation, f as useNavigate, i as icons, j as jsxRuntimeExports, I as IonMenuToggle, g as IonItem, h as IonIcon, k as IonLabel, _ as __vitePreload, l as IonRefresher, m as IonRefresherContent, n as isPlatform, M as MEMISContext, o as IonMenu, p as IonHeader, q as IonToolbar, t as IonTitle, L as Link$1, v as IonContent, w as IonList, x as home, y as IonAccordionGroup, z as IonAccordion, A as albumsOutline, e as setActiveProgramCookie, C as settingsSharp, E as IonButtons, F as IonMenuButton, G as IonButton, H as mailOutline, J as notificationsOutline, K as IonBadge, N as personCircleOutline, Q as logOutOutline, R as showToast, V as Outlet, W as chevronDownOutline, X as searchOutline, Y as checkmarkOutline, Z as closeCircle, $ as IonGrid, a0 as IonRow, a1 as IonCol, a2 as chevronUpOutline, a3 as IonInput, a4 as IonRadioGroup, a5 as IonRadio, a6 as IonCard, a7 as IonCardContent, a8 as warningOutline, a9 as constructOutline, aa as arrowForward, ab as chevronForwardOutline, ac as IonPage, S as SuspenseLoader, ad as metadataInit, r as renderListByUserRole, ae as hardwareChipOutline, af as closeOutline, ag as settingsOutline, ah as addOutline, ai as y$3, s as sendNotification, aj as IonSpinner, ak as close, d as documentText, al as imageOutline, am as document$1, an as alertCircleOutline, ao as IonText, ap as arrowBackCircleOutline, aq as chevronBackOutline, ar as saveOutline, as as IonLoading, at as IonCheckbox, au as IonPopover, av as IonDatetime, aw as IonTextarea, ax as IonCardHeader, ay as IonCardTitle, az as useSearchParams, aA as ellipsisVertical, aB as arrowUp, aC as arrowDown, aD as removeOutline, aE as IonModal, aF as IonSearchbar, aG as filterOutline, aH as qrCodeOutline, aI as IonSelect, aJ as IonSelectOption, aK as api, aL as businessOutline, aM as usePermissions, aN as removeCircleOutline, aO as addCircleOutline, aP as useDataStore, aQ as IonInputPasswordToggle, aR as checkmarkDoneOutline, aS as timeOutline, aT as createOutline, aU as IonBreadcrumbs, aV as IonBreadcrumb, aW as chevronForward, aX as useParams, aY as IonAvatar, aZ as IonActionSheet, P as PROGRAMS_FIELDS, a_ as IonFooter, a$ as downloadOutline, b0 as eyeOutline, b1 as printOutline, b2 as IonCardSubtitle, b3 as PROGRAM_STAGES_FIELDS, b4 as informationCircleOutline, b5 as homeOutline, b6 as arrowBackOutline, b7 as trash, b8 as IonAlert, b9 as addCircle, ba as refresh, bb as eye, bc as useIonToast, bd as IonToggle, be as IonTabs, bf as IonTabBar, bg as IonTabButton, bh as settings, bi as lockClosed, bj as documentLock, bk as business, bl as informationCircle, bm as barChart, bn as IonTab, bo as checkmarkCircleOutline, bp as chatbubbleOutline, bq as analyticsOutline, br as lockClosedOutline, bs as refreshOutline, bt as locationOutline, bu as peopleOutline, bv as add$1, bw as IonToast, bx as Routes, by as Route, bz as Navigate } from './breadCrumb.js';
+import { u as useLocation, f as useNavigate, i as icons, j as jsxRuntimeExports, I as IonMenuToggle, g as IonItem, h as IonIcon, k as IonLabel, _ as __vitePreload, l as IonRefresher, m as IonRefresherContent, n as isPlatform, M as MEMISContext, o as IonMenu, p as IonHeader, q as IonToolbar, t as IonTitle, L as Link$1, v as IonContent, w as IonList, x as home, y as IonAccordionGroup, z as IonAccordion, A as albumsOutline, e as setActiveProgramCookie, C as settingsSharp, E as IonButtons, F as IonMenuButton, G as IonButton, H as mailOutline, J as notificationsOutline, K as IonBadge, N as personCircleOutline, Q as logOutOutline, R as showToast, V as Outlet, W as chevronDownOutline, X as searchOutline, Y as checkmarkOutline, Z as closeCircle, $ as IonGrid, a0 as IonRow, a1 as IonCol, a2 as chevronUpOutline, a3 as IonInput, a4 as IonRadioGroup, a5 as IonRadio, a6 as IonCard, a7 as IonCardContent, a8 as warningOutline, a9 as constructOutline, aa as arrowForward, ab as chevronForwardOutline, ac as IonPage, S as SuspenseLoader, ad as metadataInit, r as renderListByUserRole, ae as hardwareChipOutline, af as closeOutline, ag as settingsOutline, ah as addOutline, ai as y$3, s as sendNotification, aj as IonSpinner, ak as close, d as documentText, al as imageOutline, am as document$1, an as alertCircleOutline, ao as IonText, ap as arrowBackCircleOutline, aq as chevronBackOutline, ar as saveOutline, as as IonLoading, at as IonCheckbox, au as IonPopover, av as IonDatetime, aw as IonTextarea, ax as IonCardHeader, ay as IonCardTitle, az as useSearchParams, aA as ellipsisVertical, aB as arrowUp, aC as arrowDown, aD as removeOutline, aE as IonModal, aF as IonSearchbar, aG as filterOutline, aH as qrCodeOutline, aI as IonSelect, aJ as IonSelectOption, aK as api, aL as businessOutline, aM as usePermissions, aN as removeCircleOutline, aO as addCircleOutline, aP as useDataStore, aQ as IonInputPasswordToggle, aR as checkmarkDoneOutline, aS as timeOutline, aT as createOutline, aU as IonBreadcrumbs, aV as IonBreadcrumb, aW as chevronForward, aX as useParams, aY as IonAvatar, aZ as IonActionSheet, P as PROGRAMS_FIELDS, a_ as IonFooter, a$ as downloadOutline, b0 as eyeOutline, b1 as printOutline, b2 as IonCardSubtitle, b3 as PROGRAM_STAGES_FIELDS, b4 as informationCircleOutline, b5 as homeOutline, b6 as arrowBackOutline, b7 as trash, b8 as IonAlert, b9 as addCircle, ba as refresh, bb as useIonToast, bc as IonToggle, bd as IonTabs, be as IonTabBar, bf as IonTabButton, bg as settings, bh as lockClosed, bi as documentLock, bj as business, bk as informationCircle, bl as barChart, bm as IonTab, bn as checkmarkCircleOutline, bo as chatbubbleOutline, bp as analyticsOutline, bq as lockClosedOutline, br as refreshOutline, bs as locationOutline, bt as peopleOutline, bu as add$1, bv as IonToast, bw as Routes, bx as Route, by as Navigate } from './breadCrumb.js';
 import dataStore, { qrConfigService } from './index2.js';
 import { c as commonjsRequire$1, L as LocalForageServiceInstance } from './LocalForageService.js';
 import { a as getAugmentedNamespace$2, c as commonjsGlobal$2, g as getDefaultExportFromCjs$3 } from './_commonjsHelpers.js';
@@ -8446,7 +8446,7 @@ const dataSetsInit = async (forceRefresh = false) => {
 
 var define_process_env_default$2 = {};
 const React$W = await importShared('react');
-const {useContext: useContext$H,useEffect: useEffect$1C,useRef: useRef$w,useState: useState$1z,useMemo: useMemo$V,Suspense} = React$W;
+const {useContext: useContext$H,useEffect: useEffect$1C,useRef: useRef$w,useState: useState$1z,useMemo: useMemo$W,Suspense} = React$W;
 const MainLayout = ({ menuItems, children }) => {
   const navigate = useNavigate();
   const [hasAccess, setHasAccess] = useState$1z(null);
@@ -9020,7 +9020,7 @@ const MainLayout = ({ menuItems, children }) => {
 };
 
 const React$V = await importShared('react');
-const {useContext: useContext$G,useEffect: useEffect$1B,useMemo: useMemo$U} = React$V;
+const {useContext: useContext$G,useEffect: useEffect$1B,useMemo: useMemo$V} = React$V;
 const WithRoleBasedLayout = () => {
   const { menuModel, loading } = useContext$G(MEMISContext.MenuContext);
   return (
@@ -19515,7 +19515,7 @@ const React$T = await importShared('react');
 const {useEffect: useEffect$1y} = React$T;
 
 const React$S = await importShared('react');
-const {useState: useState$1x,useEffect: useEffect$1x,useMemo: useMemo$T,useCallback: useCallback$s} = React$S;
+const {useState: useState$1x,useEffect: useEffect$1x,useMemo: useMemo$U,useCallback: useCallback$s} = React$S;
 
 const {createPortal: createPortal$4} = await importShared('react-dom');
 const SearchableSelect = ({
@@ -19557,7 +19557,7 @@ const SearchableSelect = ({
       setSearchTerm("");
     }
   }, [closeOnSignal]);
-  const filteredData = useMemo$T(() => {
+  const filteredData = useMemo$U(() => {
     const term = searchTerm?.toLowerCase();
     return data.filter(
       (item) => (item[itemTextField] || "").toLowerCase().includes(term)
@@ -20078,7 +20078,7 @@ const getDateRangeFromPeriod = (period) => {
   }
 };
 
-const {useEffect: useEffect$1w,useMemo: useMemo$S,useState: useState$1w} = await importShared('react');
+const {useEffect: useEffect$1w,useMemo: useMemo$T,useState: useState$1w} = await importShared('react');
 const RELATIVE_PERIODS = [
   { id: "THIS_MONTH", label: "This Month" },
   { id: "LAST_MONTH", label: "Last Month" },
@@ -20144,7 +20144,7 @@ const FilterFields = ({
   const clearFilters = () => {
     if (onClear) onClear();
   };
-  const hasActiveFilters = useMemo$S(() => {
+  const hasActiveFilters = useMemo$T(() => {
     return filters.equipment !== "" || filters.department !== defaultDepartment || filters.period !== "THIS_MONTH";
   }, [filters, defaultDepartment]);
   useEffect$1w(() => {
@@ -21021,7 +21021,7 @@ const EquipmentStats = {
   },
 };
 
-const {useContext: useContext$E,useEffect: useEffect$1v,useMemo: useMemo$R,useState: useState$1v} = await importShared('react');
+const {useContext: useContext$E,useEffect: useEffect$1v,useMemo: useMemo$S,useState: useState$1v} = await importShared('react');
 const DEFAULT_FILTERS = {
   startDate: "",
   endDate: "",
@@ -21092,7 +21092,7 @@ const Dashboard = () => {
       period: "THIS_MONTH"
     });
   };
-  const hasDashboardAccess = useMemo$R(() => {
+  const hasDashboardAccess = useMemo$S(() => {
     return dashboardConfigs?.some(
       (d) => d.access?.some(
         (acc) => user?.userRoles?.some((ur) => ur?.id === acc?.id)
@@ -21692,7 +21692,7 @@ const ComponentsField = ({
   ] });
 };
 
-const {useEffect: useEffect$1t,useMemo: useMemo$Q,useState: useState$1t} = await importShared('react');
+const {useEffect: useEffect$1t,useMemo: useMemo$R,useState: useState$1t} = await importShared('react');
 
 function useSectionVisibilityConfig(programId) {
     const [tick, setTick] = useState$1t(0);
@@ -21724,7 +21724,7 @@ function useSectionVisibilityConfig(programId) {
     }, [tick]);
 
     // Derive visibility rules for the current program
-    const visibilityRules = useMemo$Q(() => {
+    const visibilityRules = useMemo$R(() => {
         if (!programId || !config) return null;
 
         try {
@@ -21780,7 +21780,7 @@ function useSectionVisibilityConfig(programId) {
     return visibilityRules;
 }
 
-const {useMemo: useMemo$P} = await importShared('react');
+const {useMemo: useMemo$Q} = await importShared('react');
 
 
 const A$b = (x) => (Array.isArray(x) ? x : []);
@@ -21860,20 +21860,20 @@ function useProgramRules({
     formData = {},
     isAddFlow = false,
 }) {
-    const isReportsProgram = useMemo$P(() => {
+    const isReportsProgram = useMemo$Q(() => {
         if (!program) return false;
         const programId = program?.id || "";
         const name = normalizeText(program?.name || program?.displayName);
         return programId === "C0ZvPkEFpLt" || name === "reports";
     }, [program]);
 
-    const programRulesList = useMemo$P(() => {
+    const programRulesList = useMemo$Q(() => {
         if (Array.isArray(externalRules) && externalRules.length) return externalRules;
         if (Array.isArray(program?.programRules)) return program.programRules;
         return [];
     }, [externalRules, program]);
 
-    const programRuleVariables = useMemo$P(
+    const programRuleVariables = useMemo$Q(
         () => A$b(program?.programRuleVariables),
         [program]
     );
@@ -21885,7 +21885,7 @@ function useProgramRules({
         return normalizeText(rule.program.name) === normalizeText(program.name);
     };
 
-    const reviewRule = useMemo$P(
+    const reviewRule = useMemo$Q(
         () =>
             programRulesList.find((rule) => {
                 if (!matchesProgram(rule)) return false;
@@ -21898,7 +21898,7 @@ function useProgramRules({
         [programRulesList, program]
     );
 
-    const assignRule = useMemo$P(
+    const assignRule = useMemo$Q(
         () =>
             programRulesList.find((rule) => {
                 if (!matchesProgram(rule)) return false;
@@ -21911,12 +21911,12 @@ function useProgramRules({
         [programRulesList, program]
     );
 
-    const fieldMetaById = useMemo$P(
+    const fieldMetaById = useMemo$Q(
         () => buildFieldMetaById(sections),
         [sections]
     );
 
-    const referencedVariableNames = useMemo$P(() => {
+    const referencedVariableNames = useMemo$Q(() => {
         const names = new Set();
         [reviewRule, assignRule].forEach((rule) => {
             extractVariableNames(rule?.condition).forEach((name) =>
@@ -21926,7 +21926,7 @@ function useProgramRules({
         return Array.from(names);
     }, [reviewRule, assignRule]);
 
-    const reportTypeVariable = useMemo$P(
+    const reportTypeVariable = useMemo$Q(
         () =>
             referencedVariableNames
                 .map((name) =>
@@ -21949,14 +21949,14 @@ function useProgramRules({
         : undefined;
     const normalizedReportType = normalizeText(reportTypeLabel || reportTypeValue);
 
-    const reviewTriggerSet = useMemo$P(
+    const reviewTriggerSet = useMemo$Q(
         () => (reviewRule?.condition ? extractComparisonValues(reviewRule.condition) : new Set()),
         [reviewRule]
     );
 
     const requiresReview = Boolean(normalizedReportType) && reviewTriggerSet.has(normalizedReportType) && isReportsProgram;
 
-    const approverAssignments = useMemo$P(
+    const approverAssignments = useMemo$Q(
         () => (assignRule?.condition ? parseAssignPairs(assignRule.condition) : {}),
         [assignRule]
     );
@@ -21965,12 +21965,12 @@ function useProgramRules({
         ? approverAssignments[normalizedReportType]
         : undefined;
 
-    const autoAssignedApprovers = useMemo$P(
+    const autoAssignedApprovers = useMemo$Q(
         () => new Set(Object.values(approverAssignments).filter(Boolean)),
         [approverAssignments]
     );
 
-    const assignAction = useMemo$P(() => {
+    const assignAction = useMemo$Q(() => {
         if (!assignRule) return null;
         return (
             A$b(assignRule.programRuleActions).find(
@@ -21983,7 +21983,7 @@ function useProgramRules({
 
     const approvingOfficerFieldId = assignAction?.dataElement?.id || null;
 
-    const approvingSectionId = useMemo$P(() => {
+    const approvingSectionId = useMemo$Q(() => {
         if (!approvingOfficerFieldId) return null;
         for (const section of sections) {
             const hasField = A$b(section?.fields).some((field) => {
@@ -22546,7 +22546,7 @@ async function getSkipLogicConfig(programId) {
   }
 }
 
-const {useMemo: useMemo$O} = await importShared('react');
+const {useMemo: useMemo$P} = await importShared('react');
 
 /**
  * Hook: compute the primary button label from:
@@ -22567,7 +22567,7 @@ function usePrimaryButtonLabel({
 }) {
     // const cfg = getButtonTextConfig(dataStore);
 
-    return useMemo$O(() => {
+    return useMemo$P(() => {
         if (loading) return "Saving…";
 
         // Always show "Submit" on last step to make UX explicit.
@@ -22930,14 +22930,14 @@ function useDateRangePopover() {
     };
 }
 
-const {useMemo: useMemo$N} = await importShared('react');
+const {useMemo: useMemo$O} = await importShared('react');
 
 /**
  * Custom hook to compute sections from program/stage metadata
  * Shape: [{ id, name, fields:[dataElement|trackedEntityAttribute] }]
  */
 function useSections({ programObj, stageObj, programKey, selectedStageId }) {
-    return useMemo$N(() => {
+    return useMemo$O(() => {
         const mapSectionId = (section) => {
             const sectionName = (section.name || section.formName || "").toLowerCase();
 
@@ -23011,7 +23011,7 @@ function useSections({ programObj, stageObj, programKey, selectedStageId }) {
     }, [programObj, stageObj, programKey, selectedStageId]);
 }
 
-const {useMemo: useMemo$M,useEffect: useEffect$1p,useState: useState$1n} = await importShared('react');
+const {useMemo: useMemo$N,useEffect: useEffect$1p,useState: useState$1n} = await importShared('react');
 
 function useSectionsList({
   sections,
@@ -23045,7 +23045,7 @@ function useSectionsList({
   }, [sections, programId, user]);
 
   // 🔹 2. Compute final visible sections
-  const sectionsList = useMemo$M(() => {
+  const sectionsList = useMemo$N(() => {
     if (!sections || !sectionAccessMap) return [];
 
     // Filter writable sections
@@ -23203,7 +23203,7 @@ const applyOtherFieldRules = ({
   });
 };
 
-const {useState: useState$1m,useEffect: useEffect$1o,useMemo: useMemo$L,useRef: useRef$r} = await importShared('react');
+const {useState: useState$1m,useEffect: useEffect$1o,useMemo: useMemo$M,useRef: useRef$r} = await importShared('react');
 
 /**
  * Hook to manage field visibility based on skip logic and OTHER field rules
@@ -23246,7 +23246,7 @@ function useHiddenFields({
   }, [programId]);
 
   // Initial hidden fields: Hide OTHER text fields by default in create mode
-  const initialHiddenFields = useMemo$L(() => {
+  const initialHiddenFields = useMemo$M(() => {
     const hidden = new Set(defaultHidden);
 
     if (!isEdit && Array.isArray(otherFieldMappings) && otherFieldMappings.length > 0) {
@@ -24059,7 +24059,7 @@ function useSparePartLookup({ programId, setFormData, isCheckingRegistration, se
     };
 }
 
-const {useMemo: useMemo$K} = await importShared('react');
+const {useMemo: useMemo$L} = await importShared('react');
 
 /**
  * Hook to compute required fields from program metadata
@@ -24071,7 +24071,7 @@ function useRequiredFields({
     programKey,
     selectedStageId,
 }) {
-    const requiredById = useMemo$K(() => {
+    const requiredById = useMemo$L(() => {
         const out = {};
 
         if (programObj?.programType === "WITH_REGISTRATION") {
@@ -24112,7 +24112,7 @@ function useRequiredFields({
     return { requiredById };
 }
 
-const {useMemo: useMemo$J,useEffect: useEffect$1h,useState: useState$1f} = await importShared('react');
+const {useMemo: useMemo$K,useEffect: useEffect$1h,useState: useState$1f} = await importShared('react');
 
 /**
  * Hook to load custom mandatory fields from datastore and merge with native DHIS2 mandatory
@@ -24164,7 +24164,7 @@ function useCustomMandatoryFields({
     }, []);
 
     // Compute custom mandatory fields
-    const customRequiredById = useMemo$J(() => {
+    const customRequiredById = useMemo$K(() => {
         if (!customConfig.length) return {};
 
         const out = {};
@@ -24199,7 +24199,7 @@ function useCustomMandatoryFields({
     }, [customConfig, programObj, selectedStageId, stageObj, programKey]);
 
     // Merge native and custom mandatory fields
-    const requiredById = useMemo$J(() => {
+    const requiredById = useMemo$K(() => {
         return {
             ...nativeRequiredById,
             ...customRequiredById,
@@ -24212,7 +24212,7 @@ function useCustomMandatoryFields({
     };
 }
 
-const {useState: useState$1e,useEffect: useEffect$1g,useMemo: useMemo$I} = await importShared('react');
+const {useState: useState$1e,useEffect: useEffect$1g,useMemo: useMemo$J} = await importShared('react');
 
 /**
  * Hook to manage multi-step wizard navigation
@@ -24230,7 +24230,7 @@ function useStepNavigation({
   const stepIndex =
     typeof currentStep === "number" ? currentStep : internalStep;
 
-  const activeSection = useMemo$I(() => {
+  const activeSection = useMemo$J(() => {
     const res = sectionsList[stepIndex] || {
       id: "default",
       name: "Form",
@@ -25787,6 +25787,33 @@ const matchesBaseContext = (config, context = {}) => {
   );
 };
 
+/**
+ * Returns a label override for a specific field in a specific maintenance
+ * context, or null if no override is configured.
+ *
+ * Reads from dataStore key: fieldLabelOverrides.overrides[]
+ *   { fieldId, label, triggerAt }
+ *
+ * @param {object} dataStoreData - cached datastore object
+ * @param {string} fieldId       - data element / attribute UID
+ * @param {string} triggerAt     - maintenance type label e.g. "Referral Maintenance"
+ */
+function getFieldLabelOverride(dataStoreData, fieldId, triggerAt) {
+  if (!fieldId || !triggerAt) return null;
+  const overrides = dataStoreData?.fieldLabelOverrides?.overrides;
+  if (!Array.isArray(overrides)) return null;
+  // Normalize: lowercase + replace underscores with spaces so
+  // "Referral Maintenance" and "Referral_maintenance" both match
+  const normalizeType = (v) =>
+    String(v || "").trim().toLowerCase().replace(/_/g, " ");
+  const match = overrides.find(
+    (o) =>
+      o.fieldId === fieldId &&
+      normalizeType(o.triggerAt) === normalizeType(triggerAt),
+  );
+  return match?.label || null;
+}
+
 function getSectionFormNameOverride(dataStoreData, context = {}) {
   const configurations = getConfigurations(dataStoreData);
 
@@ -25801,7 +25828,7 @@ function getSectionFormNameOverride(dataStoreData, context = {}) {
   return match?.overrideText || null;
 }
 
-const {useEffect: useEffect$1b,useMemo: useMemo$H,useRef: useRef$q} = await importShared('react');
+const {useEffect: useEffect$1b,useMemo: useMemo$I,useRef: useRef$q} = await importShared('react');
 function ParticipantsPerWardField({
   value,
   wards = [],
@@ -25810,7 +25837,7 @@ function ParticipantsPerWardField({
   disabled = false
 }) {
   const lastEmittedTotal = useRef$q(void 0);
-  const parsed = useMemo$H(() => {
+  const parsed = useMemo$I(() => {
     if (!value) return {};
     try {
       const obj = JSON.parse(value);
@@ -25952,7 +25979,7 @@ const styles$2 = {
   }
 };
 
-const {useEffect: useEffect$1a,useMemo: useMemo$G,useRef: useRef$p} = await importShared('react');
+const {useEffect: useEffect$1a,useMemo: useMemo$H,useRef: useRef$p} = await importShared('react');
 function SparePartsQuantityField({
   value,
   parts = [],
@@ -25961,7 +25988,7 @@ function SparePartsQuantityField({
   disabled = false
 }) {
   const lastEmittedTotal = useRef$p(void 0);
-  const parsed = useMemo$G(() => {
+  const parsed = useMemo$H(() => {
     if (!value) return {};
     try {
       const obj = JSON.parse(value);
@@ -26096,7 +26123,7 @@ const styles$1 = {
   }
 };
 
-const {useCallback: useCallback$r,useContext: useContext$D,useEffect: useEffect$19,useMemo: useMemo$F,useState: useState$1a} = await importShared('react');
+const {useCallback: useCallback$r,useContext: useContext$D,useEffect: useEffect$19,useMemo: useMemo$G,useState: useState$1a} = await importShared('react');
 function ConfigurableForm({
   handleSubmit,
   handleCancel,
@@ -26219,7 +26246,7 @@ function ConfigurableForm({
   );
   const sectionVisibilityRules = useSectionVisibilityConfig(programId);
   const { programs } = useContext$D(MEMISContext.ProgramContext);
-  const programObj = useMemo$F(() => {
+  const programObj = useMemo$G(() => {
     if (!programId) return null;
     const list = Array.isArray(programs) ? programs : programs?.programs || [];
     return list.find((p) => p?.id === programId) || null;
@@ -27483,7 +27510,7 @@ function ConfigurableForm({
     isLast: isFinalStep,
     dataStore: dataStoreData
   });
-  useMemo$F(
+  useMemo$G(
     () => sections?.map((s) => s.id).join(","),
     [sections]
   );
@@ -27699,7 +27726,7 @@ function ConfigurableForm({
       mounted = false;
     };
   }, [dataStoreData, programId]);
-  const isInitiallyLoading = useMemo$F(
+  const isInitiallyLoading = useMemo$G(
     () => formLoading || autoFillFacilityLoading,
     [formLoading, autoFillFacilityLoading]
   );
@@ -27842,7 +27869,7 @@ function ConfigurableForm({
         if (id === COMPONENTS_LIST && !formData?.[HAS_COMPONENTS]) {
           return null;
         }
-        const labelText = el?.formName || el?.name || "Field";
+        const labelText = getFieldLabelOverride(dataStoreData, id, pM) || el?.formName || el?.name || "Field";
         const isRequired = !!requiredById[id];
         const sectionAccess = sectionAccessMap[activeSection.id];
         return /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -27887,7 +27914,7 @@ function ConfigurableForm({
         const id = el?.id || el?.attribute || el?.dataElement?.id || el;
         if (hiddenFields?.has(id)) return null;
         if (id === "EbJI5Loxjbl") return null;
-        const labelText = el?.formName || el?.name || "Field";
+        const labelText = getFieldLabelOverride(dataStoreData, id, pM) || el?.formName || el?.name || "Field";
         const isRequired = !!requiredById[id];
         const sectionAccess = sectionAccessMap[activeSection.id];
         return /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -31627,7 +31654,7 @@ const CreateDataItemsController = {
 };
 
 const React$Q = await importShared('react');
-const {useContext: useContext$C,useEffect: useEffect$18,useMemo: useMemo$E,useState: useState$19} = React$Q;
+const {useContext: useContext$C,useEffect: useEffect$18,useMemo: useMemo$F,useState: useState$19} = React$Q;
 const A$9 = (x) => Array.isArray(x) ? x : [];
 function MultiEntryForm({
   dataElements = null,
@@ -31649,7 +31676,7 @@ function MultiEntryForm({
   const navigate = useNavigate();
   const { userOrganisationUnits } = useContext$C(MEMISContext.UserContext);
   const { user } = useContext$C(MEMISContext.UserRolesContext);
-  const commonFields = useMemo$E(() => {
+  const commonFields = useMemo$F(() => {
     if (!dataElements) return [];
     const program2 = dataElements?.program;
     if (!program2) return [];
@@ -31658,7 +31685,7 @@ function MultiEntryForm({
     }
     return [];
   }, [dataElements]);
-  const entryFields = useMemo$E(() => {
+  const entryFields = useMemo$F(() => {
     if (!commonFields?.length) return [];
     return commonFields.filter((f) => !selectedCommonFields.includes(f.id));
   }, [commonFields, selectedCommonFields]);
@@ -32262,7 +32289,7 @@ const calculateDeregistrationAutofill = async (teiAttributes, isolationDate = nu
     return autofillValues;
 };
 
-const {useState: useState$18,useEffect: useEffect$17,useContext: useContext$B,useMemo: useMemo$D,useRef: useRef$o} = await importShared('react');
+const {useState: useState$18,useEffect: useEffect$17,useContext: useContext$B,useMemo: useMemo$E,useRef: useRef$o} = await importShared('react');
 
 /**
  * Hook to automatically fill facility/org unit based on DataStore configuration
@@ -32290,12 +32317,12 @@ function useFacilityAutoFill(
   const configCacheRef = useRef$o(null);
 
   // Stable reference to user org units
-  useMemo$D(() => {
+  useMemo$E(() => {
     return JSON.stringify(userOrganisationUnits?.map((ou) => ou.id) || []);
   }, [userOrganisationUnits]);
 
   // Stable reference to user info
-  useMemo$D(() => {
+  useMemo$E(() => {
     return user?.id || "";
   }, [user?.id]);
 
@@ -33228,7 +33255,7 @@ const generateUniquePamAssetNumber = async ({
   throw new Error("PAM_GENERATION_EXHAUSTED");
 };
 
-const {useContext: useContext$A,useEffect: useEffect$16,useState: useState$17,useMemo: useMemo$C,useRef: useRef$n} = await importShared('react');
+const {useContext: useContext$A,useEffect: useEffect$16,useState: useState$17,useMemo: useMemo$D,useRef: useRef$n} = await importShared('react');
 const A$8 = (x) => Array.isArray(x) ? x : [];
 function collectBundleUids(value, seen = /* @__PURE__ */ new Set()) {
   if (!value || typeof value !== "object") return [];
@@ -33303,7 +33330,7 @@ function FormComponent({
   );
   const [ackModalOpen, setAckModalOpen] = useState$17(false);
   const autoFillFacilityAppliedRef = useRef$n(false);
-  const isEditMode = useMemo$C(() => {
+  const isEditMode = useMemo$D(() => {
     return query === "edit" || !!editData;
   }, [query, editData]);
   const { autoFilledOrgUnit, loading: autoFillLoading } = useFacilityAutoFill(
@@ -33492,7 +33519,7 @@ function FormComponent({
     if (v instanceof File) return false;
     return v == null || typeof v === "string" && v.trim() === "";
   };
-  const requiredTrackerAttrIds = useMemo$C(() => {
+  const requiredTrackerAttrIds = useMemo$D(() => {
     if (!program) return [];
     const progReq = program?.programTrackedEntityAttributes?.filter((ptea) => ptea?.mandatory)?.map(
       (ptea) => ptea?.trackedEntityAttribute?.id || ptea?.trackedEntityAttribute
@@ -33502,7 +33529,7 @@ function FormComponent({
     ) || [];
     return Array.from(/* @__PURE__ */ new Set([...progReq || [], ...tetReq || []]));
   }, [program]);
-  const requiredTrackerAttrNames = useMemo$C(() => {
+  const requiredTrackerAttrNames = useMemo$D(() => {
     if (!program) return {};
     const map = {};
     (program?.programTrackedEntityAttributes || []).forEach((ptea) => {
@@ -33598,6 +33625,15 @@ function FormComponent({
       return;
     }
     const isEditMode2 = query === "edit" || !!editData;
+    const REFERRAL_NUMBER_DE = "svwmE8fSNwy";
+    if (!isEditMode2 && pM === "Referral_maintenance" && !selectedData[REFERRAL_NUMBER_DE]) {
+      const now = /* @__PURE__ */ new Date();
+      const YYYY = now.getFullYear();
+      const MM = String(now.getMonth() + 1).padStart(2, "0");
+      const DD = String(now.getDate()).padStart(2, "0");
+      const rand = Math.random().toString(36).substring(2, 7).toUpperCase();
+      selectedData[REFERRAL_NUMBER_DE] = `REF-${YYYY}${MM}${DD}-${rand}`;
+    }
     if (!isEditMode2 && program) {
       let reportIdentificationId = null;
       if (program?.programType === "WITHOUT_REGISTRATION") {
@@ -34579,7 +34615,7 @@ const dateTime = {
     FORMAT_PRESETS,
 };
 
-const {useState: useState$16,useMemo: useMemo$B,useEffect: useEffect$15} = await importShared('react');
+const {useState: useState$16,useMemo: useMemo$C,useEffect: useEffect$15} = await importShared('react');
 const DataTable = ({
   columns,
   rows,
@@ -34615,7 +34651,7 @@ const DataTable = ({
     return false;
   });
   const [resolvedRows, setResolvedRows] = useState$16(rows);
-  const correctedColumns = useMemo$B(() => {
+  const correctedColumns = useMemo$C(() => {
     if (!Array.isArray(columns)) return [];
     const keyCorrections = {
       // Transfer Type
@@ -34678,7 +34714,7 @@ const DataTable = ({
       setLocalSortOrder(newOrder);
     }
   };
-  const sortedRows = useMemo$B(() => {
+  const sortedRows = useMemo$C(() => {
     if (!clientSideSort || !localSortKey) return resolvedRows;
     return [...resolvedRows].sort((a, b) => {
       const aVal = a[localSortKey];
@@ -35441,7 +35477,7 @@ const GeneralCustomModal = ({
 };
 
 const React$P = await importShared('react');
-const {useMemo: useMemo$A,useState: useState$15,useEffect: useEffect$13} = React$P;
+const {useMemo: useMemo$B,useState: useState$15,useEffect: useEffect$13} = React$P;
 
 const React$O = await importShared('react');
 const {useCallback: useCallback$q,useContext: useContext$z,useEffect: useEffect$12,useRef: useRef$l,useState: useState$14} = React$O;
@@ -62443,7 +62479,7 @@ const Tracker = ({ id }) => {
 };
 
 const React$M = await importShared('react');
-const {useState: useState$12,useEffect: useEffect$10,useMemo: useMemo$z,useRef: useRef$k,useCallback: useCallback$o} = React$M;
+const {useState: useState$12,useEffect: useEffect$10,useMemo: useMemo$A,useRef: useRef$k,useCallback: useCallback$o} = React$M;
 const SearchFilterCard = ({
   children,
   searchText,
@@ -62531,7 +62567,7 @@ const SearchFilterCard = ({
       window.removeEventListener("error", onWindowError);
     };
   }, [scanDebug]);
-  const placeHolder = useMemo$z(() => {
+  const placeHolder = useMemo$A(() => {
     if (searchPlaceholder) return searchPlaceholder;
     const labels = (filterColumns || []).map((c) => c.label).filter(Boolean);
     if (!labels.length) return "Search...";
@@ -63038,13 +63074,13 @@ const SearchFilterCard = ({
   ] });
 };
 
-const {useCallback: useCallback$n,useMemo: useMemo$y} = await importShared('react');
+const {useCallback: useCallback$n,useMemo: useMemo$z} = await importShared('react');
 
 const unwrap = (res) => res?.data ?? res;
 
 function useTeiSearch(columns = []) {
  
-  const colKeySet = useMemo$y(() => {
+  const colKeySet = useMemo$z(() => {
     return new Set((columns || []).map((c) => c.key));
   }, [columns]);
 
@@ -63309,7 +63345,7 @@ const eventSearchFilter = async (programId, data) => {
   return { filter: "&filter=" + filterString };
 };
 
-const {useCallback: useCallback$m,useEffect: useEffect$$,useMemo: useMemo$x,useRef: useRef$j,useState: useState$11} = await importShared('react');
+const {useCallback: useCallback$m,useEffect: useEffect$$,useMemo: useMemo$y,useRef: useRef$j,useState: useState$11} = await importShared('react');
 function ItemSearch({
   programId,
   programStageId,
@@ -63334,12 +63370,12 @@ function ItemSearch({
   useEffect$$(() => {
     onLoadingRef.current = onLoadingChange;
   }, [onLoadingChange]);
-  const keySet = useMemo$x(
+  const keySet = useMemo$y(
     () => new Set((visibleColumns || []).map((c) => c.key)),
     [visibleColumns]
   );
-  const colKeys = useMemo$x(() => Array.from(keySet), [keySet]);
-  const eventSearchKeys = useMemo$x(() => {
+  const colKeys = useMemo$y(() => Array.from(keySet), [keySet]);
+  const eventSearchKeys = useMemo$y(() => {
     const nonEventKeys = /* @__PURE__ */ new Set([
       "id",
       "event",
@@ -63352,14 +63388,14 @@ function ItemSearch({
     ]);
     return colKeys.filter((k) => !nonEventKeys.has(k));
   }, [colKeys]);
-  const colKeysKey = useMemo$x(() => colKeys.join(","), [colKeys]);
-  const orgUnitsKey = useMemo$x(
+  const colKeysKey = useMemo$y(() => colKeys.join(","), [colKeys]);
+  const orgUnitsKey = useMemo$y(
     () => (orgUnits || []).map((o) => o.id).join(","),
     [orgUnits]
   );
   const [searchSets, setSearchSets] = useState$11({ equipment: [], spare: [] });
-  const EQUIP_SET = useMemo$x(() => searchSets?.equipment || [], [searchSets]);
-  const SPARE_SET = useMemo$x(() => searchSets?.spare || [], [searchSets]);
+  const EQUIP_SET = useMemo$y(() => searchSets?.equipment || [], [searchSets]);
+  const SPARE_SET = useMemo$y(() => searchSets?.spare || [], [searchSets]);
   const teiSearch = useTeiSearch(visibleColumns);
   const eventFieldMapRef = useRef$j({ key: null, map: /* @__PURE__ */ new Map() });
   const resolveDisplayValue = (field, rawValue) => {
@@ -63934,7 +63970,7 @@ function getBlankPlaceholderForDataElement(dataElements = [], deId) {
   );
 }
 
-const {useCallback: useCallback$l,useContext: useContext$x,useEffect: useEffect$Z,useMemo: useMemo$w,useRef: useRef$i,useState: useState$$} = await importShared('react');
+const {useCallback: useCallback$l,useContext: useContext$x,useEffect: useEffect$Z,useMemo: useMemo$x,useRef: useRef$i,useState: useState$$} = await importShared('react');
 function StageEvents({
   id,
   programId: programIdProp,
@@ -63959,11 +63995,11 @@ function StageEvents({
   const orgUnitCacheRef = useRef$i(/* @__PURE__ */ new Map());
   const [allColumnsOrdered, setAllColumnsOrdered] = useState$$([]);
   const [visibleColumnKeys, setVisibleColumnKeys] = useState$$(/* @__PURE__ */ new Set());
-  const visibleColumns = useMemo$w(
+  const visibleColumns = useMemo$x(
     () => allColumnsOrdered.filter((c) => visibleColumnKeys.has(c.key)),
     [allColumnsOrdered, visibleColumnKeys]
   );
-  const searchPlaceholder = useMemo$w(() => {
+  const searchPlaceholder = useMemo$x(() => {
     const labels = visibleColumns.map((c) => c.label).filter(Boolean);
     if (!labels.length) return "Search events...";
     const max = 10;
@@ -63977,7 +64013,7 @@ function StageEvents({
   const [deletingId, setDeletingId] = useState$$(null);
   const [fallbackStageId, setFallbackStageId] = useState$$(null);
   const getRowId = (row) => row?.id || row?.event || row?.enrollment || row?.trackedEntity || null;
-  const { resolvedProgramId, resolvedStageId } = useMemo$w(() => {
+  const { resolvedProgramId, resolvedStageId } = useMemo$x(() => {
     const match = menuItems?.find((m) => m?.id === (stageIdProp || id)) || null;
     const stage = stageIdProp || match?.dependentStage || match?.id || id;
     const program = programIdProp || match?.dependentProgram || (match?.isProgram ? match?.id : null) || id;
@@ -63986,7 +64022,7 @@ function StageEvents({
       resolvedStageId: stage
     };
   }, [id, menuItems, programIdProp, stageIdProp]);
-  const effectiveProgramId = useMemo$w(
+  const effectiveProgramId = useMemo$x(
     () => resolvedProgramId || programIdProp || id || null,
     [id, programIdProp, resolvedProgramId]
   );
@@ -63995,7 +64031,7 @@ function StageEvents({
     currentNavigationId: id,
     scanProgramId: effectiveProgramId
   });
-  const effectiveStageId = useMemo$w(() => {
+  const effectiveStageId = useMemo$x(() => {
     const rawStage = stageIdProp || resolvedStageId;
     if (rawStage && rawStage !== effectiveProgramId) return rawStage;
     if (fallbackStageId) return fallbackStageId;
@@ -64489,7 +64525,7 @@ function StageEvents({
   ] });
 }
 
-const {useCallback: useCallback$k,useContext: useContext$w,useEffect: useEffect$Y,useMemo: useMemo$v,useRef: useRef$h,useState: useState$_} = await importShared('react');
+const {useCallback: useCallback$k,useContext: useContext$w,useEffect: useEffect$Y,useMemo: useMemo$w,useRef: useRef$h,useState: useState$_} = await importShared('react');
 function StageSectionsEvents({
   id,
   programId: programIdProp,
@@ -64515,11 +64551,11 @@ function StageSectionsEvents({
   const orgUnitCacheRef = useRef$h(/* @__PURE__ */ new Map());
   const [allColumnsOrdered, setAllColumnsOrdered] = useState$_([]);
   const [visibleColumnKeys, setVisibleColumnKeys] = useState$_(/* @__PURE__ */ new Set());
-  const visibleColumns = useMemo$v(
+  const visibleColumns = useMemo$w(
     () => allColumnsOrdered?.filter((c) => visibleColumnKeys?.has(c?.key)),
     [allColumnsOrdered, visibleColumnKeys]
   );
-  const searchPlaceholder = useMemo$v(() => {
+  const searchPlaceholder = useMemo$w(() => {
     const labels = visibleColumns.map((c) => c.label).filter(Boolean);
     if (!labels.length) return "Search events...";
     const max = 10;
@@ -64533,7 +64569,7 @@ function StageSectionsEvents({
   const [deletingId, setDeletingId] = useState$_(null);
   const [fallbackStageId, setFallbackStageId] = useState$_(null);
   const getRowId = (row) => row?.id || row?.event || row?.enrollment || row?.trackedEntity || null;
-  const { resolvedProgramId, resolvedStageId } = useMemo$v(() => {
+  const { resolvedProgramId, resolvedStageId } = useMemo$w(() => {
     const match = menuItems?.find((m) => m?.id === (stageIdProp || id)) || null;
     const stage = stageIdProp || match?.dependentStage || match?.id || id;
     const program = programIdProp || match?.dependentProgram || (match?.isProgram ? match?.id : null) || id;
@@ -64542,7 +64578,7 @@ function StageSectionsEvents({
       resolvedStageId: stage
     };
   }, [id, menuItems, programIdProp, stageIdProp]);
-  const effectiveProgramId = useMemo$v(
+  const effectiveProgramId = useMemo$w(
     () => resolvedProgramId || programIdProp || id || null,
     [id, programIdProp, resolvedProgramId]
   );
@@ -64551,7 +64587,7 @@ function StageSectionsEvents({
     currentNavigationId: id,
     scanProgramId: effectiveProgramId
   });
-  const effectiveStageId = useMemo$v(() => {
+  const effectiveStageId = useMemo$w(() => {
     const rawStage = stageIdProp || resolvedStageId;
     if (rawStage && rawStage !== effectiveProgramId) return rawStage;
     if (fallbackStageId) return fallbackStageId;
@@ -65020,7 +65056,7 @@ function StageSectionsEvents({
 }
 
 const React$L = await importShared('react');
-const {useState: useState$Z,useMemo: useMemo$u,useEffect: useEffect$X} = React$L;
+const {useState: useState$Z,useMemo: useMemo$v,useEffect: useEffect$X} = React$L;
 
 const {createPortal: createPortal$3} = await importShared('react-dom');
 function EquipmentPicker({
@@ -65039,7 +65075,7 @@ function EquipmentPicker({
   const [selectedWard, setSelectedWard] = useState$Z(null);
   const [isLoading, setLoading] = useState$Z(loading);
   const [avEquipment, setAvailableEquipment] = useState$Z(availableEquipment);
-  const filteredEquipment = useMemo$u(() => {
+  const filteredEquipment = useMemo$v(() => {
     if (!searchTerm.trim()) return avEquipment;
     const term = searchTerm.toLowerCase();
     return avEquipment.filter(
@@ -69729,7 +69765,7 @@ function toLowerLabel(label) {
   return raw ? raw.toLowerCase() : DEFAULT_ENTITY_LABEL.toLowerCase();
 }
 
-const {useCallback: useCallback$i,useContext: useContext$v,useEffect: useEffect$U,useMemo: useMemo$t,useState: useState$W} = await importShared('react');
+const {useCallback: useCallback$i,useContext: useContext$v,useEffect: useEffect$U,useMemo: useMemo$u,useState: useState$W} = await importShared('react');
 const BUTTON_ICON_MAP = {
   addCircleOutline,
   removeCircleOutline
@@ -70226,10 +70262,10 @@ function GeneralComponent({ programProp }) {
   }, [menuItems, programs, program]);
   const params = new URLSearchParams(location.search);
   const selectedStage = params.get("stage") || params.get("stageId") || null;
-  const addButtonLabel = useMemo$t(() => {
+  const addButtonLabel = useMemo$u(() => {
     return buttonConfig?.label || null;
   }, [buttonConfig]);
-  const addButtonIcon = useMemo$t(() => {
+  const addButtonIcon = useMemo$u(() => {
     const key = buttonConfig?.icon;
     return (key && BUTTON_ICON_MAP[key]) ?? addCircleOutline;
   }, [buttonConfig]);
@@ -70248,7 +70284,7 @@ function GeneralComponent({ programProp }) {
     setPendingAction(null);
     handlePickerCancel();
   };
-  const handleAddButtonClick = useMemo$t(() => {
+  const handleAddButtonClick = useMemo$u(() => {
     return handleActionButtonClick;
   }, [handleActionButtonClick]);
   const clearFormUiState = useCallback$i(() => {
@@ -73532,7 +73568,7 @@ await importShared('react');
 
 const {useContext: useContext$s} = await importShared('react');
 
-const {useCallback: useCallback$h,useMemo: useMemo$s} = await importShared('react');
+const {useCallback: useCallback$h,useMemo: useMemo$t} = await importShared('react');
 
 await importShared('react');
 
@@ -76831,7 +76867,7 @@ function requireIsEqual () {
 requireIsEqual();
 
 const React$I = await importShared('react');
-const {useEffect: useEffect$O,useCallback: useCallback$c,useContext: useContext$o,useState: useState$O,useMemo: useMemo$r} = React$I;
+const {useEffect: useEffect$O,useCallback: useCallback$c,useContext: useContext$o,useState: useState$O,useMemo: useMemo$s} = React$I;
 ({
   children: PropTypes.node,
   store: PropTypes.shape({})
@@ -76847,7 +76883,7 @@ const {createContext,useContext: useContext$n} = React$H;
 });
 
 const React$G = await importShared('react');
-const {useEffect: useEffect$N,useCallback: useCallback$b,useMemo: useMemo$q} = React$G;
+const {useEffect: useEffect$N,useCallback: useCallback$b,useMemo: useMemo$r} = React$G;
 ({
   children: PropTypes.node
 });
@@ -94071,7 +94107,7 @@ if (shouldLog) {
 const {useCallback: useCallback$a} = await importShared('react');
 
 const React$F = await importShared('react');
-const {useCallback: useCallback$9,useState: useState$N,useRef: useRef$b,useMemo: useMemo$p,useEffect: useEffect$M,useContext: useContext$m} = React$F;
+const {useCallback: useCallback$9,useState: useState$N,useRef: useRef$b,useMemo: useMemo$q,useEffect: useEffect$M,useContext: useContext$m} = React$F;
 ({
   children: PropTypes.node
 });
@@ -94088,7 +94124,7 @@ await importShared('react');
 });
 
 const React$D = await importShared('react');
-const {useCallback: useCallback$8,useEffect: useEffect$L,useMemo: useMemo$o} = React$D;
+const {useCallback: useCallback$8,useEffect: useEffect$L,useMemo: useMemo$p} = React$D;
 
 const {flushSync} = await importShared('react-dom');
 ({
@@ -94499,11 +94535,11 @@ function requireDebounce () {
 
 requireDebounce();
 
-const {useState: useState$L,useEffect: useEffect$K,useCallback: useCallback$7,useMemo: useMemo$n} = await importShared('react');
+const {useState: useState$L,useEffect: useEffect$K,useCallback: useCallback$7,useMemo: useMemo$o} = await importShared('react');
 
 await importShared('react');
 
-const {useEffect: useEffect$J,useMemo: useMemo$m,useState: useState$K,useRef: useRef$a} = await importShared('react');
+const {useEffect: useEffect$J,useMemo: useMemo$n,useState: useState$K,useRef: useRef$a} = await importShared('react');
 const {createPortal: createPortal$2} = await importShared('react-dom');
 function TrackerPgStages() {
   const { program, id } = useParams();
@@ -94541,7 +94577,7 @@ function TrackerPgStages() {
   const [formActive, setFormActive] = useState$K(false);
   const [editData, setEditData] = useState$K(null);
   const [resolvedPamAttributeId, setResolvedPamAttributeId] = useState$K("");
-  const pamAttributeIdFromProgram = useMemo$m(() => {
+  const pamAttributeIdFromProgram = useMemo$n(() => {
     const attrs = selectedProgram?.programTrackedEntityAttributes || [];
     const hit = attrs.find((progAttr) => {
       const tea = progAttr?.trackedEntityAttribute || {};
@@ -94800,7 +94836,7 @@ function TrackerPgStages() {
       document.body.style.overflow = prev;
     };
   }, [printOpen]);
-  const headerTitle = useMemo$m(() => {
+  const headerTitle = useMemo$n(() => {
     const displayLabel = primaryAttr?.trackedEntityAttribute?.displayFormName || "Name";
     return `${displayLabel} : ${tei ? getName() : ""}`;
   }, [tei, primaryAttr]);
@@ -95689,7 +95725,7 @@ const loadDataStore = async (key) => {
 const loadFlowRules$1 = () => loadDataStore("flowRules");
 
 const React$C = await importShared('react');
-const {useEffect: useEffect$I,useMemo: useMemo$l,useState: useState$J} = React$C;
+const {useEffect: useEffect$I,useMemo: useMemo$m,useState: useState$J} = React$C;
 const loadFlowRules = async () => {
   try {
     let data = await LocalForageServiceInstance.getItem("dataStore", "dataStore");
@@ -96112,7 +96148,7 @@ function ApproveModal({
     }
   };
   const isTransferProgram = program?.id === TRANSFER_PROGRAM_ID;
-  const approvedFieldId = useMemo$l(
+  const approvedFieldId = useMemo$m(
     () => fields.find((f) => f.valueType === "BOOLEAN")?.id || null,
     [fields]
   );
@@ -97239,7 +97275,7 @@ const getNameOfCollectorByFacilityOptionGroups = async ({ program, formName, pay
 };
 
 const React$z = await importShared('react');
-const {useEffect: useEffect$D,useMemo: useMemo$k,useState: useState$F} = React$z;
+const {useEffect: useEffect$D,useMemo: useMemo$l,useState: useState$F} = React$z;
 function buildDeMetaById(program) {
   const m = /* @__PURE__ */ new Map();
   (program?.programStages || []).forEach(
@@ -97361,7 +97397,7 @@ function CollectionModal({
   const formSection = flow?.onApprove?.formSection || flow?.formSection || { fields: [] };
   const fields = Array.isArray(formSection?.fields) ? formSection.fields : [];
   const prefillCfg = formSection?.prefill || null;
-  const formSectionSparePartFieldId = useMemo$k(
+  const formSectionSparePartFieldId = useMemo$l(
     () => findSparePartFieldIdFromSection(formSection),
     [formSection]
   );
@@ -97379,18 +97415,18 @@ function CollectionModal({
   const validationCfg = flow?.onApprove?.collectionValidation || flow?.collectionValidation || null;
   const [collectionAllowed, setCollectionAllowed] = useState$F(true);
   const [permissionChecked, setPermissionChecked] = useState$F(false);
-  const byKey = useMemo$k(() => {
+  const byKey = useMemo$l(() => {
     const m = /* @__PURE__ */ new Map();
     fields.forEach((f) => f?.key && m.set(f.key, f));
     return m;
   }, [fields]);
-  const deMetaById = useMemo$k(() => buildDeMetaById(program), [program]);
+  const deMetaById = useMemo$l(() => buildDeMetaById(program), [program]);
   const { sparePartOptions, sparePartLoading } = useSparePartOptions({
     programId: SPARE_PART_PROGRAM_ID,
     selectedOrganisationUnit: event?.orgUnit,
     data: event?.dataValues
   });
-  const existingByDE = useMemo$k(
+  const existingByDE = useMemo$l(
     () => new Map(
       (event?.dataValues || []).map((dv) => [dv.dataElement, dv.value])
     ),
@@ -97423,7 +97459,7 @@ function CollectionModal({
       active = false;
     };
   }, [formSectionSparePartFieldId, program?.id]);
-  const requestedQty = useMemo$k(() => {
+  const requestedQty = useMemo$l(() => {
     const requestedDirect = toNumberOrNull(
       existingByDE?.get(quantitiesId["DE_QUANTITY_REQUESTED"])
     );
@@ -97439,7 +97475,7 @@ function CollectionModal({
     if (guessedN != null) return guessedN;
     return null;
   }, [deMetaById, event, validationCfg, existingByDE, quantitiesId]);
-  const approvedQty = useMemo$k(() => {
+  const approvedQty = useMemo$l(() => {
     const raw = existingByDE?.get(quantitiesId["DE_QUANTITY_APPROVED"]);
     return toNumberOrNull(raw);
   }, [existingByDE, quantitiesId]);
@@ -140827,7 +140863,7 @@ const ReportActionButtons = ({
 };
 
 var define_process_env_default$1 = {};
-const {useState: useState$C,useContext: useContext$j,useCallback: useCallback$6,useEffect: useEffect$A,useMemo: useMemo$j,useRef: useRef$6} = await importShared('react');
+const {useState: useState$C,useContext: useContext$j,useCallback: useCallback$6,useEffect: useEffect$A,useMemo: useMemo$k,useRef: useRef$6} = await importShared('react');
 const DHIS_UID_REGEX$1 = /^[A-Za-z0-9]{11}$/;
 const TRACKER_PROGRAM_FIELDS = PROGRAM_STAGES_FIELDS + ",programTrackedEntityAttributes[mandatory,trackedEntityAttribute[id,name,formName,displayName,code,valueType,optionSetValue,optionSet[id,name,code,options[id,name,code]]]]";
 const PROGRAM_STAGE_FIELDS_PARAM = encodeURIComponent(TRACKER_PROGRAM_FIELDS);
@@ -141046,7 +141082,7 @@ const ReportExportButtons = ({
     );
     return reportNameType;
   };
-  const reportNameTypeValue = useMemo$j(
+  const reportNameTypeValue = useMemo$k(
     () => extractReportNameType(),
     [reportData?.dataValues, reportData?.fieldNames]
   );
@@ -141061,11 +141097,11 @@ const ReportExportButtons = ({
     );
     return reportName;
   };
-  const reportNameValue = useMemo$j(
+  const reportNameValue = useMemo$k(
     () => extractReportName(),
     [reportData?.dataValues, reportData?.fieldNames]
   );
-  const programReferenceCandidates = useMemo$j(() => {
+  const programReferenceCandidates = useMemo$k(() => {
     const refs = [];
     const pushRef = (value) => {
       if (!value) return;
@@ -141103,7 +141139,7 @@ const ReportExportButtons = ({
     reportData?.programCode
   ]);
   const programMetadataCacheRef = useRef$6(/* @__PURE__ */ new Map());
-  const programList = useMemo$j(() => {
+  const programList = useMemo$k(() => {
     if (Array.isArray(programs?.programs)) return programs.programs;
     if (Array.isArray(programs)) return programs;
     return [];
@@ -143320,7 +143356,7 @@ const hasApprovalStatus = (programId, approvalStatusConfig) => {
     );
 };
 
-const {useMemo: useMemo$i} = await importShared('react');
+const {useMemo: useMemo$j} = await importShared('react');
 
 
 /**
@@ -143335,7 +143371,7 @@ const {useMemo: useMemo$i} = await importShared('react');
  * @returns {Object} - Validation state and message
  */
 const useTrainingApprovalValidation = (event, flowMain, allFlows = []) => {
-    const validationResult = useMemo$i(() => {
+    const validationResult = useMemo$j(() => {
 
         // CRITICAL: Find the flow with approvalValidation for this program
         let validationConfig = flowMain?.approvalValidation;
@@ -143588,7 +143624,7 @@ const WardParticipantsDisplay = ({ value }) => {
   ] });
 };
 
-const {useEffect: useEffect$y,useState: useState$A,useMemo: useMemo$h} = await importShared('react');
+const {useEffect: useEffect$y,useState: useState$A,useMemo: useMemo$i} = await importShared('react');
 
 /**
  * Hook to load section visibility rules for event detail pages
@@ -143634,7 +143670,7 @@ function useEventSectionVisibility(programId) {
     }, [tick]);
 
     // Extract rules for the current program
-    const programRules = useMemo$h(() => {
+    const programRules = useMemo$i(() => {
         if (!programId || !config) return [];
         
         try {
@@ -143730,7 +143766,7 @@ function evaluateCondition(condition, dataValues) {
     }
 }
 
-const {useContext: useContext$i,useEffect: useEffect$x,useMemo: useMemo$g,useState: useState$z} = await importShared('react');
+const {useContext: useContext$i,useEffect: useEffect$x,useMemo: useMemo$h,useState: useState$z} = await importShared('react');
 const norm$1 = (s) => String(s ?? "").trim().toLowerCase();
 const truthy = (v) => {
   if (v === true) return true;
@@ -143803,6 +143839,7 @@ function EventPage() {
   const [statusOptionMap, setStatusOptionMap] = useState$z({});
   const [programApprovalButtons, setProgramApprovalButtons] = useState$z([]);
   const [reportRequiresApproval, setReportRequiresApproval] = useState$z(null);
+  const [dataStoreRaw, setDataStoreRaw] = useState$z(null);
   const [infoCardExpanded, setInfoCardExpanded] = useState$z(false);
   const [expandedSections, setExpandedSections] = useState$z({});
   const [showRegisterButton, setShowRegisterButton] = useState$z(false);
@@ -143919,6 +143956,7 @@ function EventPage() {
         "dataStore",
         "dataStore"
       );
+      setDataStoreRaw(response);
       const approvalProc = response?.approvalProcesses;
       const allocationProc = response?.allocationProcesses;
       const allocationsStatus = response?.allocationsStatus?.configuration;
@@ -144226,7 +144264,7 @@ function EventPage() {
     );
     return progData?.id ?? "";
   };
-  const sections = useMemo$g(
+  const sections = useMemo$h(
     () => (pg?.programStages || []).flatMap((ps) => ps?.programStageSections || []),
     [pg]
   );
@@ -144393,13 +144431,16 @@ function EventPage() {
   const isRegistrationTask = (event?.dataValues || []).some(
     (d) => d?.value === "EQUIPMENT_REGISTRATION"
   );
-  const dataValuesObj = useMemo$g(() => {
+  const dataValuesObj = useMemo$h(() => {
     const map = {};
     (event?.dataValues || []).forEach((dv) => {
       map[dv.dataElement] = dv.value;
     });
     return map;
   }, [event?.dataValues]);
+  const maintenanceTriggerAt = useMemo$h(() => {
+    return dataValuesObj["EbJI5Loxjbl"] || null;
+  }, [dataValuesObj]);
   const trainingValidation = useTrainingApprovalValidation(
     event,
     flowMain,
@@ -144413,11 +144454,11 @@ function EventPage() {
     formData: dataValuesObj
   });
   const assignedApproverValue = approvingOfficerFieldId ? dataValuesObj[approvingOfficerFieldId] : null;
-  const normalizedApproverTokens = useMemo$g(() => {
+  const normalizedApproverTokens = useMemo$h(() => {
     if (!assignedApproverValue) return [];
     return assignedApproverValue.split(/[,/|]+/).map((token) => token.trim().toLowerCase()).filter(Boolean);
   }, [assignedApproverValue]);
-  const isAssignedApprover = useMemo$g(() => {
+  const isAssignedApprover = useMemo$h(() => {
     if (!normalizedApproverTokens.length) return true;
     if (!user) return false;
     const candidateTokens = /* @__PURE__ */ new Set();
@@ -144434,18 +144475,18 @@ function EventPage() {
     });
     return normalizedApproverTokens.some((token) => candidateTokens.has(token));
   }, [normalizedApproverTokens, user]);
-  const approvalConfigList = useMemo$g(() => {
+  const approvalConfigList = useMemo$h(() => {
     if (!userApprovalConfig) return [];
     return Array.isArray(userApprovalConfig) ? userApprovalConfig : [userApprovalConfig];
   }, [userApprovalConfig]);
-  const sectionApprovalConfigById = useMemo$g(() => {
+  const sectionApprovalConfigById = useMemo$h(() => {
     const map = {};
     approvalConfigList.forEach((config) => {
       if (config?.sectionId) map[config.sectionId] = config;
     });
     return map;
   }, [approvalConfigList]);
-  const userHasApprovalRole = useMemo$g(() => {
+  const userHasApprovalRole = useMemo$h(() => {
     if (!approvalConfigList.length || !user?.userRoles) return false;
     return approvalConfigList.some(
       (config) => (config?.userRoles || []).some(
@@ -144905,7 +144946,7 @@ function EventPage() {
                   }
                   const isFileType = de?.valueType === "FILE_RESOURCE" || de?.valueType === "IMAGE";
                   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { marginBottom: 18 }, children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "form-field-label", children: de?.formName || de?.displayName || de?.name || de?.id }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "form-field-label", children: getFieldLabelOverride(dataStoreRaw, de?.id, maintenanceTriggerAt) || de?.formName || de?.displayName || de?.name || de?.id }),
                     isWardMap ? /* @__PURE__ */ jsxRuntimeExports.jsx(WardParticipantsDisplay, { value: rawValue }) : isFileType && rawValue && rawValue !== "N/A" ? /* @__PURE__ */ jsxRuntimeExports.jsx(
                       IonButton,
                       {
@@ -145162,16 +145203,16 @@ const React$t = await importShared('react');
 const {useContext: useContext$h,useState: useState$w} = React$t;
 
 const React$s = await importShared('react');
-const {useEffect: useEffect$u,useMemo: useMemo$f,useState: useState$v} = React$s;
+const {useEffect: useEffect$u,useMemo: useMemo$g,useState: useState$v} = React$s;
 
 const React$r = await importShared('react');
-const {useContext: useContext$g,useState: useState$u,useEffect: useEffect$t,useMemo: useMemo$e} = React$r;
+const {useContext: useContext$g,useState: useState$u,useEffect: useEffect$t,useMemo: useMemo$f} = React$r;
 
 const React$q = await importShared('react');
-const {useState: useState$t,useEffect: useEffect$s,useMemo: useMemo$d} = React$q;
+const {useState: useState$t,useEffect: useEffect$s,useMemo: useMemo$e} = React$q;
 
 const React$p = await importShared('react');
-const {useEffect: useEffect$r,useMemo: useMemo$c,useState: useState$s} = React$p;
+const {useEffect: useEffect$r,useMemo: useMemo$d,useState: useState$s} = React$p;
 const ViewProgramSectionsAccess = ({ onEdit }) => {
   const [confirmOpen, setConfirmOpen] = useState$s(false);
   const [rowToDelete, setRowToDelete] = useState$s(null);
@@ -145191,7 +145232,7 @@ const ViewProgramSectionsAccess = ({ onEdit }) => {
       mq.removeEventListener?.("change", handler);
     };
   }, []);
-  const columns = useMemo$c(
+  const columns = useMemo$d(
     () => [
       { key: "program", label: "Program" },
       { key: "section", label: "Section" },
@@ -145700,7 +145741,7 @@ function SectionAccessUserRoles() {
 }
 
 const React$n = await importShared('react');
-const {useContext: useContext$e,useState: useState$q,useEffect: useEffect$p,useMemo: useMemo$b} = React$n;
+const {useContext: useContext$e,useState: useState$q,useEffect: useEffect$p,useMemo: useMemo$c} = React$n;
 
 const {createPortal: createPortal$1} = await importShared('react-dom');
 const DS_KEY = "enrollmentAccessSettings";
@@ -145723,20 +145764,20 @@ function InlineEditor({ open, onClose, onSave, programs, roles, initial, usedPro
     setQuery("");
   }, [initial, open]);
   const isEdit = !!initial;
-  const eligiblePrograms = useMemo$b(() => {
+  const eligiblePrograms = useMemo$c(() => {
     if (isEdit) return programs;
     return programs.filter((p) => !usedProgramIds?.has(p.id));
   }, [programs, usedProgramIds, isEdit]);
   const noChange = isEdit && initial.programId === programId && JSON.stringify([...roleIds].sort()) === JSON.stringify([...initial.roleIds || []].sort());
-  const sortedPrograms = useMemo$b(
+  const sortedPrograms = useMemo$c(
     () => eligiblePrograms.slice().sort((a, b) => (a?.name || "").localeCompare(b?.name || "")),
     [eligiblePrograms]
   );
-  const sortedRoles = useMemo$b(
+  const sortedRoles = useMemo$c(
     () => roles.slice().sort((a, b) => (a?.name || "").localeCompare(b?.name || "")),
     [roles]
   );
-  const filteredRoles = useMemo$b(() => {
+  const filteredRoles = useMemo$c(() => {
     const q = query.trim().toLowerCase();
     if (!q) return sortedRoles;
     return sortedRoles.filter((r) => (r.name || r.displayName || "").toLowerCase().includes(q));
@@ -145952,11 +145993,11 @@ function EnrollmentAccessSettings() {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
-  const allPrograms = useMemo$b(
+  const allPrograms = useMemo$c(
     () => (programsCtx?.programs || []).slice().sort((a, b) => (a?.name || "").localeCompare(b?.name || "")),
     [programsCtx?.programs]
   );
-  const allRoles = useMemo$b(
+  const allRoles = useMemo$c(
     () => (rolesCtx?.userRoles || []).slice().sort((a, b) => (a?.name || "").localeCompare(b?.name || "")),
     [rolesCtx?.userRoles]
   );
@@ -146015,8 +146056,8 @@ function EnrollmentAccessSettings() {
     load();
   }, [programsReady, rolesReady]);
   const broadcastChange = (next) => window.dispatchEvent(new CustomEvent("memis:enrollmentAccessChanged", { detail: next }));
-  const usedProgramIds = useMemo$b(() => new Set(rows.map((r) => r.programId)), [rows]);
-  const remainingProgramsCount = useMemo$b(
+  const usedProgramIds = useMemo$c(() => new Set(rows.map((r) => r.programId)), [rows]);
+  const remainingProgramsCount = useMemo$c(
     () => allPrograms.filter((p) => !usedProgramIds.has(p.id)).length,
     [allPrograms, usedProgramIds]
   );
@@ -146103,7 +146144,7 @@ function EnrollmentAccessSettings() {
       setConfirmIdx(null);
     }
   };
-  useMemo$b(
+  useMemo$c(
     () => [
       { key: "program", label: "Program" },
       { key: "roles", label: "Allowed Roles" }
@@ -146257,7 +146298,7 @@ function EnrollmentAccessSettings() {
 }
 
 const React$m = await importShared('react');
-const {useEffect: useEffect$o,useMemo: useMemo$a,useState: useState$p} = React$m;
+const {useEffect: useEffect$o,useMemo: useMemo$b,useState: useState$p} = React$m;
 const PAGE_SIZE$2 = 50;
 const MOBILE_BREAKPOINT$2 = 768;
 const WardsSettings = () => {
@@ -146278,11 +146319,21 @@ const WardsSettings = () => {
     try {
       setIsLoading(true);
       const res = await LocalForageServiceInstance.getItem(
-        "userOrganisationUnits",
-        "userOrgUnits"
+        "orgUnitGroups",
+        "orgUnitGroups"
       );
-      res?.sort((a, b) => a.name.localeCompare(b.name));
-      setWards(res || []);
+      const userData = await LocalForageServiceInstance.getItem(
+        "userRes",
+        "user"
+      );
+      const userOrg = userData?.organisationUnits;
+      const groups = res?.find((group) => group?.code === "MEMIS_HF");
+      userOrg.sort((a, b) => a - b);
+      const facilities = groups?.organisationUnits?.filter(
+        (org) => org?.id === userOrg[0]?.id
+      );
+      facilities?.sort((a, b) => a.name.localeCompare(b.name));
+      setWards(facilities || []);
     } catch (error) {
       console.error("Error fetching organisation units:", error);
     } finally {
@@ -146320,14 +146371,14 @@ const WardsSettings = () => {
     window.addEventListener("resize", resize);
     return () => window.removeEventListener("resize", resize);
   }, []);
-  const filteredWards = useMemo$a(() => {
+  const filteredWards = useMemo$b(() => {
     return wards.filter((item) => {
       const value = search.toLowerCase();
       return item?.name?.toLowerCase().includes(value) || item?.parent?.name?.toLowerCase().includes(value) || item?.code?.toLowerCase().includes(value) || String(item?.level || "").toLowerCase().includes(value);
     });
   }, [wards, search]);
   const totalPages = Math.ceil(filteredWards.length / PAGE_SIZE$2);
-  const paginatedData = useMemo$a(() => {
+  const paginatedData = useMemo$b(() => {
     const start = (page - 1) * PAGE_SIZE$2;
     const end = start + PAGE_SIZE$2;
     return filteredWards.slice(start, end);
@@ -146391,8 +146442,8 @@ const WardsSettings = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonPage, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(IonContent, { fullscreen: true, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(IonHeader, { className: "ion-no-border", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonToolbar, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(IonTitle, { slot: "start", children: "Facilities & Wards" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { slot: "end", onClick: () => setOpenModal(true), children: "Assign User" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx(IonTitle, { slot: "start", children: "Facilities" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { slot: "end", onClick: () => setOpenModal(true), className: "ion-margin-end", children: "Assign User to Ward" })
       ] }) }),
       isLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: loaderStyle$1, children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonSpinner, { name: "crescent" }) }) : wards.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { className: "ion-padding", children: "No wards found." }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { padding: "16px" }, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -146444,31 +146495,29 @@ const WardsSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx("th", { style: thStyle$1, children: "Name" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("th", { style: thStyle$1, children: "Parent" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("th", { style: thStyle$1, children: "Code" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("th", { style: thStyle$1, children: "Level" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("th", { style: thStyle$1, children: "Actions" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("th", { style: thStyle$1, children: "Level" })
             ] }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: paginatedData.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("td", { colSpan: "5", style: emptyStyle$1, children: "No matching records found." }) }) : paginatedData.map((row, index) => /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, children: row.name }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, children: row.parent?.name }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, children: row.code }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, children: row.level }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonButtons, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                IonButton,
-                {
-                  fill: "clear",
-                  color: "primary",
-                  onClick: () => {
-                    const params = new URLSearchParams();
-                    params.append("id", row.id);
-                    params.append("name", row.name);
-                    navigate(
-                      `/memis/settings/view?${params.toString()}`
-                    );
-                  },
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonIcon, { icon: eye })
-                }
-              ) }) })
-            ] }, row.id || index)) })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: paginatedData.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("td", { colSpan: "5", style: emptyStyle$1, children: "No matching records found." }) }) : paginatedData.map((row, index) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "tr",
+              {
+                className: "rowCss",
+                onClick: () => {
+                  const params = new URLSearchParams();
+                  params.append("id", row.id);
+                  params.append("name", row.name);
+                  navigate(
+                    `/memis/settings/view?${params.toString()}`
+                  );
+                },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, children: row.name }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, children: row.parent?.name }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, children: row.code }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, children: row.level })
+                ]
+              },
+              row.id || index
+            )) })
           ] }) })
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: paginationStyle$1, children: [
@@ -146598,7 +146647,7 @@ const cardRow = {
 };
 
 const React$l = await importShared('react');
-const {useEffect: useEffect$n,useMemo: useMemo$9,useState: useState$o} = React$l;
+const {useEffect: useEffect$n,useMemo: useMemo$a,useState: useState$o} = React$l;
 const MOBILE_BREAKPOINT$1 = 992;
 const PAGE_SIZE$1 = 50;
 const MetadataSettings = () => {
@@ -146670,17 +146719,17 @@ const MetadataSettings = () => {
       showToast("Failed to save metadata", "danger");
     }
   };
-  const optionSetMap = useMemo$9(() => {
+  const optionSetMap = useMemo$a(() => {
     return Object.fromEntries(optionSets.map((x) => [x.id, x]));
   }, [optionSets]);
   const selectedOptionSet = optionSetMap[selectedSetId];
-  const filteredOptionSets = useMemo$9(() => {
+  const filteredOptionSets = useMemo$a(() => {
     const value = searchOptionSet.toLowerCase();
     return optionSets.filter((item) => {
       return item?.name?.toLowerCase()?.includes(value) || item?.code?.toLowerCase()?.includes(value);
     });
   }, [optionSets, searchOptionSet]);
-  const filteredOptions = useMemo$9(() => {
+  const filteredOptions = useMemo$a(() => {
     if (!selectedOptionSet?.options) return [];
     const value = searchOptions.toLowerCase();
     return selectedOptionSet.options.filter((item) => {
@@ -146688,7 +146737,7 @@ const MetadataSettings = () => {
     });
   }, [selectedOptionSet, searchOptions]);
   const totalPages = Math.ceil(filteredOptions.length / PAGE_SIZE$1);
-  const paginatedOptions = useMemo$9(() => {
+  const paginatedOptions = useMemo$a(() => {
     const start = (page - 1) * PAGE_SIZE$1;
     const end = start + PAGE_SIZE$1;
     return filteredOptions.slice(start, end);
@@ -146696,7 +146745,7 @@ const MetadataSettings = () => {
   useEffect$n(() => {
     setPage(1);
   }, [searchOptions, selectedSetId]);
-  const totalOptions = useMemo$9(() => {
+  const totalOptions = useMemo$a(() => {
     return optionSets.reduce(
       (acc, curr) => acc + (curr?.options?.length || 0),
       0
@@ -147458,7 +147507,7 @@ const DatasetGeneralForm = ({
 };
 
 const React$k = await importShared('react');
-const {useState: useState$n,useEffect: useEffect$m,useMemo: useMemo$8} = React$k;
+const {useState: useState$n,useEffect: useEffect$m,useMemo: useMemo$9} = React$k;
 const StockThresholdSettings = () => {
   const [loading, setLoading] = useState$n(true);
   const [dataSets, setDataSets] = useState$n([]);
@@ -147467,20 +147516,14 @@ const StockThresholdSettings = () => {
   const [selectedPeriod, setSelectedPeriod] = useState$n("");
   const [formData, setFormData] = useState$n({});
   const [userFacility, setUserFacility] = useState$n([]);
-  const selectedDatasetObject = useMemo$8(() => {
+  const selectedDatasetObject = useMemo$9(() => {
     return dataSets.find((dts) => dts?.id === selectedDataSet);
   }, [selectedDataSet, dataSets]);
   const loadData = async () => {
     setLoading(true);
     try {
-      const data = await LocalForageServiceInstance.getItem(
-        "dataSets",
-        "dataSets"
-      );
-      const user = await LocalForageServiceInstance.getItem(
-        "userRes",
-        "user"
-      );
+      const data = await LocalForageServiceInstance.getItem("dataSets", "dataSets");
+      const user = await LocalForageServiceInstance.getItem("userRes", "user");
       setUserFacility(user?.organisationUnits || []);
       setDataSets(data || []);
     } catch (e) {
@@ -147498,20 +147541,6 @@ const StockThresholdSettings = () => {
       ...prev,
       [id]: value
     }));
-  };
-  const getPeriodPresentation = (periodType) => {
-    switch (periodType) {
-      case "Yearly":
-        return "year";
-      case "Monthly":
-        return "month-year";
-      case "Weekly":
-        return "date";
-      case "Daily":
-        return "date";
-      default:
-        return "date";
-    }
   };
   if (loading) {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -147590,9 +147619,7 @@ const StockThresholdSettings = () => {
                 placeholder: "Facilities",
                 disabled: !selectedDataSet,
                 data: selectedDatasetObject ? selectedDatasetObject?.organisationUnits?.filter(
-                  (org) => userFacility?.some(
-                    (usf) => usf?.id !== org?.id
-                  )
+                  (org) => userFacility?.some((usf) => usf?.id !== org?.id)
                 ) : [],
                 itemTextField: "name",
                 itemValueField: "id",
@@ -147632,11 +147659,11 @@ const StockThresholdSettings = () => {
                     }
                   ),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    IonDatetime,
+                    IonInput,
                     {
-                      presentation: getPeriodPresentation(
-                        selectedDatasetObject?.periodType
-                      ),
+                      fill: "outline",
+                      max: (/* @__PURE__ */ new Date()).toISOString().split("T")[0],
+                      type: "date",
                       value: selectedPeriod,
                       onIonChange: (e) => setSelectedPeriod(e.detail.value)
                     }
@@ -147722,17 +147749,17 @@ function Settings() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(IonTab, { tab: "enrollment", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { id: "enrollment-page", children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonPage, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonContent, { fullscreen: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx(EnrollmentAccessSettings, {}) }) }) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(IonTab, { tab: "wards", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { id: "wards-page", children: /* @__PURE__ */ jsxRuntimeExports.jsx(WardsSettings, {}) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(IonTab, { tab: "metadata", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { id: "metadata-page", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MetadataSettings, {}) }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IonTab, { tab: "stockThreshold", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { id: "stock-threshold-page", children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonPage, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonContent, { fullscreen: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx(StockThresholdSettings, {}) }) }) }) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(IonTab, { tab: "stockThreshold", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { id: "stock-threshold-page", children: /* @__PURE__ */ jsxRuntimeExports.jsx(StockThresholdSettings, {}) }) })
   ] });
 }
 
 const React$i = await importShared('react');
-const {useContext: useContext$d,useMemo: useMemo$7} = React$i;
+const {useContext: useContext$d,useMemo: useMemo$8} = React$i;
 function ProgramAccessGuard({ children, programId }) {
   const { program } = useParams();
   const permissions = useContext$d(MEMISContext.PermissionContext);
   const isPermissionsReady = !!permissions && typeof permissions.hasProgramRight === "function";
-  const hasRead = useMemo$7(() => {
+  const hasRead = useMemo$8(() => {
     const pid = programId || program;
     if (!pid) return true;
     const roleRead = permissions?.hasProgramRight?.(pid, "read");
@@ -149282,7 +149309,7 @@ function DeregistrationEventView() {
 }
 
 const React$f = await importShared('react');
-const {useCallback: useCallback$5,useEffect: useEffect$h,useMemo: useMemo$6,useRef: useRef$5,useState: useState$i} = React$f;
+const {useCallback: useCallback$5,useEffect: useEffect$h,useMemo: useMemo$7,useRef: useRef$5,useState: useState$i} = React$f;
 React$f.memo(function FieldRenderer2({
   f,
   getDEMeta,
@@ -149368,7 +149395,7 @@ React$f.memo(function FieldRenderer2({
 });
 
 const React$e = await importShared('react');
-const {useCallback: useCallback$4,useEffect: useEffect$g,useMemo: useMemo$5,useRef: useRef$4,useState: useState$h} = React$e;
+const {useCallback: useCallback$4,useEffect: useEffect$g,useMemo: useMemo$6,useRef: useRef$4,useState: useState$h} = React$e;
 React$e.memo(function Field2({ meta, value, onChange }) {
   const f = meta;
   const label = f.name || f.formName || f.id;
@@ -149447,7 +149474,7 @@ React$e.memo(function Field2({ meta, value, onChange }) {
 });
 
 const React$d = await importShared('react');
-const {useCallback: useCallback$3,useEffect: useEffect$f,useMemo: useMemo$4,useState: useState$g} = React$d;
+const {useCallback: useCallback$3,useEffect: useEffect$f,useMemo: useMemo$5,useState: useState$g} = React$d;
 function ConfirmMaintenanceModal({ program, event, section, getEventDetails, buttonLabel }) {
   const [open, setOpen] = useState$g(false);
   const [matches, setMatches] = useState$g([]);
@@ -149483,7 +149510,7 @@ function ConfirmMaintenanceModal({ program, event, section, getEventDetails, but
       }
     })();
   }, []);
-  const cfg = useMemo$4(() => {
+  const cfg = useMemo$5(() => {
     if (!matches?.length) return null;
     const meRoles = new Set((user?.userRoles || []).map((r) => r.id));
     const requirementsOk = (c) => {
@@ -149503,14 +149530,14 @@ function ConfirmMaintenanceModal({ program, event, section, getEventDetails, but
     });
     return visibleToMe[0] || pool[0];
   }, [matches, user?.userRoles, event]);
-  const canSeeButton = useMemo$4(() => {
+  const canSeeButton = useMemo$5(() => {
     if (!cfg) return false;
     const allowed = cfg.rolesAllowed || [];
     if (allowed.length === 0) return true;
     const meRoleIds = new Set((user?.userRoles || []).map((r) => r.id));
     return allowed.some((r) => meRoleIds.has(r.id));
   }, [cfg, user?.userRoles]);
-  const decisionDE = useMemo$4(() => {
+  const decisionDE = useMemo$5(() => {
     if (!cfg?.decisionFieldRef) return null;
     const needle = String(cfg.decisionFieldRef.value).trim().toLowerCase();
     const by = String(cfg.decisionFieldRef.matchBy || "id").toLowerCase();
@@ -149533,7 +149560,7 @@ function ConfirmMaintenanceModal({ program, event, section, getEventDetails, but
     const viaPDE = pdes.find((p) => String(p?.dataElement?.id || "").toLowerCase() === needle);
     return viaPDE?.dataElement || null;
   }, [section, cfg?.decisionFieldRef]);
-  const currentDecision = useMemo$4(() => {
+  const currentDecision = useMemo$5(() => {
     if (!decisionDE) return "";
     const m = new Map((event?.dataValues || []).map((d) => [d.dataElement, d.value]));
     const raw = m.get(decisionDE.id);
@@ -264399,7 +264426,7 @@ function PrintJobCard({ event, section, elements }) {
   ] });
 }
 
-const {useCallback: useCallback$1,useEffect: useEffect$6,useState: useState$7} = await importShared('react');
+const {useCallback: useCallback$1,useEffect: useEffect$6,useState: useState$7,useMemo: useMemo$4} = await importShared('react');
 function TeiEvents() {
   const { program, tei, stage, evnt } = useParams();
   const [loadingPage, setLoadingPage] = useState$7(true);
@@ -264426,9 +264453,16 @@ function TeiEvents() {
   const [maintenanceCfg, setMaintenanceCfg] = useState$7(null);
   const [maintenanceButtons, setMaintenanceButtons] = useState$7([]);
   const [maintenanceRoles, setMaintenanceRoles] = useState$7([]);
+  const [dataStoreRaw, setDataStoreRaw] = useState$7(null);
   const [workFlow, setWorkFlows] = useState$7();
   const [de, setDe] = useState$7([]);
   useLocation();
+  const maintenanceTriggerAt = useMemo$4(() => {
+    const code = event?.dataValues?.find(
+      (dv) => dv.dataElement === "EbJI5Loxjbl"
+    )?.value;
+    return code || null;
+  }, [event?.dataValues]);
   const [infoCardExpanded, setInfoCardExpanded] = useState$7(false);
   const [expandedSections, setExpandedSections] = useState$7({});
   const [filePreviewOpen, setFilePreviewOpen] = useState$7(false);
@@ -264547,6 +264581,7 @@ function TeiEvents() {
           "dataStore",
           "dataStore"
         );
+        setDataStoreRaw(results);
         const allocationProc = results?.equipmentCollectionProcesses;
         const acknowledgeResult = results?.acknowledgementEquipmentReceiptProcesses;
         const mnt = results?.maintenanceProcesses;
@@ -264876,8 +264911,13 @@ function TeiEvents() {
                   const isFileType = de2?.valueType === "FILE_RESOURCE" || de2?.valueType === "IMAGE";
                   const val = de2?.valueType === "ORGANISATION_UNIT" ? ouNameMap[de2?.id] || ouName : getVal(de2?.id, de2);
                   if (val === void 0) return null;
+                  const fieldLabel = getFieldLabelOverride(
+                    dataStoreRaw,
+                    de2?.id,
+                    maintenanceTriggerAt
+                  ) || de2?.formName;
                   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { marginBottom: 18 }, children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "form-field-label", children: de2?.formName }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "form-field-label", children: fieldLabel }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "form-field-value", children: isFileType && val && val !== "N/A" ? /* @__PURE__ */ jsxRuntimeExports.jsx(
                       IonButton,
                       {
@@ -268747,11 +268787,20 @@ const ViewWardSettingsDetails = () => {
               }
             )
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { button: true, onClick: () => setShowDatePicker(true), children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { button: true, children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { children: [
               "Opening Date ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "red" }, children: "*" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: form.openingDate ? new Date(form.openingDate).toDateString() : "Tap to select" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                IonInput,
+                {
+                  fill: "outline",
+                  max: (/* @__PURE__ */ new Date()).toISOString().split("T")[0],
+                  type: "date",
+                  value: form.openingDate,
+                  onIonChange: (e) => setForm({ ...form, openingDate: e.detail.value })
+                }
+              )
             ] }),
             submitted && errors.openingDate && /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "danger", style: { fontSize: 12 }, children: errors.openingDate })
           ] }),
@@ -268809,29 +268858,6 @@ const ViewWardSettingsDetails = () => {
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IonPopover,
-      {
-        isOpen: showDatePicker,
-        onDidDismiss: () => setShowDatePicker(false),
-        className: "date-popover",
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          IonDatetime,
-          {
-            max: (/* @__PURE__ */ new Date()).toISOString().split("T")[0],
-            presentation: "date",
-            value: form.openingDate,
-            onIonChange: (e) => {
-              setForm((prev) => ({
-                ...prev,
-                openingDate: e.detail.value
-              }));
-              setShowDatePicker(false);
-            }
-          }
-        )
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
       IonToast,
       {
         isOpen: toast.open,
@@ -268847,7 +268873,7 @@ const ViewWardSettingsDetails = () => {
 const hero = {
   padding: 16,
   color: "#2b2a2aff",
-  background: "linear-gradient(135deg, #d4d4d4ff, #e0e0e0ff)"
+  background: "linear-gradient(135deg, rgb(247, 246, 246), rgb(243, 242, 242))"
 };
 const title = {
   fontSize: 18,
