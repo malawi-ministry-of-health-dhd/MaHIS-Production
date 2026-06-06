@@ -1,6 +1,6 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/LocalForageService.js","assets/_commonjsHelpers.js","assets/index2.js","assets/index.es.js"])))=>i.map(i=>d[i]);
 import { importShared } from './__federation_fn_import.js';
-import { u as useLocation, f as useNavigate, i as icons, j as jsxRuntimeExports, I as IonMenuToggle, g as IonItem, h as IonIcon, k as IonLabel, _ as __vitePreload, l as IonRefresher, m as IonRefresherContent, n as isPlatform, M as MEMISContext, o as IonMenu, p as IonHeader, q as IonToolbar, t as IonTitle, L as Link$1, v as IonContent, w as IonList, x as home, y as IonAccordionGroup, z as IonAccordion, A as albumsOutline, e as setActiveProgramCookie, C as settingsSharp, E as IonButtons, F as IonMenuButton, G as IonButton, H as mailOutline, J as notificationsOutline, K as IonBadge, N as personCircleOutline, Q as logOutOutline, R as showToast, V as Outlet, W as chevronDownOutline, X as searchOutline, Y as checkmarkOutline, Z as closeCircle, $ as IonGrid, a0 as IonRow, a1 as IonCol, a2 as chevronUpOutline, a3 as IonInput, a4 as IonRadioGroup, a5 as IonRadio, a6 as IonCard, a7 as IonCardContent, a8 as warningOutline, a9 as constructOutline, aa as arrowForward, ab as chevronForwardOutline, ac as IonPage, S as SuspenseLoader, ad as metadataInit, r as renderListByUserRole, ae as hardwareChipOutline, af as closeOutline, ag as settingsOutline, ah as addOutline, ai as y$3, s as sendNotification, aj as IonSpinner, ak as close, d as documentText, al as imageOutline, am as document$1, an as alertCircleOutline, ao as IonText, ap as arrowBackCircleOutline, aq as chevronBackOutline, ar as saveOutline, as as IonLoading, at as IonCheckbox, au as IonPopover, av as IonDatetime, aw as IonTextarea, ax as IonCardHeader, ay as IonCardTitle, az as useSearchParams, aA as ellipsisVertical, aB as arrowUp, aC as arrowDown, aD as removeOutline, aE as IonModal, aF as IonSearchbar, aG as filterOutline, aH as qrCodeOutline, aI as IonSelect, aJ as IonSelectOption, aK as api, aL as businessOutline, aM as usePermissions, aN as removeCircleOutline, aO as addCircleOutline, aP as useDataStore, aQ as IonInputPasswordToggle, aR as checkmarkDoneOutline, aS as timeOutline, aT as createOutline, aU as IonBreadcrumbs, aV as IonBreadcrumb, aW as chevronForward, aX as useParams, aY as IonAvatar, aZ as IonActionSheet, P as PROGRAMS_FIELDS, a_ as IonFooter, a$ as downloadOutline, b0 as eyeOutline, b1 as printOutline, b2 as IonCardSubtitle, b3 as PROGRAM_STAGES_FIELDS, b4 as informationCircleOutline, b5 as homeOutline, b6 as arrowBackOutline, b7 as trash, b8 as IonAlert, b9 as addCircle, ba as refresh, bb as useIonToast, bc as IonToggle, bd as IonTabs, be as IonTabBar, bf as IonTabButton, bg as settings, bh as lockClosed, bi as documentLock, bj as business, bk as informationCircle, bl as barChart, bm as IonTab, bn as checkmarkCircleOutline, bo as chatbubbleOutline, bp as analyticsOutline, bq as lockClosedOutline, br as refreshOutline, bs as locationOutline, bt as peopleOutline, bu as add$1, bv as IonToast, bw as Routes, bx as Route, by as Navigate } from './breadCrumb.js';
+import { u as useLocation, f as useNavigate, i as icons, j as jsxRuntimeExports, I as IonMenuToggle, g as IonItem, h as IonIcon, k as IonLabel, _ as __vitePreload, l as IonRefresher, m as IonRefresherContent, n as isPlatform, M as MEMISContext, o as IonMenu, p as IonHeader, q as IonToolbar, t as IonTitle, L as Link$1, v as IonContent, w as IonList, x as home, y as IonAccordionGroup, z as IonAccordion, A as albumsOutline, e as setActiveProgramCookie, C as settingsSharp, E as IonButtons, F as IonMenuButton, G as IonButton, H as mailOutline, J as notificationsOutline, K as IonBadge, N as personCircleOutline, Q as logOutOutline, R as showToast, V as Outlet, W as chevronDownOutline, X as searchOutline, Y as checkmarkOutline, Z as closeCircle, $ as IonGrid, a0 as IonRow, a1 as IonCol, a2 as chevronUpOutline, a3 as IonInput, a4 as IonRadioGroup, a5 as IonRadio, a6 as IonCard, a7 as IonCardContent, a8 as warningOutline, a9 as constructOutline, aa as arrowForward, ab as chevronForwardOutline, ac as IonPage, S as SuspenseLoader, ad as metadataInit, r as renderListByUserRole, ae as hardwareChipOutline, af as closeOutline, ag as settingsOutline, ah as addOutline, ai as y$3, s as sendNotification, aj as IonSpinner, ak as close, d as documentText, al as imageOutline, am as document$1, an as alertCircleOutline, ao as IonText, ap as arrowBackCircleOutline, aq as chevronBackOutline, ar as saveOutline, as as IonLoading, at as IonCheckbox, au as IonPopover, av as IonDatetime, aw as IonTextarea, ax as IonCardHeader, ay as IonCardTitle, az as useSearchParams, aA as ellipsisVertical, aB as arrowUp, aC as arrowDown, aD as removeOutline, aE as IonModal, aF as IonSearchbar, aG as filterOutline, aH as qrCodeOutline, aI as IonSelect, aJ as IonSelectOption, aK as api, aL as businessOutline, aM as usePermissions, aN as removeCircleOutline, aO as addCircleOutline, aP as useDataStore, aQ as IonInputPasswordToggle, aR as checkmarkDoneOutline, aS as timeOutline, aT as createOutline, aU as IonBreadcrumbs, aV as IonBreadcrumb, aW as chevronForward, aX as useParams, aY as IonAvatar, aZ as IonActionSheet, P as PROGRAMS_FIELDS, a_ as IonFooter, a$ as downloadOutline, b0 as eyeOutline, b1 as printOutline, b2 as IonCardSubtitle, b3 as PROGRAM_STAGES_FIELDS, b4 as informationCircleOutline, b5 as homeOutline, b6 as arrowBackOutline, b7 as trash, b8 as IonAlert, b9 as addCircle, ba as refresh, bb as locationOutline, bc as orgUnitGroupsInit, bd as useIonToast, be as IonToggle, bf as IonTabs, bg as IonTabBar, bh as IonTabButton, bi as settings, bj as lockClosed, bk as documentLock, bl as business, bm as informationCircle, bn as barChart, bo as IonTab, bp as checkmarkCircleOutline, bq as chatbubbleOutline, br as analyticsOutline, bs as lockClosedOutline, bt as refreshOutline, bu as peopleOutline, bv as add$1, bw as IonToast, bx as Routes, by as Route, bz as Navigate } from './breadCrumb.js';
 import dataStore, { qrConfigService } from './index2.js';
 import { c as commonjsRequire$1, L as LocalForageServiceInstance } from './LocalForageService.js';
 import { a as getAugmentedNamespace$2, c as commonjsGlobal$2, g as getDefaultExportFromCjs$3 } from './_commonjsHelpers.js';
@@ -8446,7 +8446,7 @@ const dataSetsInit = async (forceRefresh = false) => {
 
 var define_process_env_default$2 = {};
 const React$T = await importShared('react');
-const {useContext: useContext$G,useEffect: useEffect$1z,useRef: useRef$u,useState: useState$1x,useMemo: useMemo$U,Suspense} = React$T;
+const {useContext: useContext$H,useEffect: useEffect$1z,useRef: useRef$u,useState: useState$1x,useMemo: useMemo$U,Suspense} = React$T;
 const MainLayout = ({ menuItems, children }) => {
   const navigate = useNavigate();
   const [hasAccess, setHasAccess] = useState$1x(null);
@@ -8557,13 +8557,13 @@ const MainLayout = ({ menuItems, children }) => {
     loading: menuLoading = false,
     refresh: refreshMenu,
     menuError
-  } = useContext$G(MEMISContext.MenuContext) || {};
-  const { isLoading } = useContext$G(MEMISContext.DashboardContext);
+  } = useContext$H(MEMISContext.MenuContext) || {};
+  const { isLoading } = useContext$H(MEMISContext.DashboardContext);
   const {
     programs = [],
     loading: programsLoading = false,
     refresh: refreshPrograms
-  } = useContext$G(MEMISContext.ProgramContext) || {};
+  } = useContext$H(MEMISContext.ProgramContext) || {};
   const getMessages = async () => {
     try {
       const data = await dataStore.get(
@@ -9020,9 +9020,9 @@ const MainLayout = ({ menuItems, children }) => {
 };
 
 const React$S = await importShared('react');
-const {useContext: useContext$F,useEffect: useEffect$1y,useMemo: useMemo$T} = React$S;
+const {useContext: useContext$G,useEffect: useEffect$1y,useMemo: useMemo$T} = React$S;
 const WithRoleBasedLayout = () => {
-  const { menuModel, loading } = useContext$F(MEMISContext.MenuContext);
+  const { menuModel, loading } = useContext$G(MEMISContext.MenuContext);
   return (
     // <MainLayout menuItems={groupedMenu}>
     /* @__PURE__ */ jsxRuntimeExports.jsxs(MainLayout, { menuItems: menuModel, children: [
@@ -19509,7 +19509,7 @@ await importShared('react');
 Chart$1.register(ArcElement, plugin_tooltip, plugin_legend);
 
 const React$R = await importShared('react');
-const {useContext: useContext$E,useEffect: useEffect$1w,useState: useState$1w} = React$R;
+const {useContext: useContext$F,useEffect: useEffect$1w,useState: useState$1w} = React$R;
 
 const React$Q = await importShared('react');
 const {useEffect: useEffect$1v} = React$Q;
@@ -21021,7 +21021,7 @@ const EquipmentStats = {
   },
 };
 
-const {useContext: useContext$D,useEffect: useEffect$1s,useMemo: useMemo$Q,useState: useState$1t} = await importShared('react');
+const {useContext: useContext$E,useEffect: useEffect$1s,useMemo: useMemo$Q,useState: useState$1t} = await importShared('react');
 const DEFAULT_FILTERS = {
   startDate: "",
   endDate: "",
@@ -21030,10 +21030,10 @@ const DEFAULT_FILTERS = {
   period: "THIS_MONTH"
 };
 const Dashboard = () => {
-  const { dashboardConfigs, isLoading, reload, setIsLoading } = useContext$D(
+  const { dashboardConfigs, isLoading, reload, setIsLoading } = useContext$E(
     MEMISContext.DashboardContext
   );
-  const { user } = useContext$D(MEMISContext.UserRolesContext);
+  const { user } = useContext$E(MEMISContext.UserRolesContext);
   const [isLoadingFromFilters, setIsLoadingFromFilters] = useState$1t(false);
   const [defaultDepartment, setDefaultDepartment] = useState$1t("");
   const [dashboardData, setDashboardData] = useState$1t({});
@@ -21092,7 +21092,7 @@ const Dashboard = () => {
       period: "THIS_MONTH"
     });
   };
-  const hasDashboardAccess = useMemo$Q(() => {
+  useMemo$Q(() => {
     return dashboardConfigs?.some(
       (d) => d.access?.some(
         (acc) => user?.userRoles?.some((ur) => ur?.id === acc?.id)
@@ -21123,7 +21123,9 @@ const Dashboard = () => {
       }
       let data = null;
       const loggedInUser = await LocalForageServiceInstance.getItem("userRes", "user");
-      const useAllocated = loggedInUser.userRoles?.some((role) => role?.id === "Ec6TZ5N1QeF");
+      const useAllocated = loggedInUser.userRoles?.some(
+        (role) => role?.id === "Ec6TZ5N1QeF"
+      );
       if (brand) {
         filters.push(`cHWWv4Tn1NE:like:${brand}`);
       }
@@ -21427,9 +21429,9 @@ const Dashboard = () => {
       endDate,
       period: "THIS_MONTH"
     });
-  }, [selectedFilters]);
+  }, [selectedFilters, dashboardConfigs]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonPage, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IonHeader, { className: "custom-header", children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonToolbar, { className: "custom-toolbar", children: hasDashboardAccess && /* @__PURE__ */ jsxRuntimeExports.jsx(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(IonHeader, { className: "custom-header", children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonToolbar, { className: "custom-toolbar", children: !isLoading && !isLoadingFromFilters && /* @__PURE__ */ jsxRuntimeExports.jsx(
       FilterFields,
       {
         filters: selectedFilters,
@@ -26123,7 +26125,7 @@ const styles$1 = {
   }
 };
 
-const {useCallback: useCallback$p,useContext: useContext$C,useEffect: useEffect$16,useMemo: useMemo$E,useState: useState$18} = await importShared('react');
+const {useCallback: useCallback$p,useContext: useContext$D,useEffect: useEffect$16,useMemo: useMemo$E,useState: useState$18} = await importShared('react');
 function ConfigurableForm({
   handleSubmit,
   handleCancel,
@@ -26159,8 +26161,8 @@ function ConfigurableForm({
 }) {
   const [wardData, setWardData] = useState$18(null);
   const location = useLocation();
-  const { userOrganisationUnits } = useContext$C(MEMISContext.UserContext);
-  const { user } = useContext$C(MEMISContext.UserRolesContext) || {};
+  const { userOrganisationUnits } = useContext$D(MEMISContext.UserContext);
+  const { user } = useContext$D(MEMISContext.UserRolesContext) || {};
   const [futureDateFields, setFutureDateFields] = useState$18([]);
   const [dataStoreData, setDataStoreData] = useState$18({});
   const [validationErrors, setValidationErrors] = useState$18({});
@@ -26245,7 +26247,7 @@ function ConfigurableForm({
     selectedOrganisationUnit
   );
   const sectionVisibilityRules = useSectionVisibilityConfig(programId);
-  const { programs } = useContext$C(MEMISContext.ProgramContext);
+  const { programs } = useContext$D(MEMISContext.ProgramContext);
   const programObj = useMemo$E(() => {
     if (!programId) return null;
     const list = Array.isArray(programs) ? programs : programs?.programs || [];
@@ -31654,7 +31656,7 @@ const CreateDataItemsController = {
 };
 
 const React$N = await importShared('react');
-const {useContext: useContext$B,useEffect: useEffect$15,useMemo: useMemo$D,useState: useState$17} = React$N;
+const {useContext: useContext$C,useEffect: useEffect$15,useMemo: useMemo$D,useState: useState$17} = React$N;
 const A$9 = (x) => Array.isArray(x) ? x : [];
 function MultiEntryForm({
   dataElements = null,
@@ -31674,8 +31676,8 @@ function MultiEntryForm({
   const [imageUrls, setImageUrls] = useState$17({});
   const [imageLoading, setImageLoading] = useState$17({});
   const navigate = useNavigate();
-  const { userOrganisationUnits } = useContext$B(MEMISContext.UserContext);
-  const { user } = useContext$B(MEMISContext.UserRolesContext);
+  const { userOrganisationUnits } = useContext$C(MEMISContext.UserContext);
+  const { user } = useContext$C(MEMISContext.UserRolesContext);
   const commonFields = useMemo$D(() => {
     if (!dataElements) return [];
     const program2 = dataElements?.program;
@@ -32289,7 +32291,7 @@ const calculateDeregistrationAutofill = async (teiAttributes, isolationDate = nu
     return autofillValues;
 };
 
-const {useState: useState$16,useEffect: useEffect$14,useContext: useContext$A,useMemo: useMemo$C,useRef: useRef$m} = await importShared('react');
+const {useState: useState$16,useEffect: useEffect$14,useContext: useContext$B,useMemo: useMemo$C,useRef: useRef$m} = await importShared('react');
 
 /**
  * Hook to automatically fill facility/org unit based on DataStore configuration
@@ -32306,8 +32308,8 @@ function useFacilityAutoFill(
   isEdit,
 ) {
   const location = useLocation();
-  const { userOrganisationUnits } = useContext$A(MEMISContext.UserContext);
-  const { user } = useContext$A(MEMISContext.UserRolesContext) || {};
+  const { userOrganisationUnits } = useContext$B(MEMISContext.UserContext);
+  const { user } = useContext$B(MEMISContext.UserRolesContext) || {};
 
   const [autoFilledOrgUnit, setAutoFilledOrgUnit] = useState$16(null);
   const [loading, setLoading] = useState$16(false);
@@ -33255,7 +33257,7 @@ const generateUniquePamAssetNumber = async ({
   throw new Error("PAM_GENERATION_EXHAUSTED");
 };
 
-const {useContext: useContext$z,useEffect: useEffect$13,useState: useState$15,useMemo: useMemo$B,useRef: useRef$l} = await importShared('react');
+const {useContext: useContext$A,useEffect: useEffect$13,useState: useState$15,useMemo: useMemo$B,useRef: useRef$l} = await importShared('react');
 const A$8 = (x) => Array.isArray(x) ? x : [];
 function collectBundleUids(value, seen = /* @__PURE__ */ new Set()) {
   if (!value || typeof value !== "object") return [];
@@ -33315,7 +33317,7 @@ function FormComponent({
   const [loading, setLoading] = useState$15(false);
   const [eventDate, setEventDate] = useState$15((/* @__PURE__ */ new Date()).toISOString());
   const navigate = useNavigate();
-  const { user } = useContext$z(MEMISContext.UserRolesContext);
+  const { user } = useContext$A(MEMISContext.UserRolesContext);
   const [pgRules, setRule] = useState$15([]);
   const [selectedOrganisationUnit, setSelectedOrganisationUnit] = useState$15(null);
   const [equip, setEquipment] = useState$15();
@@ -35480,12 +35482,12 @@ const React$M = await importShared('react');
 const {useMemo: useMemo$z,useState: useState$13,useEffect: useEffect$10} = React$M;
 
 const React$L = await importShared('react');
-const {useCallback: useCallback$o,useContext: useContext$y,useEffect: useEffect$$,useRef: useRef$j,useState: useState$12} = React$L;
+const {useCallback: useCallback$o,useContext: useContext$z,useEffect: useEffect$$,useRef: useRef$j,useState: useState$12} = React$L;
 function Event({ id }) {
-  const { eventsList, reload, isLoading, columns, pagination } = useContext$y(
+  const { eventsList, reload, isLoading, columns, pagination } = useContext$z(
     MEMISContext.EventsContext
   );
-  const { user } = useContext$y(MEMISContext.UserRolesContext) || {};
+  const { user } = useContext$z(MEMISContext.UserRolesContext) || {};
   const navigate = useNavigate();
   const [rows, setRows] = useState$12([]);
   const [searchValue, setSearchValue] = useState$12("");
@@ -62044,7 +62046,7 @@ class CapacitorBarcodeScanner {
 }
 
 const React$K = await importShared('react');
-const {useEffect: useEffect$_,useContext: useContext$x,useState: useState$11,useCallback: useCallback$n} = React$K;
+const {useEffect: useEffect$_,useContext: useContext$y,useState: useState$11,useCallback: useCallback$n} = React$K;
 const Tracker = ({ id }) => {
   const {
     equipmentList,
@@ -62053,8 +62055,8 @@ const Tracker = ({ id }) => {
     columns,
     pagination,
     setPagination
-  } = useContext$x(MEMISContext.TrackedEntitiesContext);
-  const { user } = useContext$x(MEMISContext.UserRolesContext) || {};
+  } = useContext$y(MEMISContext.TrackedEntitiesContext);
+  const { user } = useContext$y(MEMISContext.UserRolesContext) || {};
   const location = useLocation();
   const navigate = useNavigate();
   const [rows, setRows] = useState$11([]);
@@ -63970,7 +63972,7 @@ function getBlankPlaceholderForDataElement(dataElements = [], deId) {
   );
 }
 
-const {useCallback: useCallback$j,useContext: useContext$w,useEffect: useEffect$W,useMemo: useMemo$v,useRef: useRef$g,useState: useState$Z} = await importShared('react');
+const {useCallback: useCallback$j,useContext: useContext$x,useEffect: useEffect$W,useMemo: useMemo$v,useRef: useRef$g,useState: useState$Z} = await importShared('react');
 function StageEvents({
   id,
   programId: programIdProp,
@@ -63980,8 +63982,8 @@ function StageEvents({
 }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user } = useContext$w(MEMISContext.UserRolesContext);
-  const { menuItems } = useContext$w(MEMISContext.MenuContext);
+  const { user } = useContext$x(MEMISContext.UserRolesContext);
+  const { menuItems } = useContext$x(MEMISContext.MenuContext);
   const [rows, setRows] = useState$Z([]);
   const [priorities, setPriorities] = useState$Z(null);
   const [loading, setLoading] = useState$Z(false);
@@ -64525,7 +64527,7 @@ function StageEvents({
   ] });
 }
 
-const {useCallback: useCallback$i,useContext: useContext$v,useEffect: useEffect$V,useMemo: useMemo$u,useRef: useRef$f,useState: useState$Y} = await importShared('react');
+const {useCallback: useCallback$i,useContext: useContext$w,useEffect: useEffect$V,useMemo: useMemo$u,useRef: useRef$f,useState: useState$Y} = await importShared('react');
 function StageSectionsEvents({
   id,
   programId: programIdProp,
@@ -64535,8 +64537,8 @@ function StageSectionsEvents({
 }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user } = useContext$v(MEMISContext.UserRolesContext);
-  const { menuItems } = useContext$v(MEMISContext.MenuContext);
+  const { user } = useContext$w(MEMISContext.UserRolesContext);
+  const { menuItems } = useContext$w(MEMISContext.MenuContext);
   const queryParams = new URLSearchParams(location.search);
   const [rows, setRows] = useState$Y([]);
   const [priorities, setPriorities] = useState$Y(null);
@@ -69765,7 +69767,7 @@ function toLowerLabel(label) {
   return raw ? raw.toLowerCase() : DEFAULT_ENTITY_LABEL.toLowerCase();
 }
 
-const {useCallback: useCallback$g,useContext: useContext$u,useEffect: useEffect$R,useMemo: useMemo$s,useState: useState$U} = await importShared('react');
+const {useCallback: useCallback$g,useContext: useContext$v,useEffect: useEffect$R,useMemo: useMemo$s,useState: useState$U} = await importShared('react');
 const BUTTON_ICON_MAP = {
   addCircleOutline,
   removeCircleOutline
@@ -69782,13 +69784,13 @@ function readActiveProgramIdFromCookie() {
   }
 }
 function GeneralComponent({ programProp }) {
-  const { programs, loading: programsLoading } = useContext$u(
+  const { programs, loading: programsLoading } = useContext$v(
     MEMISContext.ProgramContext
   );
-  const { menuItems, loading: menuLoading } = useContext$u(
+  const { menuItems, loading: menuLoading } = useContext$v(
     MEMISContext.MenuContext
   );
-  const { user } = useContext$u(MEMISContext.UserRolesContext);
+  const { user } = useContext$v(MEMISContext.UserRolesContext);
   const [workflow, setapplicableDE] = useState$U({});
   const { canModifyProgram } = usePermissions();
   const [program, setProgram] = useState$U(null);
@@ -71016,7 +71018,7 @@ const stageAddButtonAccess = async (programId, stageId, userRoles) => {
   return { access: true };
 };
 
-const {useEffect: useEffect$P,useState: useState$S,useContext: useContext$t} = await importShared('react');
+const {useEffect: useEffect$P,useState: useState$S,useContext: useContext$u} = await importShared('react');
 function DeregistrationStage({
   id,
   program,
@@ -71035,7 +71037,7 @@ function DeregistrationStage({
   const [canApprove, setCanApprove] = useState$S(false);
   const navigate = useNavigate();
   const [addButton, setAddButton] = useState$S(false);
-  const { user } = useContext$t(MEMISContext.UserRolesContext);
+  const { user } = useContext$u(MEMISContext.UserRolesContext);
   const [equipmentState, setEquipmentState] = useState$S(null);
   const fetchEquipmentState = async () => {
     try {
@@ -71228,14 +71230,14 @@ function DeregistrationStage({
   ] });
 }
 
-const {useContext: useContext$s,useEffect: useEffect$O,useState: useState$R} = await importShared('react');
+const {useContext: useContext$t,useEffect: useEffect$O,useState: useState$R} = await importShared('react');
 function Stages({ id, program, pgStages, events, handleAddEvent, formatDate, refreshEvents }) {
   const [open, setOpen] = useState$R(false);
   const [stage] = useState$R(pgStages);
   const [evnts, setEvnts] = useState$R([]);
   const [addButton, setAddButton] = useState$R(false);
   const navigate = useNavigate();
-  const { user } = useContext$s(MEMISContext.UserRolesContext);
+  const { user } = useContext$t(MEMISContext.UserRolesContext);
   useEffect$O(() => {
     setEvnts((events || [])?.filter((e) => e.programStage === stage.id));
   }, [stage.id, events]);
@@ -73566,7 +73568,7 @@ await importShared('react');
 
 await importShared('react');
 
-const {useContext: useContext$r} = await importShared('react');
+const {useContext: useContext$s} = await importShared('react');
 
 const {useCallback: useCallback$f,useMemo: useMemo$r} = await importShared('react');
 
@@ -73597,7 +73599,7 @@ new QueryClient(queryClientOptions);
 
 await importShared('react');
 
-const {useContext: useContext$q} = await importShared('react');
+const {useContext: useContext$r} = await importShared('react');
 
 const {useState: useState$Q,useEffect: useEffect$N,useRef: useRef$d,useDebugValue: useDebugValue$1} = await importShared('react');
 
@@ -73614,9 +73616,9 @@ await importShared('react');
 const React$G = await importShared('react');
 const {useState: useState$N} = React$G;
 
-const {useContext: useContext$p} = await importShared('react');
+const {useContext: useContext$q} = await importShared('react');
 
-const {useContext: useContext$o,useRef: useRef$a,useCallback: useCallback$b} = await importShared('react');
+const {useContext: useContext$p,useRef: useRef$a,useCallback: useCallback$b} = await importShared('react');
 
 var propTypes = {exports: {}};
 
@@ -76867,14 +76869,14 @@ function requireIsEqual () {
 requireIsEqual();
 
 const React$F = await importShared('react');
-const {useEffect: useEffect$L,useCallback: useCallback$a,useContext: useContext$n,useState: useState$M,useMemo: useMemo$q} = React$F;
+const {useEffect: useEffect$L,useCallback: useCallback$a,useContext: useContext$o,useState: useState$M,useMemo: useMemo$q} = React$F;
 ({
   children: PropTypes.node,
   store: PropTypes.shape({})
 });
 
 const React$E = await importShared('react');
-const {createContext,useContext: useContext$m} = React$E;
+const {createContext,useContext: useContext$n} = React$E;
 ({
   children: PropTypes.node,
   offlineInterface: PropTypes.shape({
@@ -94107,13 +94109,13 @@ if (shouldLog) {
 const {useCallback: useCallback$8} = await importShared('react');
 
 const React$C = await importShared('react');
-const {useCallback: useCallback$7,useState: useState$L,useRef: useRef$9,useMemo: useMemo$o,useEffect: useEffect$J,useContext: useContext$l} = React$C;
+const {useCallback: useCallback$7,useState: useState$L,useRef: useRef$9,useMemo: useMemo$o,useEffect: useEffect$J,useContext: useContext$m} = React$C;
 ({
   children: PropTypes.node
 });
 
 const React$B = await importShared('react');
-const {useContext: useContext$k,useState: useState$K} = React$B;
+const {useContext: useContext$l,useState: useState$K} = React$B;
 
 await importShared('react');
 ({
@@ -96781,7 +96783,7 @@ function MultiSelectField({
 }
 
 const React$x = await importShared('react');
-const {useContext: useContext$j,useEffect: useEffect$C,useState: useState$F} = React$x;
+const {useContext: useContext$k,useEffect: useEffect$C,useState: useState$F} = React$x;
 const A$5 = (x) => Array.isArray(x) ? x : [];
 const _store = {
   fields: [],
@@ -96810,7 +96812,7 @@ function AllocateEquipmentModal({
   const [equipmentOptions, setEquipmentOptions] = useState$F({});
   const [programDataTEI, setProgramDataTEI] = useState$F([]);
   const [maxSelectQuantity, setMaxSelectQuantity] = useState$F(null);
-  const { userOrganisationUnits } = useContext$j(MEMISContext.UserContext);
+  const { userOrganisationUnits } = useContext$k(MEMISContext.UserContext);
   _store.fields = fields;
   _store.targetProgram = targetProgram;
   _store.programDataTEI = programDataTEI;
@@ -140863,7 +140865,7 @@ const ReportActionButtons = ({
 };
 
 var define_process_env_default$1 = {};
-const {useState: useState$A,useContext: useContext$i,useCallback: useCallback$4,useEffect: useEffect$x,useMemo: useMemo$i,useRef: useRef$4} = await importShared('react');
+const {useState: useState$A,useContext: useContext$j,useCallback: useCallback$4,useEffect: useEffect$x,useMemo: useMemo$i,useRef: useRef$4} = await importShared('react');
 const DHIS_UID_REGEX$1 = /^[A-Za-z0-9]{11}$/;
 const TRACKER_PROGRAM_FIELDS = PROGRAM_STAGES_FIELDS + ",programTrackedEntityAttributes[mandatory,trackedEntityAttribute[id,name,formName,displayName,code,valueType,optionSetValue,optionSet[id,name,code,options[id,name,code]]]]";
 const PROGRAM_STAGE_FIELDS_PARAM = encodeURIComponent(TRACKER_PROGRAM_FIELDS);
@@ -141012,7 +141014,7 @@ const ReportExportButtons = ({
     },
     [reportData?.dataValues]
   );
-  const { programs } = useContext$i(MEMISContext.ProgramContext);
+  const { programs } = useContext$j(MEMISContext.ProgramContext);
   const [isGenerating, setIsGenerating] = useState$A(false);
   const [showProgress, setShowProgress] = useState$A(false);
   const [progressStage, setProgressStage] = useState$A("");
@@ -143853,7 +143855,7 @@ function useExpandableSections() {
     return { expandedSections, toggleSection, navigateToSection };
 }
 
-const {useContext: useContext$h,useEffect: useEffect$u,useMemo: useMemo$f,useState: useState$w} = await importShared('react');
+const {useContext: useContext$i,useEffect: useEffect$u,useMemo: useMemo$f,useState: useState$w} = await importShared('react');
 const norm$1 = (s) => String(s ?? "").trim().toLowerCase();
 const truthy = (v) => {
   if (v === true) return true;
@@ -143900,7 +143902,7 @@ function EventPage() {
   const [isApproved, setIsApproved] = useState$w(false);
   const [uid] = useState$w(queryParams.get("uid") || "");
   const [allocationTag] = useState$w(queryParams.get("q") || "");
-  const { programs } = useContext$h(MEMISContext.ProgramContext);
+  const { programs } = useContext$i(MEMISContext.ProgramContext);
   const [openModal, setOpenModal] = useState$w(false);
   const [pg, setPg] = useState$w(null);
   const [event, setEvent] = useState$w(null);
@@ -145295,13 +145297,13 @@ const AppDetailsCard = () => {
 };
 
 const React$q = await importShared('react');
-const {useContext: useContext$g,useState: useState$t} = React$q;
+const {useContext: useContext$h,useState: useState$t} = React$q;
 
 const React$p = await importShared('react');
 const {useEffect: useEffect$r,useMemo: useMemo$e,useState: useState$s} = React$p;
 
 const React$o = await importShared('react');
-const {useContext: useContext$f,useState: useState$r,useEffect: useEffect$q,useMemo: useMemo$d} = React$o;
+const {useContext: useContext$g,useState: useState$r,useEffect: useEffect$q,useMemo: useMemo$d} = React$o;
 
 const React$n = await importShared('react');
 const {useState: useState$q,useEffect: useEffect$p,useMemo: useMemo$c} = React$n;
@@ -145562,10 +145564,10 @@ const ViewProgramSectionsAccess = ({ onEdit }) => {
 };
 
 const React$l = await importShared('react');
-const {useContext: useContext$e,useEffect: useEffect$n,useState: useState$o} = React$l;
+const {useContext: useContext$f,useEffect: useEffect$n,useState: useState$o} = React$l;
 function SectionAccessUserRoles() {
-  const { programs } = useContext$e(MEMISContext.ProgramContext);
-  const { userRoles } = useContext$e(MEMISContext.UserRolesContext);
+  const { programs } = useContext$f(MEMISContext.ProgramContext);
+  const { userRoles } = useContext$f(MEMISContext.UserRolesContext);
   const [sections, setSections] = useState$o([]);
   const [formActive, setFormActive] = useState$o(false);
   const [isLoading, setIsLoading] = useState$o(false);
@@ -145836,7 +145838,7 @@ function SectionAccessUserRoles() {
 }
 
 const React$k = await importShared('react');
-const {useContext: useContext$d,useState: useState$n,useEffect: useEffect$m,useMemo: useMemo$a} = React$k;
+const {useContext: useContext$e,useState: useState$n,useEffect: useEffect$m,useMemo: useMemo$a} = React$k;
 
 const {createPortal: createPortal$1} = await importShared('react-dom');
 const DS_KEY = "enrollmentAccessSettings";
@@ -146078,8 +146080,8 @@ function EnrollmentAccessSettings() {
   const [confirmIdx, setConfirmIdx] = useState$n(null);
   const [editorOpen, setEditorOpen] = useState$n(false);
   const [editRow, setEditRow] = useState$n(null);
-  const programsCtx = useContext$d(MEMISContext.ProgramContext);
-  const rolesCtx = useContext$d(MEMISContext.UserRolesContext);
+  const programsCtx = useContext$e(MEMISContext.ProgramContext);
+  const rolesCtx = useContext$e(MEMISContext.UserRolesContext);
   const programsReady = !!programsCtx?.programs?.length;
   const rolesReady = !!rolesCtx?.userRoles?.length;
   const [isMobile, setIsMobile] = useState$n(() => window.innerWidth <= 576);
@@ -146392,24 +146394,63 @@ function EnrollmentAccessSettings() {
   ] }) });
 }
 
+const Geolocation = registerPlugin('Geolocation', {
+    web: () => __vitePreload(() => import('./web6.js'),true              ?[]:void 0).then((m) => new m.GeolocationWeb()),
+});
+f$4();
+
 const React$j = await importShared('react');
-const {useEffect: useEffect$l,useMemo: useMemo$9,useState: useState$m} = React$j;
+const {useContext: useContext$d,useEffect: useEffect$l,useMemo: useMemo$9,useState: useState$m} = React$j;
 const PAGE_SIZE$2 = 50;
 const MOBILE_BREAKPOINT$2 = 768;
 const WardsSettings = () => {
+  const userRoleCanAdd = "vGr0Exf3SRX";
+  const { fetchOrgUnits } = useContext$d(MEMISContext.UserContext);
+  const { refreshUser } = useContext$d(MEMISContext.UserRolesContext);
   const [wards, setWards] = useState$m([]);
+  const [memisFacilities, setMemisFacilities] = useState$m([]);
+  const [availableFacilities, setAvailableFacilities] = useState$m([]);
+  const [memisGroupId, setMemisGroupId] = useState$m(null);
+  const [parentFacilities, setParentFacilities] = useState$m([]);
+  const [hasAdminRole, setHasAdminRole] = useState$m(false);
   const [isLoading, setIsLoading] = useState$m(false);
   const [openModal, setOpenModal] = useState$m(false);
+  const [openFacilityModal, setOpenFacilityModal] = useState$m(false);
   const [search, setSearch] = useState$m("");
   const [page, setPage] = useState$m(1);
+  const [locating, setLocating] = useState$m(false);
   const [isMobile, setIsMobile] = useState$m(
     window.innerWidth < MOBILE_BREAKPOINT$2
   );
+  const [form, setForm] = useState$m({
+    name: "",
+    code: "",
+    shortName: "",
+    parent: "",
+    openingDate: "",
+    latitude: "",
+    longitude: ""
+  });
+  const [saving, setSaving] = useState$m(false);
+  const [toast, setToast] = useState$m({
+    open: false,
+    message: "",
+    color: "success"
+  });
   const [selectedUser, setSelectedUser] = useState$m(null);
   const [selectedWard, setSelectedWard] = useState$m(null);
   const [selectedFacility, setSelectedFacility] = useState$m(null);
+  const [errors, setErrors] = useState$m({});
+  const [submitted, setSubmitted] = useState$m(false);
+  const [viewMode, setViewMode] = useState$m("user");
   const navigate = useNavigate();
   const [users, setUsers] = useState$m([]);
+  const [wardUsers, setWardUsers] = useState$m([]);
+  const [usersToRemove, setUsersToRemove] = useState$m([]);
+  const [confirmDelete, setConfirmDelete] = useState$m({
+    open: false,
+    facility: null
+  });
   const getOrganisationUnits = async () => {
     try {
       setIsLoading(true);
@@ -146417,18 +146458,32 @@ const WardsSettings = () => {
         "orgUnitGroups",
         "orgUnitGroups"
       );
+      const oUnits = await LocalForageServiceInstance.getItem(
+        "organisationUnits",
+        "organisationUnits"
+      );
       const userData = await LocalForageServiceInstance.getItem(
         "userRes",
         "user"
       );
       const userOrg = userData?.organisationUnits;
-      const groups = res?.find((group) => group?.code === "MEMIS_HF");
-      userOrg.sort((a, b) => a - b);
-      const facilities = groups?.organisationUnits?.filter(
-        (org) => org?.id === userOrg[0]?.id
+      setParentFacilities(userOrg);
+      const memisGroup = res?.find((group) => group?.code === "MEMIS_HF");
+      setMemisGroupId(memisGroup?.id);
+      const memisFacilitiesList = memisGroup?.organisationUnits || [];
+      memisFacilitiesList.sort((a, b) => a.name.localeCompare(b.name));
+      setMemisFacilities(memisFacilitiesList);
+      const userFacilities = oUnits?.filter(
+        (org) => userOrg.some(
+          (userFacility) => userFacility.id === org?.id || userFacility.id === org?.parent?.id
+        )
+      ) || [];
+      const available = userFacilities.filter(
+        (facility) => !memisFacilitiesList.some((mf) => mf.id === facility.id)
       );
-      facilities?.sort((a, b) => a.name.localeCompare(b.name));
-      setWards(facilities || []);
+      available.sort((a, b) => a.name.localeCompare(b.name));
+      setAvailableFacilities(available);
+      setWards(userFacilities);
     } catch (error) {
       console.error("Error fetching organisation units:", error);
     } finally {
@@ -146473,7 +146528,7 @@ const WardsSettings = () => {
     });
   }, [wards, search]);
   const totalPages = Math.ceil(filteredWards.length / PAGE_SIZE$2);
-  const paginatedData = useMemo$9(() => {
+  useMemo$9(() => {
     const start = (page - 1) * PAGE_SIZE$2;
     const end = start + PAGE_SIZE$2;
     return filteredWards.slice(start, end);
@@ -146488,59 +146543,515 @@ const WardsSettings = () => {
     if (page > 1) setPage(page - 1);
   };
   const assignUserWard = async () => {
-    if (!selectedUser || !selectedWard) return;
+    if (!selectedWard) return;
+    const hasAdd = !!selectedUser;
+    const hasRemove = Array.isArray(usersToRemove) && usersToRemove.length > 0;
+    if (!hasAdd && !hasRemove) {
+      showToast("No operation selected", "warning");
+      return;
+    }
     try {
-      const user = users?.find((us) => us?.id === selectedUser);
-      const appendOrgUnit = (existing = []) => {
+      const removeOrgUnit = (existing = []) => existing?.filter((ou) => ou?.id !== selectedWard);
+      const addOrgUnit = (existing = []) => {
         const exists = existing?.some((ou) => ou?.id === selectedWard);
         if (exists) return existing;
-        return [
-          ...existing,
-          {
-            id: selectedWard
+        return [...existing, { id: selectedWard }];
+      };
+      if (hasRemove) {
+        await Promise.all(
+          usersToRemove.map(async (userId) => {
+            const user = users?.find((u) => u.id === userId);
+            if (!user) return;
+            const payload = {
+              ...user,
+              organisationUnits: removeOrgUnit(user.organisationUnits),
+              dataViewOrganisationUnits: removeOrgUnit(
+                user.dataViewOrganisationUnits
+              ),
+              teiSearchOrganisationUnits: removeOrgUnit(
+                user.teiSearchOrganisationUnits
+              )
+            };
+            const resp = await dataStore.put(`users/${userId}`, payload);
+            if (resp?.status === 200) {
+              showToast("Ward updated successfully", "success");
+            } else {
+              showToast("Failed to assign user", "warning");
+            }
+          })
+        );
+      } else if (hasAdd) {
+        const selected = users?.find((u) => u.id === selectedUser);
+        if (!selected) {
+          showToast("Selected user not found", "error");
+          return;
+        }
+        const payload = {
+          ...selected,
+          organisationUnits: addOrgUnit(selected.organisationUnits),
+          dataViewOrganisationUnits: addOrgUnit(
+            selected.dataViewOrganisationUnits
+          ),
+          teiSearchOrganisationUnits: addOrgUnit(
+            selected.teiSearchOrganisationUnits
+          )
+        };
+        const response = await dataStore.put(`users/${selectedUser}`, payload);
+        if (response?.status === 200) {
+          showToast("Ward updated successfully", "success");
+        } else {
+          showToast("Failed to assign user", "warning");
+        }
+      } else {
+      }
+      await orgUnitGroupsInit(true);
+      await getOrganisationUnits();
+      setSelectedWard(null);
+      setSelectedUser(null);
+      setSelectedFacility(null);
+      setUsersToRemove([]);
+      if (hasAdd && hasRemove) {
+        showToast("Ward reassigned successfully", "success");
+      }
+    } catch (error) {
+      console.error(error);
+      showToast("Failed to update ward assignment", "error");
+    } finally {
+      setOpenModal(false);
+      setUsersToRemove([]);
+    }
+  };
+  const validateForm = () => {
+    const newErrors = {};
+    if (!form.name?.trim()) newErrors.name = "Name is required";
+    if (!form.shortName?.trim()) newErrors.shortName = "Short name is required";
+    if (!form.openingDate) newErrors.openingDate = "Opening date is required";
+    if (!form.parent) newErrors.parent = "Parent is required";
+    if (!form.code) newErrors.code = "Code is required";
+    if (form.latitude && isNaN(Number(form.latitude))) {
+      newErrors.latitude = "Latitude must be numeric";
+    }
+    if (form.longitude && isNaN(Number(form.longitude))) {
+      newErrors.longitude = "Longitude must be numeric";
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+  const clearError = (field) => {
+    setErrors((prev) => {
+      const copy = { ...prev };
+      delete copy[field];
+      return copy;
+    });
+  };
+  const getCurrentCoordinates = async () => {
+    try {
+      let position;
+      setLocating(true);
+      try {
+        position = await Geolocation.getCurrentPosition({
+          enableHighAccuracy: true,
+          timeout: 1e4
+        });
+      } catch (capError) {
+        console.warn("Capacitor GPS failed, falling back to web:", capError);
+        position = await new Promise((resolve, reject) => {
+          if (!navigator.geolocation) {
+            reject(new Error("Geolocation not supported in browser"));
+            return;
           }
-        ];
+          navigator.geolocation.getCurrentPosition(resolve, reject, {
+            enableHighAccuracy: true,
+            timeout: 1e4,
+            maximumAge: 0
+          });
+        });
+      }
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
+      setForm((prev) => ({
+        ...prev,
+        latitude: String(lat),
+        longitude: String(lng)
+      }));
+    } catch (error) {
+      console.error("Location error:", error);
+    } finally {
+      setLocating(false);
+    }
+  };
+  const handleSaveFacility = async () => {
+    try {
+      setSubmitted(true);
+      const vForm = validateForm();
+      if (!vForm) return;
+      setSaving(true);
+      const payload = {
+        name: form.name,
+        shortName: form.shortName,
+        ...form.code && { code: form.code },
+        openingDate: form.openingDate,
+        ...form.latitude && { latitude: form.latitude },
+        ...form.longitude && { longitude: form.longitude },
+        parent: { id: form?.parent },
+        ...form.latitude && form.longitude && {
+          geometry: {
+            type: "Point",
+            coordinates: [
+              parseFloat(form.longitude),
+              parseFloat(form.latitude)
+            ]
+          }
+        }
       };
-      const userPayload = {
-        firstName: user?.firstName || "",
-        surname: user?.surname || "",
-        email: user?.email || "",
-        username: user?.username || "",
-        userRoles: user?.userRoles || [],
-        userGroups: user?.userGroups || [],
-        organisationUnits: appendOrgUnit(user?.organisationUnits),
-        dataViewOrganisationUnits: appendOrgUnit(
-          user?.dataViewOrganisationUnits
-        ),
-        teiSearchOrganisationUnits: appendOrgUnit(
-          user?.teiSearchOrganisationUnits
-        )
-      };
-      const response = await dataStore.put(
-        `users/${selectedUser}`,
-        userPayload
-      );
-      if (response?.status === 200) {
-        showToast("Assigned", "success");
+      const ct = await dataStore.post("organisationUnits", payload);
+      const success = ct?.status === 201 || ct?.data?.httpStatusCode === 201 || ct?.data?.status === "OK";
+      if (success) {
+        showToast(ct.data.httpStatus, "success");
+        setForm({
+          name: "",
+          code: "",
+          shortName: "",
+          parent: "",
+          openingDate: "",
+          latitude: "",
+          longitude: ""
+        });
+        setErrors({});
+        setSubmitted(false);
+        await refreshUser();
+        setOpenFacilityModal(false);
+        await fetchOrgUnits();
+        await getOrganisationUnits();
       } else {
         showToast(
-          "Faild to assign. Check if you have right permissions.",
+          "Faild to create. Check if you have right permissions.",
           "warining"
         );
       }
     } catch (error) {
       showToast("Failed to assign", "error");
     } finally {
+      setSaving(false);
       setOpenModal(false);
     }
   };
+  const addFacilityToMemis = async (facility) => {
+    try {
+      const facilityId = facility.id;
+      const programStore = await LocalForageServiceInstance.getItem(
+        "programs",
+        "programs"
+      );
+      const groupResp = await dataStore.post(
+        `organisationUnitGroups/${memisGroupId}/organisationUnits/${facilityId}`,
+        {}
+      );
+      if (groupResp.status !== 200) {
+        showToast("Failed to add to MEMIS group", "warning");
+        return;
+      }
+      const programs = programStore?.map((program) => program?.id);
+      const results = await Promise.allSettled(
+        programs.map(
+          (programId) => dataStore.post(
+            `programs/${programId}/organisationUnits/${facilityId}`,
+            {}
+          )
+        )
+      );
+      const successful = results.filter((r) => r.status === "fulfilled");
+      const failed = results.filter((r) => r.status === "rejected");
+      if (failed.length === 0) {
+        showToast(
+          `Facility added to MEMIS and ${successful.length} program(s) assigned successfully.`,
+          "success"
+        );
+      } else if (successful.length > 0) {
+        showToast(
+          `Facility added to MEMIS. ${successful.length} program(s) assigned and ${failed.length} failed.`,
+          "warning"
+        );
+      } else {
+        showToast(
+          "Facility added to MEMIS but program assignment failed.",
+          "warning"
+        );
+      }
+      await orgUnitGroupsInit(true);
+      await getOrganisationUnits();
+    } catch (error) {
+      showToast("Failed to add facility", "error");
+    }
+  };
+  const removeFacilityFromMemis = (facility) => {
+    setConfirmDelete({
+      open: true,
+      facility
+    });
+  };
+  const confirmRemoveFacility = async () => {
+    const facility = confirmDelete.facility;
+    if (!facility) return;
+    try {
+      const programStore = await LocalForageServiceInstance.getItem(
+        "programs",
+        "programs"
+      );
+      const resp = await dataStore.delete(
+        `organisationUnitGroups/${memisGroupId}/organisationUnits/${facility?.id}`,
+        {}
+      );
+      if (resp.status !== 200) {
+        showToast("Failed to add to MEMIS group", "warning");
+        return;
+      }
+      const programs = programStore?.map((program) => program?.id);
+      const results = await Promise.allSettled(
+        programs.map(
+          (programId) => dataStore.delete(
+            `programs/${programId}/organisationUnits/${facility?.id}`,
+            {}
+          )
+        )
+      );
+      const failed = results.filter((r) => r.status === "rejected");
+      const success = results.filter((r) => r.status === "fulfilled");
+      if (resp?.status === 200) {
+        if (failed.length === 0) {
+          showToast(
+            `Facility removed from MEMIS and removed from ${success.length} program(s).`,
+            "success"
+          );
+        } else if (success.length > 0) {
+          showToast(
+            `Facility removed from MEMIS. Removed from ${success.length} program(s), ${failed.length} failed.`,
+            "warning"
+          );
+        } else {
+          showToast(
+            "Facility removed from MEMIS, but program removal failed.",
+            "warning"
+          );
+        }
+        await orgUnitGroupsInit(true);
+        await getOrganisationUnits();
+      } else {
+        showToast("Failed to remove facility from MEMIS.", "danger");
+      }
+    } catch (error) {
+      showToast("Failed to remove facility", "danger");
+    } finally {
+      setConfirmDelete({ open: false, facility: null });
+    }
+  };
+  const cancelRemove = () => {
+    setConfirmDelete({
+      open: false,
+      facility: null
+    });
+  };
+  const getWardUsers = async (wardId) => {
+    if (!wardId) return;
+    try {
+      const orgUnit = await dataStore.get(
+        `organisationUnits/${wardId}?fields=id,name,level,code,users[id,name,username,userRoles[id,name]]`
+      );
+      setWardUsers(orgUnit?.data?.users ?? []);
+    } catch (error) {
+      console.error("Failed to load ward users:", error);
+      setWardUsers([]);
+    }
+  };
+  useEffect$l(() => {
+    if (selectedWard) {
+      getWardUsers(selectedWard);
+    }
+  }, [selectedWard]);
+  useEffect$l(() => {
+    const load = async () => {
+      const res = await LocalForageServiceInstance.getItem("userRes", "user");
+      const hasRole = res?.userRoles?.some(
+        (role) => role?.id === userRoleCanAdd
+      );
+      setHasAdminRole(hasRole);
+    };
+    load();
+  }, [userRoleCanAdd]);
+  wards.filter(
+    (facility) => parentFacilities.some((parent) => parent.id === facility?.parent?.id)
+  );
+  const isFormValid = form.name?.trim() && form.shortName?.trim() && !form.parent && !form.openingDate;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonPage, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(IonContent, { fullscreen: true, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(IonHeader, { className: "ion-no-border", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonToolbar, { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(IonTitle, { slot: "start", children: "Facilities" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { slot: "end", onClick: () => setOpenModal(true), className: "ion-margin-end", children: "Assign User to Ward" })
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(IonButtons, { slot: "end", className: "ion-margin-end", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            IonButton,
+            {
+              color: "primary",
+              fill: "outline",
+              onClick: () => setOpenModal(true),
+              children: "Assign User to Ward"
+            }
+          ),
+          hasAdminRole && /* @__PURE__ */ jsxRuntimeExports.jsx(
+            IonButton,
+            {
+              color: "primary",
+              fill: "solid",
+              onClick: () => setOpenFacilityModal(true),
+              children: "New"
+            }
+          )
+        ] })
       ] }) }),
-      isLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: loaderStyle$1, children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonSpinner, { name: "crescent" }) }) : wards.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { className: "ion-padding", children: "No wards found." }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { padding: "16px" }, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          style: {
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
+            gap: "16px",
+            marginBottom: "20px"
+          },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              IonCard,
+              {
+                button: true,
+                onClick: () => setViewMode("user"),
+                style: {
+                  cursor: "pointer",
+                  border: viewMode === "user" ? "2px solid var(--ion-color-primary)" : "1px solid #e0e0e0",
+                  background: viewMode === "user" ? "rgba(var(--ion-color-primary-rgb),0.08)" : "#fff"
+                },
+                children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonCardContent, { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { style: { margin: 0 }, children: "User Access Facilities/Wards" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      style: {
+                        fontSize: "32px",
+                        fontWeight: "bold",
+                        marginTop: "10px"
+                      },
+                      children: wards?.length
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { style: { marginBottom: 0 }, children: "Facilities/Wards accessible by the logged-in user" })
+                ] })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              IonCard,
+              {
+                button: true,
+                onClick: () => setViewMode("memis-facilities"),
+                style: {
+                  cursor: "pointer",
+                  border: viewMode === "memis-facilities" ? "2px solid var(--ion-color-success)" : "1px solid #e0e0e0",
+                  background: viewMode === "memis-facilities" ? "rgba(var(--ion-color-success-rgb),0.08)" : "#fff"
+                },
+                children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonCardContent, { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { style: { margin: 0 }, children: "MEMIS Facilities" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      style: {
+                        fontSize: "32px",
+                        fontWeight: "bold",
+                        marginTop: "10px"
+                      },
+                      children: memisFacilities.length
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { style: { marginBottom: 0 }, children: "View all facilities and MEMIS reporting status" })
+                ] })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              IonCard,
+              {
+                button: true,
+                onClick: () => setViewMode("non-memis-facilities"),
+                style: {
+                  cursor: "pointer",
+                  border: viewMode === "non-memis-facilities" ? "2px solid var(--ion-color-success)" : "1px solid #e0e0e0",
+                  background: viewMode === "non-memis-facilities" ? "rgba(var(--ion-color-success-rgb),0.08)" : "#fff"
+                },
+                children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonCardContent, { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { style: { margin: 0 }, children: "Non-MEMIS Facilities" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      style: {
+                        fontSize: "32px",
+                        fontWeight: "bold",
+                        marginTop: "10px"
+                      },
+                      children: availableFacilities?.length
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { style: { marginBottom: 0 }, children: "View all facilities not MEMIS reporting fcilities" })
+                ] })
+              }
+            )
+          ]
+        }
+      ),
+      viewMode === "memis-facilities" && /* @__PURE__ */ jsxRuntimeExports.jsx(IonCard, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonCardContent, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "MEMIS Reporting Facilities" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { style: tableStyle$2, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { style: { background: "#f4f5f8" }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("th", { style: thStyle$1, children: "Name" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("th", { style: thStyle$1, children: "Parent" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("th", { style: thStyle$1, children: "Action" })
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: Array.isArray(memisFacilities) && memisFacilities?.map((facility) => /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, children: facility.name }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, children: facility.parent?.name }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, slot: "end", children: hasAdminRole && /* @__PURE__ */ jsxRuntimeExports.jsx(
+              IonButton,
+              {
+                slot: "end",
+                size: "small",
+                fill: "outline",
+                color: "warning",
+                onClick: () => removeFacilityFromMemis(facility),
+                children: "Remove"
+              }
+            ) })
+          ] }, facility.id)) })
+        ] })
+      ] }) }),
+      viewMode === "non-memis-facilities" && /* @__PURE__ */ jsxRuntimeExports.jsx(IonCard, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonCardContent, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { children: "Non-Memis Facilities" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { style: tableStyle$2, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { style: { background: "#f4f5f8" }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("th", { style: thStyle$1, children: "Name" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("th", { style: thStyle$1, children: "Parent" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("th", { style: thStyle$1, children: "Action" })
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: availableFacilities.map((facility) => /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, children: facility.name }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, children: facility.parent?.name }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { style: tdStyle$1, slot: "end", children: hasAdminRole && /* @__PURE__ */ jsxRuntimeExports.jsx(
+              IonButton,
+              {
+                slot: "end",
+                size: "small",
+                fill: "outline",
+                color: "primary",
+                onClick: () => addFacilityToMemis(facility),
+                children: "Add to group"
+              }
+            ) })
+          ] }, facility.id)) })
+        ] })
+      ] }) }),
+      viewMode === "user" && wards?.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { padding: "16px" }, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           IonSearchbar,
           {
@@ -146550,7 +147061,7 @@ const WardsSettings = () => {
             onIonInput: (e) => setSearch(e.detail.value)
           }
         ),
-        isMobile ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: "12px" }, children: paginatedData.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: "No matching records found." }) : paginatedData.map((row, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(IonCard, { style: cardStyle, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonCardContent, { children: [
+        isMobile ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginTop: "12px" }, children: wards.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: "No matching records found." }) : wards.map((row, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(IonCard, { style: cardStyle, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonCardContent, { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: cardRow, children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Name:" }),
             " ",
@@ -146592,7 +147103,7 @@ const WardsSettings = () => {
               /* @__PURE__ */ jsxRuntimeExports.jsx("th", { style: thStyle$1, children: "Code" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("th", { style: thStyle$1, children: "Level" })
             ] }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: paginatedData.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("td", { colSpan: "5", style: emptyStyle$1, children: "No matching records found." }) }) : paginatedData.map((row, index) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: wards.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("td", { colSpan: "5", style: emptyStyle$1, children: "No matching records found." }) }) : wards.map((row, index) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "tr",
               {
                 className: "rowCss",
@@ -146661,7 +147172,7 @@ const WardsSettings = () => {
         cancelButton: "Close",
         onClose: () => setOpenModal(false),
         width: "50%",
-        height: "50%",
+        height: "80%",
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             SearchableSelect,
@@ -146678,18 +147189,6 @@ const WardsSettings = () => {
           selectedFacility && /* @__PURE__ */ jsxRuntimeExports.jsx(
             SearchableSelect,
             {
-              title: "User",
-              placeholder: "Select user",
-              itemTextField: "name",
-              itemValueField: "id",
-              data: users,
-              value: selectedUser,
-              onChange: (e) => setSelectedUser(e[0]?.id)
-            }
-          ),
-          selectedFacility && selectedUser && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            SearchableSelect,
-            {
               title: "Ward",
               placeholder: "Select ward",
               itemTextField: "name",
@@ -146698,16 +147197,423 @@ const WardsSettings = () => {
               value: selectedWard,
               onChange: (e) => setSelectedWard(e[0]?.id)
             }
-          )
+          ),
+          selectedFacility && selectedWard && /* @__PURE__ */ jsxRuntimeExports.jsx(
+            SearchableSelect,
+            {
+              title: "User",
+              placeholder: "Select user",
+              itemTextField: "name",
+              itemValueField: "id",
+              data: users.filter(
+                (user) => !wardUsers.some((us) => us?.id === user?.id)
+              ),
+              value: selectedUser,
+              onChange: (e) => setSelectedUser(e[0]?.id)
+            }
+          ),
+          selectedWard && /* @__PURE__ */ jsxRuntimeExports.jsx(IonItem, { lines: "none", className: "ion-no-padding", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              style: {
+                width: "100%",
+                marginTop: "20px"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    style: {
+                      color: "#6b7280",
+                      fontSize: "13px",
+                      marginBottom: "12px"
+                    },
+                    children: "Users currently assigned to this ward. Select users to remove if their responsibilities have changed."
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    style: {
+                      fontSize: "16px",
+                      fontWeight: 600,
+                      marginBottom: "12px"
+                    },
+                    children: "Current Assignments"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    style: {
+                      display: "grid",
+                      gridTemplateColumns: "1fr 1fr",
+                      gap: "16px",
+                      maxHeight: "250px",
+                      overflowY: "auto"
+                    },
+                    children: Array.isArray(wardUsers) && wardUsers.map((wardUser) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        style: {
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          padding: "12px 16px",
+                          border: "1px solid #e5e7eb",
+                          borderRadius: "12px",
+                          background: "#edecec",
+                          boxShadow: "0 2px 8px rgba(0,0,0,0.05)"
+                        },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                            "div",
+                            {
+                              style: {
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "12px",
+                                flex: 1
+                              },
+                              children: [
+                                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                  "div",
+                                  {
+                                    style: {
+                                      width: "42px",
+                                      height: "42px",
+                                      borderRadius: "50%",
+                                      background: "#93c194",
+                                      color: "#fff",
+                                      display: "flex",
+                                      alignItems: "center",
+                                      justifyContent: "center",
+                                      fontWeight: 600
+                                    },
+                                    children: wardUser?.name?.split(" ")?.map((n) => n[0])?.join("")?.substring(0, 2)?.toUpperCase()
+                                  }
+                                ),
+                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                    "div",
+                                    {
+                                      style: {
+                                        fontWeight: 600,
+                                        fontSize: "14px"
+                                      },
+                                      children: wardUser?.name
+                                    }
+                                  ),
+                                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                                    "div",
+                                    {
+                                      style: {
+                                        color: "#6b7280",
+                                        fontSize: "12px"
+                                      },
+                                      children: [
+                                        "@",
+                                        wardUser?.username
+                                      ]
+                                    }
+                                  ),
+                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                    "div",
+                                    {
+                                      style: {
+                                        display: "flex",
+                                        flexWrap: "wrap",
+                                        gap: "6px",
+                                        marginTop: "6px"
+                                      },
+                                      children: wardUser?.userRoles?.map((role) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                        "span",
+                                        {
+                                          style: {
+                                            background: "#eef2ff",
+                                            color: "#303030",
+                                            padding: "4px 8px",
+                                            borderRadius: "20px",
+                                            fontSize: "11px",
+                                            fontWeight: 500
+                                          },
+                                          children: role?.name
+                                        },
+                                        role.id
+                                      ))
+                                    }
+                                  )
+                                ] })
+                              ]
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                            "label",
+                            {
+                              style: {
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "8px",
+                                cursor: "pointer",
+                                color: "#dc2626",
+                                fontWeight: 500
+                              },
+                              children: [
+                                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                  "input",
+                                  {
+                                    type: "checkbox",
+                                    checked: usersToRemove?.includes(wardUser.id),
+                                    onChange: (e) => {
+                                      if (e.target.checked) {
+                                        setUsersToRemove((prev) => [
+                                          ...prev,
+                                          wardUser.id
+                                        ]);
+                                      } else {
+                                        setUsersToRemove(
+                                          (prev) => prev.filter((id) => id !== wardUser.id)
+                                        );
+                                      }
+                                    }
+                                  }
+                                ),
+                                "Remove"
+                              ]
+                            }
+                          ) })
+                        ]
+                      },
+                      wardUser.id
+                    ))
+                  }
+                ),
+                usersToRemove?.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    style: {
+                      marginTop: "12px",
+                      padding: "10px",
+                      background: "#fef2f2",
+                      border: "1px solid #fecaca",
+                      borderRadius: "8px",
+                      color: "#b91c1c",
+                      fontSize: "13px"
+                    },
+                    children: [
+                      usersToRemove.length,
+                      " user(s) marked for removal from this ward."
+                    ]
+                  }
+                )
+              ]
+            }
+          ) })
         ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      CustomModal,
+      {
+        disabledPositiveButtonController: isFormValid,
+        showCloseButton: true,
+        isOpen: openFacilityModal,
+        onClose: () => !saving && setOpenFacilityModal(false),
+        title: "Add Facility",
+        cancelButton: "Close",
+        positiveButtonText: saving ? "Saving..." : "Save",
+        onSave: handleSaveFacility,
+        height: "90%",
+        width: "50%",
+        children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { gridColumn: "1 / -1" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonText, { color: "medium", className: "ion-margin-horizontal", children: [
+            "Fields marked with ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "red" }, children: "*" }),
+            " are required."
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { position: "stacked", className: "ion-margin-bottom", children: [
+              "Parent ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "red" }, children: "*" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SearchableSelect,
+              {
+                title: "Parent Facility",
+                placeholder: "Select parent facility",
+                itemTextField: "name",
+                itemValueField: "id",
+                data: parentFacilities,
+                value: form.parent,
+                onChange: (e) => setSelectedFacility(e[0]?.id),
+                onChange: (e) => {
+                  setForm({ ...form, parent: e[0]?.id });
+                  clearError("parent");
+                }
+              }
+            ),
+            submitted && errors.parent && /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "danger", style: { fontSize: 12 }, children: errors.parent })
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              style: {
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: "16px"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { position: "stacked", children: [
+                    "Name ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "red" }, children: "*" })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    IonInput,
+                    {
+                      color: submitted && errors.name ? "danger" : "",
+                      fill: "outline",
+                      className: "ion-margin-top",
+                      value: form.name,
+                      onIonChange: (e) => {
+                        setForm({ ...form, name: e.detail.value });
+                        clearError("parent");
+                      }
+                    }
+                  ),
+                  submitted && errors.name && /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "danger", style: { fontSize: 12 }, children: errors.name })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { position: "stacked", children: [
+                    "Short Name ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "red" }, children: "*" })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    IonInput,
+                    {
+                      color: submitted && errors.shortName ? "danger" : "",
+                      fill: "outline",
+                      className: "ion-margin-top",
+                      value: form.shortName,
+                      onIonChange: (e) => setForm({
+                        ...form,
+                        shortName: e.detail.value
+                      })
+                    }
+                  ),
+                  submitted && errors.shortName && /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "danger", style: { fontSize: 12 }, children: errors.shortName })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { position: "stacked", children: [
+                    "Code ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "red" }, children: "*" })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    IonInput,
+                    {
+                      fill: "outline",
+                      className: "ion-margin-top",
+                      value: form.code,
+                      placeholder: "Enter code",
+                      onIonChange: (e) => setForm({ ...form, code: e.detail.value })
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { position: "stacked", children: [
+                    "Opening Date ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "red" }, children: "*" })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    IonInput,
+                    {
+                      fill: "outline",
+                      className: "ion-margin-top",
+                      type: "date",
+                      max: (/* @__PURE__ */ new Date()).toISOString().split("T")[0],
+                      value: form.openingDate,
+                      onIonChange: (e) => setForm({ ...form, openingDate: e.detail.value })
+                    }
+                  ),
+                  submitted && errors.openingDate && /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "danger", style: { fontSize: 12 }, children: errors.openingDate })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: "Latitude" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    IonInput,
+                    {
+                      fill: "outline",
+                      value: form.latitude,
+                      placeholder: "-13.9626",
+                      className: "ion-margin-top",
+                      onIonChange: (e) => setForm((prev) => ({
+                        ...prev,
+                        latitude: e.detail.value
+                      }))
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: "Longitude" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    IonInput,
+                    {
+                      fill: "outline",
+                      className: "ion-margin-top",
+                      value: form.longitude,
+                      placeholder: "33.7741",
+                      onIonChange: (e) => setForm((prev) => ({
+                        ...prev,
+                        longitude: e.detail.value
+                      }))
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  IonItem,
+                  {
+                    style: { gridColumn: "1 / -1" },
+                    lines: "none",
+                    button: true,
+                    onClick: getCurrentCoordinates,
+                    disabled: locating,
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Capture Current Location" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: locating ? "Getting GPS location..." : form.latitude && form.longitude ? `${form.latitude}, ${form.longitude}` : "Tap to capture GPS location" })
+                      ] }),
+                      locating ? /* @__PURE__ */ jsxRuntimeExports.jsx(IonSpinner, { slot: "end", name: "crescent" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(IonIcon, { slot: "end", icon: locationOutline })
+                    ]
+                  }
+                )
+              ]
+            }
+          )
+        ] })
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IonAlert,
+      {
+        isOpen: confirmDelete.open,
+        header: "Remove Facility",
+        message: `Are you sure you want to remove "${confirmDelete.facility?.name}" from MEMIS reporting facilities? This action will affect reporting configuration.`,
+        buttons: [
+          {
+            text: "Cancel",
+            role: "cancel",
+            handler: cancelRemove
+          },
+          {
+            text: "Remove",
+            role: "destructive",
+            handler: confirmRemoveFacility
+          }
+        ],
+        onDidDismiss: cancelRemove
       }
     )
   ] });
-};
-const loaderStyle$1 = {
-  display: "flex",
-  justifyContent: "center",
-  marginTop: "30px"
 };
 const tableStyle$2 = {
   width: "100%",
@@ -147828,7 +148734,7 @@ function Settings() {
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs(IonTabButton, { tab: "wards", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(IonIcon, { icon: business }),
-        "Wards"
+        "Facilities"
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs(IonTabButton, { tab: "metadata", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(IonIcon, { icon: informationCircle }),
@@ -268344,11 +269250,6 @@ function DataPreview({ headers, rows }) {
   ] });
 }
 
-const Geolocation = registerPlugin('Geolocation', {
-    web: () => __vitePreload(() => import('./web6.js'),true              ?[]:void 0).then((m) => new m.GeolocationWeb()),
-});
-f$4();
-
 const React$1 = await importShared('react');
 const {useContext: useContext$1,useEffect: useEffect$1,useMemo,useState} = React$1;
 const PAGE_SIZE = 20;
@@ -268366,6 +269267,11 @@ const ViewWardSettingsDetails = () => {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [isMemisReportingFacility, setIsMemisReportingFacility] = useState(false);
+  const [memisGroup, setMemisGroup] = useState(null);
+  const [memisFacilities, setMemisFacilities] = useState([]);
+  const [memisLoading, setMemisLoading] = useState(false);
+  const [facilitySearch, setFacilitySearch] = useState("");
   const [openModal, setOpenModal] = useState(false);
   const [showCoordModal, setShowCoordModal] = useState(false);
   const [isMobile, setIsMobile] = useState(
@@ -268509,7 +269415,7 @@ const ViewWardSettingsDetails = () => {
       if (success) {
         setToast({
           open: true,
-          message: "Child unit created successfully",
+          message: "Ward created.",
           color: "success"
         });
         await fetchOrgUnits();
@@ -268587,7 +269493,7 @@ const ViewWardSettingsDetails = () => {
           onClick: () => setOpenModal(true),
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(IonIcon, { icon: add$1 }),
-            "Add"
+            "Add Ward"
           ]
         }
       ) })
@@ -268668,130 +269574,140 @@ const ViewWardSettingsDetails = () => {
         onSave: handleSave,
         height: "90%",
         width: "50%",
-        children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexDirection: "column", gap: 10 }, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(IonText, { color: "medium", className: "ion-margin", children: [
+        children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { gridColumn: "1 / -1" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonText, { color: "medium", className: "ion-margin", children: [
             "Fields marked with ",
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "red" }, children: "*" }),
             " are required."
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { position: "stacked", children: [
-              "Name ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "red" }, children: "*" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              IonInput,
-              {
-                color: submitted && errors.name ? "danger" : "",
-                fill: "outline",
-                className: "ion-margin-top",
-                value: form.name,
-                onIonChange: (e) => setForm({ ...form, name: e.detail.value })
-              }
-            ),
-            submitted && errors.name && /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "danger", style: { fontSize: 12 }, children: errors.name })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { position: "stacked", children: [
-              "Short Name",
-              " ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "var(--ion-color-danger)" }, children: "*" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              IonInput,
-              {
-                color: submitted && errors.shortName ? "danger" : "",
-                fill: "outline",
-                className: "ion-margin-top",
-                value: form.shortName,
-                onIonChange: (e) => setForm({
-                  ...form,
-                  shortName: e.detail.value
-                })
-              }
-            ),
-            submitted && errors.shortName && /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "danger", style: { fontSize: 12 }, children: errors.shortName })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: "Code" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              IonInput,
-              {
-                fill: "outline",
-                className: "ion-margin-top",
-                value: form.code,
-                placeholder: "Enter code",
-                onIonChange: (e) => setForm({ ...form, code: e.detail.value })
-              }
-            )
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { button: true, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { children: [
-              "Opening Date ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "red" }, children: "*" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                IonInput,
-                {
-                  fill: "outline",
-                  max: (/* @__PURE__ */ new Date()).toISOString().split("T")[0],
-                  type: "date",
-                  value: form.openingDate,
-                  onIonChange: (e) => setForm({ ...form, openingDate: e.detail.value })
-                }
-              )
-            ] }),
-            submitted && errors.openingDate && /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "danger", style: { fontSize: 12 }, children: errors.openingDate })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: "Latitude" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                IonInput,
-                {
-                  fill: "outline",
-                  className: "ion-margin-top",
-                  value: form.latitude,
-                  placeholder: "-13.9626",
-                  onIonChange: (e) => setForm((prev) => ({
-                    ...prev,
-                    latitude: e.detail.value
-                  }))
-                }
-              )
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: "Longitude" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                IonInput,
-                {
-                  fill: "outline",
-                  className: "ion-margin-top",
-                  value: form.longitude,
-                  placeholder: "33.7741",
-                  onIonChange: (e) => setForm((prev) => ({
-                    ...prev,
-                    longitude: e.detail.value
-                  }))
-                }
-              )
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              IonItem,
-              {
-                lines: "none",
-                button: true,
-                onClick: getCurrentCoordinates,
-                disabled: locating,
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Capture Current Location" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: locating ? "Getting GPS location..." : form.latitude && form.longitude ? `${form.latitude}, ${form.longitude}` : "Tap to capture GPS location" })
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              style: {
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: "16px"
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { position: "stacked", children: [
+                    "Name ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "red" }, children: "*" })
                   ] }),
-                  locating ? /* @__PURE__ */ jsxRuntimeExports.jsx(IonSpinner, { slot: "end", name: "crescent" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(IonIcon, { slot: "end", icon: locationOutline })
-                ]
-              }
-            )
-          ] })
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    IonInput,
+                    {
+                      color: submitted && errors.name ? "danger" : "",
+                      fill: "outline",
+                      className: "ion-margin-top",
+                      value: form.name,
+                      onIonChange: (e) => setForm({ ...form, name: e.detail.value })
+                    }
+                  ),
+                  submitted && errors.name && /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "danger", style: { fontSize: 12 }, children: errors.name })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { position: "stacked", children: [
+                    "Short Name",
+                    " ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "var(--ion-color-danger)" }, children: "*" })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    IonInput,
+                    {
+                      color: submitted && errors.shortName ? "danger" : "",
+                      fill: "outline",
+                      className: "ion-margin-top",
+                      value: form.shortName,
+                      onIonChange: (e) => setForm({
+                        ...form,
+                        shortName: e.detail.value
+                      })
+                    }
+                  ),
+                  submitted && errors.shortName && /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "danger", style: { fontSize: 12 }, children: errors.shortName })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: "Code" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    IonInput,
+                    {
+                      fill: "outline",
+                      className: "ion-margin-top",
+                      value: form.code,
+                      placeholder: "Enter code",
+                      onIonChange: (e) => setForm({ ...form, code: e.detail.value })
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { button: true, lines: "none", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { children: [
+                    "Opening Date ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "red" }, children: "*" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      IonInput,
+                      {
+                        fill: "outline",
+                        max: (/* @__PURE__ */ new Date()).toISOString().split("T")[0],
+                        type: "date",
+                        value: form.openingDate,
+                        onIonChange: (e) => setForm({ ...form, openingDate: e.detail.value })
+                      }
+                    )
+                  ] }),
+                  submitted && errors.openingDate && /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "danger", style: { fontSize: 12 }, children: errors.openingDate })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: "Latitude" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    IonInput,
+                    {
+                      fill: "outline",
+                      className: "ion-margin-top",
+                      value: form.latitude,
+                      placeholder: "-13.9626",
+                      onIonChange: (e) => setForm((prev) => ({
+                        ...prev,
+                        latitude: e.detail.value
+                      }))
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: "Longitude" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    IonInput,
+                    {
+                      fill: "outline",
+                      className: "ion-margin-top",
+                      value: form.longitude,
+                      placeholder: "33.7741",
+                      onIonChange: (e) => setForm((prev) => ({
+                        ...prev,
+                        longitude: e.detail.value
+                      }))
+                    }
+                  )
+                ] })
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            IonItem,
+            {
+              lines: "none",
+              button: true,
+              onClick: getCurrentCoordinates,
+              disabled: locating,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { children: "Capture Current Location" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: locating ? "Getting GPS location..." : form.latitude && form.longitude ? `${form.latitude}, ${form.longitude}` : "Tap to capture GPS location" })
+                ] }),
+                locating ? /* @__PURE__ */ jsxRuntimeExports.jsx(IonSpinner, { slot: "end", name: "crescent" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(IonIcon, { slot: "end", icon: locationOutline })
+              ]
+            }
+          )
         ] })
       }
     ),

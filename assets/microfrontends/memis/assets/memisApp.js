@@ -619,7 +619,7 @@ function UserProvider({ children }) {
         )
       );
       const allOrgUnits = await dataStore.get(
-        `organisationUnits.json?fields=id,name,code,level&paging=false`
+        `organisationUnits.json?fields=id,name,code,,parent(id,name,level,code),level&paging=false`
       );
       await LocalForageServiceInstance.setItem(
         "userOrganisationUnits",
@@ -633,7 +633,7 @@ function UserProvider({ children }) {
       );
       const cachedUser = await LocalForageServiceInstance.getItem("userRes", "user");
       const userOnlyOrgUnits = await dataStore.get(
-        `users/${cachedUser?.id}?fields=organisationUnits[id,name,code,displayName,level]`
+        `users/${cachedUser?.id}?fields=organisationUnits[id,name,code,parent(id,name,level,code),displayName,level]`
       );
       await LocalForageServiceInstance.setItem(
         "userOnlyOrgUnits",
