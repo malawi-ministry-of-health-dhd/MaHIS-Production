@@ -734,7 +734,7 @@ registerPlugin('App', {
     web: () => __vitePreload(() => import('./web.js'),true              ?[]:void 0).then(m => new m.AppWeb()),
 });
 
-const {useEffect: useEffect$1D} = await importShared('react');
+const {useEffect: useEffect$1A} = await importShared('react');
 
 await importShared('react');
 const RefresherWrapper = ({ onRefresh, children }) => {
@@ -8445,25 +8445,25 @@ const dataSetsInit = async (forceRefresh = false) => {
 };
 
 var define_process_env_default$2 = {};
-const React$W = await importShared('react');
-const {useContext: useContext$H,useEffect: useEffect$1C,useRef: useRef$w,useState: useState$1z,useMemo: useMemo$W,Suspense} = React$W;
+const React$T = await importShared('react');
+const {useContext: useContext$G,useEffect: useEffect$1z,useRef: useRef$u,useState: useState$1x,useMemo: useMemo$U,Suspense} = React$T;
 const MainLayout = ({ menuItems, children }) => {
   const navigate = useNavigate();
-  const [hasAccess, setHasAccess] = useState$1z(null);
+  const [hasAccess, setHasAccess] = useState$1x(null);
   const isApk = Capacitor.isNativePlatform();
   const isMobile = isPlatform("ios") || isPlatform("android");
   const isWeb = isPlatform("mobileweb") || isPlatform("desktop");
-  const [user, setUser] = useState$1z(null);
+  const [user, setUser] = useState$1x(null);
   const { search } = useLocation();
-  const [superuser, setSuperUser] = useState$1z(null);
-  const [showNotifications, setShowNotifications] = useState$1z(false);
-  const [notifications, setNotifications] = useState$1z([]);
-  const [unReadNotifications, setUnReadNotifications] = useState$1z([]);
-  const [messageCount, setMessageCount] = useState$1z(0);
-  const [showDropdown, setShowDropdown] = useState$1z(false);
-  const [userOrgUnit, setUserOrgUnits] = useState$1z("");
-  const notificationsRef = useRef$w(null);
-  const dropdownRef = useRef$w(null);
+  const [superuser, setSuperUser] = useState$1x(null);
+  const [showNotifications, setShowNotifications] = useState$1x(false);
+  const [notifications, setNotifications] = useState$1x([]);
+  const [unReadNotifications, setUnReadNotifications] = useState$1x([]);
+  const [messageCount, setMessageCount] = useState$1x(0);
+  const [showDropdown, setShowDropdown] = useState$1x(false);
+  const [userOrgUnit, setUserOrgUnits] = useState$1x("");
+  const notificationsRef = useRef$u(null);
+  const dropdownRef = useRef$u(null);
   function bridgeNavigate(target) {
     try {
       const d = document;
@@ -8557,13 +8557,13 @@ const MainLayout = ({ menuItems, children }) => {
     loading: menuLoading = false,
     refresh: refreshMenu,
     menuError
-  } = useContext$H(MEMISContext.MenuContext) || {};
-  const { isLoading } = useContext$H(MEMISContext.DashboardContext);
+  } = useContext$G(MEMISContext.MenuContext) || {};
+  const { isLoading } = useContext$G(MEMISContext.DashboardContext);
   const {
     programs = [],
     loading: programsLoading = false,
     refresh: refreshPrograms
-  } = useContext$H(MEMISContext.ProgramContext) || {};
+  } = useContext$G(MEMISContext.ProgramContext) || {};
   const getMessages = async () => {
     try {
       const data = await dataStore.get(
@@ -8619,7 +8619,7 @@ const MainLayout = ({ menuItems, children }) => {
       console.error("Error handling notification click", err);
     }
   };
-  useEffect$1C(() => {
+  useEffect$1z(() => {
     const handleOutside = (e) => {
       if (notificationsRef.current && !notificationsRef.current.contains(e.target))
         setShowNotifications(false);
@@ -8657,10 +8657,10 @@ const MainLayout = ({ menuItems, children }) => {
       window.location.replace("/memis/login");
     }
   };
-  useEffect$1C(() => {
+  useEffect$1z(() => {
     getUser();
   }, []);
-  useEffect$1C(() => {
+  useEffect$1z(() => {
     const intervalId = setInterval(() => {
       getMessages();
     }, 6e4);
@@ -8690,7 +8690,7 @@ const MainLayout = ({ menuItems, children }) => {
       getMessages()
     ]);
   };
-  useEffect$1C(() => {
+  useEffect$1z(() => {
     const loadUser = async () => {
       try {
         await dataSetsInit();
@@ -8707,7 +8707,7 @@ const MainLayout = ({ menuItems, children }) => {
     };
     loadUser();
   }, []);
-  useEffect$1C(() => {
+  useEffect$1z(() => {
     const loadAccess = async () => {
       try {
         const res = await canAccessSettings();
@@ -9019,10 +9019,10 @@ const MainLayout = ({ menuItems, children }) => {
   ] });
 };
 
-const React$V = await importShared('react');
-const {useContext: useContext$G,useEffect: useEffect$1B,useMemo: useMemo$V} = React$V;
+const React$S = await importShared('react');
+const {useContext: useContext$F,useEffect: useEffect$1y,useMemo: useMemo$T} = React$S;
 const WithRoleBasedLayout = () => {
-  const { menuModel, loading } = useContext$G(MEMISContext.MenuContext);
+  const { menuModel, loading } = useContext$F(MEMISContext.MenuContext);
   return (
     // <MainLayout menuItems={groupedMenu}>
     /* @__PURE__ */ jsxRuntimeExports.jsxs(MainLayout, { menuItems: menuModel, children: [
@@ -19366,7 +19366,7 @@ class TimeSeriesScale extends TimeScale {
     }
 }
 
-const {forwardRef: forwardRef$1,useRef: useRef$v,useEffect: useEffect$1A} = await importShared('react');
+const {forwardRef: forwardRef$1,useRef: useRef$t,useEffect: useEffect$1x} = await importShared('react');
 
 const defaultDatasetIdKey = 'label';
 function reforwardRef(ref, value) {
@@ -19413,8 +19413,8 @@ function cloneData(data, datasetIdKey = defaultDatasetIdKey) {
 
 function ChartComponent(props, ref) {
     const { height = 150, width = 300, redraw = false, datasetIdKey, type, data, options, plugins = [], fallbackContent, updateMode, ...canvasProps } = props;
-    const canvasRef = useRef$v(null);
-    const chartRef = useRef$v(null);
+    const canvasRef = useRef$t(null);
+    const chartRef = useRef$t(null);
     const renderChart = ()=>{
         if (!canvasRef.current) return;
         chartRef.current = new Chart$1(canvasRef.current, {
@@ -19434,7 +19434,7 @@ function ChartComponent(props, ref) {
             chartRef.current = null;
         }
     };
-    useEffect$1A(()=>{
+    useEffect$1x(()=>{
         if (!redraw && chartRef.current && options) {
             setOptions(chartRef.current, options);
         }
@@ -19442,7 +19442,7 @@ function ChartComponent(props, ref) {
         redraw,
         options
     ]);
-    useEffect$1A(()=>{
+    useEffect$1x(()=>{
         if (!redraw && chartRef.current) {
             setLabels(chartRef.current.config.data, data.labels);
         }
@@ -19450,7 +19450,7 @@ function ChartComponent(props, ref) {
         redraw,
         data.labels
     ]);
-    useEffect$1A(()=>{
+    useEffect$1x(()=>{
         if (!redraw && chartRef.current && data.datasets) {
             setDatasets(chartRef.current.config.data, data.datasets, datasetIdKey);
         }
@@ -19458,7 +19458,7 @@ function ChartComponent(props, ref) {
         redraw,
         data.datasets
     ]);
-    useEffect$1A(()=>{
+    useEffect$1x(()=>{
         if (!chartRef.current) return;
         if (redraw) {
             destroyChart();
@@ -19473,14 +19473,14 @@ function ChartComponent(props, ref) {
         data.datasets,
         updateMode
     ]);
-    useEffect$1A(()=>{
+    useEffect$1x(()=>{
         if (!chartRef.current) return;
         destroyChart();
         setTimeout(renderChart);
     }, [
         type
     ]);
-    useEffect$1A(()=>{
+    useEffect$1x(()=>{
         renderChart();
         return ()=>destroyChart();
     }, []);
@@ -19508,14 +19508,14 @@ const Doughnut = /* #__PURE__ */ createTypedChart('doughnut', DoughnutController
 await importShared('react');
 Chart$1.register(ArcElement, plugin_tooltip, plugin_legend);
 
-const React$U = await importShared('react');
-const {useContext: useContext$F,useEffect: useEffect$1z,useState: useState$1y} = React$U;
+const React$R = await importShared('react');
+const {useContext: useContext$E,useEffect: useEffect$1w,useState: useState$1w} = React$R;
 
-const React$T = await importShared('react');
-const {useEffect: useEffect$1y} = React$T;
+const React$Q = await importShared('react');
+const {useEffect: useEffect$1v} = React$Q;
 
-const React$S = await importShared('react');
-const {useState: useState$1x,useEffect: useEffect$1x,useMemo: useMemo$U,useCallback: useCallback$s} = React$S;
+const React$P = await importShared('react');
+const {useState: useState$1v,useEffect: useEffect$1u,useMemo: useMemo$S,useCallback: useCallback$q} = React$P;
 
 const {createPortal: createPortal$4} = await importShared('react-dom');
 const SearchableSelect = ({
@@ -19530,10 +19530,10 @@ const SearchableSelect = ({
   value = null,
   closeOnSignal
 }) => {
-  const [isOpen, setIsOpen] = useState$1x(false);
-  const [searchTerm, setSearchTerm] = useState$1x("");
-  const [selectedItems, setSelectedItems] = useState$1x([]);
-  useEffect$1x(() => {
+  const [isOpen, setIsOpen] = useState$1v(false);
+  const [searchTerm, setSearchTerm] = useState$1v("");
+  const [selectedItems, setSelectedItems] = useState$1v([]);
+  useEffect$1u(() => {
     if (value == null) {
       if (selectedItems?.length > 0) setSelectedItems([]);
       return;
@@ -19551,25 +19551,25 @@ const SearchableSelect = ({
     );
     if (!isEqual) setSelectedItems(newSelected);
   }, [value, multiple, itemValueField, data, selectedItems]);
-  useEffect$1x(() => {
+  useEffect$1u(() => {
     if (closeOnSignal) {
       setIsOpen(false);
       setSearchTerm("");
     }
   }, [closeOnSignal]);
-  const filteredData = useMemo$U(() => {
+  const filteredData = useMemo$S(() => {
     const term = searchTerm?.toLowerCase();
     return data.filter(
       (item) => (item[itemTextField] || "").toLowerCase().includes(term)
     );
   }, [data, searchTerm, itemTextField]);
-  const isItemSelected = useCallback$s(
+  const isItemSelected = useCallback$q(
     (item) => selectedItems?.some(
       (sel) => sel[itemValueField] === item[itemValueField]
     ),
     [selectedItems, itemValueField]
   );
-  const handleSelect = useCallback$s(
+  const handleSelect = useCallback$q(
     (item) => {
       let newSelection;
       if (multiple) {
@@ -20078,7 +20078,7 @@ const getDateRangeFromPeriod = (period) => {
   }
 };
 
-const {useEffect: useEffect$1w,useMemo: useMemo$T,useState: useState$1w} = await importShared('react');
+const {useEffect: useEffect$1t,useMemo: useMemo$R,useState: useState$1u} = await importShared('react');
 const RELATIVE_PERIODS = [
   { id: "THIS_MONTH", label: "This Month" },
   { id: "LAST_MONTH", label: "Last Month" },
@@ -20095,17 +20095,17 @@ const FilterFields = ({
   onClear,
   setIsLoading
 }) => {
-  const [departments, setDepartments] = useState$1w([]);
-  const [equipmentList, setEquipmentList] = useState$1w([]);
-  const [showFacilityFility, setShowFacilityFilter] = useState$1w(true);
-  const [showPeriodModal, setShowPeriodModal] = useState$1w(false);
-  const [periodTab, setPeriodTab] = useState$1w("RELATIVE");
-  const [tempPeriod, setTempPeriod] = useState$1w(filters.period);
-  const [tempStartDate, setTempStartDate] = useState$1w(filters.startDate);
-  const [tempEndDate, setTempEndDate] = useState$1w(filters.endDate);
-  const [isMobile, setIsMobile] = useState$1w(window.innerWidth < 768);
-  const [showMobileFilters, setShowMobileFilters] = useState$1w(false);
-  useEffect$1w(() => {
+  const [departments, setDepartments] = useState$1u([]);
+  const [equipmentList, setEquipmentList] = useState$1u([]);
+  const [showFacilityFility, setShowFacilityFilter] = useState$1u(true);
+  const [showPeriodModal, setShowPeriodModal] = useState$1u(false);
+  const [periodTab, setPeriodTab] = useState$1u("RELATIVE");
+  const [tempPeriod, setTempPeriod] = useState$1u(filters.period);
+  const [tempStartDate, setTempStartDate] = useState$1u(filters.startDate);
+  const [tempEndDate, setTempEndDate] = useState$1u(filters.endDate);
+  const [isMobile, setIsMobile] = useState$1u(window.innerWidth < 768);
+  const [showMobileFilters, setShowMobileFilters] = useState$1u(false);
+  useEffect$1t(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -20114,7 +20114,7 @@ const FilterFields = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  useEffect$1w(() => {
+  useEffect$1t(() => {
     const load = async () => {
       const [orgUnits, optionSets] = await Promise.all([
         LocalForageServiceInstance.getItem("userOrganisationUnits", "userOrgUnits"),
@@ -20144,10 +20144,10 @@ const FilterFields = ({
   const clearFilters = () => {
     if (onClear) onClear();
   };
-  const hasActiveFilters = useMemo$T(() => {
+  const hasActiveFilters = useMemo$R(() => {
     return filters.equipment !== "" || filters.department !== defaultDepartment || filters.period !== "THIS_MONTH";
   }, [filters, defaultDepartment]);
-  useEffect$1w(() => {
+  useEffect$1t(() => {
     if (showPeriodModal) {
       setTempPeriod(filters.period);
       setTempStartDate(filters.startDate);
@@ -21021,7 +21021,7 @@ const EquipmentStats = {
   },
 };
 
-const {useContext: useContext$E,useEffect: useEffect$1v,useMemo: useMemo$S,useState: useState$1v} = await importShared('react');
+const {useContext: useContext$D,useEffect: useEffect$1s,useMemo: useMemo$Q,useState: useState$1t} = await importShared('react');
 const DEFAULT_FILTERS = {
   startDate: "",
   endDate: "",
@@ -21030,15 +21030,15 @@ const DEFAULT_FILTERS = {
   period: "THIS_MONTH"
 };
 const Dashboard = () => {
-  const { dashboardConfigs, isLoading, reload, setIsLoading } = useContext$E(
+  const { dashboardConfigs, isLoading, reload, setIsLoading } = useContext$D(
     MEMISContext.DashboardContext
   );
-  const { user } = useContext$E(MEMISContext.UserRolesContext);
-  const [isLoadingFromFilters, setIsLoadingFromFilters] = useState$1v(false);
-  const [defaultDepartment, setDefaultDepartment] = useState$1v("");
-  const [dashboardData, setDashboardData] = useState$1v({});
-  const [selectedFilters, setSelectedFilters] = useState$1v(DEFAULT_FILTERS);
-  useEffect$1v(() => {
+  const { user } = useContext$D(MEMISContext.UserRolesContext);
+  const [isLoadingFromFilters, setIsLoadingFromFilters] = useState$1t(false);
+  const [defaultDepartment, setDefaultDepartment] = useState$1t("");
+  const [dashboardData, setDashboardData] = useState$1t({});
+  const [selectedFilters, setSelectedFilters] = useState$1t(DEFAULT_FILTERS);
+  useEffect$1s(() => {
     const loadDefaultDepartment = async () => {
       const orgUnits = await LocalForageServiceInstance.getItem(
         "userOrganisationUnits",
@@ -21092,14 +21092,14 @@ const Dashboard = () => {
       period: "THIS_MONTH"
     });
   };
-  const hasDashboardAccess = useMemo$S(() => {
+  const hasDashboardAccess = useMemo$Q(() => {
     return dashboardConfigs?.some(
       (d) => d.access?.some(
         (acc) => user?.userRoles?.some((ur) => ur?.id === acc?.id)
       )
     );
   }, [dashboardConfigs, user]);
-  useEffect$1v(() => {
+  useEffect$1s(() => {
     setIsLoadingFromFilters(true);
     setTimeout(() => {
       setIsLoadingFromFilters(false);
@@ -21413,7 +21413,7 @@ const Dashboard = () => {
       setIsLoading(false);
     }
   };
-  useEffect$1v(() => {
+  useEffect$1s(() => {
     let startDate;
     let endDate;
     const today = /* @__PURE__ */ new Date();
@@ -21463,8 +21463,8 @@ const Dashboard = () => {
   ] });
 };
 
-const React$R = await importShared('react');
-const {useEffect: useEffect$1u,useState: useState$1u} = React$R;
+const React$O = await importShared('react');
+const {useEffect: useEffect$1r,useState: useState$1s} = React$O;
 function OrganisationUnitsWidget({
   programOrgUnits = [],
   selectedOrganisationUnit,
@@ -21479,8 +21479,8 @@ function OrganisationUnitsWidget({
   searchParams.get("q");
   searchParams.get("stage");
   searchParams.get("equipmentId");
-  const [facility, setFacility] = useState$1u("Facility");
-  const [orgUnitName, setOrgUnitName] = useState$1u("");
+  const [facility, setFacility] = useState$1s("Facility");
+  const [orgUnitName, setOrgUnitName] = useState$1s("");
   const getTEI = async (teiOu2) => {
     try {
       await dataStore.get(`tracker/trackedEntities/${teiOu2}`).then(async (res) => {
@@ -21495,7 +21495,7 @@ function OrganisationUnitsWidget({
       console.error("Failed to fetch TEI data:", error);
     }
   };
-  useEffect$1u(() => {
+  useEffect$1r(() => {
     if (!Array.isArray(programOrgUnits) || programOrgUnits?.length === 0 || !dataStoreData) {
       return;
     }
@@ -21692,21 +21692,21 @@ const ComponentsField = ({
   ] });
 };
 
-const {useEffect: useEffect$1t,useMemo: useMemo$R,useState: useState$1t} = await importShared('react');
+const {useEffect: useEffect$1q,useMemo: useMemo$P,useState: useState$1r} = await importShared('react');
 
 function useSectionVisibilityConfig(programId) {
-    const [tick, setTick] = useState$1t(0);
-    const [config, setConfig] = useState$1t(null);
+    const [tick, setTick] = useState$1r(0);
+    const [config, setConfig] = useState$1r(null);
 
     // Listen for external updates
-    useEffect$1t(() => {
+    useEffect$1q(() => {
         const onUpdate = () => setTick((n) => n + 1);
         window.addEventListener("memis:sectionVisibility:updated", onUpdate);
         return () => window.removeEventListener("memis:sectionVisibility:updated", onUpdate);
     }, []);
 
     // Fetch data asynchronously
-    useEffect$1t(() => {
+    useEffect$1q(() => {
         let mounted = true;
         const fetchConfig = async () => {
             try {
@@ -21724,7 +21724,7 @@ function useSectionVisibilityConfig(programId) {
     }, [tick]);
 
     // Derive visibility rules for the current program
-    const visibilityRules = useMemo$R(() => {
+    const visibilityRules = useMemo$P(() => {
         if (!programId || !config) return null;
 
         try {
@@ -21780,7 +21780,7 @@ function useSectionVisibilityConfig(programId) {
     return visibilityRules;
 }
 
-const {useMemo: useMemo$Q} = await importShared('react');
+const {useMemo: useMemo$O} = await importShared('react');
 
 
 const A$b = (x) => (Array.isArray(x) ? x : []);
@@ -21860,20 +21860,20 @@ function useProgramRules({
     formData = {},
     isAddFlow = false,
 }) {
-    const isReportsProgram = useMemo$Q(() => {
+    const isReportsProgram = useMemo$O(() => {
         if (!program) return false;
         const programId = program?.id || "";
         const name = normalizeText(program?.name || program?.displayName);
         return programId === "C0ZvPkEFpLt" || name === "reports";
     }, [program]);
 
-    const programRulesList = useMemo$Q(() => {
+    const programRulesList = useMemo$O(() => {
         if (Array.isArray(externalRules) && externalRules.length) return externalRules;
         if (Array.isArray(program?.programRules)) return program.programRules;
         return [];
     }, [externalRules, program]);
 
-    const programRuleVariables = useMemo$Q(
+    const programRuleVariables = useMemo$O(
         () => A$b(program?.programRuleVariables),
         [program]
     );
@@ -21885,7 +21885,7 @@ function useProgramRules({
         return normalizeText(rule.program.name) === normalizeText(program.name);
     };
 
-    const reviewRule = useMemo$Q(
+    const reviewRule = useMemo$O(
         () =>
             programRulesList.find((rule) => {
                 if (!matchesProgram(rule)) return false;
@@ -21898,7 +21898,7 @@ function useProgramRules({
         [programRulesList, program]
     );
 
-    const assignRule = useMemo$Q(
+    const assignRule = useMemo$O(
         () =>
             programRulesList.find((rule) => {
                 if (!matchesProgram(rule)) return false;
@@ -21911,12 +21911,12 @@ function useProgramRules({
         [programRulesList, program]
     );
 
-    const fieldMetaById = useMemo$Q(
+    const fieldMetaById = useMemo$O(
         () => buildFieldMetaById(sections),
         [sections]
     );
 
-    const referencedVariableNames = useMemo$Q(() => {
+    const referencedVariableNames = useMemo$O(() => {
         const names = new Set();
         [reviewRule, assignRule].forEach((rule) => {
             extractVariableNames(rule?.condition).forEach((name) =>
@@ -21926,7 +21926,7 @@ function useProgramRules({
         return Array.from(names);
     }, [reviewRule, assignRule]);
 
-    const reportTypeVariable = useMemo$Q(
+    const reportTypeVariable = useMemo$O(
         () =>
             referencedVariableNames
                 .map((name) =>
@@ -21949,14 +21949,14 @@ function useProgramRules({
         : undefined;
     const normalizedReportType = normalizeText(reportTypeLabel || reportTypeValue);
 
-    const reviewTriggerSet = useMemo$Q(
+    const reviewTriggerSet = useMemo$O(
         () => (reviewRule?.condition ? extractComparisonValues(reviewRule.condition) : new Set()),
         [reviewRule]
     );
 
     const requiresReview = Boolean(normalizedReportType) && reviewTriggerSet.has(normalizedReportType) && isReportsProgram;
 
-    const approverAssignments = useMemo$Q(
+    const approverAssignments = useMemo$O(
         () => (assignRule?.condition ? parseAssignPairs(assignRule.condition) : {}),
         [assignRule]
     );
@@ -21965,12 +21965,12 @@ function useProgramRules({
         ? approverAssignments[normalizedReportType]
         : undefined;
 
-    const autoAssignedApprovers = useMemo$Q(
+    const autoAssignedApprovers = useMemo$O(
         () => new Set(Object.values(approverAssignments).filter(Boolean)),
         [approverAssignments]
     );
 
-    const assignAction = useMemo$Q(() => {
+    const assignAction = useMemo$O(() => {
         if (!assignRule) return null;
         return (
             A$b(assignRule.programRuleActions).find(
@@ -21983,7 +21983,7 @@ function useProgramRules({
 
     const approvingOfficerFieldId = assignAction?.dataElement?.id || null;
 
-    const approvingSectionId = useMemo$Q(() => {
+    const approvingSectionId = useMemo$O(() => {
         if (!approvingOfficerFieldId) return null;
         for (const section of sections) {
             const hasField = A$b(section?.fields).some((field) => {
@@ -22032,7 +22032,7 @@ const DE_TRANSFER_TO_LOCATION = "Hk2JSouuvga";
 const DE_TRANSFER_EQUIPMENT_NAME = "wObkfr29dtK";
 const DE_TRANSFER_EQUIPMENT_TO_BE_TRANSFERRED = "oIEtXbVslFN";
 
-const {useEffect: useEffect$1s,useRef: useRef$u,useState: useState$1s} = await importShared('react');
+const {useEffect: useEffect$1p,useRef: useRef$s,useState: useState$1q} = await importShared('react');
 
 const NO_WARD_ALLOCATED_MESSAGE = "THE USER HAS NO WARD ALLOCATED";
 let facilityOrgUnitsCache = null;
@@ -22081,8 +22081,8 @@ function useTransferDefaults({
     setFormData,
     userOrganisationUnits,
 }) {
-    const transferLocationDefaultAppliedRef = useRef$u(false);
-    const transferToLocationDefaultAppliedRef = useRef$u(false);
+    const transferLocationDefaultAppliedRef = useRef$s(false);
+    const transferToLocationDefaultAppliedRef = useRef$s(false);
 
     const isWardInChargeForTransfer =
         user &&
@@ -22118,7 +22118,7 @@ function useTransferDefaults({
 
     const transferLocationValue = formData?.[DE_TRANSFER_LOCATION_TYPE];
 
-    useEffect$1s(() => {
+    useEffect$1p(() => {
         if (transferLocationDefaultAppliedRef.current) return;
         if (!isWardInChargeForTransfer && !isHospitalAdminForTransfer) return;
         if (isEdit) return;
@@ -22151,7 +22151,7 @@ function useTransferDefaults({
         setFormData,
     ]);
 
-    useEffect$1s(() => {
+    useEffect$1p(() => {
         const shouldPrefill =
             isWardInChargeForTransfer || isHospitalAdminForTransfer;
         if (!shouldPrefill) return;
@@ -22203,16 +22203,16 @@ function useTransferOrganisationUnitOptions({
     isHospitalAdminForTransfer,
     transferLocationValue,
 }) {
-    const [facilityOrgUnits, setFacilityOrgUnits] = useState$1s([]);
-    const [facilityOrgUnitsLoading, setFacilityOrgUnitsLoading] = useState$1s(false);
-    const facilityOrgUnitsLoadedRef = useRef$u(false);
+    const [facilityOrgUnits, setFacilityOrgUnits] = useState$1q([]);
+    const [facilityOrgUnitsLoading, setFacilityOrgUnitsLoading] = useState$1q(false);
+    const facilityOrgUnitsLoadedRef = useRef$s(false);
 
     const shouldUseFacilityGroup =
         isHospitalAdminForTransfer &&
         transferLocationValue &&
         String(transferLocationValue).trim() === OPTION_CODE_OUTSIDE_FACILITY;
 
-    useEffect$1s(() => {
+    useEffect$1p(() => {
         if (!shouldUseFacilityGroup) return;
         if (facilityOrgUnitsLoadedRef.current) return;
 
@@ -22546,7 +22546,7 @@ async function getSkipLogicConfig(programId) {
   }
 }
 
-const {useMemo: useMemo$P} = await importShared('react');
+const {useMemo: useMemo$N} = await importShared('react');
 
 /**
  * Hook: compute the primary button label from:
@@ -22567,7 +22567,7 @@ function usePrimaryButtonLabel({
 }) {
     // const cfg = getButtonTextConfig(dataStore);
 
-    return useMemo$P(() => {
+    return useMemo$N(() => {
         if (loading) return "Saving…";
 
         // Always show "Submit" on last step to make UX explicit.
@@ -22632,7 +22632,7 @@ async function getEquipmentListOnTransferOutside(event) {
     }
 }
 
-const {useState: useState$1r,useEffect: useEffect$1r,useRef: useRef$t} = await importShared('react');
+const {useState: useState$1p,useEffect: useEffect$1o,useRef: useRef$r} = await importShared('react');
 
 const ATTR$1 = ATTRIBUTE_FOR_EQUIPMENT_LOOKUP;
 
@@ -22647,9 +22647,9 @@ function useEquipmentOptions(
   selectedOrganisationUnit = null,
   event = null,
 ) {
-  const equipmentCacheRef = useRef$t(new Map());
-  const [equipmentOptions, setEquipmentOptions] = useState$1r([]);
-  const [equipmentLoading, setEquipmentLoading] = useState$1r(false);
+  const equipmentCacheRef = useRef$r(new Map());
+  const [equipmentOptions, setEquipmentOptions] = useState$1p([]);
+  const [equipmentLoading, setEquipmentLoading] = useState$1p(false);
 
   /* ---------------------------------------------------------
        Determine whether outside-facility logic should apply
@@ -22794,7 +22794,7 @@ function useEquipmentOptions(
   /* ---------------------------------------------------------
        Effect trigger
        --------------------------------------------------------- */
-  useEffect$1r(() => {
+  useEffect$1o(() => {
     let active = true;
 
     const run = async () => {
@@ -22825,18 +22825,18 @@ function useEquipmentOptions(
   };
 }
 
-const {useState: useState$1q,useEffect: useEffect$1q,useRef: useRef$s} = await importShared('react');
+const {useState: useState$1o,useEffect: useEffect$1n,useRef: useRef$q} = await importShared('react');
 
 /**
  * Custom hook to manage status field initialization and tracking
  * Encapsulates status-related state logic
  */
 function useStatusField({ programObj, programKey, selectedStageId, isEdit, formData, setFormData }) {
-    const [statusFieldId, setStatusFieldId] = useState$1q(null);
-    const [statusOptionCodes, setStatusOptionCodes] = useState$1q({});
-    const lastApproverNotificationRef = useRef$s(null);
+    const [statusFieldId, setStatusFieldId] = useState$1o(null);
+    const [statusOptionCodes, setStatusOptionCodes] = useState$1o({});
+    const lastApproverNotificationRef = useRef$q(null);
 
-    useEffect$1q(() => {
+    useEffect$1n(() => {
         if (!programObj || isEdit) return;
 
         let statusDE = null;
@@ -22891,7 +22891,7 @@ function useStatusField({ programObj, programKey, selectedStageId, isEdit, formD
     };
 }
 
-const {useState: useState$1p} = await importShared('react');
+const {useState: useState$1n} = await importShared('react');
 
 
 /**
@@ -22899,8 +22899,8 @@ const {useState: useState$1p} = await importShared('react');
  * Consolidates image-related state
  */
 function useImageState() {
-    const [imageUrls, setImageUrls] = useState$1p({});
-    const [imageLoading, setImageLoading] = useState$1p({});
+    const [imageUrls, setImageUrls] = useState$1n({});
+    const [imageLoading, setImageLoading] = useState$1n({});
 
     return {
         imageUrls,
@@ -22910,7 +22910,7 @@ function useImageState() {
     };
 }
 
-const {useState: useState$1o} = await importShared('react');
+const {useState: useState$1m} = await importShared('react');
 
 
 /**
@@ -22918,7 +22918,7 @@ const {useState: useState$1o} = await importShared('react');
  * Consolidates date picker UI state
  */
 function useDateRangePopover() {
-    const [dateRangePopover, setDateRangePopover] = useState$1o({
+    const [dateRangePopover, setDateRangePopover] = useState$1m({
         from: false,
         to: false,
         fieldId: null,
@@ -22930,14 +22930,14 @@ function useDateRangePopover() {
     };
 }
 
-const {useMemo: useMemo$O} = await importShared('react');
+const {useMemo: useMemo$M} = await importShared('react');
 
 /**
  * Custom hook to compute sections from program/stage metadata
  * Shape: [{ id, name, fields:[dataElement|trackedEntityAttribute] }]
  */
 function useSections({ programObj, stageObj, programKey, selectedStageId }) {
-    return useMemo$O(() => {
+    return useMemo$M(() => {
         const mapSectionId = (section) => {
             const sectionName = (section.name || section.formName || "").toLowerCase();
 
@@ -23011,7 +23011,7 @@ function useSections({ programObj, stageObj, programKey, selectedStageId }) {
     }, [programObj, stageObj, programKey, selectedStageId]);
 }
 
-const {useMemo: useMemo$N,useEffect: useEffect$1p,useState: useState$1n} = await importShared('react');
+const {useMemo: useMemo$L,useEffect: useEffect$1m,useState: useState$1l} = await importShared('react');
 
 function useSectionsList({
   sections,
@@ -23020,10 +23020,10 @@ function useSectionsList({
   user,
   formData,
 }) {
-  const [sectionAccessMap, setSectionAccessMap] = useState$1n(null);
+  const [sectionAccessMap, setSectionAccessMap] = useState$1l(null);
 
   // 🔹 1. Load section access asynchronously
-  useEffect$1p(() => {
+  useEffect$1m(() => {
 
     if (!sections || !user || !programId) return;
 
@@ -23045,7 +23045,7 @@ function useSectionsList({
   }, [sections, programId, user]);
 
   // 🔹 2. Compute final visible sections
-  const sectionsList = useMemo$N(() => {
+  const sectionsList = useMemo$L(() => {
     if (!sections || !sectionAccessMap) return [];
 
     // Filter writable sections
@@ -23203,7 +23203,7 @@ const applyOtherFieldRules = ({
   });
 };
 
-const {useState: useState$1m,useEffect: useEffect$1o,useMemo: useMemo$M,useRef: useRef$r} = await importShared('react');
+const {useState: useState$1k,useEffect: useEffect$1l,useMemo: useMemo$K,useRef: useRef$p} = await importShared('react');
 
 /**
  * Hook to manage field visibility based on skip logic and OTHER field rules
@@ -23220,11 +23220,11 @@ function useHiddenFields({
   activeSection,
   setStepIndex,
 }) {
-  const [skipLogicMap, setSkipLogicMap] = useState$1m({});
-  const [defaultHidden, setDefaultHidden] = useState$1m(new Set());
+  const [skipLogicMap, setSkipLogicMap] = useState$1k({});
+  const [defaultHidden, setDefaultHidden] = useState$1k(new Set());
 
   // Load skip logic config from LocalForage whenever programId changes
-  useEffect$1o(() => {
+  useEffect$1l(() => {
     if (!programId) return;
 
     let cancelled = false;
@@ -23246,7 +23246,7 @@ function useHiddenFields({
   }, [programId]);
 
   // Initial hidden fields: Hide OTHER text fields by default in create mode
-  const initialHiddenFields = useMemo$M(() => {
+  const initialHiddenFields = useMemo$K(() => {
     const hidden = new Set(defaultHidden);
 
     if (!isEdit && Array.isArray(otherFieldMappings) && otherFieldMappings.length > 0) {
@@ -23258,17 +23258,17 @@ function useHiddenFields({
     return hidden;
   }, [selectedStage, isEdit, otherFieldMappings, defaultHidden]);
 
-  const [hiddenFields, setHiddenFields] = useState$1m(initialHiddenFields);
-  const hiddenFieldsRef = useRef$r(hiddenFields);
+  const [hiddenFields, setHiddenFields] = useState$1k(initialHiddenFields);
+  const hiddenFieldsRef = useRef$p(hiddenFields);
 
   // Re-seed hiddenFields whenever initialHiddenFields changes
-  useEffect$1o(() => {
+  useEffect$1l(() => {
     hiddenFieldsRef.current = initialHiddenFields;
     setHiddenFields(initialHiddenFields);
   }, [initialHiddenFields]);
 
   // Apply skip-logic whenever relevant formData or skipLogicMap changes
-  useEffect$1o(() => {
+  useEffect$1l(() => {
     const newHidden = new Set(defaultHidden);
 
     // Seed with OTHER fields hidden by default in create mode
@@ -23396,7 +23396,7 @@ function useHiddenFields({
   };
 }
 
-const {useState: useState$1l} = await importShared('react');
+const {useState: useState$1j} = await importShared('react');
 
 
 /**
@@ -23404,10 +23404,10 @@ const {useState: useState$1l} = await importShared('react');
  * Handles loading state for task-based form prefilling
  */
 function useTaskPrefill() {
-    const [taskAvailableInQuery, setTaskAvailableInQuery] = useState$1l(null);
-    const [prefilledValues, setPrefilledValues] = useState$1l([]);
-    const [isCheckingRegistration, setIsCheckingRegistration] = useState$1l(false);
-    const [formLoading, setFormLoading] = useState$1l(false);
+    const [taskAvailableInQuery, setTaskAvailableInQuery] = useState$1j(null);
+    const [prefilledValues, setPrefilledValues] = useState$1j([]);
+    const [isCheckingRegistration, setIsCheckingRegistration] = useState$1j(false);
+    const [formLoading, setFormLoading] = useState$1j(false);
 
     return {
         taskAvailableInQuery,
@@ -23421,7 +23421,7 @@ function useTaskPrefill() {
     };
 }
 
-const {useEffect: useEffect$1n} = await importShared('react');
+const {useEffect: useEffect$1k} = await importShared('react');
 
 /**
  * Hook to handle task prefill logic
@@ -23433,7 +23433,7 @@ function useTaskPrefillLogic({
     setFormLoading,
     setFormData,
 }) {
-    useEffect$1n(() => {
+    useEffect$1k(() => {
         const loadTaskPrefill = async () => {
             const taskId = queryParams.get("taskId");
             if (!taskId) return;
@@ -23520,14 +23520,14 @@ function useTaskPrefillLogic({
     }, []);
 }
 
-const {useState: useState$1k} = await importShared('react');
+const {useState: useState$1i} = await importShared('react');
 
 
 /**
  * Hook to manage simple popover visibility state
  */
 function usePopoverState(initialState = false) {
-    const [showPopover, setShowPopover] = useState$1k(initialState);
+    const [showPopover, setShowPopover] = useState$1i(initialState);
 
     return {
         showPopover,
@@ -23535,7 +23535,7 @@ function usePopoverState(initialState = false) {
     };
 }
 
-const {useState: useState$1j,useEffect: useEffect$1m} = await importShared('react');
+const {useState: useState$1h,useEffect: useEffect$1j} = await importShared('react');
 
 
 /**
@@ -23543,14 +23543,14 @@ const {useState: useState$1j,useEffect: useEffect$1m} = await importShared('reac
  */
 function useViewport() {
     // Initialize with actual window width to prevent flash
-    const [isMobile, setIsMobile] = useState$1j(() => {
+    const [isMobile, setIsMobile] = useState$1h(() => {
         if (typeof window !== 'undefined') {
             return window.innerWidth <= 600;
         }
         return false;
     });
 
-    useEffect$1m(() => {
+    useEffect$1j(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 600);
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
@@ -23559,18 +23559,18 @@ function useViewport() {
     return { isMobile };
 }
 
-const {useState: useState$1i,useEffect: useEffect$1l} = await importShared('react');
+const {useState: useState$1g,useEffect: useEffect$1i} = await importShared('react');
 
 /**
  * Hook to manage OTHER field configuration and mappings
  * Handles showing/hiding "Other" text fields based on dropdown selections
  */
 function useOtherFieldLogic({ selectedStageId, programObj }) {
-  const [otherFieldConfig, setOtherFieldConfig] = useState$1i({});
-  const [otherFieldMappings, setOtherFieldMappings] = useState$1i([]);
+  const [otherFieldConfig, setOtherFieldConfig] = useState$1g({});
+  const [otherFieldMappings, setOtherFieldMappings] = useState$1g([]);
 
   // Fetch OTHER field configuration on mount
-  useEffect$1l(() => {
+  useEffect$1i(() => {
     let mounted = true;
 
     const loadConfig = async () => {
@@ -23587,7 +23587,7 @@ function useOtherFieldLogic({ selectedStageId, programObj }) {
   }, []);
 
   // Load OTHER field mappings when stage/program changes
-  useEffect$1l(() => {
+  useEffect$1i(() => {
     const stageIdFromProgram =
       !selectedStageId && Array.isArray(programObj?.programStages) && programObj.programStages.length > 0
         ? programObj.programStages[0]?.id
@@ -23615,9 +23615,9 @@ function useOtherFieldLogic({ selectedStageId, programObj }) {
   };
 }
 
-const {useState: useState$1h,useEffect: useEffect$1k} = await importShared('react');
+const {useState: useState$1f,useEffect: useEffect$1h} = await importShared('react');
 
-const {useEffect: useEffect$1j} = await importShared('react');
+const {useEffect: useEffect$1g} = await importShared('react');
 
 /**
  * Hook to load image URLs for IMAGE type fields when editing
@@ -23666,7 +23666,7 @@ function useImageLoader({
     /**
      * When editing a TEI, load existing IMAGE values for data elements so they can be previewed.
      */
-    useEffect$1j(() => {
+    useEffect$1g(() => {
         const load = async () => {
             if (!trackedEntityUID || !programId) return;
 
@@ -23719,7 +23719,7 @@ function useImageLoader({
     }, [trackedEntityUID, programId, programObj, stageObj, selectedStageId]);
 }
 
-const {useState: useState$1g,useEffect: useEffect$1i} = await importShared('react');
+const {useState: useState$1e,useEffect: useEffect$1f} = await importShared('react');
 
 /**
  * Resolves the equipment program ID and stage configs from the datastore cache.
@@ -23744,16 +23744,16 @@ function useEquipmentContext({
   routeEquipmentId,
   resetTrigger,
 }) {
-  const [contextConfig, setContextConfig] = useState$1g(null);
-  const [selectedEquipment, setSelectedEquipment] = useState$1g(null);
-  const [availableEquipment, setAvailableEquipment] = useState$1g([]);
-  const [showEquipmentPicker, setShowEquipmentPicker] = useState$1g(false);
-  const [loading, setLoading] = useState$1g(false);
-  const [error, setError] = useState$1g(null);
-  const [configLoaded, setConfigLoaded] = useState$1g(false);
+  const [contextConfig, setContextConfig] = useState$1e(null);
+  const [selectedEquipment, setSelectedEquipment] = useState$1e(null);
+  const [availableEquipment, setAvailableEquipment] = useState$1e([]);
+  const [showEquipmentPicker, setShowEquipmentPicker] = useState$1e(false);
+  const [loading, setLoading] = useState$1e(false);
+  const [error, setError] = useState$1e(null);
+  const [configLoaded, setConfigLoaded] = useState$1e(false);
 
   // Reset state when stage/program changes OR when resetTrigger changes (new action)
-  useEffect$1i(() => {
+  useEffect$1f(() => {
     setContextConfig(null);
     setSelectedEquipment(null);
     setAvailableEquipment([]);
@@ -24059,7 +24059,7 @@ function useSparePartLookup({ programId, setFormData, isCheckingRegistration, se
     };
 }
 
-const {useMemo: useMemo$L} = await importShared('react');
+const {useMemo: useMemo$J} = await importShared('react');
 
 /**
  * Hook to compute required fields from program metadata
@@ -24071,7 +24071,7 @@ function useRequiredFields({
     programKey,
     selectedStageId,
 }) {
-    const requiredById = useMemo$L(() => {
+    const requiredById = useMemo$J(() => {
         const out = {};
 
         if (programObj?.programType === "WITH_REGISTRATION") {
@@ -24112,7 +24112,7 @@ function useRequiredFields({
     return { requiredById };
 }
 
-const {useMemo: useMemo$K,useEffect: useEffect$1h,useState: useState$1f} = await importShared('react');
+const {useMemo: useMemo$I,useEffect: useEffect$1e,useState: useState$1d} = await importShared('react');
 
 /**
  * Hook to load custom mandatory fields from datastore and merge with native DHIS2 mandatory
@@ -24131,11 +24131,11 @@ function useCustomMandatoryFields({
     stageObj,
     nativeRequiredById = {},
 }) {
-    const [customConfig, setCustomConfig] = useState$1f([]);
-    const [isLoading, setIsLoading] = useState$1f(true);
+    const [customConfig, setCustomConfig] = useState$1d([]);
+    const [isLoading, setIsLoading] = useState$1d(true);
 
     // Load custom mandatory configuration from datastore
-    useEffect$1h(() => {
+    useEffect$1e(() => {
         let mounted = true;
 
         const loadCustomConfig = async () => {
@@ -24164,7 +24164,7 @@ function useCustomMandatoryFields({
     }, []);
 
     // Compute custom mandatory fields
-    const customRequiredById = useMemo$K(() => {
+    const customRequiredById = useMemo$I(() => {
         if (!customConfig.length) return {};
 
         const out = {};
@@ -24199,7 +24199,7 @@ function useCustomMandatoryFields({
     }, [customConfig, programObj, selectedStageId, stageObj, programKey]);
 
     // Merge native and custom mandatory fields
-    const requiredById = useMemo$K(() => {
+    const requiredById = useMemo$I(() => {
         return {
             ...nativeRequiredById,
             ...customRequiredById,
@@ -24212,7 +24212,7 @@ function useCustomMandatoryFields({
     };
 }
 
-const {useState: useState$1e,useEffect: useEffect$1g,useMemo: useMemo$J} = await importShared('react');
+const {useState: useState$1c,useEffect: useEffect$1d,useMemo: useMemo$H} = await importShared('react');
 
 /**
  * Hook to manage multi-step wizard navigation
@@ -24225,12 +24225,12 @@ function useStepNavigation({
   sectionsList,
   reviewNavigationLocked,
 }) {
-  const [internalStep, setInternalStep] = useState$1e(0);
+  const [internalStep, setInternalStep] = useState$1c(0);
 
   const stepIndex =
     typeof currentStep === "number" ? currentStep : internalStep;
 
-  const activeSection = useMemo$J(() => {
+  const activeSection = useMemo$H(() => {
     const res = sectionsList[stepIndex] || {
       id: "default",
       name: "Form",
@@ -24274,7 +24274,7 @@ function useStepNavigation({
   };
 
   // Update current section when active section changes
-  useEffect$1g(() => {
+  useEffect$1d(() => {
     if (typeof setCurrentSection === "function" && activeSection) {
       setCurrentSection(activeSection);
     }
@@ -24513,7 +24513,7 @@ const triggerNotifications = async ({
   }
 };
 
-const {useEffect: useEffect$1f} = await importShared('react');
+const {useEffect: useEffect$1c} = await importShared('react');
 
 /**
  * Hook to manage approval officer assignment and notifications
@@ -24570,7 +24570,7 @@ function useApprovalNotifications({
      * Ensure the "approving officer" TEI is set:
      *   - On new forms when navigation is locked for review.
      */
-    useEffect$1f(() => {
+    useEffect$1c(() => {
         if (!isAddFlow || !approvingOfficerFieldId) return;
 
         setFormData((prev) => {
@@ -24606,7 +24606,7 @@ function useApprovalNotifications({
      *   - On new forms when navigation is locked for review.
      *   - On edits when status transitions to "Feedback required".
      */
-    useEffect$1f(() => {
+    useEffect$1c(() => {
         if (!programObj?.id) return;
         if (!assignedApprover || !approvingOfficerFieldId || !approvingSectionId)
             return;
@@ -25200,7 +25200,7 @@ const exportBlobWithHostBridge = async (blob, filename) => {
     });
 };
 
-const {useEffect: useEffect$1e,useState: useState$1d} = await importShared('react');
+const {useEffect: useEffect$1b,useState: useState$1b} = await importShared('react');
 function FilePreviewModal({
   isOpen,
   onClose,
@@ -25213,13 +25213,13 @@ function FilePreviewModal({
   dataElementId,
   programId
 }) {
-  const [loading, setLoading] = useState$1d(true);
-  const [imageUrl, setImageUrl] = useState$1d(null);
-  const [fileData, setFileData] = useState$1d(null);
-  const [error, setError] = useState$1d(null);
-  const [mimeType, setMimeType] = useState$1d("application/octet-stream");
-  const [downloading, setDownloading] = useState$1d(false);
-  useEffect$1e(() => {
+  const [loading, setLoading] = useState$1b(true);
+  const [imageUrl, setImageUrl] = useState$1b(null);
+  const [fileData, setFileData] = useState$1b(null);
+  const [error, setError] = useState$1b(null);
+  const [mimeType, setMimeType] = useState$1b("application/octet-stream");
+  const [downloading, setDownloading] = useState$1b(false);
+  useEffect$1b(() => {
     if (isOpen && fileId && (teiId && attributeId || eventId && dataElementId)) {
       fetchFile();
     } else if (!isOpen) {
@@ -25594,7 +25594,7 @@ function validateProgramField(programId, fieldId, formData = {}, validationConfi
   }, []);
 }
 
-const {useState: useState$1c,useEffect: useEffect$1d} = await importShared('react');
+const {useState: useState$1a,useEffect: useEffect$1a} = await importShared('react');
 
 /**
  * useParticipantsPerWardConfig
@@ -25628,14 +25628,14 @@ const {useState: useState$1c,useEffect: useEffect$1d} = await importShared('reac
  * participantsPerWardField === null.
  */
 function useParticipantsPerWardConfig(programId) {
-    const [config, setConfig] = useState$1c({
+    const [config, setConfig] = useState$1a({
         wardsField: null,
         participantsPerWardField: null,
         totalParticipantsField: null,
         ready: false,
     });
 
-    useEffect$1d(() => {
+    useEffect$1a(() => {
         if (!programId) {
             setConfig({ wardsField: null, participantsPerWardField: null, totalParticipantsField: null, ready: true });
             return;
@@ -25678,7 +25678,7 @@ function useParticipantsPerWardConfig(programId) {
     return config;
 }
 
-const {useState: useState$1b,useEffect: useEffect$1c} = await importShared('react');
+const {useState: useState$19,useEffect: useEffect$19} = await importShared('react');
 
 /**
  * useSparePartsQuantityConfig
@@ -25707,14 +25707,14 @@ const {useState: useState$1b,useEffect: useEffect$1c} = await importShared('reac
  * }
  */
 function useSparePartsQuantityConfig(programId) {
-    const [config, setConfig] = useState$1b({
+    const [config, setConfig] = useState$19({
         sparePartsField: null,
         quantityPerPartField: null,
         totalQuantityField: null,
         ready: false,
     });
 
-    useEffect$1c(() => {
+    useEffect$19(() => {
         const empty = { sparePartsField: null, quantityPerPartField: null, totalQuantityField: null, ready: true };
 
         if (!programId) {
@@ -25828,7 +25828,7 @@ function getSectionFormNameOverride(dataStoreData, context = {}) {
   return match?.overrideText || null;
 }
 
-const {useEffect: useEffect$1b,useMemo: useMemo$I,useRef: useRef$q} = await importShared('react');
+const {useEffect: useEffect$18,useMemo: useMemo$G,useRef: useRef$o} = await importShared('react');
 function ParticipantsPerWardField({
   value,
   wards = [],
@@ -25836,8 +25836,8 @@ function ParticipantsPerWardField({
   onTotalChange,
   disabled = false
 }) {
-  const lastEmittedTotal = useRef$q(void 0);
-  const parsed = useMemo$I(() => {
+  const lastEmittedTotal = useRef$o(void 0);
+  const parsed = useMemo$G(() => {
     if (!value) return {};
     try {
       const obj = JSON.parse(value);
@@ -25846,7 +25846,7 @@ function ParticipantsPerWardField({
       return {};
     }
   }, [value]);
-  useEffect$1b(() => {
+  useEffect$18(() => {
     const total2 = wards.reduce((sum, ward) => {
       const n = Number(parsed[ward] ?? 0);
       return sum + (isNaN(n) ? 0 : n);
@@ -25979,7 +25979,7 @@ const styles$2 = {
   }
 };
 
-const {useEffect: useEffect$1a,useMemo: useMemo$H,useRef: useRef$p} = await importShared('react');
+const {useEffect: useEffect$17,useMemo: useMemo$F,useRef: useRef$n} = await importShared('react');
 function SparePartsQuantityField({
   value,
   parts = [],
@@ -25987,8 +25987,8 @@ function SparePartsQuantityField({
   onTotalChange,
   disabled = false
 }) {
-  const lastEmittedTotal = useRef$p(void 0);
-  const parsed = useMemo$H(() => {
+  const lastEmittedTotal = useRef$n(void 0);
+  const parsed = useMemo$F(() => {
     if (!value) return {};
     try {
       const obj = JSON.parse(value);
@@ -25997,7 +25997,7 @@ function SparePartsQuantityField({
       return {};
     }
   }, [value]);
-  useEffect$1a(() => {
+  useEffect$17(() => {
     const total2 = parts.reduce((sum, { name }) => {
       const n = Number(parsed[name] ?? 0);
       return sum + (isNaN(n) ? 0 : n);
@@ -26123,7 +26123,7 @@ const styles$1 = {
   }
 };
 
-const {useCallback: useCallback$r,useContext: useContext$D,useEffect: useEffect$19,useMemo: useMemo$G,useState: useState$1a} = await importShared('react');
+const {useCallback: useCallback$p,useContext: useContext$C,useEffect: useEffect$16,useMemo: useMemo$E,useState: useState$18} = await importShared('react');
 function ConfigurableForm({
   handleSubmit,
   handleCancel,
@@ -26157,18 +26157,18 @@ function ConfigurableForm({
   autoFillFacilityLoading = false,
   lockedFields = /* @__PURE__ */ new Set()
 }) {
-  const [wardData, setWardData] = useState$1a(null);
+  const [wardData, setWardData] = useState$18(null);
   const location = useLocation();
-  const { userOrganisationUnits } = useContext$D(MEMISContext.UserContext);
-  const { user } = useContext$D(MEMISContext.UserRolesContext) || {};
-  const [futureDateFields, setFutureDateFields] = useState$1a([]);
-  const [dataStoreData, setDataStoreData] = useState$1a({});
-  const [validationErrors, setValidationErrors] = useState$1a({});
-  const [firstStageDe, setfirstDE] = useState$1a([]);
+  const { userOrganisationUnits } = useContext$C(MEMISContext.UserContext);
+  const { user } = useContext$C(MEMISContext.UserRolesContext) || {};
+  const [futureDateFields, setFutureDateFields] = useState$18([]);
+  const [dataStoreData, setDataStoreData] = useState$18({});
+  const [validationErrors, setValidationErrors] = useState$18({});
+  const [firstStageDe, setfirstDE] = useState$18([]);
   const validationConfig = dataStoreData?.formValidations;
-  const [canSave, setCanSave] = useState$1a(false);
-  const [orgUnitsByLevel, setOrgUnitsByLevel] = useState$1a({});
-  useEffect$19(() => {
+  const [canSave, setCanSave] = useState$18(false);
+  const [orgUnitsByLevel, setOrgUnitsByLevel] = useState$18({});
+  useEffect$16(() => {
     console.log({ lockedFields });
     const loadOrgUnitGroupFields = async () => {
       try {
@@ -26203,13 +26203,13 @@ function ConfigurableForm({
     };
     loadOrgUnitGroupFields();
   }, [programId]);
-  const [wslConfig, setWslConfig] = useState$1a(null);
-  const [componentInputs, setComponentInputs] = useState$1a({});
+  const [wslConfig, setWslConfig] = useState$18(null);
+  const [componentInputs, setComponentInputs] = useState$18({});
   const { showPopover, setShowPopover } = usePopoverState();
   const { setDateRangePopover } = useDateRangePopover();
   const { imageUrls, setImageUrls, imageLoading, setImageLoading } = useImageState();
   const { isMobile } = useViewport();
-  const [previewModal, setPreviewModal] = useState$1a({
+  const [previewModal, setPreviewModal] = useState$18({
     isOpen: false,
     fileId: null,
     fileName: null,
@@ -26245,8 +26245,8 @@ function ConfigurableForm({
     selectedOrganisationUnit
   );
   const sectionVisibilityRules = useSectionVisibilityConfig(programId);
-  const { programs } = useContext$D(MEMISContext.ProgramContext);
-  const programObj = useMemo$G(() => {
+  const { programs } = useContext$C(MEMISContext.ProgramContext);
+  const programObj = useMemo$E(() => {
     if (!programId) return null;
     const list = Array.isArray(programs) ? programs : programs?.programs || [];
     return list.find((p) => p?.id === programId) || null;
@@ -27510,11 +27510,11 @@ function ConfigurableForm({
     isLast: isFinalStep,
     dataStore: dataStoreData
   });
-  useMemo$G(
+  useMemo$E(
     () => sections?.map((s) => s.id).join(","),
     [sections]
   );
-  const getDisplayedSectionName = useCallback$r(
+  const getDisplayedSectionName = useCallback$p(
     (section) => {
       const override = getSectionFormNameOverride(dataStoreData, {
         programId,
@@ -27547,7 +27547,7 @@ function ConfigurableForm({
       console.log({ error });
     }
   };
-  useEffect$19(() => {
+  useEffect$16(() => {
     let cancelled = false;
     const fetchWslConfig = async () => {
       try {
@@ -27572,7 +27572,7 @@ function ConfigurableForm({
       cancelled = true;
     };
   }, [programId, selectedStage]);
-  useEffect$19(() => {
+  useEffect$16(() => {
     const loadTaskPrefill = async () => {
       const taskId = queryParams.get("taskId");
       if (!taskId) return;
@@ -27622,7 +27622,7 @@ function ConfigurableForm({
     loadTaskPrefill();
     prefillWard();
   }, [programObj]);
-  useEffect$19(() => {
+  useEffect$16(() => {
     if (!wardData?.use || !wardData?.field) return;
     const targetId = wardData.field;
     setFormData((prev) => {
@@ -27635,7 +27635,7 @@ function ConfigurableForm({
       };
     });
   }, [wardData, setFormData]);
-  useEffect$19(() => {
+  useEffect$16(() => {
     let mounted = true;
     const loadFutureDateConfig = async () => {
       const dataStore2 = await LocalForageServiceInstance.getItem(
@@ -27650,7 +27650,7 @@ function ConfigurableForm({
       mounted = false;
     };
   }, [programObj, sectionsList]);
-  useEffect$19(() => {
+  useEffect$16(() => {
     let mounted = true;
     const loadFutureDateConfig = async () => {
       const dataStore2 = await LocalForageServiceInstance.getItem(
@@ -27674,7 +27674,7 @@ function ConfigurableForm({
     stageObj,
     activeSection
   ]);
-  useEffect$19(() => {
+  useEffect$16(() => {
     let cancelled = false;
     const loadFutureDateConfig = async () => {
       try {
@@ -27707,7 +27707,7 @@ function ConfigurableForm({
       cancelled = true;
     };
   }, [programId, selectedStage, formData]);
-  useEffect$19(() => {
+  useEffect$16(() => {
     let mounted = true;
     if (mounted) {
       const config = dataStoreData?.reportGenerationDatePrefill?.configurations;
@@ -27726,7 +27726,7 @@ function ConfigurableForm({
       mounted = false;
     };
   }, [dataStoreData, programId]);
-  const isInitiallyLoading = useMemo$G(
+  const isInitiallyLoading = useMemo$E(
     () => formLoading || autoFillFacilityLoading,
     [formLoading, autoFillFacilityLoading]
   );
@@ -27749,7 +27749,7 @@ function ConfigurableForm({
     const selectedSection = result?.sections?.find((s) => s.id === actSect);
     setCanSave(selectedSection?.canSave ?? false);
   };
-  useEffect$19(() => {
+  useEffect$16(() => {
     if (!workflow) return;
     const wf = workflow?.workflows?.find((e) => e.value === pM);
     const w = wf?.firstStage;
@@ -27759,7 +27759,7 @@ function ConfigurableForm({
       getDe(j);
     }
   }, [workflow, pM]);
-  useEffect$19(() => {
+  useEffect$16(() => {
     const loadUser = async () => {
       const us = await LocalForageServiceInstance.getItem("userRes", "user");
       const { userShowOrgUnit } = await LocalForageServiceInstance.getItem(
@@ -27784,7 +27784,7 @@ function ConfigurableForm({
     };
     loadUser();
   }, [user, selectedOrganisationUnit]);
-  useEffect$19(() => {
+  useEffect$16(() => {
     if (activeSection?.id) {
       getActiveSectionCanSave(activeSection?.id, programId);
     }
@@ -31653,8 +31653,8 @@ const CreateDataItemsController = {
   programWithRegistrationEvent,
 };
 
-const React$Q = await importShared('react');
-const {useContext: useContext$C,useEffect: useEffect$18,useMemo: useMemo$F,useState: useState$19} = React$Q;
+const React$N = await importShared('react');
+const {useContext: useContext$B,useEffect: useEffect$15,useMemo: useMemo$D,useState: useState$17} = React$N;
 const A$9 = (x) => Array.isArray(x) ? x : [];
 function MultiEntryForm({
   dataElements = null,
@@ -31664,19 +31664,19 @@ function MultiEntryForm({
   worklow,
   onClose
 }) {
-  const [numEntries, setNumEntries] = useState$19(2);
-  const [step, setStep] = useState$19("count");
-  const [commonData, setCommonData] = useState$19({});
-  const [entries, setEntries] = useState$19([]);
-  const [loading, setLoading] = useState$19(false);
-  const [selectedCommonFields, setSelectedCommonFields] = useState$19([]);
-  const [showPopover, setShowPopover] = useState$19(false);
-  const [imageUrls, setImageUrls] = useState$19({});
-  const [imageLoading, setImageLoading] = useState$19({});
+  const [numEntries, setNumEntries] = useState$17(2);
+  const [step, setStep] = useState$17("count");
+  const [commonData, setCommonData] = useState$17({});
+  const [entries, setEntries] = useState$17([]);
+  const [loading, setLoading] = useState$17(false);
+  const [selectedCommonFields, setSelectedCommonFields] = useState$17([]);
+  const [showPopover, setShowPopover] = useState$17(false);
+  const [imageUrls, setImageUrls] = useState$17({});
+  const [imageLoading, setImageLoading] = useState$17({});
   const navigate = useNavigate();
-  const { userOrganisationUnits } = useContext$C(MEMISContext.UserContext);
-  const { user } = useContext$C(MEMISContext.UserRolesContext);
-  const commonFields = useMemo$F(() => {
+  const { userOrganisationUnits } = useContext$B(MEMISContext.UserContext);
+  const { user } = useContext$B(MEMISContext.UserRolesContext);
+  const commonFields = useMemo$D(() => {
     if (!dataElements) return [];
     const program2 = dataElements?.program;
     if (!program2) return [];
@@ -31685,7 +31685,7 @@ function MultiEntryForm({
     }
     return [];
   }, [dataElements]);
-  const entryFields = useMemo$F(() => {
+  const entryFields = useMemo$D(() => {
     if (!commonFields?.length) return [];
     return commonFields.filter((f) => !selectedCommonFields.includes(f.id));
   }, [commonFields, selectedCommonFields]);
@@ -31759,7 +31759,7 @@ function MultiEntryForm({
       setLoading(false);
     }
   };
-  useEffect$18(() => {
+  useEffect$15(() => {
     console.log(worklow);
   }, []);
   const renderInput = (el, canAddUpdateSection, idx, isCommonField) => {
@@ -32289,7 +32289,7 @@ const calculateDeregistrationAutofill = async (teiAttributes, isolationDate = nu
     return autofillValues;
 };
 
-const {useState: useState$18,useEffect: useEffect$17,useContext: useContext$B,useMemo: useMemo$E,useRef: useRef$o} = await importShared('react');
+const {useState: useState$16,useEffect: useEffect$14,useContext: useContext$A,useMemo: useMemo$C,useRef: useRef$m} = await importShared('react');
 
 /**
  * Hook to automatically fill facility/org unit based on DataStore configuration
@@ -32306,27 +32306,27 @@ function useFacilityAutoFill(
   isEdit,
 ) {
   const location = useLocation();
-  const { userOrganisationUnits } = useContext$B(MEMISContext.UserContext);
-  const { user } = useContext$B(MEMISContext.UserRolesContext) || {};
+  const { userOrganisationUnits } = useContext$A(MEMISContext.UserContext);
+  const { user } = useContext$A(MEMISContext.UserRolesContext) || {};
 
-  const [autoFilledOrgUnit, setAutoFilledOrgUnit] = useState$18(null);
-  const [loading, setLoading] = useState$18(false);
+  const [autoFilledOrgUnit, setAutoFilledOrgUnit] = useState$16(null);
+  const [loading, setLoading] = useState$16(false);
 
   // Track if we've already loaded to prevent re-fetching
-  const hasLoadedRef = useRef$o(false);
-  const configCacheRef = useRef$o(null);
+  const hasLoadedRef = useRef$m(false);
+  const configCacheRef = useRef$m(null);
 
   // Stable reference to user org units
-  useMemo$E(() => {
+  useMemo$C(() => {
     return JSON.stringify(userOrganisationUnits?.map((ou) => ou.id) || []);
   }, [userOrganisationUnits]);
 
   // Stable reference to user info
-  useMemo$E(() => {
+  useMemo$C(() => {
     return user?.id || "";
   }, [user?.id]);
 
-  useEffect$17(() => {
+  useEffect$14(() => {
     // Skip if we're in edit mode
     if (isEdit) {
       setAutoFilledOrgUnit(null);
@@ -33255,7 +33255,7 @@ const generateUniquePamAssetNumber = async ({
   throw new Error("PAM_GENERATION_EXHAUSTED");
 };
 
-const {useContext: useContext$A,useEffect: useEffect$16,useState: useState$17,useMemo: useMemo$D,useRef: useRef$n} = await importShared('react');
+const {useContext: useContext$z,useEffect: useEffect$13,useState: useState$15,useMemo: useMemo$B,useRef: useRef$l} = await importShared('react');
 const A$8 = (x) => Array.isArray(x) ? x : [];
 function collectBundleUids(value, seen = /* @__PURE__ */ new Set()) {
   if (!value || typeof value !== "object") return [];
@@ -33298,39 +33298,39 @@ function FormComponent({
   editData,
   onSaveSuccess
 }) {
-  const [isMultiple, setIsMultiple] = useState$17(false);
+  const [isMultiple, setIsMultiple] = useState$15(false);
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const [query, setQuery] = useState$17(queryParams.get("query") || "");
-  const [formData, setFormData] = useState$17({});
-  const [maintainanceTye, setMaintenancetype] = useState$17();
-  const [currentSection, setCurrentSection] = useState$17(0);
-  const [fieldMultiText, setFieldMultiText] = useState$17([]);
-  const [lockedFields, setLockedFields] = useState$17(/* @__PURE__ */ new Set());
-  const [pM, setPM] = useState$17();
-  const [ranKey, setKey] = useState$17(
+  const [query, setQuery] = useState$15(queryParams.get("query") || "");
+  const [formData, setFormData] = useState$15({});
+  const [maintainanceTye, setMaintenancetype] = useState$15();
+  const [currentSection, setCurrentSection] = useState$15(0);
+  const [fieldMultiText, setFieldMultiText] = useState$15([]);
+  const [lockedFields, setLockedFields] = useState$15(/* @__PURE__ */ new Set());
+  const [pM, setPM] = useState$15();
+  const [ranKey, setKey] = useState$15(
     Math.random().toString(36).substring(2, 10).toUpperCase()
   );
-  const [triggerAt, setTriggerAt] = useState$17(queryParams.get("triggerAt"));
-  const [loading, setLoading] = useState$17(false);
-  const [eventDate, setEventDate] = useState$17((/* @__PURE__ */ new Date()).toISOString());
+  const [triggerAt, setTriggerAt] = useState$15(queryParams.get("triggerAt"));
+  const [loading, setLoading] = useState$15(false);
+  const [eventDate, setEventDate] = useState$15((/* @__PURE__ */ new Date()).toISOString());
   const navigate = useNavigate();
-  const { user } = useContext$A(MEMISContext.UserRolesContext);
-  const [pgRules, setRule] = useState$17([]);
-  const [selectedOrganisationUnit, setSelectedOrganisationUnit] = useState$17(null);
-  const [equip, setEquipment] = useState$17();
-  const [enrollmentDate, setEnrollmentDate] = useState$17(
+  const { user } = useContext$z(MEMISContext.UserRolesContext);
+  const [pgRules, setRule] = useState$15([]);
+  const [selectedOrganisationUnit, setSelectedOrganisationUnit] = useState$15(null);
+  const [equip, setEquipment] = useState$15();
+  const [enrollmentDate, setEnrollmentDate] = useState$15(
     editData?.enrollmentDate || Date.now()
   );
-  const [incidentDate, setIncidentDate] = useState$17(
+  const [incidentDate, setIncidentDate] = useState$15(
     editData?.incidentDate || Date.now()
   );
-  const [entityId, setEntityId] = useState$17(
+  const [entityId, setEntityId] = useState$15(
     editData?.trackedEntity || editData?.id || null
   );
-  const [ackModalOpen, setAckModalOpen] = useState$17(false);
-  const autoFillFacilityAppliedRef = useRef$n(false);
-  const isEditMode = useMemo$D(() => {
+  const [ackModalOpen, setAckModalOpen] = useState$15(false);
+  const autoFillFacilityAppliedRef = useRef$l(false);
+  const isEditMode = useMemo$B(() => {
     return query === "edit" || !!editData;
   }, [query, editData]);
   const { autoFilledOrgUnit, loading: autoFillLoading } = useFacilityAutoFill(
@@ -33380,7 +33380,7 @@ function FormComponent({
       console.error("Failed to fetch deregistration autofill rules:", error);
     }
   };
-  useEffect$16(() => {
+  useEffect$13(() => {
     if (autoFillFacilityAppliedRef.current) return;
     if (isEditMode) return;
     if (!autoFilledOrgUnit) return;
@@ -33388,7 +33388,7 @@ function FormComponent({
     if (autoFillLoading) return;
     autoFillFacilityAppliedRef.current = true;
   }, [autoFilledOrgUnit, autoFillLoading, isEditMode]);
-  useEffect$16(() => {
+  useEffect$13(() => {
     autoFillFacilityAppliedRef.current = false;
     getRules();
   }, [program?.id]);
@@ -33447,7 +33447,7 @@ function FormComponent({
       console.error("Failed to fetch warrant data:", err);
     }
   };
-  useEffect$16(() => {
+  useEffect$13(() => {
     getRules();
     const q = queryParams.get("triggerAt");
     if (q === "Corrective Maintenance") {
@@ -33519,7 +33519,7 @@ function FormComponent({
     if (v instanceof File) return false;
     return v == null || typeof v === "string" && v.trim() === "";
   };
-  const requiredTrackerAttrIds = useMemo$D(() => {
+  const requiredTrackerAttrIds = useMemo$B(() => {
     if (!program) return [];
     const progReq = program?.programTrackedEntityAttributes?.filter((ptea) => ptea?.mandatory)?.map(
       (ptea) => ptea?.trackedEntityAttribute?.id || ptea?.trackedEntityAttribute
@@ -33529,7 +33529,7 @@ function FormComponent({
     ) || [];
     return Array.from(/* @__PURE__ */ new Set([...progReq || [], ...tetReq || []]));
   }, [program]);
-  const requiredTrackerAttrNames = useMemo$D(() => {
+  const requiredTrackerAttrNames = useMemo$B(() => {
     if (!program) return {};
     const map = {};
     (program?.programTrackedEntityAttributes || []).forEach((ptea) => {
@@ -33898,7 +33898,7 @@ function FormComponent({
     onClose?.();
     navigate(window.location.pathname, { replace: true });
   };
-  useEffect$16(() => {
+  useEffect$13(() => {
     if (editData && Object.keys(editData).length > 0 && program) {
       setQuery("edit");
       const getFieldMetadata = (fieldId) => {
@@ -34001,7 +34001,7 @@ function FormComponent({
     const name = await resolveEquipmentName(id);
     setEquipment(name);
   };
-  useEffect$16(() => {
+  useEffect$13(() => {
     const queryParams2 = new URLSearchParams(location.search);
     const equipmentId = trackedEntity || queryParams2.get("equipmentId");
     getEquip(equipmentId);
@@ -34047,7 +34047,7 @@ function FormComponent({
       fetchEquipmentDataAndPrefill();
     }
   }, [selectedStage, trackedEntity, program, editData, user, location.search]);
-  useEffect$16(() => {
+  useEffect$13(() => {
     const queryId = queryParams.get("q");
     if (queryId === "add") {
       const taskId = queryParams.get("taskId");
@@ -34615,7 +34615,7 @@ const dateTime = {
     FORMAT_PRESETS,
 };
 
-const {useState: useState$16,useMemo: useMemo$C,useEffect: useEffect$15} = await importShared('react');
+const {useState: useState$14,useMemo: useMemo$A,useEffect: useEffect$12} = await importShared('react');
 const DataTable = ({
   columns,
   rows,
@@ -34642,16 +34642,16 @@ const DataTable = ({
   priorities,
   approvalStatusColors
 }) => {
-  const [localSortKey, setLocalSortKey] = useState$16("");
-  const [localSortOrder, setLocalSortOrder] = useState$16("asc");
-  const [isMobile, setIsMobile] = useState$16(() => {
+  const [localSortKey, setLocalSortKey] = useState$14("");
+  const [localSortOrder, setLocalSortOrder] = useState$14("asc");
+  const [isMobile, setIsMobile] = useState$14(() => {
     if (typeof window !== "undefined") {
       return window.innerWidth < 768;
     }
     return false;
   });
-  const [resolvedRows, setResolvedRows] = useState$16(rows);
-  const correctedColumns = useMemo$C(() => {
+  const [resolvedRows, setResolvedRows] = useState$14(rows);
+  const correctedColumns = useMemo$A(() => {
     if (!Array.isArray(columns)) return [];
     const keyCorrections = {
       // Transfer Type
@@ -34676,13 +34676,13 @@ const DataTable = ({
       return correctedKey !== col.key ? { ...col, key: correctedKey } : col;
     });
   }, [columns]);
-  useEffect$15(() => {
+  useEffect$12(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-  useEffect$15(() => {
+  useEffect$12(() => {
     let mounted = true;
     (async () => {
       try {
@@ -34714,7 +34714,7 @@ const DataTable = ({
       setLocalSortOrder(newOrder);
     }
   };
-  const sortedRows = useMemo$C(() => {
+  const sortedRows = useMemo$A(() => {
     if (!clientSideSort || !localSortKey) return resolvedRows;
     return [...resolvedRows].sort((a, b) => {
       const aVal = a[localSortKey];
@@ -35382,7 +35382,7 @@ const DataTable = ({
   ] });
 };
 
-const {useEffect: useEffect$14,useRef: useRef$m} = await importShared('react');
+const {useEffect: useEffect$11,useRef: useRef$k} = await importShared('react');
 
 const GeneralCustomModal = ({
   isOpen,
@@ -35398,7 +35398,7 @@ const GeneralCustomModal = ({
   showCloseButton = true,
   onDidDismiss
 }) => {
-  useEffect$14(() => {
+  useEffect$11(() => {
     const handleClick = (e) => {
       const path = e.composedPath?.() || [];
       for (let el of path) {
@@ -35476,41 +35476,41 @@ const GeneralCustomModal = ({
   );
 };
 
-const React$P = await importShared('react');
-const {useMemo: useMemo$B,useState: useState$15,useEffect: useEffect$13} = React$P;
+const React$M = await importShared('react');
+const {useMemo: useMemo$z,useState: useState$13,useEffect: useEffect$10} = React$M;
 
-const React$O = await importShared('react');
-const {useCallback: useCallback$q,useContext: useContext$z,useEffect: useEffect$12,useRef: useRef$l,useState: useState$14} = React$O;
+const React$L = await importShared('react');
+const {useCallback: useCallback$o,useContext: useContext$y,useEffect: useEffect$$,useRef: useRef$j,useState: useState$12} = React$L;
 function Event({ id }) {
-  const { eventsList, reload, isLoading, columns, pagination } = useContext$z(
+  const { eventsList, reload, isLoading, columns, pagination } = useContext$y(
     MEMISContext.EventsContext
   );
-  const { user } = useContext$z(MEMISContext.UserRolesContext) || {};
+  const { user } = useContext$y(MEMISContext.UserRolesContext) || {};
   const navigate = useNavigate();
-  const [rows, setRows] = useState$14([]);
-  const [searchValue, setSearchValue] = useState$14("");
-  const [search, setSearch] = useState$14("");
-  const [organisationUnits, setOrganisationUnits] = useState$14([]);
-  const [selectedLocation, setSelectedLocation] = useState$14("");
-  const [optionFilters, setOptionFilters] = useState$14([]);
-  const [showSearchField, setShowSearchField] = useState$14(false);
-  const [optionSets, setOptionSets] = useState$14([]);
-  const [filterType, setFilterType] = useState$14([]);
-  const [filterValue, setFilterValue] = useState$14([]);
-  const [filterOpen, setFilterOpen] = useState$14(false);
-  const [filterValueOpen, setFilterValueOpen] = useState$14(null);
-  const [activePicker, setActivePicker] = useState$14(null);
-  const locationRef = useRef$l("");
-  const filterValueRef = useRef$l([]);
-  const filterTypesRef = useRef$l([]);
-  const optionFiltersRef = useRef$l([]);
-  const runQueryRef = useRef$l(null);
-  useEffect$12(() => {
+  const [rows, setRows] = useState$12([]);
+  const [searchValue, setSearchValue] = useState$12("");
+  const [search, setSearch] = useState$12("");
+  const [organisationUnits, setOrganisationUnits] = useState$12([]);
+  const [selectedLocation, setSelectedLocation] = useState$12("");
+  const [optionFilters, setOptionFilters] = useState$12([]);
+  const [showSearchField, setShowSearchField] = useState$12(false);
+  const [optionSets, setOptionSets] = useState$12([]);
+  const [filterType, setFilterType] = useState$12([]);
+  const [filterValue, setFilterValue] = useState$12([]);
+  const [filterOpen, setFilterOpen] = useState$12(false);
+  const [filterValueOpen, setFilterValueOpen] = useState$12(null);
+  const [activePicker, setActivePicker] = useState$12(null);
+  const locationRef = useRef$j("");
+  const filterValueRef = useRef$j([]);
+  const filterTypesRef = useRef$j([]);
+  const optionFiltersRef = useRef$j([]);
+  const runQueryRef = useRef$j(null);
+  useEffect$$(() => {
     filterValueRef.current = filterValue;
     filterTypesRef.current = filterType;
     optionFiltersRef.current = optionFilters;
   }, [filterValue, filterType]);
-  const buildOptions = useCallback$q(
+  const buildOptions = useCallback$o(
     (overrides = {}) => ({
       searchWithSerialNumber: search?.trim() || null,
       orgUnit: selectedLocation || null,
@@ -35519,7 +35519,7 @@ function Event({ id }) {
     }),
     [search, selectedLocation]
   );
-  const runQuery = useCallback$q(
+  const runQuery = useCallback$o(
     (overrides = {}) => {
       reload({
         programId: id,
@@ -35528,10 +35528,10 @@ function Event({ id }) {
     },
     [id, reload, buildOptions]
   );
-  useEffect$12(() => {
+  useEffect$$(() => {
     runQueryRef.current = runQuery;
   }, [runQuery]);
-  useEffect$12(() => {
+  useEffect$$(() => {
     const load = async () => {
       try {
         const orgs = await LocalForageServiceInstance.getItem(
@@ -35546,7 +35546,7 @@ function Event({ id }) {
     };
     load();
   }, []);
-  useEffect$12(() => {
+  useEffect$$(() => {
     if (!user?.userRoles?.length) return;
     const resolveLocation = async () => {
       try {
@@ -35571,7 +35571,7 @@ function Event({ id }) {
     };
     resolveLocation();
   }, [id, user]);
-  useEffect$12(() => {
+  useEffect$$(() => {
     const load = async () => {
       const dataStore = await LocalForageServiceInstance.getItem(
         "dataStore",
@@ -35590,13 +35590,13 @@ function Event({ id }) {
     };
     load();
   }, [id]);
-  useEffect$12(() => {
+  useEffect$$(() => {
     if (id && selectedLocation) runQueryRef.current?.();
   }, [id]);
-  useEffect$12(() => {
+  useEffect$$(() => {
     setRows(eventsList || []);
   }, [eventsList]);
-  useEffect$12(() => {
+  useEffect$$(() => {
     if (!search.trim()) return;
     const timer = setTimeout(() => {
       if (id) runQueryRef.current?.();
@@ -35648,7 +35648,7 @@ function Event({ id }) {
     });
     setFilterOpen(false);
   };
-  useEffect$12(() => {
+  useEffect$$(() => {
     const handleClick = (e) => {
       const path = e.composedPath?.() || [];
       for (let el of path) {
@@ -62043,8 +62043,8 @@ class CapacitorBarcodeScanner {
     }
 }
 
-const React$N = await importShared('react');
-const {useEffect: useEffect$11,useContext: useContext$y,useState: useState$13,useCallback: useCallback$p} = React$N;
+const React$K = await importShared('react');
+const {useEffect: useEffect$_,useContext: useContext$x,useState: useState$11,useCallback: useCallback$n} = React$K;
 const Tracker = ({ id }) => {
   const {
     equipmentList,
@@ -62053,41 +62053,41 @@ const Tracker = ({ id }) => {
     columns,
     pagination,
     setPagination
-  } = useContext$y(MEMISContext.TrackedEntitiesContext);
-  const { user } = useContext$y(MEMISContext.UserRolesContext) || {};
+  } = useContext$x(MEMISContext.TrackedEntitiesContext);
+  const { user } = useContext$x(MEMISContext.UserRolesContext) || {};
   const location = useLocation();
   const navigate = useNavigate();
-  const [rows, setRows] = useState$13([]);
-  const [search, setSearch] = useState$13("");
-  const [searchValue, setSearchValue] = useState$13("");
-  const [organisationUnits, setOrganisationUnits] = useState$13([]);
-  const [equipmentNamesOptions, setEquipmentNamesOptions] = useState$13([]);
-  const [selectedLocation, setSelectedLocation] = useState$13("");
-  const [optionFilters, setOptionFilters] = useState$13([]);
-  const [searchFilter, setSearchFilter] = useState$13(null);
-  const [filterType, setFilterType] = useState$13("");
-  const [filterValue, setFilterValue] = useState$13("");
-  const [appliedFilter, setAppliedFilter] = useState$13({
+  const [rows, setRows] = useState$11([]);
+  const [search, setSearch] = useState$11("");
+  const [searchValue, setSearchValue] = useState$11("");
+  const [organisationUnits, setOrganisationUnits] = useState$11([]);
+  const [equipmentNamesOptions, setEquipmentNamesOptions] = useState$11([]);
+  const [selectedLocation, setSelectedLocation] = useState$11("");
+  const [optionFilters, setOptionFilters] = useState$11([]);
+  const [searchFilter, setSearchFilter] = useState$11(null);
+  const [filterType, setFilterType] = useState$11("");
+  const [filterValue, setFilterValue] = useState$11("");
+  const [appliedFilter, setAppliedFilter] = useState$11({
     type: null,
     value: null
   });
-  const [filterOpen, setFilterOpen] = useState$13(false);
-  const filterRef = React$N.useRef({
+  const [filterOpen, setFilterOpen] = useState$11(false);
+  const filterRef = React$K.useRef({
     type: "",
     value: ""
   });
-  const filterByLocationRef = React$N.useRef({
+  const filterByLocationRef = React$K.useRef({
     type: "",
     value: ""
   });
-  const optionFiltersRef = React$N.useRef([]);
-  const searchFiltersRef = React$N.useRef([]);
-  const getEquipmentNamesOptions = useCallback$p(async () => {
+  const optionFiltersRef = React$K.useRef([]);
+  const searchFiltersRef = React$K.useRef([]);
+  const getEquipmentNamesOptions = useCallback$n(async () => {
     const options = await LocalForageServiceInstance.getItem("optionSets", "metadata");
     const equipmentOptions = options?.find((opt) => opt?.id === "VuKFOqg584G") || [];
     return equipmentOptions?.options || [];
   });
-  useEffect$11(() => {
+  useEffect$_(() => {
     const loadOptions = async () => {
       const options = await getEquipmentNamesOptions();
       setEquipmentNamesOptions(options || []);
@@ -62114,7 +62114,7 @@ const Tracker = ({ id }) => {
       });
     }
   };
-  const buildOptions = useCallback$p(
+  const buildOptions = useCallback$n(
     (overrides = {}) => {
       const hasValidFilter = appliedFilter.type && appliedFilter.value;
       searchFiltersRef?.current;
@@ -62132,7 +62132,7 @@ const Tracker = ({ id }) => {
     },
     [search, appliedFilter]
   );
-  const runQuery = useCallback$p(
+  const runQuery = useCallback$n(
     (overrides = {}) => {
       reload({
         programId: id,
@@ -62141,11 +62141,11 @@ const Tracker = ({ id }) => {
     },
     [id, reload, buildOptions]
   );
-  const runQueryRef = React$N.useRef(runQuery);
-  useEffect$11(() => {
+  const runQueryRef = React$K.useRef(runQuery);
+  useEffect$_(() => {
     runQueryRef.current = runQuery;
   }, [runQuery]);
-  useEffect$11(() => {
+  useEffect$_(() => {
     const loadOrgUnits = async () => {
       try {
         const orgUnits = await LocalForageServiceInstance.getItem(
@@ -62161,7 +62161,7 @@ const Tracker = ({ id }) => {
     };
     loadOrgUnits();
   }, []);
-  useEffect$11(() => {
+  useEffect$_(() => {
     if (!organisationUnits.length || !user?.userRoles?.length) return;
     const resolveDefaultLocation = async () => {
       try {
@@ -62192,10 +62192,10 @@ const Tracker = ({ id }) => {
     };
     resolveDefaultLocation();
   }, [organisationUnits, id, user]);
-  useEffect$11(() => {
+  useEffect$_(() => {
     setRows(equipmentList || []);
   }, [equipmentList]);
-  useEffect$11(() => {
+  useEffect$_(() => {
     if (!search.trim()) return;
     const timeout = setTimeout(() => {
       if (id) {
@@ -62301,7 +62301,7 @@ const Tracker = ({ id }) => {
       console.error("QR Scan failed:", err);
     }
   };
-  useEffect$11(() => {
+  useEffect$_(() => {
     const load = async () => {
       const programAttributesResult = await LocalForageServiceInstance.getItem(
         "dataStore",
@@ -62320,7 +62320,7 @@ const Tracker = ({ id }) => {
     };
     load();
   }, [id]);
-  useEffect$11(() => {
+  useEffect$_(() => {
     optionFiltersRef.current = optionFilters || [];
     searchFiltersRef.current = searchFilter || null;
   }, [optionFilters, searchFilter]);
@@ -62478,8 +62478,8 @@ const Tracker = ({ id }) => {
   ] });
 };
 
-const React$M = await importShared('react');
-const {useState: useState$12,useEffect: useEffect$10,useMemo: useMemo$A,useRef: useRef$k,useCallback: useCallback$o} = React$M;
+const React$J = await importShared('react');
+const {useState: useState$10,useEffect: useEffect$Z,useMemo: useMemo$y,useRef: useRef$i,useCallback: useCallback$m} = React$J;
 const SearchFilterCard = ({
   children,
   searchText,
@@ -62500,48 +62500,48 @@ const SearchFilterCard = ({
   onScanSearch,
   programId
 }) => {
-  const [popoverEvent, setPopoverEvent] = useState$12(null);
-  const [filterPopoverEvent, setFilterPopoverEvent] = useState$12(null);
-  const [localApproval, setLocalApproval] = useState$12(
+  const [popoverEvent, setPopoverEvent] = useState$10(null);
+  const [filterPopoverEvent, setFilterPopoverEvent] = useState$10(null);
+  const [localApproval, setLocalApproval] = useState$10(
     filterOptions?.approval ?? ""
   );
-  const lastExternalApprovalRef = useRef$k(filterOptions?.approval ?? "");
-  const [scanOpen, setScanOpen] = useState$12(false);
-  const [scanError, setScanError] = useState$12("");
-  const videoRef = useRef$k(null);
-  const streamRef = useRef$k(null);
-  const rafRef = useRef$k(null);
-  const detectorRef = useRef$k(null);
-  const [optionFilters, setOptionFilters] = useState$12([]);
-  const [searchFilter, setSearchFilter] = useState$12(null);
-  const [organisationUnits, setOrganisationUnits] = useState$12([]);
-  const [selectedLocation, setSelectedLocation] = useState$12("");
-  const [filterType, setFilterType] = useState$12("");
-  const [filterValue, setFilterValue] = useState$12("");
-  const [appliedFilter, setAppliedFilter] = useState$12({
+  const lastExternalApprovalRef = useRef$i(filterOptions?.approval ?? "");
+  const [scanOpen, setScanOpen] = useState$10(false);
+  const [scanError, setScanError] = useState$10("");
+  const videoRef = useRef$i(null);
+  const streamRef = useRef$i(null);
+  const rafRef = useRef$i(null);
+  const detectorRef = useRef$i(null);
+  const [optionFilters, setOptionFilters] = useState$10([]);
+  const [searchFilter, setSearchFilter] = useState$10(null);
+  const [organisationUnits, setOrganisationUnits] = useState$10([]);
+  const [selectedLocation, setSelectedLocation] = useState$10("");
+  const [filterType, setFilterType] = useState$10("");
+  const [filterValue, setFilterValue] = useState$10("");
+  const [appliedFilter, setAppliedFilter] = useState$10({
     type: null,
     value: null
   });
-  const [filterOpen, setFilterOpen] = useState$12(false);
-  const filterRef = React$M.useRef({
+  const [filterOpen, setFilterOpen] = useState$10(false);
+  const filterRef = React$J.useRef({
     type: "",
     value: ""
   });
-  const filterByLocationRef = React$M.useRef({
+  const filterByLocationRef = React$J.useRef({
     type: "",
     value: ""
   });
-  const optionFiltersRef = React$M.useRef([]);
-  const searchFiltersRef = React$M.useRef([]);
+  const optionFiltersRef = React$J.useRef([]);
+  const searchFiltersRef = React$J.useRef([]);
   const isScanDebug = typeof window !== "undefined" && (window.localStorage?.getItem("memis_qr_scan_debug") === "1" || window.__MEMIS_QR_SCAN_DEBUG__ === true) || false;
-  const scanDebug = useCallback$o(
+  const scanDebug = useCallback$m(
     (...args) => {
       if (!isScanDebug) return;
       console.log("[MEMIS][QR_SCAN]", ...args);
     },
     [isScanDebug]
   );
-  useEffect$10(() => {
+  useEffect$Z(() => {
     const onUnhandledRejection = (event) => {
       const reason = String(
         event?.reason?.message || event?.reason || ""
@@ -62567,7 +62567,7 @@ const SearchFilterCard = ({
       window.removeEventListener("error", onWindowError);
     };
   }, [scanDebug]);
-  const placeHolder = useMemo$A(() => {
+  const placeHolder = useMemo$y(() => {
     if (searchPlaceholder) return searchPlaceholder;
     const labels = (filterColumns || []).map((c) => c.label).filter(Boolean);
     if (!labels.length) return "Search...";
@@ -62575,14 +62575,14 @@ const SearchFilterCard = ({
     const shownWords = labels.slice(0, max).join(", ");
     return `Search by ${shownWords}${labels.length > max ? "..." : ""}`;
   }, [searchPlaceholder, filterColumns]);
-  useEffect$10(() => {
+  useEffect$Z(() => {
     const external = filterOptions?.approval ?? "";
     if (lastExternalApprovalRef.current !== external) {
       lastExternalApprovalRef.current = external;
       setLocalApproval(external);
     }
   }, [filterOptions?.approval]);
-  const stopScanner = useCallback$o(() => {
+  const stopScanner = useCallback$m(() => {
     if (rafRef.current) {
       cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
@@ -62596,7 +62596,7 @@ const SearchFilterCard = ({
       videoRef.current.srcObject = null;
     }
   }, []);
-  const waitForVideoReady = useCallback$o(async (videoEl) => {
+  const waitForVideoReady = useCallback$m(async (videoEl) => {
     if (!videoEl) return;
     if (videoEl.readyState >= 2) return;
     await new Promise((resolve) => {
@@ -62613,12 +62613,12 @@ const SearchFilterCard = ({
       setTimeout(finish, 600);
     });
   }, []);
-  useEffect$10(() => {
+  useEffect$Z(() => {
     return () => {
       stopScanner();
     };
   }, [stopScanner]);
-  const handleScannedValue = useCallback$o(
+  const handleScannedValue = useCallback$m(
     async (rawValue) => {
       const incoming = String(rawValue || "").trim();
       if (!incoming) return;
@@ -62634,7 +62634,7 @@ const SearchFilterCard = ({
     [onScanSearch, onSearchChange]
   );
   const isNativePlatform = typeof Capacitor?.isNativePlatform === "function" ? Capacitor.isNativePlatform() : ["android", "ios"].includes(Capacitor?.getPlatform?.());
-  const mapScannerError = useCallback$o((error, { native = false } = {}) => {
+  const mapScannerError = useCallback$m((error, { native = false } = {}) => {
     const name = String(error?.name || "").trim();
     const message = String(error?.message || "").toLowerCase();
     if (name === "NotAllowedError" || name === "SecurityError" || message.includes("permission") || message.includes("denied")) {
@@ -62672,7 +62672,7 @@ const SearchFilterCard = ({
       message: native ? "Unable to scan QR code on this device right now." : "Unable to start browser QR scanner right now."
     };
   }, []);
-  const runNativePluginScan = useCallback$o(async () => {
+  const runNativePluginScan = useCallback$m(async () => {
     try {
       scanDebug("path=native-mobile:start");
       const result = await CapacitorBarcodeScanner.scanBarcode({
@@ -62700,7 +62700,7 @@ const SearchFilterCard = ({
       return { ok: false, ...mapped };
     }
   }, [handleScannedValue, mapScannerError, scanDebug]);
-  const openScanner = useCallback$o(async () => {
+  const openScanner = useCallback$m(async () => {
     try {
       if (!enableQrScan) return;
       setScanError("");
@@ -62736,11 +62736,11 @@ const SearchFilterCard = ({
     runNativePluginScan,
     scanDebug
   ]);
-  const closeScanner = useCallback$o(() => {
+  const closeScanner = useCallback$m(() => {
     setScanOpen(false);
     stopScanner();
   }, [stopScanner]);
-  useEffect$10(() => {
+  useEffect$Z(() => {
     if (!scanOpen) return;
     let cancelled = false;
     const start = async () => {
@@ -62835,7 +62835,7 @@ const SearchFilterCard = ({
   };
   const resetFilters = () => {
   };
-  useEffect$10(() => {
+  useEffect$Z(() => {
     const load = async () => {
       const programAttributesResult = await LocalForageServiceInstance.getItem(
         "dataStore",
@@ -62856,7 +62856,7 @@ const SearchFilterCard = ({
     };
     load();
   }, [programId]);
-  useEffect$10(() => {
+  useEffect$Z(() => {
     optionFiltersRef.current = optionFilters || [];
     searchFiltersRef.current = searchFilter || null;
   }, [optionFilters, searchFilter]);
@@ -63074,13 +63074,13 @@ const SearchFilterCard = ({
   ] });
 };
 
-const {useCallback: useCallback$n,useMemo: useMemo$z} = await importShared('react');
+const {useCallback: useCallback$l,useMemo: useMemo$x} = await importShared('react');
 
 const unwrap = (res) => res?.data ?? res;
 
 function useTeiSearch(columns = []) {
  
-  const colKeySet = useMemo$z(() => {
+  const colKeySet = useMemo$x(() => {
     return new Set((columns || []).map((c) => c.key));
   }, [columns]);
 
@@ -63122,7 +63122,7 @@ function useTeiSearch(columns = []) {
     return rawValue;
   };
 
-  const search = useCallback$n(
+  const search = useCallback$l(
     async ({ programId, orgUnits, query, attributeUids, pageSize = 25, page = 1 }) => {
       if (!programId || !query || !attributeUids?.length) {
           return {
@@ -63345,7 +63345,7 @@ const eventSearchFilter = async (programId, data) => {
   return { filter: "&filter=" + filterString };
 };
 
-const {useCallback: useCallback$m,useEffect: useEffect$$,useMemo: useMemo$y,useRef: useRef$j,useState: useState$11} = await importShared('react');
+const {useCallback: useCallback$k,useEffect: useEffect$Y,useMemo: useMemo$w,useRef: useRef$h,useState: useState$$} = await importShared('react');
 function ItemSearch({
   programId,
   programStageId,
@@ -63359,23 +63359,23 @@ function ItemSearch({
   onResults,
   onLoadingChange
 }) {
-  const [debounced, setDebounced] = useState$11((searchText || "").trim());
-  const [programType, setProgramType] = useState$11(null);
-  const mountedRef = useRef$j(true);
-  const onResultsRef = useRef$j(onResults);
-  const onLoadingRef = useRef$j(onLoadingChange);
-  useEffect$$(() => {
+  const [debounced, setDebounced] = useState$$((searchText || "").trim());
+  const [programType, setProgramType] = useState$$(null);
+  const mountedRef = useRef$h(true);
+  const onResultsRef = useRef$h(onResults);
+  const onLoadingRef = useRef$h(onLoadingChange);
+  useEffect$Y(() => {
     onResultsRef.current = onResults;
   }, [onResults]);
-  useEffect$$(() => {
+  useEffect$Y(() => {
     onLoadingRef.current = onLoadingChange;
   }, [onLoadingChange]);
-  const keySet = useMemo$y(
+  const keySet = useMemo$w(
     () => new Set((visibleColumns || []).map((c) => c.key)),
     [visibleColumns]
   );
-  const colKeys = useMemo$y(() => Array.from(keySet), [keySet]);
-  const eventSearchKeys = useMemo$y(() => {
+  const colKeys = useMemo$w(() => Array.from(keySet), [keySet]);
+  const eventSearchKeys = useMemo$w(() => {
     const nonEventKeys = /* @__PURE__ */ new Set([
       "id",
       "event",
@@ -63388,16 +63388,16 @@ function ItemSearch({
     ]);
     return colKeys.filter((k) => !nonEventKeys.has(k));
   }, [colKeys]);
-  const colKeysKey = useMemo$y(() => colKeys.join(","), [colKeys]);
-  const orgUnitsKey = useMemo$y(
+  const colKeysKey = useMemo$w(() => colKeys.join(","), [colKeys]);
+  const orgUnitsKey = useMemo$w(
     () => (orgUnits || []).map((o) => o.id).join(","),
     [orgUnits]
   );
-  const [searchSets, setSearchSets] = useState$11({ equipment: [], spare: [] });
-  const EQUIP_SET = useMemo$y(() => searchSets?.equipment || [], [searchSets]);
-  const SPARE_SET = useMemo$y(() => searchSets?.spare || [], [searchSets]);
+  const [searchSets, setSearchSets] = useState$$({ equipment: [], spare: [] });
+  const EQUIP_SET = useMemo$w(() => searchSets?.equipment || [], [searchSets]);
+  const SPARE_SET = useMemo$w(() => searchSets?.spare || [], [searchSets]);
   const teiSearch = useTeiSearch(visibleColumns);
-  const eventFieldMapRef = useRef$j({ key: null, map: /* @__PURE__ */ new Map() });
+  const eventFieldMapRef = useRef$h({ key: null, map: /* @__PURE__ */ new Map() });
   const resolveDisplayValue = (field, rawValue) => {
     if (!field || rawValue == null || rawValue === "") return rawValue;
     const valueType = String(field.valueType || "").toUpperCase();
@@ -63425,7 +63425,7 @@ function ItemSearch({
     }
     return rawValue;
   };
-  const getEventFieldMap = useCallback$m(async () => {
+  const getEventFieldMap = useCallback$k(async () => {
     if (!programId) return /* @__PURE__ */ new Map();
     const cacheKey = `${programId}:${programStageId || ""}`;
     if (eventFieldMapRef.current.key === cacheKey) return eventFieldMapRef.current.map;
@@ -63443,13 +63443,13 @@ function ItemSearch({
     eventFieldMapRef.current = { key: cacheKey, map };
     return map;
   }, [programId, programStageId]);
-  const pickTeiScope = useCallback$m(() => {
+  const pickTeiScope = useCallback$k(() => {
     const hasAny = (uids) => uids.some((u) => keySet.has(u));
     if (hasAny(EQUIP_SET)) return EQUIP_SET;
     if (hasAny(SPARE_SET)) return SPARE_SET;
     return EQUIP_SET;
   }, [keySet, EQUIP_SET, SPARE_SET]);
-  const shapeEventRows = useCallback$m(
+  const shapeEventRows = useCallback$k(
     (events) => {
       const allowed = new Set(colKeys);
       return (events || []).map((ev) => {
@@ -63462,17 +63462,17 @@ function ItemSearch({
     },
     [colKeys]
   );
-  useEffect$$(() => {
+  useEffect$Y(() => {
     mountedRef.current = true;
     return () => {
       mountedRef.current = false;
     };
   }, []);
-  useEffect$$(() => {
+  useEffect$Y(() => {
     const t = setTimeout(() => setDebounced((searchText || "").trim()), 250);
     return () => clearTimeout(t);
   }, [searchText]);
-  useEffect$$(() => {
+  useEffect$Y(() => {
     if (!programId) return;
     const fetchProgramType = async () => {
       try {
@@ -63484,7 +63484,7 @@ function ItemSearch({
     };
     fetchProgramType();
   }, [programId]);
-  useEffect$$(() => {
+  useEffect$Y(() => {
     let cancelled = false;
     (async () => {
       const sets = await getSearchAttributeSets(programId);
@@ -63496,7 +63496,7 @@ function ItemSearch({
       cancelled = true;
     };
   }, [programId]);
-  useEffect$$(() => {
+  useEffect$Y(() => {
     let cancelled = false;
     const runTei = async () => {
       const attributeUids = pickTeiScope();
@@ -63855,16 +63855,16 @@ const sortRowsByApproval = (rows, approvalFieldKey) => {
   return copy;
 };
 
-const {useEffect: useEffect$_,useState: useState$10} = await importShared('react');
+const {useEffect: useEffect$X,useState: useState$_} = await importShared('react');
 
 function useQrScanEnabled({
   menuItems,
   currentNavigationId,
   scanProgramId,
 }) {
-  const [qrScanEnabled, setQrScanEnabled] = useState$10(false);
+  const [qrScanEnabled, setQrScanEnabled] = useState$_(false);
 
-  useEffect$_(() => {
+  useEffect$X(() => {
     let cancelled = false;
 
     (async () => {
@@ -63970,7 +63970,7 @@ function getBlankPlaceholderForDataElement(dataElements = [], deId) {
   );
 }
 
-const {useCallback: useCallback$l,useContext: useContext$x,useEffect: useEffect$Z,useMemo: useMemo$x,useRef: useRef$i,useState: useState$$} = await importShared('react');
+const {useCallback: useCallback$j,useContext: useContext$w,useEffect: useEffect$W,useMemo: useMemo$v,useRef: useRef$g,useState: useState$Z} = await importShared('react');
 function StageEvents({
   id,
   programId: programIdProp,
@@ -63980,40 +63980,40 @@ function StageEvents({
 }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user } = useContext$x(MEMISContext.UserRolesContext);
-  const { menuItems } = useContext$x(MEMISContext.MenuContext);
-  const [rows, setRows] = useState$$([]);
-  const [priorities, setPriorities] = useState$$(null);
-  const [loading, setLoading] = useState$$(false);
-  const [loadingColumns, setLoadingColumns] = useState$$(false);
-  const [loadingRows, setLoadingRows] = useState$$(false);
-  const [searchText, setSearchText] = useState$$("");
-  const [rawRows, setRawRows] = useState$$([]);
-  const [filterOptions, setFilterOptions] = useState$$({ approval: null });
-  const [approvalFieldKey, setApprovalFieldKey] = useState$$(null);
-  const [approvalConfig, setApprovalConfig] = useState$$(null);
-  const orgUnitCacheRef = useRef$i(/* @__PURE__ */ new Map());
-  const [allColumnsOrdered, setAllColumnsOrdered] = useState$$([]);
-  const [visibleColumnKeys, setVisibleColumnKeys] = useState$$(/* @__PURE__ */ new Set());
-  const visibleColumns = useMemo$x(
+  const { user } = useContext$w(MEMISContext.UserRolesContext);
+  const { menuItems } = useContext$w(MEMISContext.MenuContext);
+  const [rows, setRows] = useState$Z([]);
+  const [priorities, setPriorities] = useState$Z(null);
+  const [loading, setLoading] = useState$Z(false);
+  const [loadingColumns, setLoadingColumns] = useState$Z(false);
+  const [loadingRows, setLoadingRows] = useState$Z(false);
+  const [searchText, setSearchText] = useState$Z("");
+  const [rawRows, setRawRows] = useState$Z([]);
+  const [filterOptions, setFilterOptions] = useState$Z({ approval: null });
+  const [approvalFieldKey, setApprovalFieldKey] = useState$Z(null);
+  const [approvalConfig, setApprovalConfig] = useState$Z(null);
+  const orgUnitCacheRef = useRef$g(/* @__PURE__ */ new Map());
+  const [allColumnsOrdered, setAllColumnsOrdered] = useState$Z([]);
+  const [visibleColumnKeys, setVisibleColumnKeys] = useState$Z(/* @__PURE__ */ new Set());
+  const visibleColumns = useMemo$v(
     () => allColumnsOrdered.filter((c) => visibleColumnKeys.has(c.key)),
     [allColumnsOrdered, visibleColumnKeys]
   );
-  const searchPlaceholder = useMemo$x(() => {
+  const searchPlaceholder = useMemo$v(() => {
     const labels = visibleColumns.map((c) => c.label).filter(Boolean);
     if (!labels.length) return "Search events...";
     const max = 10;
     const shown = labels.slice(0, max).join(", ");
     return `Search by ${shown}${labels.length > max ? "..." : ""}`;
   }, [visibleColumns]);
-  const [selectedRow, setSelectedRow] = useState$$(null);
-  const [selectedRowId, setSelectedRowId] = useState$$(null);
-  const [showActions, setShowActions] = useState$$(false);
-  const [pendingDelete, setPendingDelete] = useState$$(null);
-  const [deletingId, setDeletingId] = useState$$(null);
-  const [fallbackStageId, setFallbackStageId] = useState$$(null);
+  const [selectedRow, setSelectedRow] = useState$Z(null);
+  const [selectedRowId, setSelectedRowId] = useState$Z(null);
+  const [showActions, setShowActions] = useState$Z(false);
+  const [pendingDelete, setPendingDelete] = useState$Z(null);
+  const [deletingId, setDeletingId] = useState$Z(null);
+  const [fallbackStageId, setFallbackStageId] = useState$Z(null);
   const getRowId = (row) => row?.id || row?.event || row?.enrollment || row?.trackedEntity || null;
-  const { resolvedProgramId, resolvedStageId } = useMemo$x(() => {
+  const { resolvedProgramId, resolvedStageId } = useMemo$v(() => {
     const match = menuItems?.find((m) => m?.id === (stageIdProp || id)) || null;
     const stage = stageIdProp || match?.dependentStage || match?.id || id;
     const program = programIdProp || match?.dependentProgram || (match?.isProgram ? match?.id : null) || id;
@@ -64022,7 +64022,7 @@ function StageEvents({
       resolvedStageId: stage
     };
   }, [id, menuItems, programIdProp, stageIdProp]);
-  const effectiveProgramId = useMemo$x(
+  const effectiveProgramId = useMemo$v(
     () => resolvedProgramId || programIdProp || id || null,
     [id, programIdProp, resolvedProgramId]
   );
@@ -64031,16 +64031,16 @@ function StageEvents({
     currentNavigationId: id,
     scanProgramId: effectiveProgramId
   });
-  const effectiveStageId = useMemo$x(() => {
+  const effectiveStageId = useMemo$v(() => {
     const rawStage = stageIdProp || resolvedStageId;
     if (rawStage && rawStage !== effectiveProgramId) return rawStage;
     if (fallbackStageId) return fallbackStageId;
     return rawStage || null;
   }, [stageIdProp, resolvedStageId, fallbackStageId, effectiveProgramId]);
-  useEffect$Z(() => {
+  useEffect$W(() => {
     setFallbackStageId(null);
   }, [effectiveProgramId, stageIdProp, resolvedStageId]);
-  useEffect$Z(() => {
+  useEffect$W(() => {
     const needsLookup = !effectiveStageId || effectiveProgramId && effectiveStageId === effectiveProgramId;
     if (!effectiveProgramId || !needsLookup) return;
     (async () => {
@@ -64137,7 +64137,7 @@ function StageEvents({
       setLoadingColumns(false);
     }
   };
-  const [pagination, setPagination] = useState$$({
+  const [pagination, setPagination] = useState$Z({
     page: 1,
     pageCount: 1,
     pageSize: 100,
@@ -64364,7 +64364,7 @@ function StageEvents({
     );
     setPriorities(res);
   };
-  useEffect$Z(() => {
+  useEffect$W(() => {
     setAllColumnsOrdered([]);
     setVisibleColumnKeys(/* @__PURE__ */ new Set());
     setRawRows([]);
@@ -64385,7 +64385,7 @@ function StageEvents({
       setPagination((prev) => ({ ...prev, page: 1 }));
     }
   }, [user, effectiveProgramId, effectiveStageId, location.pathname]);
-  useEffect$Z(() => {
+  useEffect$W(() => {
     const filtered = filterRowsByApproval(
       rawRows,
       filterOptions.approval,
@@ -64398,7 +64398,7 @@ function StageEvents({
     const v = value || null;
     setFilterOptions((prev) => ({ ...prev, approval: v }));
   };
-  useEffect$Z(() => {
+  useEffect$W(() => {
     if (!effectiveProgramId || !effectiveStageId || !user?.organisationUnits || allColumnsOrdered.length === 0)
       return;
     if ((searchText ?? "").trim().length < 2) {
@@ -64417,7 +64417,7 @@ function StageEvents({
     allColumnsOrdered
   ]);
   const isLoading = loading || loadingRows || loadingColumns;
-  const handleScanSearch = useCallback$l(
+  const handleScanSearch = useCallback$j(
     async (rawScannedValue) => {
       return resolveQrSearchQuery({
         rawScannedValue,
@@ -64525,7 +64525,7 @@ function StageEvents({
   ] });
 }
 
-const {useCallback: useCallback$k,useContext: useContext$w,useEffect: useEffect$Y,useMemo: useMemo$w,useRef: useRef$h,useState: useState$_} = await importShared('react');
+const {useCallback: useCallback$i,useContext: useContext$v,useEffect: useEffect$V,useMemo: useMemo$u,useRef: useRef$f,useState: useState$Y} = await importShared('react');
 function StageSectionsEvents({
   id,
   programId: programIdProp,
@@ -64535,41 +64535,41 @@ function StageSectionsEvents({
 }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user } = useContext$w(MEMISContext.UserRolesContext);
-  const { menuItems } = useContext$w(MEMISContext.MenuContext);
+  const { user } = useContext$v(MEMISContext.UserRolesContext);
+  const { menuItems } = useContext$v(MEMISContext.MenuContext);
   const queryParams = new URLSearchParams(location.search);
-  const [rows, setRows] = useState$_([]);
-  const [priorities, setPriorities] = useState$_(null);
-  const [loading, setLoading] = useState$_(false);
-  const [loadingColumns, setLoadingColumns] = useState$_(false);
-  const [loadingRows, setLoadingRows] = useState$_(false);
-  const [searchText, setSearchText] = useState$_("");
-  const [rawRows, setRawRows] = useState$_([]);
-  const [filterOptions, setFilterOptions] = useState$_({ approval: null });
-  const [approvalFieldKey, setApprovalFieldKey] = useState$_(null);
-  const [approvalConfig, setApprovalConfig] = useState$_(null);
-  const orgUnitCacheRef = useRef$h(/* @__PURE__ */ new Map());
-  const [allColumnsOrdered, setAllColumnsOrdered] = useState$_([]);
-  const [visibleColumnKeys, setVisibleColumnKeys] = useState$_(/* @__PURE__ */ new Set());
-  const visibleColumns = useMemo$w(
+  const [rows, setRows] = useState$Y([]);
+  const [priorities, setPriorities] = useState$Y(null);
+  const [loading, setLoading] = useState$Y(false);
+  const [loadingColumns, setLoadingColumns] = useState$Y(false);
+  const [loadingRows, setLoadingRows] = useState$Y(false);
+  const [searchText, setSearchText] = useState$Y("");
+  const [rawRows, setRawRows] = useState$Y([]);
+  const [filterOptions, setFilterOptions] = useState$Y({ approval: null });
+  const [approvalFieldKey, setApprovalFieldKey] = useState$Y(null);
+  const [approvalConfig, setApprovalConfig] = useState$Y(null);
+  const orgUnitCacheRef = useRef$f(/* @__PURE__ */ new Map());
+  const [allColumnsOrdered, setAllColumnsOrdered] = useState$Y([]);
+  const [visibleColumnKeys, setVisibleColumnKeys] = useState$Y(/* @__PURE__ */ new Set());
+  const visibleColumns = useMemo$u(
     () => allColumnsOrdered?.filter((c) => visibleColumnKeys?.has(c?.key)),
     [allColumnsOrdered, visibleColumnKeys]
   );
-  const searchPlaceholder = useMemo$w(() => {
+  const searchPlaceholder = useMemo$u(() => {
     const labels = visibleColumns.map((c) => c.label).filter(Boolean);
     if (!labels.length) return "Search events...";
     const max = 10;
     const shown = labels.slice(0, max).join(", ");
     return `Search by ${shown}${labels.length > max ? "..." : ""}`;
   }, [visibleColumns]);
-  const [selectedRow, setSelectedRow] = useState$_(null);
-  const [selectedRowId, setSelectedRowId] = useState$_(null);
-  const [showActions, setShowActions] = useState$_(false);
-  const [pendingDelete, setPendingDelete] = useState$_(null);
-  const [deletingId, setDeletingId] = useState$_(null);
-  const [fallbackStageId, setFallbackStageId] = useState$_(null);
+  const [selectedRow, setSelectedRow] = useState$Y(null);
+  const [selectedRowId, setSelectedRowId] = useState$Y(null);
+  const [showActions, setShowActions] = useState$Y(false);
+  const [pendingDelete, setPendingDelete] = useState$Y(null);
+  const [deletingId, setDeletingId] = useState$Y(null);
+  const [fallbackStageId, setFallbackStageId] = useState$Y(null);
   const getRowId = (row) => row?.id || row?.event || row?.enrollment || row?.trackedEntity || null;
-  const { resolvedProgramId, resolvedStageId } = useMemo$w(() => {
+  const { resolvedProgramId, resolvedStageId } = useMemo$u(() => {
     const match = menuItems?.find((m) => m?.id === (stageIdProp || id)) || null;
     const stage = stageIdProp || match?.dependentStage || match?.id || id;
     const program = programIdProp || match?.dependentProgram || (match?.isProgram ? match?.id : null) || id;
@@ -64578,7 +64578,7 @@ function StageSectionsEvents({
       resolvedStageId: stage
     };
   }, [id, menuItems, programIdProp, stageIdProp]);
-  const effectiveProgramId = useMemo$w(
+  const effectiveProgramId = useMemo$u(
     () => resolvedProgramId || programIdProp || id || null,
     [id, programIdProp, resolvedProgramId]
   );
@@ -64587,16 +64587,16 @@ function StageSectionsEvents({
     currentNavigationId: id,
     scanProgramId: effectiveProgramId
   });
-  const effectiveStageId = useMemo$w(() => {
+  const effectiveStageId = useMemo$u(() => {
     const rawStage = stageIdProp || resolvedStageId;
     if (rawStage && rawStage !== effectiveProgramId) return rawStage;
     if (fallbackStageId) return fallbackStageId;
     return rawStage || null;
   }, [stageIdProp, resolvedStageId, fallbackStageId, effectiveProgramId]);
-  useEffect$Y(() => {
+  useEffect$V(() => {
     setFallbackStageId(null);
   }, [effectiveProgramId, stageIdProp, resolvedStageId]);
-  useEffect$Y(() => {
+  useEffect$V(() => {
     const needsLookup = !effectiveStageId || effectiveProgramId && effectiveStageId === effectiveProgramId;
     if (!effectiveProgramId || !needsLookup) return;
     (async () => {
@@ -64665,7 +64665,7 @@ function StageSectionsEvents({
       setLoadingColumns(false);
     }
   };
-  const [pagination, setPagination] = useState$_({
+  const [pagination, setPagination] = useState$Y({
     page: 1,
     pageCount: 1,
     pageSize: 50,
@@ -64929,7 +64929,7 @@ function StageSectionsEvents({
     );
     setPriorities(res);
   };
-  useEffect$Y(() => {
+  useEffect$V(() => {
     if (effectiveProgramId && effectiveStageId) {
       getProgramDE(effectiveProgramId, effectiveStageId);
       getPriorityColors(effectiveProgramId);
@@ -64948,7 +64948,7 @@ function StageSectionsEvents({
     const v = value || null;
     setFilterOptions((prev) => ({ ...prev, approval: v }));
   };
-  useEffect$Y(() => {
+  useEffect$V(() => {
     if (!effectiveProgramId || !effectiveStageId || !user?.organisationUnits || allColumnsOrdered.length === 0)
       return;
     if ((searchText ?? "").trim().length < 2) {
@@ -64967,7 +64967,7 @@ function StageSectionsEvents({
     allColumnsOrdered
   ]);
   const isLoading = loading || loadingRows || loadingColumns;
-  const handleScanSearch = useCallback$k(
+  const handleScanSearch = useCallback$i(
     async (rawScannedValue) => {
       return resolveQrSearchQuery({
         rawScannedValue,
@@ -65055,8 +65055,8 @@ function StageSectionsEvents({
   ] });
 }
 
-const React$L = await importShared('react');
-const {useState: useState$Z,useMemo: useMemo$v,useEffect: useEffect$X} = React$L;
+const React$I = await importShared('react');
+const {useState: useState$X,useMemo: useMemo$t,useEffect: useEffect$U} = React$I;
 
 const {createPortal: createPortal$3} = await importShared('react-dom');
 function EquipmentPicker({
@@ -65069,13 +65069,13 @@ function EquipmentPicker({
   loading = false,
   error = null
 }) {
-  const [searchTerm, setSearchTerm] = useState$Z("");
-  const [selectedItem, setSelectedItem] = useState$Z(null);
-  const [wardsList, setWardsList] = useState$Z([]);
-  const [selectedWard, setSelectedWard] = useState$Z(null);
-  const [isLoading, setLoading] = useState$Z(loading);
-  const [avEquipment, setAvailableEquipment] = useState$Z(availableEquipment);
-  const filteredEquipment = useMemo$v(() => {
+  const [searchTerm, setSearchTerm] = useState$X("");
+  const [selectedItem, setSelectedItem] = useState$X(null);
+  const [wardsList, setWardsList] = useState$X([]);
+  const [selectedWard, setSelectedWard] = useState$X(null);
+  const [isLoading, setLoading] = useState$X(loading);
+  const [avEquipment, setAvailableEquipment] = useState$X(availableEquipment);
+  const filteredEquipment = useMemo$t(() => {
     if (!searchTerm.trim()) return avEquipment;
     const term = searchTerm.toLowerCase();
     return avEquipment.filter(
@@ -65204,13 +65204,13 @@ function EquipmentPicker({
       setLoading(false);
     }
   };
-  useEffect$X(() => {
+  useEffect$U(() => {
     getWards();
   }, []);
-  useEffect$X(() => {
+  useEffect$U(() => {
     setLoading(loading);
   }, [loading]);
-  useEffect$X(() => {
+  useEffect$U(() => {
     setAvailableEquipment(availableEquipment);
   }, [availableEquipment]);
   const handleConfirm = () => {
@@ -65741,7 +65741,7 @@ function EquipmentPicker({
   );
 }
 
-const {useEffect: useEffect$W,useState: useState$Y} = await importShared('react');
+const {useEffect: useEffect$T,useState: useState$W} = await importShared('react');
 
 const A$7 = (x) => Array.isArray(x) ? x : [];
 const RequiredLabel = ({ label, required }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { position: "stacked", className: "ion-text-wrap", children: [
@@ -65754,8 +65754,8 @@ function RenderField({ field, required, missing, formData, handleChange, getVal,
   const type = field?.valueType;
   const value = formData?.[field?.id] || getVal(field?.id) || "";
   const label = field?.formName || field?.name || field?.id;
-  const [options, setOptions] = useState$Y([]);
-  useEffect$W(() => {
+  const [options, setOptions] = useState$W([]);
+  useEffect$T(() => {
     if (!field?.optionSet) return;
     setOptions(field?.optionSet?.options || []);
   }, []);
@@ -65845,7 +65845,7 @@ function RenderField({ field, required, missing, formData, handleChange, getVal,
   }
 }
 
-const {useCallback: useCallback$j,useEffect: useEffect$V,useRef: useRef$g,useState: useState$X} = await importShared('react');
+const {useCallback: useCallback$h,useEffect: useEffect$S,useRef: useRef$e,useState: useState$V} = await importShared('react');
 const JOB_CARD_SOURCE_DE_ID = "GeM9XLFWC7d";
 const MAINTENANCE_TYPE_DE_ID = "EbJI5Loxjbl";
 const REQUESTER_DE_ID = "M074NJAYjb6";
@@ -65860,20 +65860,20 @@ function MaintenanceEvents({
   program,
   user
 }) {
-  const [loading, setLoading] = useState$X(false);
-  const [loadingMessage, setLoadingMessage] = useState$X(
+  const [loading, setLoading] = useState$V(false);
+  const [loadingMessage, setLoadingMessage] = useState$V(
     "Fetching maintenance activities"
   );
-  const [events, setEvents] = useState$X([]);
-  const [page, setPage] = useState$X(1);
-  const [rows, setRows] = useState$X([]);
-  const [formData, setFormData] = useState$X();
-  const [tei, setTei] = useState$X([]);
-  const [selected, setSelected] = useState$X();
-  const [section, setSection] = useState$X();
-  const [programMeta, setProgramMeta] = useState$X({ id: program, name: "" });
-  const [standaloneRequest, setStandaloneRequest] = useState$X(null);
-  const standaloneCreateRef = useRef$g(null);
+  const [events, setEvents] = useState$V([]);
+  const [page, setPage] = useState$V(1);
+  const [rows, setRows] = useState$V([]);
+  const [formData, setFormData] = useState$V();
+  const [tei, setTei] = useState$V([]);
+  const [selected, setSelected] = useState$V();
+  const [section, setSection] = useState$V();
+  const [programMeta, setProgramMeta] = useState$V({ id: program, name: "" });
+  const [standaloneRequest, setStandaloneRequest] = useState$V(null);
+  const standaloneCreateRef = useRef$e(null);
   const {
     contextConfig,
     selectedEquipment,
@@ -65906,7 +65906,7 @@ function MaintenanceEvents({
       order: 3
     }
   ];
-  const getEvents = useCallback$j(async () => {
+  const getEvents = useCallback$h(async () => {
     setLoading(true);
     setLoadingMessage("Fetching maintenance activities");
     const sortedOrgUnits = user.organisationUnits?.sort(
@@ -65963,7 +65963,7 @@ function MaintenanceEvents({
       });
     });
   }, [program, stage, user]);
-  const getMetadata = useCallback$j(async () => {
+  const getMetadata = useCallback$h(async () => {
     await dataStore.get(`programStages/${stage}?fields=programStageSections[id,dataElements[*]]`).then((res) => {
       const jobCardSection = res.data.programStageSections.find(
         (entry) => entry.id === JOB_CARD_SECTION_ID
@@ -65971,7 +65971,7 @@ function MaintenanceEvents({
       setSection(jobCardSection);
     });
   }, [stage]);
-  const getProgramMeta = useCallback$j(async () => {
+  const getProgramMeta = useCallback$h(async () => {
     try {
       const res = await dataStore.get(`programs/${program}?fields=id,name`);
       const meta = res?.data || res;
@@ -65983,7 +65983,7 @@ function MaintenanceEvents({
     }
   }, [program]);
   const buildJobCardNumber = (serialSeed) => `${serialSeed || "Equipment"}-Job-Card-${(/* @__PURE__ */ new Date()).getTime()}`;
-  const resolveStandaloneSourceValue = useCallback$j(async () => {
+  const resolveStandaloneSourceValue = useCallback$h(async () => {
     const normalize = (value) => String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
     const res = await dataStore.get(
       `dataElements/${JOB_CARD_SOURCE_DE_ID}?fields=id,optionSet[id,options[id,code,name]]`
@@ -66039,7 +66039,7 @@ function MaintenanceEvents({
       [fieldId]: value
     }));
   };
-  const createStandaloneEvent = useCallback$j(async (equipment) => {
+  const createStandaloneEvent = useCallback$h(async (equipment) => {
     const requestKey = standaloneRequest?.timestamp;
     if (!requestKey || standaloneCreateRef.current === requestKey) {
       return;
@@ -66177,12 +66177,12 @@ function MaintenanceEvents({
     setStandaloneRequest(null);
     handlePickerCancel();
   };
-  useEffect$V(() => {
+  useEffect$S(() => {
     getMetadata();
     getEvents();
     getProgramMeta();
   }, [getEvents, getMetadata, getProgramMeta, page]);
-  useEffect$V(() => {
+  useEffect$S(() => {
     if (!selectedEquipment || !standaloneRequest) return;
     createStandaloneEvent(selectedEquipment);
   }, [createStandaloneEvent, selectedEquipment, standaloneRequest]);
@@ -69765,7 +69765,7 @@ function toLowerLabel(label) {
   return raw ? raw.toLowerCase() : DEFAULT_ENTITY_LABEL.toLowerCase();
 }
 
-const {useCallback: useCallback$i,useContext: useContext$v,useEffect: useEffect$U,useMemo: useMemo$u,useState: useState$W} = await importShared('react');
+const {useCallback: useCallback$g,useContext: useContext$u,useEffect: useEffect$R,useMemo: useMemo$s,useState: useState$U} = await importShared('react');
 const BUTTON_ICON_MAP = {
   addCircleOutline,
   removeCircleOutline
@@ -69782,47 +69782,47 @@ function readActiveProgramIdFromCookie() {
   }
 }
 function GeneralComponent({ programProp }) {
-  const { programs, loading: programsLoading } = useContext$v(
+  const { programs, loading: programsLoading } = useContext$u(
     MEMISContext.ProgramContext
   );
-  const { menuItems, loading: menuLoading } = useContext$v(
+  const { menuItems, loading: menuLoading } = useContext$u(
     MEMISContext.MenuContext
   );
-  const { user } = useContext$v(MEMISContext.UserRolesContext);
-  const [workflow, setapplicableDE] = useState$W({});
+  const { user } = useContext$u(MEMISContext.UserRolesContext);
+  const [workflow, setapplicableDE] = useState$U({});
   const { canModifyProgram } = usePermissions();
-  const [program, setProgram] = useState$W(null);
-  const [formActive, setFormActive] = useState$W(false);
-  const [query, setQuery] = useState$W("");
-  const [itemsData, setItemsData] = useState$W([]);
-  const [editData, setEditData] = useState$W(null);
-  const [crumbs, setCrumbs] = useState$W([]);
-  const [jobCard, setJobCard] = useState$W(false);
-  const [resolutionComplete, setResolutionComplete] = useState$W(false);
-  const [buttonConfig, setButtonConfig] = useState$W(null);
-  const [loadingButtonConfig, setLoadingButtonConfig] = useState$W(true);
-  const [postSaveQrPromptOpen, setPostSaveQrPromptOpen] = useState$W(false);
-  const [postSaveQrPreviewOpen, setPostSaveQrPreviewOpen] = useState$W(false);
-  const [postSaveQrRequest, setPostSaveQrRequest] = useState$W(null);
-  const [postSaveQrData, setPostSaveQrData] = useState$W(null);
-  const [postSaveQrPreviewUrl, setPostSaveQrPreviewUrl] = useState$W(null);
-  const [postSaveQrError, setPostSaveQrError] = useState$W("");
-  const [postSaveQrPreparing, setPostSaveQrPreparing] = useState$W(false);
-  const [qrBusy, setQrBusy] = useState$W(false);
-  const [dataStoreData, setDataStoreData] = useState$W({});
+  const [program, setProgram] = useState$U(null);
+  const [formActive, setFormActive] = useState$U(false);
+  const [query, setQuery] = useState$U("");
+  const [itemsData, setItemsData] = useState$U([]);
+  const [editData, setEditData] = useState$U(null);
+  const [crumbs, setCrumbs] = useState$U([]);
+  const [jobCard, setJobCard] = useState$U(false);
+  const [resolutionComplete, setResolutionComplete] = useState$U(false);
+  const [buttonConfig, setButtonConfig] = useState$U(null);
+  const [loadingButtonConfig, setLoadingButtonConfig] = useState$U(true);
+  const [postSaveQrPromptOpen, setPostSaveQrPromptOpen] = useState$U(false);
+  const [postSaveQrPreviewOpen, setPostSaveQrPreviewOpen] = useState$U(false);
+  const [postSaveQrRequest, setPostSaveQrRequest] = useState$U(null);
+  const [postSaveQrData, setPostSaveQrData] = useState$U(null);
+  const [postSaveQrPreviewUrl, setPostSaveQrPreviewUrl] = useState$U(null);
+  const [postSaveQrError, setPostSaveQrError] = useState$U("");
+  const [postSaveQrPreparing, setPostSaveQrPreparing] = useState$U(false);
+  const [qrBusy, setQrBusy] = useState$U(false);
+  const [dataStoreData, setDataStoreData] = useState$U({});
   const isNativeMobile = Capacitor.getPlatform() === "android" || Capacitor.getPlatform() === "ios";
-  const [isMobileView, setIsMobileView] = useState$W(() => {
+  const [isMobileView, setIsMobileView] = useState$U(() => {
     if (isNativeMobile) return true;
     return typeof window !== "undefined" ? window.innerWidth <= 600 : false;
   });
-  useEffect$U(() => {
+  useEffect$R(() => {
     if (!isNativeMobile) {
       const handleResize = () => setIsMobileView(window.innerWidth <= 600);
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
   }, [isNativeMobile]);
-  useEffect$U(() => {
+  useEffect$R(() => {
     let mounted = true;
     const loadDataStore = async () => {
       const cachedDataStore = await LocalForageServiceInstance.getItem(
@@ -69838,8 +69838,8 @@ function GeneralComponent({ programProp }) {
       mounted = false;
     };
   }, []);
-  const [pendingAction, setPendingAction] = useState$W(null);
-  const [persistedEquipment, setPersistedEquipment] = useState$W(null);
+  const [pendingAction, setPendingAction] = useState$U(null);
+  const [persistedEquipment, setPersistedEquipment] = useState$U(null);
   const {
     contextConfig,
     selectedEquipment,
@@ -69859,7 +69859,7 @@ function GeneralComponent({ programProp }) {
   });
   const location = useLocation();
   const navigate = useNavigate();
-  const fetchButtonConfig = useCallback$i(
+  const fetchButtonConfig = useCallback$g(
     async (currentProgram) => {
       if (!currentProgram || !user) {
         setButtonConfig(null);
@@ -69933,7 +69933,7 @@ function GeneralComponent({ programProp }) {
     },
     [user]
   );
-  const resolveProgram = useCallback$i(() => {
+  const resolveProgram = useCallback$g(() => {
     const targetId = programProp?.id || readActiveProgramIdFromCookie();
     if (menuLoading || programsLoading) {
       setResolutionComplete(false);
@@ -70087,7 +70087,7 @@ function GeneralComponent({ programProp }) {
     }
     handleQuery("add", null, extra);
   };
-  useEffect$U(() => {
+  useEffect$R(() => {
     const params2 = new URLSearchParams(location.search);
     const q = params2.get("q");
     const refId = params2.get("ref");
@@ -70238,10 +70238,10 @@ function GeneralComponent({ programProp }) {
     } catch (error) {
     }
   };
-  useEffect$U(() => {
+  useEffect$R(() => {
     resolveProgram();
   }, [resolveProgram]);
-  useEffect$U(() => {
+  useEffect$R(() => {
     const isLoading = menuLoading || programsLoading;
     if (!isLoading && !program && resolutionComplete && menuItems !== void 0 && programs !== void 0 && !formActive) {
       navigate("/", { replace: true });
@@ -70256,20 +70256,20 @@ function GeneralComponent({ programProp }) {
     navigate,
     resolutionComplete
   ]);
-  useEffect$U(() => {
+  useEffect$R(() => {
     getProgramView();
     getWorkflow();
   }, [menuItems, programs, program]);
   const params = new URLSearchParams(location.search);
   const selectedStage = params.get("stage") || params.get("stageId") || null;
-  const addButtonLabel = useMemo$u(() => {
+  const addButtonLabel = useMemo$s(() => {
     return buttonConfig?.label || null;
   }, [buttonConfig]);
-  const addButtonIcon = useMemo$u(() => {
+  const addButtonIcon = useMemo$s(() => {
     const key = buttonConfig?.icon;
     return (key && BUTTON_ICON_MAP[key]) ?? addCircleOutline;
   }, [buttonConfig]);
-  useEffect$U(() => {
+  useEffect$R(() => {
     if (selectedEquipment && pendingAction) {
       setPersistedEquipment(selectedEquipment);
       const extraWithEquipment = {
@@ -70284,16 +70284,16 @@ function GeneralComponent({ programProp }) {
     setPendingAction(null);
     handlePickerCancel();
   };
-  const handleAddButtonClick = useMemo$u(() => {
+  const handleAddButtonClick = useMemo$s(() => {
     return handleActionButtonClick;
   }, [handleActionButtonClick]);
-  const clearFormUiState = useCallback$i(() => {
+  const clearFormUiState = useCallback$g(() => {
     setFormActive(false);
     setQuery("");
     setEditData(null);
     setPersistedEquipment(null);
   }, []);
-  const clearFormRouteState = useCallback$i(() => {
+  const clearFormRouteState = useCallback$g(() => {
     const p = new URLSearchParams(location?.search);
     p.delete("q");
     p.delete("ref");
@@ -70304,11 +70304,11 @@ function GeneralComponent({ programProp }) {
     p.delete("equipmentId");
     navigate({ search: p.toString() }, { replace: true });
   }, [location?.search, navigate]);
-  useCallback$i(() => {
+  useCallback$g(() => {
     clearFormUiState();
     clearFormRouteState();
   }, [clearFormRouteState, clearFormUiState]);
-  const resetPostSaveQrState = useCallback$i(() => {
+  const resetPostSaveQrState = useCallback$g(() => {
     setPostSaveQrPromptOpen(false);
     setPostSaveQrPreviewOpen(false);
     setPostSaveQrRequest(null);
@@ -70317,14 +70317,14 @@ function GeneralComponent({ programProp }) {
     setPostSaveQrError("");
     setPostSaveQrPreparing(false);
   }, []);
-  const closePostSaveQrFlow = useCallback$i(() => {
+  const closePostSaveQrFlow = useCallback$g(() => {
     resetPostSaveQrState();
   }, [resetPostSaveQrState]);
-  const getQrErrorMessage = useCallback$i((error, fallbackMessage) => {
+  const getQrErrorMessage = useCallback$g((error, fallbackMessage) => {
     const message = String(error?.message || "").trim();
     return message || fallbackMessage;
   }, []);
-  const handleFormSaveSuccess = useCallback$i(
+  const handleFormSaveSuccess = useCallback$g(
     async ({
       teiId,
       isEditMode,
@@ -70363,7 +70363,7 @@ function GeneralComponent({ programProp }) {
     },
     [clearFormRouteState, clearFormUiState]
   );
-  useEffect$U(() => {
+  useEffect$R(() => {
     let cancelled = false;
     if (!postSaveQrPromptOpen || !postSaveQrRequest?.teiId || !postSaveQrRequest?.program?.id) {
       return void 0;
@@ -70401,7 +70401,7 @@ function GeneralComponent({ programProp }) {
     postSaveQrPromptOpen,
     postSaveQrRequest
   ]);
-  const handlePostSaveQrPreview = useCallback$i(async () => {
+  const handlePostSaveQrPreview = useCallback$g(async () => {
     if (!postSaveQrData?.payloadStr) {
       showToast(
         postSaveQrError || "The QR code is not available for this equipment.",
@@ -70424,7 +70424,7 @@ function GeneralComponent({ programProp }) {
       setQrBusy(false);
     }
   }, [getQrErrorMessage, postSaveQrData, postSaveQrError]);
-  const handlePostSaveQrDownload = useCallback$i(async () => {
+  const handlePostSaveQrDownload = useCallback$g(async () => {
     const shouldReturnToPrompt = postSaveQrPreviewOpen;
     if (!postSaveQrData?.payloadStr || !postSaveQrData?.filename) {
       showToast(
@@ -70468,7 +70468,7 @@ function GeneralComponent({ programProp }) {
     postSaveQrError,
     postSaveQrPreviewOpen
   ]);
-  const handlePostSaveQrPrint = useCallback$i(async () => {
+  const handlePostSaveQrPrint = useCallback$g(async () => {
     if (!postSaveQrPreviewUrl) {
       showToast("Open the QR code preview before printing.", "warning");
       return;
@@ -70832,12 +70832,12 @@ function GeneralComponent({ programProp }) {
   ] });
 }
 
-const React$K = await importShared('react');
-const {useEffect: useEffect$T,useState: useState$V} = React$K;
+const React$H = await importShared('react');
+const {useEffect: useEffect$Q,useState: useState$T} = React$H;
 const Login = () => {
-  const [username, setUsername] = useState$V("");
-  const [password, setPassword] = useState$V("");
-  const [loading, setLoading] = useState$V(false);
+  const [username, setUsername] = useState$T("");
+  const [password, setPassword] = useState$T("");
+  const [loading, setLoading] = useState$T(false);
   const navigate = useNavigate();
   const { reload: reloadDataStore } = useDataStore();
   const handleLogin = async (e) => {
@@ -70878,7 +70878,7 @@ const Login = () => {
       setLoading(false);
     }
   };
-  useEffect$T(() => {
+  useEffect$Q(() => {
     const userData = localStorage.getItem("memisCredentials");
     const load = async () => {
       if (userData) {
@@ -71016,7 +71016,7 @@ const stageAddButtonAccess = async (programId, stageId, userRoles) => {
   return { access: true };
 };
 
-const {useEffect: useEffect$S,useState: useState$U,useContext: useContext$u} = await importShared('react');
+const {useEffect: useEffect$P,useState: useState$S,useContext: useContext$t} = await importShared('react');
 function DeregistrationStage({
   id,
   program,
@@ -71027,16 +71027,16 @@ function DeregistrationStage({
   refreshEvents
   // Add refresh callback
 }) {
-  const [open, setOpen] = useState$U(false);
-  const [lastEventCount, setLastEventCount] = useState$U(0);
-  const [stage] = useState$U(pgStages);
-  const [evnts, setEvnts] = useState$U([]);
-  const [canAddNew, setCanAddNew] = useState$U(false);
-  const [canApprove, setCanApprove] = useState$U(false);
+  const [open, setOpen] = useState$S(false);
+  const [lastEventCount, setLastEventCount] = useState$S(0);
+  const [stage] = useState$S(pgStages);
+  const [evnts, setEvnts] = useState$S([]);
+  const [canAddNew, setCanAddNew] = useState$S(false);
+  const [canApprove, setCanApprove] = useState$S(false);
   const navigate = useNavigate();
-  const [addButton, setAddButton] = useState$U(false);
-  const { user } = useContext$u(MEMISContext.UserRolesContext);
-  const [equipmentState, setEquipmentState] = useState$U(null);
+  const [addButton, setAddButton] = useState$S(false);
+  const { user } = useContext$t(MEMISContext.UserRolesContext);
+  const [equipmentState, setEquipmentState] = useState$S(null);
   const fetchEquipmentState = async () => {
     try {
       const DataStore = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./index2.js');return { default: __vite_default__ }},true              ?__vite__mapDeps([2,0,1]):void 0)).default;
@@ -71050,7 +71050,7 @@ function DeregistrationStage({
       setEquipmentState(null);
     }
   };
-  useEffect$S(() => {
+  useEffect$P(() => {
     const filteredEvents = (events || [])?.filter((e) => e.programStage === stage.id);
     const sortedEvents = filteredEvents.sort((a, b) => {
       const dateA = new Date(a.occurredAt || a.createdAt);
@@ -71061,12 +71061,12 @@ function DeregistrationStage({
     setEvnts(sortedEvents);
     setLastEventCount(filteredEvents.length);
   }, [stage.id, events, lastEventCount, open]);
-  useEffect$S(() => {
+  useEffect$P(() => {
     if (id && program) {
       fetchEquipmentState();
     }
   }, [id, program, events]);
-  useEffect$S(() => {
+  useEffect$P(() => {
     let intervalId;
     if (open && refreshEvents && typeof refreshEvents === "function") {
       intervalId = setInterval(() => {
@@ -71137,7 +71137,7 @@ function DeregistrationStage({
     const res = await stageAddButtonAccess(program, stage.id, user?.userRoles);
     setAddButton(res?.access || false);
   };
-  useEffect$S(() => {
+  useEffect$P(() => {
     addNewAndApproval();
     showAddButton();
   }, []);
@@ -71228,22 +71228,22 @@ function DeregistrationStage({
   ] });
 }
 
-const {useContext: useContext$t,useEffect: useEffect$R,useState: useState$T} = await importShared('react');
+const {useContext: useContext$s,useEffect: useEffect$O,useState: useState$R} = await importShared('react');
 function Stages({ id, program, pgStages, events, handleAddEvent, formatDate, refreshEvents }) {
-  const [open, setOpen] = useState$T(false);
-  const [stage] = useState$T(pgStages);
-  const [evnts, setEvnts] = useState$T([]);
-  const [addButton, setAddButton] = useState$T(false);
+  const [open, setOpen] = useState$R(false);
+  const [stage] = useState$R(pgStages);
+  const [evnts, setEvnts] = useState$R([]);
+  const [addButton, setAddButton] = useState$R(false);
   const navigate = useNavigate();
-  const { user } = useContext$t(MEMISContext.UserRolesContext);
-  useEffect$R(() => {
+  const { user } = useContext$s(MEMISContext.UserRolesContext);
+  useEffect$O(() => {
     setEvnts((events || [])?.filter((e) => e.programStage === stage.id));
   }, [stage.id, events]);
   const showAddButton = async () => {
     const res = await stageAddButtonAccess(program, stage.id, user?.userRoles);
     setAddButton(res?.access || false);
   };
-  useEffect$R(() => {
+  useEffect$O(() => {
     showAddButton();
   }, [open]);
   if (isDeregistrationStage(stage.id, stage.name)) {
@@ -73566,9 +73566,9 @@ await importShared('react');
 
 await importShared('react');
 
-const {useContext: useContext$s} = await importShared('react');
+const {useContext: useContext$r} = await importShared('react');
 
-const {useCallback: useCallback$h,useMemo: useMemo$t} = await importShared('react');
+const {useCallback: useCallback$f,useMemo: useMemo$r} = await importShared('react');
 
 await importShared('react');
 
@@ -73597,26 +73597,26 @@ new QueryClient(queryClientOptions);
 
 await importShared('react');
 
-const {useContext: useContext$r} = await importShared('react');
-
-const {useState: useState$S,useEffect: useEffect$Q,useRef: useRef$f,useDebugValue: useDebugValue$1} = await importShared('react');
-
-const {useState: useState$R,useCallback: useCallback$g,useRef: useRef$e,useEffect: useEffect$P} = await importShared('react');
-
-const {useCallback: useCallback$f} = await importShared('react');
-
-const {useState: useState$Q,useRef: useRef$d,useCallback: useCallback$e,useDebugValue} = await importShared('react');
-
-await importShared('react');
-
-await importShared('react');
-
-const React$J = await importShared('react');
-const {useState: useState$P} = React$J;
-
 const {useContext: useContext$q} = await importShared('react');
 
-const {useContext: useContext$p,useRef: useRef$c,useCallback: useCallback$d} = await importShared('react');
+const {useState: useState$Q,useEffect: useEffect$N,useRef: useRef$d,useDebugValue: useDebugValue$1} = await importShared('react');
+
+const {useState: useState$P,useCallback: useCallback$e,useRef: useRef$c,useEffect: useEffect$M} = await importShared('react');
+
+const {useCallback: useCallback$d} = await importShared('react');
+
+const {useState: useState$O,useRef: useRef$b,useCallback: useCallback$c,useDebugValue} = await importShared('react');
+
+await importShared('react');
+
+await importShared('react');
+
+const React$G = await importShared('react');
+const {useState: useState$N} = React$G;
+
+const {useContext: useContext$p} = await importShared('react');
+
+const {useContext: useContext$o,useRef: useRef$a,useCallback: useCallback$b} = await importShared('react');
 
 var propTypes = {exports: {}};
 
@@ -76866,15 +76866,15 @@ function requireIsEqual () {
 
 requireIsEqual();
 
-const React$I = await importShared('react');
-const {useEffect: useEffect$O,useCallback: useCallback$c,useContext: useContext$o,useState: useState$O,useMemo: useMemo$s} = React$I;
+const React$F = await importShared('react');
+const {useEffect: useEffect$L,useCallback: useCallback$a,useContext: useContext$n,useState: useState$M,useMemo: useMemo$q} = React$F;
 ({
   children: PropTypes.node,
   store: PropTypes.shape({})
 });
 
-const React$H = await importShared('react');
-const {createContext,useContext: useContext$n} = React$H;
+const React$E = await importShared('react');
+const {createContext,useContext: useContext$m} = React$E;
 ({
   children: PropTypes.node,
   offlineInterface: PropTypes.shape({
@@ -76882,8 +76882,8 @@ const {createContext,useContext: useContext$n} = React$H;
   })
 });
 
-const React$G = await importShared('react');
-const {useEffect: useEffect$N,useCallback: useCallback$b,useMemo: useMemo$r} = React$G;
+const React$D = await importShared('react');
+const {useEffect: useEffect$K,useCallback: useCallback$9,useMemo: useMemo$p} = React$D;
 ({
   children: PropTypes.node
 });
@@ -94104,16 +94104,16 @@ if (shouldLog) {
   console.log('Logging for dhis2ConnectionStatus is enabled. Remove the `dhis2.debugConnectionStatus` item in localStorage to disable logging.');
 }
 
-const {useCallback: useCallback$a} = await importShared('react');
+const {useCallback: useCallback$8} = await importShared('react');
 
-const React$F = await importShared('react');
-const {useCallback: useCallback$9,useState: useState$N,useRef: useRef$b,useMemo: useMemo$q,useEffect: useEffect$M,useContext: useContext$m} = React$F;
+const React$C = await importShared('react');
+const {useCallback: useCallback$7,useState: useState$L,useRef: useRef$9,useMemo: useMemo$o,useEffect: useEffect$J,useContext: useContext$l} = React$C;
 ({
   children: PropTypes.node
 });
 
-const React$E = await importShared('react');
-const {useContext: useContext$l,useState: useState$M} = React$E;
+const React$B = await importShared('react');
+const {useContext: useContext$k,useState: useState$K} = React$B;
 
 await importShared('react');
 ({
@@ -94123,8 +94123,8 @@ await importShared('react');
   })
 });
 
-const React$D = await importShared('react');
-const {useCallback: useCallback$8,useEffect: useEffect$L,useMemo: useMemo$p} = React$D;
+const React$A = await importShared('react');
+const {useCallback: useCallback$6,useEffect: useEffect$I,useMemo: useMemo$n} = React$A;
 
 const {flushSync} = await importShared('react-dom');
 ({
@@ -94535,49 +94535,49 @@ function requireDebounce () {
 
 requireDebounce();
 
-const {useState: useState$L,useEffect: useEffect$K,useCallback: useCallback$7,useMemo: useMemo$o} = await importShared('react');
+const {useState: useState$J,useEffect: useEffect$H,useCallback: useCallback$5,useMemo: useMemo$m} = await importShared('react');
 
 await importShared('react');
 
-const {useEffect: useEffect$J,useMemo: useMemo$n,useState: useState$K,useRef: useRef$a} = await importShared('react');
+const {useEffect: useEffect$G,useMemo: useMemo$l,useState: useState$I,useRef: useRef$8} = await importShared('react');
 const {createPortal: createPortal$2} = await importShared('react-dom');
 function TrackerPgStages() {
   const { program, id } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
-  const [crumbs, setCrumbs] = useState$K([]);
-  const [showActions, setShowActions] = useState$K(false);
-  const [printOpen, setPrintOpen] = useState$K(false);
-  const canvasRef = useRef$a(null);
-  const [qrBusy, setQrBusy] = useState$K(false);
-  const [qrDataUrl, setQrDataUrl] = useState$K(null);
-  const [ev, setEvents] = useState$K([]);
-  const [tei, setTei] = useState$K({});
-  const [orgUnit, setOrgUnit] = useState$K(null);
-  const [primaryAttr, setPrimaryAttr] = useState$K(null);
-  const [listAttrs, setListAttrs] = useState$K([]);
-  const [pgStages, setPgStages] = useState$K([]);
-  const [attrWithOpt, setWithOpt] = useState$K([]);
-  const [options, setOptions] = useState$K([]);
-  const [qrCodeValuesToDisplay, setQRCodeValuesToDisplay] = useState$K([]);
-  const [showAllAttributes, setShowAllAttributes] = useState$K(false);
-  const [filePreviewOpen, setFilePreviewOpen] = useState$K(false);
-  const [selectedFile, setSelectedFile] = useState$K({
+  const [crumbs, setCrumbs] = useState$I([]);
+  const [showActions, setShowActions] = useState$I(false);
+  const [printOpen, setPrintOpen] = useState$I(false);
+  const canvasRef = useRef$8(null);
+  const [qrBusy, setQrBusy] = useState$I(false);
+  const [qrDataUrl, setQrDataUrl] = useState$I(null);
+  const [ev, setEvents] = useState$I([]);
+  const [tei, setTei] = useState$I({});
+  const [orgUnit, setOrgUnit] = useState$I(null);
+  const [primaryAttr, setPrimaryAttr] = useState$I(null);
+  const [listAttrs, setListAttrs] = useState$I([]);
+  const [pgStages, setPgStages] = useState$I([]);
+  const [attrWithOpt, setWithOpt] = useState$I([]);
+  const [options, setOptions] = useState$I([]);
+  const [qrCodeValuesToDisplay, setQRCodeValuesToDisplay] = useState$I([]);
+  const [showAllAttributes, setShowAllAttributes] = useState$I(false);
+  const [filePreviewOpen, setFilePreviewOpen] = useState$I(false);
+  const [selectedFile, setSelectedFile] = useState$I({
     fileId: null,
     fileName: null,
     valueType: null
   });
-  const [activeEnrollmentId, setActiveEnrollmentId] = useState$K(null);
-  const [pendingDelete, setPendingDelete] = useState$K(false);
-  const [deleting, setDeleting] = useState$K(false);
-  const [selectedStageId, setSelectedStageId] = useState$K("");
-  const [selectedStage, setSelectedStage] = useState$K({});
-  const [selectedProgram, setSelectedProgram] = useState$K({});
-  const [query, setQuery] = useState$K("");
-  const [formActive, setFormActive] = useState$K(false);
-  const [editData, setEditData] = useState$K(null);
-  const [resolvedPamAttributeId, setResolvedPamAttributeId] = useState$K("");
-  const pamAttributeIdFromProgram = useMemo$n(() => {
+  const [activeEnrollmentId, setActiveEnrollmentId] = useState$I(null);
+  const [pendingDelete, setPendingDelete] = useState$I(false);
+  const [deleting, setDeleting] = useState$I(false);
+  const [selectedStageId, setSelectedStageId] = useState$I("");
+  const [selectedStage, setSelectedStage] = useState$I({});
+  const [selectedProgram, setSelectedProgram] = useState$I({});
+  const [query, setQuery] = useState$I("");
+  const [formActive, setFormActive] = useState$I(false);
+  const [editData, setEditData] = useState$I(null);
+  const [resolvedPamAttributeId, setResolvedPamAttributeId] = useState$I("");
+  const pamAttributeIdFromProgram = useMemo$l(() => {
     const attrs = selectedProgram?.programTrackedEntityAttributes || [];
     const hit = attrs.find((progAttr) => {
       const tea = progAttr?.trackedEntityAttribute || {};
@@ -94647,11 +94647,11 @@ function TrackerPgStages() {
     } catch (e) {
     }
   };
-  useEffect$J(() => {
+  useEffect$G(() => {
     getAttr(program);
     getTEI(id, program);
   }, [program, id]);
-  useEffect$J(() => {
+  useEffect$G(() => {
     let cancelled = false;
     (async () => {
       const idFromConfig = await resolvePamAssetAttributeId(program);
@@ -94780,7 +94780,7 @@ function TrackerPgStages() {
     } catch (error) {
     }
   };
-  useEffect$J(() => {
+  useEffect$G(() => {
     const params = new URLSearchParams(location.search);
     const page = params.get("page");
     const stage = params.get("stage");
@@ -94828,7 +94828,7 @@ function TrackerPgStages() {
       setEditData(null);
     }
   }, [location.search, pgStages, ev]);
-  useEffect$J(() => {
+  useEffect$G(() => {
     if (!printOpen) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -94836,7 +94836,7 @@ function TrackerPgStages() {
       document.body.style.overflow = prev;
     };
   }, [printOpen]);
-  const headerTitle = useMemo$n(() => {
+  const headerTitle = useMemo$l(() => {
     const displayLabel = primaryAttr?.trackedEntityAttribute?.displayFormName || "Name";
     return `${displayLabel} : ${tei ? getName() : ""}`;
   }, [tei, primaryAttr]);
@@ -94999,7 +94999,7 @@ function TrackerPgStages() {
       return error;
     }
   };
-  useEffect$J(() => {
+  useEffect$G(() => {
     if (!tei?.trackedEntity || !selectedProgram?.id) return;
     const breadcrumbs = buildProgramBreadcrumbs(selectedProgram, [
       {
@@ -95724,8 +95724,8 @@ const loadDataStore = async (key) => {
 
 const loadFlowRules$1 = () => loadDataStore("flowRules");
 
-const React$C = await importShared('react');
-const {useEffect: useEffect$I,useMemo: useMemo$m,useState: useState$J} = React$C;
+const React$z = await importShared('react');
+const {useEffect: useEffect$F,useMemo: useMemo$k,useState: useState$H} = React$z;
 const loadFlowRules = async () => {
   try {
     let data = await LocalForageServiceInstance.getItem("dataStore", "dataStore");
@@ -95752,18 +95752,18 @@ function ApproveModal({
   statusFieldId,
   statusOptions = {}
 }) {
-  const [fields, setFields] = useState$J([]);
-  const [formData, setFormData] = useState$J({});
-  const [loading, setLoading] = useState$J(true);
-  const [saving, setSaving] = useState$J(false);
-  const [error, setError] = useState$J(null);
-  const [openModal, setOpenModal] = useState$J(false);
-  const [visibleFields, setVisibleFields] = useState$J([]);
-  const [hideApprovalButton, setHideApprovalButton] = useState$J(false);
-  const [hideCheckDone, setHideCheckDone] = useState$J(false);
-  const [activeActionConfig, setActiveActionConfig] = useState$J(null);
-  const [equipmentNameOptionMap, setEquipmentNameOptionMap] = useState$J({});
-  useEffect$I(() => {
+  const [fields, setFields] = useState$H([]);
+  const [formData, setFormData] = useState$H({});
+  const [loading, setLoading] = useState$H(true);
+  const [saving, setSaving] = useState$H(false);
+  const [error, setError] = useState$H(null);
+  const [openModal, setOpenModal] = useState$H(false);
+  const [visibleFields, setVisibleFields] = useState$H([]);
+  const [hideApprovalButton, setHideApprovalButton] = useState$H(false);
+  const [hideCheckDone, setHideCheckDone] = useState$H(false);
+  const [activeActionConfig, setActiveActionConfig] = useState$H(null);
+  const [equipmentNameOptionMap, setEquipmentNameOptionMap] = useState$H({});
+  useEffect$F(() => {
     let cancelled = false;
     const loadOptionMap = async () => {
       try {
@@ -96148,7 +96148,7 @@ function ApproveModal({
     }
   };
   const isTransferProgram = program?.id === TRANSFER_PROGRAM_ID;
-  const approvedFieldId = useMemo$m(
+  const approvedFieldId = useMemo$k(
     () => fields.find((f) => f.valueType === "BOOLEAN")?.id || null,
     [fields]
   );
@@ -96370,10 +96370,10 @@ function ApproveModal({
     });
     return initial;
   };
-  useEffect$I(() => {
+  useEffect$F(() => {
     getFields();
   }, []);
-  useEffect$I(() => {
+  useEffect$F(() => {
     if (openModal && fields.length > 0) {
       const initial = prefillFromEvent(fields, event);
       const approvedField = fields.find((f) => f.valueType === "BOOLEAN");
@@ -96417,7 +96417,7 @@ function ApproveModal({
     setFormData(nextData);
     setVisibleFields(Array.from(nextVisible));
   };
-  useEffect$I(() => {
+  useEffect$F(() => {
     setHideCheckDone(false);
     evaluateHideApprovalForRequester();
   }, [program?.id, event?.event]);
@@ -96577,7 +96577,7 @@ const getAvailableEquipmentCount = async (event) => {
     }
 };
 
-const {useEffect: useEffect$H,useRef: useRef$9} = await importShared('react');
+const {useEffect: useEffect$E,useRef: useRef$7} = await importShared('react');
 
 const AllocationCustomModal = ({
   isOpen,
@@ -96592,7 +96592,7 @@ const AllocationCustomModal = ({
   showFooter = true,
   showCloseButton = true
 }) => {
-  useEffect$H(() => {
+  useEffect$E(() => {
     const handleClick = (e) => {
       const path = e.composedPath?.() || [];
       for (let el of path) {
@@ -96644,8 +96644,8 @@ const AllocationCustomModal = ({
   );
 };
 
-const React$B = await importShared('react');
-const {useEffect: useEffect$G,useRef: useRef$8,useState: useState$I} = React$B;
+const React$y = await importShared('react');
+const {useEffect: useEffect$D,useRef: useRef$6,useState: useState$G} = React$y;
 const A$6 = (x) => Array.isArray(x) ? x : [];
 function MultiSelectField({
   field,
@@ -96654,19 +96654,19 @@ function MultiSelectField({
   handleChange,
   maxSelectQuantity
 }) {
-  const selectRef = useRef$8(null);
-  const selectAllBtnRef = useRef$8(null);
-  const [isRemounting, setIsRemounting] = useState$I(false);
+  const selectRef = useRef$6(null);
+  const selectAllBtnRef = useRef$6(null);
+  const [isRemounting, setIsRemounting] = useState$G(false);
   const optionsList = equipmentOptions[field?.id] || [];
   const currentSelected = A$6(formData[field?.id]);
   const selectableCount = maxSelectQuantity !== null ? Math.min(maxSelectQuantity, optionsList.length) : optionsList.length;
   const allSelected = optionsList.length > 0 && currentSelected.length === selectableCount && optionsList.slice(0, selectableCount).every((opt) => currentSelected.includes(opt?.trackedEntity));
-  useEffect$G(() => {
+  useEffect$D(() => {
     if (!isRemounting && selectRef.current && currentSelected.length > 0) {
       selectRef.current.value = [...currentSelected];
     }
   }, [isRemounting]);
-  useEffect$G(() => {
+  useEffect$D(() => {
     if (isRemounting) {
       const t = setTimeout(() => setIsRemounting(false), 0);
       return () => clearTimeout(t);
@@ -96677,7 +96677,7 @@ function MultiSelectField({
     handleChange(field.id, toSelect);
     setIsRemounting(true);
   };
-  useEffect$G(() => {
+  useEffect$D(() => {
     const btn = selectAllBtnRef.current;
     if (!btn) return;
     btn.addEventListener("click", handleSelectAll);
@@ -96780,8 +96780,8 @@ function MultiSelectField({
   ] });
 }
 
-const React$A = await importShared('react');
-const {useContext: useContext$k,useEffect: useEffect$F,useState: useState$H} = React$A;
+const React$x = await importShared('react');
+const {useContext: useContext$j,useEffect: useEffect$C,useState: useState$F} = React$x;
 const A$5 = (x) => Array.isArray(x) ? x : [];
 const _store = {
   fields: [],
@@ -96799,18 +96799,18 @@ function AllocateEquipmentModal({
   getEventDetails,
   buttonPositiveName = "Save"
 }) {
-  const [fields, setFields] = useState$H([]);
-  const [formData, setFormData] = useState$H({});
-  const [loading, setLoading] = useState$H(false);
-  const [saving, setSaving] = useState$H(false);
-  const [error, setError] = useState$H(null);
-  const [openModal, setOpenModal] = useState$H(false);
-  const [visibleFields, setVisibleFields] = useState$H([]);
-  const [targetProgram, setTargetProgram] = useState$H(null);
-  const [equipmentOptions, setEquipmentOptions] = useState$H({});
-  const [programDataTEI, setProgramDataTEI] = useState$H([]);
-  const [maxSelectQuantity, setMaxSelectQuantity] = useState$H(null);
-  const { userOrganisationUnits } = useContext$k(MEMISContext.UserContext);
+  const [fields, setFields] = useState$F([]);
+  const [formData, setFormData] = useState$F({});
+  const [loading, setLoading] = useState$F(false);
+  const [saving, setSaving] = useState$F(false);
+  const [error, setError] = useState$F(null);
+  const [openModal, setOpenModal] = useState$F(false);
+  const [visibleFields, setVisibleFields] = useState$F([]);
+  const [targetProgram, setTargetProgram] = useState$F(null);
+  const [equipmentOptions, setEquipmentOptions] = useState$F({});
+  const [programDataTEI, setProgramDataTEI] = useState$F([]);
+  const [maxSelectQuantity, setMaxSelectQuantity] = useState$F(null);
+  const { userOrganisationUnits } = useContext$j(MEMISContext.UserContext);
   _store.fields = fields;
   _store.targetProgram = targetProgram;
   _store.programDataTEI = programDataTEI;
@@ -96969,7 +96969,7 @@ function AllocateEquipmentModal({
     setOpenModal(false);
     setMaxSelectQuantity(null);
   };
-  useEffect$F(() => {
+  useEffect$C(() => {
     if (openModal) {
       getFields();
     }
@@ -97122,7 +97122,7 @@ const SPARE_PART_ATTRIBUTE_IDS = {
 
 const SPARE_PART_PROGRAM_ID = "kth8UcvwybE";
 
-const {useEffect: useEffect$E,useRef: useRef$7,useState: useState$G} = await importShared('react');
+const {useEffect: useEffect$B,useRef: useRef$5,useState: useState$E} = await importShared('react');
 
 const ATTR = SPARE_PART_ATTRIBUTE_IDS;
 
@@ -97153,11 +97153,11 @@ function useSparePartOptions({
   programId,
   selectedOrganisationUnit,
 } = {}) {
-  const cacheRef = useRef$7(new Map());
-  const [sparePartOptions, setSparePartOptions] = useState$G([]);
-  const [sparePartLoading, setSparePartLoading] = useState$G(false);
+  const cacheRef = useRef$5(new Map());
+  const [sparePartOptions, setSparePartOptions] = useState$E([]);
+  const [sparePartLoading, setSparePartLoading] = useState$E(false);
 
-  useEffect$E(() => {
+  useEffect$B(() => {
     let active = true;
 
     const load = async () => {
@@ -97274,8 +97274,8 @@ const getNameOfCollectorByFacilityOptionGroups = async ({ program, formName, pay
     }
 };
 
-const React$z = await importShared('react');
-const {useEffect: useEffect$D,useMemo: useMemo$l,useState: useState$F} = React$z;
+const React$w = await importShared('react');
+const {useEffect: useEffect$A,useMemo: useMemo$j,useState: useState$D} = React$w;
 function buildDeMetaById(program) {
   const m = /* @__PURE__ */ new Map();
   (program?.programStages || []).forEach(
@@ -97393,46 +97393,46 @@ function CollectionModal({
   flow,
   getEventDetails
 }) {
-  const [collectorDetails, setCollectorDetails] = useState$F(null);
+  const [collectorDetails, setCollectorDetails] = useState$D(null);
   const formSection = flow?.onApprove?.formSection || flow?.formSection || { fields: [] };
   const fields = Array.isArray(formSection?.fields) ? formSection.fields : [];
   const prefillCfg = formSection?.prefill || null;
-  const formSectionSparePartFieldId = useMemo$l(
+  const formSectionSparePartFieldId = useMemo$j(
     () => findSparePartFieldIdFromSection(formSection),
     [formSection]
   );
-  const [formData, setFormData] = useState$F({});
-  const [loading, setLoading] = useState$F(true);
-  const [error, setError] = useState$F(null);
-  const [optionsCache, setOptionsCache] = useState$F(/* @__PURE__ */ new Map());
-  const [qtyError, setQtyError] = useState$F("");
-  const [saving, setSaving] = useState$F(false);
-  const [quantitiesId, setQuantitiesId] = useState$F({});
-  const [sparePartCollectionFieldId, setSparePartCollectionFieldId] = useState$F(
+  const [formData, setFormData] = useState$D({});
+  const [loading, setLoading] = useState$D(true);
+  const [error, setError] = useState$D(null);
+  const [optionsCache, setOptionsCache] = useState$D(/* @__PURE__ */ new Map());
+  const [qtyError, setQtyError] = useState$D("");
+  const [saving, setSaving] = useState$D(false);
+  const [quantitiesId, setQuantitiesId] = useState$D({});
+  const [sparePartCollectionFieldId, setSparePartCollectionFieldId] = useState$D(
     formSectionSparePartFieldId
   );
-  const [sparePartSelectedId, setSparePartSelectedId] = useState$F(null);
+  const [sparePartSelectedId, setSparePartSelectedId] = useState$D(null);
   const validationCfg = flow?.onApprove?.collectionValidation || flow?.collectionValidation || null;
-  const [collectionAllowed, setCollectionAllowed] = useState$F(true);
-  const [permissionChecked, setPermissionChecked] = useState$F(false);
-  const byKey = useMemo$l(() => {
+  const [collectionAllowed, setCollectionAllowed] = useState$D(true);
+  const [permissionChecked, setPermissionChecked] = useState$D(false);
+  const byKey = useMemo$j(() => {
     const m = /* @__PURE__ */ new Map();
     fields.forEach((f) => f?.key && m.set(f.key, f));
     return m;
   }, [fields]);
-  const deMetaById = useMemo$l(() => buildDeMetaById(program), [program]);
+  const deMetaById = useMemo$j(() => buildDeMetaById(program), [program]);
   const { sparePartOptions, sparePartLoading } = useSparePartOptions({
     programId: SPARE_PART_PROGRAM_ID,
     selectedOrganisationUnit: event?.orgUnit,
     data: event?.dataValues
   });
-  const existingByDE = useMemo$l(
+  const existingByDE = useMemo$j(
     () => new Map(
       (event?.dataValues || []).map((dv) => [dv.dataElement, dv.value])
     ),
     [event]
   );
-  useEffect$D(() => {
+  useEffect$A(() => {
     let active = true;
     setSparePartCollectionFieldId(formSectionSparePartFieldId);
     setSparePartSelectedId(null);
@@ -97459,7 +97459,7 @@ function CollectionModal({
       active = false;
     };
   }, [formSectionSparePartFieldId, program?.id]);
-  const requestedQty = useMemo$l(() => {
+  const requestedQty = useMemo$j(() => {
     const requestedDirect = toNumberOrNull(
       existingByDE?.get(quantitiesId["DE_QUANTITY_REQUESTED"])
     );
@@ -97475,7 +97475,7 @@ function CollectionModal({
     if (guessedN != null) return guessedN;
     return null;
   }, [deMetaById, event, validationCfg, existingByDE, quantitiesId]);
-  const approvedQty = useMemo$l(() => {
+  const approvedQty = useMemo$j(() => {
     const raw = existingByDE?.get(quantitiesId["DE_QUANTITY_APPROVED"]);
     return toNumberOrNull(raw);
   }, [existingByDE, quantitiesId]);
@@ -97583,7 +97583,7 @@ function CollectionModal({
     }
     return null;
   };
-  useEffect$D(() => {
+  useEffect$A(() => {
     const init = async () => {
       if (!isOpen) return;
       setLoading(true);
@@ -97696,7 +97696,7 @@ function CollectionModal({
     };
     init();
   }, [isOpen]);
-  useEffect$D(() => {
+  useEffect$A(() => {
     const fieldId = sparePartCollectionFieldId || formSectionSparePartFieldId;
     if (!fieldId) {
       if (sparePartSelectedId) setSparePartSelectedId(null);
@@ -97718,7 +97718,7 @@ function CollectionModal({
     formSectionSparePartFieldId,
     sparePartSelectedId
   ]);
-  useEffect$D(() => {
+  useEffect$A(() => {
     if (!isOpen) {
       setPermissionChecked(false);
       return;
@@ -97748,7 +97748,7 @@ function CollectionModal({
     };
     check();
   }, [isOpen, flow, event]);
-  useEffect$D(() => {
+  useEffect$A(() => {
     const load = async () => {
       const result = await getRequestedApprovedCollectedQuantitiesId(
         program?.id,
@@ -98094,7 +98094,7 @@ function CollectionModal({
   };
   const isSaveDisabled = loading || fields.length === 0 || !!qtyError;
   const disablePositive = isSaveDisabled || saving || flow?.collectionOnlyForRequester && (!permissionChecked || !collectionAllowed);
-  useEffect$D(() => {
+  useEffect$A(() => {
     (async () => {
       if (isOpen) {
         const results = await getNameOfCollectorByFacilityOptionGroups({
@@ -98155,8 +98155,8 @@ function CollectionModal({
   );
 }
 
-const React$y = await importShared('react');
-const {useEffect: useEffect$C,useState: useState$E} = React$y;
+const React$v = await importShared('react');
+const {useEffect: useEffect$z,useState: useState$C} = React$v;
 function TrainingFeedbackModal({
   program,
   event,
@@ -98165,10 +98165,10 @@ function TrainingFeedbackModal({
   buttonLabel = "Training Feedback",
   fields = []
 }) {
-  const [formData, setFormData] = useState$E({});
-  const [loading, setLoading] = useState$E(false);
-  const [openModal, setOpenModal] = useState$E(false);
-  const [visibleFields, setVisibleFields] = useState$E([]);
+  const [formData, setFormData] = useState$C({});
+  const [loading, setLoading] = useState$C(false);
+  const [openModal, setOpenModal] = useState$C(false);
+  const [visibleFields, setVisibleFields] = useState$C([]);
   const handleSubmit = async () => {
     try {
       setLoading(true);
@@ -98266,7 +98266,7 @@ function TrainingFeedbackModal({
     });
     return visible;
   };
-  useEffect$C(() => {
+  useEffect$z(() => {
     if (openModal && fields.length > 0) {
       const initial = prefillFromEvent();
       const trainingTookPlaceField = fields.find((f) => f.key === "trainingTookPlace");
@@ -140704,7 +140704,7 @@ const xlsIcon = "/assets/microfrontends/memis/assets/xls.png";
 
 const docIcon = "/assets/microfrontends/memis/assets/doc.png";
 
-const {useEffect: useEffect$B,useState: useState$D} = await importShared('react');
+const {useEffect: useEffect$y,useState: useState$B} = await importShared('react');
 const EXPORT_OPTIONS = [
   { value: "pdf", label: "PDF Document", icon: pdfIcon },
   { value: "excel", label: "Excel Spreadsheet", icon: xlsIcon },
@@ -140725,9 +140725,9 @@ const ReportActionButtons = ({
   isSensitiveStatus,
   reportStatus
 }) => {
-  const [selectedFormat, setSelectedFormat] = useState$D("pdf");
-  const [isDesktopWeb, setIsDesktopWeb] = useState$D(window.innerWidth >= 992);
-  useEffect$B(() => {
+  const [selectedFormat, setSelectedFormat] = useState$B("pdf");
+  const [isDesktopWeb, setIsDesktopWeb] = useState$B(window.innerWidth >= 992);
+  useEffect$y(() => {
     const handleResize = () => {
       setIsDesktopWeb(window.innerWidth >= 992);
     };
@@ -140863,7 +140863,7 @@ const ReportActionButtons = ({
 };
 
 var define_process_env_default$1 = {};
-const {useState: useState$C,useContext: useContext$j,useCallback: useCallback$6,useEffect: useEffect$A,useMemo: useMemo$k,useRef: useRef$6} = await importShared('react');
+const {useState: useState$A,useContext: useContext$i,useCallback: useCallback$4,useEffect: useEffect$x,useMemo: useMemo$i,useRef: useRef$4} = await importShared('react');
 const DHIS_UID_REGEX$1 = /^[A-Za-z0-9]{11}$/;
 const TRACKER_PROGRAM_FIELDS = PROGRAM_STAGES_FIELDS + ",programTrackedEntityAttributes[mandatory,trackedEntityAttribute[id,name,formName,displayName,code,valueType,optionSetValue,optionSet[id,name,code,options[id,name,code]]]]";
 const PROGRAM_STAGE_FIELDS_PARAM = encodeURIComponent(TRACKER_PROGRAM_FIELDS);
@@ -141003,7 +141003,7 @@ const ReportExportButtons = ({
   program,
   isApprover = false
 }) => {
-  useCallback$6(
+  useCallback$4(
     (dataElementId) => {
       if (!dataElementId) return "";
       const rawValue = reportData?.dataValues?.[dataElementId];
@@ -141012,30 +141012,30 @@ const ReportExportButtons = ({
     },
     [reportData?.dataValues]
   );
-  const { programs } = useContext$j(MEMISContext.ProgramContext);
-  const [isGenerating, setIsGenerating] = useState$C(false);
-  const [showProgress, setShowProgress] = useState$C(false);
-  const [progressStage, setProgressStage] = useState$C("");
-  const [progressPercent, setProgressPercent] = useState$C(0);
-  const [analyticsData, setAnalyticsData] = useState$C(null);
-  const [error, setError] = useState$C(null);
-  const [isPreviewOpen, setIsPreviewOpen] = useState$C(false);
-  const [previewHtml, setPreviewHtml] = useState$C("");
-  const [isPreviewLoading, setIsPreviewLoading] = useState$C(false);
-  const [previewLoadingMessage, setPreviewLoadingMessage] = useState$C(
+  const { programs } = useContext$i(MEMISContext.ProgramContext);
+  const [isGenerating, setIsGenerating] = useState$A(false);
+  const [showProgress, setShowProgress] = useState$A(false);
+  const [progressStage, setProgressStage] = useState$A("");
+  const [progressPercent, setProgressPercent] = useState$A(0);
+  const [analyticsData, setAnalyticsData] = useState$A(null);
+  const [error, setError] = useState$A(null);
+  const [isPreviewOpen, setIsPreviewOpen] = useState$A(false);
+  const [previewHtml, setPreviewHtml] = useState$A("");
+  const [isPreviewLoading, setIsPreviewLoading] = useState$A(false);
+  const [previewLoadingMessage, setPreviewLoadingMessage] = useState$A(
     "Preparing preview..."
   );
-  const [reportRequiresApproval, setReportRequiresApproval] = useState$C(false);
+  const [reportRequiresApproval, setReportRequiresApproval] = useState$A(false);
   const normalizedStatus = (reportData?.status || "").trim().toLowerCase();
-  const [isDesktopWeb, setIsDesktopWeb] = useState$C(window.innerWidth >= 992);
-  useEffect$A(() => {
+  const [isDesktopWeb, setIsDesktopWeb] = useState$A(window.innerWidth >= 992);
+  useEffect$x(() => {
     const handleResize = () => {
       setIsDesktopWeb(window.innerWidth >= 992);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  useEffect$A(() => {
+  useEffect$x(() => {
     const checkReportApprovalRequirement = async () => {
       try {
         const dataStoreData = await LocalForageServiceInstance.getItem("dataStore", "dataStore");
@@ -141082,7 +141082,7 @@ const ReportExportButtons = ({
     );
     return reportNameType;
   };
-  const reportNameTypeValue = useMemo$k(
+  const reportNameTypeValue = useMemo$i(
     () => extractReportNameType(),
     [reportData?.dataValues, reportData?.fieldNames]
   );
@@ -141097,11 +141097,11 @@ const ReportExportButtons = ({
     );
     return reportName;
   };
-  const reportNameValue = useMemo$k(
+  const reportNameValue = useMemo$i(
     () => extractReportName(),
     [reportData?.dataValues, reportData?.fieldNames]
   );
-  const programReferenceCandidates = useMemo$k(() => {
+  const programReferenceCandidates = useMemo$i(() => {
     const refs = [];
     const pushRef = (value) => {
       if (!value) return;
@@ -141138,13 +141138,13 @@ const ReportExportButtons = ({
     reportData?.programId,
     reportData?.programCode
   ]);
-  const programMetadataCacheRef = useRef$6(/* @__PURE__ */ new Map());
-  const programList = useMemo$k(() => {
+  const programMetadataCacheRef = useRef$4(/* @__PURE__ */ new Map());
+  const programList = useMemo$i(() => {
     if (Array.isArray(programs?.programs)) return programs.programs;
     if (Array.isArray(programs)) return programs;
     return [];
   }, [programs]);
-  const findProgramByReference = useCallback$6(
+  const findProgramByReference = useCallback$4(
     (programRef) => {
       if (!programRef) return null;
       const normalizedRef = typeof programRef === "string" ? programRef.trim().toLowerCase() : programRef;
@@ -141167,7 +141167,7 @@ const ReportExportButtons = ({
     },
     [programList]
   );
-  const fetchProgramDetails = useCallback$6(async (programId) => {
+  const fetchProgramDetails = useCallback$4(async (programId) => {
     if (!programId) {
       return null;
     }
@@ -141188,7 +141188,7 @@ const ReportExportButtons = ({
     }
     return null;
   }, []);
-  const ensureProgramMetadata = useCallback$6(
+  const ensureProgramMetadata = useCallback$4(
     async (candidateProgram) => {
       if (!candidateProgram) {
         return null;
@@ -141219,7 +141219,7 @@ const ReportExportButtons = ({
     },
     [fetchProgramDetails]
   );
-  const resolveProgramReference = useCallback$6(
+  const resolveProgramReference = useCallback$4(
     async (programRef) => {
       const referenceValueRaw = typeof programRef === "string" ? programRef : programRef?.id || programRef?.uid || programRef?.code || programRef?.name;
       const referenceValue = typeof referenceValueRaw === "string" ? referenceValueRaw.trim() : referenceValueRaw;
@@ -141249,7 +141249,7 @@ const ReportExportButtons = ({
       fetchProgramDetails
     ]
   );
-  const resetProgressState = useCallback$6(() => {
+  const resetProgressState = useCallback$4(() => {
     setShowProgress(false);
     setIsGenerating(false);
     setError(null);
@@ -143214,8 +143214,8 @@ const taskController = async (event) => {
   }
 };
 
-const React$x = await importShared('react');
-const {useEffect: useEffect$z,useState: useState$B} = React$x;
+const React$u = await importShared('react');
+const {useEffect: useEffect$w,useState: useState$z} = React$u;
 function ScheduleTrainingModal({
   program,
   event,
@@ -143224,9 +143224,9 @@ function ScheduleTrainingModal({
   buttonLabel = "Schedule",
   trainingDateFieldId
 }) {
-  const [trainingDate, setTrainingDate] = useState$B("");
-  const [loading, setLoading] = useState$B(false);
-  const [openModal, setOpenModal] = useState$B(false);
+  const [trainingDate, setTrainingDate] = useState$z("");
+  const [loading, setLoading] = useState$z(false);
+  const [openModal, setOpenModal] = useState$z(false);
   const handleSubmit = async () => {
     try {
       setLoading(true);
@@ -143277,7 +143277,7 @@ function ScheduleTrainingModal({
     setTrainingDate("");
     setOpenModal(false);
   };
-  useEffect$z(() => {
+  useEffect$w(() => {
     if (openModal) {
       const existingDate = event?.dataValues?.find(
         (dv) => dv.dataElement === trainingDateFieldId
@@ -143356,7 +143356,7 @@ const hasApprovalStatus = (programId, approvalStatusConfig) => {
     );
 };
 
-const {useMemo: useMemo$j} = await importShared('react');
+const {useMemo: useMemo$h} = await importShared('react');
 
 
 /**
@@ -143371,7 +143371,7 @@ const {useMemo: useMemo$j} = await importShared('react');
  * @returns {Object} - Validation state and message
  */
 const useTrainingApprovalValidation = (event, flowMain, allFlows = []) => {
-    const validationResult = useMemo$j(() => {
+    const validationResult = useMemo$h(() => {
 
         // CRITICAL: Find the flow with approvalValidation for this program
         let validationConfig = flowMain?.approvalValidation;
@@ -143624,7 +143624,7 @@ const WardParticipantsDisplay = ({ value }) => {
   ] });
 };
 
-const {useEffect: useEffect$y,useState: useState$A,useMemo: useMemo$i} = await importShared('react');
+const {useEffect: useEffect$v,useState: useState$y,useMemo: useMemo$g} = await importShared('react');
 
 /**
  * Hook to load section visibility rules for event detail pages
@@ -143632,18 +143632,18 @@ const {useEffect: useEffect$y,useState: useState$A,useMemo: useMemo$i} = await i
  * @returns {Array} Array of visibility rules for the program
  */
 function useEventSectionVisibility(programId) {
-    const [config, setConfig] = useState$A(null);
-    const [tick, setTick] = useState$A(0);
+    const [config, setConfig] = useState$y(null);
+    const [tick, setTick] = useState$y(0);
 
     // Listen for external updates
-    useEffect$y(() => {
+    useEffect$v(() => {
         const onUpdate = () => setTick((n) => n + 1);
         window.addEventListener("memis:eventSectionVisibility:updated", onUpdate);
         return () => window.removeEventListener("memis:eventSectionVisibility:updated", onUpdate);
     }, []);
 
     // Fetch configuration from datastore
-    useEffect$y(() => {
+    useEffect$v(() => {
         let mounted = true;
         
         const fetchConfig = async () => {
@@ -143670,7 +143670,7 @@ function useEventSectionVisibility(programId) {
     }, [tick]);
 
     // Extract rules for the current program
-    const programRules = useMemo$i(() => {
+    const programRules = useMemo$g(() => {
         if (!programId || !config) return [];
         
         try {
@@ -143766,7 +143766,94 @@ function evaluateCondition(condition, dataValues) {
     }
 }
 
-const {useContext: useContext$i,useEffect: useEffect$x,useMemo: useMemo$h,useState: useState$z} = await importShared('react');
+function SectionNavButtons({ currentSection, prevSection, nextSection, onNavigate }) {
+  const isFirst = !prevSection;
+  const isLast = !nextSection;
+  if (isFirst && isLast) return null;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      style: {
+        display: "flex",
+        justifyContent: isFirst ? "flex-end" : isLast ? "flex-start" : "space-between",
+        marginTop: 16,
+        paddingTop: 12,
+        borderTop: "1px solid #e0e0e0"
+      },
+      children: [
+        !isFirst && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          IonButton,
+          {
+            fill: "outline",
+            size: "medium",
+            onClick: () => onNavigate(currentSection.id, prevSection.id),
+            children: "Back"
+          }
+        ),
+        !isLast && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          IonButton,
+          {
+            fill: "solid",
+            size: "medium",
+            onClick: () => onNavigate(currentSection.id, nextSection.id),
+            children: "Next"
+          }
+        )
+      ]
+    }
+  );
+}
+
+const {useState: useState$x} = await importShared('react');
+
+
+/**
+ * useExpandableSections
+ *
+ * Manages expand/collapse state for a list of sections and provides
+ * keyboard-free Back / Next navigation between them.
+ *
+ * Usage (both TeiEvents and EventPage):
+ *
+ *   const { expandedSections, toggleSection, navigateToSection } =
+ *     useExpandableSections();
+ *
+ *   // In the section map, derive position helpers:
+ *   const isFirst   = index === 0;
+ *   const isLast    = index === visibleSections.length - 1;
+ *   const prevSection = !isFirst ? visibleSections[index - 1] : null;
+ *   const nextSection = !isLast  ? visibleSections[index + 1] : null;
+ *
+ *   // Pass them straight to <SectionNavButtons />.
+ */
+function useExpandableSections() {
+    const [expandedSections, setExpandedSections] = useState$x({});
+
+    /** Toggle a single section open / closed. */
+    const toggleSection = (id) => {
+        setExpandedSections((prev) => ({ ...prev, [id]: !prev[id] }));
+    };
+
+    /**
+     * Close `fromId`, open `toId`, then scroll the target into view.
+     * The section card must have id={`section-${toId}`} for the scroll to work.
+     */
+    const navigateToSection = (fromId, toId) => {
+        setExpandedSections((prev) => ({
+            ...prev,
+            [fromId]: false,
+            [toId]: true,
+        }));
+        setTimeout(() => {
+            const el = document.getElementById(`section-${toId}`);
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 50);
+    };
+
+    return { expandedSections, toggleSection, navigateToSection };
+}
+
+const {useContext: useContext$h,useEffect: useEffect$u,useMemo: useMemo$f,useState: useState$w} = await importShared('react');
 const norm$1 = (s) => String(s ?? "").trim().toLowerCase();
 const truthy = (v) => {
   if (v === true) return true;
@@ -143805,51 +143892,51 @@ function EventPage() {
   const [
     showApprovalButtonBasedOnTransferType,
     setShowApprovalButtonBasedOnTransferType
-  ] = useState$z(false);
+  ] = useState$w(false);
   const { event: eventId } = useParams();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const navigate = useNavigate();
-  const [isApproved, setIsApproved] = useState$z(false);
-  const [uid] = useState$z(queryParams.get("uid") || "");
-  const [allocationTag] = useState$z(queryParams.get("q") || "");
-  const { programs } = useContext$i(MEMISContext.ProgramContext);
-  const [openModal, setOpenModal] = useState$z(false);
-  const [pg, setPg] = useState$z(null);
-  const [event, setEvent] = useState$z(null);
-  const [orgUnit, setOu] = useState$z({});
-  const [orgUnitNames, setOrgUnitNames] = useState$z({});
-  const [crumbs, setCrumbs] = useState$z([]);
-  const [user, setUser] = useState$z(null);
-  const [isUserCreateEvent, setIsUserCreateEvent] = useState$z(false);
-  const [userApprovalConfig, setUserApprovalConfig] = useState$z(null);
-  const [hideApproveButton, setHideApproveButton] = useState$z([]);
-  const [allocationsUserRoles, setAllocationsUserRoles] = useState$z({});
-  const [isAllocated, setIsAllocated] = useState$z(false);
-  const [allocationSection, setAllocationSection] = useState$z(null);
-  const [approvalStatusConfig, setApprovalStatusConfig] = useState$z(null);
-  const [loading, setLoading] = useState$z(true);
-  const [error, setError] = useState$z(null);
-  const [flowRules, setFlowRules] = useState$z(null);
-  const [openCollection, setOpenCollection] = useState$z(false);
-  const [programIndicatorAvailableCount, setProgramIndicatorAvailableCount] = useState$z(0);
-  const [declineReasonFieldId, setDeclineReasonFieldId] = useState$z(null);
-  const [fieldNames, setFieldNames] = useState$z({});
-  const [statusFieldId, setStatusFieldId] = useState$z(null);
-  const [statusOptionMap, setStatusOptionMap] = useState$z({});
-  const [programApprovalButtons, setProgramApprovalButtons] = useState$z([]);
-  const [reportRequiresApproval, setReportRequiresApproval] = useState$z(null);
-  const [dataStoreRaw, setDataStoreRaw] = useState$z(null);
-  const [infoCardExpanded, setInfoCardExpanded] = useState$z(false);
-  const [expandedSections, setExpandedSections] = useState$z({});
-  const [showRegisterButton, setShowRegisterButton] = useState$z(false);
-  const [showRegisterButtonByUserRole, setShowRegisterButtonByUserRole] = useState$z(false);
+  const [isApproved, setIsApproved] = useState$w(false);
+  const [uid] = useState$w(queryParams.get("uid") || "");
+  const [allocationTag] = useState$w(queryParams.get("q") || "");
+  const { programs } = useContext$h(MEMISContext.ProgramContext);
+  const [openModal, setOpenModal] = useState$w(false);
+  const [pg, setPg] = useState$w(null);
+  const [event, setEvent] = useState$w(null);
+  const [orgUnit, setOu] = useState$w({});
+  const [orgUnitNames, setOrgUnitNames] = useState$w({});
+  const [crumbs, setCrumbs] = useState$w([]);
+  const [user, setUser] = useState$w(null);
+  const [isUserCreateEvent, setIsUserCreateEvent] = useState$w(false);
+  const [userApprovalConfig, setUserApprovalConfig] = useState$w(null);
+  const [hideApproveButton, setHideApproveButton] = useState$w([]);
+  const [allocationsUserRoles, setAllocationsUserRoles] = useState$w({});
+  const [isAllocated, setIsAllocated] = useState$w(false);
+  const [allocationSection, setAllocationSection] = useState$w(null);
+  const [approvalStatusConfig, setApprovalStatusConfig] = useState$w(null);
+  const [loading, setLoading] = useState$w(true);
+  const [error, setError] = useState$w(null);
+  const [flowRules, setFlowRules] = useState$w(null);
+  const [openCollection, setOpenCollection] = useState$w(false);
+  const [programIndicatorAvailableCount, setProgramIndicatorAvailableCount] = useState$w(0);
+  const [declineReasonFieldId, setDeclineReasonFieldId] = useState$w(null);
+  const [fieldNames, setFieldNames] = useState$w({});
+  const [statusFieldId, setStatusFieldId] = useState$w(null);
+  const [statusOptionMap, setStatusOptionMap] = useState$w({});
+  const [programApprovalButtons, setProgramApprovalButtons] = useState$w([]);
+  const [reportRequiresApproval, setReportRequiresApproval] = useState$w(null);
+  const [dataStoreRaw, setDataStoreRaw] = useState$w(null);
+  const [infoCardExpanded, setInfoCardExpanded] = useState$w(false);
+  const { expandedSections, toggleSection, navigateToSection } = useExpandableSections();
+  const [showRegisterButton, setShowRegisterButton] = useState$w(false);
+  const [showRegisterButtonByUserRole, setShowRegisterButtonByUserRole] = useState$w(false);
   const [
     openApprovalButtonWhenInNoFlowRules,
     setOpenApprovalButtonWhenInNoFlowRules
-  ] = useState$z(false);
-  const [filePreviewOpen, setFilePreviewOpen] = useState$z(false);
-  const [selectedFile, setSelectedFile] = useState$z({
+  ] = useState$w(false);
+  const [filePreviewOpen, setFilePreviewOpen] = useState$w(false);
+  const [selectedFile, setSelectedFile] = useState$w({
     fileId: null,
     fileName: null,
     valueType: null,
@@ -144181,18 +144268,12 @@ function EventPage() {
     if (statusLower === "under review") return "var(--ion-color-warning)";
     return "var(--ion-color-medium)";
   };
-  const toggleSection = (id) => {
-    setExpandedSections((prev) => ({
-      ...prev,
-      [id]: !prev[id]
-    }));
-  };
-  useEffect$x(() => {
+  useEffect$u(() => {
     if (eventId) {
       getEventDetails(eventId);
     }
   }, [eventId]);
-  useEffect$x(() => {
+  useEffect$u(() => {
     getUser();
   }, []);
   const getVal = (de) => {
@@ -144264,7 +144345,7 @@ function EventPage() {
     );
     return progData?.id ?? "";
   };
-  const sections = useMemo$h(
+  const sections = useMemo$f(
     () => (pg?.programStages || []).flatMap((ps) => ps?.programStageSections || []),
     [pg]
   );
@@ -144431,14 +144512,14 @@ function EventPage() {
   const isRegistrationTask = (event?.dataValues || []).some(
     (d) => d?.value === "EQUIPMENT_REGISTRATION"
   );
-  const dataValuesObj = useMemo$h(() => {
+  const dataValuesObj = useMemo$f(() => {
     const map = {};
     (event?.dataValues || []).forEach((dv) => {
       map[dv.dataElement] = dv.value;
     });
     return map;
   }, [event?.dataValues]);
-  const maintenanceTriggerAt = useMemo$h(() => {
+  const maintenanceTriggerAt = useMemo$f(() => {
     return dataValuesObj["EbJI5Loxjbl"] || null;
   }, [dataValuesObj]);
   const trainingValidation = useTrainingApprovalValidation(
@@ -144454,11 +144535,11 @@ function EventPage() {
     formData: dataValuesObj
   });
   const assignedApproverValue = approvingOfficerFieldId ? dataValuesObj[approvingOfficerFieldId] : null;
-  const normalizedApproverTokens = useMemo$h(() => {
+  const normalizedApproverTokens = useMemo$f(() => {
     if (!assignedApproverValue) return [];
     return assignedApproverValue.split(/[,/|]+/).map((token) => token.trim().toLowerCase()).filter(Boolean);
   }, [assignedApproverValue]);
-  const isAssignedApprover = useMemo$h(() => {
+  const isAssignedApprover = useMemo$f(() => {
     if (!normalizedApproverTokens.length) return true;
     if (!user) return false;
     const candidateTokens = /* @__PURE__ */ new Set();
@@ -144475,18 +144556,18 @@ function EventPage() {
     });
     return normalizedApproverTokens.some((token) => candidateTokens.has(token));
   }, [normalizedApproverTokens, user]);
-  const approvalConfigList = useMemo$h(() => {
+  const approvalConfigList = useMemo$f(() => {
     if (!userApprovalConfig) return [];
     return Array.isArray(userApprovalConfig) ? userApprovalConfig : [userApprovalConfig];
   }, [userApprovalConfig]);
-  const sectionApprovalConfigById = useMemo$h(() => {
+  const sectionApprovalConfigById = useMemo$f(() => {
     const map = {};
     approvalConfigList.forEach((config) => {
       if (config?.sectionId) map[config.sectionId] = config;
     });
     return map;
   }, [approvalConfigList]);
-  const userHasApprovalRole = useMemo$h(() => {
+  const userHasApprovalRole = useMemo$f(() => {
     if (!approvalConfigList.length || !user?.userRoles) return false;
     return approvalConfigList.some(
       (config) => (config?.userRoles || []).some(
@@ -144494,7 +144575,7 @@ function EventPage() {
       )
     );
   }, [approvalConfigList, user]);
-  useEffect$x(() => {
+  useEffect$u(() => {
     const rs = async () => {
       const gg = await hideApprovalButtonBasedOnTransferType(event, user);
       setShowApprovalButtonBasedOnTransferType(gg);
@@ -144683,11 +144764,16 @@ function EventPage() {
           sectionVisibilityRules,
           currentByDE
         );
-      }).map((section) => {
+      }).map((section, sectionIndex, visibleSections) => {
         const sectionApprovalConfig = sectionApprovalConfigById[section?.id];
+        const isFirst = sectionIndex === 0;
+        const isLast = sectionIndex === visibleSections.length - 1;
+        const prevSection = !isFirst ? visibleSections[sectionIndex - 1] : null;
+        const nextSection = !isLast ? visibleSections[sectionIndex + 1] : null;
         return /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
+            id: `section-${section?.id}`,
             className: "form-section-card",
             style: { margin: 20 },
             children: [
@@ -144993,7 +145079,16 @@ function EventPage() {
                     buttonPositiveName: "Allocate",
                     buttonNegativeName: "Cancel"
                   }
-                ) })
+                ) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SectionNavButtons,
+                  {
+                    currentSection: section,
+                    prevSection,
+                    nextSection,
+                    onNavigate: navigateToSection
+                  }
+                )
               ] })
             ]
           },
@@ -145043,8 +145138,8 @@ function EventPage() {
   ] });
 }
 
-const React$w = await importShared('react');
-const {useEffect: useEffect$w,useState: useState$y} = React$w;
+const React$t = await importShared('react');
+const {useEffect: useEffect$t,useState: useState$v} = React$t;
 function AccessDenied503({
   title = "Service Unavailable",
   message = "You do not have permissions to access this program.",
@@ -145052,8 +145147,8 @@ function AccessDenied503({
   actionText = "Go to Dashboard"
 }) {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState$y(true);
-  useEffect$w(() => {
+  const [loading, setLoading] = useState$v(true);
+  useEffect$t(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1e4);
@@ -145104,8 +145199,8 @@ function AccessDenied503({
   ) }) });
 }
 
-const React$v = await importShared('react');
-const {useEffect: useEffect$v} = React$v;
+const React$s = await importShared('react');
+const {useEffect: useEffect$s} = React$s;
 const NotFoundHandler = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     AccessDenied503,
@@ -145118,13 +145213,13 @@ const NotFoundHandler = () => {
   );
 };
 
-const React$u = await importShared('react');
-const {useState: useState$x} = React$u;
+const React$r = await importShared('react');
+const {useState: useState$u} = React$r;
 const AppDetailsCard = () => {
-  const [isEditing, setIsEditing] = useState$x(false);
-  const [system, setSystem] = useState$x("MEMIS");
-  const [version, setVersion] = useState$x("1.0.0");
-  const [isSaving, setIsSaving] = useState$x(false);
+  const [isEditing, setIsEditing] = useState$u(false);
+  const [system, setSystem] = useState$u("MEMIS");
+  const [version, setVersion] = useState$u("1.0.0");
+  const [isSaving, setIsSaving] = useState$u(false);
   const toggleEdit = async () => {
     if (isEditing) {
       try {
@@ -145199,31 +145294,31 @@ const AppDetailsCard = () => {
   ] }) });
 };
 
-const React$t = await importShared('react');
-const {useContext: useContext$h,useState: useState$w} = React$t;
-
-const React$s = await importShared('react');
-const {useEffect: useEffect$u,useMemo: useMemo$g,useState: useState$v} = React$s;
-
-const React$r = await importShared('react');
-const {useContext: useContext$g,useState: useState$u,useEffect: useEffect$t,useMemo: useMemo$f} = React$r;
-
 const React$q = await importShared('react');
-const {useState: useState$t,useEffect: useEffect$s,useMemo: useMemo$e} = React$q;
+const {useContext: useContext$g,useState: useState$t} = React$q;
 
 const React$p = await importShared('react');
-const {useEffect: useEffect$r,useMemo: useMemo$d,useState: useState$s} = React$p;
+const {useEffect: useEffect$r,useMemo: useMemo$e,useState: useState$s} = React$p;
+
+const React$o = await importShared('react');
+const {useContext: useContext$f,useState: useState$r,useEffect: useEffect$q,useMemo: useMemo$d} = React$o;
+
+const React$n = await importShared('react');
+const {useState: useState$q,useEffect: useEffect$p,useMemo: useMemo$c} = React$n;
+
+const React$m = await importShared('react');
+const {useEffect: useEffect$o,useMemo: useMemo$b,useState: useState$p} = React$m;
 const ViewProgramSectionsAccess = ({ onEdit }) => {
-  const [confirmOpen, setConfirmOpen] = useState$s(false);
-  const [rowToDelete, setRowToDelete] = useState$s(null);
-  const [deleting, setDeleting] = useState$s(false);
-  const [sharingSettings, setSharingSettings] = useState$s([]);
-  const [rawData, seRawData] = useState$s(null);
-  const [loading, setLoading] = useState$s(true);
-  const [isMobile, setIsMobile] = useState$s(
+  const [confirmOpen, setConfirmOpen] = useState$p(false);
+  const [rowToDelete, setRowToDelete] = useState$p(null);
+  const [deleting, setDeleting] = useState$p(false);
+  const [sharingSettings, setSharingSettings] = useState$p([]);
+  const [rawData, seRawData] = useState$p(null);
+  const [loading, setLoading] = useState$p(true);
+  const [isMobile, setIsMobile] = useState$p(
     () => typeof window !== "undefined" ? window.matchMedia("(max-width: 576px)").matches : false
   );
-  useEffect$r(() => {
+  useEffect$o(() => {
     const mq = window.matchMedia("(max-width: 576px)");
     const handler = (e) => setIsMobile(e.matches);
     setIsMobile(mq.matches);
@@ -145232,7 +145327,7 @@ const ViewProgramSectionsAccess = ({ onEdit }) => {
       mq.removeEventListener?.("change", handler);
     };
   }, []);
-  const columns = useMemo$d(
+  const columns = useMemo$b(
     () => [
       { key: "program", label: "Program" },
       { key: "section", label: "Section" },
@@ -145303,7 +145398,7 @@ const ViewProgramSectionsAccess = ({ onEdit }) => {
       setRowToDelete(null);
     }
   };
-  useEffect$r(() => {
+  useEffect$o(() => {
     getSharingSettings();
   }, []);
   const openDeleteConfirm = (idx) => {
@@ -145466,15 +145561,15 @@ const ViewProgramSectionsAccess = ({ onEdit }) => {
   ] }) });
 };
 
-const React$o = await importShared('react');
-const {useContext: useContext$f,useEffect: useEffect$q,useState: useState$r} = React$o;
+const React$l = await importShared('react');
+const {useContext: useContext$e,useEffect: useEffect$n,useState: useState$o} = React$l;
 function SectionAccessUserRoles() {
-  const { programs } = useContext$f(MEMISContext.ProgramContext);
-  const { userRoles } = useContext$f(MEMISContext.UserRolesContext);
-  const [sections, setSections] = useState$r([]);
-  const [formActive, setFormActive] = useState$r(false);
-  const [isLoading, setIsLoading] = useState$r(false);
-  const [query, setQuery] = useState$r("");
+  const { programs } = useContext$e(MEMISContext.ProgramContext);
+  const { userRoles } = useContext$e(MEMISContext.UserRolesContext);
+  const [sections, setSections] = useState$o([]);
+  const [formActive, setFormActive] = useState$o(false);
+  const [isLoading, setIsLoading] = useState$o(false);
+  const [query, setQuery] = useState$o("");
   const location = useLocation();
   const navigate = useNavigate();
   const accessRights = [
@@ -145483,10 +145578,10 @@ function SectionAccessUserRoles() {
     { id: "update", name: "Update" },
     { id: "delete", name: "Delete" }
   ];
-  const [programId, setProgramId] = useState$r("");
-  const [sectionId, setSectionId] = useState$r("");
-  const [userRole, setUserRole] = useState$r("");
-  const [selectedRights, setSelectedRights] = useState$r([]);
+  const [programId, setProgramId] = useState$o("");
+  const [sectionId, setSectionId] = useState$o("");
+  const [userRole, setUserRole] = useState$o("");
+  const [selectedRights, setSelectedRights] = useState$o([]);
   const sectionsData = (programIdToUse, preselectSectionId = null) => {
     if (!programIdToUse) return;
     const program = programs?.find((p) => p.id === programIdToUse);
@@ -145595,7 +145690,7 @@ function SectionAccessUserRoles() {
       setIsLoading(false);
     }
   };
-  useEffect$q(() => {
+  useEffect$n(() => {
     if (programId) sectionsData(programId);
   }, [programs, programId]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonPage, { className: "section-access-user-roles", children: [
@@ -145740,8 +145835,8 @@ function SectionAccessUserRoles() {
   ] });
 }
 
-const React$n = await importShared('react');
-const {useContext: useContext$e,useState: useState$q,useEffect: useEffect$p,useMemo: useMemo$c} = React$n;
+const React$k = await importShared('react');
+const {useContext: useContext$d,useState: useState$n,useEffect: useEffect$m,useMemo: useMemo$a} = React$k;
 
 const {createPortal: createPortal$1} = await importShared('react-dom');
 const DS_KEY = "enrollmentAccessSettings";
@@ -145749,35 +145844,35 @@ const DS_PATH = `dataStore/memis/${DS_KEY}`;
 const TEXT_MD = { color: "#000", fontSize: 15, lineHeight: 1.35 };
 const HEAD_MD = { color: "#000", fontSize: 17, lineHeight: 1.3, margin: 0 };
 function InlineEditor({ open, onClose, onSave, programs, roles, initial, usedProgramIds }) {
-  const [programId, setProgramId] = useState$q(initial?.programId || "");
-  const [roleIds, setRoleIds] = useState$q(initial?.roleIds || []);
-  const [query, setQuery] = useState$q("");
-  const [isMobile, setIsMobile] = useState$q(() => window.innerWidth <= 576);
-  useEffect$p(() => {
+  const [programId, setProgramId] = useState$n(initial?.programId || "");
+  const [roleIds, setRoleIds] = useState$n(initial?.roleIds || []);
+  const [query, setQuery] = useState$n("");
+  const [isMobile, setIsMobile] = useState$n(() => window.innerWidth <= 576);
+  useEffect$m(() => {
     const onResize = () => setIsMobile(window.innerWidth <= 576);
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
-  useEffect$p(() => {
+  useEffect$m(() => {
     setProgramId(initial?.programId || "");
     setRoleIds(initial?.roleIds || []);
     setQuery("");
   }, [initial, open]);
   const isEdit = !!initial;
-  const eligiblePrograms = useMemo$c(() => {
+  const eligiblePrograms = useMemo$a(() => {
     if (isEdit) return programs;
     return programs.filter((p) => !usedProgramIds?.has(p.id));
   }, [programs, usedProgramIds, isEdit]);
   const noChange = isEdit && initial.programId === programId && JSON.stringify([...roleIds].sort()) === JSON.stringify([...initial.roleIds || []].sort());
-  const sortedPrograms = useMemo$c(
+  const sortedPrograms = useMemo$a(
     () => eligiblePrograms.slice().sort((a, b) => (a?.name || "").localeCompare(b?.name || "")),
     [eligiblePrograms]
   );
-  const sortedRoles = useMemo$c(
+  const sortedRoles = useMemo$a(
     () => roles.slice().sort((a, b) => (a?.name || "").localeCompare(b?.name || "")),
     [roles]
   );
-  const filteredRoles = useMemo$c(() => {
+  const filteredRoles = useMemo$a(() => {
     const q = query.trim().toLowerCase();
     if (!q) return sortedRoles;
     return sortedRoles.filter((r) => (r.name || r.displayName || "").toLowerCase().includes(q));
@@ -145978,26 +146073,26 @@ function InlineEditor({ open, onClose, onSave, programs, roles, initial, usedPro
   );
 }
 function EnrollmentAccessSettings() {
-  const [rows, setRows] = useState$q([]);
-  const [loading, setLoading] = useState$q(true);
-  const [confirmIdx, setConfirmIdx] = useState$q(null);
-  const [editorOpen, setEditorOpen] = useState$q(false);
-  const [editRow, setEditRow] = useState$q(null);
-  const programsCtx = useContext$e(MEMISContext.ProgramContext);
-  const rolesCtx = useContext$e(MEMISContext.UserRolesContext);
+  const [rows, setRows] = useState$n([]);
+  const [loading, setLoading] = useState$n(true);
+  const [confirmIdx, setConfirmIdx] = useState$n(null);
+  const [editorOpen, setEditorOpen] = useState$n(false);
+  const [editRow, setEditRow] = useState$n(null);
+  const programsCtx = useContext$d(MEMISContext.ProgramContext);
+  const rolesCtx = useContext$d(MEMISContext.UserRolesContext);
   const programsReady = !!programsCtx?.programs?.length;
   const rolesReady = !!rolesCtx?.userRoles?.length;
-  const [isMobile, setIsMobile] = useState$q(() => window.innerWidth <= 576);
-  useEffect$p(() => {
+  const [isMobile, setIsMobile] = useState$n(() => window.innerWidth <= 576);
+  useEffect$m(() => {
     const onResize = () => setIsMobile(window.innerWidth <= 576);
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
-  const allPrograms = useMemo$c(
+  const allPrograms = useMemo$a(
     () => (programsCtx?.programs || []).slice().sort((a, b) => (a?.name || "").localeCompare(b?.name || "")),
     [programsCtx?.programs]
   );
-  const allRoles = useMemo$c(
+  const allRoles = useMemo$a(
     () => (rolesCtx?.userRoles || []).slice().sort((a, b) => (a?.name || "").localeCompare(b?.name || "")),
     [rolesCtx?.userRoles]
   );
@@ -146027,7 +146122,7 @@ function EnrollmentAccessSettings() {
       return null;
     }
   };
-  useEffect$p(() => {
+  useEffect$m(() => {
     const load = async () => {
       if (!programsReady || !rolesReady) return;
       const cached = readCache();
@@ -146056,8 +146151,8 @@ function EnrollmentAccessSettings() {
     load();
   }, [programsReady, rolesReady]);
   const broadcastChange = (next) => window.dispatchEvent(new CustomEvent("memis:enrollmentAccessChanged", { detail: next }));
-  const usedProgramIds = useMemo$c(() => new Set(rows.map((r) => r.programId)), [rows]);
-  const remainingProgramsCount = useMemo$c(
+  const usedProgramIds = useMemo$a(() => new Set(rows.map((r) => r.programId)), [rows]);
+  const remainingProgramsCount = useMemo$a(
     () => allPrograms.filter((p) => !usedProgramIds.has(p.id)).length,
     [allPrograms, usedProgramIds]
   );
@@ -146144,7 +146239,7 @@ function EnrollmentAccessSettings() {
       setConfirmIdx(null);
     }
   };
-  useMemo$c(
+  useMemo$a(
     () => [
       { key: "program", label: "Program" },
       { key: "roles", label: "Allowed Roles" }
@@ -146297,24 +146392,24 @@ function EnrollmentAccessSettings() {
   ] }) });
 }
 
-const React$m = await importShared('react');
-const {useEffect: useEffect$o,useMemo: useMemo$b,useState: useState$p} = React$m;
+const React$j = await importShared('react');
+const {useEffect: useEffect$l,useMemo: useMemo$9,useState: useState$m} = React$j;
 const PAGE_SIZE$2 = 50;
 const MOBILE_BREAKPOINT$2 = 768;
 const WardsSettings = () => {
-  const [wards, setWards] = useState$p([]);
-  const [isLoading, setIsLoading] = useState$p(false);
-  const [openModal, setOpenModal] = useState$p(false);
-  const [search, setSearch] = useState$p("");
-  const [page, setPage] = useState$p(1);
-  const [isMobile, setIsMobile] = useState$p(
+  const [wards, setWards] = useState$m([]);
+  const [isLoading, setIsLoading] = useState$m(false);
+  const [openModal, setOpenModal] = useState$m(false);
+  const [search, setSearch] = useState$m("");
+  const [page, setPage] = useState$m(1);
+  const [isMobile, setIsMobile] = useState$m(
     window.innerWidth < MOBILE_BREAKPOINT$2
   );
-  const [selectedUser, setSelectedUser] = useState$p(null);
-  const [selectedWard, setSelectedWard] = useState$p(null);
-  const [selectedFacility, setSelectedFacility] = useState$p(null);
+  const [selectedUser, setSelectedUser] = useState$m(null);
+  const [selectedWard, setSelectedWard] = useState$m(null);
+  const [selectedFacility, setSelectedFacility] = useState$m(null);
   const navigate = useNavigate();
-  const [users, setUsers] = useState$p([]);
+  const [users, setUsers] = useState$m([]);
   const getOrganisationUnits = async () => {
     try {
       setIsLoading(true);
@@ -146356,34 +146451,34 @@ const WardsSettings = () => {
       console.log({ error });
     }
   };
-  useEffect$o(() => {
+  useEffect$l(() => {
     getOrganisationUnits();
   }, []);
-  useEffect$o(() => {
+  useEffect$l(() => {
     if (selectedFacility) {
       getUsers();
     }
   }, [selectedFacility]);
-  useEffect$o(() => {
+  useEffect$l(() => {
     const resize = () => {
       setIsMobile(window.innerWidth < MOBILE_BREAKPOINT$2);
     };
     window.addEventListener("resize", resize);
     return () => window.removeEventListener("resize", resize);
   }, []);
-  const filteredWards = useMemo$b(() => {
+  const filteredWards = useMemo$9(() => {
     return wards.filter((item) => {
       const value = search.toLowerCase();
       return item?.name?.toLowerCase().includes(value) || item?.parent?.name?.toLowerCase().includes(value) || item?.code?.toLowerCase().includes(value) || String(item?.level || "").toLowerCase().includes(value);
     });
   }, [wards, search]);
   const totalPages = Math.ceil(filteredWards.length / PAGE_SIZE$2);
-  const paginatedData = useMemo$b(() => {
+  const paginatedData = useMemo$9(() => {
     const start = (page - 1) * PAGE_SIZE$2;
     const end = start + PAGE_SIZE$2;
     return filteredWards.slice(start, end);
   }, [filteredWards, page]);
-  useEffect$o(() => {
+  useEffect$l(() => {
     setPage(1);
   }, [search]);
   const nextPage = () => {
@@ -146646,8 +146741,8 @@ const cardRow = {
   fontSize: "14px"
 };
 
-const React$l = await importShared('react');
-const {useEffect: useEffect$n,useMemo: useMemo$a,useState: useState$o} = React$l;
+const React$i = await importShared('react');
+const {useEffect: useEffect$k,useMemo: useMemo$8,useState: useState$l} = React$i;
 const MOBILE_BREAKPOINT$1 = 992;
 const PAGE_SIZE$1 = 50;
 const MetadataSettings = () => {
@@ -146660,24 +146755,24 @@ const MetadataSettings = () => {
       position: "top"
     });
   };
-  const [optionSets, setOptionSets] = useState$o([]);
-  const [selectedSetId, setSelectedSetId] = useState$o(null);
-  const [searchOptionSet, setSearchOptionSet] = useState$o("");
-  const [searchOptions, setSearchOptions] = useState$o("");
-  const [isLoading, setIsLoading] = useState$o(false);
-  const [isSubmitting, setIsSubmitting] = useState$o(false);
-  const [page, setPage] = useState$o(1);
-  const [isMobile, setIsMobile] = useState$o(
+  const [optionSets, setOptionSets] = useState$l([]);
+  const [selectedSetId, setSelectedSetId] = useState$l(null);
+  const [searchOptionSet, setSearchOptionSet] = useState$l("");
+  const [searchOptions, setSearchOptions] = useState$l("");
+  const [isLoading, setIsLoading] = useState$l(false);
+  const [isSubmitting, setIsSubmitting] = useState$l(false);
+  const [page, setPage] = useState$l(1);
+  const [isMobile, setIsMobile] = useState$l(
     window.innerWidth < MOBILE_BREAKPOINT$1
   );
-  const [showAddModal, setShowAddModal] = useState$o(false);
-  const [showBulkModal, setShowBulkModal] = useState$o(false);
-  const [newOption, setNewOption] = useState$o({
+  const [showAddModal, setShowAddModal] = useState$l(false);
+  const [showBulkModal, setShowBulkModal] = useState$l(false);
+  const [newOption, setNewOption] = useState$l({
     name: "",
     code: ""
   });
-  const [bulkText, setBulkText] = useState$o("");
-  useEffect$n(() => {
+  const [bulkText, setBulkText] = useState$l("");
+  useEffect$k(() => {
     const resize = () => {
       setIsMobile(window.innerWidth < MOBILE_BREAKPOINT$1);
     };
@@ -146708,7 +146803,7 @@ const MetadataSettings = () => {
       setIsLoading(false);
     }
   };
-  useEffect$n(() => {
+  useEffect$k(() => {
     loadMetadata();
   }, []);
   const persistOptionSets = async (data) => {
@@ -146719,17 +146814,17 @@ const MetadataSettings = () => {
       showToast("Failed to save metadata", "danger");
     }
   };
-  const optionSetMap = useMemo$a(() => {
+  const optionSetMap = useMemo$8(() => {
     return Object.fromEntries(optionSets.map((x) => [x.id, x]));
   }, [optionSets]);
   const selectedOptionSet = optionSetMap[selectedSetId];
-  const filteredOptionSets = useMemo$a(() => {
+  const filteredOptionSets = useMemo$8(() => {
     const value = searchOptionSet.toLowerCase();
     return optionSets.filter((item) => {
       return item?.name?.toLowerCase()?.includes(value) || item?.code?.toLowerCase()?.includes(value);
     });
   }, [optionSets, searchOptionSet]);
-  const filteredOptions = useMemo$a(() => {
+  const filteredOptions = useMemo$8(() => {
     if (!selectedOptionSet?.options) return [];
     const value = searchOptions.toLowerCase();
     return selectedOptionSet.options.filter((item) => {
@@ -146737,15 +146832,15 @@ const MetadataSettings = () => {
     });
   }, [selectedOptionSet, searchOptions]);
   const totalPages = Math.ceil(filteredOptions.length / PAGE_SIZE$1);
-  const paginatedOptions = useMemo$a(() => {
+  const paginatedOptions = useMemo$8(() => {
     const start = (page - 1) * PAGE_SIZE$1;
     const end = start + PAGE_SIZE$1;
     return filteredOptions.slice(start, end);
   }, [filteredOptions, page]);
-  useEffect$n(() => {
+  useEffect$k(() => {
     setPage(1);
   }, [searchOptions, selectedSetId]);
-  const totalOptions = useMemo$a(() => {
+  const totalOptions = useMemo$8(() => {
     return optionSets.reduce(
       (acc, curr) => acc + (curr?.options?.length || 0),
       0
@@ -147506,17 +147601,17 @@ const DatasetGeneralForm = ({
   );
 };
 
-const React$k = await importShared('react');
-const {useState: useState$n,useEffect: useEffect$m,useMemo: useMemo$9} = React$k;
+const React$h = await importShared('react');
+const {useState: useState$k,useEffect: useEffect$j,useMemo: useMemo$7} = React$h;
 const StockThresholdSettings = () => {
-  const [loading, setLoading] = useState$n(true);
-  const [dataSets, setDataSets] = useState$n([]);
-  const [selectedDataSet, setSelectedDataSet] = useState$n("");
-  const [selectedFacility, setSelectedFacility] = useState$n("");
-  const [selectedPeriod, setSelectedPeriod] = useState$n("");
-  const [formData, setFormData] = useState$n({});
-  const [userFacility, setUserFacility] = useState$n([]);
-  const selectedDatasetObject = useMemo$9(() => {
+  const [loading, setLoading] = useState$k(true);
+  const [dataSets, setDataSets] = useState$k([]);
+  const [selectedDataSet, setSelectedDataSet] = useState$k("");
+  const [selectedFacility, setSelectedFacility] = useState$k("");
+  const [selectedPeriod, setSelectedPeriod] = useState$k("");
+  const [formData, setFormData] = useState$k({});
+  const [userFacility, setUserFacility] = useState$k([]);
+  const selectedDatasetObject = useMemo$7(() => {
     return dataSets.find((dts) => dts?.id === selectedDataSet);
   }, [selectedDataSet, dataSets]);
   const loadData = async () => {
@@ -147533,7 +147628,7 @@ const StockThresholdSettings = () => {
       setLoading(false);
     }
   };
-  useEffect$m(() => {
+  useEffect$j(() => {
     loadData();
   }, []);
   const handleChange = (id, value) => {
@@ -147690,12 +147785,12 @@ const StockThresholdSettings = () => {
   ] });
 };
 
-const React$j = await importShared('react');
-const {useEffect: useEffect$l,useState: useState$m} = React$j;
+const React$g = await importShared('react');
+const {useEffect: useEffect$i,useState: useState$j} = React$g;
 function Settings() {
   const navigate = useNavigate();
-  const [hasAccess, setHasAccess] = useState$m(null);
-  useEffect$l(() => {
+  const [hasAccess, setHasAccess] = useState$j(null);
+  useEffect$i(() => {
     const loadAccess = async () => {
       try {
         const res = await canAccessSettings();
@@ -147753,13 +147848,13 @@ function Settings() {
   ] });
 }
 
-const React$i = await importShared('react');
-const {useContext: useContext$d,useMemo: useMemo$8} = React$i;
+const React$f = await importShared('react');
+const {useContext: useContext$c,useMemo: useMemo$6} = React$f;
 function ProgramAccessGuard({ children, programId }) {
   const { program } = useParams();
-  const permissions = useContext$d(MEMISContext.PermissionContext);
+  const permissions = useContext$c(MEMISContext.PermissionContext);
   const isPermissionsReady = !!permissions && typeof permissions.hasProgramRight === "function";
-  const hasRead = useMemo$8(() => {
+  const hasRead = useMemo$6(() => {
     const pid = programId || program;
     if (!pid) return true;
     const roleRead = permissions?.hasProgramRight?.(pid, "read");
@@ -147783,8 +147878,8 @@ function ProgramAccessGuard({ children, programId }) {
   return children;
 }
 
-const React$h = await importShared('react');
-const {useContext: useContext$c,useEffect: useEffect$k,useState: useState$l} = React$h;
+const React$e = await importShared('react');
+const {useContext: useContext$b,useEffect: useEffect$h,useState: useState$i} = React$e;
 const A$3 = (x) => Array.isArray(x) ? x : [];
 function UpdateCollectionStatus({
   // program,
@@ -147795,19 +147890,19 @@ function UpdateCollectionStatus({
   buttonPositiveName = "Save"
 }) {
   const { program, tei, stage, evnt } = useParams();
-  const [fields, setFields] = useState$l([]);
-  const [formData, setFormData] = useState$l({});
-  const [loading, setLoading] = useState$l(true);
-  const [saving, setSaving] = useState$l(false);
-  const [error, setError] = useState$l(null);
-  const [openModal, setOpenModal] = useState$l(false);
-  const [visibleFields, setVisibleFields] = useState$l([]);
-  const [targetProgram, setTargetProgram] = useState$l(null);
-  const [equipmentOptions, setEquipmentOptions] = useState$l({});
-  const [programDataTEI, setProgramDataTEI] = useState$l([]);
-  const [currentUsername, setCurrentUsername] = useState$l("");
-  const [autofillConfig, setAutofillConfig] = useState$l(null);
-  useEffect$k(() => {
+  const [fields, setFields] = useState$i([]);
+  const [formData, setFormData] = useState$i({});
+  const [loading, setLoading] = useState$i(true);
+  const [saving, setSaving] = useState$i(false);
+  const [error, setError] = useState$i(null);
+  const [openModal, setOpenModal] = useState$i(false);
+  const [visibleFields, setVisibleFields] = useState$i([]);
+  const [targetProgram, setTargetProgram] = useState$i(null);
+  const [equipmentOptions, setEquipmentOptions] = useState$i({});
+  const [programDataTEI, setProgramDataTEI] = useState$i([]);
+  const [currentUsername, setCurrentUsername] = useState$i("");
+  const [autofillConfig, setAutofillConfig] = useState$i(null);
+  useEffect$h(() => {
     const userData = localStorage.getItem("memisCredentials");
     if (userData) {
       try {
@@ -148010,10 +148105,10 @@ function UpdateCollectionStatus({
     setError(null);
     setOpenModal(false);
   };
-  useEffect$k(() => {
+  useEffect$h(() => {
     getFields();
   }, []);
-  useEffect$k(() => {
+  useEffect$h(() => {
     if (openModal && fields.length > 0 && autofillConfig) {
       setVisibleFields(fields.map((f) => f.id));
       const initialData = {};
@@ -148095,8 +148190,8 @@ const prefillAcknowledgingReceiver = async (allocationData) => {
   }
 };
 
-const React$g = await importShared('react');
-const {useContext: useContext$b,useEffect: useEffect$j,useState: useState$k} = React$g;
+const React$d = await importShared('react');
+const {useContext: useContext$a,useEffect: useEffect$g,useState: useState$h} = React$d;
 const A$2 = (x) => Array.isArray(x) ? x : [];
 function AcknowledgeCollectionStatus({
   program,
@@ -148107,16 +148202,16 @@ function AcknowledgeCollectionStatus({
   buttonPositiveName = "Save",
   prefillReceiverName
 }) {
-  const [fields, setFields] = useState$k([]);
-  const [formData, setFormData] = useState$k({});
-  const [loading, setLoading] = useState$k(true);
-  const [saving, setSaving] = useState$k(false);
-  const [error, setError] = useState$k(null);
-  const [openModal, setOpenModal] = useState$k(false);
-  const [visibleFields, setVisibleFields] = useState$k([]);
-  const [targetProgram, setTargetProgram] = useState$k(null);
-  const [equipmentOptions, setEquipmentOptions] = useState$k({});
-  const [programDataTEI, setProgramDataTEI] = useState$k([]);
+  const [fields, setFields] = useState$h([]);
+  const [formData, setFormData] = useState$h({});
+  const [loading, setLoading] = useState$h(true);
+  const [saving, setSaving] = useState$h(false);
+  const [error, setError] = useState$h(null);
+  const [openModal, setOpenModal] = useState$h(false);
+  const [visibleFields, setVisibleFields] = useState$h([]);
+  const [targetProgram, setTargetProgram] = useState$h(null);
+  const [equipmentOptions, setEquipmentOptions] = useState$h({});
+  const [programDataTEI, setProgramDataTEI] = useState$h([]);
   const getFields = async () => {
     setLoading(true);
     try {
@@ -148314,10 +148409,10 @@ function AcknowledgeCollectionStatus({
     setError(null);
     setOpenModal(false);
   };
-  useEffect$j(() => {
+  useEffect$g(() => {
     getFields();
   }, []);
-  useEffect$j(() => {
+  useEffect$g(() => {
     const load = async () => {
       if (openModal && fields.length > 0) {
         const initial = {};
@@ -148365,41 +148460,41 @@ function AcknowledgeCollectionStatus({
   ] });
 }
 
-const {useContext: useContext$a,useEffect: useEffect$i,useState: useState$j} = await importShared('react');
+const {useContext: useContext$9,useEffect: useEffect$f,useState: useState$g} = await importShared('react');
 const {createPortal} = await importShared('react-dom');
 const displayVal = (val) => val === null || val === void 0 || val === "" ? "N/A" : val;
 function DeregistrationEventView() {
   const { program, tei, stage, evnt } = useParams();
   useSearchParams();
   const navigate = useNavigate();
-  const [pg, setPg] = useState$j();
-  const [event, setEvent] = useState$j();
-  const [orgUnit, setOu] = useState$j();
-  const [programData, setProgramData] = useState$j(null);
-  const [ouName, setName] = useState$j();
-  const [crumbs, setCrumbs] = useState$j([{
+  const [pg, setPg] = useState$g();
+  const [event, setEvent] = useState$g();
+  const [orgUnit, setOu] = useState$g();
+  const [programData, setProgramData] = useState$g(null);
+  const [ouName, setName] = useState$g();
+  const [crumbs, setCrumbs] = useState$g([{
     label: "Home",
     ref: "/memis"
   }]);
-  const { user } = useContext$a(MEMISContext.UserRolesContext);
-  const [currentUser, setCurrentUser] = useState$j(null);
-  const [confirmingDeregistration, setConfirmingDeregistration] = useState$j(false);
-  const [showConfirmAlert, setShowConfirmAlert] = useState$j(false);
-  const [equipmentState, setEquipmentState] = useState$j(null);
-  const [activeSectionModal, setActiveSectionModal] = useState$j(null);
-  const [modalSectionData, setModalSectionData] = useState$j(null);
-  const [sectionFormData, setSectionFormData] = useState$j({});
-  const [savingSectionData, setSavingSectionData] = useState$j(false);
-  const [filePreviewOpen, setFilePreviewOpen] = useState$j(false);
-  const [previewFileId, setPreviewFileId] = useState$j(null);
-  const [previewFileName, setPreviewFileName] = useState$j(null);
-  const [previewValueType, setPreviewValueType] = useState$j(null);
-  const [previewAttributeId, setPreviewAttributeId] = useState$j(null);
-  const [infoCardExpanded, setInfoCardExpanded] = useState$j(false);
-  const [expandedSections, setExpandedSections] = useState$j({});
-  const [dataStoreData, setDataStoreData] = useState$j({});
-  const [programsLocalData, setProgramsLocalData] = useState$j([]);
-  const [userOrganisationUnits, setUserOrganisationUnits] = useState$j([]);
+  const { user } = useContext$9(MEMISContext.UserRolesContext);
+  const [currentUser, setCurrentUser] = useState$g(null);
+  const [confirmingDeregistration, setConfirmingDeregistration] = useState$g(false);
+  const [showConfirmAlert, setShowConfirmAlert] = useState$g(false);
+  const [equipmentState, setEquipmentState] = useState$g(null);
+  const [activeSectionModal, setActiveSectionModal] = useState$g(null);
+  const [modalSectionData, setModalSectionData] = useState$g(null);
+  const [sectionFormData, setSectionFormData] = useState$g({});
+  const [savingSectionData, setSavingSectionData] = useState$g(false);
+  const [filePreviewOpen, setFilePreviewOpen] = useState$g(false);
+  const [previewFileId, setPreviewFileId] = useState$g(null);
+  const [previewFileName, setPreviewFileName] = useState$g(null);
+  const [previewValueType, setPreviewValueType] = useState$g(null);
+  const [previewAttributeId, setPreviewAttributeId] = useState$g(null);
+  const [infoCardExpanded, setInfoCardExpanded] = useState$g(false);
+  const [expandedSections, setExpandedSections] = useState$g({});
+  const [dataStoreData, setDataStoreData] = useState$g({});
+  const [programsLocalData, setProgramsLocalData] = useState$g([]);
+  const [userOrganisationUnits, setUserOrganisationUnits] = useState$g([]);
   const formatDate = (isoString) => {
     if (!isoString) return "";
     const date = new Date(isoString);
@@ -148548,12 +148643,12 @@ function DeregistrationEventView() {
       [id]: !prev[id]
     }));
   };
-  useEffect$i(() => {
+  useEffect$f(() => {
     getEventDetails(evnt, stage);
     getCurrentUser();
     fetchEquipmentState();
   }, [evnt, stage, dataStoreData, programsLocalData, userOrganisationUnits]);
-  useEffect$i(() => {
+  useEffect$f(() => {
     fetchOuValues();
   }, [event, pg]);
   const getSectionAccess = (sectionId) => {
@@ -149013,7 +149108,7 @@ function DeregistrationEventView() {
     return { status: "pending", label: "Pending Review", color: "medium", icon: timeOutline };
   };
   const eventStatus = getEventStatus();
-  useEffect$i(() => {
+  useEffect$f(() => {
     const load = async () => {
       try {
         const [dataStoreResponse, programsResponse, userOrganisationUnitsResponse] = await Promise.all([
@@ -149308,182 +149403,17 @@ function DeregistrationEventView() {
   ] });
 }
 
-const React$f = await importShared('react');
-const {useCallback: useCallback$5,useEffect: useEffect$h,useMemo: useMemo$7,useRef: useRef$5,useState: useState$i} = React$f;
-React$f.memo(function FieldRenderer2({
-  f,
-  getDEMeta,
-  formValue,
-  onChange
-}) {
-  const [meta, setMeta] = useState$i(null);
-  useEffect$h(() => {
-    let mounted = true;
-    (async () => {
-      const m = await getDEMeta(f.id);
-      if (mounted)
-        setMeta(m || { id: f.id, valueType: f.valueType, formName: f.name });
-    })();
-    return () => {
-      mounted = false;
-    };
-  }, [f.id, getDEMeta, f.name, f.valueType]);
-  if (!meta) return null;
-  const label = meta.formName || f.name || meta.name || f.id;
-  const hasOptions = !!meta.optionSet?.options?.length;
-  if (hasOptions) {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        IonSelect,
-        {
-          value: formValue ?? "",
-          onIonChange: (e) => onChange(f.id, e.detail.value),
-          interface: "popover",
-          children: meta.optionSet.options.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(IonSelectOption, { value: opt.code ?? opt.name, children: opt.name }, opt.id))
-        }
-      )
-    ] });
-  }
-  switch (meta.valueType || f.valueType) {
-    case "BOOLEAN":
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ion-w-full", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          IonRadioGroup,
-          {
-            value: formValue,
-            onIonChange: (e) => onChange(f.id, e.detail.value),
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { children: "Yes" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(IonRadio, { slot: "end", value: "true" })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { children: "No" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(IonRadio, { slot: "end", value: "false" })
-              ] })
-            ]
-          }
-        )
-      ] });
-    case "DATE":
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          IonInput,
-          {
-            type: "date",
-            value: formValue || "",
-            onIonChange: (e) => onChange(f.id, e.detail.value)
-          }
-        )
-      ] });
-    default:
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          IonInput,
-          {
-            value: formValue || "",
-            onIonChange: (e) => onChange(f.id, e.detail.value),
-            clearInput: true
-          }
-        )
-      ] });
-  }
-});
-
-const React$e = await importShared('react');
-const {useCallback: useCallback$4,useEffect: useEffect$g,useMemo: useMemo$6,useRef: useRef$4,useState: useState$h} = React$e;
-React$e.memo(function Field2({ meta, value, onChange }) {
-  const f = meta;
-  const label = f.name || f.formName || f.id;
-  if (f.optionSet?.options?.length) {
-    const options = f.optionSet.options;
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        IonSelect,
-        {
-          value: value ?? "",
-          interface: "popover",
-          onIonChange: (e) => onChange(f.id, e.detail.value),
-          children: options.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-            IonSelectOption,
-            {
-              value: opt.code ?? opt.name,
-              children: opt.name
-            },
-            opt.id || opt.code || opt.name
-          ))
-        }
-      )
-    ] });
-  }
-  switch (f.valueType) {
-    case "BOOLEAN":
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ion-w-full", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          IonRadioGroup,
-          {
-            value,
-            onIonChange: (e) => onChange(f.id, e.detail.value),
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { children: "Yes" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(IonRadio, { slot: "end", value: "true" })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { children: "No" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(IonRadio, { slot: "end", value: "false" })
-              ] })
-            ]
-          }
-        )
-      ] });
-    case "DATE":
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          IonInput,
-          {
-            type: "date",
-            value: value || "",
-            onIonChange: (e) => onChange(f.id, e.detail.value)
-          }
-        )
-      ] });
-    default:
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          IonInput,
-          {
-            value: value ?? "",
-            onIonInput: (e) => onChange(f.id, (e.detail.value ?? "").toString()),
-            inputMode: "text",
-            autocapitalize: "off",
-            autocomplete: "off",
-            autocorrect: "off"
-          }
-        )
-      ] });
-  }
-});
-
-const React$d = await importShared('react');
-const {useCallback: useCallback$3,useEffect: useEffect$f,useMemo: useMemo$5,useState: useState$g} = React$d;
+const React$c = await importShared('react');
+const {useCallback: useCallback$3,useEffect: useEffect$e,useMemo: useMemo$5,useState: useState$f} = React$c;
 function ConfirmMaintenanceModal({ program, event, section, getEventDetails, buttonLabel }) {
-  const [open, setOpen] = useState$g(false);
-  const [matches, setMatches] = useState$g([]);
-  const [saving, setSaving] = useState$g(false);
-  const [loading, setLoading] = useState$g(true);
-  const [decisionValue, setDecisionValue] = useState$g("");
-  const [user, setUser] = useState$g(null);
-  const [maintenanceCfg, setMaintenanceCfg] = useState$g(null);
-  useEffect$f(() => {
+  const [open, setOpen] = useState$f(false);
+  const [matches, setMatches] = useState$f([]);
+  const [saving, setSaving] = useState$f(false);
+  const [loading, setLoading] = useState$f(true);
+  const [decisionValue, setDecisionValue] = useState$f("");
+  const [user, setUser] = useState$f(null);
+  const [maintenanceCfg, setMaintenanceCfg] = useState$f(null);
+  useEffect$e(() => {
     (async () => {
       setLoading(true);
       try {
@@ -149498,7 +149428,7 @@ function ConfirmMaintenanceModal({ program, event, section, getEventDetails, but
       }
     })();
   }, [program?.id, section?.id, event?.programStage]);
-  useEffect$f(() => {
+  useEffect$e(() => {
     (async () => {
       try {
         const me = await dataStore.get(
@@ -149756,8 +149686,8 @@ const hideAcknowledgeButton = async (allocationData) => {
   }
 };
 
-const React$c = await importShared('react');
-const {useEffect: useEffect$e,useState: useState$f} = React$c;
+const React$b = await importShared('react');
+const {useEffect: useEffect$d,useState: useState$e} = React$b;
 const A$1 = (x) => Array.isArray(x) ? x : [];
 function Asseng({
   event,
@@ -149766,11 +149696,11 @@ function Asseng({
   getVal,
   elements
 }) {
-  const [openModal, setOpenModal] = useState$f(false);
-  const [formData, setFormData] = useState$f({});
-  const [options, setOptions] = useState$f([]);
-  const [saving, setSaving] = useState$f(false);
-  const [error, setError] = useState$f(null);
+  const [openModal, setOpenModal] = useState$e(false);
+  const [formData, setFormData] = useState$e({});
+  const [options, setOptions] = useState$e([]);
+  const [saving, setSaving] = useState$e(false);
+  const [error, setError] = useState$e(null);
   let buttonPositiveName = "Save";
   const responsibleEngineer = section?.dataElements.find(
     (e) => e.id === "ikEZkhoaTTU"
@@ -149833,7 +149763,7 @@ function Asseng({
       setSaving(false);
     }
   };
-  useEffect$e(() => {
+  useEffect$d(() => {
     setOptions(responsibleEngineer.optionSet.options || []);
   }, [responsibleEngineer]);
   const renderField = (field) => {
@@ -149944,8 +149874,8 @@ function Asseng({
   ] });
 }
 
-const React$b = await importShared('react');
-const {useEffect: useEffect$d,useState: useState$e} = React$b;
+const React$a = await importShared('react');
+const {useEffect: useEffect$c,useState: useState$d} = React$a;
 function Schedule({
   event,
   section,
@@ -149953,10 +149883,10 @@ function Schedule({
   getVal,
   elements
 }) {
-  const [openModal, setOpenModal] = useState$e(false);
-  const [formData, setFormData] = useState$e({});
-  const [saving, setSaving] = useState$e(false);
-  const [dataElements, setDataElements] = useState$e([]);
+  const [openModal, setOpenModal] = useState$d(false);
+  const [formData, setFormData] = useState$d({});
+  const [saving, setSaving] = useState$d(false);
+  const [dataElements, setDataElements] = useState$d([]);
   let buttonPositiveName = "Save";
   const handleChange = (fieldId, value) => {
     setFormData((prev) => ({
@@ -150010,7 +149940,7 @@ function Schedule({
       setSaving(false);
     }
   };
-  useEffect$d(() => {
+  useEffect$c(() => {
     setDataElements(section?.dataElements.filter((de) => elements.some((el) => el === de.id)));
   }, [openModal]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -150057,8 +149987,8 @@ function Schedule({
   ] });
 }
 
-const React$a = await importShared('react');
-const {useContext: useContext$9,useEffect: useEffect$c,useState: useState$d} = React$a;
+const React$9 = await importShared('react');
+const {useContext: useContext$8,useEffect: useEffect$b,useState: useState$c} = React$9;
 const normalizeFieldLabel = (field) => String(field?.formName || field?.name || "").trim().toLowerCase();
 const isFalseLike = (value) => String(value ?? "").trim().toLowerCase() === "false";
 function JobCardGenerate({
@@ -150069,11 +149999,11 @@ function JobCardGenerate({
   elements,
   maintenanceCfg
 }) {
-  const [openModal, setOpenModal] = useState$d(false);
-  const [formData, setFormData] = useState$d({});
-  const [saving, setSaving] = useState$d(false);
-  const [error, setError] = useState$d(null);
-  const [dataElements, setDataElements] = useState$d([]);
+  const [openModal, setOpenModal] = useState$c(false);
+  const [formData, setFormData] = useState$c({});
+  const [saving, setSaving] = useState$c(false);
+  const [error, setError] = useState$c(null);
+  const [dataElements, setDataElements] = useState$c([]);
   let buttonPositiveName = "Save";
   const handleChange = (fieldId, value) => {
     setFormData((prev) => ({
@@ -150122,7 +150052,7 @@ function JobCardGenerate({
     const opt = options.find((opti) => opti?.id === optionSet);
     return opt.options || [];
   };
-  useEffect$c(() => {
+  useEffect$b(() => {
     setDataElements(section?.dataElements.filter((de) => elements.some((el) => el === de.id)));
   }, [openModal]);
   const shouldRenderField = (field) => {
@@ -150189,19 +150119,19 @@ function JobCardGenerate({
   ] });
 }
 
-const React$9 = await importShared('react');
-const {useContext: useContext$8,useEffect: useEffect$b,useState: useState$c} = React$9;
+const React$8 = await importShared('react');
+const {useContext: useContext$7,useEffect: useEffect$a,useState: useState$b} = React$8;
 function Approve({
   event,
   section,
   getEventDetails,
   getVal
 }) {
-  const [openModal, setOpenModal] = useState$c(false);
-  const [formData, setFormData] = useState$c({});
-  const [saving, setSaving] = useState$c(false);
-  const [error, setError] = useState$c(null);
-  const [dataElements, setDataElements] = useState$c([]);
+  const [openModal, setOpenModal] = useState$b(false);
+  const [formData, setFormData] = useState$b({});
+  const [saving, setSaving] = useState$b(false);
+  const [error, setError] = useState$b(null);
+  const [dataElements, setDataElements] = useState$b([]);
   let buttonPositiveName = "Save";
   const handleChange = (fieldId, value) => {
     setFormData((prev) => ({
@@ -150262,7 +150192,7 @@ function Approve({
     const opt = await dataStore.query(`optionSets/${optionSet}?fields=options[id,code,name]`);
     return opt.options || [];
   };
-  useEffect$b(() => {
+  useEffect$a(() => {
     setDataElements(section?.dataElements);
   }, [openModal]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -150312,9 +150242,6 @@ function Approve({
     )
   ] });
 }
-
-const React$8 = await importShared('react');
-const {useContext: useContext$7,useEffect: useEffect$a,useState: useState$b} = React$8;
 
 const React$7 = await importShared('react');
 const {useContext: useContext$6,useEffect: useEffect$9,useState: useState$a} = React$7;
@@ -264464,7 +264391,7 @@ function TeiEvents() {
     return code || null;
   }, [event?.dataValues]);
   const [infoCardExpanded, setInfoCardExpanded] = useState$7(false);
-  const [expandedSections, setExpandedSections] = useState$7({});
+  const { expandedSections, toggleSection, navigateToSection } = useExpandableSections();
   const [filePreviewOpen, setFilePreviewOpen] = useState$7(false);
   const [selectedFile, setSelectedFile] = useState$7({
     fileId: null,
@@ -264689,12 +264616,13 @@ function TeiEvents() {
     return fl;
   };
   const displayVal = (val) => val === null || val === void 0 || val === "" ? "N/A" : val;
-  const toggleSection = (id) => {
-    setExpandedSections((prev) => ({
-      ...prev,
-      [id]: !prev[id]
-    }));
-  };
+  const wfForSections = appworkFlow();
+  const visibleSections = (pg?.programStageSections || []).filter((section) => {
+    if (wfForSections) {
+      return isMaintenanceSection ? wfForSections?.sections?.includes(section?.id) : true;
+    }
+    return true;
+  });
   useEffect$6(() => {
     (async () => {
       await getUser();
@@ -264868,15 +264796,16 @@ function TeiEvents() {
           ]
         }
       ),
-      pg?.programStageSections?.map((section) => {
-        const wf = appworkFlow();
-        if (wf) {
-          const sectionFlow = isMaintenanceSection ? wf?.sections?.includes(section?.id) : { sections: pg?.programStageSections?.map((s) => s.id) };
-          if (!sectionFlow) return null;
-        }
+      visibleSections.map((section, sectionIndex) => {
+        const wf = wfForSections;
+        const isFirst = sectionIndex === 0;
+        const isLast = sectionIndex === visibleSections.length - 1;
+        const prevSection = !isFirst ? visibleSections[sectionIndex - 1] : null;
+        const nextSection = !isLast ? visibleSections[sectionIndex + 1] : null;
         return /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
+            id: `section-${section?.id}`,
             className: "form-section-card",
             style: { marginBottom: "20px" },
             children: [
@@ -265056,6 +264985,15 @@ function TeiEvents() {
                     buttonPositiveName: "Acknowledge",
                     buttonNegativeName: "Cancel",
                     prefillReceiverName: event
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SectionNavButtons,
+                  {
+                    currentSection: section,
+                    prevSection,
+                    nextSection,
+                    onNavigate: navigateToSection
                   }
                 )
               ] })
