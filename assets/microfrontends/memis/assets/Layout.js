@@ -734,7 +734,7 @@ registerPlugin('App', {
     web: () => __vitePreload(() => import('./web.js'),true              ?[]:void 0).then(m => new m.AppWeb()),
 });
 
-const {useEffect: useEffect$1A} = await importShared('react');
+const {useEffect: useEffect$1C} = await importShared('react');
 
 await importShared('react');
 const RefresherWrapper = ({ onRefresh, children }) => {
@@ -8445,25 +8445,25 @@ const dataSetsInit = async (forceRefresh = false) => {
 };
 
 var define_process_env_default$2 = {};
-const React$T = await importShared('react');
-const {useContext: useContext$H,useEffect: useEffect$1z,useRef: useRef$u,useState: useState$1x,useMemo: useMemo$U,Suspense} = React$T;
+const React$V = await importShared('react');
+const {useContext: useContext$I,useEffect: useEffect$1B,useRef: useRef$v,useState: useState$1y,useMemo: useMemo$V,Suspense} = React$V;
 const MainLayout = ({ menuItems, children }) => {
   const navigate = useNavigate();
-  const [hasAccess, setHasAccess] = useState$1x(null);
+  const [hasAccess, setHasAccess] = useState$1y(null);
   const isApk = Capacitor.isNativePlatform();
   const isMobile = isPlatform("ios") || isPlatform("android");
   const isWeb = isPlatform("mobileweb") || isPlatform("desktop");
-  const [user, setUser] = useState$1x(null);
+  const [user, setUser] = useState$1y(null);
   const { search } = useLocation();
-  const [superuser, setSuperUser] = useState$1x(null);
-  const [showNotifications, setShowNotifications] = useState$1x(false);
-  const [notifications, setNotifications] = useState$1x([]);
-  const [unReadNotifications, setUnReadNotifications] = useState$1x([]);
-  const [messageCount, setMessageCount] = useState$1x(0);
-  const [showDropdown, setShowDropdown] = useState$1x(false);
-  const [userOrgUnit, setUserOrgUnits] = useState$1x("");
-  const notificationsRef = useRef$u(null);
-  const dropdownRef = useRef$u(null);
+  const [superuser, setSuperUser] = useState$1y(null);
+  const [showNotifications, setShowNotifications] = useState$1y(false);
+  const [notifications, setNotifications] = useState$1y([]);
+  const [unReadNotifications, setUnReadNotifications] = useState$1y([]);
+  const [messageCount, setMessageCount] = useState$1y(0);
+  const [showDropdown, setShowDropdown] = useState$1y(false);
+  const [userOrgUnit, setUserOrgUnits] = useState$1y("");
+  const notificationsRef = useRef$v(null);
+  const dropdownRef = useRef$v(null);
   function bridgeNavigate(target) {
     try {
       const d = document;
@@ -8557,13 +8557,13 @@ const MainLayout = ({ menuItems, children }) => {
     loading: menuLoading = false,
     refresh: refreshMenu,
     menuError
-  } = useContext$H(MEMISContext.MenuContext) || {};
-  const { isLoading } = useContext$H(MEMISContext.DashboardContext);
+  } = useContext$I(MEMISContext.MenuContext) || {};
+  const { isLoading } = useContext$I(MEMISContext.DashboardContext);
   const {
     programs = [],
     loading: programsLoading = false,
     refresh: refreshPrograms
-  } = useContext$H(MEMISContext.ProgramContext) || {};
+  } = useContext$I(MEMISContext.ProgramContext) || {};
   const getMessages = async () => {
     try {
       const data = await dataStore.get(
@@ -8619,7 +8619,7 @@ const MainLayout = ({ menuItems, children }) => {
       console.error("Error handling notification click", err);
     }
   };
-  useEffect$1z(() => {
+  useEffect$1B(() => {
     const handleOutside = (e) => {
       if (notificationsRef.current && !notificationsRef.current.contains(e.target))
         setShowNotifications(false);
@@ -8657,14 +8657,8 @@ const MainLayout = ({ menuItems, children }) => {
       window.location.replace("/memis/login");
     }
   };
-  useEffect$1z(() => {
+  useEffect$1B(() => {
     getUser();
-  }, []);
-  useEffect$1z(() => {
-    const intervalId = setInterval(() => {
-      getMessages();
-    }, 6e4);
-    return () => clearInterval(intervalId);
   }, []);
   async function logoutAndBroadcast() {
     try {
@@ -8690,7 +8684,7 @@ const MainLayout = ({ menuItems, children }) => {
       getMessages()
     ]);
   };
-  useEffect$1z(() => {
+  useEffect$1B(() => {
     const loadUser = async () => {
       try {
         await dataSetsInit();
@@ -8707,7 +8701,7 @@ const MainLayout = ({ menuItems, children }) => {
     };
     loadUser();
   }, []);
-  useEffect$1z(() => {
+  useEffect$1B(() => {
     const loadAccess = async () => {
       try {
         const res = await canAccessSettings();
@@ -9019,10 +9013,10 @@ const MainLayout = ({ menuItems, children }) => {
   ] });
 };
 
-const React$S = await importShared('react');
-const {useContext: useContext$G,useEffect: useEffect$1y,useMemo: useMemo$T} = React$S;
+const React$U = await importShared('react');
+const {useContext: useContext$H,useEffect: useEffect$1A,useMemo: useMemo$U} = React$U;
 const WithRoleBasedLayout = () => {
-  const { menuModel, loading } = useContext$G(MEMISContext.MenuContext);
+  const { menuModel, loading } = useContext$H(MEMISContext.MenuContext);
   return (
     // <MainLayout menuItems={groupedMenu}>
     /* @__PURE__ */ jsxRuntimeExports.jsxs(MainLayout, { menuItems: menuModel, children: [
@@ -19366,7 +19360,7 @@ class TimeSeriesScale extends TimeScale {
     }
 }
 
-const {forwardRef: forwardRef$1,useRef: useRef$t,useEffect: useEffect$1x} = await importShared('react');
+const {forwardRef: forwardRef$1,useRef: useRef$u,useEffect: useEffect$1z} = await importShared('react');
 
 const defaultDatasetIdKey = 'label';
 function reforwardRef(ref, value) {
@@ -19413,8 +19407,8 @@ function cloneData(data, datasetIdKey = defaultDatasetIdKey) {
 
 function ChartComponent(props, ref) {
     const { height = 150, width = 300, redraw = false, datasetIdKey, type, data, options, plugins = [], fallbackContent, updateMode, ...canvasProps } = props;
-    const canvasRef = useRef$t(null);
-    const chartRef = useRef$t(null);
+    const canvasRef = useRef$u(null);
+    const chartRef = useRef$u(null);
     const renderChart = ()=>{
         if (!canvasRef.current) return;
         chartRef.current = new Chart$1(canvasRef.current, {
@@ -19434,7 +19428,7 @@ function ChartComponent(props, ref) {
             chartRef.current = null;
         }
     };
-    useEffect$1x(()=>{
+    useEffect$1z(()=>{
         if (!redraw && chartRef.current && options) {
             setOptions(chartRef.current, options);
         }
@@ -19442,7 +19436,7 @@ function ChartComponent(props, ref) {
         redraw,
         options
     ]);
-    useEffect$1x(()=>{
+    useEffect$1z(()=>{
         if (!redraw && chartRef.current) {
             setLabels(chartRef.current.config.data, data.labels);
         }
@@ -19450,7 +19444,7 @@ function ChartComponent(props, ref) {
         redraw,
         data.labels
     ]);
-    useEffect$1x(()=>{
+    useEffect$1z(()=>{
         if (!redraw && chartRef.current && data.datasets) {
             setDatasets(chartRef.current.config.data, data.datasets, datasetIdKey);
         }
@@ -19458,7 +19452,7 @@ function ChartComponent(props, ref) {
         redraw,
         data.datasets
     ]);
-    useEffect$1x(()=>{
+    useEffect$1z(()=>{
         if (!chartRef.current) return;
         if (redraw) {
             destroyChart();
@@ -19473,14 +19467,14 @@ function ChartComponent(props, ref) {
         data.datasets,
         updateMode
     ]);
-    useEffect$1x(()=>{
+    useEffect$1z(()=>{
         if (!chartRef.current) return;
         destroyChart();
         setTimeout(renderChart);
     }, [
         type
     ]);
-    useEffect$1x(()=>{
+    useEffect$1z(()=>{
         renderChart();
         return ()=>destroyChart();
     }, []);
@@ -19508,14 +19502,14 @@ const Doughnut = /* #__PURE__ */ createTypedChart('doughnut', DoughnutController
 await importShared('react');
 Chart$1.register(ArcElement, plugin_tooltip, plugin_legend);
 
+const React$T = await importShared('react');
+const {useContext: useContext$G,useEffect: useEffect$1y,useState: useState$1x} = React$T;
+
+const React$S = await importShared('react');
+const {useEffect: useEffect$1x} = React$S;
+
 const React$R = await importShared('react');
-const {useContext: useContext$F,useEffect: useEffect$1w,useState: useState$1w} = React$R;
-
-const React$Q = await importShared('react');
-const {useEffect: useEffect$1v} = React$Q;
-
-const React$P = await importShared('react');
-const {useState: useState$1v,useEffect: useEffect$1u,useMemo: useMemo$S,useCallback: useCallback$q} = React$P;
+const {useState: useState$1w,useEffect: useEffect$1w,useMemo: useMemo$T,useCallback: useCallback$s} = React$R;
 
 const {createPortal: createPortal$4} = await importShared('react-dom');
 const SearchableSelect = ({
@@ -19530,10 +19524,10 @@ const SearchableSelect = ({
   value = null,
   closeOnSignal
 }) => {
-  const [isOpen, setIsOpen] = useState$1v(false);
-  const [searchTerm, setSearchTerm] = useState$1v("");
-  const [selectedItems, setSelectedItems] = useState$1v([]);
-  useEffect$1u(() => {
+  const [isOpen, setIsOpen] = useState$1w(false);
+  const [searchTerm, setSearchTerm] = useState$1w("");
+  const [selectedItems, setSelectedItems] = useState$1w([]);
+  useEffect$1w(() => {
     if (value == null) {
       if (selectedItems?.length > 0) setSelectedItems([]);
       return;
@@ -19551,25 +19545,25 @@ const SearchableSelect = ({
     );
     if (!isEqual) setSelectedItems(newSelected);
   }, [value, multiple, itemValueField, data, selectedItems]);
-  useEffect$1u(() => {
+  useEffect$1w(() => {
     if (closeOnSignal) {
       setIsOpen(false);
       setSearchTerm("");
     }
   }, [closeOnSignal]);
-  const filteredData = useMemo$S(() => {
+  const filteredData = useMemo$T(() => {
     const term = searchTerm?.toLowerCase();
     return data.filter(
       (item) => (item[itemTextField] || "").toLowerCase().includes(term)
     );
   }, [data, searchTerm, itemTextField]);
-  const isItemSelected = useCallback$q(
+  const isItemSelected = useCallback$s(
     (item) => selectedItems?.some(
       (sel) => sel[itemValueField] === item[itemValueField]
     ),
     [selectedItems, itemValueField]
   );
-  const handleSelect = useCallback$q(
+  const handleSelect = useCallback$s(
     (item) => {
       let newSelection;
       if (multiple) {
@@ -20078,7 +20072,7 @@ const getDateRangeFromPeriod = (period) => {
   }
 };
 
-const {useEffect: useEffect$1t,useMemo: useMemo$R,useState: useState$1u} = await importShared('react');
+const {useEffect: useEffect$1v,useMemo: useMemo$S,useState: useState$1v} = await importShared('react');
 const RELATIVE_PERIODS = [
   { id: "THIS_MONTH", label: "This Month" },
   { id: "LAST_MONTH", label: "Last Month" },
@@ -20095,17 +20089,17 @@ const FilterFields = ({
   onClear,
   setIsLoading
 }) => {
-  const [departments, setDepartments] = useState$1u([]);
-  const [equipmentList, setEquipmentList] = useState$1u([]);
-  const [showFacilityFility, setShowFacilityFilter] = useState$1u(true);
-  const [showPeriodModal, setShowPeriodModal] = useState$1u(false);
-  const [periodTab, setPeriodTab] = useState$1u("RELATIVE");
-  const [tempPeriod, setTempPeriod] = useState$1u(filters.period);
-  const [tempStartDate, setTempStartDate] = useState$1u(filters.startDate);
-  const [tempEndDate, setTempEndDate] = useState$1u(filters.endDate);
-  const [isMobile, setIsMobile] = useState$1u(window.innerWidth < 768);
-  const [showMobileFilters, setShowMobileFilters] = useState$1u(false);
-  useEffect$1t(() => {
+  const [departments, setDepartments] = useState$1v([]);
+  const [equipmentList, setEquipmentList] = useState$1v([]);
+  const [showFacilityFility, setShowFacilityFilter] = useState$1v(true);
+  const [showPeriodModal, setShowPeriodModal] = useState$1v(false);
+  const [periodTab, setPeriodTab] = useState$1v("RELATIVE");
+  const [tempPeriod, setTempPeriod] = useState$1v(filters.period);
+  const [tempStartDate, setTempStartDate] = useState$1v(filters.startDate);
+  const [tempEndDate, setTempEndDate] = useState$1v(filters.endDate);
+  const [isMobile, setIsMobile] = useState$1v(window.innerWidth < 768);
+  const [showMobileFilters, setShowMobileFilters] = useState$1v(false);
+  useEffect$1v(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -20114,7 +20108,7 @@ const FilterFields = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  useEffect$1t(() => {
+  useEffect$1v(() => {
     const load = async () => {
       const [orgUnits, optionSets] = await Promise.all([
         LocalForageServiceInstance.getItem("userOrganisationUnits", "userOrgUnits"),
@@ -20144,10 +20138,10 @@ const FilterFields = ({
   const clearFilters = () => {
     if (onClear) onClear();
   };
-  const hasActiveFilters = useMemo$R(() => {
+  const hasActiveFilters = useMemo$S(() => {
     return filters.equipment !== "" || filters.department !== defaultDepartment || filters.period !== "THIS_MONTH";
   }, [filters, defaultDepartment]);
-  useEffect$1t(() => {
+  useEffect$1v(() => {
     if (showPeriodModal) {
       setTempPeriod(filters.period);
       setTempStartDate(filters.startDate);
@@ -21021,7 +21015,7 @@ const EquipmentStats = {
   },
 };
 
-const {useContext: useContext$E,useEffect: useEffect$1s,useMemo: useMemo$Q,useState: useState$1t} = await importShared('react');
+const {useContext: useContext$F,useEffect: useEffect$1u,useMemo: useMemo$R,useState: useState$1u} = await importShared('react');
 const DEFAULT_FILTERS = {
   startDate: "",
   endDate: "",
@@ -21030,15 +21024,15 @@ const DEFAULT_FILTERS = {
   period: "THIS_MONTH"
 };
 const Dashboard = () => {
-  const { dashboardConfigs, isLoading, reload, setIsLoading } = useContext$E(
+  const { dashboardConfigs, isLoading, reload, setIsLoading } = useContext$F(
     MEMISContext.DashboardContext
   );
-  const { user } = useContext$E(MEMISContext.UserRolesContext);
-  const [isLoadingFromFilters, setIsLoadingFromFilters] = useState$1t(false);
-  const [defaultDepartment, setDefaultDepartment] = useState$1t("");
-  const [dashboardData, setDashboardData] = useState$1t({});
-  const [selectedFilters, setSelectedFilters] = useState$1t(DEFAULT_FILTERS);
-  useEffect$1s(() => {
+  const { user } = useContext$F(MEMISContext.UserRolesContext);
+  const [isLoadingFromFilters, setIsLoadingFromFilters] = useState$1u(false);
+  const [defaultDepartment, setDefaultDepartment] = useState$1u("");
+  const [dashboardData, setDashboardData] = useState$1u({});
+  const [selectedFilters, setSelectedFilters] = useState$1u(DEFAULT_FILTERS);
+  useEffect$1u(() => {
     const loadDefaultDepartment = async () => {
       const orgUnits = await LocalForageServiceInstance.getItem(
         "userOrganisationUnits",
@@ -21092,14 +21086,14 @@ const Dashboard = () => {
       period: "THIS_MONTH"
     });
   };
-  useMemo$Q(() => {
+  useMemo$R(() => {
     return dashboardConfigs?.some(
       (d) => d.access?.some(
         (acc) => user?.userRoles?.some((ur) => ur?.id === acc?.id)
       )
     );
   }, [dashboardConfigs, user]);
-  useEffect$1s(() => {
+  useEffect$1u(() => {
     setIsLoadingFromFilters(true);
     setTimeout(() => {
       setIsLoadingFromFilters(false);
@@ -21415,7 +21409,7 @@ const Dashboard = () => {
       setIsLoading(false);
     }
   };
-  useEffect$1s(() => {
+  useEffect$1u(() => {
     let startDate;
     let endDate;
     const today = /* @__PURE__ */ new Date();
@@ -21465,8 +21459,8 @@ const Dashboard = () => {
   ] });
 };
 
-const React$O = await importShared('react');
-const {useEffect: useEffect$1r,useState: useState$1s} = React$O;
+const React$Q = await importShared('react');
+const {useEffect: useEffect$1t,useState: useState$1t} = React$Q;
 function OrganisationUnitsWidget({
   programOrgUnits = [],
   selectedOrganisationUnit,
@@ -21481,8 +21475,8 @@ function OrganisationUnitsWidget({
   searchParams.get("q");
   searchParams.get("stage");
   searchParams.get("equipmentId");
-  const [facility, setFacility] = useState$1s("Facility");
-  const [orgUnitName, setOrgUnitName] = useState$1s("");
+  const [facility, setFacility] = useState$1t("Facility");
+  const [orgUnitName, setOrgUnitName] = useState$1t("");
   const getTEI = async (teiOu2) => {
     try {
       await dataStore.get(`tracker/trackedEntities/${teiOu2}`).then(async (res) => {
@@ -21497,7 +21491,7 @@ function OrganisationUnitsWidget({
       console.error("Failed to fetch TEI data:", error);
     }
   };
-  useEffect$1r(() => {
+  useEffect$1t(() => {
     if (!Array.isArray(programOrgUnits) || programOrgUnits?.length === 0 || !dataStoreData) {
       return;
     }
@@ -21694,21 +21688,21 @@ const ComponentsField = ({
   ] });
 };
 
-const {useEffect: useEffect$1q,useMemo: useMemo$P,useState: useState$1r} = await importShared('react');
+const {useEffect: useEffect$1s,useMemo: useMemo$Q,useState: useState$1s} = await importShared('react');
 
 function useSectionVisibilityConfig(programId) {
-    const [tick, setTick] = useState$1r(0);
-    const [config, setConfig] = useState$1r(null);
+    const [tick, setTick] = useState$1s(0);
+    const [config, setConfig] = useState$1s(null);
 
     // Listen for external updates
-    useEffect$1q(() => {
+    useEffect$1s(() => {
         const onUpdate = () => setTick((n) => n + 1);
         window.addEventListener("memis:sectionVisibility:updated", onUpdate);
         return () => window.removeEventListener("memis:sectionVisibility:updated", onUpdate);
     }, []);
 
     // Fetch data asynchronously
-    useEffect$1q(() => {
+    useEffect$1s(() => {
         let mounted = true;
         const fetchConfig = async () => {
             try {
@@ -21726,7 +21720,7 @@ function useSectionVisibilityConfig(programId) {
     }, [tick]);
 
     // Derive visibility rules for the current program
-    const visibilityRules = useMemo$P(() => {
+    const visibilityRules = useMemo$Q(() => {
         if (!programId || !config) return null;
 
         try {
@@ -21782,10 +21776,10 @@ function useSectionVisibilityConfig(programId) {
     return visibilityRules;
 }
 
-const {useMemo: useMemo$O} = await importShared('react');
+const {useMemo: useMemo$P} = await importShared('react');
 
 
-const A$b = (x) => (Array.isArray(x) ? x : []);
+const A$a = (x) => (Array.isArray(x) ? x : []);
 
 const normalizeText = (value) =>
     typeof value === "string"
@@ -21832,7 +21826,7 @@ const extractVariableNames = (condition) => {
 const buildFieldMetaById = (sections) => {
     const metaMap = {};
     sections.forEach((section) => {
-        A$b(section?.fields).forEach((field) => {
+        A$a(section?.fields).forEach((field) => {
             const node = field?.dataElement || field;
             const id = node?.id || field?.id || field;
             if (id && !metaMap[id]) {
@@ -21846,7 +21840,7 @@ const buildFieldMetaById = (sections) => {
 const resolveOptionLabel = (metaMap, fieldId, rawValue) => {
     if (!fieldId || rawValue == null) return rawValue;
     const meta = metaMap[fieldId];
-    const options = A$b(meta?.optionSet?.options);
+    const options = A$a(meta?.optionSet?.options);
     if (!options.length) return rawValue;
     const target = normalizeText(rawValue);
     const match = options.find((opt) =>
@@ -21862,21 +21856,21 @@ function useProgramRules({
     formData = {},
     isAddFlow = false,
 }) {
-    const isReportsProgram = useMemo$O(() => {
+    const isReportsProgram = useMemo$P(() => {
         if (!program) return false;
         const programId = program?.id || "";
         const name = normalizeText(program?.name || program?.displayName);
         return programId === "C0ZvPkEFpLt" || name === "reports";
     }, [program]);
 
-    const programRulesList = useMemo$O(() => {
+    const programRulesList = useMemo$P(() => {
         if (Array.isArray(externalRules) && externalRules.length) return externalRules;
         if (Array.isArray(program?.programRules)) return program.programRules;
         return [];
     }, [externalRules, program]);
 
-    const programRuleVariables = useMemo$O(
-        () => A$b(program?.programRuleVariables),
+    const programRuleVariables = useMemo$P(
+        () => A$a(program?.programRuleVariables),
         [program]
     );
 
@@ -21887,7 +21881,7 @@ function useProgramRules({
         return normalizeText(rule.program.name) === normalizeText(program.name);
     };
 
-    const reviewRule = useMemo$O(
+    const reviewRule = useMemo$P(
         () =>
             programRulesList.find((rule) => {
                 if (!matchesProgram(rule)) return false;
@@ -21900,11 +21894,11 @@ function useProgramRules({
         [programRulesList, program]
     );
 
-    const assignRule = useMemo$O(
+    const assignRule = useMemo$P(
         () =>
             programRulesList.find((rule) => {
                 if (!matchesProgram(rule)) return false;
-                return A$b(rule?.programRuleActions).some(
+                return A$a(rule?.programRuleActions).some(
                     (action) =>
                         action?.programRuleActionType === "ASSIGN" &&
                         action?.dataElement?.id
@@ -21913,12 +21907,12 @@ function useProgramRules({
         [programRulesList, program]
     );
 
-    const fieldMetaById = useMemo$O(
+    const fieldMetaById = useMemo$P(
         () => buildFieldMetaById(sections),
         [sections]
     );
 
-    const referencedVariableNames = useMemo$O(() => {
+    const referencedVariableNames = useMemo$P(() => {
         const names = new Set();
         [reviewRule, assignRule].forEach((rule) => {
             extractVariableNames(rule?.condition).forEach((name) =>
@@ -21928,7 +21922,7 @@ function useProgramRules({
         return Array.from(names);
     }, [reviewRule, assignRule]);
 
-    const reportTypeVariable = useMemo$O(
+    const reportTypeVariable = useMemo$P(
         () =>
             referencedVariableNames
                 .map((name) =>
@@ -21951,14 +21945,14 @@ function useProgramRules({
         : undefined;
     const normalizedReportType = normalizeText(reportTypeLabel || reportTypeValue);
 
-    const reviewTriggerSet = useMemo$O(
+    const reviewTriggerSet = useMemo$P(
         () => (reviewRule?.condition ? extractComparisonValues(reviewRule.condition) : new Set()),
         [reviewRule]
     );
 
     const requiresReview = Boolean(normalizedReportType) && reviewTriggerSet.has(normalizedReportType) && isReportsProgram;
 
-    const approverAssignments = useMemo$O(
+    const approverAssignments = useMemo$P(
         () => (assignRule?.condition ? parseAssignPairs(assignRule.condition) : {}),
         [assignRule]
     );
@@ -21967,15 +21961,15 @@ function useProgramRules({
         ? approverAssignments[normalizedReportType]
         : undefined;
 
-    const autoAssignedApprovers = useMemo$O(
+    const autoAssignedApprovers = useMemo$P(
         () => new Set(Object.values(approverAssignments).filter(Boolean)),
         [approverAssignments]
     );
 
-    const assignAction = useMemo$O(() => {
+    const assignAction = useMemo$P(() => {
         if (!assignRule) return null;
         return (
-            A$b(assignRule.programRuleActions).find(
+            A$a(assignRule.programRuleActions).find(
                 (action) =>
                     action?.programRuleActionType === "ASSIGN" &&
                     action?.dataElement?.id
@@ -21985,10 +21979,10 @@ function useProgramRules({
 
     const approvingOfficerFieldId = assignAction?.dataElement?.id || null;
 
-    const approvingSectionId = useMemo$O(() => {
+    const approvingSectionId = useMemo$P(() => {
         if (!approvingOfficerFieldId) return null;
         for (const section of sections) {
-            const hasField = A$b(section?.fields).some((field) => {
+            const hasField = A$a(section?.fields).some((field) => {
                 const node = field?.dataElement || field;
                 const id = node?.id || field?.id || field;
                 return id === approvingOfficerFieldId;
@@ -22034,7 +22028,7 @@ const DE_TRANSFER_TO_LOCATION = "Hk2JSouuvga";
 const DE_TRANSFER_EQUIPMENT_NAME = "wObkfr29dtK";
 const DE_TRANSFER_EQUIPMENT_TO_BE_TRANSFERRED = "oIEtXbVslFN";
 
-const {useEffect: useEffect$1p,useRef: useRef$s,useState: useState$1q} = await importShared('react');
+const {useEffect: useEffect$1r,useRef: useRef$t,useState: useState$1r} = await importShared('react');
 
 const NO_WARD_ALLOCATED_MESSAGE = "THE USER HAS NO WARD ALLOCATED";
 let facilityOrgUnitsCache = null;
@@ -22083,8 +22077,8 @@ function useTransferDefaults({
     setFormData,
     userOrganisationUnits,
 }) {
-    const transferLocationDefaultAppliedRef = useRef$s(false);
-    const transferToLocationDefaultAppliedRef = useRef$s(false);
+    const transferLocationDefaultAppliedRef = useRef$t(false);
+    const transferToLocationDefaultAppliedRef = useRef$t(false);
 
     const isWardInChargeForTransfer =
         user &&
@@ -22120,7 +22114,7 @@ function useTransferDefaults({
 
     const transferLocationValue = formData?.[DE_TRANSFER_LOCATION_TYPE];
 
-    useEffect$1p(() => {
+    useEffect$1r(() => {
         if (transferLocationDefaultAppliedRef.current) return;
         if (!isWardInChargeForTransfer && !isHospitalAdminForTransfer) return;
         if (isEdit) return;
@@ -22153,7 +22147,7 @@ function useTransferDefaults({
         setFormData,
     ]);
 
-    useEffect$1p(() => {
+    useEffect$1r(() => {
         const shouldPrefill =
             isWardInChargeForTransfer || isHospitalAdminForTransfer;
         if (!shouldPrefill) return;
@@ -22205,16 +22199,16 @@ function useTransferOrganisationUnitOptions({
     isHospitalAdminForTransfer,
     transferLocationValue,
 }) {
-    const [facilityOrgUnits, setFacilityOrgUnits] = useState$1q([]);
-    const [facilityOrgUnitsLoading, setFacilityOrgUnitsLoading] = useState$1q(false);
-    const facilityOrgUnitsLoadedRef = useRef$s(false);
+    const [facilityOrgUnits, setFacilityOrgUnits] = useState$1r([]);
+    const [facilityOrgUnitsLoading, setFacilityOrgUnitsLoading] = useState$1r(false);
+    const facilityOrgUnitsLoadedRef = useRef$t(false);
 
     const shouldUseFacilityGroup =
         isHospitalAdminForTransfer &&
         transferLocationValue &&
         String(transferLocationValue).trim() === OPTION_CODE_OUTSIDE_FACILITY;
 
-    useEffect$1p(() => {
+    useEffect$1r(() => {
         if (!shouldUseFacilityGroup) return;
         if (facilityOrgUnitsLoadedRef.current) return;
 
@@ -22279,7 +22273,7 @@ function useTransferOrganisationUnitOptions({
 /**
  * Utility: normalise collection to array.
  */
-const A$a = (x) => (Array.isArray(x) ? x : []);
+const A$9 = (x) => (Array.isArray(x) ? x : []);
 
 const Block = ({ children, style }) => /* @__PURE__ */ jsxRuntimeExports.jsx(
   "div",
@@ -22548,7 +22542,7 @@ async function getSkipLogicConfig(programId) {
   }
 }
 
-const {useMemo: useMemo$N} = await importShared('react');
+const {useMemo: useMemo$O} = await importShared('react');
 
 /**
  * Hook: compute the primary button label from:
@@ -22569,7 +22563,7 @@ function usePrimaryButtonLabel({
 }) {
     // const cfg = getButtonTextConfig(dataStore);
 
-    return useMemo$N(() => {
+    return useMemo$O(() => {
         if (loading) return "Saving…";
 
         // Always show "Submit" on last step to make UX explicit.
@@ -22634,7 +22628,7 @@ async function getEquipmentListOnTransferOutside(event) {
     }
 }
 
-const {useState: useState$1p,useEffect: useEffect$1o,useRef: useRef$r} = await importShared('react');
+const {useState: useState$1q,useEffect: useEffect$1q,useRef: useRef$s} = await importShared('react');
 
 const ATTR$1 = ATTRIBUTE_FOR_EQUIPMENT_LOOKUP;
 
@@ -22649,9 +22643,9 @@ function useEquipmentOptions(
   selectedOrganisationUnit = null,
   event = null,
 ) {
-  const equipmentCacheRef = useRef$r(new Map());
-  const [equipmentOptions, setEquipmentOptions] = useState$1p([]);
-  const [equipmentLoading, setEquipmentLoading] = useState$1p(false);
+  const equipmentCacheRef = useRef$s(new Map());
+  const [equipmentOptions, setEquipmentOptions] = useState$1q([]);
+  const [equipmentLoading, setEquipmentLoading] = useState$1q(false);
 
   /* ---------------------------------------------------------
        Determine whether outside-facility logic should apply
@@ -22796,7 +22790,7 @@ function useEquipmentOptions(
   /* ---------------------------------------------------------
        Effect trigger
        --------------------------------------------------------- */
-  useEffect$1o(() => {
+  useEffect$1q(() => {
     let active = true;
 
     const run = async () => {
@@ -22827,18 +22821,18 @@ function useEquipmentOptions(
   };
 }
 
-const {useState: useState$1o,useEffect: useEffect$1n,useRef: useRef$q} = await importShared('react');
+const {useState: useState$1p,useEffect: useEffect$1p,useRef: useRef$r} = await importShared('react');
 
 /**
  * Custom hook to manage status field initialization and tracking
  * Encapsulates status-related state logic
  */
 function useStatusField({ programObj, programKey, selectedStageId, isEdit, formData, setFormData }) {
-    const [statusFieldId, setStatusFieldId] = useState$1o(null);
-    const [statusOptionCodes, setStatusOptionCodes] = useState$1o({});
-    const lastApproverNotificationRef = useRef$q(null);
+    const [statusFieldId, setStatusFieldId] = useState$1p(null);
+    const [statusOptionCodes, setStatusOptionCodes] = useState$1p({});
+    const lastApproverNotificationRef = useRef$r(null);
 
-    useEffect$1n(() => {
+    useEffect$1p(() => {
         if (!programObj || isEdit) return;
 
         let statusDE = null;
@@ -22893,7 +22887,7 @@ function useStatusField({ programObj, programKey, selectedStageId, isEdit, formD
     };
 }
 
-const {useState: useState$1n} = await importShared('react');
+const {useState: useState$1o} = await importShared('react');
 
 
 /**
@@ -22901,8 +22895,8 @@ const {useState: useState$1n} = await importShared('react');
  * Consolidates image-related state
  */
 function useImageState() {
-    const [imageUrls, setImageUrls] = useState$1n({});
-    const [imageLoading, setImageLoading] = useState$1n({});
+    const [imageUrls, setImageUrls] = useState$1o({});
+    const [imageLoading, setImageLoading] = useState$1o({});
 
     return {
         imageUrls,
@@ -22912,7 +22906,7 @@ function useImageState() {
     };
 }
 
-const {useState: useState$1m} = await importShared('react');
+const {useState: useState$1n} = await importShared('react');
 
 
 /**
@@ -22920,7 +22914,7 @@ const {useState: useState$1m} = await importShared('react');
  * Consolidates date picker UI state
  */
 function useDateRangePopover() {
-    const [dateRangePopover, setDateRangePopover] = useState$1m({
+    const [dateRangePopover, setDateRangePopover] = useState$1n({
         from: false,
         to: false,
         fieldId: null,
@@ -22932,14 +22926,14 @@ function useDateRangePopover() {
     };
 }
 
-const {useMemo: useMemo$M} = await importShared('react');
+const {useMemo: useMemo$N} = await importShared('react');
 
 /**
  * Custom hook to compute sections from program/stage metadata
  * Shape: [{ id, name, fields:[dataElement|trackedEntityAttribute] }]
  */
 function useSections({ programObj, stageObj, programKey, selectedStageId }) {
-    return useMemo$M(() => {
+    return useMemo$N(() => {
         const mapSectionId = (section) => {
             const sectionName = (section.name || section.formName || "").toLowerCase();
 
@@ -22956,16 +22950,16 @@ function useSections({ programObj, stageObj, programKey, selectedStageId }) {
 
         // Event program (WITHOUT_REGISTRATION)
         if (isStageObj(stageObj) && (!programObj || programObj.programType === "WITHOUT_REGISTRATION")) {
-            const secs = A$a(stageObj.programStageSections);
+            const secs = A$9(stageObj.programStageSections);
             if (secs.length) {
                 return secs.map((s) => ({
                     id: mapSectionId(s),
                     name: s.formName || s.name,
-                    fields: A$a(s.dataElements),
+                    fields: A$9(s.dataElements),
                 }));
             }
 
-            const flat = A$a(stageObj.programStageDataElements)
+            const flat = A$9(stageObj.programStageDataElements)
                 .map((psde) => psde?.dataElement)
                 .filter(Boolean);
             return [{ id: "default", name: "Form", fields: flat }];
@@ -22973,19 +22967,19 @@ function useSections({ programObj, stageObj, programKey, selectedStageId }) {
 
         // Tracker stage event form (teiEvents)
         if (programKey === "teiEvents" && programObj && selectedStageId) {
-            const st = A$a(programObj.programStages).find((s) => s?.id === selectedStageId);
+            const st = A$9(programObj.programStages).find((s) => s?.id === selectedStageId);
             if (!st) return [];
-            const secs = A$a(st.programStageSections);
+            const secs = A$9(st.programStageSections);
 
             if (secs.length) {
                 return secs.map((s) => ({
                     id: mapSectionId(s),
                     name: s.formName || s.name,
-                    fields: A$a(s.dataElements),
+                    fields: A$9(s.dataElements),
                 }));
             }
 
-            const flat = A$a(st.programStageDataElements)
+            const flat = A$9(st.programStageDataElements)
                 .map((psde) => psde?.dataElement)
                 .filter(Boolean);
             return [{ id: "default", name: "Form", fields: flat }];
@@ -22993,16 +22987,16 @@ function useSections({ programObj, stageObj, programKey, selectedStageId }) {
 
         // Tracker enrollment form (WITH_REGISTRATION)
         if (programObj && programObj.programType === "WITH_REGISTRATION") {
-            const secs = A$a(programObj.programSections);
+            const secs = A$9(programObj.programSections);
             if (secs.length) {
                 return secs.map((s) => ({
                     id: mapSectionId(s),
                     name: s.formName || s.name,
-                    fields: A$a(s.trackedEntityAttributes),
+                    fields: A$9(s.trackedEntityAttributes),
                 }));
             }
 
-            const teas = A$a(programObj.programTrackedEntityAttributes)
+            const teas = A$9(programObj.programTrackedEntityAttributes)
                 .map((a) => a?.trackedEntityAttribute)
                 .filter(Boolean);
 
@@ -23013,7 +23007,7 @@ function useSections({ programObj, stageObj, programKey, selectedStageId }) {
     }, [programObj, stageObj, programKey, selectedStageId]);
 }
 
-const {useMemo: useMemo$L,useEffect: useEffect$1m,useState: useState$1l} = await importShared('react');
+const {useMemo: useMemo$M,useEffect: useEffect$1o,useState: useState$1m} = await importShared('react');
 
 function useSectionsList({
   sections,
@@ -23022,10 +23016,10 @@ function useSectionsList({
   user,
   formData,
 }) {
-  const [sectionAccessMap, setSectionAccessMap] = useState$1l(null);
+  const [sectionAccessMap, setSectionAccessMap] = useState$1m(null);
 
   // 🔹 1. Load section access asynchronously
-  useEffect$1m(() => {
+  useEffect$1o(() => {
 
     if (!sections || !user || !programId) return;
 
@@ -23047,7 +23041,7 @@ function useSectionsList({
   }, [sections, programId, user]);
 
   // 🔹 2. Compute final visible sections
-  const sectionsList = useMemo$L(() => {
+  const sectionsList = useMemo$M(() => {
     if (!sections || !sectionAccessMap) return [];
 
     // Filter writable sections
@@ -23205,7 +23199,7 @@ const applyOtherFieldRules = ({
   });
 };
 
-const {useState: useState$1k,useEffect: useEffect$1l,useMemo: useMemo$K,useRef: useRef$p} = await importShared('react');
+const {useState: useState$1l,useEffect: useEffect$1n,useMemo: useMemo$L,useRef: useRef$q} = await importShared('react');
 
 /**
  * Hook to manage field visibility based on skip logic and OTHER field rules
@@ -23222,11 +23216,11 @@ function useHiddenFields({
   activeSection,
   setStepIndex,
 }) {
-  const [skipLogicMap, setSkipLogicMap] = useState$1k({});
-  const [defaultHidden, setDefaultHidden] = useState$1k(new Set());
+  const [skipLogicMap, setSkipLogicMap] = useState$1l({});
+  const [defaultHidden, setDefaultHidden] = useState$1l(new Set());
 
   // Load skip logic config from LocalForage whenever programId changes
-  useEffect$1l(() => {
+  useEffect$1n(() => {
     if (!programId) return;
 
     let cancelled = false;
@@ -23248,7 +23242,7 @@ function useHiddenFields({
   }, [programId]);
 
   // Initial hidden fields: Hide OTHER text fields by default in create mode
-  const initialHiddenFields = useMemo$K(() => {
+  const initialHiddenFields = useMemo$L(() => {
     const hidden = new Set(defaultHidden);
 
     if (!isEdit && Array.isArray(otherFieldMappings) && otherFieldMappings.length > 0) {
@@ -23260,17 +23254,17 @@ function useHiddenFields({
     return hidden;
   }, [selectedStage, isEdit, otherFieldMappings, defaultHidden]);
 
-  const [hiddenFields, setHiddenFields] = useState$1k(initialHiddenFields);
-  const hiddenFieldsRef = useRef$p(hiddenFields);
+  const [hiddenFields, setHiddenFields] = useState$1l(initialHiddenFields);
+  const hiddenFieldsRef = useRef$q(hiddenFields);
 
   // Re-seed hiddenFields whenever initialHiddenFields changes
-  useEffect$1l(() => {
+  useEffect$1n(() => {
     hiddenFieldsRef.current = initialHiddenFields;
     setHiddenFields(initialHiddenFields);
   }, [initialHiddenFields]);
 
   // Apply skip-logic whenever relevant formData or skipLogicMap changes
-  useEffect$1l(() => {
+  useEffect$1n(() => {
     const newHidden = new Set(defaultHidden);
 
     // Seed with OTHER fields hidden by default in create mode
@@ -23398,7 +23392,7 @@ function useHiddenFields({
   };
 }
 
-const {useState: useState$1j} = await importShared('react');
+const {useState: useState$1k} = await importShared('react');
 
 
 /**
@@ -23406,10 +23400,10 @@ const {useState: useState$1j} = await importShared('react');
  * Handles loading state for task-based form prefilling
  */
 function useTaskPrefill() {
-    const [taskAvailableInQuery, setTaskAvailableInQuery] = useState$1j(null);
-    const [prefilledValues, setPrefilledValues] = useState$1j([]);
-    const [isCheckingRegistration, setIsCheckingRegistration] = useState$1j(false);
-    const [formLoading, setFormLoading] = useState$1j(false);
+    const [taskAvailableInQuery, setTaskAvailableInQuery] = useState$1k(null);
+    const [prefilledValues, setPrefilledValues] = useState$1k([]);
+    const [isCheckingRegistration, setIsCheckingRegistration] = useState$1k(false);
+    const [formLoading, setFormLoading] = useState$1k(false);
 
     return {
         taskAvailableInQuery,
@@ -23423,7 +23417,7 @@ function useTaskPrefill() {
     };
 }
 
-const {useEffect: useEffect$1k} = await importShared('react');
+const {useEffect: useEffect$1m} = await importShared('react');
 
 /**
  * Hook to handle task prefill logic
@@ -23435,7 +23429,7 @@ function useTaskPrefillLogic({
     setFormLoading,
     setFormData,
 }) {
-    useEffect$1k(() => {
+    useEffect$1m(() => {
         const loadTaskPrefill = async () => {
             const taskId = queryParams.get("taskId");
             if (!taskId) return;
@@ -23522,14 +23516,14 @@ function useTaskPrefillLogic({
     }, []);
 }
 
-const {useState: useState$1i} = await importShared('react');
+const {useState: useState$1j} = await importShared('react');
 
 
 /**
  * Hook to manage simple popover visibility state
  */
 function usePopoverState(initialState = false) {
-    const [showPopover, setShowPopover] = useState$1i(initialState);
+    const [showPopover, setShowPopover] = useState$1j(initialState);
 
     return {
         showPopover,
@@ -23537,7 +23531,7 @@ function usePopoverState(initialState = false) {
     };
 }
 
-const {useState: useState$1h,useEffect: useEffect$1j} = await importShared('react');
+const {useState: useState$1i,useEffect: useEffect$1l} = await importShared('react');
 
 
 /**
@@ -23545,14 +23539,14 @@ const {useState: useState$1h,useEffect: useEffect$1j} = await importShared('reac
  */
 function useViewport() {
     // Initialize with actual window width to prevent flash
-    const [isMobile, setIsMobile] = useState$1h(() => {
+    const [isMobile, setIsMobile] = useState$1i(() => {
         if (typeof window !== 'undefined') {
             return window.innerWidth <= 600;
         }
         return false;
     });
 
-    useEffect$1j(() => {
+    useEffect$1l(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 600);
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
@@ -23561,18 +23555,18 @@ function useViewport() {
     return { isMobile };
 }
 
-const {useState: useState$1g,useEffect: useEffect$1i} = await importShared('react');
+const {useState: useState$1h,useEffect: useEffect$1k} = await importShared('react');
 
 /**
  * Hook to manage OTHER field configuration and mappings
  * Handles showing/hiding "Other" text fields based on dropdown selections
  */
 function useOtherFieldLogic({ selectedStageId, programObj }) {
-  const [otherFieldConfig, setOtherFieldConfig] = useState$1g({});
-  const [otherFieldMappings, setOtherFieldMappings] = useState$1g([]);
+  const [otherFieldConfig, setOtherFieldConfig] = useState$1h({});
+  const [otherFieldMappings, setOtherFieldMappings] = useState$1h([]);
 
   // Fetch OTHER field configuration on mount
-  useEffect$1i(() => {
+  useEffect$1k(() => {
     let mounted = true;
 
     const loadConfig = async () => {
@@ -23589,7 +23583,7 @@ function useOtherFieldLogic({ selectedStageId, programObj }) {
   }, []);
 
   // Load OTHER field mappings when stage/program changes
-  useEffect$1i(() => {
+  useEffect$1k(() => {
     const stageIdFromProgram =
       !selectedStageId && Array.isArray(programObj?.programStages) && programObj.programStages.length > 0
         ? programObj.programStages[0]?.id
@@ -23617,9 +23611,9 @@ function useOtherFieldLogic({ selectedStageId, programObj }) {
   };
 }
 
-const {useState: useState$1f,useEffect: useEffect$1h} = await importShared('react');
+const {useState: useState$1g,useEffect: useEffect$1j} = await importShared('react');
 
-const {useEffect: useEffect$1g} = await importShared('react');
+const {useEffect: useEffect$1i} = await importShared('react');
 
 /**
  * Hook to load image URLs for IMAGE type fields when editing
@@ -23668,24 +23662,24 @@ function useImageLoader({
     /**
      * When editing a TEI, load existing IMAGE values for data elements so they can be previewed.
      */
-    useEffect$1g(() => {
+    useEffect$1i(() => {
         const load = async () => {
             if (!trackedEntityUID || !programId) return;
 
             let fields = [];
 
             if (isStageObj(stageObj)) {
-                fields = A$a(stageObj.programStageDataElements)
+                fields = A$9(stageObj.programStageDataElements)
                     .map((x) => x?.dataElement)
                     .filter(Boolean);
             } else if (programObj?.programType === "WITH_REGISTRATION") {
                 if (programKey === "teiEvents" && selectedStageId) {
-                    const st = A$a(programObj.programStages).find((s) => s?.id === selectedStageId);
-                    fields = A$a(st?.programStageDataElements)
+                    const st = A$9(programObj.programStages).find((s) => s?.id === selectedStageId);
+                    fields = A$9(st?.programStageDataElements)
                         .map((x) => x?.dataElement)
                         .filter(Boolean);
                 } else {
-                    fields = A$a(programObj.programTrackedEntityAttributes)
+                    fields = A$9(programObj.programTrackedEntityAttributes)
                         .map((a) => a?.trackedEntityAttribute)
                         .filter(Boolean);
                 }
@@ -23721,7 +23715,7 @@ function useImageLoader({
     }, [trackedEntityUID, programId, programObj, stageObj, selectedStageId]);
 }
 
-const {useState: useState$1e,useEffect: useEffect$1f} = await importShared('react');
+const {useState: useState$1f,useEffect: useEffect$1h} = await importShared('react');
 
 /**
  * Resolves the equipment program ID and stage configs from the datastore cache.
@@ -23746,16 +23740,16 @@ function useEquipmentContext({
   routeEquipmentId,
   resetTrigger,
 }) {
-  const [contextConfig, setContextConfig] = useState$1e(null);
-  const [selectedEquipment, setSelectedEquipment] = useState$1e(null);
-  const [availableEquipment, setAvailableEquipment] = useState$1e([]);
-  const [showEquipmentPicker, setShowEquipmentPicker] = useState$1e(false);
-  const [loading, setLoading] = useState$1e(false);
-  const [error, setError] = useState$1e(null);
-  const [configLoaded, setConfigLoaded] = useState$1e(false);
+  const [contextConfig, setContextConfig] = useState$1f(null);
+  const [selectedEquipment, setSelectedEquipment] = useState$1f(null);
+  const [availableEquipment, setAvailableEquipment] = useState$1f([]);
+  const [showEquipmentPicker, setShowEquipmentPicker] = useState$1f(false);
+  const [loading, setLoading] = useState$1f(false);
+  const [error, setError] = useState$1f(null);
+  const [configLoaded, setConfigLoaded] = useState$1f(false);
 
   // Reset state when stage/program changes OR when resetTrigger changes (new action)
-  useEffect$1f(() => {
+  useEffect$1h(() => {
     setContextConfig(null);
     setSelectedEquipment(null);
     setAvailableEquipment([]);
@@ -24061,7 +24055,7 @@ function useSparePartLookup({ programId, setFormData, isCheckingRegistration, se
     };
 }
 
-const {useMemo: useMemo$J} = await importShared('react');
+const {useMemo: useMemo$K} = await importShared('react');
 
 /**
  * Hook to compute required fields from program metadata
@@ -24073,26 +24067,26 @@ function useRequiredFields({
     programKey,
     selectedStageId,
 }) {
-    const requiredById = useMemo$J(() => {
+    const requiredById = useMemo$K(() => {
         const out = {};
 
         if (programObj?.programType === "WITH_REGISTRATION") {
             if (programKey === "teiEvents" && selectedStageId) {
                 // Tracker stage event: get required fields from stage
-                const st = A$a(programObj.programStages).find((s) => s?.id === selectedStageId);
-                A$a(st?.programStageDataElements).forEach((psde) => {
+                const st = A$9(programObj.programStages).find((s) => s?.id === selectedStageId);
+                A$9(st?.programStageDataElements).forEach((psde) => {
                     const id = psde?.dataElement?.id || psde?.dataElement;
                     if (id && psde?.compulsory) out[id] = true;
                 });
             } else {
                 // Enrollment: get required fields from program attributes
-                A$a(programObj.programTrackedEntityAttributes).forEach((ptea) => {
+                A$9(programObj.programTrackedEntityAttributes).forEach((ptea) => {
                     const id = ptea?.trackedEntityAttribute?.id || ptea?.trackedEntityAttribute;
                     if (id && ptea?.mandatory) out[id] = true;
                 });
 
                 // Also check tracked entity type attributes
-                A$a(programObj.trackedEntityType?.trackedEntityTypeAttributes).forEach(
+                A$9(programObj.trackedEntityType?.trackedEntityTypeAttributes).forEach(
                     (teta) => {
                         const id =
                             teta?.trackedEntityAttribute?.id || teta?.trackedEntityAttribute;
@@ -24102,7 +24096,7 @@ function useRequiredFields({
             }
         } else if (isStageObj(stageObj)) {
             // Event program without registration
-            A$a(stageObj.programStageDataElements).forEach((psde) => {
+            A$9(stageObj.programStageDataElements).forEach((psde) => {
                 const id = psde?.dataElement?.id || psde?.dataElement;
                 if (id && psde?.compulsory) out[id] = true;
             });
@@ -24114,7 +24108,7 @@ function useRequiredFields({
     return { requiredById };
 }
 
-const {useMemo: useMemo$I,useEffect: useEffect$1e,useState: useState$1d} = await importShared('react');
+const {useMemo: useMemo$J,useEffect: useEffect$1g,useState: useState$1e} = await importShared('react');
 
 /**
  * Hook to load custom mandatory fields from datastore and merge with native DHIS2 mandatory
@@ -24133,11 +24127,11 @@ function useCustomMandatoryFields({
     stageObj,
     nativeRequiredById = {},
 }) {
-    const [customConfig, setCustomConfig] = useState$1d([]);
-    const [isLoading, setIsLoading] = useState$1d(true);
+    const [customConfig, setCustomConfig] = useState$1e([]);
+    const [isLoading, setIsLoading] = useState$1e(true);
 
     // Load custom mandatory configuration from datastore
-    useEffect$1e(() => {
+    useEffect$1g(() => {
         let mounted = true;
 
         const loadCustomConfig = async () => {
@@ -24166,7 +24160,7 @@ function useCustomMandatoryFields({
     }, []);
 
     // Compute custom mandatory fields
-    const customRequiredById = useMemo$I(() => {
+    const customRequiredById = useMemo$J(() => {
         if (!customConfig.length) return {};
 
         const out = {};
@@ -24201,7 +24195,7 @@ function useCustomMandatoryFields({
     }, [customConfig, programObj, selectedStageId, stageObj, programKey]);
 
     // Merge native and custom mandatory fields
-    const requiredById = useMemo$I(() => {
+    const requiredById = useMemo$J(() => {
         return {
             ...nativeRequiredById,
             ...customRequiredById,
@@ -24214,7 +24208,7 @@ function useCustomMandatoryFields({
     };
 }
 
-const {useState: useState$1c,useEffect: useEffect$1d,useMemo: useMemo$H} = await importShared('react');
+const {useState: useState$1d,useEffect: useEffect$1f,useMemo: useMemo$I} = await importShared('react');
 
 /**
  * Hook to manage multi-step wizard navigation
@@ -24227,12 +24221,12 @@ function useStepNavigation({
   sectionsList,
   reviewNavigationLocked,
 }) {
-  const [internalStep, setInternalStep] = useState$1c(0);
+  const [internalStep, setInternalStep] = useState$1d(0);
 
   const stepIndex =
     typeof currentStep === "number" ? currentStep : internalStep;
 
-  const activeSection = useMemo$H(() => {
+  const activeSection = useMemo$I(() => {
     const res = sectionsList[stepIndex] || {
       id: "default",
       name: "Form",
@@ -24276,7 +24270,7 @@ function useStepNavigation({
   };
 
   // Update current section when active section changes
-  useEffect$1d(() => {
+  useEffect$1f(() => {
     if (typeof setCurrentSection === "function" && activeSection) {
       setCurrentSection(activeSection);
     }
@@ -24515,7 +24509,7 @@ const triggerNotifications = async ({
   }
 };
 
-const {useEffect: useEffect$1c} = await importShared('react');
+const {useEffect: useEffect$1e} = await importShared('react');
 
 /**
  * Hook to manage approval officer assignment and notifications
@@ -24572,7 +24566,7 @@ function useApprovalNotifications({
      * Ensure the "approving officer" TEI is set:
      *   - On new forms when navigation is locked for review.
      */
-    useEffect$1c(() => {
+    useEffect$1e(() => {
         if (!isAddFlow || !approvingOfficerFieldId) return;
 
         setFormData((prev) => {
@@ -24608,7 +24602,7 @@ function useApprovalNotifications({
      *   - On new forms when navigation is locked for review.
      *   - On edits when status transitions to "Feedback required".
      */
-    useEffect$1c(() => {
+    useEffect$1e(() => {
         if (!programObj?.id) return;
         if (!assignedApprover || !approvingOfficerFieldId || !approvingSectionId)
             return;
@@ -24678,7 +24672,7 @@ function validateMandatoryFields(formData, requiredById, metadata, hiddenFields 
   const errors = [];
   const { programObj, stageObj } = metadata;
   const findFieldMetadata = (fieldId) => {
-    const ptea = A$a(programObj?.programTrackedEntityAttributes).find(
+    const ptea = A$9(programObj?.programTrackedEntityAttributes).find(
       (attr) => attr?.trackedEntityAttribute?.id === fieldId
     );
     if (ptea) {
@@ -24690,7 +24684,7 @@ function validateMandatoryFields(formData, requiredById, metadata, hiddenFields 
       };
     }
     if (stageObj) {
-      const psde = A$a(stageObj?.programStageDataElements)?.find(
+      const psde = A$9(stageObj?.programStageDataElements)?.find(
         (de) => de?.dataElement?.id === fieldId
       );
       if (psde) {
@@ -24703,8 +24697,8 @@ function validateMandatoryFields(formData, requiredById, metadata, hiddenFields 
       }
     }
     if (programObj?.programStages) {
-      for (const stage of A$a(programObj?.programStages)) {
-        const psde = A$a(stage?.programStageDataElements)?.find(
+      for (const stage of A$9(programObj?.programStages)) {
+        const psde = A$9(stage?.programStageDataElements)?.find(
           (de) => de?.dataElement?.id === fieldId
         );
         if (psde) {
@@ -25202,7 +25196,7 @@ const exportBlobWithHostBridge = async (blob, filename) => {
     });
 };
 
-const {useEffect: useEffect$1b,useState: useState$1b} = await importShared('react');
+const {useEffect: useEffect$1d,useState: useState$1c} = await importShared('react');
 function FilePreviewModal({
   isOpen,
   onClose,
@@ -25215,13 +25209,13 @@ function FilePreviewModal({
   dataElementId,
   programId
 }) {
-  const [loading, setLoading] = useState$1b(true);
-  const [imageUrl, setImageUrl] = useState$1b(null);
-  const [fileData, setFileData] = useState$1b(null);
-  const [error, setError] = useState$1b(null);
-  const [mimeType, setMimeType] = useState$1b("application/octet-stream");
-  const [downloading, setDownloading] = useState$1b(false);
-  useEffect$1b(() => {
+  const [loading, setLoading] = useState$1c(true);
+  const [imageUrl, setImageUrl] = useState$1c(null);
+  const [fileData, setFileData] = useState$1c(null);
+  const [error, setError] = useState$1c(null);
+  const [mimeType, setMimeType] = useState$1c("application/octet-stream");
+  const [downloading, setDownloading] = useState$1c(false);
+  useEffect$1d(() => {
     if (isOpen && fileId && (teiId && attributeId || eventId && dataElementId)) {
       fetchFile();
     } else if (!isOpen) {
@@ -25596,7 +25590,7 @@ function validateProgramField(programId, fieldId, formData = {}, validationConfi
   }, []);
 }
 
-const {useState: useState$1a,useEffect: useEffect$1a} = await importShared('react');
+const {useState: useState$1b,useEffect: useEffect$1c} = await importShared('react');
 
 /**
  * useParticipantsPerWardConfig
@@ -25630,14 +25624,14 @@ const {useState: useState$1a,useEffect: useEffect$1a} = await importShared('reac
  * participantsPerWardField === null.
  */
 function useParticipantsPerWardConfig(programId) {
-    const [config, setConfig] = useState$1a({
+    const [config, setConfig] = useState$1b({
         wardsField: null,
         participantsPerWardField: null,
         totalParticipantsField: null,
         ready: false,
     });
 
-    useEffect$1a(() => {
+    useEffect$1c(() => {
         if (!programId) {
             setConfig({ wardsField: null, participantsPerWardField: null, totalParticipantsField: null, ready: true });
             return;
@@ -25680,7 +25674,7 @@ function useParticipantsPerWardConfig(programId) {
     return config;
 }
 
-const {useState: useState$19,useEffect: useEffect$19} = await importShared('react');
+const {useState: useState$1a,useEffect: useEffect$1b} = await importShared('react');
 
 /**
  * useSparePartsQuantityConfig
@@ -25709,14 +25703,14 @@ const {useState: useState$19,useEffect: useEffect$19} = await importShared('reac
  * }
  */
 function useSparePartsQuantityConfig(programId) {
-    const [config, setConfig] = useState$19({
+    const [config, setConfig] = useState$1a({
         sparePartsField: null,
         quantityPerPartField: null,
         totalQuantityField: null,
         ready: false,
     });
 
-    useEffect$19(() => {
+    useEffect$1b(() => {
         const empty = { sparePartsField: null, quantityPerPartField: null, totalQuantityField: null, ready: true };
 
         if (!programId) {
@@ -25789,33 +25783,6 @@ const matchesBaseContext = (config, context = {}) => {
   );
 };
 
-/**
- * Returns a label override for a specific field in a specific maintenance
- * context, or null if no override is configured.
- *
- * Reads from dataStore key: fieldLabelOverrides.overrides[]
- *   { fieldId, label, triggerAt }
- *
- * @param {object} dataStoreData - cached datastore object
- * @param {string} fieldId       - data element / attribute UID
- * @param {string} triggerAt     - maintenance type label e.g. "Referral Maintenance"
- */
-function getFieldLabelOverride(dataStoreData, fieldId, triggerAt) {
-  if (!fieldId || !triggerAt) return null;
-  const overrides = dataStoreData?.fieldLabelOverrides?.overrides;
-  if (!Array.isArray(overrides)) return null;
-  // Normalize: lowercase + replace underscores with spaces so
-  // "Referral Maintenance" and "Referral_maintenance" both match
-  const normalizeType = (v) =>
-    String(v || "").trim().toLowerCase().replace(/_/g, " ");
-  const match = overrides.find(
-    (o) =>
-      o.fieldId === fieldId &&
-      normalizeType(o.triggerAt) === normalizeType(triggerAt),
-  );
-  return match?.label || null;
-}
-
 function getSectionFormNameOverride(dataStoreData, context = {}) {
   const configurations = getConfigurations(dataStoreData);
 
@@ -25830,7 +25797,7 @@ function getSectionFormNameOverride(dataStoreData, context = {}) {
   return match?.overrideText || null;
 }
 
-const {useEffect: useEffect$18,useMemo: useMemo$G,useRef: useRef$o} = await importShared('react');
+const {useEffect: useEffect$1a,useMemo: useMemo$H,useRef: useRef$p} = await importShared('react');
 function ParticipantsPerWardField({
   value,
   wards = [],
@@ -25838,8 +25805,8 @@ function ParticipantsPerWardField({
   onTotalChange,
   disabled = false
 }) {
-  const lastEmittedTotal = useRef$o(void 0);
-  const parsed = useMemo$G(() => {
+  const lastEmittedTotal = useRef$p(void 0);
+  const parsed = useMemo$H(() => {
     if (!value) return {};
     try {
       const obj = JSON.parse(value);
@@ -25848,7 +25815,7 @@ function ParticipantsPerWardField({
       return {};
     }
   }, [value]);
-  useEffect$18(() => {
+  useEffect$1a(() => {
     const total2 = wards.reduce((sum, ward) => {
       const n = Number(parsed[ward] ?? 0);
       return sum + (isNaN(n) ? 0 : n);
@@ -25981,7 +25948,7 @@ const styles$2 = {
   }
 };
 
-const {useEffect: useEffect$17,useMemo: useMemo$F,useRef: useRef$n} = await importShared('react');
+const {useEffect: useEffect$19,useMemo: useMemo$G,useRef: useRef$o} = await importShared('react');
 function SparePartsQuantityField({
   value,
   parts = [],
@@ -25989,8 +25956,8 @@ function SparePartsQuantityField({
   onTotalChange,
   disabled = false
 }) {
-  const lastEmittedTotal = useRef$n(void 0);
-  const parsed = useMemo$F(() => {
+  const lastEmittedTotal = useRef$o(void 0);
+  const parsed = useMemo$G(() => {
     if (!value) return {};
     try {
       const obj = JSON.parse(value);
@@ -25999,7 +25966,7 @@ function SparePartsQuantityField({
       return {};
     }
   }, [value]);
-  useEffect$17(() => {
+  useEffect$19(() => {
     const total2 = parts.reduce((sum, { name }) => {
       const n = Number(parsed[name] ?? 0);
       return sum + (isNaN(n) ? 0 : n);
@@ -26125,7 +26092,7 @@ const styles$1 = {
   }
 };
 
-const {useCallback: useCallback$p,useContext: useContext$D,useEffect: useEffect$16,useMemo: useMemo$E,useState: useState$18} = await importShared('react');
+const {useCallback: useCallback$r,useContext: useContext$E,useEffect: useEffect$18,useMemo: useMemo$F,useState: useState$19} = await importShared('react');
 function ConfigurableForm({
   handleSubmit,
   handleCancel,
@@ -26159,18 +26126,18 @@ function ConfigurableForm({
   autoFillFacilityLoading = false,
   lockedFields = /* @__PURE__ */ new Set()
 }) {
-  const [wardData, setWardData] = useState$18(null);
+  const [wardData, setWardData] = useState$19(null);
   const location = useLocation();
-  const { userOrganisationUnits } = useContext$D(MEMISContext.UserContext);
-  const { user } = useContext$D(MEMISContext.UserRolesContext) || {};
-  const [futureDateFields, setFutureDateFields] = useState$18([]);
-  const [dataStoreData, setDataStoreData] = useState$18({});
-  const [validationErrors, setValidationErrors] = useState$18({});
-  const [firstStageDe, setfirstDE] = useState$18([]);
+  const { userOrganisationUnits } = useContext$E(MEMISContext.UserContext);
+  const { user } = useContext$E(MEMISContext.UserRolesContext) || {};
+  const [futureDateFields, setFutureDateFields] = useState$19([]);
+  const [dataStoreData, setDataStoreData] = useState$19({});
+  const [validationErrors, setValidationErrors] = useState$19({});
+  const [firstStageDe, setfirstDE] = useState$19([]);
   const validationConfig = dataStoreData?.formValidations;
-  const [canSave, setCanSave] = useState$18(false);
-  const [orgUnitsByLevel, setOrgUnitsByLevel] = useState$18({});
-  useEffect$16(() => {
+  const [canSave, setCanSave] = useState$19(false);
+  const [orgUnitsByLevel, setOrgUnitsByLevel] = useState$19({});
+  useEffect$18(() => {
     console.log({ lockedFields });
     const loadOrgUnitGroupFields = async () => {
       try {
@@ -26205,13 +26172,13 @@ function ConfigurableForm({
     };
     loadOrgUnitGroupFields();
   }, [programId]);
-  const [wslConfig, setWslConfig] = useState$18(null);
-  const [componentInputs, setComponentInputs] = useState$18({});
+  const [wslConfig, setWslConfig] = useState$19(null);
+  const [componentInputs, setComponentInputs] = useState$19({});
   const { showPopover, setShowPopover } = usePopoverState();
   const { setDateRangePopover } = useDateRangePopover();
   const { imageUrls, setImageUrls, imageLoading, setImageLoading } = useImageState();
   const { isMobile } = useViewport();
-  const [previewModal, setPreviewModal] = useState$18({
+  const [previewModal, setPreviewModal] = useState$19({
     isOpen: false,
     fileId: null,
     fileName: null,
@@ -26247,8 +26214,8 @@ function ConfigurableForm({
     selectedOrganisationUnit
   );
   const sectionVisibilityRules = useSectionVisibilityConfig(programId);
-  const { programs } = useContext$D(MEMISContext.ProgramContext);
-  const programObj = useMemo$E(() => {
+  const { programs } = useContext$E(MEMISContext.ProgramContext);
+  const programObj = useMemo$F(() => {
     if (!programId) return null;
     const list = Array.isArray(programs) ? programs : programs?.programs || [];
     return list.find((p) => p?.id === programId) || null;
@@ -26270,7 +26237,7 @@ function ConfigurableForm({
   const { otherFieldMappings } = useOtherFieldLogic({
     selectedStageId,
     programObj});
-  const stageObj = (programKey === "teiEvents" && programObj ? A$a(programObj.programStages).find((s) => s?.id === selectedStageId) : null) || (isStageObj(dataElements) ? dataElements : null);
+  const stageObj = (programKey === "teiEvents" && programObj ? A$9(programObj.programStages).find((s) => s?.id === selectedStageId) : null) || (isStageObj(dataElements) ? dataElements : null);
   const sections = useSections({
     programObj,
     stageObj,
@@ -26638,7 +26605,7 @@ function ConfigurableForm({
           return /* @__PURE__ */ jsxRuntimeExports.jsx(
             SearchableSelect,
             {
-              data: A$a(el?.optionSet?.options),
+              data: A$9(el?.optionSet?.options),
               itemTextField: "name",
               itemValueField: "code",
               multiple: false,
@@ -27318,7 +27285,7 @@ function ConfigurableForm({
         return /* @__PURE__ */ jsxRuntimeExports.jsx(
           SearchableSelect,
           {
-            data: A$a(el?.optionSet?.options),
+            data: A$9(el?.optionSet?.options),
             itemTextField: "name",
             itemValueField: "code",
             multiple: true,
@@ -27512,11 +27479,11 @@ function ConfigurableForm({
     isLast: isFinalStep,
     dataStore: dataStoreData
   });
-  useMemo$E(
+  useMemo$F(
     () => sections?.map((s) => s.id).join(","),
     [sections]
   );
-  const getDisplayedSectionName = useCallback$p(
+  const getDisplayedSectionName = useCallback$r(
     (section) => {
       const override = getSectionFormNameOverride(dataStoreData, {
         programId,
@@ -27549,7 +27516,7 @@ function ConfigurableForm({
       console.log({ error });
     }
   };
-  useEffect$16(() => {
+  useEffect$18(() => {
     let cancelled = false;
     const fetchWslConfig = async () => {
       try {
@@ -27574,7 +27541,7 @@ function ConfigurableForm({
       cancelled = true;
     };
   }, [programId, selectedStage]);
-  useEffect$16(() => {
+  useEffect$18(() => {
     const loadTaskPrefill = async () => {
       const taskId = queryParams.get("taskId");
       if (!taskId) return;
@@ -27624,7 +27591,7 @@ function ConfigurableForm({
     loadTaskPrefill();
     prefillWard();
   }, [programObj]);
-  useEffect$16(() => {
+  useEffect$18(() => {
     if (!wardData?.use || !wardData?.field) return;
     const targetId = wardData.field;
     setFormData((prev) => {
@@ -27637,7 +27604,7 @@ function ConfigurableForm({
       };
     });
   }, [wardData, setFormData]);
-  useEffect$16(() => {
+  useEffect$18(() => {
     let mounted = true;
     const loadFutureDateConfig = async () => {
       const dataStore2 = await LocalForageServiceInstance.getItem(
@@ -27652,7 +27619,7 @@ function ConfigurableForm({
       mounted = false;
     };
   }, [programObj, sectionsList]);
-  useEffect$16(() => {
+  useEffect$18(() => {
     let mounted = true;
     const loadFutureDateConfig = async () => {
       const dataStore2 = await LocalForageServiceInstance.getItem(
@@ -27676,7 +27643,7 @@ function ConfigurableForm({
     stageObj,
     activeSection
   ]);
-  useEffect$16(() => {
+  useEffect$18(() => {
     let cancelled = false;
     const loadFutureDateConfig = async () => {
       try {
@@ -27709,7 +27676,7 @@ function ConfigurableForm({
       cancelled = true;
     };
   }, [programId, selectedStage, formData]);
-  useEffect$16(() => {
+  useEffect$18(() => {
     let mounted = true;
     if (mounted) {
       const config = dataStoreData?.reportGenerationDatePrefill?.configurations;
@@ -27728,7 +27695,7 @@ function ConfigurableForm({
       mounted = false;
     };
   }, [dataStoreData, programId]);
-  const isInitiallyLoading = useMemo$E(
+  const isInitiallyLoading = useMemo$F(
     () => formLoading || autoFillFacilityLoading,
     [formLoading, autoFillFacilityLoading]
   );
@@ -27751,7 +27718,7 @@ function ConfigurableForm({
     const selectedSection = result?.sections?.find((s) => s.id === actSect);
     setCanSave(selectedSection?.canSave ?? false);
   };
-  useEffect$16(() => {
+  useEffect$18(() => {
     if (!workflow) return;
     const wf = workflow?.workflows?.find((e) => e.value === pM);
     const w = wf?.firstStage;
@@ -27761,7 +27728,7 @@ function ConfigurableForm({
       getDe(j);
     }
   }, [workflow, pM]);
-  useEffect$16(() => {
+  useEffect$18(() => {
     const loadUser = async () => {
       const us = await LocalForageServiceInstance.getItem("userRes", "user");
       const { userShowOrgUnit } = await LocalForageServiceInstance.getItem(
@@ -27786,7 +27753,7 @@ function ConfigurableForm({
     };
     loadUser();
   }, [user, selectedOrganisationUnit]);
-  useEffect$16(() => {
+  useEffect$18(() => {
     if (activeSection?.id) {
       getActiveSectionCanSave(activeSection?.id, programId);
     }
@@ -27871,7 +27838,7 @@ function ConfigurableForm({
         if (id === COMPONENTS_LIST && !formData?.[HAS_COMPONENTS]) {
           return null;
         }
-        const labelText = getFieldLabelOverride(dataStoreData, id, pM) || el?.formName || el?.name || "Field";
+        const labelText = el?.formName || el?.name || "Field";
         const isRequired = !!requiredById[id];
         const sectionAccess = sectionAccessMap[activeSection.id];
         return /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -27916,7 +27883,7 @@ function ConfigurableForm({
         const id = el?.id || el?.attribute || el?.dataElement?.id || el;
         if (hiddenFields?.has(id)) return null;
         if (id === "EbJI5Loxjbl") return null;
-        const labelText = getFieldLabelOverride(dataStoreData, id, pM) || el?.formName || el?.name || "Field";
+        const labelText = el?.formName || el?.name || "Field";
         const isRequired = !!requiredById[id];
         const sectionAccess = sectionAccessMap[activeSection.id];
         return /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -28302,40 +28269,6 @@ const equipmentAllocation = async (config, options) => {
   }
 };
 
-const unique = (items = []) => [...new Set(items.filter(Boolean))];
-
-async function getUsersForRoles(userRoles = [], orgUnitId) {
-  if (!userRoles?.length || !orgUnitId) return [];
-
-  const ouData = await dataStore.get(
-    `organisationUnits/${orgUnitId}?fields=name,id,parent(id,name)`,
-  );
-  const ou = ouData?.data;
-  const usersId = [];
-
-  for (const role of userRoles) {
-    let targetOrgUnitFilter = "";
-
-    if (role?.facilityLevel === "SAME_ORG_UNIT") {
-      targetOrgUnitFilter = `&filter=organisationUnits.id:eq:${ou?.id}`;
-    } else if (role?.facilityLevel === "NATIONAL_LEVEL") {
-      targetOrgUnitFilter = "";
-    } else {
-      targetOrgUnitFilter = ou?.parent?.id
-        ? `&filter=organisationUnits.id:eq:${ou.parent.id}`
-        : "";
-    }
-
-    const usersResp = await dataStore.get(
-      `users.json?paging=false&fields=id,username,displayName&filter=userRoles.id:eq:${role.id}${targetOrgUnitFilter}`,
-    );
-    const roleUsers = usersResp?.data?.users?.map((u) => u.id) || [];
-    usersId.push(...roleUsers);
-  }
-
-  return unique(usersId);
-}
-
 const equipmentCollectionStatus = async (config, options) => {
   try {
     const data = await dataStore.get(
@@ -28383,21 +28316,30 @@ const equipmentCollectionStatus = async (config, options) => {
       ? `Ward-incharge has acknowledged receipt of the allocated ${equipmentNameText} ${serialNumberText}.`
       : `Acknowledge receipt of the allocated equipment ${serialNumberText}.`;
     let usersId = [];
-    const roleUsers = await getUsersForRoles(
-      config?.userRoles || [],
-      data?.data?.orgUnit,
-    );
 
-    if (config?.event === "EQUIPMENT_COLLECTION_ACKNOWLEDGMENT") {
-      usersId = roleUsers;
+    // For EQUIPMENT_COLLECTION_ACKNOWLEDGMENT, notify user roles
+    if (config?.event === "EQUIPMENT_COLLECTION_ACKNOWLEDGMENT" && config?.userRoles) {
+      let ou = null;
+      const ouData = await dataStore.get(
+        `organisationUnits/${data?.data?.orgUnit}?fields=name,id,parent(id,name)`
+      );
+      ou = ouData?.data;
+      for (const role of config.userRoles) {
+        const targetOrgUnitId = role?.facilityLevel === "SAME_ORG_UNIT" ? ou?.id : ou?.parent?.id;
+        const usersResp = await dataStore.get(
+          `users.json?paging=false&fields=id,username,displayName&filter=userRoles.id:eq:${role.id}&filter=organisationUnits.id:eq:${targetOrgUnitId}`
+        );
+        const roleUsers = usersResp?.data?.users?.map((u) => u.id) || [];
+        usersId.push(...roleUsers);
+      }
+      console.log({ place: "inside", usersId });
+
     } else {
-      // For EQUIPMENT_COLLECTION_STATUS, notify the specific receiver plus configured roles
+      // For EQUIPMENT_COLLECTION_STATUS, notify specific receiver
       const receiverDetails = await dataStore.get(
         `users?filter=username:eq:${receiver?.value}&fields=id,username`
-      );      
-      const receiverUsers =
-        receiverDetails?.data?.users?.map((user) => user?.id) || [];
-      usersId = unique([...receiverUsers, ...roleUsers]);
+      );
+      usersId = receiverDetails?.data?.users?.map((user) => user?.id) || [];
     }
 
     sendNotificationHandler(subject, body, usersId);
@@ -31655,9 +31597,9 @@ const CreateDataItemsController = {
   programWithRegistrationEvent,
 };
 
-const React$N = await importShared('react');
-const {useContext: useContext$C,useEffect: useEffect$15,useMemo: useMemo$D,useState: useState$17} = React$N;
-const A$9 = (x) => Array.isArray(x) ? x : [];
+const React$P = await importShared('react');
+const {useContext: useContext$D,useEffect: useEffect$17,useMemo: useMemo$E,useState: useState$18} = React$P;
+const A$8 = (x) => Array.isArray(x) ? x : [];
 function MultiEntryForm({
   dataElements = null,
   selectedOrganisationUnit = null,
@@ -31666,19 +31608,19 @@ function MultiEntryForm({
   worklow,
   onClose
 }) {
-  const [numEntries, setNumEntries] = useState$17(2);
-  const [step, setStep] = useState$17("count");
-  const [commonData, setCommonData] = useState$17({});
-  const [entries, setEntries] = useState$17([]);
-  const [loading, setLoading] = useState$17(false);
-  const [selectedCommonFields, setSelectedCommonFields] = useState$17([]);
-  const [showPopover, setShowPopover] = useState$17(false);
-  const [imageUrls, setImageUrls] = useState$17({});
-  const [imageLoading, setImageLoading] = useState$17({});
+  const [numEntries, setNumEntries] = useState$18(2);
+  const [step, setStep] = useState$18("count");
+  const [commonData, setCommonData] = useState$18({});
+  const [entries, setEntries] = useState$18([]);
+  const [loading, setLoading] = useState$18(false);
+  const [selectedCommonFields, setSelectedCommonFields] = useState$18([]);
+  const [showPopover, setShowPopover] = useState$18(false);
+  const [imageUrls, setImageUrls] = useState$18({});
+  const [imageLoading, setImageLoading] = useState$18({});
   const navigate = useNavigate();
-  const { userOrganisationUnits } = useContext$C(MEMISContext.UserContext);
-  const { user } = useContext$C(MEMISContext.UserRolesContext);
-  const commonFields = useMemo$D(() => {
+  const { userOrganisationUnits } = useContext$D(MEMISContext.UserContext);
+  const { user } = useContext$D(MEMISContext.UserRolesContext);
+  const commonFields = useMemo$E(() => {
     if (!dataElements) return [];
     const program2 = dataElements?.program;
     if (!program2) return [];
@@ -31687,7 +31629,7 @@ function MultiEntryForm({
     }
     return [];
   }, [dataElements]);
-  const entryFields = useMemo$D(() => {
+  const entryFields = useMemo$E(() => {
     if (!commonFields?.length) return [];
     return commonFields.filter((f) => !selectedCommonFields.includes(f.id));
   }, [commonFields, selectedCommonFields]);
@@ -31761,7 +31703,7 @@ function MultiEntryForm({
       setLoading(false);
     }
   };
-  useEffect$15(() => {
+  useEffect$17(() => {
     console.log(worklow);
   }, []);
   const renderInput = (el, canAddUpdateSection, idx, isCommonField) => {
@@ -31777,7 +31719,7 @@ function MultiEntryForm({
           return /* @__PURE__ */ jsxRuntimeExports.jsx(
             SearchableSelect,
             {
-              data: A$9(el?.optionSet?.options),
+              data: A$8(el?.optionSet?.options),
               itemTextField: "name",
               itemValueField: "code",
               multiple: false,
@@ -31988,7 +31930,7 @@ function MultiEntryForm({
         return /* @__PURE__ */ jsxRuntimeExports.jsx(
           SearchableSelect,
           {
-            data: A$9(el?.optionSet?.options),
+            data: A$8(el?.optionSet?.options),
             itemTextField: "name",
             itemValueField: "code",
             multiple: true,
@@ -32291,7 +32233,7 @@ const calculateDeregistrationAutofill = async (teiAttributes, isolationDate = nu
     return autofillValues;
 };
 
-const {useState: useState$16,useEffect: useEffect$14,useContext: useContext$B,useMemo: useMemo$C,useRef: useRef$m} = await importShared('react');
+const {useState: useState$17,useEffect: useEffect$16,useContext: useContext$C,useMemo: useMemo$D,useRef: useRef$n} = await importShared('react');
 
 /**
  * Hook to automatically fill facility/org unit based on DataStore configuration
@@ -32308,27 +32250,27 @@ function useFacilityAutoFill(
   isEdit,
 ) {
   const location = useLocation();
-  const { userOrganisationUnits } = useContext$B(MEMISContext.UserContext);
-  const { user } = useContext$B(MEMISContext.UserRolesContext) || {};
+  const { userOrganisationUnits } = useContext$C(MEMISContext.UserContext);
+  const { user } = useContext$C(MEMISContext.UserRolesContext) || {};
 
-  const [autoFilledOrgUnit, setAutoFilledOrgUnit] = useState$16(null);
-  const [loading, setLoading] = useState$16(false);
+  const [autoFilledOrgUnit, setAutoFilledOrgUnit] = useState$17(null);
+  const [loading, setLoading] = useState$17(false);
 
   // Track if we've already loaded to prevent re-fetching
-  const hasLoadedRef = useRef$m(false);
-  const configCacheRef = useRef$m(null);
+  const hasLoadedRef = useRef$n(false);
+  const configCacheRef = useRef$n(null);
 
   // Stable reference to user org units
-  useMemo$C(() => {
+  useMemo$D(() => {
     return JSON.stringify(userOrganisationUnits?.map((ou) => ou.id) || []);
   }, [userOrganisationUnits]);
 
   // Stable reference to user info
-  useMemo$C(() => {
+  useMemo$D(() => {
     return user?.id || "";
   }, [user?.id]);
 
-  useEffect$14(() => {
+  useEffect$16(() => {
     // Skip if we're in edit mode
     if (isEdit) {
       setAutoFilledOrgUnit(null);
@@ -33257,8 +33199,8 @@ const generateUniquePamAssetNumber = async ({
   throw new Error("PAM_GENERATION_EXHAUSTED");
 };
 
-const {useContext: useContext$A,useEffect: useEffect$13,useState: useState$15,useMemo: useMemo$B,useRef: useRef$l} = await importShared('react');
-const A$8 = (x) => Array.isArray(x) ? x : [];
+const {useContext: useContext$B,useEffect: useEffect$15,useState: useState$16,useMemo: useMemo$C,useRef: useRef$m} = await importShared('react');
+const A$7 = (x) => Array.isArray(x) ? x : [];
 function collectBundleUids(value, seen = /* @__PURE__ */ new Set()) {
   if (!value || typeof value !== "object") return [];
   if (seen.has(value)) return [];
@@ -33300,39 +33242,39 @@ function FormComponent({
   editData,
   onSaveSuccess
 }) {
-  const [isMultiple, setIsMultiple] = useState$15(false);
+  const [isMultiple, setIsMultiple] = useState$16(false);
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const [query, setQuery] = useState$15(queryParams.get("query") || "");
-  const [formData, setFormData] = useState$15({});
-  const [maintainanceTye, setMaintenancetype] = useState$15();
-  const [currentSection, setCurrentSection] = useState$15(0);
-  const [fieldMultiText, setFieldMultiText] = useState$15([]);
-  const [lockedFields, setLockedFields] = useState$15(/* @__PURE__ */ new Set());
-  const [pM, setPM] = useState$15();
-  const [ranKey, setKey] = useState$15(
+  const [query, setQuery] = useState$16(queryParams.get("query") || "");
+  const [formData, setFormData] = useState$16({});
+  const [maintainanceTye, setMaintenancetype] = useState$16();
+  const [currentSection, setCurrentSection] = useState$16(0);
+  const [fieldMultiText, setFieldMultiText] = useState$16([]);
+  const [lockedFields, setLockedFields] = useState$16(/* @__PURE__ */ new Set());
+  const [pM, setPM] = useState$16();
+  const [ranKey, setKey] = useState$16(
     Math.random().toString(36).substring(2, 10).toUpperCase()
   );
-  const [triggerAt, setTriggerAt] = useState$15(queryParams.get("triggerAt"));
-  const [loading, setLoading] = useState$15(false);
-  const [eventDate, setEventDate] = useState$15((/* @__PURE__ */ new Date()).toISOString());
+  const [triggerAt, setTriggerAt] = useState$16(queryParams.get("triggerAt"));
+  const [loading, setLoading] = useState$16(false);
+  const [eventDate, setEventDate] = useState$16((/* @__PURE__ */ new Date()).toISOString());
   const navigate = useNavigate();
-  const { user } = useContext$A(MEMISContext.UserRolesContext);
-  const [pgRules, setRule] = useState$15([]);
-  const [selectedOrganisationUnit, setSelectedOrganisationUnit] = useState$15(null);
-  const [equip, setEquipment] = useState$15();
-  const [enrollmentDate, setEnrollmentDate] = useState$15(
+  const { user } = useContext$B(MEMISContext.UserRolesContext);
+  const [pgRules, setRule] = useState$16([]);
+  const [selectedOrganisationUnit, setSelectedOrganisationUnit] = useState$16(null);
+  const [equip, setEquipment] = useState$16();
+  const [enrollmentDate, setEnrollmentDate] = useState$16(
     editData?.enrollmentDate || Date.now()
   );
-  const [incidentDate, setIncidentDate] = useState$15(
+  const [incidentDate, setIncidentDate] = useState$16(
     editData?.incidentDate || Date.now()
   );
-  const [entityId, setEntityId] = useState$15(
+  const [entityId, setEntityId] = useState$16(
     editData?.trackedEntity || editData?.id || null
   );
-  const [ackModalOpen, setAckModalOpen] = useState$15(false);
-  const autoFillFacilityAppliedRef = useRef$l(false);
-  const isEditMode = useMemo$B(() => {
+  const [ackModalOpen, setAckModalOpen] = useState$16(false);
+  const autoFillFacilityAppliedRef = useRef$m(false);
+  const isEditMode = useMemo$C(() => {
     return query === "edit" || !!editData;
   }, [query, editData]);
   const { autoFilledOrgUnit, loading: autoFillLoading } = useFacilityAutoFill(
@@ -33382,7 +33324,7 @@ function FormComponent({
       console.error("Failed to fetch deregistration autofill rules:", error);
     }
   };
-  useEffect$13(() => {
+  useEffect$15(() => {
     if (autoFillFacilityAppliedRef.current) return;
     if (isEditMode) return;
     if (!autoFilledOrgUnit) return;
@@ -33390,7 +33332,7 @@ function FormComponent({
     if (autoFillLoading) return;
     autoFillFacilityAppliedRef.current = true;
   }, [autoFilledOrgUnit, autoFillLoading, isEditMode]);
-  useEffect$13(() => {
+  useEffect$15(() => {
     autoFillFacilityAppliedRef.current = false;
     getRules();
   }, [program?.id]);
@@ -33449,7 +33391,7 @@ function FormComponent({
       console.error("Failed to fetch warrant data:", err);
     }
   };
-  useEffect$13(() => {
+  useEffect$15(() => {
     getRules();
     const q = queryParams.get("triggerAt");
     if (q === "Corrective Maintenance") {
@@ -33521,7 +33463,7 @@ function FormComponent({
     if (v instanceof File) return false;
     return v == null || typeof v === "string" && v.trim() === "";
   };
-  const requiredTrackerAttrIds = useMemo$B(() => {
+  const requiredTrackerAttrIds = useMemo$C(() => {
     if (!program) return [];
     const progReq = program?.programTrackedEntityAttributes?.filter((ptea) => ptea?.mandatory)?.map(
       (ptea) => ptea?.trackedEntityAttribute?.id || ptea?.trackedEntityAttribute
@@ -33531,7 +33473,7 @@ function FormComponent({
     ) || [];
     return Array.from(/* @__PURE__ */ new Set([...progReq || [], ...tetReq || []]));
   }, [program]);
-  const requiredTrackerAttrNames = useMemo$B(() => {
+  const requiredTrackerAttrNames = useMemo$C(() => {
     if (!program) return {};
     const map = {};
     (program?.programTrackedEntityAttributes || []).forEach((ptea) => {
@@ -33572,7 +33514,7 @@ function FormComponent({
       }
     } catch (_) {
     }
-    const reportAttribute = A$8(program?.programTrackedEntityAttributes).map((ptea) => ptea?.trackedEntityAttribute).find((attr) => {
+    const reportAttribute = A$7(program?.programTrackedEntityAttributes).map((ptea) => ptea?.trackedEntityAttribute).find((attr) => {
       const name = String(
         attr?.name || attr?.displayName || ""
       ).toLowerCase();
@@ -33627,23 +33569,14 @@ function FormComponent({
       return;
     }
     const isEditMode2 = query === "edit" || !!editData;
-    const REFERRAL_NUMBER_DE = "svwmE8fSNwy";
-    if (!isEditMode2 && pM === "Referral_maintenance" && !selectedData[REFERRAL_NUMBER_DE]) {
-      const now = /* @__PURE__ */ new Date();
-      const YYYY = now.getFullYear();
-      const MM = String(now.getMonth() + 1).padStart(2, "0");
-      const DD = String(now.getDate()).padStart(2, "0");
-      const rand = Math.random().toString(36).substring(2, 7).toUpperCase();
-      selectedData[REFERRAL_NUMBER_DE] = `REF-${YYYY}${MM}${DD}-${rand}`;
-    }
     if (!isEditMode2 && program) {
       let reportIdentificationId = null;
       if (program?.programType === "WITHOUT_REGISTRATION") {
         const stage = program?.programStages?.[0];
-        const sectionDEs = A$8(stage?.programStageSections).flatMap(
-          (s) => A$8(s?.dataElements)
+        const sectionDEs = A$7(stage?.programStageSections).flatMap(
+          (s) => A$7(s?.dataElements)
         );
-        const flatDEs = A$8(stage?.programStageDataElements).map((de) => de?.dataElement).filter(Boolean);
+        const flatDEs = A$7(stage?.programStageDataElements).map((de) => de?.dataElement).filter(Boolean);
         const allDEs = sectionDEs.length ? sectionDEs : flatDEs;
         const reportIdDE = allDEs.find((de) => {
           const name = (de?.name || de?.displayName || "").toLowerCase();
@@ -33653,7 +33586,7 @@ function FormComponent({
           reportIdentificationId = reportIdDE.id;
         }
       } else if (program?.programType === "WITH_REGISTRATION") {
-        const attrs = A$8(program?.programTrackedEntityAttributes).map((ptea) => ptea?.trackedEntityAttribute).filter(Boolean);
+        const attrs = A$7(program?.programTrackedEntityAttributes).map((ptea) => ptea?.trackedEntityAttribute).filter(Boolean);
         const reportIdAttr = attrs.find((attr) => {
           const name = (attr?.name || attr?.displayName || "").toLowerCase();
           return name.includes("report identification") || name.includes("report id");
@@ -33695,12 +33628,12 @@ function FormComponent({
       const queryDataAddEdit = queryParams.get("q");
       if (program?.programType === "WITHOUT_REGISTRATION") {
         const stage = program?.programStages?.[0];
-        const sectionDEs = A$8(stage?.programStageSections).flatMap(
-          (s) => A$8(s?.dataElements)
+        const sectionDEs = A$7(stage?.programStageSections).flatMap(
+          (s) => A$7(s?.dataElements)
         );
-        const flatDEs = A$8(stage?.programStageDataElements).map((de) => de?.dataElement).filter(Boolean);
+        const flatDEs = A$7(stage?.programStageDataElements).map((de) => de?.dataElement).filter(Boolean);
         const allDEs = sectionDEs.length ? sectionDEs : flatDEs;
-        const fileDataIds = A$8(allDEs).filter(
+        const fileDataIds = A$7(allDEs).filter(
           (f) => ["IMAGE", "FILE_RESOURCE"].includes(
             String(f?.valueType || "").toUpperCase()
           )
@@ -33900,17 +33833,17 @@ function FormComponent({
     onClose?.();
     navigate(window.location.pathname, { replace: true });
   };
-  useEffect$13(() => {
+  useEffect$15(() => {
     if (editData && Object.keys(editData).length > 0 && program) {
       setQuery("edit");
       const getFieldMetadata = (fieldId) => {
         if (!program) return null;
         if (program?.programType === "WITHOUT_REGISTRATION") {
           const stage = program?.programStages?.[0];
-          const sectionDEs = A$8(stage?.programStageSections).flatMap(
-            (s) => A$8(s?.dataElements)
+          const sectionDEs = A$7(stage?.programStageSections).flatMap(
+            (s) => A$7(s?.dataElements)
           );
-          const flatDEs = A$8(stage?.programStageDataElements).map((psde) => psde?.dataElement).filter(Boolean);
+          const flatDEs = A$7(stage?.programStageDataElements).map((psde) => psde?.dataElement).filter(Boolean);
           const combined = [...sectionDEs, ...flatDEs];
           const allDEs = Array.from(
             new Map(combined.map((de) => [de?.id, de])).values()
@@ -33925,11 +33858,11 @@ function FormComponent({
           const secDEs = stageMeta?.programStageSections?.flatMap(
             (sec) => sec?.dataElements || []
           ) || [];
-          const flatDEs = A$8(stageMeta?.programStageDataElements).map((psde) => psde?.dataElement).filter(Boolean);
+          const flatDEs = A$7(stageMeta?.programStageDataElements).map((psde) => psde?.dataElement).filter(Boolean);
           const allDEs = secDEs.length ? secDEs : flatDEs;
           return allDEs.find((de) => de?.id === fieldId);
         }
-        const attrs = A$8(program?.programTrackedEntityAttributes).map((ptea) => ptea?.trackedEntityAttribute).filter(Boolean);
+        const attrs = A$7(program?.programTrackedEntityAttributes).map((ptea) => ptea?.trackedEntityAttribute).filter(Boolean);
         return attrs.find((attr) => attr?.id === fieldId);
       };
       const transformValue = (key, value, metadata) => {
@@ -34003,7 +33936,7 @@ function FormComponent({
     const name = await resolveEquipmentName(id);
     setEquipment(name);
   };
-  useEffect$13(() => {
+  useEffect$15(() => {
     const queryParams2 = new URLSearchParams(location.search);
     const equipmentId = trackedEntity || queryParams2.get("equipmentId");
     getEquip(equipmentId);
@@ -34049,7 +33982,7 @@ function FormComponent({
       fetchEquipmentDataAndPrefill();
     }
   }, [selectedStage, trackedEntity, program, editData, user, location.search]);
-  useEffect$13(() => {
+  useEffect$15(() => {
     const queryId = queryParams.get("q");
     if (queryId === "add") {
       const taskId = queryParams.get("taskId");
@@ -34100,8 +34033,8 @@ function FormComponent({
           incidentDate,
           setIncidentDate,
           enrollmentDate,
-          organisationUnits: A$8(program?.organisationUnits).filter(
-            (org) => A$8(user?.organisationUnits).some(
+          organisationUnits: A$7(program?.organisationUnits).filter(
+            (org) => A$7(user?.organisationUnits).some(
               (uo) => uo.id === org?.id || uo.id === org?.parent?.id
             )
           ),
@@ -34148,8 +34081,8 @@ function FormComponent({
               incidentDate,
               setIncidentDate,
               enrollmentDate,
-              organisationUnits: A$8(program?.organisationUnits).filter(
-                (org) => A$8(user?.organisationUnits).some(
+              organisationUnits: A$7(program?.organisationUnits).filter(
+                (org) => A$7(user?.organisationUnits).some(
                   (uo) => uo.id === org?.id || uo.id === org?.parent?.id
                 )
               ),
@@ -34617,7 +34550,7 @@ const dateTime = {
     FORMAT_PRESETS,
 };
 
-const {useState: useState$14,useMemo: useMemo$A,useEffect: useEffect$12} = await importShared('react');
+const {useState: useState$15,useMemo: useMemo$B,useEffect: useEffect$14} = await importShared('react');
 const DataTable = ({
   columns,
   rows,
@@ -34644,16 +34577,16 @@ const DataTable = ({
   priorities,
   approvalStatusColors
 }) => {
-  const [localSortKey, setLocalSortKey] = useState$14("");
-  const [localSortOrder, setLocalSortOrder] = useState$14("asc");
-  const [isMobile, setIsMobile] = useState$14(() => {
+  const [localSortKey, setLocalSortKey] = useState$15("");
+  const [localSortOrder, setLocalSortOrder] = useState$15("asc");
+  const [isMobile, setIsMobile] = useState$15(() => {
     if (typeof window !== "undefined") {
       return window.innerWidth < 768;
     }
     return false;
   });
-  const [resolvedRows, setResolvedRows] = useState$14(rows);
-  const correctedColumns = useMemo$A(() => {
+  const [resolvedRows, setResolvedRows] = useState$15(rows);
+  const correctedColumns = useMemo$B(() => {
     if (!Array.isArray(columns)) return [];
     const keyCorrections = {
       // Transfer Type
@@ -34678,13 +34611,13 @@ const DataTable = ({
       return correctedKey !== col.key ? { ...col, key: correctedKey } : col;
     });
   }, [columns]);
-  useEffect$12(() => {
+  useEffect$14(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-  useEffect$12(() => {
+  useEffect$14(() => {
     let mounted = true;
     (async () => {
       try {
@@ -34716,7 +34649,7 @@ const DataTable = ({
       setLocalSortOrder(newOrder);
     }
   };
-  const sortedRows = useMemo$A(() => {
+  const sortedRows = useMemo$B(() => {
     if (!clientSideSort || !localSortKey) return resolvedRows;
     return [...resolvedRows].sort((a, b) => {
       const aVal = a[localSortKey];
@@ -35384,7 +35317,7 @@ const DataTable = ({
   ] });
 };
 
-const {useEffect: useEffect$11,useRef: useRef$k} = await importShared('react');
+const {useEffect: useEffect$13,useRef: useRef$l} = await importShared('react');
 
 const GeneralCustomModal = ({
   isOpen,
@@ -35400,7 +35333,7 @@ const GeneralCustomModal = ({
   showCloseButton = true,
   onDidDismiss
 }) => {
-  useEffect$11(() => {
+  useEffect$13(() => {
     const handleClick = (e) => {
       const path = e.composedPath?.() || [];
       for (let el of path) {
@@ -35478,41 +35411,41 @@ const GeneralCustomModal = ({
   );
 };
 
-const React$M = await importShared('react');
-const {useMemo: useMemo$z,useState: useState$13,useEffect: useEffect$10} = React$M;
+const React$O = await importShared('react');
+const {useMemo: useMemo$A,useState: useState$14,useEffect: useEffect$12} = React$O;
 
-const React$L = await importShared('react');
-const {useCallback: useCallback$o,useContext: useContext$z,useEffect: useEffect$$,useRef: useRef$j,useState: useState$12} = React$L;
+const React$N = await importShared('react');
+const {useCallback: useCallback$q,useContext: useContext$A,useEffect: useEffect$11,useRef: useRef$k,useState: useState$13} = React$N;
 function Event({ id }) {
-  const { eventsList, reload, isLoading, columns, pagination } = useContext$z(
+  const { eventsList, reload, isLoading, columns, pagination } = useContext$A(
     MEMISContext.EventsContext
   );
-  const { user } = useContext$z(MEMISContext.UserRolesContext) || {};
+  const { user } = useContext$A(MEMISContext.UserRolesContext) || {};
   const navigate = useNavigate();
-  const [rows, setRows] = useState$12([]);
-  const [searchValue, setSearchValue] = useState$12("");
-  const [search, setSearch] = useState$12("");
-  const [organisationUnits, setOrganisationUnits] = useState$12([]);
-  const [selectedLocation, setSelectedLocation] = useState$12("");
-  const [optionFilters, setOptionFilters] = useState$12([]);
-  const [showSearchField, setShowSearchField] = useState$12(false);
-  const [optionSets, setOptionSets] = useState$12([]);
-  const [filterType, setFilterType] = useState$12([]);
-  const [filterValue, setFilterValue] = useState$12([]);
-  const [filterOpen, setFilterOpen] = useState$12(false);
-  const [filterValueOpen, setFilterValueOpen] = useState$12(null);
-  const [activePicker, setActivePicker] = useState$12(null);
-  const locationRef = useRef$j("");
-  const filterValueRef = useRef$j([]);
-  const filterTypesRef = useRef$j([]);
-  const optionFiltersRef = useRef$j([]);
-  const runQueryRef = useRef$j(null);
-  useEffect$$(() => {
+  const [rows, setRows] = useState$13([]);
+  const [searchValue, setSearchValue] = useState$13("");
+  const [search, setSearch] = useState$13("");
+  const [organisationUnits, setOrganisationUnits] = useState$13([]);
+  const [selectedLocation, setSelectedLocation] = useState$13("");
+  const [optionFilters, setOptionFilters] = useState$13([]);
+  const [showSearchField, setShowSearchField] = useState$13(false);
+  const [optionSets, setOptionSets] = useState$13([]);
+  const [filterType, setFilterType] = useState$13([]);
+  const [filterValue, setFilterValue] = useState$13([]);
+  const [filterOpen, setFilterOpen] = useState$13(false);
+  const [filterValueOpen, setFilterValueOpen] = useState$13(null);
+  const [activePicker, setActivePicker] = useState$13(null);
+  const locationRef = useRef$k("");
+  const filterValueRef = useRef$k([]);
+  const filterTypesRef = useRef$k([]);
+  const optionFiltersRef = useRef$k([]);
+  const runQueryRef = useRef$k(null);
+  useEffect$11(() => {
     filterValueRef.current = filterValue;
     filterTypesRef.current = filterType;
     optionFiltersRef.current = optionFilters;
   }, [filterValue, filterType]);
-  const buildOptions = useCallback$o(
+  const buildOptions = useCallback$q(
     (overrides = {}) => ({
       searchWithSerialNumber: search?.trim() || null,
       orgUnit: selectedLocation || null,
@@ -35521,7 +35454,7 @@ function Event({ id }) {
     }),
     [search, selectedLocation]
   );
-  const runQuery = useCallback$o(
+  const runQuery = useCallback$q(
     (overrides = {}) => {
       reload({
         programId: id,
@@ -35530,10 +35463,10 @@ function Event({ id }) {
     },
     [id, reload, buildOptions]
   );
-  useEffect$$(() => {
+  useEffect$11(() => {
     runQueryRef.current = runQuery;
   }, [runQuery]);
-  useEffect$$(() => {
+  useEffect$11(() => {
     const load = async () => {
       try {
         const orgs = await LocalForageServiceInstance.getItem(
@@ -35548,7 +35481,7 @@ function Event({ id }) {
     };
     load();
   }, []);
-  useEffect$$(() => {
+  useEffect$11(() => {
     if (!user?.userRoles?.length) return;
     const resolveLocation = async () => {
       try {
@@ -35573,7 +35506,7 @@ function Event({ id }) {
     };
     resolveLocation();
   }, [id, user]);
-  useEffect$$(() => {
+  useEffect$11(() => {
     const load = async () => {
       const dataStore = await LocalForageServiceInstance.getItem(
         "dataStore",
@@ -35592,13 +35525,13 @@ function Event({ id }) {
     };
     load();
   }, [id]);
-  useEffect$$(() => {
+  useEffect$11(() => {
     if (id && selectedLocation) runQueryRef.current?.();
   }, [id]);
-  useEffect$$(() => {
+  useEffect$11(() => {
     setRows(eventsList || []);
   }, [eventsList]);
-  useEffect$$(() => {
+  useEffect$11(() => {
     if (!search.trim()) return;
     const timer = setTimeout(() => {
       if (id) runQueryRef.current?.();
@@ -35650,7 +35583,7 @@ function Event({ id }) {
     });
     setFilterOpen(false);
   };
-  useEffect$$(() => {
+  useEffect$11(() => {
     const handleClick = (e) => {
       const path = e.composedPath?.() || [];
       for (let el of path) {
@@ -62045,8 +61978,8 @@ class CapacitorBarcodeScanner {
     }
 }
 
-const React$K = await importShared('react');
-const {useEffect: useEffect$_,useContext: useContext$y,useState: useState$11,useCallback: useCallback$n} = React$K;
+const React$M = await importShared('react');
+const {useEffect: useEffect$10,useContext: useContext$z,useState: useState$12,useCallback: useCallback$p} = React$M;
 const Tracker = ({ id }) => {
   const {
     equipmentList,
@@ -62055,41 +61988,41 @@ const Tracker = ({ id }) => {
     columns,
     pagination,
     setPagination
-  } = useContext$y(MEMISContext.TrackedEntitiesContext);
-  const { user } = useContext$y(MEMISContext.UserRolesContext) || {};
+  } = useContext$z(MEMISContext.TrackedEntitiesContext);
+  const { user } = useContext$z(MEMISContext.UserRolesContext) || {};
   const location = useLocation();
   const navigate = useNavigate();
-  const [rows, setRows] = useState$11([]);
-  const [search, setSearch] = useState$11("");
-  const [searchValue, setSearchValue] = useState$11("");
-  const [organisationUnits, setOrganisationUnits] = useState$11([]);
-  const [equipmentNamesOptions, setEquipmentNamesOptions] = useState$11([]);
-  const [selectedLocation, setSelectedLocation] = useState$11("");
-  const [optionFilters, setOptionFilters] = useState$11([]);
-  const [searchFilter, setSearchFilter] = useState$11(null);
-  const [filterType, setFilterType] = useState$11("");
-  const [filterValue, setFilterValue] = useState$11("");
-  const [appliedFilter, setAppliedFilter] = useState$11({
+  const [rows, setRows] = useState$12([]);
+  const [search, setSearch] = useState$12("");
+  const [searchValue, setSearchValue] = useState$12("");
+  const [organisationUnits, setOrganisationUnits] = useState$12([]);
+  const [equipmentNamesOptions, setEquipmentNamesOptions] = useState$12([]);
+  const [selectedLocation, setSelectedLocation] = useState$12("");
+  const [optionFilters, setOptionFilters] = useState$12([]);
+  const [searchFilter, setSearchFilter] = useState$12(null);
+  const [filterType, setFilterType] = useState$12("");
+  const [filterValue, setFilterValue] = useState$12("");
+  const [appliedFilter, setAppliedFilter] = useState$12({
     type: null,
     value: null
   });
-  const [filterOpen, setFilterOpen] = useState$11(false);
-  const filterRef = React$K.useRef({
+  const [filterOpen, setFilterOpen] = useState$12(false);
+  const filterRef = React$M.useRef({
     type: "",
     value: ""
   });
-  const filterByLocationRef = React$K.useRef({
+  const filterByLocationRef = React$M.useRef({
     type: "",
     value: ""
   });
-  const optionFiltersRef = React$K.useRef([]);
-  const searchFiltersRef = React$K.useRef([]);
-  const getEquipmentNamesOptions = useCallback$n(async () => {
+  const optionFiltersRef = React$M.useRef([]);
+  const searchFiltersRef = React$M.useRef([]);
+  const getEquipmentNamesOptions = useCallback$p(async () => {
     const options = await LocalForageServiceInstance.getItem("optionSets", "metadata");
     const equipmentOptions = options?.find((opt) => opt?.id === "VuKFOqg584G") || [];
     return equipmentOptions?.options || [];
   });
-  useEffect$_(() => {
+  useEffect$10(() => {
     const loadOptions = async () => {
       const options = await getEquipmentNamesOptions();
       setEquipmentNamesOptions(options || []);
@@ -62116,7 +62049,7 @@ const Tracker = ({ id }) => {
       });
     }
   };
-  const buildOptions = useCallback$n(
+  const buildOptions = useCallback$p(
     (overrides = {}) => {
       const hasValidFilter = appliedFilter.type && appliedFilter.value;
       searchFiltersRef?.current;
@@ -62134,7 +62067,7 @@ const Tracker = ({ id }) => {
     },
     [search, appliedFilter]
   );
-  const runQuery = useCallback$n(
+  const runQuery = useCallback$p(
     (overrides = {}) => {
       reload({
         programId: id,
@@ -62143,11 +62076,11 @@ const Tracker = ({ id }) => {
     },
     [id, reload, buildOptions]
   );
-  const runQueryRef = React$K.useRef(runQuery);
-  useEffect$_(() => {
+  const runQueryRef = React$M.useRef(runQuery);
+  useEffect$10(() => {
     runQueryRef.current = runQuery;
   }, [runQuery]);
-  useEffect$_(() => {
+  useEffect$10(() => {
     const loadOrgUnits = async () => {
       try {
         const orgUnits = await LocalForageServiceInstance.getItem(
@@ -62163,7 +62096,7 @@ const Tracker = ({ id }) => {
     };
     loadOrgUnits();
   }, []);
-  useEffect$_(() => {
+  useEffect$10(() => {
     if (!organisationUnits.length || !user?.userRoles?.length) return;
     const resolveDefaultLocation = async () => {
       try {
@@ -62194,10 +62127,10 @@ const Tracker = ({ id }) => {
     };
     resolveDefaultLocation();
   }, [organisationUnits, id, user]);
-  useEffect$_(() => {
+  useEffect$10(() => {
     setRows(equipmentList || []);
   }, [equipmentList]);
-  useEffect$_(() => {
+  useEffect$10(() => {
     if (!search.trim()) return;
     const timeout = setTimeout(() => {
       if (id) {
@@ -62303,7 +62236,7 @@ const Tracker = ({ id }) => {
       console.error("QR Scan failed:", err);
     }
   };
-  useEffect$_(() => {
+  useEffect$10(() => {
     const load = async () => {
       const programAttributesResult = await LocalForageServiceInstance.getItem(
         "dataStore",
@@ -62322,7 +62255,7 @@ const Tracker = ({ id }) => {
     };
     load();
   }, [id]);
-  useEffect$_(() => {
+  useEffect$10(() => {
     optionFiltersRef.current = optionFilters || [];
     searchFiltersRef.current = searchFilter || null;
   }, [optionFilters, searchFilter]);
@@ -62480,8 +62413,8 @@ const Tracker = ({ id }) => {
   ] });
 };
 
-const React$J = await importShared('react');
-const {useState: useState$10,useEffect: useEffect$Z,useMemo: useMemo$y,useRef: useRef$i,useCallback: useCallback$m} = React$J;
+const React$L = await importShared('react');
+const {useState: useState$11,useEffect: useEffect$$,useMemo: useMemo$z,useRef: useRef$j,useCallback: useCallback$o} = React$L;
 const SearchFilterCard = ({
   children,
   searchText,
@@ -62502,48 +62435,48 @@ const SearchFilterCard = ({
   onScanSearch,
   programId
 }) => {
-  const [popoverEvent, setPopoverEvent] = useState$10(null);
-  const [filterPopoverEvent, setFilterPopoverEvent] = useState$10(null);
-  const [localApproval, setLocalApproval] = useState$10(
+  const [popoverEvent, setPopoverEvent] = useState$11(null);
+  const [filterPopoverEvent, setFilterPopoverEvent] = useState$11(null);
+  const [localApproval, setLocalApproval] = useState$11(
     filterOptions?.approval ?? ""
   );
-  const lastExternalApprovalRef = useRef$i(filterOptions?.approval ?? "");
-  const [scanOpen, setScanOpen] = useState$10(false);
-  const [scanError, setScanError] = useState$10("");
-  const videoRef = useRef$i(null);
-  const streamRef = useRef$i(null);
-  const rafRef = useRef$i(null);
-  const detectorRef = useRef$i(null);
-  const [optionFilters, setOptionFilters] = useState$10([]);
-  const [searchFilter, setSearchFilter] = useState$10(null);
-  const [organisationUnits, setOrganisationUnits] = useState$10([]);
-  const [selectedLocation, setSelectedLocation] = useState$10("");
-  const [filterType, setFilterType] = useState$10("");
-  const [filterValue, setFilterValue] = useState$10("");
-  const [appliedFilter, setAppliedFilter] = useState$10({
+  const lastExternalApprovalRef = useRef$j(filterOptions?.approval ?? "");
+  const [scanOpen, setScanOpen] = useState$11(false);
+  const [scanError, setScanError] = useState$11("");
+  const videoRef = useRef$j(null);
+  const streamRef = useRef$j(null);
+  const rafRef = useRef$j(null);
+  const detectorRef = useRef$j(null);
+  const [optionFilters, setOptionFilters] = useState$11([]);
+  const [searchFilter, setSearchFilter] = useState$11(null);
+  const [organisationUnits, setOrganisationUnits] = useState$11([]);
+  const [selectedLocation, setSelectedLocation] = useState$11("");
+  const [filterType, setFilterType] = useState$11("");
+  const [filterValue, setFilterValue] = useState$11("");
+  const [appliedFilter, setAppliedFilter] = useState$11({
     type: null,
     value: null
   });
-  const [filterOpen, setFilterOpen] = useState$10(false);
-  const filterRef = React$J.useRef({
+  const [filterOpen, setFilterOpen] = useState$11(false);
+  const filterRef = React$L.useRef({
     type: "",
     value: ""
   });
-  const filterByLocationRef = React$J.useRef({
+  const filterByLocationRef = React$L.useRef({
     type: "",
     value: ""
   });
-  const optionFiltersRef = React$J.useRef([]);
-  const searchFiltersRef = React$J.useRef([]);
+  const optionFiltersRef = React$L.useRef([]);
+  const searchFiltersRef = React$L.useRef([]);
   const isScanDebug = typeof window !== "undefined" && (window.localStorage?.getItem("memis_qr_scan_debug") === "1" || window.__MEMIS_QR_SCAN_DEBUG__ === true) || false;
-  const scanDebug = useCallback$m(
+  const scanDebug = useCallback$o(
     (...args) => {
       if (!isScanDebug) return;
       console.log("[MEMIS][QR_SCAN]", ...args);
     },
     [isScanDebug]
   );
-  useEffect$Z(() => {
+  useEffect$$(() => {
     const onUnhandledRejection = (event) => {
       const reason = String(
         event?.reason?.message || event?.reason || ""
@@ -62569,7 +62502,7 @@ const SearchFilterCard = ({
       window.removeEventListener("error", onWindowError);
     };
   }, [scanDebug]);
-  const placeHolder = useMemo$y(() => {
+  const placeHolder = useMemo$z(() => {
     if (searchPlaceholder) return searchPlaceholder;
     const labels = (filterColumns || []).map((c) => c.label).filter(Boolean);
     if (!labels.length) return "Search...";
@@ -62577,14 +62510,14 @@ const SearchFilterCard = ({
     const shownWords = labels.slice(0, max).join(", ");
     return `Search by ${shownWords}${labels.length > max ? "..." : ""}`;
   }, [searchPlaceholder, filterColumns]);
-  useEffect$Z(() => {
+  useEffect$$(() => {
     const external = filterOptions?.approval ?? "";
     if (lastExternalApprovalRef.current !== external) {
       lastExternalApprovalRef.current = external;
       setLocalApproval(external);
     }
   }, [filterOptions?.approval]);
-  const stopScanner = useCallback$m(() => {
+  const stopScanner = useCallback$o(() => {
     if (rafRef.current) {
       cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
@@ -62598,7 +62531,7 @@ const SearchFilterCard = ({
       videoRef.current.srcObject = null;
     }
   }, []);
-  const waitForVideoReady = useCallback$m(async (videoEl) => {
+  const waitForVideoReady = useCallback$o(async (videoEl) => {
     if (!videoEl) return;
     if (videoEl.readyState >= 2) return;
     await new Promise((resolve) => {
@@ -62615,12 +62548,12 @@ const SearchFilterCard = ({
       setTimeout(finish, 600);
     });
   }, []);
-  useEffect$Z(() => {
+  useEffect$$(() => {
     return () => {
       stopScanner();
     };
   }, [stopScanner]);
-  const handleScannedValue = useCallback$m(
+  const handleScannedValue = useCallback$o(
     async (rawValue) => {
       const incoming = String(rawValue || "").trim();
       if (!incoming) return;
@@ -62636,7 +62569,7 @@ const SearchFilterCard = ({
     [onScanSearch, onSearchChange]
   );
   const isNativePlatform = typeof Capacitor?.isNativePlatform === "function" ? Capacitor.isNativePlatform() : ["android", "ios"].includes(Capacitor?.getPlatform?.());
-  const mapScannerError = useCallback$m((error, { native = false } = {}) => {
+  const mapScannerError = useCallback$o((error, { native = false } = {}) => {
     const name = String(error?.name || "").trim();
     const message = String(error?.message || "").toLowerCase();
     if (name === "NotAllowedError" || name === "SecurityError" || message.includes("permission") || message.includes("denied")) {
@@ -62674,7 +62607,7 @@ const SearchFilterCard = ({
       message: native ? "Unable to scan QR code on this device right now." : "Unable to start browser QR scanner right now."
     };
   }, []);
-  const runNativePluginScan = useCallback$m(async () => {
+  const runNativePluginScan = useCallback$o(async () => {
     try {
       scanDebug("path=native-mobile:start");
       const result = await CapacitorBarcodeScanner.scanBarcode({
@@ -62702,7 +62635,7 @@ const SearchFilterCard = ({
       return { ok: false, ...mapped };
     }
   }, [handleScannedValue, mapScannerError, scanDebug]);
-  const openScanner = useCallback$m(async () => {
+  const openScanner = useCallback$o(async () => {
     try {
       if (!enableQrScan) return;
       setScanError("");
@@ -62738,11 +62671,11 @@ const SearchFilterCard = ({
     runNativePluginScan,
     scanDebug
   ]);
-  const closeScanner = useCallback$m(() => {
+  const closeScanner = useCallback$o(() => {
     setScanOpen(false);
     stopScanner();
   }, [stopScanner]);
-  useEffect$Z(() => {
+  useEffect$$(() => {
     if (!scanOpen) return;
     let cancelled = false;
     const start = async () => {
@@ -62837,7 +62770,7 @@ const SearchFilterCard = ({
   };
   const resetFilters = () => {
   };
-  useEffect$Z(() => {
+  useEffect$$(() => {
     const load = async () => {
       const programAttributesResult = await LocalForageServiceInstance.getItem(
         "dataStore",
@@ -62858,7 +62791,7 @@ const SearchFilterCard = ({
     };
     load();
   }, [programId]);
-  useEffect$Z(() => {
+  useEffect$$(() => {
     optionFiltersRef.current = optionFilters || [];
     searchFiltersRef.current = searchFilter || null;
   }, [optionFilters, searchFilter]);
@@ -63076,13 +63009,13 @@ const SearchFilterCard = ({
   ] });
 };
 
-const {useCallback: useCallback$l,useMemo: useMemo$x} = await importShared('react');
+const {useCallback: useCallback$n,useMemo: useMemo$y} = await importShared('react');
 
 const unwrap = (res) => res?.data ?? res;
 
 function useTeiSearch(columns = []) {
  
-  const colKeySet = useMemo$x(() => {
+  const colKeySet = useMemo$y(() => {
     return new Set((columns || []).map((c) => c.key));
   }, [columns]);
 
@@ -63124,7 +63057,7 @@ function useTeiSearch(columns = []) {
     return rawValue;
   };
 
-  const search = useCallback$l(
+  const search = useCallback$n(
     async ({ programId, orgUnits, query, attributeUids, pageSize = 25, page = 1 }) => {
       if (!programId || !query || !attributeUids?.length) {
           return {
@@ -63347,7 +63280,7 @@ const eventSearchFilter = async (programId, data) => {
   return { filter: "&filter=" + filterString };
 };
 
-const {useCallback: useCallback$k,useEffect: useEffect$Y,useMemo: useMemo$w,useRef: useRef$h,useState: useState$$} = await importShared('react');
+const {useCallback: useCallback$m,useEffect: useEffect$_,useMemo: useMemo$x,useRef: useRef$i,useState: useState$10} = await importShared('react');
 function ItemSearch({
   programId,
   programStageId,
@@ -63361,23 +63294,23 @@ function ItemSearch({
   onResults,
   onLoadingChange
 }) {
-  const [debounced, setDebounced] = useState$$((searchText || "").trim());
-  const [programType, setProgramType] = useState$$(null);
-  const mountedRef = useRef$h(true);
-  const onResultsRef = useRef$h(onResults);
-  const onLoadingRef = useRef$h(onLoadingChange);
-  useEffect$Y(() => {
+  const [debounced, setDebounced] = useState$10((searchText || "").trim());
+  const [programType, setProgramType] = useState$10(null);
+  const mountedRef = useRef$i(true);
+  const onResultsRef = useRef$i(onResults);
+  const onLoadingRef = useRef$i(onLoadingChange);
+  useEffect$_(() => {
     onResultsRef.current = onResults;
   }, [onResults]);
-  useEffect$Y(() => {
+  useEffect$_(() => {
     onLoadingRef.current = onLoadingChange;
   }, [onLoadingChange]);
-  const keySet = useMemo$w(
+  const keySet = useMemo$x(
     () => new Set((visibleColumns || []).map((c) => c.key)),
     [visibleColumns]
   );
-  const colKeys = useMemo$w(() => Array.from(keySet), [keySet]);
-  const eventSearchKeys = useMemo$w(() => {
+  const colKeys = useMemo$x(() => Array.from(keySet), [keySet]);
+  const eventSearchKeys = useMemo$x(() => {
     const nonEventKeys = /* @__PURE__ */ new Set([
       "id",
       "event",
@@ -63390,16 +63323,16 @@ function ItemSearch({
     ]);
     return colKeys.filter((k) => !nonEventKeys.has(k));
   }, [colKeys]);
-  const colKeysKey = useMemo$w(() => colKeys.join(","), [colKeys]);
-  const orgUnitsKey = useMemo$w(
+  const colKeysKey = useMemo$x(() => colKeys.join(","), [colKeys]);
+  const orgUnitsKey = useMemo$x(
     () => (orgUnits || []).map((o) => o.id).join(","),
     [orgUnits]
   );
-  const [searchSets, setSearchSets] = useState$$({ equipment: [], spare: [] });
-  const EQUIP_SET = useMemo$w(() => searchSets?.equipment || [], [searchSets]);
-  const SPARE_SET = useMemo$w(() => searchSets?.spare || [], [searchSets]);
+  const [searchSets, setSearchSets] = useState$10({ equipment: [], spare: [] });
+  const EQUIP_SET = useMemo$x(() => searchSets?.equipment || [], [searchSets]);
+  const SPARE_SET = useMemo$x(() => searchSets?.spare || [], [searchSets]);
   const teiSearch = useTeiSearch(visibleColumns);
-  const eventFieldMapRef = useRef$h({ key: null, map: /* @__PURE__ */ new Map() });
+  const eventFieldMapRef = useRef$i({ key: null, map: /* @__PURE__ */ new Map() });
   const resolveDisplayValue = (field, rawValue) => {
     if (!field || rawValue == null || rawValue === "") return rawValue;
     const valueType = String(field.valueType || "").toUpperCase();
@@ -63427,7 +63360,7 @@ function ItemSearch({
     }
     return rawValue;
   };
-  const getEventFieldMap = useCallback$k(async () => {
+  const getEventFieldMap = useCallback$m(async () => {
     if (!programId) return /* @__PURE__ */ new Map();
     const cacheKey = `${programId}:${programStageId || ""}`;
     if (eventFieldMapRef.current.key === cacheKey) return eventFieldMapRef.current.map;
@@ -63445,13 +63378,13 @@ function ItemSearch({
     eventFieldMapRef.current = { key: cacheKey, map };
     return map;
   }, [programId, programStageId]);
-  const pickTeiScope = useCallback$k(() => {
+  const pickTeiScope = useCallback$m(() => {
     const hasAny = (uids) => uids.some((u) => keySet.has(u));
     if (hasAny(EQUIP_SET)) return EQUIP_SET;
     if (hasAny(SPARE_SET)) return SPARE_SET;
     return EQUIP_SET;
   }, [keySet, EQUIP_SET, SPARE_SET]);
-  const shapeEventRows = useCallback$k(
+  const shapeEventRows = useCallback$m(
     (events) => {
       const allowed = new Set(colKeys);
       return (events || []).map((ev) => {
@@ -63464,17 +63397,17 @@ function ItemSearch({
     },
     [colKeys]
   );
-  useEffect$Y(() => {
+  useEffect$_(() => {
     mountedRef.current = true;
     return () => {
       mountedRef.current = false;
     };
   }, []);
-  useEffect$Y(() => {
+  useEffect$_(() => {
     const t = setTimeout(() => setDebounced((searchText || "").trim()), 250);
     return () => clearTimeout(t);
   }, [searchText]);
-  useEffect$Y(() => {
+  useEffect$_(() => {
     if (!programId) return;
     const fetchProgramType = async () => {
       try {
@@ -63486,7 +63419,7 @@ function ItemSearch({
     };
     fetchProgramType();
   }, [programId]);
-  useEffect$Y(() => {
+  useEffect$_(() => {
     let cancelled = false;
     (async () => {
       const sets = await getSearchAttributeSets(programId);
@@ -63498,7 +63431,7 @@ function ItemSearch({
       cancelled = true;
     };
   }, [programId]);
-  useEffect$Y(() => {
+  useEffect$_(() => {
     let cancelled = false;
     const runTei = async () => {
       const attributeUids = pickTeiScope();
@@ -63857,16 +63790,16 @@ const sortRowsByApproval = (rows, approvalFieldKey) => {
   return copy;
 };
 
-const {useEffect: useEffect$X,useState: useState$_} = await importShared('react');
+const {useEffect: useEffect$Z,useState: useState$$} = await importShared('react');
 
 function useQrScanEnabled({
   menuItems,
   currentNavigationId,
   scanProgramId,
 }) {
-  const [qrScanEnabled, setQrScanEnabled] = useState$_(false);
+  const [qrScanEnabled, setQrScanEnabled] = useState$$(false);
 
-  useEffect$X(() => {
+  useEffect$Z(() => {
     let cancelled = false;
 
     (async () => {
@@ -63972,7 +63905,7 @@ function getBlankPlaceholderForDataElement(dataElements = [], deId) {
   );
 }
 
-const {useCallback: useCallback$j,useContext: useContext$x,useEffect: useEffect$W,useMemo: useMemo$v,useRef: useRef$g,useState: useState$Z} = await importShared('react');
+const {useCallback: useCallback$l,useContext: useContext$y,useEffect: useEffect$Y,useMemo: useMemo$w,useRef: useRef$h,useState: useState$_} = await importShared('react');
 function StageEvents({
   id,
   programId: programIdProp,
@@ -63982,40 +63915,40 @@ function StageEvents({
 }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user } = useContext$x(MEMISContext.UserRolesContext);
-  const { menuItems } = useContext$x(MEMISContext.MenuContext);
-  const [rows, setRows] = useState$Z([]);
-  const [priorities, setPriorities] = useState$Z(null);
-  const [loading, setLoading] = useState$Z(false);
-  const [loadingColumns, setLoadingColumns] = useState$Z(false);
-  const [loadingRows, setLoadingRows] = useState$Z(false);
-  const [searchText, setSearchText] = useState$Z("");
-  const [rawRows, setRawRows] = useState$Z([]);
-  const [filterOptions, setFilterOptions] = useState$Z({ approval: null });
-  const [approvalFieldKey, setApprovalFieldKey] = useState$Z(null);
-  const [approvalConfig, setApprovalConfig] = useState$Z(null);
-  const orgUnitCacheRef = useRef$g(/* @__PURE__ */ new Map());
-  const [allColumnsOrdered, setAllColumnsOrdered] = useState$Z([]);
-  const [visibleColumnKeys, setVisibleColumnKeys] = useState$Z(/* @__PURE__ */ new Set());
-  const visibleColumns = useMemo$v(
+  const { user } = useContext$y(MEMISContext.UserRolesContext);
+  const { menuItems } = useContext$y(MEMISContext.MenuContext);
+  const [rows, setRows] = useState$_([]);
+  const [priorities, setPriorities] = useState$_(null);
+  const [loading, setLoading] = useState$_(false);
+  const [loadingColumns, setLoadingColumns] = useState$_(false);
+  const [loadingRows, setLoadingRows] = useState$_(false);
+  const [searchText, setSearchText] = useState$_("");
+  const [rawRows, setRawRows] = useState$_([]);
+  const [filterOptions, setFilterOptions] = useState$_({ approval: null });
+  const [approvalFieldKey, setApprovalFieldKey] = useState$_(null);
+  const [approvalConfig, setApprovalConfig] = useState$_(null);
+  const orgUnitCacheRef = useRef$h(/* @__PURE__ */ new Map());
+  const [allColumnsOrdered, setAllColumnsOrdered] = useState$_([]);
+  const [visibleColumnKeys, setVisibleColumnKeys] = useState$_(/* @__PURE__ */ new Set());
+  const visibleColumns = useMemo$w(
     () => allColumnsOrdered.filter((c) => visibleColumnKeys.has(c.key)),
     [allColumnsOrdered, visibleColumnKeys]
   );
-  const searchPlaceholder = useMemo$v(() => {
+  const searchPlaceholder = useMemo$w(() => {
     const labels = visibleColumns.map((c) => c.label).filter(Boolean);
     if (!labels.length) return "Search events...";
     const max = 10;
     const shown = labels.slice(0, max).join(", ");
     return `Search by ${shown}${labels.length > max ? "..." : ""}`;
   }, [visibleColumns]);
-  const [selectedRow, setSelectedRow] = useState$Z(null);
-  const [selectedRowId, setSelectedRowId] = useState$Z(null);
-  const [showActions, setShowActions] = useState$Z(false);
-  const [pendingDelete, setPendingDelete] = useState$Z(null);
-  const [deletingId, setDeletingId] = useState$Z(null);
-  const [fallbackStageId, setFallbackStageId] = useState$Z(null);
+  const [selectedRow, setSelectedRow] = useState$_(null);
+  const [selectedRowId, setSelectedRowId] = useState$_(null);
+  const [showActions, setShowActions] = useState$_(false);
+  const [pendingDelete, setPendingDelete] = useState$_(null);
+  const [deletingId, setDeletingId] = useState$_(null);
+  const [fallbackStageId, setFallbackStageId] = useState$_(null);
   const getRowId = (row) => row?.id || row?.event || row?.enrollment || row?.trackedEntity || null;
-  const { resolvedProgramId, resolvedStageId } = useMemo$v(() => {
+  const { resolvedProgramId, resolvedStageId } = useMemo$w(() => {
     const match = menuItems?.find((m) => m?.id === (stageIdProp || id)) || null;
     const stage = stageIdProp || match?.dependentStage || match?.id || id;
     const program = programIdProp || match?.dependentProgram || (match?.isProgram ? match?.id : null) || id;
@@ -64024,7 +63957,7 @@ function StageEvents({
       resolvedStageId: stage
     };
   }, [id, menuItems, programIdProp, stageIdProp]);
-  const effectiveProgramId = useMemo$v(
+  const effectiveProgramId = useMemo$w(
     () => resolvedProgramId || programIdProp || id || null,
     [id, programIdProp, resolvedProgramId]
   );
@@ -64033,16 +63966,16 @@ function StageEvents({
     currentNavigationId: id,
     scanProgramId: effectiveProgramId
   });
-  const effectiveStageId = useMemo$v(() => {
+  const effectiveStageId = useMemo$w(() => {
     const rawStage = stageIdProp || resolvedStageId;
     if (rawStage && rawStage !== effectiveProgramId) return rawStage;
     if (fallbackStageId) return fallbackStageId;
     return rawStage || null;
   }, [stageIdProp, resolvedStageId, fallbackStageId, effectiveProgramId]);
-  useEffect$W(() => {
+  useEffect$Y(() => {
     setFallbackStageId(null);
   }, [effectiveProgramId, stageIdProp, resolvedStageId]);
-  useEffect$W(() => {
+  useEffect$Y(() => {
     const needsLookup = !effectiveStageId || effectiveProgramId && effectiveStageId === effectiveProgramId;
     if (!effectiveProgramId || !needsLookup) return;
     (async () => {
@@ -64139,7 +64072,7 @@ function StageEvents({
       setLoadingColumns(false);
     }
   };
-  const [pagination, setPagination] = useState$Z({
+  const [pagination, setPagination] = useState$_({
     page: 1,
     pageCount: 1,
     pageSize: 100,
@@ -64366,7 +64299,7 @@ function StageEvents({
     );
     setPriorities(res);
   };
-  useEffect$W(() => {
+  useEffect$Y(() => {
     setAllColumnsOrdered([]);
     setVisibleColumnKeys(/* @__PURE__ */ new Set());
     setRawRows([]);
@@ -64387,7 +64320,7 @@ function StageEvents({
       setPagination((prev) => ({ ...prev, page: 1 }));
     }
   }, [user, effectiveProgramId, effectiveStageId, location.pathname]);
-  useEffect$W(() => {
+  useEffect$Y(() => {
     const filtered = filterRowsByApproval(
       rawRows,
       filterOptions.approval,
@@ -64400,7 +64333,7 @@ function StageEvents({
     const v = value || null;
     setFilterOptions((prev) => ({ ...prev, approval: v }));
   };
-  useEffect$W(() => {
+  useEffect$Y(() => {
     if (!effectiveProgramId || !effectiveStageId || !user?.organisationUnits || allColumnsOrdered.length === 0)
       return;
     if ((searchText ?? "").trim().length < 2) {
@@ -64419,7 +64352,7 @@ function StageEvents({
     allColumnsOrdered
   ]);
   const isLoading = loading || loadingRows || loadingColumns;
-  const handleScanSearch = useCallback$j(
+  const handleScanSearch = useCallback$l(
     async (rawScannedValue) => {
       return resolveQrSearchQuery({
         rawScannedValue,
@@ -64527,7 +64460,7 @@ function StageEvents({
   ] });
 }
 
-const {useCallback: useCallback$i,useContext: useContext$w,useEffect: useEffect$V,useMemo: useMemo$u,useRef: useRef$f,useState: useState$Y} = await importShared('react');
+const {useCallback: useCallback$k,useContext: useContext$x,useEffect: useEffect$X,useMemo: useMemo$v,useRef: useRef$g,useState: useState$Z} = await importShared('react');
 function StageSectionsEvents({
   id,
   programId: programIdProp,
@@ -64537,41 +64470,41 @@ function StageSectionsEvents({
 }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user } = useContext$w(MEMISContext.UserRolesContext);
-  const { menuItems } = useContext$w(MEMISContext.MenuContext);
+  const { user } = useContext$x(MEMISContext.UserRolesContext);
+  const { menuItems } = useContext$x(MEMISContext.MenuContext);
   const queryParams = new URLSearchParams(location.search);
-  const [rows, setRows] = useState$Y([]);
-  const [priorities, setPriorities] = useState$Y(null);
-  const [loading, setLoading] = useState$Y(false);
-  const [loadingColumns, setLoadingColumns] = useState$Y(false);
-  const [loadingRows, setLoadingRows] = useState$Y(false);
-  const [searchText, setSearchText] = useState$Y("");
-  const [rawRows, setRawRows] = useState$Y([]);
-  const [filterOptions, setFilterOptions] = useState$Y({ approval: null });
-  const [approvalFieldKey, setApprovalFieldKey] = useState$Y(null);
-  const [approvalConfig, setApprovalConfig] = useState$Y(null);
-  const orgUnitCacheRef = useRef$f(/* @__PURE__ */ new Map());
-  const [allColumnsOrdered, setAllColumnsOrdered] = useState$Y([]);
-  const [visibleColumnKeys, setVisibleColumnKeys] = useState$Y(/* @__PURE__ */ new Set());
-  const visibleColumns = useMemo$u(
+  const [rows, setRows] = useState$Z([]);
+  const [priorities, setPriorities] = useState$Z(null);
+  const [loading, setLoading] = useState$Z(false);
+  const [loadingColumns, setLoadingColumns] = useState$Z(false);
+  const [loadingRows, setLoadingRows] = useState$Z(false);
+  const [searchText, setSearchText] = useState$Z("");
+  const [rawRows, setRawRows] = useState$Z([]);
+  const [filterOptions, setFilterOptions] = useState$Z({ approval: null });
+  const [approvalFieldKey, setApprovalFieldKey] = useState$Z(null);
+  const [approvalConfig, setApprovalConfig] = useState$Z(null);
+  const orgUnitCacheRef = useRef$g(/* @__PURE__ */ new Map());
+  const [allColumnsOrdered, setAllColumnsOrdered] = useState$Z([]);
+  const [visibleColumnKeys, setVisibleColumnKeys] = useState$Z(/* @__PURE__ */ new Set());
+  const visibleColumns = useMemo$v(
     () => allColumnsOrdered?.filter((c) => visibleColumnKeys?.has(c?.key)),
     [allColumnsOrdered, visibleColumnKeys]
   );
-  const searchPlaceholder = useMemo$u(() => {
+  const searchPlaceholder = useMemo$v(() => {
     const labels = visibleColumns.map((c) => c.label).filter(Boolean);
     if (!labels.length) return "Search events...";
     const max = 10;
     const shown = labels.slice(0, max).join(", ");
     return `Search by ${shown}${labels.length > max ? "..." : ""}`;
   }, [visibleColumns]);
-  const [selectedRow, setSelectedRow] = useState$Y(null);
-  const [selectedRowId, setSelectedRowId] = useState$Y(null);
-  const [showActions, setShowActions] = useState$Y(false);
-  const [pendingDelete, setPendingDelete] = useState$Y(null);
-  const [deletingId, setDeletingId] = useState$Y(null);
-  const [fallbackStageId, setFallbackStageId] = useState$Y(null);
+  const [selectedRow, setSelectedRow] = useState$Z(null);
+  const [selectedRowId, setSelectedRowId] = useState$Z(null);
+  const [showActions, setShowActions] = useState$Z(false);
+  const [pendingDelete, setPendingDelete] = useState$Z(null);
+  const [deletingId, setDeletingId] = useState$Z(null);
+  const [fallbackStageId, setFallbackStageId] = useState$Z(null);
   const getRowId = (row) => row?.id || row?.event || row?.enrollment || row?.trackedEntity || null;
-  const { resolvedProgramId, resolvedStageId } = useMemo$u(() => {
+  const { resolvedProgramId, resolvedStageId } = useMemo$v(() => {
     const match = menuItems?.find((m) => m?.id === (stageIdProp || id)) || null;
     const stage = stageIdProp || match?.dependentStage || match?.id || id;
     const program = programIdProp || match?.dependentProgram || (match?.isProgram ? match?.id : null) || id;
@@ -64580,7 +64513,7 @@ function StageSectionsEvents({
       resolvedStageId: stage
     };
   }, [id, menuItems, programIdProp, stageIdProp]);
-  const effectiveProgramId = useMemo$u(
+  const effectiveProgramId = useMemo$v(
     () => resolvedProgramId || programIdProp || id || null,
     [id, programIdProp, resolvedProgramId]
   );
@@ -64589,16 +64522,16 @@ function StageSectionsEvents({
     currentNavigationId: id,
     scanProgramId: effectiveProgramId
   });
-  const effectiveStageId = useMemo$u(() => {
+  const effectiveStageId = useMemo$v(() => {
     const rawStage = stageIdProp || resolvedStageId;
     if (rawStage && rawStage !== effectiveProgramId) return rawStage;
     if (fallbackStageId) return fallbackStageId;
     return rawStage || null;
   }, [stageIdProp, resolvedStageId, fallbackStageId, effectiveProgramId]);
-  useEffect$V(() => {
+  useEffect$X(() => {
     setFallbackStageId(null);
   }, [effectiveProgramId, stageIdProp, resolvedStageId]);
-  useEffect$V(() => {
+  useEffect$X(() => {
     const needsLookup = !effectiveStageId || effectiveProgramId && effectiveStageId === effectiveProgramId;
     if (!effectiveProgramId || !needsLookup) return;
     (async () => {
@@ -64667,7 +64600,7 @@ function StageSectionsEvents({
       setLoadingColumns(false);
     }
   };
-  const [pagination, setPagination] = useState$Y({
+  const [pagination, setPagination] = useState$Z({
     page: 1,
     pageCount: 1,
     pageSize: 50,
@@ -64931,7 +64864,7 @@ function StageSectionsEvents({
     );
     setPriorities(res);
   };
-  useEffect$V(() => {
+  useEffect$X(() => {
     if (effectiveProgramId && effectiveStageId) {
       getProgramDE(effectiveProgramId, effectiveStageId);
       getPriorityColors(effectiveProgramId);
@@ -64950,7 +64883,7 @@ function StageSectionsEvents({
     const v = value || null;
     setFilterOptions((prev) => ({ ...prev, approval: v }));
   };
-  useEffect$V(() => {
+  useEffect$X(() => {
     if (!effectiveProgramId || !effectiveStageId || !user?.organisationUnits || allColumnsOrdered.length === 0)
       return;
     if ((searchText ?? "").trim().length < 2) {
@@ -64969,7 +64902,7 @@ function StageSectionsEvents({
     allColumnsOrdered
   ]);
   const isLoading = loading || loadingRows || loadingColumns;
-  const handleScanSearch = useCallback$i(
+  const handleScanSearch = useCallback$k(
     async (rawScannedValue) => {
       return resolveQrSearchQuery({
         rawScannedValue,
@@ -65057,8 +64990,8 @@ function StageSectionsEvents({
   ] });
 }
 
-const React$I = await importShared('react');
-const {useState: useState$X,useMemo: useMemo$t,useEffect: useEffect$U} = React$I;
+const React$K = await importShared('react');
+const {useState: useState$Y,useMemo: useMemo$u,useEffect: useEffect$W} = React$K;
 
 const {createPortal: createPortal$3} = await importShared('react-dom');
 function EquipmentPicker({
@@ -65071,13 +65004,13 @@ function EquipmentPicker({
   loading = false,
   error = null
 }) {
-  const [searchTerm, setSearchTerm] = useState$X("");
-  const [selectedItem, setSelectedItem] = useState$X(null);
-  const [wardsList, setWardsList] = useState$X([]);
-  const [selectedWard, setSelectedWard] = useState$X(null);
-  const [isLoading, setLoading] = useState$X(loading);
-  const [avEquipment, setAvailableEquipment] = useState$X(availableEquipment);
-  const filteredEquipment = useMemo$t(() => {
+  const [searchTerm, setSearchTerm] = useState$Y("");
+  const [selectedItem, setSelectedItem] = useState$Y(null);
+  const [wardsList, setWardsList] = useState$Y([]);
+  const [selectedWard, setSelectedWard] = useState$Y(null);
+  const [isLoading, setLoading] = useState$Y(loading);
+  const [avEquipment, setAvailableEquipment] = useState$Y(availableEquipment);
+  const filteredEquipment = useMemo$u(() => {
     if (!searchTerm.trim()) return avEquipment;
     const term = searchTerm.toLowerCase();
     return avEquipment.filter(
@@ -65088,21 +65021,16 @@ function EquipmentPicker({
   const handleEquipmentSelect = (equipment) => {
     setSelectedItem(equipment);
   };
-  const sortWardsAlphabetically = (wards = []) => [...wards].sort(
-    (a, b) => String(a?.name || "").localeCompare(String(b?.name || ""), void 0, {
-      sensitivity: "base"
-    })
-  );
   const getWards = () => {
     const firstOu = user?.organisationUnits?.[0];
     if (firstOu?.children?.length > 0) {
-      setWardsList(sortWardsAlphabetically(firstOu.children));
+      setWardsList(firstOu.children);
       return;
     }
     const ou = firstOu?.id;
     if (!ou) return;
     dataStore.get(`/organisationUnits/${ou}?fields=id,name,children[id,name]`).then((res) => {
-      setWardsList(sortWardsAlphabetically(res?.data?.children || []));
+      setWardsList(res?.data?.children || []);
     });
   };
   const handleWardSelect = async (ward) => {
@@ -65206,13 +65134,13 @@ function EquipmentPicker({
       setLoading(false);
     }
   };
-  useEffect$U(() => {
+  useEffect$W(() => {
     getWards();
   }, []);
-  useEffect$U(() => {
+  useEffect$W(() => {
     setLoading(loading);
   }, [loading]);
-  useEffect$U(() => {
+  useEffect$W(() => {
     setAvailableEquipment(availableEquipment);
   }, [availableEquipment]);
   const handleConfirm = () => {
@@ -65743,9 +65671,9 @@ function EquipmentPicker({
   );
 }
 
-const {useEffect: useEffect$T,useState: useState$W} = await importShared('react');
+const {useEffect: useEffect$V,useState: useState$X} = await importShared('react');
 
-const A$7 = (x) => Array.isArray(x) ? x : [];
+const A$6 = (x) => Array.isArray(x) ? x : [];
 const RequiredLabel = ({ label, required }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { position: "stacked", className: "ion-text-wrap", children: [
   label,
   " ",
@@ -65756,8 +65684,8 @@ function RenderField({ field, required, missing, formData, handleChange, getVal,
   const type = field?.valueType;
   const value = formData?.[field?.id] || getVal(field?.id) || "";
   const label = field?.formName || field?.name || field?.id;
-  const [options, setOptions] = useState$W([]);
-  useEffect$T(() => {
+  const [options, setOptions] = useState$X([]);
+  useEffect$V(() => {
     if (!field?.optionSet) return;
     setOptions(field?.optionSet?.options || []);
   }, []);
@@ -65800,7 +65728,7 @@ function RenderField({ field, required, missing, formData, handleChange, getVal,
                 value,
                 placeholder: label,
                 onIonChange: (e) => handleChange(field.id, e.detail.value),
-                children: A$7(options).map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(IonSelectOption, { value: opt?.code, children: opt?.name }, opt?.code))
+                children: A$6(options).map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(IonSelectOption, { value: opt?.code, children: opt?.name }, opt?.code))
               }
             )
           ] }),
@@ -65847,7 +65775,7 @@ function RenderField({ field, required, missing, formData, handleChange, getVal,
   }
 }
 
-const {useCallback: useCallback$h,useEffect: useEffect$S,useRef: useRef$e,useState: useState$V} = await importShared('react');
+const {useCallback: useCallback$j,useEffect: useEffect$U,useRef: useRef$f,useState: useState$W} = await importShared('react');
 const JOB_CARD_SOURCE_DE_ID = "GeM9XLFWC7d";
 const MAINTENANCE_TYPE_DE_ID = "EbJI5Loxjbl";
 const REQUESTER_DE_ID = "M074NJAYjb6";
@@ -65862,20 +65790,20 @@ function MaintenanceEvents({
   program,
   user
 }) {
-  const [loading, setLoading] = useState$V(false);
-  const [loadingMessage, setLoadingMessage] = useState$V(
+  const [loading, setLoading] = useState$W(false);
+  const [loadingMessage, setLoadingMessage] = useState$W(
     "Fetching maintenance activities"
   );
-  const [events, setEvents] = useState$V([]);
-  const [page, setPage] = useState$V(1);
-  const [rows, setRows] = useState$V([]);
-  const [formData, setFormData] = useState$V();
-  const [tei, setTei] = useState$V([]);
-  const [selected, setSelected] = useState$V();
-  const [section, setSection] = useState$V();
-  const [programMeta, setProgramMeta] = useState$V({ id: program, name: "" });
-  const [standaloneRequest, setStandaloneRequest] = useState$V(null);
-  const standaloneCreateRef = useRef$e(null);
+  const [events, setEvents] = useState$W([]);
+  const [page, setPage] = useState$W(1);
+  const [rows, setRows] = useState$W([]);
+  const [formData, setFormData] = useState$W();
+  const [tei, setTei] = useState$W([]);
+  const [selected, setSelected] = useState$W();
+  const [section, setSection] = useState$W();
+  const [programMeta, setProgramMeta] = useState$W({ id: program, name: "" });
+  const [standaloneRequest, setStandaloneRequest] = useState$W(null);
+  const standaloneCreateRef = useRef$f(null);
   const {
     contextConfig,
     selectedEquipment,
@@ -65908,7 +65836,7 @@ function MaintenanceEvents({
       order: 3
     }
   ];
-  const getEvents = useCallback$h(async () => {
+  const getEvents = useCallback$j(async () => {
     setLoading(true);
     setLoadingMessage("Fetching maintenance activities");
     const sortedOrgUnits = user.organisationUnits?.sort(
@@ -65965,7 +65893,7 @@ function MaintenanceEvents({
       });
     });
   }, [program, stage, user]);
-  const getMetadata = useCallback$h(async () => {
+  const getMetadata = useCallback$j(async () => {
     await dataStore.get(`programStages/${stage}?fields=programStageSections[id,dataElements[*]]`).then((res) => {
       const jobCardSection = res.data.programStageSections.find(
         (entry) => entry.id === JOB_CARD_SECTION_ID
@@ -65973,7 +65901,7 @@ function MaintenanceEvents({
       setSection(jobCardSection);
     });
   }, [stage]);
-  const getProgramMeta = useCallback$h(async () => {
+  const getProgramMeta = useCallback$j(async () => {
     try {
       const res = await dataStore.get(`programs/${program}?fields=id,name`);
       const meta = res?.data || res;
@@ -65985,7 +65913,7 @@ function MaintenanceEvents({
     }
   }, [program]);
   const buildJobCardNumber = (serialSeed) => `${serialSeed || "Equipment"}-Job-Card-${(/* @__PURE__ */ new Date()).getTime()}`;
-  const resolveStandaloneSourceValue = useCallback$h(async () => {
+  const resolveStandaloneSourceValue = useCallback$j(async () => {
     const normalize = (value) => String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
     const res = await dataStore.get(
       `dataElements/${JOB_CARD_SOURCE_DE_ID}?fields=id,optionSet[id,options[id,code,name]]`
@@ -66041,7 +65969,7 @@ function MaintenanceEvents({
       [fieldId]: value
     }));
   };
-  const createStandaloneEvent = useCallback$h(async (equipment) => {
+  const createStandaloneEvent = useCallback$j(async (equipment) => {
     const requestKey = standaloneRequest?.timestamp;
     if (!requestKey || standaloneCreateRef.current === requestKey) {
       return;
@@ -66179,12 +66107,12 @@ function MaintenanceEvents({
     setStandaloneRequest(null);
     handlePickerCancel();
   };
-  useEffect$S(() => {
+  useEffect$U(() => {
     getMetadata();
     getEvents();
     getProgramMeta();
   }, [getEvents, getMetadata, getProgramMeta, page]);
-  useEffect$S(() => {
+  useEffect$U(() => {
     if (!selectedEquipment || !standaloneRequest) return;
     createStandaloneEvent(selectedEquipment);
   }, [createStandaloneEvent, selectedEquipment, standaloneRequest]);
@@ -69767,7 +69695,7 @@ function toLowerLabel(label) {
   return raw ? raw.toLowerCase() : DEFAULT_ENTITY_LABEL.toLowerCase();
 }
 
-const {useCallback: useCallback$g,useContext: useContext$v,useEffect: useEffect$R,useMemo: useMemo$s,useState: useState$U} = await importShared('react');
+const {useCallback: useCallback$i,useContext: useContext$w,useEffect: useEffect$T,useMemo: useMemo$t,useState: useState$V} = await importShared('react');
 const BUTTON_ICON_MAP = {
   addCircleOutline,
   removeCircleOutline
@@ -69784,47 +69712,47 @@ function readActiveProgramIdFromCookie() {
   }
 }
 function GeneralComponent({ programProp }) {
-  const { programs, loading: programsLoading } = useContext$v(
+  const { programs, loading: programsLoading } = useContext$w(
     MEMISContext.ProgramContext
   );
-  const { menuItems, loading: menuLoading } = useContext$v(
+  const { menuItems, loading: menuLoading } = useContext$w(
     MEMISContext.MenuContext
   );
-  const { user } = useContext$v(MEMISContext.UserRolesContext);
-  const [workflow, setapplicableDE] = useState$U({});
+  const { user } = useContext$w(MEMISContext.UserRolesContext);
+  const [workflow, setapplicableDE] = useState$V({});
   const { canModifyProgram } = usePermissions();
-  const [program, setProgram] = useState$U(null);
-  const [formActive, setFormActive] = useState$U(false);
-  const [query, setQuery] = useState$U("");
-  const [itemsData, setItemsData] = useState$U([]);
-  const [editData, setEditData] = useState$U(null);
-  const [crumbs, setCrumbs] = useState$U([]);
-  const [jobCard, setJobCard] = useState$U(false);
-  const [resolutionComplete, setResolutionComplete] = useState$U(false);
-  const [buttonConfig, setButtonConfig] = useState$U(null);
-  const [loadingButtonConfig, setLoadingButtonConfig] = useState$U(true);
-  const [postSaveQrPromptOpen, setPostSaveQrPromptOpen] = useState$U(false);
-  const [postSaveQrPreviewOpen, setPostSaveQrPreviewOpen] = useState$U(false);
-  const [postSaveQrRequest, setPostSaveQrRequest] = useState$U(null);
-  const [postSaveQrData, setPostSaveQrData] = useState$U(null);
-  const [postSaveQrPreviewUrl, setPostSaveQrPreviewUrl] = useState$U(null);
-  const [postSaveQrError, setPostSaveQrError] = useState$U("");
-  const [postSaveQrPreparing, setPostSaveQrPreparing] = useState$U(false);
-  const [qrBusy, setQrBusy] = useState$U(false);
-  const [dataStoreData, setDataStoreData] = useState$U({});
+  const [program, setProgram] = useState$V(null);
+  const [formActive, setFormActive] = useState$V(false);
+  const [query, setQuery] = useState$V("");
+  const [itemsData, setItemsData] = useState$V([]);
+  const [editData, setEditData] = useState$V(null);
+  const [crumbs, setCrumbs] = useState$V([]);
+  const [jobCard, setJobCard] = useState$V(false);
+  const [resolutionComplete, setResolutionComplete] = useState$V(false);
+  const [buttonConfig, setButtonConfig] = useState$V(null);
+  const [loadingButtonConfig, setLoadingButtonConfig] = useState$V(true);
+  const [postSaveQrPromptOpen, setPostSaveQrPromptOpen] = useState$V(false);
+  const [postSaveQrPreviewOpen, setPostSaveQrPreviewOpen] = useState$V(false);
+  const [postSaveQrRequest, setPostSaveQrRequest] = useState$V(null);
+  const [postSaveQrData, setPostSaveQrData] = useState$V(null);
+  const [postSaveQrPreviewUrl, setPostSaveQrPreviewUrl] = useState$V(null);
+  const [postSaveQrError, setPostSaveQrError] = useState$V("");
+  const [postSaveQrPreparing, setPostSaveQrPreparing] = useState$V(false);
+  const [qrBusy, setQrBusy] = useState$V(false);
+  const [dataStoreData, setDataStoreData] = useState$V({});
   const isNativeMobile = Capacitor.getPlatform() === "android" || Capacitor.getPlatform() === "ios";
-  const [isMobileView, setIsMobileView] = useState$U(() => {
+  const [isMobileView, setIsMobileView] = useState$V(() => {
     if (isNativeMobile) return true;
     return typeof window !== "undefined" ? window.innerWidth <= 600 : false;
   });
-  useEffect$R(() => {
+  useEffect$T(() => {
     if (!isNativeMobile) {
       const handleResize = () => setIsMobileView(window.innerWidth <= 600);
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
   }, [isNativeMobile]);
-  useEffect$R(() => {
+  useEffect$T(() => {
     let mounted = true;
     const loadDataStore = async () => {
       const cachedDataStore = await LocalForageServiceInstance.getItem(
@@ -69840,8 +69768,8 @@ function GeneralComponent({ programProp }) {
       mounted = false;
     };
   }, []);
-  const [pendingAction, setPendingAction] = useState$U(null);
-  const [persistedEquipment, setPersistedEquipment] = useState$U(null);
+  const [pendingAction, setPendingAction] = useState$V(null);
+  const [persistedEquipment, setPersistedEquipment] = useState$V(null);
   const {
     contextConfig,
     selectedEquipment,
@@ -69861,7 +69789,7 @@ function GeneralComponent({ programProp }) {
   });
   const location = useLocation();
   const navigate = useNavigate();
-  const fetchButtonConfig = useCallback$g(
+  const fetchButtonConfig = useCallback$i(
     async (currentProgram) => {
       if (!currentProgram || !user) {
         setButtonConfig(null);
@@ -69935,7 +69863,7 @@ function GeneralComponent({ programProp }) {
     },
     [user]
   );
-  const resolveProgram = useCallback$g(() => {
+  const resolveProgram = useCallback$i(() => {
     const targetId = programProp?.id || readActiveProgramIdFromCookie();
     if (menuLoading || programsLoading) {
       setResolutionComplete(false);
@@ -70089,7 +70017,7 @@ function GeneralComponent({ programProp }) {
     }
     handleQuery("add", null, extra);
   };
-  useEffect$R(() => {
+  useEffect$T(() => {
     const params2 = new URLSearchParams(location.search);
     const q = params2.get("q");
     const refId = params2.get("ref");
@@ -70240,10 +70168,10 @@ function GeneralComponent({ programProp }) {
     } catch (error) {
     }
   };
-  useEffect$R(() => {
+  useEffect$T(() => {
     resolveProgram();
   }, [resolveProgram]);
-  useEffect$R(() => {
+  useEffect$T(() => {
     const isLoading = menuLoading || programsLoading;
     if (!isLoading && !program && resolutionComplete && menuItems !== void 0 && programs !== void 0 && !formActive) {
       navigate("/", { replace: true });
@@ -70258,20 +70186,20 @@ function GeneralComponent({ programProp }) {
     navigate,
     resolutionComplete
   ]);
-  useEffect$R(() => {
+  useEffect$T(() => {
     getProgramView();
     getWorkflow();
   }, [menuItems, programs, program]);
   const params = new URLSearchParams(location.search);
   const selectedStage = params.get("stage") || params.get("stageId") || null;
-  const addButtonLabel = useMemo$s(() => {
+  const addButtonLabel = useMemo$t(() => {
     return buttonConfig?.label || null;
   }, [buttonConfig]);
-  const addButtonIcon = useMemo$s(() => {
+  const addButtonIcon = useMemo$t(() => {
     const key = buttonConfig?.icon;
     return (key && BUTTON_ICON_MAP[key]) ?? addCircleOutline;
   }, [buttonConfig]);
-  useEffect$R(() => {
+  useEffect$T(() => {
     if (selectedEquipment && pendingAction) {
       setPersistedEquipment(selectedEquipment);
       const extraWithEquipment = {
@@ -70286,16 +70214,16 @@ function GeneralComponent({ programProp }) {
     setPendingAction(null);
     handlePickerCancel();
   };
-  const handleAddButtonClick = useMemo$s(() => {
+  const handleAddButtonClick = useMemo$t(() => {
     return handleActionButtonClick;
   }, [handleActionButtonClick]);
-  const clearFormUiState = useCallback$g(() => {
+  const clearFormUiState = useCallback$i(() => {
     setFormActive(false);
     setQuery("");
     setEditData(null);
     setPersistedEquipment(null);
   }, []);
-  const clearFormRouteState = useCallback$g(() => {
+  const clearFormRouteState = useCallback$i(() => {
     const p = new URLSearchParams(location?.search);
     p.delete("q");
     p.delete("ref");
@@ -70306,11 +70234,11 @@ function GeneralComponent({ programProp }) {
     p.delete("equipmentId");
     navigate({ search: p.toString() }, { replace: true });
   }, [location?.search, navigate]);
-  useCallback$g(() => {
+  useCallback$i(() => {
     clearFormUiState();
     clearFormRouteState();
   }, [clearFormRouteState, clearFormUiState]);
-  const resetPostSaveQrState = useCallback$g(() => {
+  const resetPostSaveQrState = useCallback$i(() => {
     setPostSaveQrPromptOpen(false);
     setPostSaveQrPreviewOpen(false);
     setPostSaveQrRequest(null);
@@ -70319,14 +70247,14 @@ function GeneralComponent({ programProp }) {
     setPostSaveQrError("");
     setPostSaveQrPreparing(false);
   }, []);
-  const closePostSaveQrFlow = useCallback$g(() => {
+  const closePostSaveQrFlow = useCallback$i(() => {
     resetPostSaveQrState();
   }, [resetPostSaveQrState]);
-  const getQrErrorMessage = useCallback$g((error, fallbackMessage) => {
+  const getQrErrorMessage = useCallback$i((error, fallbackMessage) => {
     const message = String(error?.message || "").trim();
     return message || fallbackMessage;
   }, []);
-  const handleFormSaveSuccess = useCallback$g(
+  const handleFormSaveSuccess = useCallback$i(
     async ({
       teiId,
       isEditMode,
@@ -70365,7 +70293,7 @@ function GeneralComponent({ programProp }) {
     },
     [clearFormRouteState, clearFormUiState]
   );
-  useEffect$R(() => {
+  useEffect$T(() => {
     let cancelled = false;
     if (!postSaveQrPromptOpen || !postSaveQrRequest?.teiId || !postSaveQrRequest?.program?.id) {
       return void 0;
@@ -70403,7 +70331,7 @@ function GeneralComponent({ programProp }) {
     postSaveQrPromptOpen,
     postSaveQrRequest
   ]);
-  const handlePostSaveQrPreview = useCallback$g(async () => {
+  const handlePostSaveQrPreview = useCallback$i(async () => {
     if (!postSaveQrData?.payloadStr) {
       showToast(
         postSaveQrError || "The QR code is not available for this equipment.",
@@ -70426,7 +70354,7 @@ function GeneralComponent({ programProp }) {
       setQrBusy(false);
     }
   }, [getQrErrorMessage, postSaveQrData, postSaveQrError]);
-  const handlePostSaveQrDownload = useCallback$g(async () => {
+  const handlePostSaveQrDownload = useCallback$i(async () => {
     const shouldReturnToPrompt = postSaveQrPreviewOpen;
     if (!postSaveQrData?.payloadStr || !postSaveQrData?.filename) {
       showToast(
@@ -70470,7 +70398,7 @@ function GeneralComponent({ programProp }) {
     postSaveQrError,
     postSaveQrPreviewOpen
   ]);
-  const handlePostSaveQrPrint = useCallback$g(async () => {
+  const handlePostSaveQrPrint = useCallback$i(async () => {
     if (!postSaveQrPreviewUrl) {
       showToast("Open the QR code preview before printing.", "warning");
       return;
@@ -70834,12 +70762,12 @@ function GeneralComponent({ programProp }) {
   ] });
 }
 
-const React$H = await importShared('react');
-const {useEffect: useEffect$Q,useState: useState$T} = React$H;
+const React$J = await importShared('react');
+const {useEffect: useEffect$S,useState: useState$U} = React$J;
 const Login = () => {
-  const [username, setUsername] = useState$T("");
-  const [password, setPassword] = useState$T("");
-  const [loading, setLoading] = useState$T(false);
+  const [username, setUsername] = useState$U("");
+  const [password, setPassword] = useState$U("");
+  const [loading, setLoading] = useState$U(false);
   const navigate = useNavigate();
   const { reload: reloadDataStore } = useDataStore();
   const handleLogin = async (e) => {
@@ -70880,7 +70808,7 @@ const Login = () => {
       setLoading(false);
     }
   };
-  useEffect$Q(() => {
+  useEffect$S(() => {
     const userData = localStorage.getItem("memisCredentials");
     const load = async () => {
       if (userData) {
@@ -71018,7 +70946,7 @@ const stageAddButtonAccess = async (programId, stageId, userRoles) => {
   return { access: true };
 };
 
-const {useEffect: useEffect$P,useState: useState$S,useContext: useContext$u} = await importShared('react');
+const {useEffect: useEffect$R,useState: useState$T,useContext: useContext$v} = await importShared('react');
 function DeregistrationStage({
   id,
   program,
@@ -71029,16 +70957,16 @@ function DeregistrationStage({
   refreshEvents
   // Add refresh callback
 }) {
-  const [open, setOpen] = useState$S(false);
-  const [lastEventCount, setLastEventCount] = useState$S(0);
-  const [stage] = useState$S(pgStages);
-  const [evnts, setEvnts] = useState$S([]);
-  const [canAddNew, setCanAddNew] = useState$S(false);
-  const [canApprove, setCanApprove] = useState$S(false);
+  const [open, setOpen] = useState$T(false);
+  const [lastEventCount, setLastEventCount] = useState$T(0);
+  const [stage] = useState$T(pgStages);
+  const [evnts, setEvnts] = useState$T([]);
+  const [canAddNew, setCanAddNew] = useState$T(false);
+  const [canApprove, setCanApprove] = useState$T(false);
   const navigate = useNavigate();
-  const [addButton, setAddButton] = useState$S(false);
-  const { user } = useContext$u(MEMISContext.UserRolesContext);
-  const [equipmentState, setEquipmentState] = useState$S(null);
+  const [addButton, setAddButton] = useState$T(false);
+  const { user } = useContext$v(MEMISContext.UserRolesContext);
+  const [equipmentState, setEquipmentState] = useState$T(null);
   const fetchEquipmentState = async () => {
     try {
       const DataStore = (await __vitePreload(async () => { const {default: __vite_default__} = await import('./index2.js');return { default: __vite_default__ }},true              ?__vite__mapDeps([2,0,1]):void 0)).default;
@@ -71052,7 +70980,7 @@ function DeregistrationStage({
       setEquipmentState(null);
     }
   };
-  useEffect$P(() => {
+  useEffect$R(() => {
     const filteredEvents = (events || [])?.filter((e) => e.programStage === stage.id);
     const sortedEvents = filteredEvents.sort((a, b) => {
       const dateA = new Date(a.occurredAt || a.createdAt);
@@ -71063,12 +70991,12 @@ function DeregistrationStage({
     setEvnts(sortedEvents);
     setLastEventCount(filteredEvents.length);
   }, [stage.id, events, lastEventCount, open]);
-  useEffect$P(() => {
+  useEffect$R(() => {
     if (id && program) {
       fetchEquipmentState();
     }
   }, [id, program, events]);
-  useEffect$P(() => {
+  useEffect$R(() => {
     let intervalId;
     if (open && refreshEvents && typeof refreshEvents === "function") {
       intervalId = setInterval(() => {
@@ -71139,7 +71067,7 @@ function DeregistrationStage({
     const res = await stageAddButtonAccess(program, stage.id, user?.userRoles);
     setAddButton(res?.access || false);
   };
-  useEffect$P(() => {
+  useEffect$R(() => {
     addNewAndApproval();
     showAddButton();
   }, []);
@@ -71230,22 +71158,22 @@ function DeregistrationStage({
   ] });
 }
 
-const {useContext: useContext$t,useEffect: useEffect$O,useState: useState$R} = await importShared('react');
+const {useContext: useContext$u,useEffect: useEffect$Q,useState: useState$S} = await importShared('react');
 function Stages({ id, program, pgStages, events, handleAddEvent, formatDate, refreshEvents }) {
-  const [open, setOpen] = useState$R(false);
-  const [stage] = useState$R(pgStages);
-  const [evnts, setEvnts] = useState$R([]);
-  const [addButton, setAddButton] = useState$R(false);
+  const [open, setOpen] = useState$S(false);
+  const [stage] = useState$S(pgStages);
+  const [evnts, setEvnts] = useState$S([]);
+  const [addButton, setAddButton] = useState$S(false);
   const navigate = useNavigate();
-  const { user } = useContext$t(MEMISContext.UserRolesContext);
-  useEffect$O(() => {
+  const { user } = useContext$u(MEMISContext.UserRolesContext);
+  useEffect$Q(() => {
     setEvnts((events || [])?.filter((e) => e.programStage === stage.id));
   }, [stage.id, events]);
   const showAddButton = async () => {
     const res = await stageAddButtonAccess(program, stage.id, user?.userRoles);
     setAddButton(res?.access || false);
   };
-  useEffect$O(() => {
+  useEffect$Q(() => {
     showAddButton();
   }, [open]);
   if (isDeregistrationStage(stage.id, stage.name)) {
@@ -73568,9 +73496,9 @@ await importShared('react');
 
 await importShared('react');
 
-const {useContext: useContext$s} = await importShared('react');
+const {useContext: useContext$t} = await importShared('react');
 
-const {useCallback: useCallback$f,useMemo: useMemo$r} = await importShared('react');
+const {useCallback: useCallback$h,useMemo: useMemo$s} = await importShared('react');
 
 await importShared('react');
 
@@ -73599,26 +73527,26 @@ new QueryClient(queryClientOptions);
 
 await importShared('react');
 
+const {useContext: useContext$s} = await importShared('react');
+
+const {useState: useState$R,useEffect: useEffect$P,useRef: useRef$e,useDebugValue: useDebugValue$1} = await importShared('react');
+
+const {useState: useState$Q,useCallback: useCallback$g,useRef: useRef$d,useEffect: useEffect$O} = await importShared('react');
+
+const {useCallback: useCallback$f} = await importShared('react');
+
+const {useState: useState$P,useRef: useRef$c,useCallback: useCallback$e,useDebugValue} = await importShared('react');
+
+await importShared('react');
+
+await importShared('react');
+
+const React$I = await importShared('react');
+const {useState: useState$O} = React$I;
+
 const {useContext: useContext$r} = await importShared('react');
 
-const {useState: useState$Q,useEffect: useEffect$N,useRef: useRef$d,useDebugValue: useDebugValue$1} = await importShared('react');
-
-const {useState: useState$P,useCallback: useCallback$e,useRef: useRef$c,useEffect: useEffect$M} = await importShared('react');
-
-const {useCallback: useCallback$d} = await importShared('react');
-
-const {useState: useState$O,useRef: useRef$b,useCallback: useCallback$c,useDebugValue} = await importShared('react');
-
-await importShared('react');
-
-await importShared('react');
-
-const React$G = await importShared('react');
-const {useState: useState$N} = React$G;
-
-const {useContext: useContext$q} = await importShared('react');
-
-const {useContext: useContext$p,useRef: useRef$a,useCallback: useCallback$b} = await importShared('react');
+const {useContext: useContext$q,useRef: useRef$b,useCallback: useCallback$d} = await importShared('react');
 
 var propTypes = {exports: {}};
 
@@ -76868,15 +76796,15 @@ function requireIsEqual () {
 
 requireIsEqual();
 
-const React$F = await importShared('react');
-const {useEffect: useEffect$L,useCallback: useCallback$a,useContext: useContext$o,useState: useState$M,useMemo: useMemo$q} = React$F;
+const React$H = await importShared('react');
+const {useEffect: useEffect$N,useCallback: useCallback$c,useContext: useContext$p,useState: useState$N,useMemo: useMemo$r} = React$H;
 ({
   children: PropTypes.node,
   store: PropTypes.shape({})
 });
 
-const React$E = await importShared('react');
-const {createContext,useContext: useContext$n} = React$E;
+const React$G = await importShared('react');
+const {createContext,useContext: useContext$o} = React$G;
 ({
   children: PropTypes.node,
   offlineInterface: PropTypes.shape({
@@ -76884,8 +76812,8 @@ const {createContext,useContext: useContext$n} = React$E;
   })
 });
 
-const React$D = await importShared('react');
-const {useEffect: useEffect$K,useCallback: useCallback$9,useMemo: useMemo$p} = React$D;
+const React$F = await importShared('react');
+const {useEffect: useEffect$M,useCallback: useCallback$b,useMemo: useMemo$q} = React$F;
 ({
   children: PropTypes.node
 });
@@ -94106,16 +94034,16 @@ if (shouldLog) {
   console.log('Logging for dhis2ConnectionStatus is enabled. Remove the `dhis2.debugConnectionStatus` item in localStorage to disable logging.');
 }
 
-const {useCallback: useCallback$8} = await importShared('react');
+const {useCallback: useCallback$a} = await importShared('react');
 
-const React$C = await importShared('react');
-const {useCallback: useCallback$7,useState: useState$L,useRef: useRef$9,useMemo: useMemo$o,useEffect: useEffect$J,useContext: useContext$m} = React$C;
+const React$E = await importShared('react');
+const {useCallback: useCallback$9,useState: useState$M,useRef: useRef$a,useMemo: useMemo$p,useEffect: useEffect$L,useContext: useContext$n} = React$E;
 ({
   children: PropTypes.node
 });
 
-const React$B = await importShared('react');
-const {useContext: useContext$l,useState: useState$K} = React$B;
+const React$D = await importShared('react');
+const {useContext: useContext$m,useState: useState$L} = React$D;
 
 await importShared('react');
 ({
@@ -94125,8 +94053,8 @@ await importShared('react');
   })
 });
 
-const React$A = await importShared('react');
-const {useCallback: useCallback$6,useEffect: useEffect$I,useMemo: useMemo$n} = React$A;
+const React$C = await importShared('react');
+const {useCallback: useCallback$8,useEffect: useEffect$K,useMemo: useMemo$o} = React$C;
 
 const {flushSync} = await importShared('react-dom');
 ({
@@ -94537,49 +94465,49 @@ function requireDebounce () {
 
 requireDebounce();
 
-const {useState: useState$J,useEffect: useEffect$H,useCallback: useCallback$5,useMemo: useMemo$m} = await importShared('react');
+const {useState: useState$K,useEffect: useEffect$J,useCallback: useCallback$7,useMemo: useMemo$n} = await importShared('react');
 
 await importShared('react');
 
-const {useEffect: useEffect$G,useMemo: useMemo$l,useState: useState$I,useRef: useRef$8} = await importShared('react');
+const {useEffect: useEffect$I,useMemo: useMemo$m,useState: useState$J,useRef: useRef$9} = await importShared('react');
 const {createPortal: createPortal$2} = await importShared('react-dom');
 function TrackerPgStages() {
   const { program, id } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
-  const [crumbs, setCrumbs] = useState$I([]);
-  const [showActions, setShowActions] = useState$I(false);
-  const [printOpen, setPrintOpen] = useState$I(false);
-  const canvasRef = useRef$8(null);
-  const [qrBusy, setQrBusy] = useState$I(false);
-  const [qrDataUrl, setQrDataUrl] = useState$I(null);
-  const [ev, setEvents] = useState$I([]);
-  const [tei, setTei] = useState$I({});
-  const [orgUnit, setOrgUnit] = useState$I(null);
-  const [primaryAttr, setPrimaryAttr] = useState$I(null);
-  const [listAttrs, setListAttrs] = useState$I([]);
-  const [pgStages, setPgStages] = useState$I([]);
-  const [attrWithOpt, setWithOpt] = useState$I([]);
-  const [options, setOptions] = useState$I([]);
-  const [qrCodeValuesToDisplay, setQRCodeValuesToDisplay] = useState$I([]);
-  const [showAllAttributes, setShowAllAttributes] = useState$I(false);
-  const [filePreviewOpen, setFilePreviewOpen] = useState$I(false);
-  const [selectedFile, setSelectedFile] = useState$I({
+  const [crumbs, setCrumbs] = useState$J([]);
+  const [showActions, setShowActions] = useState$J(false);
+  const [printOpen, setPrintOpen] = useState$J(false);
+  const canvasRef = useRef$9(null);
+  const [qrBusy, setQrBusy] = useState$J(false);
+  const [qrDataUrl, setQrDataUrl] = useState$J(null);
+  const [ev, setEvents] = useState$J([]);
+  const [tei, setTei] = useState$J({});
+  const [orgUnit, setOrgUnit] = useState$J(null);
+  const [primaryAttr, setPrimaryAttr] = useState$J(null);
+  const [listAttrs, setListAttrs] = useState$J([]);
+  const [pgStages, setPgStages] = useState$J([]);
+  const [attrWithOpt, setWithOpt] = useState$J([]);
+  const [options, setOptions] = useState$J([]);
+  const [qrCodeValuesToDisplay, setQRCodeValuesToDisplay] = useState$J([]);
+  const [showAllAttributes, setShowAllAttributes] = useState$J(false);
+  const [filePreviewOpen, setFilePreviewOpen] = useState$J(false);
+  const [selectedFile, setSelectedFile] = useState$J({
     fileId: null,
     fileName: null,
     valueType: null
   });
-  const [activeEnrollmentId, setActiveEnrollmentId] = useState$I(null);
-  const [pendingDelete, setPendingDelete] = useState$I(false);
-  const [deleting, setDeleting] = useState$I(false);
-  const [selectedStageId, setSelectedStageId] = useState$I("");
-  const [selectedStage, setSelectedStage] = useState$I({});
-  const [selectedProgram, setSelectedProgram] = useState$I({});
-  const [query, setQuery] = useState$I("");
-  const [formActive, setFormActive] = useState$I(false);
-  const [editData, setEditData] = useState$I(null);
-  const [resolvedPamAttributeId, setResolvedPamAttributeId] = useState$I("");
-  const pamAttributeIdFromProgram = useMemo$l(() => {
+  const [activeEnrollmentId, setActiveEnrollmentId] = useState$J(null);
+  const [pendingDelete, setPendingDelete] = useState$J(false);
+  const [deleting, setDeleting] = useState$J(false);
+  const [selectedStageId, setSelectedStageId] = useState$J("");
+  const [selectedStage, setSelectedStage] = useState$J({});
+  const [selectedProgram, setSelectedProgram] = useState$J({});
+  const [query, setQuery] = useState$J("");
+  const [formActive, setFormActive] = useState$J(false);
+  const [editData, setEditData] = useState$J(null);
+  const [resolvedPamAttributeId, setResolvedPamAttributeId] = useState$J("");
+  const pamAttributeIdFromProgram = useMemo$m(() => {
     const attrs = selectedProgram?.programTrackedEntityAttributes || [];
     const hit = attrs.find((progAttr) => {
       const tea = progAttr?.trackedEntityAttribute || {};
@@ -94649,11 +94577,11 @@ function TrackerPgStages() {
     } catch (e) {
     }
   };
-  useEffect$G(() => {
+  useEffect$I(() => {
     getAttr(program);
     getTEI(id, program);
   }, [program, id]);
-  useEffect$G(() => {
+  useEffect$I(() => {
     let cancelled = false;
     (async () => {
       const idFromConfig = await resolvePamAssetAttributeId(program);
@@ -94782,7 +94710,7 @@ function TrackerPgStages() {
     } catch (error) {
     }
   };
-  useEffect$G(() => {
+  useEffect$I(() => {
     const params = new URLSearchParams(location.search);
     const page = params.get("page");
     const stage = params.get("stage");
@@ -94830,7 +94758,7 @@ function TrackerPgStages() {
       setEditData(null);
     }
   }, [location.search, pgStages, ev]);
-  useEffect$G(() => {
+  useEffect$I(() => {
     if (!printOpen) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -94838,7 +94766,7 @@ function TrackerPgStages() {
       document.body.style.overflow = prev;
     };
   }, [printOpen]);
-  const headerTitle = useMemo$l(() => {
+  const headerTitle = useMemo$m(() => {
     const displayLabel = primaryAttr?.trackedEntityAttribute?.displayFormName || "Name";
     return `${displayLabel} : ${tei ? getName() : ""}`;
   }, [tei, primaryAttr]);
@@ -95001,7 +94929,7 @@ function TrackerPgStages() {
       return error;
     }
   };
-  useEffect$G(() => {
+  useEffect$I(() => {
     if (!tei?.trackedEntity || !selectedProgram?.id) return;
     const breadcrumbs = buildProgramBreadcrumbs(selectedProgram, [
       {
@@ -95726,8 +95654,8 @@ const loadDataStore = async (key) => {
 
 const loadFlowRules$1 = () => loadDataStore("flowRules");
 
-const React$z = await importShared('react');
-const {useEffect: useEffect$F,useMemo: useMemo$k,useState: useState$H} = React$z;
+const React$B = await importShared('react');
+const {useEffect: useEffect$H,useMemo: useMemo$l,useState: useState$I} = React$B;
 const loadFlowRules = async () => {
   try {
     let data = await LocalForageServiceInstance.getItem("dataStore", "dataStore");
@@ -95754,18 +95682,18 @@ function ApproveModal({
   statusFieldId,
   statusOptions = {}
 }) {
-  const [fields, setFields] = useState$H([]);
-  const [formData, setFormData] = useState$H({});
-  const [loading, setLoading] = useState$H(true);
-  const [saving, setSaving] = useState$H(false);
-  const [error, setError] = useState$H(null);
-  const [openModal, setOpenModal] = useState$H(false);
-  const [visibleFields, setVisibleFields] = useState$H([]);
-  const [hideApprovalButton, setHideApprovalButton] = useState$H(false);
-  const [hideCheckDone, setHideCheckDone] = useState$H(false);
-  const [activeActionConfig, setActiveActionConfig] = useState$H(null);
-  const [equipmentNameOptionMap, setEquipmentNameOptionMap] = useState$H({});
-  useEffect$F(() => {
+  const [fields, setFields] = useState$I([]);
+  const [formData, setFormData] = useState$I({});
+  const [loading, setLoading] = useState$I(true);
+  const [saving, setSaving] = useState$I(false);
+  const [error, setError] = useState$I(null);
+  const [openModal, setOpenModal] = useState$I(false);
+  const [visibleFields, setVisibleFields] = useState$I([]);
+  const [hideApprovalButton, setHideApprovalButton] = useState$I(false);
+  const [hideCheckDone, setHideCheckDone] = useState$I(false);
+  const [activeActionConfig, setActiveActionConfig] = useState$I(null);
+  const [equipmentNameOptionMap, setEquipmentNameOptionMap] = useState$I({});
+  useEffect$H(() => {
     let cancelled = false;
     const loadOptionMap = async () => {
       try {
@@ -96150,7 +96078,7 @@ function ApproveModal({
     }
   };
   const isTransferProgram = program?.id === TRANSFER_PROGRAM_ID;
-  const approvedFieldId = useMemo$k(
+  const approvedFieldId = useMemo$l(
     () => fields.find((f) => f.valueType === "BOOLEAN")?.id || null,
     [fields]
   );
@@ -96372,10 +96300,10 @@ function ApproveModal({
     });
     return initial;
   };
-  useEffect$F(() => {
+  useEffect$H(() => {
     getFields();
   }, []);
-  useEffect$F(() => {
+  useEffect$H(() => {
     if (openModal && fields.length > 0) {
       const initial = prefillFromEvent(fields, event);
       const approvedField = fields.find((f) => f.valueType === "BOOLEAN");
@@ -96419,7 +96347,7 @@ function ApproveModal({
     setFormData(nextData);
     setVisibleFields(Array.from(nextVisible));
   };
-  useEffect$F(() => {
+  useEffect$H(() => {
     setHideCheckDone(false);
     evaluateHideApprovalForRequester();
   }, [program?.id, event?.event]);
@@ -96579,7 +96507,7 @@ const getAvailableEquipmentCount = async (event) => {
     }
 };
 
-const {useEffect: useEffect$E,useRef: useRef$7} = await importShared('react');
+const {useEffect: useEffect$G,useRef: useRef$8} = await importShared('react');
 
 const AllocationCustomModal = ({
   isOpen,
@@ -96594,7 +96522,7 @@ const AllocationCustomModal = ({
   showFooter = true,
   showCloseButton = true
 }) => {
-  useEffect$E(() => {
+  useEffect$G(() => {
     const handleClick = (e) => {
       const path = e.composedPath?.() || [];
       for (let el of path) {
@@ -96646,144 +96574,8 @@ const AllocationCustomModal = ({
   );
 };
 
-const React$y = await importShared('react');
-const {useEffect: useEffect$D,useRef: useRef$6,useState: useState$G} = React$y;
-const A$6 = (x) => Array.isArray(x) ? x : [];
-function MultiSelectField({
-  field,
-  equipmentOptions,
-  formData,
-  handleChange,
-  maxSelectQuantity
-}) {
-  const selectRef = useRef$6(null);
-  const selectAllBtnRef = useRef$6(null);
-  const [isRemounting, setIsRemounting] = useState$G(false);
-  const optionsList = equipmentOptions[field?.id] || [];
-  const currentSelected = A$6(formData[field?.id]);
-  const selectableCount = maxSelectQuantity !== null ? Math.min(maxSelectQuantity, optionsList.length) : optionsList.length;
-  const allSelected = optionsList.length > 0 && currentSelected.length === selectableCount && optionsList.slice(0, selectableCount).every((opt) => currentSelected.includes(opt?.trackedEntity));
-  useEffect$D(() => {
-    if (!isRemounting && selectRef.current && currentSelected.length > 0) {
-      selectRef.current.value = [...currentSelected];
-    }
-  }, [isRemounting]);
-  useEffect$D(() => {
-    if (isRemounting) {
-      const t = setTimeout(() => setIsRemounting(false), 0);
-      return () => clearTimeout(t);
-    }
-  }, [isRemounting]);
-  const handleSelectAll = () => {
-    const toSelect = allSelected ? [] : optionsList.slice(0, selectableCount).map((o) => o?.trackedEntity);
-    handleChange(field.id, toSelect);
-    setIsRemounting(true);
-  };
-  useEffect$D(() => {
-    const btn = selectAllBtnRef.current;
-    if (!btn) return;
-    btn.addEventListener("click", handleSelectAll);
-    return () => btn.removeEventListener("click", handleSelectAll);
-  }, [allSelected, optionsList, selectableCount]);
-  const handleManualChange = (newVal) => {
-    let filtered = A$6(newVal).filter((v) => v !== "no-equipment");
-    if (filtered.length > selectableCount) {
-      filtered = filtered.slice(0, selectableCount);
-      showToast(
-        `Maximum ${selectableCount} item${selectableCount > 1 ? "s" : ""} can be selected`,
-        "warning"
-      );
-      handleChange(field.id, filtered);
-      setIsRemounting(true);
-      return;
-    }
-    handleChange(field.id, filtered);
-  };
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { className: "ion-margin-bottom", position: "stacked", children: [
-        field?.name || field?.id,
-        currentSelected.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "span",
-          {
-            style: {
-              fontWeight: "normal",
-              color: "var(--ion-color-primary)",
-              marginLeft: 8,
-              fontSize: "0.85rem"
-            },
-            children: [
-              "(",
-              currentSelected.length,
-              maxSelectQuantity !== null ? ` / ${selectableCount}` : "",
-              " selected)"
-            ]
-          }
-        )
-      ] }),
-      !isRemounting && /* @__PURE__ */ jsxRuntimeExports.jsx(
-        IonSelect,
-        {
-          ref: selectRef,
-          className: "ion-margin-top",
-          interface: "alert",
-          fill: "outline",
-          value: currentSelected,
-          multiple: true,
-          style: { zIndex: 30 },
-          placeholder: "Select",
-          onIonChange: (e) => handleManualChange(e.detail.value),
-          children: optionsList.length > 0 ? optionsList.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsxs(IonSelectOption, { value: opt?.trackedEntity, children: [
-            opt?.attributes?.find((a) => a?.attribute === field.valueSearchKey)?.value || opt?.trackedEntity,
-            " | ",
-            opt?.attributes?.find((a) => a?.attribute === field?.valueIdentifier)?.value || ""
-          ] }, opt?.trackedEntity)) : /* @__PURE__ */ jsxRuntimeExports.jsx(IonSelectOption, { disabled: true, value: "no-equipment", children: "No registered equipment found, cannot allocate." })
-        }
-      )
-    ] }),
-    optionsList.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "div",
-      {
-        style: {
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-          padding: "4px 16px"
-        },
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "button",
-            {
-              ref: selectAllBtnRef,
-              type: "button",
-              style: {
-                background: "none",
-                border: "none",
-                color: "var(--ion-color-primary)",
-                cursor: "pointer",
-                fontSize: "0.875rem",
-                fontWeight: "500",
-                padding: "4px 8px",
-                borderRadius: "4px"
-              },
-              children: allSelected ? "Deselect All" : "Select All"
-            }
-          ),
-          maxSelectQuantity !== null && /* @__PURE__ */ jsxRuntimeExports.jsxs(IonText, { color: "medium", style: { fontSize: "0.8rem" }, children: [
-            "(max ",
-            selectableCount,
-            " of ",
-            optionsList.length,
-            " available)"
-          ] })
-        ]
-      }
-    )
-  ] });
-}
-
-const React$x = await importShared('react');
-const {useContext: useContext$k,useEffect: useEffect$C,useState: useState$F} = React$x;
+const React$A = await importShared('react');
+const {useContext: useContext$l,useEffect: useEffect$F,useState: useState$H} = React$A;
 const A$5 = (x) => Array.isArray(x) ? x : [];
 const _store = {
   fields: [],
@@ -96801,18 +96593,17 @@ function AllocateEquipmentModal({
   getEventDetails,
   buttonPositiveName = "Save"
 }) {
-  const [fields, setFields] = useState$F([]);
-  const [formData, setFormData] = useState$F({});
-  const [loading, setLoading] = useState$F(false);
-  const [saving, setSaving] = useState$F(false);
-  const [error, setError] = useState$F(null);
-  const [openModal, setOpenModal] = useState$F(false);
-  const [visibleFields, setVisibleFields] = useState$F([]);
-  const [targetProgram, setTargetProgram] = useState$F(null);
-  const [equipmentOptions, setEquipmentOptions] = useState$F({});
-  const [programDataTEI, setProgramDataTEI] = useState$F([]);
-  const [maxSelectQuantity, setMaxSelectQuantity] = useState$F(null);
-  const { userOrganisationUnits } = useContext$k(MEMISContext.UserContext);
+  const [fields, setFields] = useState$H([]);
+  const [formData, setFormData] = useState$H({});
+  const [loading, setLoading] = useState$H(false);
+  const [saving, setSaving] = useState$H(false);
+  const [error, setError] = useState$H(null);
+  const [openModal, setOpenModal] = useState$H(false);
+  const [visibleFields, setVisibleFields] = useState$H([]);
+  const [targetProgram, setTargetProgram] = useState$H(null);
+  const [equipmentOptions, setEquipmentOptions] = useState$H({});
+  const [programDataTEI, setProgramDataTEI] = useState$H([]);
+  const { userOrganisationUnits } = useContext$l(MEMISContext.UserContext);
   _store.fields = fields;
   _store.targetProgram = targetProgram;
   _store.programDataTEI = programDataTEI;
@@ -96832,16 +96623,6 @@ function AllocateEquipmentModal({
       const data = result?.allocationProcesses?.programAllocationFields?.find(
         (pg) => pg?.programId === program?.id
       );
-      const selectAllCfg = result?.allocationSelectAll?.allocationSelectAll;
-      if (selectAllCfg?.programId === program?.id && selectAllCfg?.quantityFieldId) {
-        const qtyValue = event?.dataValues?.find(
-          (d) => d?.dataElement === selectAllCfg.quantityFieldId
-        )?.value;
-        const parsed = qtyValue !== void 0 ? Number(qtyValue) : null;
-        setMaxSelectQuantity(!isNaN(parsed) && parsed > 0 ? parsed : null);
-      } else {
-        setMaxSelectQuantity(null);
-      }
       if (data) {
         const equipment = await getAvailableEquipmentCount(event);
         const teis = equipment?.equipment || [];
@@ -96969,15 +96750,15 @@ function AllocateEquipmentModal({
     setEquipmentOptions({});
     setError(null);
     setOpenModal(false);
-    setMaxSelectQuantity(null);
   };
-  useEffect$C(() => {
+  useEffect$F(() => {
     if (openModal) {
       getFields();
     }
   }, [openModal]);
   const renderField = (field) => {
     const type = field?.valueType;
+    const value = _store.formData?.[field?.id] ?? "";
     switch (type) {
       case "BOOLEAN":
         return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ion-w-full", children: [
@@ -97056,18 +96837,39 @@ function AllocateEquipmentModal({
             field?.id
           )
         ] }, field?.id);
-      case "MULTI_TEXT":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          MultiSelectField,
-          {
-            field,
-            equipmentOptions,
-            formData,
-            handleChange,
-            maxSelectQuantity
-          },
-          field?.id
-        );
+      case "MULTI_TEXT": {
+        const optionsList = equipmentOptions[field?.id] || [];
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { className: "ion-margin-bottom", position: "stacked", children: field?.name || field?.id }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            IonSelect,
+            {
+              className: "ion-margin-top",
+              interface: "alert",
+              fill: "outline",
+              value: A$5(value),
+              multiple: true,
+              style: { zIndex: 30 },
+              placeholder: "Select",
+              onIonChange: (e) => handleChange(field.id, e.detail.value),
+              children: optionsList.length > 0 ? optionsList.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                IonSelectOption,
+                {
+                  value: opt?.trackedEntity,
+                  style: { zIndex: 30 },
+                  children: [
+                    opt?.attributes?.find((a) => a?.attribute === field.valueSearchKey)?.value || opt?.trackedEntity,
+                    " | ",
+                    opt?.attributes?.find((a) => a?.attribute === field?.valueIdentifier)?.value || ""
+                  ]
+                },
+                opt?.trackedEntity
+              )) : /* @__PURE__ */ jsxRuntimeExports.jsx(IonSelectOption, { disabled: true, value: "no-equipment", children: "No registered equipment found, cannot allocate." })
+            },
+            field?.id
+          )
+        ] }, field?.id);
+      }
       default:
         return null;
     }
@@ -97124,7 +96926,7 @@ const SPARE_PART_ATTRIBUTE_IDS = {
 
 const SPARE_PART_PROGRAM_ID = "kth8UcvwybE";
 
-const {useEffect: useEffect$B,useRef: useRef$5,useState: useState$E} = await importShared('react');
+const {useEffect: useEffect$E,useRef: useRef$7,useState: useState$G} = await importShared('react');
 
 const ATTR = SPARE_PART_ATTRIBUTE_IDS;
 
@@ -97155,11 +96957,11 @@ function useSparePartOptions({
   programId,
   selectedOrganisationUnit,
 } = {}) {
-  const cacheRef = useRef$5(new Map());
-  const [sparePartOptions, setSparePartOptions] = useState$E([]);
-  const [sparePartLoading, setSparePartLoading] = useState$E(false);
+  const cacheRef = useRef$7(new Map());
+  const [sparePartOptions, setSparePartOptions] = useState$G([]);
+  const [sparePartLoading, setSparePartLoading] = useState$G(false);
 
-  useEffect$B(() => {
+  useEffect$E(() => {
     let active = true;
 
     const load = async () => {
@@ -97276,8 +97078,8 @@ const getNameOfCollectorByFacilityOptionGroups = async ({ program, formName, pay
     }
 };
 
-const React$w = await importShared('react');
-const {useEffect: useEffect$A,useMemo: useMemo$j,useState: useState$D} = React$w;
+const React$z = await importShared('react');
+const {useEffect: useEffect$D,useMemo: useMemo$k,useState: useState$F} = React$z;
 function buildDeMetaById(program) {
   const m = /* @__PURE__ */ new Map();
   (program?.programStages || []).forEach(
@@ -97395,46 +97197,46 @@ function CollectionModal({
   flow,
   getEventDetails
 }) {
-  const [collectorDetails, setCollectorDetails] = useState$D(null);
+  const [collectorDetails, setCollectorDetails] = useState$F(null);
   const formSection = flow?.onApprove?.formSection || flow?.formSection || { fields: [] };
   const fields = Array.isArray(formSection?.fields) ? formSection.fields : [];
   const prefillCfg = formSection?.prefill || null;
-  const formSectionSparePartFieldId = useMemo$j(
+  const formSectionSparePartFieldId = useMemo$k(
     () => findSparePartFieldIdFromSection(formSection),
     [formSection]
   );
-  const [formData, setFormData] = useState$D({});
-  const [loading, setLoading] = useState$D(true);
-  const [error, setError] = useState$D(null);
-  const [optionsCache, setOptionsCache] = useState$D(/* @__PURE__ */ new Map());
-  const [qtyError, setQtyError] = useState$D("");
-  const [saving, setSaving] = useState$D(false);
-  const [quantitiesId, setQuantitiesId] = useState$D({});
-  const [sparePartCollectionFieldId, setSparePartCollectionFieldId] = useState$D(
+  const [formData, setFormData] = useState$F({});
+  const [loading, setLoading] = useState$F(true);
+  const [error, setError] = useState$F(null);
+  const [optionsCache, setOptionsCache] = useState$F(/* @__PURE__ */ new Map());
+  const [qtyError, setQtyError] = useState$F("");
+  const [saving, setSaving] = useState$F(false);
+  const [quantitiesId, setQuantitiesId] = useState$F({});
+  const [sparePartCollectionFieldId, setSparePartCollectionFieldId] = useState$F(
     formSectionSparePartFieldId
   );
-  const [sparePartSelectedId, setSparePartSelectedId] = useState$D(null);
+  const [sparePartSelectedId, setSparePartSelectedId] = useState$F(null);
   const validationCfg = flow?.onApprove?.collectionValidation || flow?.collectionValidation || null;
-  const [collectionAllowed, setCollectionAllowed] = useState$D(true);
-  const [permissionChecked, setPermissionChecked] = useState$D(false);
-  const byKey = useMemo$j(() => {
+  const [collectionAllowed, setCollectionAllowed] = useState$F(true);
+  const [permissionChecked, setPermissionChecked] = useState$F(false);
+  const byKey = useMemo$k(() => {
     const m = /* @__PURE__ */ new Map();
     fields.forEach((f) => f?.key && m.set(f.key, f));
     return m;
   }, [fields]);
-  const deMetaById = useMemo$j(() => buildDeMetaById(program), [program]);
+  const deMetaById = useMemo$k(() => buildDeMetaById(program), [program]);
   const { sparePartOptions, sparePartLoading } = useSparePartOptions({
     programId: SPARE_PART_PROGRAM_ID,
     selectedOrganisationUnit: event?.orgUnit,
     data: event?.dataValues
   });
-  const existingByDE = useMemo$j(
+  const existingByDE = useMemo$k(
     () => new Map(
       (event?.dataValues || []).map((dv) => [dv.dataElement, dv.value])
     ),
     [event]
   );
-  useEffect$A(() => {
+  useEffect$D(() => {
     let active = true;
     setSparePartCollectionFieldId(formSectionSparePartFieldId);
     setSparePartSelectedId(null);
@@ -97461,7 +97263,7 @@ function CollectionModal({
       active = false;
     };
   }, [formSectionSparePartFieldId, program?.id]);
-  const requestedQty = useMemo$j(() => {
+  const requestedQty = useMemo$k(() => {
     const requestedDirect = toNumberOrNull(
       existingByDE?.get(quantitiesId["DE_QUANTITY_REQUESTED"])
     );
@@ -97477,7 +97279,7 @@ function CollectionModal({
     if (guessedN != null) return guessedN;
     return null;
   }, [deMetaById, event, validationCfg, existingByDE, quantitiesId]);
-  const approvedQty = useMemo$j(() => {
+  const approvedQty = useMemo$k(() => {
     const raw = existingByDE?.get(quantitiesId["DE_QUANTITY_APPROVED"]);
     return toNumberOrNull(raw);
   }, [existingByDE, quantitiesId]);
@@ -97585,7 +97387,7 @@ function CollectionModal({
     }
     return null;
   };
-  useEffect$A(() => {
+  useEffect$D(() => {
     const init = async () => {
       if (!isOpen) return;
       setLoading(true);
@@ -97698,7 +97500,7 @@ function CollectionModal({
     };
     init();
   }, [isOpen]);
-  useEffect$A(() => {
+  useEffect$D(() => {
     const fieldId = sparePartCollectionFieldId || formSectionSparePartFieldId;
     if (!fieldId) {
       if (sparePartSelectedId) setSparePartSelectedId(null);
@@ -97720,7 +97522,7 @@ function CollectionModal({
     formSectionSparePartFieldId,
     sparePartSelectedId
   ]);
-  useEffect$A(() => {
+  useEffect$D(() => {
     if (!isOpen) {
       setPermissionChecked(false);
       return;
@@ -97750,7 +97552,7 @@ function CollectionModal({
     };
     check();
   }, [isOpen, flow, event]);
-  useEffect$A(() => {
+  useEffect$D(() => {
     const load = async () => {
       const result = await getRequestedApprovedCollectedQuantitiesId(
         program?.id,
@@ -98096,7 +97898,7 @@ function CollectionModal({
   };
   const isSaveDisabled = loading || fields.length === 0 || !!qtyError;
   const disablePositive = isSaveDisabled || saving || flow?.collectionOnlyForRequester && (!permissionChecked || !collectionAllowed);
-  useEffect$A(() => {
+  useEffect$D(() => {
     (async () => {
       if (isOpen) {
         const results = await getNameOfCollectorByFacilityOptionGroups({
@@ -98157,8 +97959,8 @@ function CollectionModal({
   );
 }
 
-const React$v = await importShared('react');
-const {useEffect: useEffect$z,useState: useState$C} = React$v;
+const React$y = await importShared('react');
+const {useEffect: useEffect$C,useState: useState$E} = React$y;
 function TrainingFeedbackModal({
   program,
   event,
@@ -98167,10 +97969,10 @@ function TrainingFeedbackModal({
   buttonLabel = "Training Feedback",
   fields = []
 }) {
-  const [formData, setFormData] = useState$C({});
-  const [loading, setLoading] = useState$C(false);
-  const [openModal, setOpenModal] = useState$C(false);
-  const [visibleFields, setVisibleFields] = useState$C([]);
+  const [formData, setFormData] = useState$E({});
+  const [loading, setLoading] = useState$E(false);
+  const [openModal, setOpenModal] = useState$E(false);
+  const [visibleFields, setVisibleFields] = useState$E([]);
   const handleSubmit = async () => {
     try {
       setLoading(true);
@@ -98268,7 +98070,7 @@ function TrainingFeedbackModal({
     });
     return visible;
   };
-  useEffect$z(() => {
+  useEffect$C(() => {
     if (openModal && fields.length > 0) {
       const initial = prefillFromEvent();
       const trainingTookPlaceField = fields.find((f) => f.key === "trainingTookPlace");
@@ -132355,10 +132157,10 @@ function requireUtils() {
   utils$4.shr64_lo = shr64_lo;
   return utils$4;
 }
-var common$1 = {};
+var common$1$1 = {};
 var hasRequiredCommon$1;
 function requireCommon$1() {
-  if (hasRequiredCommon$1) return common$1;
+  if (hasRequiredCommon$1) return common$1$1;
   hasRequiredCommon$1 = 1;
   var utils2 = requireUtils();
   var assert = requireMinimalisticAssert();
@@ -132373,7 +132175,7 @@ function requireCommon$1() {
     this._delta8 = this.blockSize / 8;
     this._delta32 = this.blockSize / 32;
   }
-  common$1.BlockHash = BlockHash;
+  common$1$1.BlockHash = BlockHash;
   BlockHash.prototype.update = function update(msg, enc) {
     msg = utils2.toArray(msg, enc);
     if (!this.pending)
@@ -132432,14 +132234,14 @@ function requireCommon$1() {
     }
     return res;
   };
-  return common$1;
+  return common$1$1;
 }
 var sha = {};
 var common$2 = {};
-var hasRequiredCommon;
-function requireCommon() {
-  if (hasRequiredCommon) return common$2;
-  hasRequiredCommon = 1;
+var hasRequiredCommon$2;
+function requireCommon$2() {
+  if (hasRequiredCommon$2) return common$2;
+  hasRequiredCommon$2 = 1;
   var utils2 = requireUtils();
   var rotr32 = utils2.rotr32;
   function ft_1(s, x, y, z) {
@@ -132488,7 +132290,7 @@ function require_1() {
   hasRequired_1 = 1;
   var utils2 = requireUtils();
   var common2 = requireCommon$1();
-  var shaCommon = requireCommon();
+  var shaCommon = requireCommon$2();
   var rotl32 = utils2.rotl32;
   var sum32 = utils2.sum32;
   var sum32_5 = utils2.sum32_5;
@@ -132560,7 +132362,7 @@ function require_256() {
   hasRequired_256 = 1;
   var utils2 = requireUtils();
   var common2 = requireCommon$1();
-  var shaCommon = requireCommon();
+  var shaCommon = requireCommon$2();
   var assert = requireMinimalisticAssert();
   var sum32 = utils2.sum32;
   var sum32_4 = utils2.sum32_4;
@@ -140706,7 +140508,7 @@ const xlsIcon = "/assets/microfrontends/memis/assets/xls.png";
 
 const docIcon = "/assets/microfrontends/memis/assets/doc.png";
 
-const {useEffect: useEffect$y,useState: useState$B} = await importShared('react');
+const {useEffect: useEffect$B,useState: useState$D} = await importShared('react');
 const EXPORT_OPTIONS = [
   { value: "pdf", label: "PDF Document", icon: pdfIcon },
   { value: "excel", label: "Excel Spreadsheet", icon: xlsIcon },
@@ -140727,9 +140529,9 @@ const ReportActionButtons = ({
   isSensitiveStatus,
   reportStatus
 }) => {
-  const [selectedFormat, setSelectedFormat] = useState$B("pdf");
-  const [isDesktopWeb, setIsDesktopWeb] = useState$B(window.innerWidth >= 992);
-  useEffect$y(() => {
+  const [selectedFormat, setSelectedFormat] = useState$D("pdf");
+  const [isDesktopWeb, setIsDesktopWeb] = useState$D(window.innerWidth >= 992);
+  useEffect$B(() => {
     const handleResize = () => {
       setIsDesktopWeb(window.innerWidth >= 992);
     };
@@ -140865,7 +140667,7 @@ const ReportActionButtons = ({
 };
 
 var define_process_env_default$1 = {};
-const {useState: useState$A,useContext: useContext$j,useCallback: useCallback$4,useEffect: useEffect$x,useMemo: useMemo$i,useRef: useRef$4} = await importShared('react');
+const {useState: useState$C,useContext: useContext$k,useCallback: useCallback$6,useEffect: useEffect$A,useMemo: useMemo$j,useRef: useRef$6} = await importShared('react');
 const DHIS_UID_REGEX$1 = /^[A-Za-z0-9]{11}$/;
 const TRACKER_PROGRAM_FIELDS = PROGRAM_STAGES_FIELDS + ",programTrackedEntityAttributes[mandatory,trackedEntityAttribute[id,name,formName,displayName,code,valueType,optionSetValue,optionSet[id,name,code,options[id,name,code]]]]";
 const PROGRAM_STAGE_FIELDS_PARAM = encodeURIComponent(TRACKER_PROGRAM_FIELDS);
@@ -141005,7 +140807,7 @@ const ReportExportButtons = ({
   program,
   isApprover = false
 }) => {
-  useCallback$4(
+  useCallback$6(
     (dataElementId) => {
       if (!dataElementId) return "";
       const rawValue = reportData?.dataValues?.[dataElementId];
@@ -141014,30 +140816,30 @@ const ReportExportButtons = ({
     },
     [reportData?.dataValues]
   );
-  const { programs } = useContext$j(MEMISContext.ProgramContext);
-  const [isGenerating, setIsGenerating] = useState$A(false);
-  const [showProgress, setShowProgress] = useState$A(false);
-  const [progressStage, setProgressStage] = useState$A("");
-  const [progressPercent, setProgressPercent] = useState$A(0);
-  const [analyticsData, setAnalyticsData] = useState$A(null);
-  const [error, setError] = useState$A(null);
-  const [isPreviewOpen, setIsPreviewOpen] = useState$A(false);
-  const [previewHtml, setPreviewHtml] = useState$A("");
-  const [isPreviewLoading, setIsPreviewLoading] = useState$A(false);
-  const [previewLoadingMessage, setPreviewLoadingMessage] = useState$A(
+  const { programs } = useContext$k(MEMISContext.ProgramContext);
+  const [isGenerating, setIsGenerating] = useState$C(false);
+  const [showProgress, setShowProgress] = useState$C(false);
+  const [progressStage, setProgressStage] = useState$C("");
+  const [progressPercent, setProgressPercent] = useState$C(0);
+  const [analyticsData, setAnalyticsData] = useState$C(null);
+  const [error, setError] = useState$C(null);
+  const [isPreviewOpen, setIsPreviewOpen] = useState$C(false);
+  const [previewHtml, setPreviewHtml] = useState$C("");
+  const [isPreviewLoading, setIsPreviewLoading] = useState$C(false);
+  const [previewLoadingMessage, setPreviewLoadingMessage] = useState$C(
     "Preparing preview..."
   );
-  const [reportRequiresApproval, setReportRequiresApproval] = useState$A(false);
+  const [reportRequiresApproval, setReportRequiresApproval] = useState$C(false);
   const normalizedStatus = (reportData?.status || "").trim().toLowerCase();
-  const [isDesktopWeb, setIsDesktopWeb] = useState$A(window.innerWidth >= 992);
-  useEffect$x(() => {
+  const [isDesktopWeb, setIsDesktopWeb] = useState$C(window.innerWidth >= 992);
+  useEffect$A(() => {
     const handleResize = () => {
       setIsDesktopWeb(window.innerWidth >= 992);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  useEffect$x(() => {
+  useEffect$A(() => {
     const checkReportApprovalRequirement = async () => {
       try {
         const dataStoreData = await LocalForageServiceInstance.getItem("dataStore", "dataStore");
@@ -141084,7 +140886,7 @@ const ReportExportButtons = ({
     );
     return reportNameType;
   };
-  const reportNameTypeValue = useMemo$i(
+  const reportNameTypeValue = useMemo$j(
     () => extractReportNameType(),
     [reportData?.dataValues, reportData?.fieldNames]
   );
@@ -141099,11 +140901,11 @@ const ReportExportButtons = ({
     );
     return reportName;
   };
-  const reportNameValue = useMemo$i(
+  const reportNameValue = useMemo$j(
     () => extractReportName(),
     [reportData?.dataValues, reportData?.fieldNames]
   );
-  const programReferenceCandidates = useMemo$i(() => {
+  const programReferenceCandidates = useMemo$j(() => {
     const refs = [];
     const pushRef = (value) => {
       if (!value) return;
@@ -141140,13 +140942,13 @@ const ReportExportButtons = ({
     reportData?.programId,
     reportData?.programCode
   ]);
-  const programMetadataCacheRef = useRef$4(/* @__PURE__ */ new Map());
-  const programList = useMemo$i(() => {
+  const programMetadataCacheRef = useRef$6(/* @__PURE__ */ new Map());
+  const programList = useMemo$j(() => {
     if (Array.isArray(programs?.programs)) return programs.programs;
     if (Array.isArray(programs)) return programs;
     return [];
   }, [programs]);
-  const findProgramByReference = useCallback$4(
+  const findProgramByReference = useCallback$6(
     (programRef) => {
       if (!programRef) return null;
       const normalizedRef = typeof programRef === "string" ? programRef.trim().toLowerCase() : programRef;
@@ -141169,7 +140971,7 @@ const ReportExportButtons = ({
     },
     [programList]
   );
-  const fetchProgramDetails = useCallback$4(async (programId) => {
+  const fetchProgramDetails = useCallback$6(async (programId) => {
     if (!programId) {
       return null;
     }
@@ -141190,7 +140992,7 @@ const ReportExportButtons = ({
     }
     return null;
   }, []);
-  const ensureProgramMetadata = useCallback$4(
+  const ensureProgramMetadata = useCallback$6(
     async (candidateProgram) => {
       if (!candidateProgram) {
         return null;
@@ -141221,7 +141023,7 @@ const ReportExportButtons = ({
     },
     [fetchProgramDetails]
   );
-  const resolveProgramReference = useCallback$4(
+  const resolveProgramReference = useCallback$6(
     async (programRef) => {
       const referenceValueRaw = typeof programRef === "string" ? programRef : programRef?.id || programRef?.uid || programRef?.code || programRef?.name;
       const referenceValue = typeof referenceValueRaw === "string" ? referenceValueRaw.trim() : referenceValueRaw;
@@ -141251,7 +141053,7 @@ const ReportExportButtons = ({
       fetchProgramDetails
     ]
   );
-  const resetProgressState = useCallback$4(() => {
+  const resetProgressState = useCallback$6(() => {
     setShowProgress(false);
     setIsGenerating(false);
     setError(null);
@@ -143216,8 +143018,8 @@ const taskController = async (event) => {
   }
 };
 
-const React$u = await importShared('react');
-const {useEffect: useEffect$w,useState: useState$z} = React$u;
+const React$x = await importShared('react');
+const {useEffect: useEffect$z,useState: useState$B} = React$x;
 function ScheduleTrainingModal({
   program,
   event,
@@ -143226,9 +143028,9 @@ function ScheduleTrainingModal({
   buttonLabel = "Schedule",
   trainingDateFieldId
 }) {
-  const [trainingDate, setTrainingDate] = useState$z("");
-  const [loading, setLoading] = useState$z(false);
-  const [openModal, setOpenModal] = useState$z(false);
+  const [trainingDate, setTrainingDate] = useState$B("");
+  const [loading, setLoading] = useState$B(false);
+  const [openModal, setOpenModal] = useState$B(false);
   const handleSubmit = async () => {
     try {
       setLoading(true);
@@ -143279,7 +143081,7 @@ function ScheduleTrainingModal({
     setTrainingDate("");
     setOpenModal(false);
   };
-  useEffect$w(() => {
+  useEffect$z(() => {
     if (openModal) {
       const existingDate = event?.dataValues?.find(
         (dv) => dv.dataElement === trainingDateFieldId
@@ -143358,7 +143160,7 @@ const hasApprovalStatus = (programId, approvalStatusConfig) => {
     );
 };
 
-const {useMemo: useMemo$h} = await importShared('react');
+const {useMemo: useMemo$i} = await importShared('react');
 
 
 /**
@@ -143373,7 +143175,7 @@ const {useMemo: useMemo$h} = await importShared('react');
  * @returns {Object} - Validation state and message
  */
 const useTrainingApprovalValidation = (event, flowMain, allFlows = []) => {
-    const validationResult = useMemo$h(() => {
+    const validationResult = useMemo$i(() => {
 
         // CRITICAL: Find the flow with approvalValidation for this program
         let validationConfig = flowMain?.approvalValidation;
@@ -143626,7 +143428,7 @@ const WardParticipantsDisplay = ({ value }) => {
   ] });
 };
 
-const {useEffect: useEffect$v,useState: useState$y,useMemo: useMemo$g} = await importShared('react');
+const {useEffect: useEffect$y,useState: useState$A,useMemo: useMemo$h} = await importShared('react');
 
 /**
  * Hook to load section visibility rules for event detail pages
@@ -143634,18 +143436,18 @@ const {useEffect: useEffect$v,useState: useState$y,useMemo: useMemo$g} = await i
  * @returns {Array} Array of visibility rules for the program
  */
 function useEventSectionVisibility(programId) {
-    const [config, setConfig] = useState$y(null);
-    const [tick, setTick] = useState$y(0);
+    const [config, setConfig] = useState$A(null);
+    const [tick, setTick] = useState$A(0);
 
     // Listen for external updates
-    useEffect$v(() => {
+    useEffect$y(() => {
         const onUpdate = () => setTick((n) => n + 1);
         window.addEventListener("memis:eventSectionVisibility:updated", onUpdate);
         return () => window.removeEventListener("memis:eventSectionVisibility:updated", onUpdate);
     }, []);
 
     // Fetch configuration from datastore
-    useEffect$v(() => {
+    useEffect$y(() => {
         let mounted = true;
         
         const fetchConfig = async () => {
@@ -143672,7 +143474,7 @@ function useEventSectionVisibility(programId) {
     }, [tick]);
 
     // Extract rules for the current program
-    const programRules = useMemo$g(() => {
+    const programRules = useMemo$h(() => {
         if (!programId || !config) return [];
         
         try {
@@ -143768,94 +143570,7 @@ function evaluateCondition(condition, dataValues) {
     }
 }
 
-function SectionNavButtons({ currentSection, prevSection, nextSection, onNavigate }) {
-  const isFirst = !prevSection;
-  const isLast = !nextSection;
-  if (isFirst && isLast) return null;
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    "div",
-    {
-      style: {
-        display: "flex",
-        justifyContent: isFirst ? "flex-end" : isLast ? "flex-start" : "space-between",
-        marginTop: 16,
-        paddingTop: 12,
-        borderTop: "1px solid #e0e0e0"
-      },
-      children: [
-        !isFirst && /* @__PURE__ */ jsxRuntimeExports.jsx(
-          IonButton,
-          {
-            fill: "outline",
-            size: "medium",
-            onClick: () => onNavigate(currentSection.id, prevSection.id),
-            children: "Back"
-          }
-        ),
-        !isLast && /* @__PURE__ */ jsxRuntimeExports.jsx(
-          IonButton,
-          {
-            fill: "solid",
-            size: "medium",
-            onClick: () => onNavigate(currentSection.id, nextSection.id),
-            children: "Next"
-          }
-        )
-      ]
-    }
-  );
-}
-
-const {useState: useState$x} = await importShared('react');
-
-
-/**
- * useExpandableSections
- *
- * Manages expand/collapse state for a list of sections and provides
- * keyboard-free Back / Next navigation between them.
- *
- * Usage (both TeiEvents and EventPage):
- *
- *   const { expandedSections, toggleSection, navigateToSection } =
- *     useExpandableSections();
- *
- *   // In the section map, derive position helpers:
- *   const isFirst   = index === 0;
- *   const isLast    = index === visibleSections.length - 1;
- *   const prevSection = !isFirst ? visibleSections[index - 1] : null;
- *   const nextSection = !isLast  ? visibleSections[index + 1] : null;
- *
- *   // Pass them straight to <SectionNavButtons />.
- */
-function useExpandableSections() {
-    const [expandedSections, setExpandedSections] = useState$x({});
-
-    /** Toggle a single section open / closed. */
-    const toggleSection = (id) => {
-        setExpandedSections((prev) => ({ ...prev, [id]: !prev[id] }));
-    };
-
-    /**
-     * Close `fromId`, open `toId`, then scroll the target into view.
-     * The section card must have id={`section-${toId}`} for the scroll to work.
-     */
-    const navigateToSection = (fromId, toId) => {
-        setExpandedSections((prev) => ({
-            ...prev,
-            [fromId]: false,
-            [toId]: true,
-        }));
-        setTimeout(() => {
-            const el = document.getElementById(`section-${toId}`);
-            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 50);
-    };
-
-    return { expandedSections, toggleSection, navigateToSection };
-}
-
-const {useContext: useContext$i,useEffect: useEffect$u,useMemo: useMemo$f,useState: useState$w} = await importShared('react');
+const {useContext: useContext$j,useEffect: useEffect$x,useMemo: useMemo$g,useState: useState$z} = await importShared('react');
 const norm$1 = (s) => String(s ?? "").trim().toLowerCase();
 const truthy = (v) => {
   if (v === true) return true;
@@ -143894,51 +143609,50 @@ function EventPage() {
   const [
     showApprovalButtonBasedOnTransferType,
     setShowApprovalButtonBasedOnTransferType
-  ] = useState$w(false);
+  ] = useState$z(false);
   const { event: eventId } = useParams();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const navigate = useNavigate();
-  const [isApproved, setIsApproved] = useState$w(false);
-  const [uid] = useState$w(queryParams.get("uid") || "");
-  const [allocationTag] = useState$w(queryParams.get("q") || "");
-  const { programs } = useContext$i(MEMISContext.ProgramContext);
-  const [openModal, setOpenModal] = useState$w(false);
-  const [pg, setPg] = useState$w(null);
-  const [event, setEvent] = useState$w(null);
-  const [orgUnit, setOu] = useState$w({});
-  const [orgUnitNames, setOrgUnitNames] = useState$w({});
-  const [crumbs, setCrumbs] = useState$w([]);
-  const [user, setUser] = useState$w(null);
-  const [isUserCreateEvent, setIsUserCreateEvent] = useState$w(false);
-  const [userApprovalConfig, setUserApprovalConfig] = useState$w(null);
-  const [hideApproveButton, setHideApproveButton] = useState$w([]);
-  const [allocationsUserRoles, setAllocationsUserRoles] = useState$w({});
-  const [isAllocated, setIsAllocated] = useState$w(false);
-  const [allocationSection, setAllocationSection] = useState$w(null);
-  const [approvalStatusConfig, setApprovalStatusConfig] = useState$w(null);
-  const [loading, setLoading] = useState$w(true);
-  const [error, setError] = useState$w(null);
-  const [flowRules, setFlowRules] = useState$w(null);
-  const [openCollection, setOpenCollection] = useState$w(false);
-  const [programIndicatorAvailableCount, setProgramIndicatorAvailableCount] = useState$w(0);
-  const [declineReasonFieldId, setDeclineReasonFieldId] = useState$w(null);
-  const [fieldNames, setFieldNames] = useState$w({});
-  const [statusFieldId, setStatusFieldId] = useState$w(null);
-  const [statusOptionMap, setStatusOptionMap] = useState$w({});
-  const [programApprovalButtons, setProgramApprovalButtons] = useState$w([]);
-  const [reportRequiresApproval, setReportRequiresApproval] = useState$w(null);
-  const [dataStoreRaw, setDataStoreRaw] = useState$w(null);
-  const [infoCardExpanded, setInfoCardExpanded] = useState$w(false);
-  const { expandedSections, toggleSection, navigateToSection } = useExpandableSections();
-  const [showRegisterButton, setShowRegisterButton] = useState$w(false);
-  const [showRegisterButtonByUserRole, setShowRegisterButtonByUserRole] = useState$w(false);
+  const [isApproved, setIsApproved] = useState$z(false);
+  const [uid] = useState$z(queryParams.get("uid") || "");
+  const [allocationTag] = useState$z(queryParams.get("q") || "");
+  const { programs } = useContext$j(MEMISContext.ProgramContext);
+  const [openModal, setOpenModal] = useState$z(false);
+  const [pg, setPg] = useState$z(null);
+  const [event, setEvent] = useState$z(null);
+  const [orgUnit, setOu] = useState$z({});
+  const [orgUnitNames, setOrgUnitNames] = useState$z({});
+  const [crumbs, setCrumbs] = useState$z([]);
+  const [user, setUser] = useState$z(null);
+  const [isUserCreateEvent, setIsUserCreateEvent] = useState$z(false);
+  const [userApprovalConfig, setUserApprovalConfig] = useState$z(null);
+  const [hideApproveButton, setHideApproveButton] = useState$z([]);
+  const [allocationsUserRoles, setAllocationsUserRoles] = useState$z({});
+  const [isAllocated, setIsAllocated] = useState$z(false);
+  const [allocationSection, setAllocationSection] = useState$z(null);
+  const [approvalStatusConfig, setApprovalStatusConfig] = useState$z(null);
+  const [loading, setLoading] = useState$z(true);
+  const [error, setError] = useState$z(null);
+  const [flowRules, setFlowRules] = useState$z(null);
+  const [openCollection, setOpenCollection] = useState$z(false);
+  const [programIndicatorAvailableCount, setProgramIndicatorAvailableCount] = useState$z(0);
+  const [declineReasonFieldId, setDeclineReasonFieldId] = useState$z(null);
+  const [fieldNames, setFieldNames] = useState$z({});
+  const [statusFieldId, setStatusFieldId] = useState$z(null);
+  const [statusOptionMap, setStatusOptionMap] = useState$z({});
+  const [programApprovalButtons, setProgramApprovalButtons] = useState$z([]);
+  const [reportRequiresApproval, setReportRequiresApproval] = useState$z(null);
+  const [infoCardExpanded, setInfoCardExpanded] = useState$z(false);
+  const [expandedSections, setExpandedSections] = useState$z({});
+  const [showRegisterButton, setShowRegisterButton] = useState$z(false);
+  const [showRegisterButtonByUserRole, setShowRegisterButtonByUserRole] = useState$z(false);
   const [
     openApprovalButtonWhenInNoFlowRules,
     setOpenApprovalButtonWhenInNoFlowRules
-  ] = useState$w(false);
-  const [filePreviewOpen, setFilePreviewOpen] = useState$w(false);
-  const [selectedFile, setSelectedFile] = useState$w({
+  ] = useState$z(false);
+  const [filePreviewOpen, setFilePreviewOpen] = useState$z(false);
+  const [selectedFile, setSelectedFile] = useState$z({
     fileId: null,
     fileName: null,
     valueType: null,
@@ -144045,7 +143759,6 @@ function EventPage() {
         "dataStore",
         "dataStore"
       );
-      setDataStoreRaw(response);
       const approvalProc = response?.approvalProcesses;
       const allocationProc = response?.allocationProcesses;
       const allocationsStatus = response?.allocationsStatus?.configuration;
@@ -144270,12 +143983,18 @@ function EventPage() {
     if (statusLower === "under review") return "var(--ion-color-warning)";
     return "var(--ion-color-medium)";
   };
-  useEffect$u(() => {
+  const toggleSection = (id) => {
+    setExpandedSections((prev) => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
+  useEffect$x(() => {
     if (eventId) {
       getEventDetails(eventId);
     }
   }, [eventId]);
-  useEffect$u(() => {
+  useEffect$x(() => {
     getUser();
   }, []);
   const getVal = (de) => {
@@ -144347,7 +144066,7 @@ function EventPage() {
     );
     return progData?.id ?? "";
   };
-  const sections = useMemo$f(
+  const sections = useMemo$g(
     () => (pg?.programStages || []).flatMap((ps) => ps?.programStageSections || []),
     [pg]
   );
@@ -144514,16 +144233,13 @@ function EventPage() {
   const isRegistrationTask = (event?.dataValues || []).some(
     (d) => d?.value === "EQUIPMENT_REGISTRATION"
   );
-  const dataValuesObj = useMemo$f(() => {
+  const dataValuesObj = useMemo$g(() => {
     const map = {};
     (event?.dataValues || []).forEach((dv) => {
       map[dv.dataElement] = dv.value;
     });
     return map;
   }, [event?.dataValues]);
-  const maintenanceTriggerAt = useMemo$f(() => {
-    return dataValuesObj["EbJI5Loxjbl"] || null;
-  }, [dataValuesObj]);
   const trainingValidation = useTrainingApprovalValidation(
     event,
     flowMain,
@@ -144537,11 +144253,11 @@ function EventPage() {
     formData: dataValuesObj
   });
   const assignedApproverValue = approvingOfficerFieldId ? dataValuesObj[approvingOfficerFieldId] : null;
-  const normalizedApproverTokens = useMemo$f(() => {
+  const normalizedApproverTokens = useMemo$g(() => {
     if (!assignedApproverValue) return [];
     return assignedApproverValue.split(/[,/|]+/).map((token) => token.trim().toLowerCase()).filter(Boolean);
   }, [assignedApproverValue]);
-  const isAssignedApprover = useMemo$f(() => {
+  const isAssignedApprover = useMemo$g(() => {
     if (!normalizedApproverTokens.length) return true;
     if (!user) return false;
     const candidateTokens = /* @__PURE__ */ new Set();
@@ -144558,18 +144274,18 @@ function EventPage() {
     });
     return normalizedApproverTokens.some((token) => candidateTokens.has(token));
   }, [normalizedApproverTokens, user]);
-  const approvalConfigList = useMemo$f(() => {
+  const approvalConfigList = useMemo$g(() => {
     if (!userApprovalConfig) return [];
     return Array.isArray(userApprovalConfig) ? userApprovalConfig : [userApprovalConfig];
   }, [userApprovalConfig]);
-  const sectionApprovalConfigById = useMemo$f(() => {
+  const sectionApprovalConfigById = useMemo$g(() => {
     const map = {};
     approvalConfigList.forEach((config) => {
       if (config?.sectionId) map[config.sectionId] = config;
     });
     return map;
   }, [approvalConfigList]);
-  const userHasApprovalRole = useMemo$f(() => {
+  const userHasApprovalRole = useMemo$g(() => {
     if (!approvalConfigList.length || !user?.userRoles) return false;
     return approvalConfigList.some(
       (config) => (config?.userRoles || []).some(
@@ -144577,7 +144293,7 @@ function EventPage() {
       )
     );
   }, [approvalConfigList, user]);
-  useEffect$u(() => {
+  useEffect$x(() => {
     const rs = async () => {
       const gg = await hideApprovalButtonBasedOnTransferType(event, user);
       setShowApprovalButtonBasedOnTransferType(gg);
@@ -144766,16 +144482,11 @@ function EventPage() {
           sectionVisibilityRules,
           currentByDE
         );
-      }).map((section, sectionIndex, visibleSections) => {
+      }).map((section) => {
         const sectionApprovalConfig = sectionApprovalConfigById[section?.id];
-        const isFirst = sectionIndex === 0;
-        const isLast = sectionIndex === visibleSections.length - 1;
-        const prevSection = !isFirst ? visibleSections[sectionIndex - 1] : null;
-        const nextSection = !isLast ? visibleSections[sectionIndex + 1] : null;
         return /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
-            id: `section-${section?.id}`,
             className: "form-section-card",
             style: { margin: 20 },
             children: [
@@ -145034,7 +144745,7 @@ function EventPage() {
                   }
                   const isFileType = de?.valueType === "FILE_RESOURCE" || de?.valueType === "IMAGE";
                   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { marginBottom: 18 }, children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "form-field-label", children: getFieldLabelOverride(dataStoreRaw, de?.id, maintenanceTriggerAt) || de?.formName || de?.displayName || de?.name || de?.id }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "form-field-label", children: de?.formName || de?.displayName || de?.name || de?.id }),
                     isWardMap ? /* @__PURE__ */ jsxRuntimeExports.jsx(WardParticipantsDisplay, { value: rawValue }) : isFileType && rawValue && rawValue !== "N/A" ? /* @__PURE__ */ jsxRuntimeExports.jsx(
                       IonButton,
                       {
@@ -145081,16 +144792,7 @@ function EventPage() {
                     buttonPositiveName: "Allocate",
                     buttonNegativeName: "Cancel"
                   }
-                ) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  SectionNavButtons,
-                  {
-                    currentSection: section,
-                    prevSection,
-                    nextSection,
-                    onNavigate: navigateToSection
-                  }
-                )
+                ) })
               ] })
             ]
           },
@@ -145140,8 +144842,8 @@ function EventPage() {
   ] });
 }
 
-const React$t = await importShared('react');
-const {useEffect: useEffect$t,useState: useState$v} = React$t;
+const React$w = await importShared('react');
+const {useEffect: useEffect$w,useState: useState$y} = React$w;
 function AccessDenied503({
   title = "Service Unavailable",
   message = "You do not have permissions to access this program.",
@@ -145149,8 +144851,8 @@ function AccessDenied503({
   actionText = "Go to Dashboard"
 }) {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState$v(true);
-  useEffect$t(() => {
+  const [loading, setLoading] = useState$y(true);
+  useEffect$w(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1e4);
@@ -145201,8 +144903,8 @@ function AccessDenied503({
   ) }) });
 }
 
-const React$s = await importShared('react');
-const {useEffect: useEffect$s} = React$s;
+const React$v = await importShared('react');
+const {useEffect: useEffect$v} = React$v;
 const NotFoundHandler = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     AccessDenied503,
@@ -145215,13 +144917,13 @@ const NotFoundHandler = () => {
   );
 };
 
-const React$r = await importShared('react');
-const {useState: useState$u} = React$r;
+const React$u = await importShared('react');
+const {useState: useState$x} = React$u;
 const AppDetailsCard = () => {
-  const [isEditing, setIsEditing] = useState$u(false);
-  const [system, setSystem] = useState$u("MEMIS");
-  const [version, setVersion] = useState$u("1.0.0");
-  const [isSaving, setIsSaving] = useState$u(false);
+  const [isEditing, setIsEditing] = useState$x(false);
+  const [system, setSystem] = useState$x("MEMIS");
+  const [version, setVersion] = useState$x("1.0.0");
+  const [isSaving, setIsSaving] = useState$x(false);
   const toggleEdit = async () => {
     if (isEditing) {
       try {
@@ -145296,31 +144998,31 @@ const AppDetailsCard = () => {
   ] }) });
 };
 
+const React$t = await importShared('react');
+const {useContext: useContext$i,useState: useState$w} = React$t;
+
+const React$s = await importShared('react');
+const {useEffect: useEffect$u,useMemo: useMemo$f,useState: useState$v} = React$s;
+
+const React$r = await importShared('react');
+const {useContext: useContext$h,useState: useState$u,useEffect: useEffect$t,useMemo: useMemo$e} = React$r;
+
 const React$q = await importShared('react');
-const {useContext: useContext$h,useState: useState$t} = React$q;
+const {useState: useState$t,useEffect: useEffect$s,useMemo: useMemo$d} = React$q;
 
 const React$p = await importShared('react');
-const {useEffect: useEffect$r,useMemo: useMemo$e,useState: useState$s} = React$p;
-
-const React$o = await importShared('react');
-const {useContext: useContext$g,useState: useState$r,useEffect: useEffect$q,useMemo: useMemo$d} = React$o;
-
-const React$n = await importShared('react');
-const {useState: useState$q,useEffect: useEffect$p,useMemo: useMemo$c} = React$n;
-
-const React$m = await importShared('react');
-const {useEffect: useEffect$o,useMemo: useMemo$b,useState: useState$p} = React$m;
+const {useEffect: useEffect$r,useMemo: useMemo$c,useState: useState$s} = React$p;
 const ViewProgramSectionsAccess = ({ onEdit }) => {
-  const [confirmOpen, setConfirmOpen] = useState$p(false);
-  const [rowToDelete, setRowToDelete] = useState$p(null);
-  const [deleting, setDeleting] = useState$p(false);
-  const [sharingSettings, setSharingSettings] = useState$p([]);
-  const [rawData, seRawData] = useState$p(null);
-  const [loading, setLoading] = useState$p(true);
-  const [isMobile, setIsMobile] = useState$p(
+  const [confirmOpen, setConfirmOpen] = useState$s(false);
+  const [rowToDelete, setRowToDelete] = useState$s(null);
+  const [deleting, setDeleting] = useState$s(false);
+  const [sharingSettings, setSharingSettings] = useState$s([]);
+  const [rawData, seRawData] = useState$s(null);
+  const [loading, setLoading] = useState$s(true);
+  const [isMobile, setIsMobile] = useState$s(
     () => typeof window !== "undefined" ? window.matchMedia("(max-width: 576px)").matches : false
   );
-  useEffect$o(() => {
+  useEffect$r(() => {
     const mq = window.matchMedia("(max-width: 576px)");
     const handler = (e) => setIsMobile(e.matches);
     setIsMobile(mq.matches);
@@ -145329,7 +145031,7 @@ const ViewProgramSectionsAccess = ({ onEdit }) => {
       mq.removeEventListener?.("change", handler);
     };
   }, []);
-  const columns = useMemo$b(
+  const columns = useMemo$c(
     () => [
       { key: "program", label: "Program" },
       { key: "section", label: "Section" },
@@ -145400,7 +145102,7 @@ const ViewProgramSectionsAccess = ({ onEdit }) => {
       setRowToDelete(null);
     }
   };
-  useEffect$o(() => {
+  useEffect$r(() => {
     getSharingSettings();
   }, []);
   const openDeleteConfirm = (idx) => {
@@ -145563,15 +145265,15 @@ const ViewProgramSectionsAccess = ({ onEdit }) => {
   ] }) });
 };
 
-const React$l = await importShared('react');
-const {useContext: useContext$f,useEffect: useEffect$n,useState: useState$o} = React$l;
+const React$o = await importShared('react');
+const {useContext: useContext$g,useEffect: useEffect$q,useState: useState$r} = React$o;
 function SectionAccessUserRoles() {
-  const { programs } = useContext$f(MEMISContext.ProgramContext);
-  const { userRoles } = useContext$f(MEMISContext.UserRolesContext);
-  const [sections, setSections] = useState$o([]);
-  const [formActive, setFormActive] = useState$o(false);
-  const [isLoading, setIsLoading] = useState$o(false);
-  const [query, setQuery] = useState$o("");
+  const { programs } = useContext$g(MEMISContext.ProgramContext);
+  const { userRoles } = useContext$g(MEMISContext.UserRolesContext);
+  const [sections, setSections] = useState$r([]);
+  const [formActive, setFormActive] = useState$r(false);
+  const [isLoading, setIsLoading] = useState$r(false);
+  const [query, setQuery] = useState$r("");
   const location = useLocation();
   const navigate = useNavigate();
   const accessRights = [
@@ -145580,10 +145282,10 @@ function SectionAccessUserRoles() {
     { id: "update", name: "Update" },
     { id: "delete", name: "Delete" }
   ];
-  const [programId, setProgramId] = useState$o("");
-  const [sectionId, setSectionId] = useState$o("");
-  const [userRole, setUserRole] = useState$o("");
-  const [selectedRights, setSelectedRights] = useState$o([]);
+  const [programId, setProgramId] = useState$r("");
+  const [sectionId, setSectionId] = useState$r("");
+  const [userRole, setUserRole] = useState$r("");
+  const [selectedRights, setSelectedRights] = useState$r([]);
   const sectionsData = (programIdToUse, preselectSectionId = null) => {
     if (!programIdToUse) return;
     const program = programs?.find((p) => p.id === programIdToUse);
@@ -145692,7 +145394,7 @@ function SectionAccessUserRoles() {
       setIsLoading(false);
     }
   };
-  useEffect$n(() => {
+  useEffect$q(() => {
     if (programId) sectionsData(programId);
   }, [programs, programId]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonPage, { className: "section-access-user-roles", children: [
@@ -145837,8 +145539,8 @@ function SectionAccessUserRoles() {
   ] });
 }
 
-const React$k = await importShared('react');
-const {useContext: useContext$e,useState: useState$n,useEffect: useEffect$m,useMemo: useMemo$a} = React$k;
+const React$n = await importShared('react');
+const {useContext: useContext$f,useState: useState$q,useEffect: useEffect$p,useMemo: useMemo$b} = React$n;
 
 const {createPortal: createPortal$1} = await importShared('react-dom');
 const DS_KEY = "enrollmentAccessSettings";
@@ -145846,35 +145548,35 @@ const DS_PATH = `dataStore/memis/${DS_KEY}`;
 const TEXT_MD = { color: "#000", fontSize: 15, lineHeight: 1.35 };
 const HEAD_MD = { color: "#000", fontSize: 17, lineHeight: 1.3, margin: 0 };
 function InlineEditor({ open, onClose, onSave, programs, roles, initial, usedProgramIds }) {
-  const [programId, setProgramId] = useState$n(initial?.programId || "");
-  const [roleIds, setRoleIds] = useState$n(initial?.roleIds || []);
-  const [query, setQuery] = useState$n("");
-  const [isMobile, setIsMobile] = useState$n(() => window.innerWidth <= 576);
-  useEffect$m(() => {
+  const [programId, setProgramId] = useState$q(initial?.programId || "");
+  const [roleIds, setRoleIds] = useState$q(initial?.roleIds || []);
+  const [query, setQuery] = useState$q("");
+  const [isMobile, setIsMobile] = useState$q(() => window.innerWidth <= 576);
+  useEffect$p(() => {
     const onResize = () => setIsMobile(window.innerWidth <= 576);
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
-  useEffect$m(() => {
+  useEffect$p(() => {
     setProgramId(initial?.programId || "");
     setRoleIds(initial?.roleIds || []);
     setQuery("");
   }, [initial, open]);
   const isEdit = !!initial;
-  const eligiblePrograms = useMemo$a(() => {
+  const eligiblePrograms = useMemo$b(() => {
     if (isEdit) return programs;
     return programs.filter((p) => !usedProgramIds?.has(p.id));
   }, [programs, usedProgramIds, isEdit]);
   const noChange = isEdit && initial.programId === programId && JSON.stringify([...roleIds].sort()) === JSON.stringify([...initial.roleIds || []].sort());
-  const sortedPrograms = useMemo$a(
+  const sortedPrograms = useMemo$b(
     () => eligiblePrograms.slice().sort((a, b) => (a?.name || "").localeCompare(b?.name || "")),
     [eligiblePrograms]
   );
-  const sortedRoles = useMemo$a(
+  const sortedRoles = useMemo$b(
     () => roles.slice().sort((a, b) => (a?.name || "").localeCompare(b?.name || "")),
     [roles]
   );
-  const filteredRoles = useMemo$a(() => {
+  const filteredRoles = useMemo$b(() => {
     const q = query.trim().toLowerCase();
     if (!q) return sortedRoles;
     return sortedRoles.filter((r) => (r.name || r.displayName || "").toLowerCase().includes(q));
@@ -146075,26 +145777,26 @@ function InlineEditor({ open, onClose, onSave, programs, roles, initial, usedPro
   );
 }
 function EnrollmentAccessSettings() {
-  const [rows, setRows] = useState$n([]);
-  const [loading, setLoading] = useState$n(true);
-  const [confirmIdx, setConfirmIdx] = useState$n(null);
-  const [editorOpen, setEditorOpen] = useState$n(false);
-  const [editRow, setEditRow] = useState$n(null);
-  const programsCtx = useContext$e(MEMISContext.ProgramContext);
-  const rolesCtx = useContext$e(MEMISContext.UserRolesContext);
+  const [rows, setRows] = useState$q([]);
+  const [loading, setLoading] = useState$q(true);
+  const [confirmIdx, setConfirmIdx] = useState$q(null);
+  const [editorOpen, setEditorOpen] = useState$q(false);
+  const [editRow, setEditRow] = useState$q(null);
+  const programsCtx = useContext$f(MEMISContext.ProgramContext);
+  const rolesCtx = useContext$f(MEMISContext.UserRolesContext);
   const programsReady = !!programsCtx?.programs?.length;
   const rolesReady = !!rolesCtx?.userRoles?.length;
-  const [isMobile, setIsMobile] = useState$n(() => window.innerWidth <= 576);
-  useEffect$m(() => {
+  const [isMobile, setIsMobile] = useState$q(() => window.innerWidth <= 576);
+  useEffect$p(() => {
     const onResize = () => setIsMobile(window.innerWidth <= 576);
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
-  const allPrograms = useMemo$a(
+  const allPrograms = useMemo$b(
     () => (programsCtx?.programs || []).slice().sort((a, b) => (a?.name || "").localeCompare(b?.name || "")),
     [programsCtx?.programs]
   );
-  const allRoles = useMemo$a(
+  const allRoles = useMemo$b(
     () => (rolesCtx?.userRoles || []).slice().sort((a, b) => (a?.name || "").localeCompare(b?.name || "")),
     [rolesCtx?.userRoles]
   );
@@ -146124,7 +145826,7 @@ function EnrollmentAccessSettings() {
       return null;
     }
   };
-  useEffect$m(() => {
+  useEffect$p(() => {
     const load = async () => {
       if (!programsReady || !rolesReady) return;
       const cached = readCache();
@@ -146153,8 +145855,8 @@ function EnrollmentAccessSettings() {
     load();
   }, [programsReady, rolesReady]);
   const broadcastChange = (next) => window.dispatchEvent(new CustomEvent("memis:enrollmentAccessChanged", { detail: next }));
-  const usedProgramIds = useMemo$a(() => new Set(rows.map((r) => r.programId)), [rows]);
-  const remainingProgramsCount = useMemo$a(
+  const usedProgramIds = useMemo$b(() => new Set(rows.map((r) => r.programId)), [rows]);
+  const remainingProgramsCount = useMemo$b(
     () => allPrograms.filter((p) => !usedProgramIds.has(p.id)).length,
     [allPrograms, usedProgramIds]
   );
@@ -146241,7 +145943,7 @@ function EnrollmentAccessSettings() {
       setConfirmIdx(null);
     }
   };
-  useMemo$a(
+  useMemo$b(
     () => [
       { key: "program", label: "Program" },
       { key: "roles", label: "Allowed Roles" }
@@ -146399,30 +146101,30 @@ const Geolocation = registerPlugin('Geolocation', {
 });
 f$4();
 
-const React$j = await importShared('react');
-const {useContext: useContext$d,useEffect: useEffect$l,useMemo: useMemo$9,useState: useState$m} = React$j;
+const React$m = await importShared('react');
+const {useContext: useContext$e,useEffect: useEffect$o,useMemo: useMemo$a,useState: useState$p} = React$m;
 const PAGE_SIZE$2 = 50;
 const MOBILE_BREAKPOINT$2 = 768;
 const WardsSettings = () => {
   const userRoleCanAdd = "vGr0Exf3SRX";
-  const { fetchOrgUnits } = useContext$d(MEMISContext.UserContext);
-  const { refreshUser } = useContext$d(MEMISContext.UserRolesContext);
-  const [wards, setWards] = useState$m([]);
-  const [memisFacilities, setMemisFacilities] = useState$m([]);
-  const [availableFacilities, setAvailableFacilities] = useState$m([]);
-  const [memisGroupId, setMemisGroupId] = useState$m(null);
-  const [parentFacilities, setParentFacilities] = useState$m([]);
-  const [hasAdminRole, setHasAdminRole] = useState$m(false);
-  const [isLoading, setIsLoading] = useState$m(false);
-  const [openModal, setOpenModal] = useState$m(false);
-  const [openFacilityModal, setOpenFacilityModal] = useState$m(false);
-  const [search, setSearch] = useState$m("");
-  const [page, setPage] = useState$m(1);
-  const [locating, setLocating] = useState$m(false);
-  const [isMobile, setIsMobile] = useState$m(
+  const { fetchOrgUnits } = useContext$e(MEMISContext.UserContext);
+  const { refreshUser } = useContext$e(MEMISContext.UserRolesContext);
+  const [wards, setWards] = useState$p([]);
+  const [memisFacilities, setMemisFacilities] = useState$p([]);
+  const [availableFacilities, setAvailableFacilities] = useState$p([]);
+  const [memisGroupId, setMemisGroupId] = useState$p(null);
+  const [parentFacilities, setParentFacilities] = useState$p([]);
+  const [hasAdminRole, setHasAdminRole] = useState$p(false);
+  const [isLoading, setIsLoading] = useState$p(false);
+  const [openModal, setOpenModal] = useState$p(false);
+  const [openFacilityModal, setOpenFacilityModal] = useState$p(false);
+  const [search, setSearch] = useState$p("");
+  const [page, setPage] = useState$p(1);
+  const [locating, setLocating] = useState$p(false);
+  const [isMobile, setIsMobile] = useState$p(
     window.innerWidth < MOBILE_BREAKPOINT$2
   );
-  const [form, setForm] = useState$m({
+  const [form, setForm] = useState$p({
     name: "",
     code: "",
     shortName: "",
@@ -146431,23 +146133,23 @@ const WardsSettings = () => {
     latitude: "",
     longitude: ""
   });
-  const [saving, setSaving] = useState$m(false);
-  const [toast, setToast] = useState$m({
+  const [saving, setSaving] = useState$p(false);
+  const [toast, setToast] = useState$p({
     open: false,
     message: "",
     color: "success"
   });
-  const [selectedUser, setSelectedUser] = useState$m(null);
-  const [selectedWard, setSelectedWard] = useState$m(null);
-  const [selectedFacility, setSelectedFacility] = useState$m(null);
-  const [errors, setErrors] = useState$m({});
-  const [submitted, setSubmitted] = useState$m(false);
-  const [viewMode, setViewMode] = useState$m("user");
+  const [selectedUser, setSelectedUser] = useState$p(null);
+  const [selectedWard, setSelectedWard] = useState$p(null);
+  const [selectedFacility, setSelectedFacility] = useState$p(null);
+  const [errors, setErrors] = useState$p({});
+  const [submitted, setSubmitted] = useState$p(false);
+  const [viewMode, setViewMode] = useState$p("user");
   const navigate = useNavigate();
-  const [users, setUsers] = useState$m([]);
-  const [wardUsers, setWardUsers] = useState$m([]);
-  const [usersToRemove, setUsersToRemove] = useState$m([]);
-  const [confirmDelete, setConfirmDelete] = useState$m({
+  const [users, setUsers] = useState$p([]);
+  const [wardUsers, setWardUsers] = useState$p([]);
+  const [usersToRemove, setUsersToRemove] = useState$p([]);
+  const [confirmDelete, setConfirmDelete] = useState$p({
     open: false,
     facility: null
   });
@@ -146506,34 +146208,34 @@ const WardsSettings = () => {
       console.log({ error });
     }
   };
-  useEffect$l(() => {
+  useEffect$o(() => {
     getOrganisationUnits();
   }, []);
-  useEffect$l(() => {
+  useEffect$o(() => {
     if (selectedFacility) {
       getUsers();
     }
   }, [selectedFacility]);
-  useEffect$l(() => {
+  useEffect$o(() => {
     const resize = () => {
       setIsMobile(window.innerWidth < MOBILE_BREAKPOINT$2);
     };
     window.addEventListener("resize", resize);
     return () => window.removeEventListener("resize", resize);
   }, []);
-  const filteredWards = useMemo$9(() => {
+  const filteredWards = useMemo$a(() => {
     return wards.filter((item) => {
       const value = search.toLowerCase();
       return item?.name?.toLowerCase().includes(value) || item?.parent?.name?.toLowerCase().includes(value) || item?.code?.toLowerCase().includes(value) || String(item?.level || "").toLowerCase().includes(value);
     });
   }, [wards, search]);
   const totalPages = Math.ceil(filteredWards.length / PAGE_SIZE$2);
-  useMemo$9(() => {
+  useMemo$a(() => {
     const start = (page - 1) * PAGE_SIZE$2;
     const end = start + PAGE_SIZE$2;
     return filteredWards.slice(start, end);
   }, [filteredWards, page]);
-  useEffect$l(() => {
+  useEffect$o(() => {
     setPage(1);
   }, [search]);
   const nextPage = () => {
@@ -146863,12 +146565,12 @@ const WardsSettings = () => {
       setWardUsers([]);
     }
   };
-  useEffect$l(() => {
+  useEffect$o(() => {
     if (selectedWard) {
       getWardUsers(selectedWard);
     }
   }, [selectedWard]);
-  useEffect$l(() => {
+  useEffect$o(() => {
     const load = async () => {
       const res = await LocalForageServiceInstance.getItem("userRes", "user");
       const hasRole = res?.userRoles?.some(
@@ -146882,30 +146584,19 @@ const WardsSettings = () => {
     (facility) => parentFacilities.some((parent) => parent.id === facility?.parent?.id)
   );
   const isFormValid = form.name?.trim() && form.shortName?.trim() && !form.parent && !form.openingDate;
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonPage, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonPage, { style: { backgroundColor: "#ffffff" }, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(IonContent, { fullscreen: true, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(IonHeader, { className: "ion-no-border", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonToolbar, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(IonHeader, { className: "ion-no-border", color: "light", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonToolbar, { color: "light", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(IonTitle, { slot: "start", children: "Facilities" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(IonButtons, { slot: "end", className: "ion-margin-end", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            IonButton,
-            {
-              color: "primary",
-              fill: "outline",
-              onClick: () => setOpenModal(true),
-              children: "Assign User to Ward"
-            }
-          ),
-          hasAdminRole && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            IonButton,
-            {
-              color: "primary",
-              fill: "solid",
-              onClick: () => setOpenFacilityModal(true),
-              children: "New"
-            }
-          )
-        ] })
+        /* @__PURE__ */ jsxRuntimeExports.jsx(IonButtons, { slot: "end", className: "ion-margin-end", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          IonButton,
+          {
+            color: "primary",
+            fill: "solid",
+            onClick: () => setOpenModal(true),
+            children: "Assign User to Ward"
+          }
+        ) })
       ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "div",
@@ -146914,7 +146605,7 @@ const WardsSettings = () => {
             display: "grid",
             gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
             gap: "16px",
-            marginBottom: "20px"
+            margin: "20px"
           },
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -147445,7 +147136,6 @@ const WardsSettings = () => {
                 itemValueField: "id",
                 data: parentFacilities,
                 value: form.parent,
-                onChange: (e) => setSelectedFacility(e[0]?.id),
                 onChange: (e) => {
                   setForm({ ...form, parent: e[0]?.id });
                   clearError("parent");
@@ -147647,8 +147337,8 @@ const cardRow = {
   fontSize: "14px"
 };
 
-const React$i = await importShared('react');
-const {useEffect: useEffect$k,useMemo: useMemo$8,useState: useState$l} = React$i;
+const React$l = await importShared('react');
+const {useEffect: useEffect$n,useMemo: useMemo$9,useState: useState$o} = React$l;
 const MOBILE_BREAKPOINT$1 = 992;
 const PAGE_SIZE$1 = 50;
 const MetadataSettings = () => {
@@ -147661,24 +147351,24 @@ const MetadataSettings = () => {
       position: "top"
     });
   };
-  const [optionSets, setOptionSets] = useState$l([]);
-  const [selectedSetId, setSelectedSetId] = useState$l(null);
-  const [searchOptionSet, setSearchOptionSet] = useState$l("");
-  const [searchOptions, setSearchOptions] = useState$l("");
-  const [isLoading, setIsLoading] = useState$l(false);
-  const [isSubmitting, setIsSubmitting] = useState$l(false);
-  const [page, setPage] = useState$l(1);
-  const [isMobile, setIsMobile] = useState$l(
+  const [optionSets, setOptionSets] = useState$o([]);
+  const [selectedSetId, setSelectedSetId] = useState$o(null);
+  const [searchOptionSet, setSearchOptionSet] = useState$o("");
+  const [searchOptions, setSearchOptions] = useState$o("");
+  const [isLoading, setIsLoading] = useState$o(false);
+  const [isSubmitting, setIsSubmitting] = useState$o(false);
+  const [page, setPage] = useState$o(1);
+  const [isMobile, setIsMobile] = useState$o(
     window.innerWidth < MOBILE_BREAKPOINT$1
   );
-  const [showAddModal, setShowAddModal] = useState$l(false);
-  const [showBulkModal, setShowBulkModal] = useState$l(false);
-  const [newOption, setNewOption] = useState$l({
+  const [showAddModal, setShowAddModal] = useState$o(false);
+  const [showBulkModal, setShowBulkModal] = useState$o(false);
+  const [newOption, setNewOption] = useState$o({
     name: "",
     code: ""
   });
-  const [bulkText, setBulkText] = useState$l("");
-  useEffect$k(() => {
+  const [bulkText, setBulkText] = useState$o("");
+  useEffect$n(() => {
     const resize = () => {
       setIsMobile(window.innerWidth < MOBILE_BREAKPOINT$1);
     };
@@ -147709,7 +147399,7 @@ const MetadataSettings = () => {
       setIsLoading(false);
     }
   };
-  useEffect$k(() => {
+  useEffect$n(() => {
     loadMetadata();
   }, []);
   const persistOptionSets = async (data) => {
@@ -147720,17 +147410,17 @@ const MetadataSettings = () => {
       showToast("Failed to save metadata", "danger");
     }
   };
-  const optionSetMap = useMemo$8(() => {
+  const optionSetMap = useMemo$9(() => {
     return Object.fromEntries(optionSets.map((x) => [x.id, x]));
   }, [optionSets]);
   const selectedOptionSet = optionSetMap[selectedSetId];
-  const filteredOptionSets = useMemo$8(() => {
+  const filteredOptionSets = useMemo$9(() => {
     const value = searchOptionSet.toLowerCase();
     return optionSets.filter((item) => {
       return item?.name?.toLowerCase()?.includes(value) || item?.code?.toLowerCase()?.includes(value);
     });
   }, [optionSets, searchOptionSet]);
-  const filteredOptions = useMemo$8(() => {
+  const filteredOptions = useMemo$9(() => {
     if (!selectedOptionSet?.options) return [];
     const value = searchOptions.toLowerCase();
     return selectedOptionSet.options.filter((item) => {
@@ -147738,15 +147428,15 @@ const MetadataSettings = () => {
     });
   }, [selectedOptionSet, searchOptions]);
   const totalPages = Math.ceil(filteredOptions.length / PAGE_SIZE$1);
-  const paginatedOptions = useMemo$8(() => {
+  const paginatedOptions = useMemo$9(() => {
     const start = (page - 1) * PAGE_SIZE$1;
     const end = start + PAGE_SIZE$1;
     return filteredOptions.slice(start, end);
   }, [filteredOptions, page]);
-  useEffect$k(() => {
+  useEffect$n(() => {
     setPage(1);
   }, [searchOptions, selectedSetId]);
-  const totalOptions = useMemo$8(() => {
+  const totalOptions = useMemo$9(() => {
     return optionSets.reduce(
       (acc, curr) => acc + (curr?.options?.length || 0),
       0
@@ -148507,17 +148197,17 @@ const DatasetGeneralForm = ({
   );
 };
 
-const React$h = await importShared('react');
-const {useState: useState$k,useEffect: useEffect$j,useMemo: useMemo$7} = React$h;
+const React$k = await importShared('react');
+const {useState: useState$n,useEffect: useEffect$m,useMemo: useMemo$8} = React$k;
 const StockThresholdSettings = () => {
-  const [loading, setLoading] = useState$k(true);
-  const [dataSets, setDataSets] = useState$k([]);
-  const [selectedDataSet, setSelectedDataSet] = useState$k("");
-  const [selectedFacility, setSelectedFacility] = useState$k("");
-  const [selectedPeriod, setSelectedPeriod] = useState$k("");
-  const [formData, setFormData] = useState$k({});
-  const [userFacility, setUserFacility] = useState$k([]);
-  const selectedDatasetObject = useMemo$7(() => {
+  const [loading, setLoading] = useState$n(true);
+  const [dataSets, setDataSets] = useState$n([]);
+  const [selectedDataSet, setSelectedDataSet] = useState$n("");
+  const [selectedFacility, setSelectedFacility] = useState$n("");
+  const [selectedPeriod, setSelectedPeriod] = useState$n("");
+  const [formData, setFormData] = useState$n({});
+  const [userFacility, setUserFacility] = useState$n([]);
+  const selectedDatasetObject = useMemo$8(() => {
     return dataSets.find((dts) => dts?.id === selectedDataSet);
   }, [selectedDataSet, dataSets]);
   const loadData = async () => {
@@ -148534,7 +148224,7 @@ const StockThresholdSettings = () => {
       setLoading(false);
     }
   };
-  useEffect$j(() => {
+  useEffect$m(() => {
     loadData();
   }, []);
   const handleChange = (id, value) => {
@@ -148691,12 +148381,12 @@ const StockThresholdSettings = () => {
   ] });
 };
 
-const React$g = await importShared('react');
-const {useEffect: useEffect$i,useState: useState$j} = React$g;
+const React$j = await importShared('react');
+const {useEffect: useEffect$l,useState: useState$m} = React$j;
 function Settings() {
   const navigate = useNavigate();
-  const [hasAccess, setHasAccess] = useState$j(null);
-  useEffect$i(() => {
+  const [hasAccess, setHasAccess] = useState$m(null);
+  useEffect$l(() => {
     const loadAccess = async () => {
       try {
         const res = await canAccessSettings();
@@ -148754,13 +148444,13 @@ function Settings() {
   ] });
 }
 
-const React$f = await importShared('react');
-const {useContext: useContext$c,useMemo: useMemo$6} = React$f;
+const React$i = await importShared('react');
+const {useContext: useContext$d,useMemo: useMemo$7} = React$i;
 function ProgramAccessGuard({ children, programId }) {
   const { program } = useParams();
-  const permissions = useContext$c(MEMISContext.PermissionContext);
+  const permissions = useContext$d(MEMISContext.PermissionContext);
   const isPermissionsReady = !!permissions && typeof permissions.hasProgramRight === "function";
-  const hasRead = useMemo$6(() => {
+  const hasRead = useMemo$7(() => {
     const pid = programId || program;
     if (!pid) return true;
     const roleRead = permissions?.hasProgramRight?.(pid, "read");
@@ -148784,8 +148474,8 @@ function ProgramAccessGuard({ children, programId }) {
   return children;
 }
 
-const React$e = await importShared('react');
-const {useContext: useContext$b,useEffect: useEffect$h,useState: useState$i} = React$e;
+const React$h = await importShared('react');
+const {useContext: useContext$c,useEffect: useEffect$k,useState: useState$l} = React$h;
 const A$3 = (x) => Array.isArray(x) ? x : [];
 function UpdateCollectionStatus({
   // program,
@@ -148796,19 +148486,19 @@ function UpdateCollectionStatus({
   buttonPositiveName = "Save"
 }) {
   const { program, tei, stage, evnt } = useParams();
-  const [fields, setFields] = useState$i([]);
-  const [formData, setFormData] = useState$i({});
-  const [loading, setLoading] = useState$i(true);
-  const [saving, setSaving] = useState$i(false);
-  const [error, setError] = useState$i(null);
-  const [openModal, setOpenModal] = useState$i(false);
-  const [visibleFields, setVisibleFields] = useState$i([]);
-  const [targetProgram, setTargetProgram] = useState$i(null);
-  const [equipmentOptions, setEquipmentOptions] = useState$i({});
-  const [programDataTEI, setProgramDataTEI] = useState$i([]);
-  const [currentUsername, setCurrentUsername] = useState$i("");
-  const [autofillConfig, setAutofillConfig] = useState$i(null);
-  useEffect$h(() => {
+  const [fields, setFields] = useState$l([]);
+  const [formData, setFormData] = useState$l({});
+  const [loading, setLoading] = useState$l(true);
+  const [saving, setSaving] = useState$l(false);
+  const [error, setError] = useState$l(null);
+  const [openModal, setOpenModal] = useState$l(false);
+  const [visibleFields, setVisibleFields] = useState$l([]);
+  const [targetProgram, setTargetProgram] = useState$l(null);
+  const [equipmentOptions, setEquipmentOptions] = useState$l({});
+  const [programDataTEI, setProgramDataTEI] = useState$l([]);
+  const [currentUsername, setCurrentUsername] = useState$l("");
+  const [autofillConfig, setAutofillConfig] = useState$l(null);
+  useEffect$k(() => {
     const userData = localStorage.getItem("memisCredentials");
     if (userData) {
       try {
@@ -149011,10 +148701,10 @@ function UpdateCollectionStatus({
     setError(null);
     setOpenModal(false);
   };
-  useEffect$h(() => {
+  useEffect$k(() => {
     getFields();
   }, []);
-  useEffect$h(() => {
+  useEffect$k(() => {
     if (openModal && fields.length > 0 && autofillConfig) {
       setVisibleFields(fields.map((f) => f.id));
       const initialData = {};
@@ -149096,8 +148786,8 @@ const prefillAcknowledgingReceiver = async (allocationData) => {
   }
 };
 
-const React$d = await importShared('react');
-const {useContext: useContext$a,useEffect: useEffect$g,useState: useState$h} = React$d;
+const React$g = await importShared('react');
+const {useContext: useContext$b,useEffect: useEffect$j,useState: useState$k} = React$g;
 const A$2 = (x) => Array.isArray(x) ? x : [];
 function AcknowledgeCollectionStatus({
   program,
@@ -149108,16 +148798,16 @@ function AcknowledgeCollectionStatus({
   buttonPositiveName = "Save",
   prefillReceiverName
 }) {
-  const [fields, setFields] = useState$h([]);
-  const [formData, setFormData] = useState$h({});
-  const [loading, setLoading] = useState$h(true);
-  const [saving, setSaving] = useState$h(false);
-  const [error, setError] = useState$h(null);
-  const [openModal, setOpenModal] = useState$h(false);
-  const [visibleFields, setVisibleFields] = useState$h([]);
-  const [targetProgram, setTargetProgram] = useState$h(null);
-  const [equipmentOptions, setEquipmentOptions] = useState$h({});
-  const [programDataTEI, setProgramDataTEI] = useState$h([]);
+  const [fields, setFields] = useState$k([]);
+  const [formData, setFormData] = useState$k({});
+  const [loading, setLoading] = useState$k(true);
+  const [saving, setSaving] = useState$k(false);
+  const [error, setError] = useState$k(null);
+  const [openModal, setOpenModal] = useState$k(false);
+  const [visibleFields, setVisibleFields] = useState$k([]);
+  const [targetProgram, setTargetProgram] = useState$k(null);
+  const [equipmentOptions, setEquipmentOptions] = useState$k({});
+  const [programDataTEI, setProgramDataTEI] = useState$k([]);
   const getFields = async () => {
     setLoading(true);
     try {
@@ -149315,10 +149005,10 @@ function AcknowledgeCollectionStatus({
     setError(null);
     setOpenModal(false);
   };
-  useEffect$g(() => {
+  useEffect$j(() => {
     getFields();
   }, []);
-  useEffect$g(() => {
+  useEffect$j(() => {
     const load = async () => {
       if (openModal && fields.length > 0) {
         const initial = {};
@@ -149366,41 +149056,41 @@ function AcknowledgeCollectionStatus({
   ] });
 }
 
-const {useContext: useContext$9,useEffect: useEffect$f,useState: useState$g} = await importShared('react');
+const {useContext: useContext$a,useEffect: useEffect$i,useState: useState$j} = await importShared('react');
 const {createPortal} = await importShared('react-dom');
 const displayVal = (val) => val === null || val === void 0 || val === "" ? "N/A" : val;
 function DeregistrationEventView() {
   const { program, tei, stage, evnt } = useParams();
   useSearchParams();
   const navigate = useNavigate();
-  const [pg, setPg] = useState$g();
-  const [event, setEvent] = useState$g();
-  const [orgUnit, setOu] = useState$g();
-  const [programData, setProgramData] = useState$g(null);
-  const [ouName, setName] = useState$g();
-  const [crumbs, setCrumbs] = useState$g([{
+  const [pg, setPg] = useState$j();
+  const [event, setEvent] = useState$j();
+  const [orgUnit, setOu] = useState$j();
+  const [programData, setProgramData] = useState$j(null);
+  const [ouName, setName] = useState$j();
+  const [crumbs, setCrumbs] = useState$j([{
     label: "Home",
     ref: "/memis"
   }]);
-  const { user } = useContext$9(MEMISContext.UserRolesContext);
-  const [currentUser, setCurrentUser] = useState$g(null);
-  const [confirmingDeregistration, setConfirmingDeregistration] = useState$g(false);
-  const [showConfirmAlert, setShowConfirmAlert] = useState$g(false);
-  const [equipmentState, setEquipmentState] = useState$g(null);
-  const [activeSectionModal, setActiveSectionModal] = useState$g(null);
-  const [modalSectionData, setModalSectionData] = useState$g(null);
-  const [sectionFormData, setSectionFormData] = useState$g({});
-  const [savingSectionData, setSavingSectionData] = useState$g(false);
-  const [filePreviewOpen, setFilePreviewOpen] = useState$g(false);
-  const [previewFileId, setPreviewFileId] = useState$g(null);
-  const [previewFileName, setPreviewFileName] = useState$g(null);
-  const [previewValueType, setPreviewValueType] = useState$g(null);
-  const [previewAttributeId, setPreviewAttributeId] = useState$g(null);
-  const [infoCardExpanded, setInfoCardExpanded] = useState$g(false);
-  const [expandedSections, setExpandedSections] = useState$g({});
-  const [dataStoreData, setDataStoreData] = useState$g({});
-  const [programsLocalData, setProgramsLocalData] = useState$g([]);
-  const [userOrganisationUnits, setUserOrganisationUnits] = useState$g([]);
+  const { user } = useContext$a(MEMISContext.UserRolesContext);
+  const [currentUser, setCurrentUser] = useState$j(null);
+  const [confirmingDeregistration, setConfirmingDeregistration] = useState$j(false);
+  const [showConfirmAlert, setShowConfirmAlert] = useState$j(false);
+  const [equipmentState, setEquipmentState] = useState$j(null);
+  const [activeSectionModal, setActiveSectionModal] = useState$j(null);
+  const [modalSectionData, setModalSectionData] = useState$j(null);
+  const [sectionFormData, setSectionFormData] = useState$j({});
+  const [savingSectionData, setSavingSectionData] = useState$j(false);
+  const [filePreviewOpen, setFilePreviewOpen] = useState$j(false);
+  const [previewFileId, setPreviewFileId] = useState$j(null);
+  const [previewFileName, setPreviewFileName] = useState$j(null);
+  const [previewValueType, setPreviewValueType] = useState$j(null);
+  const [previewAttributeId, setPreviewAttributeId] = useState$j(null);
+  const [infoCardExpanded, setInfoCardExpanded] = useState$j(false);
+  const [expandedSections, setExpandedSections] = useState$j({});
+  const [dataStoreData, setDataStoreData] = useState$j({});
+  const [programsLocalData, setProgramsLocalData] = useState$j([]);
+  const [userOrganisationUnits, setUserOrganisationUnits] = useState$j([]);
   const formatDate = (isoString) => {
     if (!isoString) return "";
     const date = new Date(isoString);
@@ -149549,12 +149239,12 @@ function DeregistrationEventView() {
       [id]: !prev[id]
     }));
   };
-  useEffect$f(() => {
+  useEffect$i(() => {
     getEventDetails(evnt, stage);
     getCurrentUser();
     fetchEquipmentState();
   }, [evnt, stage, dataStoreData, programsLocalData, userOrganisationUnits]);
-  useEffect$f(() => {
+  useEffect$i(() => {
     fetchOuValues();
   }, [event, pg]);
   const getSectionAccess = (sectionId) => {
@@ -150014,7 +149704,7 @@ function DeregistrationEventView() {
     return { status: "pending", label: "Pending Review", color: "medium", icon: timeOutline };
   };
   const eventStatus = getEventStatus();
-  useEffect$f(() => {
+  useEffect$i(() => {
     const load = async () => {
       try {
         const [dataStoreResponse, programsResponse, userOrganisationUnitsResponse] = await Promise.all([
@@ -150309,17 +149999,182 @@ function DeregistrationEventView() {
   ] });
 }
 
-const React$c = await importShared('react');
-const {useCallback: useCallback$3,useEffect: useEffect$e,useMemo: useMemo$5,useState: useState$f} = React$c;
+const React$f = await importShared('react');
+const {useCallback: useCallback$5,useEffect: useEffect$h,useMemo: useMemo$6,useRef: useRef$5,useState: useState$i} = React$f;
+React$f.memo(function FieldRenderer2({
+  f,
+  getDEMeta,
+  formValue,
+  onChange
+}) {
+  const [meta, setMeta] = useState$i(null);
+  useEffect$h(() => {
+    let mounted = true;
+    (async () => {
+      const m = await getDEMeta(f.id);
+      if (mounted)
+        setMeta(m || { id: f.id, valueType: f.valueType, formName: f.name });
+    })();
+    return () => {
+      mounted = false;
+    };
+  }, [f.id, getDEMeta, f.name, f.valueType]);
+  if (!meta) return null;
+  const label = meta.formName || f.name || meta.name || f.id;
+  const hasOptions = !!meta.optionSet?.options?.length;
+  if (hasOptions) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IonSelect,
+        {
+          value: formValue ?? "",
+          onIonChange: (e) => onChange(f.id, e.detail.value),
+          interface: "popover",
+          children: meta.optionSet.options.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(IonSelectOption, { value: opt.code ?? opt.name, children: opt.name }, opt.id))
+        }
+      )
+    ] });
+  }
+  switch (meta.valueType || f.valueType) {
+    case "BOOLEAN":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ion-w-full", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          IonRadioGroup,
+          {
+            value: formValue,
+            onIonChange: (e) => onChange(f.id, e.detail.value),
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { children: "Yes" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(IonRadio, { slot: "end", value: "true" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { children: "No" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(IonRadio, { slot: "end", value: "false" })
+              ] })
+            ]
+          }
+        )
+      ] });
+    case "DATE":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          IonInput,
+          {
+            type: "date",
+            value: formValue || "",
+            onIonChange: (e) => onChange(f.id, e.detail.value)
+          }
+        )
+      ] });
+    default:
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          IonInput,
+          {
+            value: formValue || "",
+            onIonChange: (e) => onChange(f.id, e.detail.value),
+            clearInput: true
+          }
+        )
+      ] });
+  }
+});
+
+const React$e = await importShared('react');
+const {useCallback: useCallback$4,useEffect: useEffect$g,useMemo: useMemo$5,useRef: useRef$4,useState: useState$h} = React$e;
+React$e.memo(function Field2({ meta, value, onChange }) {
+  const f = meta;
+  const label = f.name || f.formName || f.id;
+  if (f.optionSet?.options?.length) {
+    const options = f.optionSet.options;
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        IonSelect,
+        {
+          value: value ?? "",
+          interface: "popover",
+          onIonChange: (e) => onChange(f.id, e.detail.value),
+          children: options.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+            IonSelectOption,
+            {
+              value: opt.code ?? opt.name,
+              children: opt.name
+            },
+            opt.id || opt.code || opt.name
+          ))
+        }
+      )
+    ] });
+  }
+  switch (f.valueType) {
+    case "BOOLEAN":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ion-w-full", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          IonRadioGroup,
+          {
+            value,
+            onIonChange: (e) => onChange(f.id, e.detail.value),
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { children: "Yes" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(IonRadio, { slot: "end", value: "true" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { children: "No" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(IonRadio, { slot: "end", value: "false" })
+              ] })
+            ]
+          }
+        )
+      ] });
+    case "DATE":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          IonInput,
+          {
+            type: "date",
+            value: value || "",
+            onIonChange: (e) => onChange(f.id, e.detail.value)
+          }
+        )
+      ] });
+    default:
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          IonInput,
+          {
+            value: value ?? "",
+            onIonInput: (e) => onChange(f.id, (e.detail.value ?? "").toString()),
+            inputMode: "text",
+            autocapitalize: "off",
+            autocomplete: "off",
+            autocorrect: "off"
+          }
+        )
+      ] });
+  }
+});
+
+const React$d = await importShared('react');
+const {useCallback: useCallback$3,useEffect: useEffect$f,useMemo: useMemo$4,useState: useState$g} = React$d;
 function ConfirmMaintenanceModal({ program, event, section, getEventDetails, buttonLabel }) {
-  const [open, setOpen] = useState$f(false);
-  const [matches, setMatches] = useState$f([]);
-  const [saving, setSaving] = useState$f(false);
-  const [loading, setLoading] = useState$f(true);
-  const [decisionValue, setDecisionValue] = useState$f("");
-  const [user, setUser] = useState$f(null);
-  const [maintenanceCfg, setMaintenanceCfg] = useState$f(null);
-  useEffect$e(() => {
+  const [open, setOpen] = useState$g(false);
+  const [matches, setMatches] = useState$g([]);
+  const [saving, setSaving] = useState$g(false);
+  const [loading, setLoading] = useState$g(true);
+  const [decisionValue, setDecisionValue] = useState$g("");
+  const [user, setUser] = useState$g(null);
+  const [maintenanceCfg, setMaintenanceCfg] = useState$g(null);
+  useEffect$f(() => {
     (async () => {
       setLoading(true);
       try {
@@ -150334,7 +150189,7 @@ function ConfirmMaintenanceModal({ program, event, section, getEventDetails, but
       }
     })();
   }, [program?.id, section?.id, event?.programStage]);
-  useEffect$e(() => {
+  useEffect$f(() => {
     (async () => {
       try {
         const me = await dataStore.get(
@@ -150346,7 +150201,7 @@ function ConfirmMaintenanceModal({ program, event, section, getEventDetails, but
       }
     })();
   }, []);
-  const cfg = useMemo$5(() => {
+  const cfg = useMemo$4(() => {
     if (!matches?.length) return null;
     const meRoles = new Set((user?.userRoles || []).map((r) => r.id));
     const requirementsOk = (c) => {
@@ -150366,14 +150221,14 @@ function ConfirmMaintenanceModal({ program, event, section, getEventDetails, but
     });
     return visibleToMe[0] || pool[0];
   }, [matches, user?.userRoles, event]);
-  const canSeeButton = useMemo$5(() => {
+  const canSeeButton = useMemo$4(() => {
     if (!cfg) return false;
     const allowed = cfg.rolesAllowed || [];
     if (allowed.length === 0) return true;
     const meRoleIds = new Set((user?.userRoles || []).map((r) => r.id));
     return allowed.some((r) => meRoleIds.has(r.id));
   }, [cfg, user?.userRoles]);
-  const decisionDE = useMemo$5(() => {
+  const decisionDE = useMemo$4(() => {
     if (!cfg?.decisionFieldRef) return null;
     const needle = String(cfg.decisionFieldRef.value).trim().toLowerCase();
     const by = String(cfg.decisionFieldRef.matchBy || "id").toLowerCase();
@@ -150396,7 +150251,7 @@ function ConfirmMaintenanceModal({ program, event, section, getEventDetails, but
     const viaPDE = pdes.find((p) => String(p?.dataElement?.id || "").toLowerCase() === needle);
     return viaPDE?.dataElement || null;
   }, [section, cfg?.decisionFieldRef]);
-  const currentDecision = useMemo$5(() => {
+  const currentDecision = useMemo$4(() => {
     if (!decisionDE) return "";
     const m = new Map((event?.dataValues || []).map((d) => [d.dataElement, d.value]));
     const raw = m.get(decisionDE.id);
@@ -150562,38 +150417,50 @@ const hideAcknowledgeButton = async (allocationData) => {
   try {
     const data = await LocalForageServiceInstance.getItem("dataStore", "dataStore");
     if (!data || !data?.prefillReceiverNameEquipment)
-      return { showButton: true };
-
+      return {
+        showButton: true,
+      };
     const task = data?.prefillReceiverNameEquipment;
 
     if (allocationData?.program !== task?.programId)
-      return { showButton: true };
+      return {
+        showButton: true,
+      };
 
     const source = allocationData?.dataValues?.find(
-        (f) => f.dataElement === task?.sourceId
+      (f) => f.dataElement === task?.sourceId
     );
 
     const target = allocationData?.dataValues?.find(
-        (f) => f.dataElement === task?.targetId
+      (f) => f.dataElement === task?.targetId
     );
 
-    // Collection not yet done — hide
-    if (!source?.value || source.value.trim() === "")
-      return { showButton: false };
-
-    // Already acknowledged (target pre-filled) — hide
-    if (target?.value && target.value.trim() !== "")
-      return { showButton: false };
-
-    // Collected but not yet acknowledged — show
-    return { showButton: true };
+    if (!target)
+      return {
+        showButton: true,
+      };
+    if (
+      target?.value.trim() === "" ||
+      target?.value === null ||
+      target?.value === undefined
+    ) {
+      return {
+        showButton: true,
+      };
+    } else {
+      return {
+        showButton: false,
+      };
+    }
   } catch (error) {
-    return { showButton: true };
+    return {
+      showButton: true,
+    };
   }
 };
 
-const React$b = await importShared('react');
-const {useEffect: useEffect$d,useState: useState$e} = React$b;
+const React$c = await importShared('react');
+const {useEffect: useEffect$e,useState: useState$f} = React$c;
 const A$1 = (x) => Array.isArray(x) ? x : [];
 function Asseng({
   event,
@@ -150602,11 +150469,11 @@ function Asseng({
   getVal,
   elements
 }) {
-  const [openModal, setOpenModal] = useState$e(false);
-  const [formData, setFormData] = useState$e({});
-  const [options, setOptions] = useState$e([]);
-  const [saving, setSaving] = useState$e(false);
-  const [error, setError] = useState$e(null);
+  const [openModal, setOpenModal] = useState$f(false);
+  const [formData, setFormData] = useState$f({});
+  const [options, setOptions] = useState$f([]);
+  const [saving, setSaving] = useState$f(false);
+  const [error, setError] = useState$f(null);
   let buttonPositiveName = "Save";
   const responsibleEngineer = section?.dataElements.find(
     (e) => e.id === "ikEZkhoaTTU"
@@ -150669,7 +150536,7 @@ function Asseng({
       setSaving(false);
     }
   };
-  useEffect$d(() => {
+  useEffect$e(() => {
     setOptions(responsibleEngineer.optionSet.options || []);
   }, [responsibleEngineer]);
   const renderField = (field) => {
@@ -150780,8 +150647,8 @@ function Asseng({
   ] });
 }
 
-const React$a = await importShared('react');
-const {useEffect: useEffect$c,useState: useState$d} = React$a;
+const React$b = await importShared('react');
+const {useEffect: useEffect$d,useState: useState$e} = React$b;
 function Schedule({
   event,
   section,
@@ -150789,10 +150656,10 @@ function Schedule({
   getVal,
   elements
 }) {
-  const [openModal, setOpenModal] = useState$d(false);
-  const [formData, setFormData] = useState$d({});
-  const [saving, setSaving] = useState$d(false);
-  const [dataElements, setDataElements] = useState$d([]);
+  const [openModal, setOpenModal] = useState$e(false);
+  const [formData, setFormData] = useState$e({});
+  const [saving, setSaving] = useState$e(false);
+  const [dataElements, setDataElements] = useState$e([]);
   let buttonPositiveName = "Save";
   const handleChange = (fieldId, value) => {
     setFormData((prev) => ({
@@ -150846,7 +150713,7 @@ function Schedule({
       setSaving(false);
     }
   };
-  useEffect$c(() => {
+  useEffect$d(() => {
     setDataElements(section?.dataElements.filter((de) => elements.some((el) => el === de.id)));
   }, [openModal]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -150893,8 +150760,8 @@ function Schedule({
   ] });
 }
 
-const React$9 = await importShared('react');
-const {useContext: useContext$8,useEffect: useEffect$b,useState: useState$c} = React$9;
+const React$a = await importShared('react');
+const {useContext: useContext$9,useEffect: useEffect$c,useState: useState$d} = React$a;
 const normalizeFieldLabel = (field) => String(field?.formName || field?.name || "").trim().toLowerCase();
 const isFalseLike = (value) => String(value ?? "").trim().toLowerCase() === "false";
 function JobCardGenerate({
@@ -150905,11 +150772,11 @@ function JobCardGenerate({
   elements,
   maintenanceCfg
 }) {
-  const [openModal, setOpenModal] = useState$c(false);
-  const [formData, setFormData] = useState$c({});
-  const [saving, setSaving] = useState$c(false);
-  const [error, setError] = useState$c(null);
-  const [dataElements, setDataElements] = useState$c([]);
+  const [openModal, setOpenModal] = useState$d(false);
+  const [formData, setFormData] = useState$d({});
+  const [saving, setSaving] = useState$d(false);
+  const [error, setError] = useState$d(null);
+  const [dataElements, setDataElements] = useState$d([]);
   let buttonPositiveName = "Save";
   const handleChange = (fieldId, value) => {
     setFormData((prev) => ({
@@ -150958,7 +150825,7 @@ function JobCardGenerate({
     const opt = options.find((opti) => opti?.id === optionSet);
     return opt.options || [];
   };
-  useEffect$b(() => {
+  useEffect$c(() => {
     setDataElements(section?.dataElements.filter((de) => elements.some((el) => el === de.id)));
   }, [openModal]);
   const shouldRenderField = (field) => {
@@ -151025,19 +150892,19 @@ function JobCardGenerate({
   ] });
 }
 
-const React$8 = await importShared('react');
-const {useContext: useContext$7,useEffect: useEffect$a,useState: useState$b} = React$8;
+const React$9 = await importShared('react');
+const {useContext: useContext$8,useEffect: useEffect$b,useState: useState$c} = React$9;
 function Approve({
   event,
   section,
   getEventDetails,
   getVal
 }) {
-  const [openModal, setOpenModal] = useState$b(false);
-  const [formData, setFormData] = useState$b({});
-  const [saving, setSaving] = useState$b(false);
-  const [error, setError] = useState$b(null);
-  const [dataElements, setDataElements] = useState$b([]);
+  const [openModal, setOpenModal] = useState$c(false);
+  const [formData, setFormData] = useState$c({});
+  const [saving, setSaving] = useState$c(false);
+  const [error, setError] = useState$c(null);
+  const [dataElements, setDataElements] = useState$c([]);
   let buttonPositiveName = "Save";
   const handleChange = (fieldId, value) => {
     setFormData((prev) => ({
@@ -151098,7 +150965,7 @@ function Approve({
     const opt = await dataStore.query(`optionSets/${optionSet}?fields=options[id,code,name]`);
     return opt.options || [];
   };
-  useEffect$a(() => {
+  useEffect$b(() => {
     setDataElements(section?.dataElements);
   }, [openModal]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -151148,6 +151015,9 @@ function Approve({
     )
   ] });
 }
+
+const React$8 = await importShared('react');
+const {useContext: useContext$7,useEffect: useEffect$a,useState: useState$b} = React$8;
 
 const React$7 = await importShared('react');
 const {useContext: useContext$6,useEffect: useEffect$9,useState: useState$a} = React$7;
@@ -169783,6 +169653,122 @@ const require$$1$2$1 = /*@__PURE__*/getDefaultExportFromCjs$3(zstreamExports);
 
 var deflate$2 = {};
 
+var common$1 = {};
+
+var hasRequiredCommon;
+
+function requireCommon () {
+	if (hasRequiredCommon) return common$1;
+	hasRequiredCommon = 1;
+	(function (exports$1) {
+
+
+		var TYPED_OK =  (typeof Uint8Array !== 'undefined') &&
+		                (typeof Uint16Array !== 'undefined') &&
+		                (typeof Int32Array !== 'undefined');
+
+		function _has(obj, key) {
+		  return Object.prototype.hasOwnProperty.call(obj, key);
+		}
+
+		exports$1.assign = function (obj /*from1, from2, from3, ...*/) {
+		  var sources = Array.prototype.slice.call(arguments, 1);
+		  while (sources.length) {
+		    var source = sources.shift();
+		    if (!source) { continue; }
+
+		    if (typeof source !== 'object') {
+		      throw new TypeError(source + 'must be non-object');
+		    }
+
+		    for (var p in source) {
+		      if (_has(source, p)) {
+		        obj[p] = source[p];
+		      }
+		    }
+		  }
+
+		  return obj;
+		};
+
+
+		// reduce buffer size, avoiding mem copy
+		exports$1.shrinkBuf = function (buf, size) {
+		  if (buf.length === size) { return buf; }
+		  if (buf.subarray) { return buf.subarray(0, size); }
+		  buf.length = size;
+		  return buf;
+		};
+
+
+		var fnTyped = {
+		  arraySet: function (dest, src, src_offs, len, dest_offs) {
+		    if (src.subarray && dest.subarray) {
+		      dest.set(src.subarray(src_offs, src_offs + len), dest_offs);
+		      return;
+		    }
+		    // Fallback to ordinary array
+		    for (var i = 0; i < len; i++) {
+		      dest[dest_offs + i] = src[src_offs + i];
+		    }
+		  },
+		  // Join array of chunks to single array.
+		  flattenChunks: function (chunks) {
+		    var i, l, len, pos, chunk, result;
+
+		    // calculate data length
+		    len = 0;
+		    for (i = 0, l = chunks.length; i < l; i++) {
+		      len += chunks[i].length;
+		    }
+
+		    // join chunks
+		    result = new Uint8Array(len);
+		    pos = 0;
+		    for (i = 0, l = chunks.length; i < l; i++) {
+		      chunk = chunks[i];
+		      result.set(chunk, pos);
+		      pos += chunk.length;
+		    }
+
+		    return result;
+		  }
+		};
+
+		var fnUntyped = {
+		  arraySet: function (dest, src, src_offs, len, dest_offs) {
+		    for (var i = 0; i < len; i++) {
+		      dest[dest_offs + i] = src[src_offs + i];
+		    }
+		  },
+		  // Join array of chunks to single array.
+		  flattenChunks: function (chunks) {
+		    return [].concat.apply([], chunks);
+		  }
+		};
+
+
+		// Enable/Disable typed arrays use, for testing
+		//
+		exports$1.setTyped = function (on) {
+		  if (on) {
+		    exports$1.Buf8  = Uint8Array;
+		    exports$1.Buf16 = Uint16Array;
+		    exports$1.Buf32 = Int32Array;
+		    exports$1.assign(exports$1, fnTyped);
+		  } else {
+		    exports$1.Buf8  = Array;
+		    exports$1.Buf16 = Array;
+		    exports$1.Buf32 = Array;
+		    exports$1.assign(exports$1, fnUntyped);
+		  }
+		};
+
+		exports$1.setTyped(TYPED_OK); 
+	} (common$1));
+	return common$1;
+}
+
 var trees$2 = {};
 
 var hasRequiredTrees;
@@ -169812,36 +169798,38 @@ function requireTrees () {
 
 	/* eslint-disable space-unary-ops */
 
+	var utils = requireCommon();
+
 	/* Public constants ==========================================================*/
 	/* ===========================================================================*/
 
 
-	//const Z_FILTERED          = 1;
-	//const Z_HUFFMAN_ONLY      = 2;
-	//const Z_RLE               = 3;
-	const Z_FIXED               = 4;
-	//const Z_DEFAULT_STRATEGY  = 0;
+	//var Z_FILTERED          = 1;
+	//var Z_HUFFMAN_ONLY      = 2;
+	//var Z_RLE               = 3;
+	var Z_FIXED               = 4;
+	//var Z_DEFAULT_STRATEGY  = 0;
 
 	/* Possible values of the data_type field (though see inflate()) */
-	const Z_BINARY              = 0;
-	const Z_TEXT                = 1;
-	//const Z_ASCII             = 1; // = Z_TEXT
-	const Z_UNKNOWN             = 2;
+	var Z_BINARY              = 0;
+	var Z_TEXT                = 1;
+	//var Z_ASCII             = 1; // = Z_TEXT
+	var Z_UNKNOWN             = 2;
 
 	/*============================================================================*/
 
 
-	function zero(buf) { let len = buf.length; while (--len >= 0) { buf[len] = 0; } }
+	function zero(buf) { var len = buf.length; while (--len >= 0) { buf[len] = 0; } }
 
 	// From zutil.h
 
-	const STORED_BLOCK = 0;
-	const STATIC_TREES = 1;
-	const DYN_TREES    = 2;
+	var STORED_BLOCK = 0;
+	var STATIC_TREES = 1;
+	var DYN_TREES    = 2;
 	/* The three kinds of block type */
 
-	const MIN_MATCH    = 3;
-	const MAX_MATCH    = 258;
+	var MIN_MATCH    = 3;
+	var MAX_MATCH    = 258;
 	/* The minimum and maximum match lengths */
 
 	// From deflate.h
@@ -169849,28 +169837,28 @@ function requireTrees () {
 	 * Internal compression state.
 	 */
 
-	const LENGTH_CODES  = 29;
+	var LENGTH_CODES  = 29;
 	/* number of length codes, not counting the special END_BLOCK code */
 
-	const LITERALS      = 256;
+	var LITERALS      = 256;
 	/* number of literal bytes 0..255 */
 
-	const L_CODES       = LITERALS + 1 + LENGTH_CODES;
+	var L_CODES       = LITERALS + 1 + LENGTH_CODES;
 	/* number of Literal or Length codes, including the END_BLOCK code */
 
-	const D_CODES       = 30;
+	var D_CODES       = 30;
 	/* number of distance codes */
 
-	const BL_CODES      = 19;
+	var BL_CODES      = 19;
 	/* number of codes used to transfer the bit lengths */
 
-	const HEAP_SIZE     = 2 * L_CODES + 1;
+	var HEAP_SIZE     = 2 * L_CODES + 1;
 	/* maximum heap size */
 
-	const MAX_BITS      = 15;
+	var MAX_BITS      = 15;
 	/* All codes must not exceed MAX_BITS bits */
 
-	const Buf_size      = 16;
+	var Buf_size      = 16;
 	/* size of bit buffer in bi_buf */
 
 
@@ -169878,33 +169866,33 @@ function requireTrees () {
 	 * Constants
 	 */
 
-	const MAX_BL_BITS = 7;
+	var MAX_BL_BITS = 7;
 	/* Bit length codes must not exceed MAX_BL_BITS bits */
 
-	const END_BLOCK   = 256;
+	var END_BLOCK   = 256;
 	/* end of block literal code */
 
-	const REP_3_6     = 16;
+	var REP_3_6     = 16;
 	/* repeat previous bit length 3-6 times (2 bits of repeat count) */
 
-	const REPZ_3_10   = 17;
+	var REPZ_3_10   = 17;
 	/* repeat a zero length 3-10 times  (3 bits of repeat count) */
 
-	const REPZ_11_138 = 18;
+	var REPZ_11_138 = 18;
 	/* repeat a zero length 11-138 times  (7 bits of repeat count) */
 
 	/* eslint-disable comma-spacing,array-bracket-spacing */
-	const extra_lbits =   /* extra bits for each length code */
-	  new Uint8Array([0,0,0,0,0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,0]);
+	var extra_lbits =   /* extra bits for each length code */
+	  [0,0,0,0,0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,0];
 
-	const extra_dbits =   /* extra bits for each distance code */
-	  new Uint8Array([0,0,0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13]);
+	var extra_dbits =   /* extra bits for each distance code */
+	  [0,0,0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13];
 
-	const extra_blbits =  /* extra bits for each bit length code */
-	  new Uint8Array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,7]);
+	var extra_blbits =  /* extra bits for each bit length code */
+	  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,7];
 
-	const bl_order =
-	  new Uint8Array([16,17,18,0,8,7,9,6,10,5,11,4,12,3,13,2,14,1,15]);
+	var bl_order =
+	  [16,17,18,0,8,7,9,6,10,5,11,4,12,3,13,2,14,1,15];
 	/* eslint-enable comma-spacing,array-bracket-spacing */
 
 	/* The lengths of the bit length codes are sent in order of decreasing
@@ -169917,10 +169905,10 @@ function requireTrees () {
 
 	// We pre-fill arrays with 0 to avoid uninitialized gaps
 
-	const DIST_CODE_LEN = 512; /* see definition of array dist_code below */
+	var DIST_CODE_LEN = 512; /* see definition of array dist_code below */
 
 	// !!!! Use flat array instead of structure, Freq = i*2, Len = i*2+1
-	const static_ltree  = new Array((L_CODES + 2) * 2);
+	var static_ltree  = new Array((L_CODES + 2) * 2);
 	zero(static_ltree);
 	/* The static literal tree. Since the bit lengths are imposed, there is no
 	 * need for the L_CODES extra codes used during heap construction. However
@@ -169928,28 +169916,28 @@ function requireTrees () {
 	 * below).
 	 */
 
-	const static_dtree  = new Array(D_CODES * 2);
+	var static_dtree  = new Array(D_CODES * 2);
 	zero(static_dtree);
 	/* The static distance tree. (Actually a trivial tree since all codes use
 	 * 5 bits.)
 	 */
 
-	const _dist_code    = new Array(DIST_CODE_LEN);
+	var _dist_code    = new Array(DIST_CODE_LEN);
 	zero(_dist_code);
 	/* Distance codes. The first 256 values correspond to the distances
 	 * 3 .. 258, the last 256 values correspond to the top 8 bits of
 	 * the 15 bit distances.
 	 */
 
-	const _length_code  = new Array(MAX_MATCH - MIN_MATCH + 1);
+	var _length_code  = new Array(MAX_MATCH - MIN_MATCH + 1);
 	zero(_length_code);
 	/* length code for each normalized match length (0 == MIN_MATCH) */
 
-	const base_length   = new Array(LENGTH_CODES);
+	var base_length   = new Array(LENGTH_CODES);
 	zero(base_length);
 	/* First normalized length for each code (0 = MIN_MATCH) */
 
-	const base_dist     = new Array(D_CODES);
+	var base_dist     = new Array(D_CODES);
 	zero(base_dist);
 	/* First normalized distance for each code (0 = distance of 1) */
 
@@ -169967,9 +169955,9 @@ function requireTrees () {
 	}
 
 
-	let static_l_desc;
-	let static_d_desc;
-	let static_bl_desc;
+	var static_l_desc;
+	var static_d_desc;
+	var static_bl_desc;
 
 
 	function TreeDesc(dyn_tree, stat_desc) {
@@ -169980,30 +169968,28 @@ function requireTrees () {
 
 
 
-	const d_code = (dist) => {
-
+	function d_code(dist) {
 	  return dist < 256 ? _dist_code[dist] : _dist_code[256 + (dist >>> 7)];
-	};
+	}
 
 
 	/* ===========================================================================
 	 * Output a short LSB first on the stream.
 	 * IN assertion: there is enough room in pendingBuf.
 	 */
-	const put_short = (s, w) => {
+	function put_short(s, w) {
 	//    put_byte(s, (uch)((w) & 0xff));
 	//    put_byte(s, (uch)((ush)(w) >> 8));
 	  s.pending_buf[s.pending++] = (w) & 0xff;
 	  s.pending_buf[s.pending++] = (w >>> 8) & 0xff;
-	};
+	}
 
 
 	/* ===========================================================================
 	 * Send a value on a given number of bits.
 	 * IN assertion: length <= 16 and value fits in length bits.
 	 */
-	const send_bits = (s, value, length) => {
-
+	function send_bits(s, value, length) {
 	  if (s.bi_valid > (Buf_size - length)) {
 	    s.bi_buf |= (value << s.bi_valid) & 0xffff;
 	    put_short(s, s.bi_buf);
@@ -170013,13 +169999,12 @@ function requireTrees () {
 	    s.bi_buf |= (value << s.bi_valid) & 0xffff;
 	    s.bi_valid += length;
 	  }
-	};
+	}
 
 
-	const send_code = (s, c, tree) => {
-
+	function send_code(s, c, tree) {
 	  send_bits(s, tree[c * 2]/*.Code*/, tree[c * 2 + 1]/*.Len*/);
-	};
+	}
 
 
 	/* ===========================================================================
@@ -170027,23 +170012,21 @@ function requireTrees () {
 	 * method would use a table)
 	 * IN assertion: 1 <= len <= 15
 	 */
-	const bi_reverse = (code, len) => {
-
-	  let res = 0;
+	function bi_reverse(code, len) {
+	  var res = 0;
 	  do {
 	    res |= code & 1;
 	    code >>>= 1;
 	    res <<= 1;
 	  } while (--len > 0);
 	  return res >>> 1;
-	};
+	}
 
 
 	/* ===========================================================================
 	 * Flush the bit buffer, keeping at most 7 bits in it.
 	 */
-	const bi_flush = (s) => {
-
+	function bi_flush(s) {
 	  if (s.bi_valid === 16) {
 	    put_short(s, s.bi_buf);
 	    s.bi_buf = 0;
@@ -170054,7 +170037,7 @@ function requireTrees () {
 	    s.bi_buf >>= 8;
 	    s.bi_valid -= 8;
 	  }
-	};
+	}
 
 
 	/* ===========================================================================
@@ -170067,23 +170050,23 @@ function requireTrees () {
 	 *     The length opt_len is updated; static_len is also updated if stree is
 	 *     not null.
 	 */
-	const gen_bitlen = (s, desc) => {
+	function gen_bitlen(s, desc)
 	//    deflate_state *s;
 	//    tree_desc *desc;    /* the tree descriptor */
-
-	  const tree            = desc.dyn_tree;
-	  const max_code        = desc.max_code;
-	  const stree           = desc.stat_desc.static_tree;
-	  const has_stree       = desc.stat_desc.has_stree;
-	  const extra           = desc.stat_desc.extra_bits;
-	  const base            = desc.stat_desc.extra_base;
-	  const max_length      = desc.stat_desc.max_length;
-	  let h;              /* heap index */
-	  let n, m;           /* iterate over the tree elements */
-	  let bits;           /* bit length */
-	  let xbits;          /* extra bits */
-	  let f;              /* frequency */
-	  let overflow = 0;   /* number of elements with bit length too large */
+	{
+	  var tree            = desc.dyn_tree;
+	  var max_code        = desc.max_code;
+	  var stree           = desc.stat_desc.static_tree;
+	  var has_stree       = desc.stat_desc.has_stree;
+	  var extra           = desc.stat_desc.extra_bits;
+	  var base            = desc.stat_desc.extra_base;
+	  var max_length      = desc.stat_desc.max_length;
+	  var h;              /* heap index */
+	  var n, m;           /* iterate over the tree elements */
+	  var bits;           /* bit length */
+	  var xbits;          /* extra bits */
+	  var f;              /* frequency */
+	  var overflow = 0;   /* number of elements with bit length too large */
 
 	  for (bits = 0; bits <= MAX_BITS; bits++) {
 	    s.bl_count[bits] = 0;
@@ -170119,7 +170102,7 @@ function requireTrees () {
 	  }
 	  if (overflow === 0) { return; }
 
-	  // Tracev((stderr,"\nbit length overflow\n"));
+	  // Trace((stderr,"\nbit length overflow\n"));
 	  /* This happens for example on obj2 and pic of the Calgary corpus */
 
 	  /* Find the first bit length which could increase: */
@@ -170146,14 +170129,14 @@ function requireTrees () {
 	      m = s.heap[--h];
 	      if (m > max_code) { continue; }
 	      if (tree[m * 2 + 1]/*.Len*/ !== bits) {
-	        // Tracev((stderr,"code %d bits %d->%d\n", m, tree[m].Len, bits));
+	        // Trace((stderr,"code %d bits %d->%d\n", m, tree[m].Len, bits));
 	        s.opt_len += (bits - tree[m * 2 + 1]/*.Len*/) * tree[m * 2]/*.Freq*/;
 	        tree[m * 2 + 1]/*.Len*/ = bits;
 	      }
 	      n--;
 	    }
 	  }
-	};
+	}
 
 
 	/* ===========================================================================
@@ -170164,22 +170147,21 @@ function requireTrees () {
 	 * OUT assertion: the field code is set for all tree elements of non
 	 *     zero code length.
 	 */
-	const gen_codes = (tree, max_code, bl_count) => {
+	function gen_codes(tree, max_code, bl_count)
 	//    ct_data *tree;             /* the tree to decorate */
 	//    int max_code;              /* largest code with non zero frequency */
 	//    ushf *bl_count;            /* number of codes at each bit length */
-
-	  const next_code = new Array(MAX_BITS + 1); /* next code value for each bit length */
-	  let code = 0;              /* running code value */
-	  let bits;                  /* bit index */
-	  let n;                     /* code index */
+	{
+	  var next_code = new Array(MAX_BITS + 1); /* next code value for each bit length */
+	  var code = 0;              /* running code value */
+	  var bits;                  /* bit index */
+	  var n;                     /* code index */
 
 	  /* The distribution counts are first used to generate the code values
 	   * without bit reversal.
 	   */
 	  for (bits = 1; bits <= MAX_BITS; bits++) {
-	    code = (code + bl_count[bits - 1]) << 1;
-	    next_code[bits] = code;
+	    next_code[bits] = code = (code + bl_count[bits - 1]) << 1;
 	  }
 	  /* Check that the bit counts in bl_count are consistent. The last code
 	   * must be all ones.
@@ -170189,7 +170171,7 @@ function requireTrees () {
 	  //Tracev((stderr,"\ngen_codes: max_code %d ", max_code));
 
 	  for (n = 0;  n <= max_code; n++) {
-	    let len = tree[n * 2 + 1]/*.Len*/;
+	    var len = tree[n * 2 + 1]/*.Len*/;
 	    if (len === 0) { continue; }
 	    /* Now reverse the bits */
 	    tree[n * 2]/*.Code*/ = bi_reverse(next_code[len]++, len);
@@ -170197,20 +170179,19 @@ function requireTrees () {
 	    //Tracecv(tree != static_ltree, (stderr,"\nn %3d %c l %2d c %4x (%x) ",
 	    //     n, (isgraph(n) ? n : ' '), len, tree[n].Code, next_code[len]-1));
 	  }
-	};
+	}
 
 
 	/* ===========================================================================
 	 * Initialize the various 'constant' tables.
 	 */
-	const tr_static_init = () => {
-
-	  let n;        /* iterates over tree elements */
-	  let bits;     /* bit counter */
-	  let length;   /* length value */
-	  let code;     /* code value */
-	  let dist;     /* distance index */
-	  const bl_count = new Array(MAX_BITS + 1);
+	function tr_static_init() {
+	  var n;        /* iterates over tree elements */
+	  var bits;     /* bit counter */
+	  var length;   /* length value */
+	  var code;     /* code value */
+	  var dist;     /* distance index */
+	  var bl_count = new Array(MAX_BITS + 1);
 	  /* number of codes at each bit length for an optimal tree */
 
 	  // do check in _tr_init()
@@ -170302,15 +170283,14 @@ function requireTrees () {
 	  static_bl_desc = new StaticTreeDesc(new Array(0), extra_blbits, 0,         BL_CODES, MAX_BL_BITS);
 
 	  //static_init_done = true;
-	};
+	}
 
 
 	/* ===========================================================================
 	 * Initialize a new block.
 	 */
-	const init_block = (s) => {
-
-	  let n; /* iterates over tree elements */
+	function init_block(s) {
+	  var n; /* iterates over tree elements */
 
 	  /* Initialize the trees. */
 	  for (n = 0; n < L_CODES;  n++) { s.dyn_ltree[n * 2]/*.Freq*/ = 0; }
@@ -170319,14 +170299,14 @@ function requireTrees () {
 
 	  s.dyn_ltree[END_BLOCK * 2]/*.Freq*/ = 1;
 	  s.opt_len = s.static_len = 0;
-	  s.sym_next = s.matches = 0;
-	};
+	  s.last_lit = s.matches = 0;
+	}
 
 
 	/* ===========================================================================
 	 * Flush the bit buffer and align the output on a byte boundary
 	 */
-	const bi_windup = (s) =>
+	function bi_windup(s)
 	{
 	  if (s.bi_valid > 8) {
 	    put_short(s, s.bi_buf);
@@ -170336,19 +170316,41 @@ function requireTrees () {
 	  }
 	  s.bi_buf = 0;
 	  s.bi_valid = 0;
-	};
+	}
+
+	/* ===========================================================================
+	 * Copy a stored block, storing first the length and its
+	 * one's complement if requested.
+	 */
+	function copy_block(s, buf, len, header)
+	//DeflateState *s;
+	//charf    *buf;    /* the input data */
+	//unsigned len;     /* its length */
+	//int      header;  /* true if block header must be written */
+	{
+	  bi_windup(s);        /* align on byte boundary */
+
+	  {
+	    put_short(s, len);
+	    put_short(s, ~len);
+	  }
+	//  while (len--) {
+	//    put_byte(s, *buf++);
+	//  }
+	  utils.arraySet(s.pending_buf, s.window, buf, len, s.pending);
+	  s.pending += len;
+	}
 
 	/* ===========================================================================
 	 * Compares to subtrees, using the tree depth as tie breaker when
 	 * the subtrees have equal frequency. This minimizes the worst case length.
 	 */
-	const smaller = (tree, n, m, depth) => {
-
-	  const _n2 = n * 2;
-	  const _m2 = m * 2;
+	function smaller(tree, n, m, depth) {
+	  var _n2 = n * 2;
+	  var _m2 = m * 2;
 	  return (tree[_n2]/*.Freq*/ < tree[_m2]/*.Freq*/ ||
 	         (tree[_n2]/*.Freq*/ === tree[_m2]/*.Freq*/ && depth[n] <= depth[m]));
-	};
+	}
 
 	/* ===========================================================================
 	 * Restore the heap property by moving down the tree starting at node k,
@@ -170356,13 +170358,13 @@ function requireTrees () {
 	 * when the heap property is re-established (each father smaller than its
 	 * two sons).
 	 */
-	const pqdownheap = (s, tree, k) => {
+	function pqdownheap(s, tree, k)
 	//    deflate_state *s;
 	//    ct_data *tree;  /* the tree to restore */
 	//    int k;               /* node to move down */
-
-	  const v = s.heap[k];
-	  let j = k << 1;  /* left son of k */
+	{
+	  var v = s.heap[k];
+	  var j = k << 1;  /* left son of k */
 	  while (j <= s.heap_len) {
 	    /* Set j to the smallest of the two sons: */
 	    if (j < s.heap_len &&
@@ -170380,31 +170382,32 @@ function requireTrees () {
 	    j <<= 1;
 	  }
 	  s.heap[k] = v;
-	};
+	}
 
 
 	// inlined manually
-	// const SMALLEST = 1;
+	// var SMALLEST = 1;
 
 	/* ===========================================================================
 	 * Send the block data compressed using the given Huffman trees
 	 */
-	const compress_block = (s, ltree, dtree) => {
+	function compress_block(s, ltree, dtree)
 	//    deflate_state *s;
 	//    const ct_data *ltree; /* literal tree */
 	//    const ct_data *dtree; /* distance tree */
+	{
+	  var dist;           /* distance of matched string */
+	  var lc;             /* match length or unmatched char (if dist == 0) */
+	  var lx = 0;         /* running index in l_buf */
+	  var code;           /* the code to send */
+	  var extra;          /* number of extra bits to send */
 
-	  let dist;           /* distance of matched string */
-	  let lc;             /* match length or unmatched char (if dist == 0) */
-	  let sx = 0;         /* running index in sym_buf */
-	  let code;           /* the code to send */
-	  let extra;          /* number of extra bits to send */
-
-	  if (s.sym_next !== 0) {
+	  if (s.last_lit !== 0) {
 	    do {
-	      dist = s.pending_buf[s.sym_buf + sx++] & 0xff;
-	      dist += (s.pending_buf[s.sym_buf + sx++] & 0xff) << 8;
-	      lc = s.pending_buf[s.sym_buf + sx++];
+	      dist = (s.pending_buf[s.d_buf + lx * 2] << 8) | (s.pending_buf[s.d_buf + lx * 2 + 1]);
+	      lc = s.pending_buf[s.l_buf + lx];
+	      lx++;
+
 	      if (dist === 0) {
 	        send_code(s, lc, ltree); /* send a literal byte */
 	        //Tracecv(isgraph(lc), (stderr," '%c' ", lc));
@@ -170429,14 +170432,15 @@ function requireTrees () {
 	        }
 	      } /* literal or match pair ? */
 
-	      /* Check that the overlay between pending_buf and sym_buf is ok: */
-	      //Assert(s->pending < s->lit_bufsize + sx, "pendingBuf overflow");
+	      /* Check that the overlay between pending_buf and d_buf+l_buf is ok: */
+	      //Assert((uInt)(s->pending) < s->lit_bufsize + 2*lx,
+	      //       "pendingBuf overflow");
 
-	    } while (sx < s.sym_next);
+	    } while (lx < s.last_lit);
 	  }
 
 	  send_code(s, END_BLOCK, ltree);
-	};
+	}
 
 
 	/* ===========================================================================
@@ -170447,17 +170451,17 @@ function requireTrees () {
 	 *     and corresponding code. The length opt_len is updated; static_len is
 	 *     also updated if stree is not null. The field max_code is set.
 	 */
-	const build_tree = (s, desc) => {
+	function build_tree(s, desc)
 	//    deflate_state *s;
 	//    tree_desc *desc; /* the tree descriptor */
-
-	  const tree     = desc.dyn_tree;
-	  const stree    = desc.stat_desc.static_tree;
-	  const has_stree = desc.stat_desc.has_stree;
-	  const elems    = desc.stat_desc.elems;
-	  let n, m;          /* iterate over heap elements */
-	  let max_code = -1; /* largest code with non zero frequency */
-	  let node;          /* new node being created */
+	{
+	  var tree     = desc.dyn_tree;
+	  var stree    = desc.stat_desc.static_tree;
+	  var has_stree = desc.stat_desc.has_stree;
+	  var elems    = desc.stat_desc.elems;
+	  var n, m;          /* iterate over heap elements */
+	  var max_code = -1; /* largest code with non zero frequency */
+	  var node;          /* new node being created */
 
 	  /* Construct the initial heap, with least frequent element in
 	   * heap[SMALLEST]. The sons of heap[n] are heap[2*n] and heap[2*n+1].
@@ -170536,27 +170540,27 @@ function requireTrees () {
 
 	  /* The field len is now set, we can generate the bit codes */
 	  gen_codes(tree, max_code, s.bl_count);
-	};
+	}
 
 
 	/* ===========================================================================
 	 * Scan a literal or distance tree to determine the frequencies of the codes
 	 * in the bit length tree.
 	 */
-	const scan_tree = (s, tree, max_code) => {
+	function scan_tree(s, tree, max_code)
 	//    deflate_state *s;
 	//    ct_data *tree;   /* the tree to be scanned */
 	//    int max_code;    /* and its largest code of non zero frequency */
+	{
+	  var n;                     /* iterates over all tree elements */
+	  var prevlen = -1;          /* last emitted length */
+	  var curlen;                /* length of current code */
 
-	  let n;                     /* iterates over all tree elements */
-	  let prevlen = -1;          /* last emitted length */
-	  let curlen;                /* length of current code */
+	  var nextlen = tree[0 * 2 + 1]/*.Len*/; /* length of next code */
 
-	  let nextlen = tree[0 * 2 + 1]/*.Len*/; /* length of next code */
-
-	  let count = 0;             /* repeat count of the current code */
-	  let max_count = 7;         /* max repeat count */
-	  let min_count = 4;         /* min repeat count */
+	  var count = 0;             /* repeat count of the current code */
+	  var max_count = 7;         /* max repeat count */
+	  var min_count = 4;         /* min repeat count */
 
 	  if (nextlen === 0) {
 	    max_count = 138;
@@ -170602,27 +170606,27 @@ function requireTrees () {
 	      min_count = 4;
 	    }
 	  }
-	};
+	}
 
 
 	/* ===========================================================================
 	 * Send a literal or distance tree in compressed form, using the codes in
 	 * bl_tree.
 	 */
-	const send_tree = (s, tree, max_code) => {
+	function send_tree(s, tree, max_code)
 	//    deflate_state *s;
 	//    ct_data *tree; /* the tree to be scanned */
 	//    int max_code;       /* and its largest code of non zero frequency */
+	{
+	  var n;                     /* iterates over all tree elements */
+	  var prevlen = -1;          /* last emitted length */
+	  var curlen;                /* length of current code */
 
-	  let n;                     /* iterates over all tree elements */
-	  let prevlen = -1;          /* last emitted length */
-	  let curlen;                /* length of current code */
+	  var nextlen = tree[0 * 2 + 1]/*.Len*/; /* length of next code */
 
-	  let nextlen = tree[0 * 2 + 1]/*.Len*/; /* length of next code */
-
-	  let count = 0;             /* repeat count of the current code */
-	  let max_count = 7;         /* max repeat count */
-	  let min_count = 4;         /* min repeat count */
+	  var count = 0;             /* repeat count of the current code */
+	  var max_count = 7;         /* max repeat count */
+	  var min_count = 4;         /* min repeat count */
 
 	  /* tree[max_code+1].Len = -1; */  /* guard already set */
 	  if (nextlen === 0) {
@@ -170673,16 +170677,15 @@ function requireTrees () {
 	      min_count = 4;
 	    }
 	  }
-	};
+	}
 
 
 	/* ===========================================================================
 	 * Construct the Huffman tree for the bit lengths and return the index in
 	 * bl_order of the last bit length code to send.
 	 */
-	const build_bl_tree = (s) => {
-
-	  let max_blindex;  /* index of last bit length code of non zero freq */
+	function build_bl_tree(s) {
+	  var max_blindex;  /* index of last bit length code of non zero freq */
 
 	  /* Determine the bit length frequencies for literal and distance trees */
 	  scan_tree(s, s.dyn_ltree, s.l_desc.max_code);
@@ -170709,7 +170712,7 @@ function requireTrees () {
 	  //        s->opt_len, s->static_len));
 
 	  return max_blindex;
-	};
+	}
 
 
 	/* ===========================================================================
@@ -170717,11 +170720,11 @@ function requireTrees () {
 	 * lengths of the bit length codes, the literal tree and the distance tree.
 	 * IN assertion: lcodes >= 257, dcodes >= 1, blcodes >= 4.
 	 */
-	const send_all_trees = (s, lcodes, dcodes, blcodes) => {
+	function send_all_trees(s, lcodes, dcodes, blcodes)
 	//    deflate_state *s;
 	//    int lcodes, dcodes, blcodes; /* number of codes for each tree */
-
-	  let rank;                    /* index in bl_order */
+	{
+	  var rank;                    /* index in bl_order */
 
 	  //Assert (lcodes >= 257 && dcodes >= 1 && blcodes >= 4, "not enough codes");
 	  //Assert (lcodes <= L_CODES && dcodes <= D_CODES && blcodes <= BL_CODES,
@@ -170741,38 +170744,38 @@ function requireTrees () {
 
 	  send_tree(s, s.dyn_dtree, dcodes - 1); /* distance tree */
 	  //Tracev((stderr, "\ndist tree: sent %ld", s->bits_sent));
-	};
+	}
 
 
 	/* ===========================================================================
 	 * Check if the data type is TEXT or BINARY, using the following algorithm:
 	 * - TEXT if the two conditions below are satisfied:
 	 *    a) There are no non-portable control characters belonging to the
-	 *       "block list" (0..6, 14..25, 28..31).
+	 *       "black list" (0..6, 14..25, 28..31).
 	 *    b) There is at least one printable character belonging to the
-	 *       "allow list" (9 {TAB}, 10 {LF}, 13 {CR}, 32..255).
+	 *       "white list" (9 {TAB}, 10 {LF}, 13 {CR}, 32..255).
 	 * - BINARY otherwise.
 	 * - The following partially-portable control characters form a
 	 *   "gray list" that is ignored in this detection algorithm:
 	 *   (7 {BEL}, 8 {BS}, 11 {VT}, 12 {FF}, 26 {SUB}, 27 {ESC}).
 	 * IN assertion: the fields Freq of dyn_ltree are set.
 	 */
-	const detect_data_type = (s) => {
-	  /* block_mask is the bit mask of block-listed bytes
+	function detect_data_type(s) {
+	  /* black_mask is the bit mask of black-listed bytes
 	   * set bits 0..6, 14..25, and 28..31
 	   * 0xf3ffc07f = binary 11110011111111111100000001111111
 	   */
-	  let block_mask = 0xf3ffc07f;
-	  let n;
+	  var black_mask = 0xf3ffc07f;
+	  var n;
 
-	  /* Check for non-textual ("block-listed") bytes. */
-	  for (n = 0; n <= 31; n++, block_mask >>>= 1) {
-	    if ((block_mask & 1) && (s.dyn_ltree[n * 2]/*.Freq*/ !== 0)) {
+	  /* Check for non-textual ("black-listed") bytes. */
+	  for (n = 0; n <= 31; n++, black_mask >>>= 1) {
+	    if ((black_mask & 1) && (s.dyn_ltree[n * 2]/*.Freq*/ !== 0)) {
 	      return Z_BINARY;
 	    }
 	  }
 
-	  /* Check for textual ("allow-listed") bytes. */
+	  /* Check for textual ("white-listed") bytes. */
 	  if (s.dyn_ltree[9 * 2]/*.Freq*/ !== 0 || s.dyn_ltree[10 * 2]/*.Freq*/ !== 0 ||
 	      s.dyn_ltree[13 * 2]/*.Freq*/ !== 0) {
 	    return Z_TEXT;
@@ -170783,19 +170786,19 @@ function requireTrees () {
 	    }
 	  }
 
-	  /* There are no "block-listed" or "allow-listed" bytes:
+	  /* There are no "black-listed" or "white-listed" bytes:
 	   * this stream either is empty or has tolerated ("gray-listed") bytes only.
 	   */
 	  return Z_BINARY;
-	};
+	}
 
 
-	let static_init_done = false;
+	var static_init_done = false;
 
 	/* ===========================================================================
 	 * Initialize the tree data structures for a new zlib stream.
 	 */
-	const _tr_init = (s) =>
+	function _tr_init(s)
 	{
 
 	  if (!static_init_done) {
@@ -170812,52 +170815,46 @@ function requireTrees () {
 
 	  /* Initialize the first block of the first file: */
 	  init_block(s);
-	};
+	}
 
 
 	/* ===========================================================================
 	 * Send a stored block
 	 */
-	const _tr_stored_block = (s, buf, stored_len, last) => {
+	function _tr_stored_block(s, buf, stored_len, last)
 	//DeflateState *s;
 	//charf *buf;       /* input block */
 	//ulg stored_len;   /* length of input block */
 	//int last;         /* one if this is the last block for a file */
-
+	{
 	  send_bits(s, (STORED_BLOCK << 1) + (last ? 1 : 0), 3);    /* send block type */
-	  bi_windup(s);        /* align on byte boundary */
-	  put_short(s, stored_len);
-	  put_short(s, ~stored_len);
-	  if (stored_len) {
-	    s.pending_buf.set(s.window.subarray(buf, buf + stored_len), s.pending);
-	  }
-	  s.pending += stored_len;
-	};
+	  copy_block(s, buf, stored_len); /* with header */
+	}
 
 
 	/* ===========================================================================
 	 * Send one empty static block to give enough lookahead for inflate.
 	 * This takes 10 bits, of which 7 may remain in the bit buffer.
 	 */
-	const _tr_align = (s) => {
+	function _tr_align(s) {
 	  send_bits(s, STATIC_TREES << 1, 3);
 	  send_code(s, END_BLOCK, static_ltree);
 	  bi_flush(s);
-	};
+	}
 
 
 	/* ===========================================================================
 	 * Determine the best encoding for the current block: dynamic trees, static
-	 * trees or store, and write out the encoded block.
+	 * trees or store, and output the encoded block to the zip file.
 	 */
-	const _tr_flush_block = (s, buf, stored_len, last) => {
+	function _tr_flush_block(s, buf, stored_len, last)
 	//DeflateState *s;
 	//charf *buf;       /* input block, or NULL if too old */
 	//ulg stored_len;   /* length of input block */
 	//int last;         /* one if this is the last block for a file */
-
-	  let opt_lenb, static_lenb;  /* opt_len and static_len in bytes */
-	  let max_blindex = 0;        /* index of last bit length code of non zero freq */
+	{
+	  var opt_lenb, static_lenb;  /* opt_len and static_len in bytes */
+	  var max_blindex = 0;        /* index of last bit length code of non zero freq */
 
 	  /* Build the Huffman trees unless a stored block is forced */
 	  if (s.level > 0) {
@@ -170890,7 +170887,7 @@ function requireTrees () {
 
 	    // Tracev((stderr, "\nopt %lu(%lu) stat %lu(%lu) stored %lu lit %u ",
 	    //        opt_lenb, s->opt_len, static_lenb, s->static_len, stored_len,
-	    //        s->sym_next / 3));
+	    //        s->last_lit));
 
 	    if (static_lenb <= opt_lenb) { opt_lenb = static_lenb; }
 
@@ -170931,20 +170928,25 @@ function requireTrees () {
 	  }
 	  // Tracev((stderr,"\ncomprlen %lu(%lu) ", s->compressed_len>>3,
 	  //       s->compressed_len-7*last));
-	};
+	}
 
 	/* ===========================================================================
 	 * Save the match info and tally the frequency counts. Return true if
 	 * the current block must be flushed.
 	 */
-	const _tr_tally = (s, dist, lc) => {
+	function _tr_tally(s, dist, lc)
 	//    deflate_state *s;
 	//    unsigned dist;  /* distance of matched string */
 	//    unsigned lc;    /* match length-MIN_MATCH or unmatched char (if dist==0) */
+	{
+	  //var out_length, in_length, dcode;
 
-	  s.pending_buf[s.sym_buf + s.sym_next++] = dist;
-	  s.pending_buf[s.sym_buf + s.sym_next++] = dist >> 8;
-	  s.pending_buf[s.sym_buf + s.sym_next++] = lc;
+	  s.pending_buf[s.d_buf + s.last_lit * 2]     = (dist >>> 8) & 0xff;
+	  s.pending_buf[s.d_buf + s.last_lit * 2 + 1] = dist & 0xff;
+
+	  s.pending_buf[s.l_buf + s.last_lit] = lc & 0xff;
+	  s.last_lit++;
+
 	  if (dist === 0) {
 	    /* lc is the unmatched char */
 	    s.dyn_ltree[lc * 2]/*.Freq*/++;
@@ -170960,8 +170962,35 @@ function requireTrees () {
 	    s.dyn_dtree[d_code(dist) * 2]/*.Freq*/++;
 	  }
 
-	  return (s.sym_next === s.sym_end);
-	};
+	// (!) This block is disabled in zlib defaults,
+	// don't enable it for binary compatibility
+
+	//#ifdef TRUNCATE_BLOCK
+	//  /* Try to guess if it is profitable to stop the current block here */
+	//  if ((s.last_lit & 0x1fff) === 0 && s.level > 2) {
+	//    /* Compute an upper bound for the compressed length */
+	//    out_length = s.last_lit*8;
+	//    in_length = s.strstart - s.block_start;
+	//
+	//    for (dcode = 0; dcode < D_CODES; dcode++) {
+	//      out_length += s.dyn_dtree[dcode*2]/*.Freq*/ * (5 + extra_dbits[dcode]);
+	//    }
+	//    out_length >>>= 3;
+	//    //Tracev((stderr,"\nlast_lit %u, in %ld, out ~%ld(%ld%%) ",
+	//    //       s->last_lit, in_length, out_length,
+	//    //       100L - out_length*100L/in_length));
+	//    if (s.matches < (s.last_lit>>1)/*int /2*/ && out_length < (in_length>>1)/*int /2*/) {
+	//      return true;
+	//    }
+	//  }
+	//#endif
+
+	  return (s.last_lit === s.lit_bufsize - 1);
+	  /* We avoid equality with lit_bufsize because of wraparound at 64K
+	   * on 16 bit machines and because stored blocks are restricted to
+	   * 64K-1 bytes.
+	   */
+	}
 
 	trees$2._tr_init  = _tr_init;
 	trees$2._tr_stored_block = _tr_stored_block;
@@ -171001,8 +171030,8 @@ function requireAdler32 () {
 	//   misrepresented as being the original software.
 	// 3. This notice may not be removed or altered from any source distribution.
 
-	const adler32 = (adler, buf, len, pos) => {
-	  let s1 = (adler & 0xffff) |0,
+	function adler32(adler, buf, len, pos) {
+	  var s1 = (adler & 0xffff) |0,
 	      s2 = ((adler >>> 16) & 0xffff) |0,
 	      n = 0;
 
@@ -171023,7 +171052,7 @@ function requireAdler32 () {
 	  }
 
 	  return (s1 | (s2 << 16)) |0;
-	};
+	}
 
 
 	adler32_1$1 = adler32;
@@ -171061,8 +171090,8 @@ function requireCrc32 () {
 	// 3. This notice may not be removed or altered from any source distribution.
 
 	// Use ordinary array, since untyped makes no boost here
-	const makeTable = () => {
-	  let c, table = [];
+	function makeTable() {
+	  var c, table = [];
 
 	  for (var n = 0; n < 256; n++) {
 	    c = n;
@@ -171073,24 +171102,24 @@ function requireCrc32 () {
 	  }
 
 	  return table;
-	};
+	}
 
 	// Create table on load. Just 255 signed longs. Not a problem.
-	const crcTable = new Uint32Array(makeTable());
+	var crcTable = makeTable();
 
 
-	const crc32 = (crc, buf, len, pos) => {
-	  const t = crcTable;
-	  const end = pos + len;
+	function crc32(crc, buf, len, pos) {
+	  var t = crcTable,
+	      end = pos + len;
 
 	  crc ^= -1;
 
-	  for (let i = pos; i < end; i++) {
+	  for (var i = pos; i < end; i++) {
 	    crc = (crc >>> 8) ^ t[(crc ^ buf[i]) & 0xFF];
 	  }
 
 	  return (crc ^ (-1)); // >>> 0;
-	};
+	}
 
 
 	crc32_1$1 = crc32;
@@ -171137,82 +171166,6 @@ function requireMessages () {
 	return messages$1;
 }
 
-var constants$2;
-var hasRequiredConstants;
-
-function requireConstants () {
-	if (hasRequiredConstants) return constants$2;
-	hasRequiredConstants = 1;
-
-	// (C) 1995-2013 Jean-loup Gailly and Mark Adler
-	// (C) 2014-2017 Vitaly Puzrin and Andrey Tupitsin
-	//
-	// This software is provided 'as-is', without any express or implied
-	// warranty. In no event will the authors be held liable for any damages
-	// arising from the use of this software.
-	//
-	// Permission is granted to anyone to use this software for any purpose,
-	// including commercial applications, and to alter it and redistribute it
-	// freely, subject to the following restrictions:
-	//
-	// 1. The origin of this software must not be misrepresented; you must not
-	//   claim that you wrote the original software. If you use this software
-	//   in a product, an acknowledgment in the product documentation would be
-	//   appreciated but is not required.
-	// 2. Altered source versions must be plainly marked as such, and must not be
-	//   misrepresented as being the original software.
-	// 3. This notice may not be removed or altered from any source distribution.
-
-	constants$2 = {
-
-	  /* Allowed flush values; see deflate() and inflate() below for details */
-	  Z_NO_FLUSH:         0,
-	  Z_PARTIAL_FLUSH:    1,
-	  Z_SYNC_FLUSH:       2,
-	  Z_FULL_FLUSH:       3,
-	  Z_FINISH:           4,
-	  Z_BLOCK:            5,
-	  Z_TREES:            6,
-
-	  /* Return codes for the compression/decompression functions. Negative values
-	  * are errors, positive values are used for special but normal events.
-	  */
-	  Z_OK:               0,
-	  Z_STREAM_END:       1,
-	  Z_NEED_DICT:        2,
-	  Z_ERRNO:           -1,
-	  Z_STREAM_ERROR:    -2,
-	  Z_DATA_ERROR:      -3,
-	  Z_MEM_ERROR:       -4,
-	  Z_BUF_ERROR:       -5,
-	  //Z_VERSION_ERROR: -6,
-
-	  /* compression levels */
-	  Z_NO_COMPRESSION:         0,
-	  Z_BEST_SPEED:             1,
-	  Z_BEST_COMPRESSION:       9,
-	  Z_DEFAULT_COMPRESSION:   -1,
-
-
-	  Z_FILTERED:               1,
-	  Z_HUFFMAN_ONLY:           2,
-	  Z_RLE:                    3,
-	  Z_FIXED:                  4,
-	  Z_DEFAULT_STRATEGY:       0,
-
-	  /* Possible values of the data_type field (though see inflate()) */
-	  Z_BINARY:                 0,
-	  Z_TEXT:                   1,
-	  //Z_ASCII:                1, // = Z_TEXT (deprecated)
-	  Z_UNKNOWN:                2,
-
-	  /* The deflate compression method */
-	  Z_DEFLATED:               8
-	  //Z_NULL:                 null // Use -1 or null inline, depending on var type
-	};
-	return constants$2;
-}
-
 var hasRequiredDeflate;
 
 function requireDeflate () {
@@ -171238,160 +171191,159 @@ function requireDeflate () {
 	//   misrepresented as being the original software.
 	// 3. This notice may not be removed or altered from any source distribution.
 
-	const { _tr_init, _tr_stored_block, _tr_flush_block, _tr_tally, _tr_align } = requireTrees();
-	const adler32 = requireAdler32();
-	const crc32   = requireCrc32();
-	const msg     = requireMessages();
+	var utils   = requireCommon();
+	var trees   = requireTrees();
+	var adler32 = requireAdler32();
+	var crc32   = requireCrc32();
+	var msg     = requireMessages();
 
 	/* Public constants ==========================================================*/
 	/* ===========================================================================*/
 
-	const {
-	  Z_NO_FLUSH, Z_PARTIAL_FLUSH, Z_FULL_FLUSH, Z_FINISH, Z_BLOCK,
-	  Z_OK, Z_STREAM_END, Z_STREAM_ERROR, Z_DATA_ERROR, Z_BUF_ERROR,
-	  Z_DEFAULT_COMPRESSION,
-	  Z_FILTERED, Z_HUFFMAN_ONLY, Z_RLE, Z_FIXED, Z_DEFAULT_STRATEGY,
-	  Z_UNKNOWN,
-	  Z_DEFLATED
-	} = requireConstants();
+
+	/* Allowed flush values; see deflate() and inflate() below for details */
+	var Z_NO_FLUSH      = 0;
+	var Z_PARTIAL_FLUSH = 1;
+	//var Z_SYNC_FLUSH    = 2;
+	var Z_FULL_FLUSH    = 3;
+	var Z_FINISH        = 4;
+	var Z_BLOCK         = 5;
+	//var Z_TREES         = 6;
+
+
+	/* Return codes for the compression/decompression functions. Negative values
+	 * are errors, positive values are used for special but normal events.
+	 */
+	var Z_OK            = 0;
+	var Z_STREAM_END    = 1;
+	//var Z_NEED_DICT     = 2;
+	//var Z_ERRNO         = -1;
+	var Z_STREAM_ERROR  = -2;
+	var Z_DATA_ERROR    = -3;
+	//var Z_MEM_ERROR     = -4;
+	var Z_BUF_ERROR     = -5;
+	//var Z_VERSION_ERROR = -6;
+
+
+	/* compression levels */
+	//var Z_NO_COMPRESSION      = 0;
+	//var Z_BEST_SPEED          = 1;
+	//var Z_BEST_COMPRESSION    = 9;
+	var Z_DEFAULT_COMPRESSION = -1;
+
+
+	var Z_FILTERED            = 1;
+	var Z_HUFFMAN_ONLY        = 2;
+	var Z_RLE                 = 3;
+	var Z_FIXED               = 4;
+	var Z_DEFAULT_STRATEGY    = 0;
+
+	/* Possible values of the data_type field (though see inflate()) */
+	//var Z_BINARY              = 0;
+	//var Z_TEXT                = 1;
+	//var Z_ASCII               = 1; // = Z_TEXT
+	var Z_UNKNOWN             = 2;
+
+
+	/* The deflate compression method */
+	var Z_DEFLATED  = 8;
 
 	/*============================================================================*/
 
 
-	const MAX_MEM_LEVEL = 9;
+	var MAX_MEM_LEVEL = 9;
 	/* Maximum value for memLevel in deflateInit2 */
-	const MAX_WBITS = 15;
+	var MAX_WBITS = 15;
 	/* 32K LZ77 window */
-	const DEF_MEM_LEVEL = 8;
+	var DEF_MEM_LEVEL = 8;
 
 
-	const LENGTH_CODES  = 29;
+	var LENGTH_CODES  = 29;
 	/* number of length codes, not counting the special END_BLOCK code */
-	const LITERALS      = 256;
+	var LITERALS      = 256;
 	/* number of literal bytes 0..255 */
-	const L_CODES       = LITERALS + 1 + LENGTH_CODES;
+	var L_CODES       = LITERALS + 1 + LENGTH_CODES;
 	/* number of Literal or Length codes, including the END_BLOCK code */
-	const D_CODES       = 30;
+	var D_CODES       = 30;
 	/* number of distance codes */
-	const BL_CODES      = 19;
+	var BL_CODES      = 19;
 	/* number of codes used to transfer the bit lengths */
-	const HEAP_SIZE     = 2 * L_CODES + 1;
+	var HEAP_SIZE     = 2 * L_CODES + 1;
 	/* maximum heap size */
-	const MAX_BITS  = 15;
+	var MAX_BITS  = 15;
 	/* All codes must not exceed MAX_BITS bits */
 
-	const MIN_MATCH = 3;
-	const MAX_MATCH = 258;
-	const MIN_LOOKAHEAD = (MAX_MATCH + MIN_MATCH + 1);
+	var MIN_MATCH = 3;
+	var MAX_MATCH = 258;
+	var MIN_LOOKAHEAD = (MAX_MATCH + MIN_MATCH + 1);
 
-	const PRESET_DICT = 0x20;
+	var PRESET_DICT = 0x20;
 
-	const INIT_STATE    =  42;    /* zlib header -> BUSY_STATE */
-	//#ifdef GZIP
-	const GZIP_STATE    =  57;    /* gzip header -> BUSY_STATE | EXTRA_STATE */
-	//#endif
-	const EXTRA_STATE   =  69;    /* gzip extra block -> NAME_STATE */
-	const NAME_STATE    =  73;    /* gzip file name -> COMMENT_STATE */
-	const COMMENT_STATE =  91;    /* gzip comment -> HCRC_STATE */
-	const HCRC_STATE    = 103;    /* gzip header CRC -> BUSY_STATE */
-	const BUSY_STATE    = 113;    /* deflate -> FINISH_STATE */
-	const FINISH_STATE  = 666;    /* stream complete */
+	var INIT_STATE = 42;
+	var EXTRA_STATE = 69;
+	var NAME_STATE = 73;
+	var COMMENT_STATE = 91;
+	var HCRC_STATE = 103;
+	var BUSY_STATE = 113;
+	var FINISH_STATE = 666;
 
-	const BS_NEED_MORE      = 1; /* block not completed, need more input or more output */
-	const BS_BLOCK_DONE     = 2; /* block flush performed */
-	const BS_FINISH_STARTED = 3; /* finish started, need only more output at next deflate */
-	const BS_FINISH_DONE    = 4; /* finish done, accept no more input or output */
+	var BS_NEED_MORE      = 1; /* block not completed, need more input or more output */
+	var BS_BLOCK_DONE     = 2; /* block flush performed */
+	var BS_FINISH_STARTED = 3; /* finish started, need only more output at next deflate */
+	var BS_FINISH_DONE    = 4; /* finish done, accept no more input or output */
 
-	const OS_CODE = 0x03; // Unix :) . Don't detect, use this default.
+	var OS_CODE = 0x03; // Unix :) . Don't detect, use this default.
 
-	const err = (strm, errorCode) => {
+	function err(strm, errorCode) {
 	  strm.msg = msg[errorCode];
 	  return errorCode;
-	};
+	}
 
-	const rank = (f) => {
-	  return ((f) * 2) - ((f) > 4 ? 9 : 0);
-	};
+	function rank(f) {
+	  return ((f) << 1) - ((f) > 4 ? 9 : 0);
+	}
 
-	const zero = (buf) => {
-	  let len = buf.length; while (--len >= 0) { buf[len] = 0; }
-	};
-
-	/* ===========================================================================
-	 * Slide the hash table when sliding the window down (could be avoided with 32
-	 * bit values at the expense of memory usage). We slide even when level == 0 to
-	 * keep the hash table consistent if we switch back to level > 0 later.
-	 */
-	const slide_hash = (s) => {
-	  let n, m;
-	  let p;
-	  let wsize = s.w_size;
-
-	  n = s.hash_size;
-	  p = n;
-	  do {
-	    m = s.head[--p];
-	    s.head[p] = (m >= wsize ? m - wsize : 0);
-	  } while (--n);
-	  n = wsize;
-	//#ifndef FASTEST
-	  p = n;
-	  do {
-	    m = s.prev[--p];
-	    s.prev[p] = (m >= wsize ? m - wsize : 0);
-	    /* If n is not on any hash chain, prev[n] is garbage but
-	     * its value will never be used.
-	     */
-	  } while (--n);
-	//#endif
-	};
-
-	/* eslint-disable new-cap */
-	let HASH_ZLIB = (s, prev, data) => ((prev << s.hash_shift) ^ data) & s.hash_mask;
-	// This hash causes less collisions, https://github.com/nodeca/pako/issues/135
-	// But breaks binary compatibility
-	//let HASH_FAST = (s, prev, data) => ((prev << 8) + (prev >> 8) + (data << 4)) & s.hash_mask;
-	let HASH = HASH_ZLIB;
+	function zero(buf) { var len = buf.length; while (--len >= 0) { buf[len] = 0; } }
 
 
 	/* =========================================================================
-	 * Flush as much pending output as possible. All deflate() output, except for
-	 * some deflate_stored() output, goes through this function so some
-	 * applications may wish to modify it to avoid allocating a large
-	 * strm->next_out buffer and copying into it. (See also read_buf()).
+	 * Flush as much pending output as possible. All deflate() output goes
+	 * through this function so some applications may wish to modify it
+	 * to avoid allocating a large strm->output buffer and copying into it.
+	 * (See also read_buf()).
 	 */
-	const flush_pending = (strm) => {
-	  const s = strm.state;
+	function flush_pending(strm) {
+	  var s = strm.state;
 
 	  //_tr_flush_bits(s);
-	  let len = s.pending;
+	  var len = s.pending;
 	  if (len > strm.avail_out) {
 	    len = strm.avail_out;
 	  }
 	  if (len === 0) { return; }
 
-	  strm.output.set(s.pending_buf.subarray(s.pending_out, s.pending_out + len), strm.next_out);
-	  strm.next_out  += len;
-	  s.pending_out  += len;
+	  utils.arraySet(strm.output, s.pending_buf, s.pending_out, len, strm.next_out);
+	  strm.next_out += len;
+	  s.pending_out += len;
 	  strm.total_out += len;
 	  strm.avail_out -= len;
-	  s.pending      -= len;
+	  s.pending -= len;
 	  if (s.pending === 0) {
 	    s.pending_out = 0;
 	  }
-	};
+	}
 
 
-	const flush_block_only = (s, last) => {
-	  _tr_flush_block(s, (s.block_start >= 0 ? s.block_start : -1), s.strstart - s.block_start, last);
+	function flush_block_only(s, last) {
+	  trees._tr_flush_block(s, (s.block_start >= 0 ? s.block_start : -1), s.strstart - s.block_start, last);
 	  s.block_start = s.strstart;
 	  flush_pending(s.strm);
-	};
+	}
 
 
-	const put_byte = (s, b) => {
+	function put_byte(s, b) {
 	  s.pending_buf[s.pending++] = b;
-	};
+	}
 
 
 	/* =========================================================================
@@ -171399,13 +171351,12 @@ function requireDeflate () {
 	 * IN assertion: the stream state is correct and there is enough room in
 	 * pending_buf.
 	 */
-	const putShortMSB = (s, b) => {
-
-	  //  put_byte(s, (Byte)(b >> 8));
+	function putShortMSB(s, b) {
+	//  put_byte(s, (Byte)(b >> 8));
 	//  put_byte(s, (Byte)(b & 0xff));
 	  s.pending_buf[s.pending++] = (b >>> 8) & 0xff;
 	  s.pending_buf[s.pending++] = b & 0xff;
-	};
+	}
 
 
 	/* ===========================================================================
@@ -171415,9 +171366,8 @@ function requireDeflate () {
 	 * allocating a large strm->input buffer and copying from it.
 	 * (See also flush_pending()).
 	 */
-	const read_buf = (strm, buf, start, size) => {
-
-	  let len = strm.avail_in;
+	function read_buf(strm, buf, start, size) {
+	  var len = strm.avail_in;
 
 	  if (len > size) { len = size; }
 	  if (len === 0) { return 0; }
@@ -171425,7 +171375,7 @@ function requireDeflate () {
 	  strm.avail_in -= len;
 
 	  // zmemcpy(buf, strm->next_in, len);
-	  buf.set(strm.input.subarray(strm.next_in, strm.next_in + len), start);
+	  utils.arraySet(buf, strm.input, strm.next_in, len, start);
 	  if (strm.state.wrap === 1) {
 	    strm.adler = adler32(strm.adler, buf, len, start);
 	  }
@@ -171438,7 +171388,7 @@ function requireDeflate () {
 	  strm.total_in += len;
 
 	  return len;
-	};
+	}
 
 
 	/* ===========================================================================
@@ -171450,29 +171400,28 @@ function requireDeflate () {
 	 *   string (strstart) and its distance is <= MAX_DIST, and prev_length >= 1
 	 * OUT assertion: the match length is not greater than s->lookahead.
 	 */
-	const longest_match = (s, cur_match) => {
-
-	  let chain_length = s.max_chain_length;      /* max hash chain length */
-	  let scan = s.strstart; /* current string */
-	  let match;                       /* matched string */
-	  let len;                           /* length of current match */
-	  let best_len = s.prev_length;              /* best match length so far */
-	  let nice_match = s.nice_match;             /* stop if match long enough */
-	  const limit = (s.strstart > (s.w_size - MIN_LOOKAHEAD)) ?
+	function longest_match(s, cur_match) {
+	  var chain_length = s.max_chain_length;      /* max hash chain length */
+	  var scan = s.strstart; /* current string */
+	  var match;                       /* matched string */
+	  var len;                           /* length of current match */
+	  var best_len = s.prev_length;              /* best match length so far */
+	  var nice_match = s.nice_match;             /* stop if match long enough */
+	  var limit = (s.strstart > (s.w_size - MIN_LOOKAHEAD)) ?
 	      s.strstart - (s.w_size - MIN_LOOKAHEAD) : 0/*NIL*/;
 
-	  const _win = s.window; // shortcut
+	  var _win = s.window; // shortcut
 
-	  const wmask = s.w_mask;
-	  const prev  = s.prev;
+	  var wmask = s.w_mask;
+	  var prev  = s.prev;
 
 	  /* Stop when cur_match becomes <= limit. To simplify the code,
 	   * we prevent matches with the string of window index 0.
 	   */
 
-	  const strend = s.strstart + MAX_MATCH;
-	  let scan_end1  = _win[scan + best_len - 1];
-	  let scan_end   = _win[scan + best_len];
+	  var strend = s.strstart + MAX_MATCH;
+	  var scan_end1  = _win[scan + best_len - 1];
+	  var scan_end   = _win[scan + best_len];
 
 	  /* The code is optimized for HASH_BITS >= 8 and MAX_MATCH-2 multiple of 16.
 	   * It is easy to get rid of this optimization if necessary.
@@ -171551,7 +171500,7 @@ function requireDeflate () {
 	    return best_len;
 	  }
 	  return s.lookahead;
-	};
+	}
 
 
 	/* ===========================================================================
@@ -171564,10 +171513,9 @@ function requireDeflate () {
 	 *    performed for at least two bytes (required for the zip translate_eol
 	 *    option -- not supported here).
 	 */
-	const fill_window = (s) => {
-
-	  const _w_size = s.w_size;
-	  let n, more, str;
+	function fill_window(s) {
+	  var _w_size = s.w_size;
+	  var p, n, m, more, str;
 
 	  //Assert(s->lookahead < MIN_LOOKAHEAD, "already enough lookahead");
 
@@ -171594,15 +171542,36 @@ function requireDeflate () {
 	     */
 	    if (s.strstart >= _w_size + (_w_size - MIN_LOOKAHEAD)) {
 
-	      s.window.set(s.window.subarray(_w_size, _w_size + _w_size - more), 0);
+	      utils.arraySet(s.window, s.window, _w_size, _w_size, 0);
 	      s.match_start -= _w_size;
 	      s.strstart -= _w_size;
 	      /* we now have strstart >= MAX_DIST */
 	      s.block_start -= _w_size;
-	      if (s.insert > s.strstart) {
-	        s.insert = s.strstart;
-	      }
-	      slide_hash(s);
+
+	      /* Slide the hash table (could be avoided with 32 bit values
+	       at the expense of memory usage). We slide even when level == 0
+	       to keep the hash table consistent if we switch back to level > 0
+	       later. (Using level 0 permanently is not an optimal usage of
+	       zlib, so we don't care about this pathological case.)
+	       */
+
+	      n = s.hash_size;
+	      p = n;
+	      do {
+	        m = s.head[--p];
+	        s.head[p] = (m >= _w_size ? m - _w_size : 0);
+	      } while (--n);
+
+	      n = _w_size;
+	      p = n;
+	      do {
+	        m = s.prev[--p];
+	        s.prev[p] = (m >= _w_size ? m - _w_size : 0);
+	        /* If n is not on any hash chain, prev[n] is garbage but
+	         * its value will never be used.
+	         */
+	      } while (--n);
+
 	      more += _w_size;
 	    }
 	    if (s.strm.avail_in === 0) {
@@ -171630,13 +171599,13 @@ function requireDeflate () {
 	      s.ins_h = s.window[str];
 
 	      /* UPDATE_HASH(s, s->ins_h, s->window[str + 1]); */
-	      s.ins_h = HASH(s, s.ins_h, s.window[str + 1]);
+	      s.ins_h = ((s.ins_h << s.hash_shift) ^ s.window[str + 1]) & s.hash_mask;
 	//#if MIN_MATCH != 3
 	//        Call update_hash() MIN_MATCH-3 more times
 	//#endif
 	      while (s.insert) {
 	        /* UPDATE_HASH(s, s->ins_h, s->window[str + MIN_MATCH-1]); */
-	        s.ins_h = HASH(s, s.ins_h, s.window[str + MIN_MATCH - 1]);
+	        s.ins_h = ((s.ins_h << s.hash_shift) ^ s.window[str + MIN_MATCH - 1]) & s.hash_mask;
 
 	        s.prev[str & s.w_mask] = s.head[s.ins_h];
 	        s.head[s.ins_h] = str;
@@ -171661,8 +171630,8 @@ function requireDeflate () {
 	   * routines allow scanning to strstart + MAX_MATCH, ignoring lookahead.
 	   */
 	//  if (s.high_water < s.window_size) {
-	//    const curr = s.strstart + s.lookahead;
-	//    let init = 0;
+	//    var curr = s.strstart + s.lookahead;
+	//    var init = 0;
 	//
 	//    if (s.high_water < curr) {
 	//      /* Previous high water mark below current data -- zero WIN_INIT
@@ -171689,220 +171658,107 @@ function requireDeflate () {
 	//
 	//  Assert((ulg)s->strstart <= s->window_size - MIN_LOOKAHEAD,
 	//    "not enough room for search");
-	};
+	}
 
 	/* ===========================================================================
 	 * Copy without compression as much as possible from the input stream, return
 	 * the current block state.
-	 *
-	 * In case deflateParams() is used to later switch to a non-zero compression
-	 * level, s->matches (otherwise unused when storing) keeps track of the number
-	 * of hash table slides to perform. If s->matches is 1, then one hash table
-	 * slide will be done when switching. If s->matches is 2, the maximum value
-	 * allowed here, then the hash table will be cleared, since two or more slides
-	 * is the same as a clear.
-	 *
-	 * deflate_stored() is written to minimize the number of times an input byte is
-	 * copied. It is most efficient with large input and output buffers, which
-	 * maximizes the opportunites to have a single copy from next_in to next_out.
+	 * This function does not insert new strings in the dictionary since
+	 * uncompressible data is probably not useful. This function is used
+	 * only for the level=0 compression option.
+	 * NOTE: this function should be optimized to avoid extra copying from
+	 * window to pending_buf.
 	 */
-	const deflate_stored = (s, flush) => {
-
-	  /* Smallest worthy block size when not flushing or finishing. By default
-	   * this is 32K. This can be as small as 507 bytes for memLevel == 1. For
-	   * large input and output buffers, the stored block size will be larger.
+	function deflate_stored(s, flush) {
+	  /* Stored blocks are limited to 0xffff bytes, pending_buf is limited
+	   * to pending_buf_size, and each stored block has a 5 byte header:
 	   */
-	  let min_block = s.pending_buf_size - 5 > s.w_size ? s.w_size : s.pending_buf_size - 5;
+	  var max_block_size = 0xffff;
 
-	  /* Copy as many min_block or larger stored blocks directly to next_out as
-	   * possible. If flushing, copy the remaining available input to next_out as
-	   * stored blocks, if there is enough space.
-	   */
-	  let len, left, have, last = 0;
-	  let used = s.strm.avail_in;
-	  do {
-	    /* Set len to the maximum size block that we can copy directly with the
-	     * available input data and output space. Set left to how much of that
-	     * would be copied from what's left in the window.
-	     */
-	    len = 65535/* MAX_STORED */;     /* maximum deflate stored block length */
-	    have = (s.bi_valid + 42) >> 3;     /* number of header bytes */
-	    if (s.strm.avail_out < have) {         /* need room for header */
-	      break;
-	    }
-	      /* maximum stored block length that will fit in avail_out: */
-	    have = s.strm.avail_out - have;
-	    left = s.strstart - s.block_start;  /* bytes left in window */
-	    if (len > left + s.strm.avail_in) {
-	      len = left + s.strm.avail_in;   /* limit len to the input */
-	    }
-	    if (len > have) {
-	      len = have;             /* limit len to the output */
-	    }
-
-	    /* If the stored block would be less than min_block in length, or if
-	     * unable to copy all of the available input when flushing, then try
-	     * copying to the window and the pending buffer instead. Also don't
-	     * write an empty block when flushing -- deflate() does that.
-	     */
-	    if (len < min_block && ((len === 0 && flush !== Z_FINISH) ||
-	                        flush === Z_NO_FLUSH ||
-	                        len !== left + s.strm.avail_in)) {
-	      break;
-	    }
-
-	    /* Make a dummy stored block in pending to get the header bytes,
-	     * including any pending bits. This also updates the debugging counts.
-	     */
-	    last = flush === Z_FINISH && len === left + s.strm.avail_in ? 1 : 0;
-	    _tr_stored_block(s, 0, 0, last);
-
-	    /* Replace the lengths in the dummy stored block with len. */
-	    s.pending_buf[s.pending - 4] = len;
-	    s.pending_buf[s.pending - 3] = len >> 8;
-	    s.pending_buf[s.pending - 2] = ~len;
-	    s.pending_buf[s.pending - 1] = ~len >> 8;
-
-	    /* Write the stored block header bytes. */
-	    flush_pending(s.strm);
-
-	//#ifdef ZLIB_DEBUG
-	//    /* Update debugging counts for the data about to be copied. */
-	//    s->compressed_len += len << 3;
-	//    s->bits_sent += len << 3;
-	//#endif
-
-	    /* Copy uncompressed bytes from the window to next_out. */
-	    if (left) {
-	      if (left > len) {
-	        left = len;
-	      }
-	      //zmemcpy(s->strm->next_out, s->window + s->block_start, left);
-	      s.strm.output.set(s.window.subarray(s.block_start, s.block_start + left), s.strm.next_out);
-	      s.strm.next_out += left;
-	      s.strm.avail_out -= left;
-	      s.strm.total_out += left;
-	      s.block_start += left;
-	      len -= left;
-	    }
-
-	    /* Copy uncompressed bytes directly from next_in to next_out, updating
-	     * the check value.
-	     */
-	    if (len) {
-	      read_buf(s.strm, s.strm.output, s.strm.next_out, len);
-	      s.strm.next_out += len;
-	      s.strm.avail_out -= len;
-	      s.strm.total_out += len;
-	    }
-	  } while (last === 0);
-
-	  /* Update the sliding window with the last s->w_size bytes of the copied
-	   * data, or append all of the copied data to the existing window if less
-	   * than s->w_size bytes were copied. Also update the number of bytes to
-	   * insert in the hash tables, in the event that deflateParams() switches to
-	   * a non-zero compression level.
-	   */
-	  used -= s.strm.avail_in;    /* number of input bytes directly copied */
-	  if (used) {
-	    /* If any input was used, then no unused input remains in the window,
-	     * therefore s->block_start == s->strstart.
-	     */
-	    if (used >= s.w_size) {  /* supplant the previous history */
-	      s.matches = 2;     /* clear hash */
-	      //zmemcpy(s->window, s->strm->next_in - s->w_size, s->w_size);
-	      s.window.set(s.strm.input.subarray(s.strm.next_in - s.w_size, s.strm.next_in), 0);
-	      s.strstart = s.w_size;
-	      s.insert = s.strstart;
-	    }
-	    else {
-	      if (s.window_size - s.strstart <= used) {
-	        /* Slide the window down. */
-	        s.strstart -= s.w_size;
-	        //zmemcpy(s->window, s->window + s->w_size, s->strstart);
-	        s.window.set(s.window.subarray(s.w_size, s.w_size + s.strstart), 0);
-	        if (s.matches < 2) {
-	          s.matches++;   /* add a pending slide_hash() */
-	        }
-	        if (s.insert > s.strstart) {
-	          s.insert = s.strstart;
-	        }
-	      }
-	      //zmemcpy(s->window + s->strstart, s->strm->next_in - used, used);
-	      s.window.set(s.strm.input.subarray(s.strm.next_in - used, s.strm.next_in), s.strstart);
-	      s.strstart += used;
-	      s.insert += used > s.w_size - s.insert ? s.w_size - s.insert : used;
-	    }
-	    s.block_start = s.strstart;
-	  }
-	  if (s.high_water < s.strstart) {
-	    s.high_water = s.strstart;
+	  if (max_block_size > s.pending_buf_size - 5) {
+	    max_block_size = s.pending_buf_size - 5;
 	  }
 
-	  /* If the last block was written to next_out, then done. */
-	  if (last) {
+	  /* Copy as much as possible from input to output: */
+	  for (;;) {
+	    /* Fill the window as much as possible: */
+	    if (s.lookahead <= 1) {
+
+	      //Assert(s->strstart < s->w_size+MAX_DIST(s) ||
+	      //  s->block_start >= (long)s->w_size, "slide too late");
+	//      if (!(s.strstart < s.w_size + (s.w_size - MIN_LOOKAHEAD) ||
+	//        s.block_start >= s.w_size)) {
+	//        throw  new Error("slide too late");
+	//      }
+
+	      fill_window(s);
+	      if (s.lookahead === 0 && flush === Z_NO_FLUSH) {
+	        return BS_NEED_MORE;
+	      }
+
+	      if (s.lookahead === 0) {
+	        break;
+	      }
+	      /* flush the current block */
+	    }
+	    //Assert(s->block_start >= 0L, "block gone");
+	//    if (s.block_start < 0) throw new Error("block gone");
+
+	    s.strstart += s.lookahead;
+	    s.lookahead = 0;
+
+	    /* Emit a stored block if pending_buf will be full: */
+	    var max_start = s.block_start + max_block_size;
+
+	    if (s.strstart === 0 || s.strstart >= max_start) {
+	      /* strstart == 0 is possible when wraparound on 16-bit machine */
+	      s.lookahead = s.strstart - max_start;
+	      s.strstart = max_start;
+	      /*** FLUSH_BLOCK(s, 0); ***/
+	      flush_block_only(s, false);
+	      if (s.strm.avail_out === 0) {
+	        return BS_NEED_MORE;
+	      }
+	      /***/
+
+
+	    }
+	    /* Flush if we may have to slide, otherwise block_start may become
+	     * negative and the data will be gone:
+	     */
+	    if (s.strstart - s.block_start >= (s.w_size - MIN_LOOKAHEAD)) {
+	      /*** FLUSH_BLOCK(s, 0); ***/
+	      flush_block_only(s, false);
+	      if (s.strm.avail_out === 0) {
+	        return BS_NEED_MORE;
+	      }
+	      /***/
+	    }
+	  }
+
+	  s.insert = 0;
+
+	  if (flush === Z_FINISH) {
+	    /*** FLUSH_BLOCK(s, 1); ***/
+	    flush_block_only(s, true);
+	    if (s.strm.avail_out === 0) {
+	      return BS_FINISH_STARTED;
+	    }
+	    /***/
 	    return BS_FINISH_DONE;
 	  }
 
-	  /* If flushing and all input has been consumed, then done. */
-	  if (flush !== Z_NO_FLUSH && flush !== Z_FINISH &&
-	    s.strm.avail_in === 0 && s.strstart === s.block_start) {
-	    return BS_BLOCK_DONE;
-	  }
-
-	  /* Fill the window with any remaining input. */
-	  have = s.window_size - s.strstart;
-	  if (s.strm.avail_in > have && s.block_start >= s.w_size) {
-	    /* Slide the window down. */
-	    s.block_start -= s.w_size;
-	    s.strstart -= s.w_size;
-	    //zmemcpy(s->window, s->window + s->w_size, s->strstart);
-	    s.window.set(s.window.subarray(s.w_size, s.w_size + s.strstart), 0);
-	    if (s.matches < 2) {
-	      s.matches++;       /* add a pending slide_hash() */
+	  if (s.strstart > s.block_start) {
+	    /*** FLUSH_BLOCK(s, 0); ***/
+	    flush_block_only(s, false);
+	    if (s.strm.avail_out === 0) {
+	      return BS_NEED_MORE;
 	    }
-	    have += s.w_size;      /* more space now */
-	    if (s.insert > s.strstart) {
-	      s.insert = s.strstart;
-	    }
-	  }
-	  if (have > s.strm.avail_in) {
-	    have = s.strm.avail_in;
-	  }
-	  if (have) {
-	    read_buf(s.strm, s.window, s.strstart, have);
-	    s.strstart += have;
-	    s.insert += have > s.w_size - s.insert ? s.w_size - s.insert : have;
-	  }
-	  if (s.high_water < s.strstart) {
-	    s.high_water = s.strstart;
+	    /***/
 	  }
 
-	  /* There was not enough avail_out to write a complete worthy or flushed
-	   * stored block to next_out. Write a stored block to pending instead, if we
-	   * have enough input for a worthy block, or if flushing and there is enough
-	   * room for the remaining input as a stored block in the pending buffer.
-	   */
-	  have = (s.bi_valid + 42) >> 3;     /* number of header bytes */
-	    /* maximum stored block length that will fit in pending: */
-	  have = s.pending_buf_size - have > 65535/* MAX_STORED */ ? 65535/* MAX_STORED */ : s.pending_buf_size - have;
-	  min_block = have > s.w_size ? s.w_size : have;
-	  left = s.strstart - s.block_start;
-	  if (left >= min_block ||
-	     ((left || flush === Z_FINISH) && flush !== Z_NO_FLUSH &&
-	     s.strm.avail_in === 0 && left <= have)) {
-	    len = left > have ? have : left;
-	    last = flush === Z_FINISH && s.strm.avail_in === 0 &&
-	         len === left ? 1 : 0;
-	    _tr_stored_block(s, s.block_start, len, last);
-	    s.block_start += len;
-	    flush_pending(s.strm);
-	  }
-
-	  /* We've done all we can with the available input and output. */
-	  return last ? BS_FINISH_STARTED : BS_NEED_MORE;
-	};
-
+	  return BS_NEED_MORE;
+	}
 
 	/* ===========================================================================
 	 * Compress as much as possible from the input stream, return the current
@@ -171911,10 +171767,9 @@ function requireDeflate () {
 	 * new strings in the dictionary only for unmatched strings or for short
 	 * matches. It is used only for the fast compression options.
 	 */
-	const deflate_fast = (s, flush) => {
-
-	  let hash_head;        /* head of the hash chain */
-	  let bflush;           /* set if current block must be flushed */
+	function deflate_fast(s, flush) {
+	  var hash_head;        /* head of the hash chain */
+	  var bflush;           /* set if current block must be flushed */
 
 	  for (;;) {
 	    /* Make sure that we always have enough lookahead, except
@@ -171938,7 +171793,7 @@ function requireDeflate () {
 	    hash_head = 0/*NIL*/;
 	    if (s.lookahead >= MIN_MATCH) {
 	      /*** INSERT_STRING(s, s.strstart, hash_head); ***/
-	      s.ins_h = HASH(s, s.ins_h, s.window[s.strstart + MIN_MATCH - 1]);
+	      s.ins_h = ((s.ins_h << s.hash_shift) ^ s.window[s.strstart + MIN_MATCH - 1]) & s.hash_mask;
 	      hash_head = s.prev[s.strstart & s.w_mask] = s.head[s.ins_h];
 	      s.head[s.ins_h] = s.strstart;
 	      /***/
@@ -171960,7 +171815,7 @@ function requireDeflate () {
 
 	      /*** _tr_tally_dist(s, s.strstart - s.match_start,
 	                     s.match_length - MIN_MATCH, bflush); ***/
-	      bflush = _tr_tally(s, s.strstart - s.match_start, s.match_length - MIN_MATCH);
+	      bflush = trees._tr_tally(s, s.strstart - s.match_start, s.match_length - MIN_MATCH);
 
 	      s.lookahead -= s.match_length;
 
@@ -171972,7 +171827,7 @@ function requireDeflate () {
 	        do {
 	          s.strstart++;
 	          /*** INSERT_STRING(s, s.strstart, hash_head); ***/
-	          s.ins_h = HASH(s, s.ins_h, s.window[s.strstart + MIN_MATCH - 1]);
+	          s.ins_h = ((s.ins_h << s.hash_shift) ^ s.window[s.strstart + MIN_MATCH - 1]) & s.hash_mask;
 	          hash_head = s.prev[s.strstart & s.w_mask] = s.head[s.ins_h];
 	          s.head[s.ins_h] = s.strstart;
 	          /***/
@@ -171987,7 +171842,7 @@ function requireDeflate () {
 	        s.match_length = 0;
 	        s.ins_h = s.window[s.strstart];
 	        /* UPDATE_HASH(s, s.ins_h, s.window[s.strstart+1]); */
-	        s.ins_h = HASH(s, s.ins_h, s.window[s.strstart + 1]);
+	        s.ins_h = ((s.ins_h << s.hash_shift) ^ s.window[s.strstart + 1]) & s.hash_mask;
 
 	//#if MIN_MATCH != 3
 	//                Call UPDATE_HASH() MIN_MATCH-3 more times
@@ -172000,7 +171855,7 @@ function requireDeflate () {
 	      /* No match, output a literal byte */
 	      //Tracevv((stderr,"%c", s.window[s.strstart]));
 	      /*** _tr_tally_lit(s, s.window[s.strstart], bflush); ***/
-	      bflush = _tr_tally(s, 0, s.window[s.strstart]);
+	      bflush = trees._tr_tally(s, 0, s.window[s.strstart]);
 
 	      s.lookahead--;
 	      s.strstart++;
@@ -172024,7 +171879,7 @@ function requireDeflate () {
 	    /***/
 	    return BS_FINISH_DONE;
 	  }
-	  if (s.sym_next) {
+	  if (s.last_lit) {
 	    /*** FLUSH_BLOCK(s, 0); ***/
 	    flush_block_only(s, false);
 	    if (s.strm.avail_out === 0) {
@@ -172033,19 +171888,18 @@ function requireDeflate () {
 	    /***/
 	  }
 	  return BS_BLOCK_DONE;
-	};
+	}
 
 	/* ===========================================================================
 	 * Same as above, but achieves better compression. We use a lazy
 	 * evaluation for matches: a match is finally adopted only if there is
 	 * no better match at the next window position.
 	 */
-	const deflate_slow = (s, flush) => {
+	function deflate_slow(s, flush) {
+	  var hash_head;          /* head of hash chain */
+	  var bflush;              /* set if current block must be flushed */
 
-	  let hash_head;          /* head of hash chain */
-	  let bflush;              /* set if current block must be flushed */
-
-	  let max_insert;
+	  var max_insert;
 
 	  /* Process the input block. */
 	  for (;;) {
@@ -172068,7 +171922,7 @@ function requireDeflate () {
 	    hash_head = 0/*NIL*/;
 	    if (s.lookahead >= MIN_MATCH) {
 	      /*** INSERT_STRING(s, s.strstart, hash_head); ***/
-	      s.ins_h = HASH(s, s.ins_h, s.window[s.strstart + MIN_MATCH - 1]);
+	      s.ins_h = ((s.ins_h << s.hash_shift) ^ s.window[s.strstart + MIN_MATCH - 1]) & s.hash_mask;
 	      hash_head = s.prev[s.strstart & s.w_mask] = s.head[s.ins_h];
 	      s.head[s.ins_h] = s.strstart;
 	      /***/
@@ -172109,7 +171963,7 @@ function requireDeflate () {
 
 	      /***_tr_tally_dist(s, s.strstart - 1 - s.prev_match,
 	                     s.prev_length - MIN_MATCH, bflush);***/
-	      bflush = _tr_tally(s, s.strstart - 1 - s.prev_match, s.prev_length - MIN_MATCH);
+	      bflush = trees._tr_tally(s, s.strstart - 1 - s.prev_match, s.prev_length - MIN_MATCH);
 	      /* Insert in hash table all strings up to the end of the match.
 	       * strstart-1 and strstart are already inserted. If there is not
 	       * enough lookahead, the last two strings are not inserted in
@@ -172120,7 +171974,7 @@ function requireDeflate () {
 	      do {
 	        if (++s.strstart <= max_insert) {
 	          /*** INSERT_STRING(s, s.strstart, hash_head); ***/
-	          s.ins_h = HASH(s, s.ins_h, s.window[s.strstart + MIN_MATCH - 1]);
+	          s.ins_h = ((s.ins_h << s.hash_shift) ^ s.window[s.strstart + MIN_MATCH - 1]) & s.hash_mask;
 	          hash_head = s.prev[s.strstart & s.w_mask] = s.head[s.ins_h];
 	          s.head[s.ins_h] = s.strstart;
 	          /***/
@@ -172146,7 +172000,7 @@ function requireDeflate () {
 	       */
 	      //Tracevv((stderr,"%c", s->window[s->strstart-1]));
 	      /*** _tr_tally_lit(s, s.window[s.strstart-1], bflush); ***/
-	      bflush = _tr_tally(s, 0, s.window[s.strstart - 1]);
+	      bflush = trees._tr_tally(s, 0, s.window[s.strstart - 1]);
 
 	      if (bflush) {
 	        /*** FLUSH_BLOCK_ONLY(s, 0) ***/
@@ -172171,7 +172025,7 @@ function requireDeflate () {
 	  if (s.match_available) {
 	    //Tracevv((stderr,"%c", s->window[s->strstart-1]));
 	    /*** _tr_tally_lit(s, s.window[s.strstart-1], bflush); ***/
-	    bflush = _tr_tally(s, 0, s.window[s.strstart - 1]);
+	    bflush = trees._tr_tally(s, 0, s.window[s.strstart - 1]);
 
 	    s.match_available = 0;
 	  }
@@ -172185,7 +172039,7 @@ function requireDeflate () {
 	    /***/
 	    return BS_FINISH_DONE;
 	  }
-	  if (s.sym_next) {
+	  if (s.last_lit) {
 	    /*** FLUSH_BLOCK(s, 0); ***/
 	    flush_block_only(s, false);
 	    if (s.strm.avail_out === 0) {
@@ -172195,7 +172049,7 @@ function requireDeflate () {
 	  }
 
 	  return BS_BLOCK_DONE;
-	};
+	}
 
 
 	/* ===========================================================================
@@ -172203,13 +172057,12 @@ function requireDeflate () {
 	 * one.  Do not maintain a hash table.  (It will be regenerated if this run of
 	 * deflate switches away from Z_RLE.)
 	 */
-	const deflate_rle = (s, flush) => {
+	function deflate_rle(s, flush) {
+	  var bflush;            /* set if current block must be flushed */
+	  var prev;              /* byte at distance one to match */
+	  var scan, strend;      /* scan goes up to strend for length of run */
 
-	  let bflush;            /* set if current block must be flushed */
-	  let prev;              /* byte at distance one to match */
-	  let scan, strend;      /* scan goes up to strend for length of run */
-
-	  const _win = s.window;
+	  var _win = s.window;
 
 	  for (;;) {
 	    /* Make sure that we always have enough lookahead, except
@@ -172251,7 +172104,7 @@ function requireDeflate () {
 	      //check_match(s, s.strstart, s.strstart - 1, s.match_length);
 
 	      /*** _tr_tally_dist(s, 1, s.match_length - MIN_MATCH, bflush); ***/
-	      bflush = _tr_tally(s, 1, s.match_length - MIN_MATCH);
+	      bflush = trees._tr_tally(s, 1, s.match_length - MIN_MATCH);
 
 	      s.lookahead -= s.match_length;
 	      s.strstart += s.match_length;
@@ -172260,7 +172113,7 @@ function requireDeflate () {
 	      /* No match, output a literal byte */
 	      //Tracevv((stderr,"%c", s->window[s->strstart]));
 	      /*** _tr_tally_lit(s, s.window[s.strstart], bflush); ***/
-	      bflush = _tr_tally(s, 0, s.window[s.strstart]);
+	      bflush = trees._tr_tally(s, 0, s.window[s.strstart]);
 
 	      s.lookahead--;
 	      s.strstart++;
@@ -172284,7 +172137,7 @@ function requireDeflate () {
 	    /***/
 	    return BS_FINISH_DONE;
 	  }
-	  if (s.sym_next) {
+	  if (s.last_lit) {
 	    /*** FLUSH_BLOCK(s, 0); ***/
 	    flush_block_only(s, false);
 	    if (s.strm.avail_out === 0) {
@@ -172293,15 +172146,14 @@ function requireDeflate () {
 	    /***/
 	  }
 	  return BS_BLOCK_DONE;
-	};
+	}
 
 	/* ===========================================================================
 	 * For Z_HUFFMAN_ONLY, do not look for matches.  Do not maintain a hash table.
 	 * (It will be regenerated if this run of deflate switches away from Huffman.)
 	 */
-	const deflate_huff = (s, flush) => {
-
-	  let bflush;             /* set if current block must be flushed */
+	function deflate_huff(s, flush) {
+	  var bflush;             /* set if current block must be flushed */
 
 	  for (;;) {
 	    /* Make sure that we have a literal to write. */
@@ -172319,7 +172171,7 @@ function requireDeflate () {
 	    s.match_length = 0;
 	    //Tracevv((stderr,"%c", s->window[s->strstart]));
 	    /*** _tr_tally_lit(s, s.window[s.strstart], bflush); ***/
-	    bflush = _tr_tally(s, 0, s.window[s.strstart]);
+	    bflush = trees._tr_tally(s, 0, s.window[s.strstart]);
 	    s.lookahead--;
 	    s.strstart++;
 	    if (bflush) {
@@ -172341,7 +172193,7 @@ function requireDeflate () {
 	    /***/
 	    return BS_FINISH_DONE;
 	  }
-	  if (s.sym_next) {
+	  if (s.last_lit) {
 	    /*** FLUSH_BLOCK(s, 0); ***/
 	    flush_block_only(s, false);
 	    if (s.strm.avail_out === 0) {
@@ -172350,7 +172202,7 @@ function requireDeflate () {
 	    /***/
 	  }
 	  return BS_BLOCK_DONE;
-	};
+	}
 
 	/* Values for max_lazy_match, good_match and max_chain_length, depending on
 	 * the desired pack level (0..9). The values given below have been tuned to
@@ -172358,7 +172210,6 @@ function requireDeflate () {
 	 * found for specific files.
 	 */
 	function Config(good_length, max_lazy, nice_length, max_chain, func) {
-
 	  this.good_length = good_length;
 	  this.max_lazy = max_lazy;
 	  this.nice_length = nice_length;
@@ -172366,7 +172217,9 @@ function requireDeflate () {
 	  this.func = func;
 	}
 
-	const configuration_table = [
+	var configuration_table;
+
+	configuration_table = [
 	  /*      good lazy nice chain */
 	  new Config(0, 0, 0, 0, deflate_stored),          /* 0 store only */
 	  new Config(4, 4, 8, 4, deflate_fast),            /* 1 max speed, no lazy matches */
@@ -172385,8 +172238,7 @@ function requireDeflate () {
 	/* ===========================================================================
 	 * Initialize the "longest match" routines for a new zlib stream
 	 */
-	const lm_init = (s) => {
-
+	function lm_init(s) {
 	  s.window_size = 2 * s.w_size;
 
 	  /*** CLEAR_HASH(s); ***/
@@ -172406,7 +172258,7 @@ function requireDeflate () {
 	  s.match_length = s.prev_length = MIN_MATCH - 1;
 	  s.match_available = 0;
 	  s.ins_h = 0;
-	};
+	}
 
 
 	function DeflateState() {
@@ -172512,9 +172364,9 @@ function requireDeflate () {
 
 	  // Use flat array of DOUBLE size, with interleaved fata,
 	  // because JS does not support effective
-	  this.dyn_ltree  = new Uint16Array(HEAP_SIZE * 2);
-	  this.dyn_dtree  = new Uint16Array((2 * D_CODES + 1) * 2);
-	  this.bl_tree    = new Uint16Array((2 * BL_CODES + 1) * 2);
+	  this.dyn_ltree  = new utils.Buf16(HEAP_SIZE * 2);
+	  this.dyn_dtree  = new utils.Buf16((2 * D_CODES + 1) * 2);
+	  this.bl_tree    = new utils.Buf16((2 * BL_CODES + 1) * 2);
 	  zero(this.dyn_ltree);
 	  zero(this.dyn_dtree);
 	  zero(this.bl_tree);
@@ -172524,11 +172376,11 @@ function requireDeflate () {
 	  this.bl_desc  = null;         /* desc. for bit length tree */
 
 	  //ush bl_count[MAX_BITS+1];
-	  this.bl_count = new Uint16Array(MAX_BITS + 1);
+	  this.bl_count = new utils.Buf16(MAX_BITS + 1);
 	  /* number of codes at each bit length for an optimal tree */
 
 	  //int heap[2*L_CODES+1];      /* heap used to build the Huffman trees */
-	  this.heap = new Uint16Array(2 * L_CODES + 1);  /* heap used to build the Huffman trees */
+	  this.heap = new utils.Buf16(2 * L_CODES + 1);  /* heap used to build the Huffman trees */
 	  zero(this.heap);
 
 	  this.heap_len = 0;               /* number of elements in the heap */
@@ -172537,12 +172389,12 @@ function requireDeflate () {
 	   * The same heap array is used to build all trees.
 	   */
 
-	  this.depth = new Uint16Array(2 * L_CODES + 1); //uch depth[2*L_CODES+1];
+	  this.depth = new utils.Buf16(2 * L_CODES + 1); //uch depth[2*L_CODES+1];
 	  zero(this.depth);
 	  /* Depth of each subtree used as tie breaker for trees of equal frequency
 	   */
 
-	  this.sym_buf = 0;        /* buffer for distances and literals/lengths */
+	  this.l_buf = 0;          /* buffer index for literals or lengths */
 
 	  this.lit_bufsize = 0;
 	  /* Size of match buffer for literals/lengths.  There are 4 reasons for
@@ -172564,8 +172416,13 @@ function requireDeflate () {
 	   *   - I can't count above 4
 	   */
 
-	  this.sym_next = 0;      /* running index in sym_buf */
-	  this.sym_end = 0;       /* symbol table full when sym_next reaches this */
+	  this.last_lit = 0;      /* running index in l_buf */
+
+	  this.d_buf = 0;
+	  /* Buffer index for distances. To simplify the code, d_buf and l_buf have
+	   * the same number of elements. To use different lengths, an extra flag
+	   * array would be necessary.
+	   */
 
 	  this.opt_len = 0;       /* bit length of current block with optimal trees */
 	  this.static_len = 0;    /* bit length of current block with static trees */
@@ -172593,41 +172450,17 @@ function requireDeflate () {
 	}
 
 
-	/* =========================================================================
-	 * Check for a valid deflate stream state. Return 0 if ok, 1 if not.
-	 */
-	const deflateStateCheck = (strm) => {
+	function deflateResetKeep(strm) {
+	  var s;
 
-	  if (!strm) {
-	    return 1;
-	  }
-	  const s = strm.state;
-	  if (!s || s.strm !== strm || (s.status !== INIT_STATE &&
-	//#ifdef GZIP
-	                                s.status !== GZIP_STATE &&
-	//#endif
-	                                s.status !== EXTRA_STATE &&
-	                                s.status !== NAME_STATE &&
-	                                s.status !== COMMENT_STATE &&
-	                                s.status !== HCRC_STATE &&
-	                                s.status !== BUSY_STATE &&
-	                                s.status !== FINISH_STATE)) {
-	    return 1;
-	  }
-	  return 0;
-	};
-
-
-	const deflateResetKeep = (strm) => {
-
-	  if (deflateStateCheck(strm)) {
+	  if (!strm || !strm.state) {
 	    return err(strm, Z_STREAM_ERROR);
 	  }
 
 	  strm.total_in = strm.total_out = 0;
 	  strm.data_type = Z_UNKNOWN;
 
-	  const s = strm.state;
+	  s = strm.state;
 	  s.pending = 0;
 	  s.pending_out = 0;
 
@@ -172635,47 +172468,39 @@ function requireDeflate () {
 	    s.wrap = -s.wrap;
 	    /* was made negative by deflate(..., Z_FINISH); */
 	  }
-	  s.status =
-	//#ifdef GZIP
-	    s.wrap === 2 ? GZIP_STATE :
-	//#endif
-	    s.wrap ? INIT_STATE : BUSY_STATE;
+	  s.status = (s.wrap ? INIT_STATE : BUSY_STATE);
 	  strm.adler = (s.wrap === 2) ?
 	    0  // crc32(0, Z_NULL, 0)
 	  :
 	    1; // adler32(0, Z_NULL, 0)
-	  s.last_flush = -2;
-	  _tr_init(s);
+	  s.last_flush = Z_NO_FLUSH;
+	  trees._tr_init(s);
 	  return Z_OK;
-	};
+	}
 
 
-	const deflateReset = (strm) => {
-
-	  const ret = deflateResetKeep(strm);
+	function deflateReset(strm) {
+	  var ret = deflateResetKeep(strm);
 	  if (ret === Z_OK) {
 	    lm_init(strm.state);
 	  }
 	  return ret;
-	};
+	}
 
 
-	const deflateSetHeader = (strm, head) => {
-
-	  if (deflateStateCheck(strm) || strm.state.wrap !== 2) {
-	    return Z_STREAM_ERROR;
-	  }
+	function deflateSetHeader(strm, head) {
+	  if (!strm || !strm.state) { return Z_STREAM_ERROR; }
+	  if (strm.state.wrap !== 2) { return Z_STREAM_ERROR; }
 	  strm.state.gzhead = head;
 	  return Z_OK;
-	};
+	}
 
 
-	const deflateInit2 = (strm, level, method, windowBits, memLevel, strategy) => {
-
+	function deflateInit2(strm, level, method, windowBits, memLevel, strategy) {
 	  if (!strm) { // === Z_NULL
 	    return Z_STREAM_ERROR;
 	  }
-	  let wrap = 1;
+	  var wrap = 1;
 
 	  if (level === Z_DEFAULT_COMPRESSION) {
 	    level = 6;
@@ -172694,7 +172519,7 @@ function requireDeflate () {
 
 	  if (memLevel < 1 || memLevel > MAX_MEM_LEVEL || method !== Z_DEFLATED ||
 	    windowBits < 8 || windowBits > 15 || level < 0 || level > 9 ||
-	    strategy < 0 || strategy > Z_FIXED || (windowBits === 8 && wrap !== 1)) {
+	    strategy < 0 || strategy > Z_FIXED) {
 	    return err(strm, Z_STREAM_ERROR);
 	  }
 
@@ -172704,11 +172529,10 @@ function requireDeflate () {
 	  }
 	  /* until 256-byte window bug fixed */
 
-	  const s = new DeflateState();
+	  var s = new DeflateState();
 
 	  strm.state = s;
 	  s.strm = strm;
-	  s.status = INIT_STATE;     /* to pass state test in deflateReset() */
 
 	  s.wrap = wrap;
 	  s.gzhead = null;
@@ -172721,98 +172545,260 @@ function requireDeflate () {
 	  s.hash_mask = s.hash_size - 1;
 	  s.hash_shift = ~~((s.hash_bits + MIN_MATCH - 1) / MIN_MATCH);
 
-	  s.window = new Uint8Array(s.w_size * 2);
-	  s.head = new Uint16Array(s.hash_size);
-	  s.prev = new Uint16Array(s.w_size);
+	  s.window = new utils.Buf8(s.w_size * 2);
+	  s.head = new utils.Buf16(s.hash_size);
+	  s.prev = new utils.Buf16(s.w_size);
 
 	  // Don't need mem init magic for JS.
 	  //s.high_water = 0;  /* nothing written to s->window yet */
 
 	  s.lit_bufsize = 1 << (memLevel + 6); /* 16K elements by default */
 
-	  /* We overlay pending_buf and sym_buf. This works since the average size
-	   * for length/distance pairs over any compressed block is assured to be 31
-	   * bits or less.
-	   *
-	   * Analysis: The longest fixed codes are a length code of 8 bits plus 5
-	   * extra bits, for lengths 131 to 257. The longest fixed distance codes are
-	   * 5 bits plus 13 extra bits, for distances 16385 to 32768. The longest
-	   * possible fixed-codes length/distance pair is then 31 bits total.
-	   *
-	   * sym_buf starts one-fourth of the way into pending_buf. So there are
-	   * three bytes in sym_buf for every four bytes in pending_buf. Each symbol
-	   * in sym_buf is three bytes -- two for the distance and one for the
-	   * literal/length. As each symbol is consumed, the pointer to the next
-	   * sym_buf value to read moves forward three bytes. From that symbol, up to
-	   * 31 bits are written to pending_buf. The closest the written pending_buf
-	   * bits gets to the next sym_buf symbol to read is just before the last
-	   * code is written. At that time, 31*(n-2) bits have been written, just
-	   * after 24*(n-2) bits have been consumed from sym_buf. sym_buf starts at
-	   * 8*n bits into pending_buf. (Note that the symbol buffer fills when n-1
-	   * symbols are written.) The closest the writing gets to what is unread is
-	   * then n+14 bits. Here n is lit_bufsize, which is 16384 by default, and
-	   * can range from 128 to 32768.
-	   *
-	   * Therefore, at a minimum, there are 142 bits of space between what is
-	   * written and what is read in the overlain buffers, so the symbols cannot
-	   * be overwritten by the compressed data. That space is actually 139 bits,
-	   * due to the three-bit fixed-code block header.
-	   *
-	   * That covers the case where either Z_FIXED is specified, forcing fixed
-	   * codes, or when the use of fixed codes is chosen, because that choice
-	   * results in a smaller compressed block than dynamic codes. That latter
-	   * condition then assures that the above analysis also covers all dynamic
-	   * blocks. A dynamic-code block will only be chosen to be emitted if it has
-	   * fewer bits than a fixed-code block would for the same set of symbols.
-	   * Therefore its average symbol length is assured to be less than 31. So
-	   * the compressed data for a dynamic block also cannot overwrite the
-	   * symbols from which it is being constructed.
-	   */
-
 	  s.pending_buf_size = s.lit_bufsize * 4;
-	  s.pending_buf = new Uint8Array(s.pending_buf_size);
+
+	  //overlay = (ushf *) ZALLOC(strm, s->lit_bufsize, sizeof(ush)+2);
+	  //s->pending_buf = (uchf *) overlay;
+	  s.pending_buf = new utils.Buf8(s.pending_buf_size);
 
 	  // It is offset from `s.pending_buf` (size is `s.lit_bufsize * 2`)
-	  //s->sym_buf = s->pending_buf + s->lit_bufsize;
-	  s.sym_buf = s.lit_bufsize;
+	  //s->d_buf = overlay + s->lit_bufsize/sizeof(ush);
+	  s.d_buf = 1 * s.lit_bufsize;
 
-	  //s->sym_end = (s->lit_bufsize - 1) * 3;
-	  s.sym_end = (s.lit_bufsize - 1) * 3;
-	  /* We avoid equality with lit_bufsize*3 because of wraparound at 64K
-	   * on 16 bit machines and because stored blocks are restricted to
-	   * 64K-1 bytes.
-	   */
+	  //s->l_buf = s->pending_buf + (1+sizeof(ush))*s->lit_bufsize;
+	  s.l_buf = (1 + 2) * s.lit_bufsize;
 
 	  s.level = level;
 	  s.strategy = strategy;
 	  s.method = method;
 
 	  return deflateReset(strm);
-	};
+	}
 
-	const deflateInit = (strm, level) => {
-
+	function deflateInit(strm, level) {
 	  return deflateInit2(strm, level, Z_DEFLATED, MAX_WBITS, DEF_MEM_LEVEL, Z_DEFAULT_STRATEGY);
-	};
+	}
 
 
-	/* ========================================================================= */
-	const deflate = (strm, flush) => {
+	function deflate(strm, flush) {
+	  var old_flush, s;
+	  var beg, val; // for gzip header write only
 
-	  if (deflateStateCheck(strm) || flush > Z_BLOCK || flush < 0) {
+	  if (!strm || !strm.state ||
+	    flush > Z_BLOCK || flush < 0) {
 	    return strm ? err(strm, Z_STREAM_ERROR) : Z_STREAM_ERROR;
 	  }
 
-	  const s = strm.state;
+	  s = strm.state;
 
 	  if (!strm.output ||
-	      (strm.avail_in !== 0 && !strm.input) ||
+	      (!strm.input && strm.avail_in !== 0) ||
 	      (s.status === FINISH_STATE && flush !== Z_FINISH)) {
 	    return err(strm, (strm.avail_out === 0) ? Z_BUF_ERROR : Z_STREAM_ERROR);
 	  }
 
-	  const old_flush = s.last_flush;
+	  s.strm = strm; /* just in case */
+	  old_flush = s.last_flush;
 	  s.last_flush = flush;
+
+	  /* Write the header */
+	  if (s.status === INIT_STATE) {
+
+	    if (s.wrap === 2) { // GZIP header
+	      strm.adler = 0;  //crc32(0L, Z_NULL, 0);
+	      put_byte(s, 31);
+	      put_byte(s, 139);
+	      put_byte(s, 8);
+	      if (!s.gzhead) { // s->gzhead == Z_NULL
+	        put_byte(s, 0);
+	        put_byte(s, 0);
+	        put_byte(s, 0);
+	        put_byte(s, 0);
+	        put_byte(s, 0);
+	        put_byte(s, s.level === 9 ? 2 :
+	                    (s.strategy >= Z_HUFFMAN_ONLY || s.level < 2 ?
+	                     4 : 0));
+	        put_byte(s, OS_CODE);
+	        s.status = BUSY_STATE;
+	      }
+	      else {
+	        put_byte(s, (s.gzhead.text ? 1 : 0) +
+	                    (s.gzhead.hcrc ? 2 : 0) +
+	                    (!s.gzhead.extra ? 0 : 4) +
+	                    (!s.gzhead.name ? 0 : 8) +
+	                    (!s.gzhead.comment ? 0 : 16)
+	        );
+	        put_byte(s, s.gzhead.time & 0xff);
+	        put_byte(s, (s.gzhead.time >> 8) & 0xff);
+	        put_byte(s, (s.gzhead.time >> 16) & 0xff);
+	        put_byte(s, (s.gzhead.time >> 24) & 0xff);
+	        put_byte(s, s.level === 9 ? 2 :
+	                    (s.strategy >= Z_HUFFMAN_ONLY || s.level < 2 ?
+	                     4 : 0));
+	        put_byte(s, s.gzhead.os & 0xff);
+	        if (s.gzhead.extra && s.gzhead.extra.length) {
+	          put_byte(s, s.gzhead.extra.length & 0xff);
+	          put_byte(s, (s.gzhead.extra.length >> 8) & 0xff);
+	        }
+	        if (s.gzhead.hcrc) {
+	          strm.adler = crc32(strm.adler, s.pending_buf, s.pending, 0);
+	        }
+	        s.gzindex = 0;
+	        s.status = EXTRA_STATE;
+	      }
+	    }
+	    else // DEFLATE header
+	    {
+	      var header = (Z_DEFLATED + ((s.w_bits - 8) << 4)) << 8;
+	      var level_flags = -1;
+
+	      if (s.strategy >= Z_HUFFMAN_ONLY || s.level < 2) {
+	        level_flags = 0;
+	      } else if (s.level < 6) {
+	        level_flags = 1;
+	      } else if (s.level === 6) {
+	        level_flags = 2;
+	      } else {
+	        level_flags = 3;
+	      }
+	      header |= (level_flags << 6);
+	      if (s.strstart !== 0) { header |= PRESET_DICT; }
+	      header += 31 - (header % 31);
+
+	      s.status = BUSY_STATE;
+	      putShortMSB(s, header);
+
+	      /* Save the adler32 of the preset dictionary: */
+	      if (s.strstart !== 0) {
+	        putShortMSB(s, strm.adler >>> 16);
+	        putShortMSB(s, strm.adler & 0xffff);
+	      }
+	      strm.adler = 1; // adler32(0L, Z_NULL, 0);
+	    }
+	  }
+
+	//#ifdef GZIP
+	  if (s.status === EXTRA_STATE) {
+	    if (s.gzhead.extra/* != Z_NULL*/) {
+	      beg = s.pending;  /* start of bytes to update crc */
+
+	      while (s.gzindex < (s.gzhead.extra.length & 0xffff)) {
+	        if (s.pending === s.pending_buf_size) {
+	          if (s.gzhead.hcrc && s.pending > beg) {
+	            strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
+	          }
+	          flush_pending(strm);
+	          beg = s.pending;
+	          if (s.pending === s.pending_buf_size) {
+	            break;
+	          }
+	        }
+	        put_byte(s, s.gzhead.extra[s.gzindex] & 0xff);
+	        s.gzindex++;
+	      }
+	      if (s.gzhead.hcrc && s.pending > beg) {
+	        strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
+	      }
+	      if (s.gzindex === s.gzhead.extra.length) {
+	        s.gzindex = 0;
+	        s.status = NAME_STATE;
+	      }
+	    }
+	    else {
+	      s.status = NAME_STATE;
+	    }
+	  }
+	  if (s.status === NAME_STATE) {
+	    if (s.gzhead.name/* != Z_NULL*/) {
+	      beg = s.pending;  /* start of bytes to update crc */
+	      //int val;
+
+	      do {
+	        if (s.pending === s.pending_buf_size) {
+	          if (s.gzhead.hcrc && s.pending > beg) {
+	            strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
+	          }
+	          flush_pending(strm);
+	          beg = s.pending;
+	          if (s.pending === s.pending_buf_size) {
+	            val = 1;
+	            break;
+	          }
+	        }
+	        // JS specific: little magic to add zero terminator to end of string
+	        if (s.gzindex < s.gzhead.name.length) {
+	          val = s.gzhead.name.charCodeAt(s.gzindex++) & 0xff;
+	        } else {
+	          val = 0;
+	        }
+	        put_byte(s, val);
+	      } while (val !== 0);
+
+	      if (s.gzhead.hcrc && s.pending > beg) {
+	        strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
+	      }
+	      if (val === 0) {
+	        s.gzindex = 0;
+	        s.status = COMMENT_STATE;
+	      }
+	    }
+	    else {
+	      s.status = COMMENT_STATE;
+	    }
+	  }
+	  if (s.status === COMMENT_STATE) {
+	    if (s.gzhead.comment/* != Z_NULL*/) {
+	      beg = s.pending;  /* start of bytes to update crc */
+	      //int val;
+
+	      do {
+	        if (s.pending === s.pending_buf_size) {
+	          if (s.gzhead.hcrc && s.pending > beg) {
+	            strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
+	          }
+	          flush_pending(strm);
+	          beg = s.pending;
+	          if (s.pending === s.pending_buf_size) {
+	            val = 1;
+	            break;
+	          }
+	        }
+	        // JS specific: little magic to add zero terminator to end of string
+	        if (s.gzindex < s.gzhead.comment.length) {
+	          val = s.gzhead.comment.charCodeAt(s.gzindex++) & 0xff;
+	        } else {
+	          val = 0;
+	        }
+	        put_byte(s, val);
+	      } while (val !== 0);
+
+	      if (s.gzhead.hcrc && s.pending > beg) {
+	        strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
+	      }
+	      if (val === 0) {
+	        s.status = HCRC_STATE;
+	      }
+	    }
+	    else {
+	      s.status = HCRC_STATE;
+	    }
+	  }
+	  if (s.status === HCRC_STATE) {
+	    if (s.gzhead.hcrc) {
+	      if (s.pending + 2 > s.pending_buf_size) {
+	        flush_pending(strm);
+	      }
+	      if (s.pending + 2 <= s.pending_buf_size) {
+	        put_byte(s, strm.adler & 0xff);
+	        put_byte(s, (strm.adler >> 8) & 0xff);
+	        strm.adler = 0; //crc32(0L, Z_NULL, 0);
+	        s.status = BUSY_STATE;
+	      }
+	    }
+	    else {
+	      s.status = BUSY_STATE;
+	    }
+	  }
+	//#endif
 
 	  /* Flush as much pending output as possible */
 	  if (s.pending !== 0) {
@@ -172842,238 +172828,13 @@ function requireDeflate () {
 	    return err(strm, Z_BUF_ERROR);
 	  }
 
-	  /* Write the header */
-	  if (s.status === INIT_STATE && s.wrap === 0) {
-	    s.status = BUSY_STATE;
-	  }
-	  if (s.status === INIT_STATE) {
-	    /* zlib header */
-	    let header = (Z_DEFLATED + ((s.w_bits - 8) << 4)) << 8;
-	    let level_flags = -1;
-
-	    if (s.strategy >= Z_HUFFMAN_ONLY || s.level < 2) {
-	      level_flags = 0;
-	    } else if (s.level < 6) {
-	      level_flags = 1;
-	    } else if (s.level === 6) {
-	      level_flags = 2;
-	    } else {
-	      level_flags = 3;
-	    }
-	    header |= (level_flags << 6);
-	    if (s.strstart !== 0) { header |= PRESET_DICT; }
-	    header += 31 - (header % 31);
-
-	    putShortMSB(s, header);
-
-	    /* Save the adler32 of the preset dictionary: */
-	    if (s.strstart !== 0) {
-	      putShortMSB(s, strm.adler >>> 16);
-	      putShortMSB(s, strm.adler & 0xffff);
-	    }
-	    strm.adler = 1; // adler32(0L, Z_NULL, 0);
-	    s.status = BUSY_STATE;
-
-	    /* Compression must start with an empty pending buffer */
-	    flush_pending(strm);
-	    if (s.pending !== 0) {
-	      s.last_flush = -1;
-	      return Z_OK;
-	    }
-	  }
-	//#ifdef GZIP
-	  if (s.status === GZIP_STATE) {
-	    /* gzip header */
-	    strm.adler = 0;  //crc32(0L, Z_NULL, 0);
-	    put_byte(s, 31);
-	    put_byte(s, 139);
-	    put_byte(s, 8);
-	    if (!s.gzhead) { // s->gzhead == Z_NULL
-	      put_byte(s, 0);
-	      put_byte(s, 0);
-	      put_byte(s, 0);
-	      put_byte(s, 0);
-	      put_byte(s, 0);
-	      put_byte(s, s.level === 9 ? 2 :
-	                  (s.strategy >= Z_HUFFMAN_ONLY || s.level < 2 ?
-	                   4 : 0));
-	      put_byte(s, OS_CODE);
-	      s.status = BUSY_STATE;
-
-	      /* Compression must start with an empty pending buffer */
-	      flush_pending(strm);
-	      if (s.pending !== 0) {
-	        s.last_flush = -1;
-	        return Z_OK;
-	      }
-	    }
-	    else {
-	      put_byte(s, (s.gzhead.text ? 1 : 0) +
-	                  (s.gzhead.hcrc ? 2 : 0) +
-	                  (!s.gzhead.extra ? 0 : 4) +
-	                  (!s.gzhead.name ? 0 : 8) +
-	                  (!s.gzhead.comment ? 0 : 16)
-	      );
-	      put_byte(s, s.gzhead.time & 0xff);
-	      put_byte(s, (s.gzhead.time >> 8) & 0xff);
-	      put_byte(s, (s.gzhead.time >> 16) & 0xff);
-	      put_byte(s, (s.gzhead.time >> 24) & 0xff);
-	      put_byte(s, s.level === 9 ? 2 :
-	                  (s.strategy >= Z_HUFFMAN_ONLY || s.level < 2 ?
-	                   4 : 0));
-	      put_byte(s, s.gzhead.os & 0xff);
-	      if (s.gzhead.extra && s.gzhead.extra.length) {
-	        put_byte(s, s.gzhead.extra.length & 0xff);
-	        put_byte(s, (s.gzhead.extra.length >> 8) & 0xff);
-	      }
-	      if (s.gzhead.hcrc) {
-	        strm.adler = crc32(strm.adler, s.pending_buf, s.pending, 0);
-	      }
-	      s.gzindex = 0;
-	      s.status = EXTRA_STATE;
-	    }
-	  }
-	  if (s.status === EXTRA_STATE) {
-	    if (s.gzhead.extra/* != Z_NULL*/) {
-	      let beg = s.pending;   /* start of bytes to update crc */
-	      let left = (s.gzhead.extra.length & 0xffff) - s.gzindex;
-	      while (s.pending + left > s.pending_buf_size) {
-	        let copy = s.pending_buf_size - s.pending;
-	        // zmemcpy(s.pending_buf + s.pending,
-	        //    s.gzhead.extra + s.gzindex, copy);
-	        s.pending_buf.set(s.gzhead.extra.subarray(s.gzindex, s.gzindex + copy), s.pending);
-	        s.pending = s.pending_buf_size;
-	        //--- HCRC_UPDATE(beg) ---//
-	        if (s.gzhead.hcrc && s.pending > beg) {
-	          strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
-	        }
-	        //---//
-	        s.gzindex += copy;
-	        flush_pending(strm);
-	        if (s.pending !== 0) {
-	          s.last_flush = -1;
-	          return Z_OK;
-	        }
-	        beg = 0;
-	        left -= copy;
-	      }
-	      // JS specific: s.gzhead.extra may be TypedArray or Array for backward compatibility
-	      //              TypedArray.slice and TypedArray.from don't exist in IE10-IE11
-	      let gzhead_extra = new Uint8Array(s.gzhead.extra);
-	      // zmemcpy(s->pending_buf + s->pending,
-	      //     s->gzhead->extra + s->gzindex, left);
-	      s.pending_buf.set(gzhead_extra.subarray(s.gzindex, s.gzindex + left), s.pending);
-	      s.pending += left;
-	      //--- HCRC_UPDATE(beg) ---//
-	      if (s.gzhead.hcrc && s.pending > beg) {
-	        strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
-	      }
-	      //---//
-	      s.gzindex = 0;
-	    }
-	    s.status = NAME_STATE;
-	  }
-	  if (s.status === NAME_STATE) {
-	    if (s.gzhead.name/* != Z_NULL*/) {
-	      let beg = s.pending;   /* start of bytes to update crc */
-	      let val;
-	      do {
-	        if (s.pending === s.pending_buf_size) {
-	          //--- HCRC_UPDATE(beg) ---//
-	          if (s.gzhead.hcrc && s.pending > beg) {
-	            strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
-	          }
-	          //---//
-	          flush_pending(strm);
-	          if (s.pending !== 0) {
-	            s.last_flush = -1;
-	            return Z_OK;
-	          }
-	          beg = 0;
-	        }
-	        // JS specific: little magic to add zero terminator to end of string
-	        if (s.gzindex < s.gzhead.name.length) {
-	          val = s.gzhead.name.charCodeAt(s.gzindex++) & 0xff;
-	        } else {
-	          val = 0;
-	        }
-	        put_byte(s, val);
-	      } while (val !== 0);
-	      //--- HCRC_UPDATE(beg) ---//
-	      if (s.gzhead.hcrc && s.pending > beg) {
-	        strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
-	      }
-	      //---//
-	      s.gzindex = 0;
-	    }
-	    s.status = COMMENT_STATE;
-	  }
-	  if (s.status === COMMENT_STATE) {
-	    if (s.gzhead.comment/* != Z_NULL*/) {
-	      let beg = s.pending;   /* start of bytes to update crc */
-	      let val;
-	      do {
-	        if (s.pending === s.pending_buf_size) {
-	          //--- HCRC_UPDATE(beg) ---//
-	          if (s.gzhead.hcrc && s.pending > beg) {
-	            strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
-	          }
-	          //---//
-	          flush_pending(strm);
-	          if (s.pending !== 0) {
-	            s.last_flush = -1;
-	            return Z_OK;
-	          }
-	          beg = 0;
-	        }
-	        // JS specific: little magic to add zero terminator to end of string
-	        if (s.gzindex < s.gzhead.comment.length) {
-	          val = s.gzhead.comment.charCodeAt(s.gzindex++) & 0xff;
-	        } else {
-	          val = 0;
-	        }
-	        put_byte(s, val);
-	      } while (val !== 0);
-	      //--- HCRC_UPDATE(beg) ---//
-	      if (s.gzhead.hcrc && s.pending > beg) {
-	        strm.adler = crc32(strm.adler, s.pending_buf, s.pending - beg, beg);
-	      }
-	      //---//
-	    }
-	    s.status = HCRC_STATE;
-	  }
-	  if (s.status === HCRC_STATE) {
-	    if (s.gzhead.hcrc) {
-	      if (s.pending + 2 > s.pending_buf_size) {
-	        flush_pending(strm);
-	        if (s.pending !== 0) {
-	          s.last_flush = -1;
-	          return Z_OK;
-	        }
-	      }
-	      put_byte(s, strm.adler & 0xff);
-	      put_byte(s, (strm.adler >> 8) & 0xff);
-	      strm.adler = 0; //crc32(0L, Z_NULL, 0);
-	    }
-	    s.status = BUSY_STATE;
-
-	    /* Compression must start with an empty pending buffer */
-	    flush_pending(strm);
-	    if (s.pending !== 0) {
-	      s.last_flush = -1;
-	      return Z_OK;
-	    }
-	  }
-	//#endif
-
 	  /* Start a new block or continue the current one.
 	   */
 	  if (strm.avail_in !== 0 || s.lookahead !== 0 ||
 	    (flush !== Z_NO_FLUSH && s.status !== FINISH_STATE)) {
-	    let bstate = s.level === 0 ? deflate_stored(s, flush) :
-	                 s.strategy === Z_HUFFMAN_ONLY ? deflate_huff(s, flush) :
-	                 s.strategy === Z_RLE ? deflate_rle(s, flush) :
-	                 configuration_table[s.level].func(s, flush);
+	    var bstate = (s.strategy === Z_HUFFMAN_ONLY) ? deflate_huff(s, flush) :
+	      (s.strategy === Z_RLE ? deflate_rle(s, flush) :
+	        configuration_table[s.level].func(s, flush));
 
 	    if (bstate === BS_FINISH_STARTED || bstate === BS_FINISH_DONE) {
 	      s.status = FINISH_STATE;
@@ -173094,11 +172855,11 @@ function requireDeflate () {
 	    }
 	    if (bstate === BS_BLOCK_DONE) {
 	      if (flush === Z_PARTIAL_FLUSH) {
-	        _tr_align(s);
+	        trees._tr_align(s);
 	      }
 	      else if (flush !== Z_BLOCK) { /* FULL_FLUSH or SYNC_FLUSH */
 
-	        _tr_stored_block(s, 0, 0, false);
+	        trees._tr_stored_block(s, 0, 0, false);
 	        /* For a full flush, this empty block will be recognized
 	         * as a special marker by inflate_sync().
 	         */
@@ -173120,6 +172881,8 @@ function requireDeflate () {
 	      }
 	    }
 	  }
+	  //Assert(strm->avail_out > 0, "bug2");
+	  //if (strm.avail_out <= 0) { throw new Error("bug2");}
 
 	  if (flush !== Z_FINISH) { return Z_OK; }
 	  if (s.wrap <= 0) { return Z_STREAM_END; }
@@ -173148,37 +172911,54 @@ function requireDeflate () {
 	  if (s.wrap > 0) { s.wrap = -s.wrap; }
 	  /* write the trailer only once! */
 	  return s.pending !== 0 ? Z_OK : Z_STREAM_END;
-	};
+	}
 
+	function deflateEnd(strm) {
+	  var status;
 
-	const deflateEnd = (strm) => {
-
-	  if (deflateStateCheck(strm)) {
+	  if (!strm/*== Z_NULL*/ || !strm.state/*== Z_NULL*/) {
 	    return Z_STREAM_ERROR;
 	  }
 
-	  const status = strm.state.status;
+	  status = strm.state.status;
+	  if (status !== INIT_STATE &&
+	    status !== EXTRA_STATE &&
+	    status !== NAME_STATE &&
+	    status !== COMMENT_STATE &&
+	    status !== HCRC_STATE &&
+	    status !== BUSY_STATE &&
+	    status !== FINISH_STATE
+	  ) {
+	    return err(strm, Z_STREAM_ERROR);
+	  }
 
 	  strm.state = null;
 
 	  return status === BUSY_STATE ? err(strm, Z_DATA_ERROR) : Z_OK;
-	};
+	}
 
 
 	/* =========================================================================
 	 * Initializes the compression dictionary from the given byte
 	 * sequence without producing any compressed output.
 	 */
-	const deflateSetDictionary = (strm, dictionary) => {
+	function deflateSetDictionary(strm, dictionary) {
+	  var dictLength = dictionary.length;
 
-	  let dictLength = dictionary.length;
+	  var s;
+	  var str, n;
+	  var wrap;
+	  var avail;
+	  var next;
+	  var input;
+	  var tmpDict;
 
-	  if (deflateStateCheck(strm)) {
+	  if (!strm/*== Z_NULL*/ || !strm.state/*== Z_NULL*/) {
 	    return Z_STREAM_ERROR;
 	  }
 
-	  const s = strm.state;
-	  const wrap = s.wrap;
+	  s = strm.state;
+	  wrap = s.wrap;
 
 	  if (wrap === 2 || (wrap === 1 && s.status !== INIT_STATE) || s.lookahead) {
 	    return Z_STREAM_ERROR;
@@ -173203,25 +172983,25 @@ function requireDeflate () {
 	    }
 	    /* use the tail */
 	    // dictionary = dictionary.slice(dictLength - s.w_size);
-	    let tmpDict = new Uint8Array(s.w_size);
-	    tmpDict.set(dictionary.subarray(dictLength - s.w_size, dictLength), 0);
+	    tmpDict = new utils.Buf8(s.w_size);
+	    utils.arraySet(tmpDict, dictionary, dictLength - s.w_size, s.w_size, 0);
 	    dictionary = tmpDict;
 	    dictLength = s.w_size;
 	  }
 	  /* insert dictionary into window and hash */
-	  const avail = strm.avail_in;
-	  const next = strm.next_in;
-	  const input = strm.input;
+	  avail = strm.avail_in;
+	  next = strm.next_in;
+	  input = strm.input;
 	  strm.avail_in = dictLength;
 	  strm.next_in = 0;
 	  strm.input = dictionary;
 	  fill_window(s);
 	  while (s.lookahead >= MIN_MATCH) {
-	    let str = s.strstart;
-	    let n = s.lookahead - (MIN_MATCH - 1);
+	    str = s.strstart;
+	    n = s.lookahead - (MIN_MATCH - 1);
 	    do {
 	      /* UPDATE_HASH(s, s->ins_h, s->window[str + MIN_MATCH-1]); */
-	      s.ins_h = HASH(s, s.ins_h, s.window[str + MIN_MATCH - 1]);
+	      s.ins_h = ((s.ins_h << s.hash_shift) ^ s.window[str + MIN_MATCH - 1]) & s.hash_mask;
 
 	      s.prev[str & s.w_mask] = s.head[s.ins_h];
 
@@ -173243,7 +173023,7 @@ function requireDeflate () {
 	  strm.avail_in = avail;
 	  s.wrap = wrap;
 	  return Z_OK;
-	};
+	}
 
 
 	deflate$2.deflateInit = deflateInit;
@@ -173257,13 +173037,12 @@ function requireDeflate () {
 	deflate$2.deflateInfo = 'pako deflate (from Nodeca project)';
 
 	/* Not implemented
-	module.exports.deflateBound = deflateBound;
-	module.exports.deflateCopy = deflateCopy;
-	module.exports.deflateGetDictionary = deflateGetDictionary;
-	module.exports.deflateParams = deflateParams;
-	module.exports.deflatePending = deflatePending;
-	module.exports.deflatePrime = deflatePrime;
-	module.exports.deflateTune = deflateTune;
+	exports.deflateBound = deflateBound;
+	exports.deflateCopy = deflateCopy;
+	exports.deflateParams = deflateParams;
+	exports.deflatePending = deflatePending;
+	exports.deflatePrime = deflatePrime;
+	exports.deflateTune = deflateTune;
 	*/
 	return deflate$2;
 }
@@ -173300,8 +173079,8 @@ function requireInffast () {
 	// 3. This notice may not be removed or altered from any source distribution.
 
 	// See state defs from inflate.js
-	const BAD = 16209;       /* got a data error -- remain here until reset */
-	const TYPE = 16191;      /* i: waiting for type bits, including last-flag bit */
+	var BAD = 30;       /* got a data error -- remain here until reset */
+	var TYPE = 12;      /* i: waiting for type bits, including last-flag bit */
 
 	/*
 	   Decode literal, length, and distance codes and write out the resulting
@@ -173339,38 +173118,39 @@ function requireInffast () {
 	      output space.
 	 */
 	inffast$1 = function inflate_fast(strm, start) {
-	  let _in;                    /* local strm.input */
-	  let last;                   /* have enough input while in < last */
-	  let _out;                   /* local strm.output */
-	  let beg;                    /* inflate()'s initial strm.output */
-	  let end;                    /* while out < end, enough space available */
+	  var state;
+	  var _in;                    /* local strm.input */
+	  var last;                   /* have enough input while in < last */
+	  var _out;                   /* local strm.output */
+	  var beg;                    /* inflate()'s initial strm.output */
+	  var end;                    /* while out < end, enough space available */
 	//#ifdef INFLATE_STRICT
-	  let dmax;                   /* maximum distance from zlib header */
+	  var dmax;                   /* maximum distance from zlib header */
 	//#endif
-	  let wsize;                  /* window size or zero if not using window */
-	  let whave;                  /* valid bytes in the window */
-	  let wnext;                  /* window write index */
+	  var wsize;                  /* window size or zero if not using window */
+	  var whave;                  /* valid bytes in the window */
+	  var wnext;                  /* window write index */
 	  // Use `s_window` instead `window`, avoid conflict with instrumentation tools
-	  let s_window;               /* allocated sliding window, if wsize != 0 */
-	  let hold;                   /* local strm.hold */
-	  let bits;                   /* local strm.bits */
-	  let lcode;                  /* local strm.lencode */
-	  let dcode;                  /* local strm.distcode */
-	  let lmask;                  /* mask for first level of length codes */
-	  let dmask;                  /* mask for first level of distance codes */
-	  let here;                   /* retrieved table entry */
-	  let op;                     /* code bits, operation, extra bits, or */
+	  var s_window;               /* allocated sliding window, if wsize != 0 */
+	  var hold;                   /* local strm.hold */
+	  var bits;                   /* local strm.bits */
+	  var lcode;                  /* local strm.lencode */
+	  var dcode;                  /* local strm.distcode */
+	  var lmask;                  /* mask for first level of length codes */
+	  var dmask;                  /* mask for first level of distance codes */
+	  var here;                   /* retrieved table entry */
+	  var op;                     /* code bits, operation, extra bits, or */
 	                              /*  window position, window bytes to copy */
-	  let len;                    /* match length, unused bytes */
-	  let dist;                   /* match distance */
-	  let from;                   /* where to copy match from */
-	  let from_source;
+	  var len;                    /* match length, unused bytes */
+	  var dist;                   /* match distance */
+	  var from;                   /* where to copy match from */
+	  var from_source;
 
 
-	  let input, output; // JS specific, because we have no pointers
+	  var input, output; // JS specific, because we have no pointers
 
 	  /* copy state to local variables */
-	  const state = strm.state;
+	  state = strm.state;
 	  //here = state.here;
 	  _in = strm.next_in;
 	  input = strm.input;
@@ -173651,64 +173431,68 @@ function requireInftrees () {
 	//   misrepresented as being the original software.
 	// 3. This notice may not be removed or altered from any source distribution.
 
-	const MAXBITS = 15;
-	const ENOUGH_LENS = 852;
-	const ENOUGH_DISTS = 592;
-	//const ENOUGH = (ENOUGH_LENS+ENOUGH_DISTS);
+	var utils = requireCommon();
 
-	const CODES = 0;
-	const LENS = 1;
-	const DISTS = 2;
+	var MAXBITS = 15;
+	var ENOUGH_LENS = 852;
+	var ENOUGH_DISTS = 592;
+	//var ENOUGH = (ENOUGH_LENS+ENOUGH_DISTS);
 
-	const lbase = new Uint16Array([ /* Length codes 257..285 base */
+	var CODES = 0;
+	var LENS = 1;
+	var DISTS = 2;
+
+	var lbase = [ /* Length codes 257..285 base */
 	  3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15, 17, 19, 23, 27, 31,
 	  35, 43, 51, 59, 67, 83, 99, 115, 131, 163, 195, 227, 258, 0, 0
-	]);
+	];
 
-	const lext = new Uint8Array([ /* Length codes 257..285 extra */
+	var lext = [ /* Length codes 257..285 extra */
 	  16, 16, 16, 16, 16, 16, 16, 16, 17, 17, 17, 17, 18, 18, 18, 18,
 	  19, 19, 19, 19, 20, 20, 20, 20, 21, 21, 21, 21, 16, 72, 78
-	]);
+	];
 
-	const dbase = new Uint16Array([ /* Distance codes 0..29 base */
+	var dbase = [ /* Distance codes 0..29 base */
 	  1, 2, 3, 4, 5, 7, 9, 13, 17, 25, 33, 49, 65, 97, 129, 193,
 	  257, 385, 513, 769, 1025, 1537, 2049, 3073, 4097, 6145,
 	  8193, 12289, 16385, 24577, 0, 0
-	]);
+	];
 
-	const dext = new Uint8Array([ /* Distance codes 0..29 extra */
+	var dext = [ /* Distance codes 0..29 extra */
 	  16, 16, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22,
 	  23, 23, 24, 24, 25, 25, 26, 26, 27, 27,
 	  28, 28, 29, 29, 64, 64
-	]);
+	];
 
-	const inflate_table = (type, lens, lens_index, codes, table, table_index, work, opts) =>
+	inftrees$1 = function inflate_table(type, lens, lens_index, codes, table, table_index, work, opts)
 	{
-	  const bits = opts.bits;
+	  var bits = opts.bits;
 	      //here = opts.here; /* table entry for duplication */
 
-	  let len = 0;               /* a code's length in bits */
-	  let sym = 0;               /* index of code symbols */
-	  let min = 0, max = 0;          /* minimum and maximum code lengths */
-	  let root = 0;              /* number of index bits for root table */
-	  let curr = 0;              /* number of index bits for current table */
-	  let drop = 0;              /* code bits to drop for sub-table */
-	  let left = 0;                   /* number of prefix codes available */
-	  let used = 0;              /* code entries in table used */
-	  let huff = 0;              /* Huffman code */
-	  let incr;              /* for incrementing code, index */
-	  let fill;              /* index for replicating entries */
-	  let low;               /* low bits for current root entry */
-	  let mask;              /* mask for low root bits */
-	  let next;             /* next available space in table */
-	  let base = null;     /* base value table to use */
-	//  let shoextra;    /* extra bits table to use */
-	  let match;                  /* use base and extra for symbol >= match */
-	  const count = new Uint16Array(MAXBITS + 1); //[MAXBITS+1];    /* number of codes of each length */
-	  const offs = new Uint16Array(MAXBITS + 1); //[MAXBITS+1];     /* offsets in table for each length */
-	  let extra = null;
+	  var len = 0;               /* a code's length in bits */
+	  var sym = 0;               /* index of code symbols */
+	  var min = 0, max = 0;          /* minimum and maximum code lengths */
+	  var root = 0;              /* number of index bits for root table */
+	  var curr = 0;              /* number of index bits for current table */
+	  var drop = 0;              /* code bits to drop for sub-table */
+	  var left = 0;                   /* number of prefix codes available */
+	  var used = 0;              /* code entries in table used */
+	  var huff = 0;              /* Huffman code */
+	  var incr;              /* for incrementing code, index */
+	  var fill;              /* index for replicating entries */
+	  var low;               /* low bits for current root entry */
+	  var mask;              /* mask for low root bits */
+	  var next;             /* next available space in table */
+	  var base = null;     /* base value table to use */
+	  var base_index = 0;
+	//  var shoextra;    /* extra bits table to use */
+	  var end;                    /* use base and extra for symbol > end */
+	  var count = new utils.Buf16(MAXBITS + 1); //[MAXBITS+1];    /* number of codes of each length */
+	  var offs = new utils.Buf16(MAXBITS + 1); //[MAXBITS+1];     /* offsets in table for each length */
+	  var extra = null;
+	  var extra_index = 0;
 
-	  let here_bits, here_op, here_val;
+	  var here_bits, here_op, here_val;
 
 	  /*
 	   Process a set of code lengths to create a canonical Huffman code.  The
@@ -173841,17 +173625,19 @@ function requireInftrees () {
 	  // to avoid deopts in old v8
 	  if (type === CODES) {
 	    base = extra = work;    /* dummy value--not used */
-	    match = 20;
+	    end = 19;
 
 	  } else if (type === LENS) {
 	    base = lbase;
+	    base_index -= 257;
 	    extra = lext;
-	    match = 257;
+	    extra_index -= 257;
+	    end = 256;
 
 	  } else {                    /* DISTS */
 	    base = dbase;
 	    extra = dext;
-	    match = 0;
+	    end = -1;
 	  }
 
 	  /* initialize opts for loop */
@@ -173875,13 +173661,13 @@ function requireInftrees () {
 	  for (;;) {
 	    /* create table entry */
 	    here_bits = len - drop;
-	    if (work[sym] + 1 < match) {
+	    if (work[sym] < end) {
 	      here_op = 0;
 	      here_val = work[sym];
 	    }
-	    else if (work[sym] >= match) {
-	      here_op = extra[work[sym] - match];
-	      here_val = base[work[sym] - match];
+	    else if (work[sym] > end) {
+	      here_op = extra[extra_index + work[sym]];
+	      here_val = base[base_index + work[sym]];
 	    }
 	    else {
 	      here_op = 32 + 64;         /* end of block */
@@ -173967,9 +173753,6 @@ function requireInftrees () {
 	  opts.bits = root;
 	  return 0;
 	};
-
-
-	inftrees$1 = inflate_table;
 	return inftrees$1;
 }
 
@@ -173998,93 +173781,111 @@ function requireInflate () {
 	//   misrepresented as being the original software.
 	// 3. This notice may not be removed or altered from any source distribution.
 
-	const adler32       = requireAdler32();
-	const crc32         = requireCrc32();
-	const inflate_fast  = requireInffast();
-	const inflate_table = requireInftrees();
+	var utils         = requireCommon();
+	var adler32       = requireAdler32();
+	var crc32         = requireCrc32();
+	var inflate_fast  = requireInffast();
+	var inflate_table = requireInftrees();
 
-	const CODES = 0;
-	const LENS = 1;
-	const DISTS = 2;
+	var CODES = 0;
+	var LENS = 1;
+	var DISTS = 2;
 
 	/* Public constants ==========================================================*/
 	/* ===========================================================================*/
 
-	const {
-	  Z_FINISH, Z_BLOCK, Z_TREES,
-	  Z_OK, Z_STREAM_END, Z_NEED_DICT, Z_STREAM_ERROR, Z_DATA_ERROR, Z_MEM_ERROR, Z_BUF_ERROR,
-	  Z_DEFLATED
-	} = requireConstants();
+
+	/* Allowed flush values; see deflate() and inflate() below for details */
+	//var Z_NO_FLUSH      = 0;
+	//var Z_PARTIAL_FLUSH = 1;
+	//var Z_SYNC_FLUSH    = 2;
+	//var Z_FULL_FLUSH    = 3;
+	var Z_FINISH        = 4;
+	var Z_BLOCK         = 5;
+	var Z_TREES         = 6;
+
+
+	/* Return codes for the compression/decompression functions. Negative values
+	 * are errors, positive values are used for special but normal events.
+	 */
+	var Z_OK            = 0;
+	var Z_STREAM_END    = 1;
+	var Z_NEED_DICT     = 2;
+	//var Z_ERRNO         = -1;
+	var Z_STREAM_ERROR  = -2;
+	var Z_DATA_ERROR    = -3;
+	var Z_MEM_ERROR     = -4;
+	var Z_BUF_ERROR     = -5;
+	//var Z_VERSION_ERROR = -6;
+
+	/* The deflate compression method */
+	var Z_DEFLATED  = 8;
 
 
 	/* STATES ====================================================================*/
 	/* ===========================================================================*/
 
 
-	const    HEAD = 16180;       /* i: waiting for magic header */
-	const    FLAGS = 16181;      /* i: waiting for method and flags (gzip) */
-	const    TIME = 16182;       /* i: waiting for modification time (gzip) */
-	const    OS = 16183;         /* i: waiting for extra flags and operating system (gzip) */
-	const    EXLEN = 16184;      /* i: waiting for extra length (gzip) */
-	const    EXTRA = 16185;      /* i: waiting for extra bytes (gzip) */
-	const    NAME = 16186;       /* i: waiting for end of file name (gzip) */
-	const    COMMENT = 16187;    /* i: waiting for end of comment (gzip) */
-	const    HCRC = 16188;       /* i: waiting for header crc (gzip) */
-	const    DICTID = 16189;    /* i: waiting for dictionary check value */
-	const    DICT = 16190;      /* waiting for inflateSetDictionary() call */
-	const        TYPE = 16191;      /* i: waiting for type bits, including last-flag bit */
-	const        TYPEDO = 16192;    /* i: same, but skip check to exit inflate on new block */
-	const        STORED = 16193;    /* i: waiting for stored size (length and complement) */
-	const        COPY_ = 16194;     /* i/o: same as COPY below, but only first time in */
-	const        COPY = 16195;      /* i/o: waiting for input or output to copy stored block */
-	const        TABLE = 16196;     /* i: waiting for dynamic block table lengths */
-	const        LENLENS = 16197;   /* i: waiting for code length code lengths */
-	const        CODELENS = 16198;  /* i: waiting for length/lit and distance code lengths */
-	const            LEN_ = 16199;      /* i: same as LEN below, but only first time in */
-	const            LEN = 16200;       /* i: waiting for length/lit/eob code */
-	const            LENEXT = 16201;    /* i: waiting for length extra bits */
-	const            DIST = 16202;      /* i: waiting for distance code */
-	const            DISTEXT = 16203;   /* i: waiting for distance extra bits */
-	const            MATCH = 16204;     /* o: waiting for output space to copy string */
-	const            LIT = 16205;       /* o: waiting for output space to write literal */
-	const    CHECK = 16206;     /* i: waiting for 32-bit check value */
-	const    LENGTH = 16207;    /* i: waiting for 32-bit length (gzip) */
-	const    DONE = 16208;      /* finished check, done -- remain here until reset */
-	const    BAD = 16209;       /* got a data error -- remain here until reset */
-	const    MEM = 16210;       /* got an inflate() memory error -- remain here until reset */
-	const    SYNC = 16211;      /* looking for synchronization bytes to restart inflate() */
+	var    HEAD = 1;       /* i: waiting for magic header */
+	var    FLAGS = 2;      /* i: waiting for method and flags (gzip) */
+	var    TIME = 3;       /* i: waiting for modification time (gzip) */
+	var    OS = 4;         /* i: waiting for extra flags and operating system (gzip) */
+	var    EXLEN = 5;      /* i: waiting for extra length (gzip) */
+	var    EXTRA = 6;      /* i: waiting for extra bytes (gzip) */
+	var    NAME = 7;       /* i: waiting for end of file name (gzip) */
+	var    COMMENT = 8;    /* i: waiting for end of comment (gzip) */
+	var    HCRC = 9;       /* i: waiting for header crc (gzip) */
+	var    DICTID = 10;    /* i: waiting for dictionary check value */
+	var    DICT = 11;      /* waiting for inflateSetDictionary() call */
+	var        TYPE = 12;      /* i: waiting for type bits, including last-flag bit */
+	var        TYPEDO = 13;    /* i: same, but skip check to exit inflate on new block */
+	var        STORED = 14;    /* i: waiting for stored size (length and complement) */
+	var        COPY_ = 15;     /* i/o: same as COPY below, but only first time in */
+	var        COPY = 16;      /* i/o: waiting for input or output to copy stored block */
+	var        TABLE = 17;     /* i: waiting for dynamic block table lengths */
+	var        LENLENS = 18;   /* i: waiting for code length code lengths */
+	var        CODELENS = 19;  /* i: waiting for length/lit and distance code lengths */
+	var            LEN_ = 20;      /* i: same as LEN below, but only first time in */
+	var            LEN = 21;       /* i: waiting for length/lit/eob code */
+	var            LENEXT = 22;    /* i: waiting for length extra bits */
+	var            DIST = 23;      /* i: waiting for distance code */
+	var            DISTEXT = 24;   /* i: waiting for distance extra bits */
+	var            MATCH = 25;     /* o: waiting for output space to copy string */
+	var            LIT = 26;       /* o: waiting for output space to write literal */
+	var    CHECK = 27;     /* i: waiting for 32-bit check value */
+	var    LENGTH = 28;    /* i: waiting for 32-bit length (gzip) */
+	var    DONE = 29;      /* finished check, done -- remain here until reset */
+	var    BAD = 30;       /* got a data error -- remain here until reset */
+	var    MEM = 31;       /* got an inflate() memory error -- remain here until reset */
+	var    SYNC = 32;      /* looking for synchronization bytes to restart inflate() */
 
 	/* ===========================================================================*/
 
 
 
-	const ENOUGH_LENS = 852;
-	const ENOUGH_DISTS = 592;
-	//const ENOUGH =  (ENOUGH_LENS+ENOUGH_DISTS);
+	var ENOUGH_LENS = 852;
+	var ENOUGH_DISTS = 592;
+	//var ENOUGH =  (ENOUGH_LENS+ENOUGH_DISTS);
 
-	const MAX_WBITS = 15;
+	var MAX_WBITS = 15;
 	/* 32K LZ77 window */
-	const DEF_WBITS = MAX_WBITS;
+	var DEF_WBITS = MAX_WBITS;
 
 
-	const zswap32 = (q) => {
-
+	function zswap32(q) {
 	  return  (((q >>> 24) & 0xff) +
 	          ((q >>> 8) & 0xff00) +
 	          ((q & 0xff00) << 8) +
 	          ((q & 0xff) << 24));
-	};
+	}
 
 
 	function InflateState() {
-	  this.strm = null;           /* pointer back to this zlib stream */
-	  this.mode = 0;              /* current inflate mode */
+	  this.mode = 0;             /* current inflate mode */
 	  this.last = false;          /* true if processing last block */
-	  this.wrap = 0;              /* bit 0 true for zlib, bit 1 true for gzip,
-	                                 bit 2 true to validate check value */
+	  this.wrap = 0;              /* bit 0 true for zlib, bit 1 true for gzip */
 	  this.havedict = false;      /* true if dictionary provided */
-	  this.flags = 0;             /* gzip header method and flags (0 if zlib), or
-	                                 -1 if raw or no header yet */
+	  this.flags = 0;             /* gzip header method and flags (0 if zlib) */
 	  this.dmax = 0;              /* zlib header max distance (INFLATE_STRICT) */
 	  this.check = 0;             /* protected copy of check value */
 	  this.total = 0;             /* protected copy of output count */
@@ -174122,14 +173923,14 @@ function requireInflate () {
 	  this.have = 0;              /* number of code lengths in lens[] */
 	  this.next = null;              /* next available space in codes[] */
 
-	  this.lens = new Uint16Array(320); /* temporary storage for code lengths */
-	  this.work = new Uint16Array(288); /* work area for code table building */
+	  this.lens = new utils.Buf16(320); /* temporary storage for code lengths */
+	  this.work = new utils.Buf16(288); /* work area for code table building */
 
 	  /*
 	   because we don't have pointers in js, we use lencode and distcode directly
 	   as buffers so we don't need codes
 	  */
-	  //this.codes = new Int32Array(ENOUGH);       /* space for code tables */
+	  //this.codes = new utils.Buf32(ENOUGH);       /* space for code tables */
 	  this.lendyn = null;              /* dynamic table for length/literal codes (JS specific) */
 	  this.distdyn = null;             /* dynamic table for distance codes (JS specific) */
 	  this.sane = 0;                   /* if false, allow invalid distance too far */
@@ -174137,25 +173938,11 @@ function requireInflate () {
 	  this.was = 0;                    /* initial length of match */
 	}
 
+	function inflateResetKeep(strm) {
+	  var state;
 
-	const inflateStateCheck = (strm) => {
-
-	  if (!strm) {
-	    return 1;
-	  }
-	  const state = strm.state;
-	  if (!state || state.strm !== strm ||
-	    state.mode < HEAD || state.mode > SYNC) {
-	    return 1;
-	  }
-	  return 0;
-	};
-
-
-	const inflateResetKeep = (strm) => {
-
-	  if (inflateStateCheck(strm)) { return Z_STREAM_ERROR; }
-	  const state = strm.state;
+	  if (!strm || !strm.state) { return Z_STREAM_ERROR; }
+	  state = strm.state;
 	  strm.total_in = strm.total_out = state.total = 0;
 	  strm.msg = ''; /*Z_NULL*/
 	  if (state.wrap) {       /* to support ill-conceived Java test suite */
@@ -174164,40 +173951,39 @@ function requireInflate () {
 	  state.mode = HEAD;
 	  state.last = 0;
 	  state.havedict = 0;
-	  state.flags = -1;
 	  state.dmax = 32768;
 	  state.head = null/*Z_NULL*/;
 	  state.hold = 0;
 	  state.bits = 0;
 	  //state.lencode = state.distcode = state.next = state.codes;
-	  state.lencode = state.lendyn = new Int32Array(ENOUGH_LENS);
-	  state.distcode = state.distdyn = new Int32Array(ENOUGH_DISTS);
+	  state.lencode = state.lendyn = new utils.Buf32(ENOUGH_LENS);
+	  state.distcode = state.distdyn = new utils.Buf32(ENOUGH_DISTS);
 
 	  state.sane = 1;
 	  state.back = -1;
 	  //Tracev((stderr, "inflate: reset\n"));
 	  return Z_OK;
-	};
+	}
 
+	function inflateReset(strm) {
+	  var state;
 
-	const inflateReset = (strm) => {
-
-	  if (inflateStateCheck(strm)) { return Z_STREAM_ERROR; }
-	  const state = strm.state;
+	  if (!strm || !strm.state) { return Z_STREAM_ERROR; }
+	  state = strm.state;
 	  state.wsize = 0;
 	  state.whave = 0;
 	  state.wnext = 0;
 	  return inflateResetKeep(strm);
 
-	};
+	}
 
-
-	const inflateReset2 = (strm, windowBits) => {
-	  let wrap;
+	function inflateReset2(strm, windowBits) {
+	  var wrap;
+	  var state;
 
 	  /* get the state */
-	  if (inflateStateCheck(strm)) { return Z_STREAM_ERROR; }
-	  const state = strm.state;
+	  if (!strm || !strm.state) { return Z_STREAM_ERROR; }
+	  state = strm.state;
 
 	  /* extract wrap request from windowBits parameter */
 	  if (windowBits < 0) {
@@ -174205,7 +173991,7 @@ function requireInflate () {
 	    windowBits = -windowBits;
 	  }
 	  else {
-	    wrap = (windowBits >> 4) + 5;
+	    wrap = (windowBits >> 4) + 1;
 	    if (windowBits < 48) {
 	      windowBits &= 15;
 	    }
@@ -174223,34 +174009,31 @@ function requireInflate () {
 	  state.wrap = wrap;
 	  state.wbits = windowBits;
 	  return inflateReset(strm);
-	};
+	}
 
-
-	const inflateInit2 = (strm, windowBits) => {
+	function inflateInit2(strm, windowBits) {
+	  var ret;
+	  var state;
 
 	  if (!strm) { return Z_STREAM_ERROR; }
 	  //strm.msg = Z_NULL;                 /* in case we return an error */
 
-	  const state = new InflateState();
+	  state = new InflateState();
 
 	  //if (state === Z_NULL) return Z_MEM_ERROR;
 	  //Tracev((stderr, "inflate: allocated\n"));
 	  strm.state = state;
-	  state.strm = strm;
 	  state.window = null/*Z_NULL*/;
-	  state.mode = HEAD;     /* to pass state test in inflateReset2() */
-	  const ret = inflateReset2(strm, windowBits);
+	  ret = inflateReset2(strm, windowBits);
 	  if (ret !== Z_OK) {
 	    strm.state = null/*Z_NULL*/;
 	  }
 	  return ret;
-	};
+	}
 
-
-	const inflateInit = (strm) => {
-
+	function inflateInit(strm) {
 	  return inflateInit2(strm, DEF_WBITS);
-	};
+	}
 
 
 	/*
@@ -174263,20 +174046,20 @@ function requireInflate () {
 	 used for threaded applications, since the rewriting of the tables and virgin
 	 may not be thread-safe.
 	 */
-	let virgin = true;
+	var virgin = true;
 
-	let lenfix, distfix; // We have no pointers in JS, so keep tables separate
+	var lenfix, distfix; // We have no pointers in JS, so keep tables separate
 
-
-	const fixedtables = (state) => {
-
+	function fixedtables(state) {
 	  /* build fixed huffman tables if first call (may not be thread safe) */
 	  if (virgin) {
-	    lenfix = new Int32Array(512);
-	    distfix = new Int32Array(32);
+	    var sym;
+
+	    lenfix = new utils.Buf32(512);
+	    distfix = new utils.Buf32(32);
 
 	    /* literal/length table */
-	    let sym = 0;
+	    sym = 0;
 	    while (sym < 144) { state.lens[sym++] = 8; }
 	    while (sym < 256) { state.lens[sym++] = 9; }
 	    while (sym < 280) { state.lens[sym++] = 7; }
@@ -174298,7 +174081,7 @@ function requireInflate () {
 	  state.lenbits = 9;
 	  state.distcode = distfix;
 	  state.distbits = 5;
-	};
+	}
 
 
 	/*
@@ -174315,10 +174098,9 @@ function requireInflate () {
 	 output will fall in the output data, making match copies simpler and faster.
 	 The advantage may be dependent on the size of the processor's data caches.
 	 */
-	const updatewindow = (strm, src, end, copy) => {
-
-	  let dist;
-	  const state = strm.state;
+	function updatewindow(strm, src, end, copy) {
+	  var dist;
+	  var state = strm.state;
 
 	  /* if it hasn't been done already, allocate space for the window */
 	  if (state.window === null) {
@@ -174326,12 +174108,12 @@ function requireInflate () {
 	    state.wnext = 0;
 	    state.whave = 0;
 
-	    state.window = new Uint8Array(state.wsize);
+	    state.window = new utils.Buf8(state.wsize);
 	  }
 
 	  /* copy state->wsize or less output bytes into the circular window */
 	  if (copy >= state.wsize) {
-	    state.window.set(src.subarray(end - state.wsize, end), 0);
+	    utils.arraySet(state.window, src, end - state.wsize, state.wsize, 0);
 	    state.wnext = 0;
 	    state.whave = state.wsize;
 	  }
@@ -174341,11 +174123,11 @@ function requireInflate () {
 	      dist = copy;
 	    }
 	    //zmemcpy(state->window + state->wnext, end - copy, dist);
-	    state.window.set(src.subarray(end - copy, end - copy + dist), state.wnext);
+	    utils.arraySet(state.window, src, end - copy, dist, state.wnext);
 	    copy -= dist;
 	    if (copy) {
 	      //zmemcpy(state->window, end - copy, copy);
-	      state.window.set(src.subarray(end - copy, end), 0);
+	      utils.arraySet(state.window, src, end - copy, copy, 0);
 	      state.wnext = copy;
 	      state.whave = state.wsize;
 	    }
@@ -174356,38 +174138,36 @@ function requireInflate () {
 	    }
 	  }
 	  return 0;
-	};
+	}
+
+	function inflate(strm, flush) {
+	  var state;
+	  var input, output;          // input/output buffers
+	  var next;                   /* next input INDEX */
+	  var put;                    /* next output INDEX */
+	  var have, left;             /* available input and output */
+	  var hold;                   /* bit buffer */
+	  var bits;                   /* bits in bit buffer */
+	  var _in, _out;              /* save starting available input and output */
+	  var copy;                   /* number of stored or match bytes to copy */
+	  var from;                   /* where to copy match bytes from */
+	  var from_source;
+	  var here = 0;               /* current decoding table entry */
+	  var here_bits, here_op, here_val; // paked "here" denormalized (JS specific)
+	  //var last;                   /* parent table entry */
+	  var last_bits, last_op, last_val; // paked "last" denormalized (JS specific)
+	  var len;                    /* length to copy for repeats, bits to drop */
+	  var ret;                    /* return code */
+	  var hbuf = new utils.Buf8(4);    /* buffer for gzip header crc calculation */
+	  var opts;
+
+	  var n; // temporary var for NEED_BITS
+
+	  var order = /* permutation of code lengths */
+	    [ 16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15 ];
 
 
-	const inflate = (strm, flush) => {
-
-	  let state;
-	  let input, output;          // input/output buffers
-	  let next;                   /* next input INDEX */
-	  let put;                    /* next output INDEX */
-	  let have, left;             /* available input and output */
-	  let hold;                   /* bit buffer */
-	  let bits;                   /* bits in bit buffer */
-	  let _in, _out;              /* save starting available input and output */
-	  let copy;                   /* number of stored or match bytes to copy */
-	  let from;                   /* where to copy match bytes from */
-	  let from_source;
-	  let here = 0;               /* current decoding table entry */
-	  let here_bits, here_op, here_val; // paked "here" denormalized (JS specific)
-	  //let last;                   /* parent table entry */
-	  let last_bits, last_op, last_val; // paked "last" denormalized (JS specific)
-	  let len;                    /* length to copy for repeats, bits to drop */
-	  let ret;                    /* return code */
-	  const hbuf = new Uint8Array(4);    /* buffer for gzip header crc calculation */
-	  let opts;
-
-	  let n; // temporary variable for NEED_BITS
-
-	  const order = /* permutation of code lengths */
-	    new Uint8Array([ 16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15 ]);
-
-
-	  if (inflateStateCheck(strm) || !strm.output ||
+	  if (!strm || !strm.state || !strm.output ||
 	      (!strm.input && strm.avail_in !== 0)) {
 	    return Z_STREAM_ERROR;
 	  }
@@ -174428,9 +174208,6 @@ function requireInflate () {
 	        }
 	        //===//
 	        if ((state.wrap & 2) && hold === 0x8b1f) {  /* gzip header */
-	          if (state.wbits === 0) {
-	            state.wbits = 15;
-	          }
 	          state.check = 0/*crc32(0L, Z_NULL, 0)*/;
 	          //=== CRC2(state.check, hold);
 	          hbuf[0] = hold & 0xff;
@@ -174445,6 +174222,7 @@ function requireInflate () {
 	          state.mode = FLAGS;
 	          break;
 	        }
+	        state.flags = 0;           /* expect zlib header */
 	        if (state.head) {
 	          state.head.done = false;
 	        }
@@ -174467,18 +174245,12 @@ function requireInflate () {
 	        if (state.wbits === 0) {
 	          state.wbits = len;
 	        }
-	        if (len > 15 || len > state.wbits) {
+	        else if (len > state.wbits) {
 	          strm.msg = 'invalid window size';
 	          state.mode = BAD;
 	          break;
 	        }
-
-	        // !!! pako patch. Force use `options.windowBits` if passed.
-	        // Required to always use max window size by default.
-	        state.dmax = 1 << state.wbits;
-	        //state.dmax = 1 << len;
-
-	        state.flags = 0;               /* indicate zlib header */
+	        state.dmax = 1 << len;
 	        //Tracev((stderr, "inflate:   zlib header ok\n"));
 	        strm.adler = state.check = 1/*adler32(0L, Z_NULL, 0)*/;
 	        state.mode = hold & 0x200 ? DICTID : TYPE;
@@ -174510,7 +174282,7 @@ function requireInflate () {
 	        if (state.head) {
 	          state.head.text = ((hold >> 8) & 1);
 	        }
-	        if ((state.flags & 0x0200) && (state.wrap & 4)) {
+	        if (state.flags & 0x0200) {
 	          //=== CRC2(state.check, hold);
 	          hbuf[0] = hold & 0xff;
 	          hbuf[1] = (hold >>> 8) & 0xff;
@@ -174535,7 +174307,7 @@ function requireInflate () {
 	        if (state.head) {
 	          state.head.time = hold;
 	        }
-	        if ((state.flags & 0x0200) && (state.wrap & 4)) {
+	        if (state.flags & 0x0200) {
 	          //=== CRC4(state.check, hold)
 	          hbuf[0] = hold & 0xff;
 	          hbuf[1] = (hold >>> 8) & 0xff;
@@ -174563,7 +174335,7 @@ function requireInflate () {
 	          state.head.xflags = (hold & 0xff);
 	          state.head.os = (hold >> 8);
 	        }
-	        if ((state.flags & 0x0200) && (state.wrap & 4)) {
+	        if (state.flags & 0x0200) {
 	          //=== CRC2(state.check, hold);
 	          hbuf[0] = hold & 0xff;
 	          hbuf[1] = (hold >>> 8) & 0xff;
@@ -174590,7 +174362,7 @@ function requireInflate () {
 	          if (state.head) {
 	            state.head.extra_len = hold;
 	          }
-	          if ((state.flags & 0x0200) && (state.wrap & 4)) {
+	          if (state.flags & 0x0200) {
 	            //=== CRC2(state.check, hold);
 	            hbuf[0] = hold & 0xff;
 	            hbuf[1] = (hold >>> 8) & 0xff;
@@ -174616,15 +174388,15 @@ function requireInflate () {
 	              len = state.head.extra_len - state.length;
 	              if (!state.head.extra) {
 	                // Use untyped array for more convenient processing later
-	                state.head.extra = new Uint8Array(state.head.extra_len);
+	                state.head.extra = new Array(state.head.extra_len);
 	              }
-	              state.head.extra.set(
-	                input.subarray(
-	                  next,
-	                  // extra field is limited to 65536 bytes
-	                  // - no need for additional size check
-	                  next + copy
-	                ),
+	              utils.arraySet(
+	                state.head.extra,
+	                input,
+	                next,
+	                // extra field is limited to 65536 bytes
+	                // - no need for additional size check
+	                copy,
 	                /*len + copy > state.head.extra_max - len ? state.head.extra_max : copy,*/
 	                len
 	              );
@@ -174632,7 +174404,7 @@ function requireInflate () {
 	              //        len + copy > state.head.extra_max ?
 	              //        state.head.extra_max - len : copy);
 	            }
-	            if ((state.flags & 0x0200) && (state.wrap & 4)) {
+	            if (state.flags & 0x0200) {
 	              state.check = crc32(state.check, input, copy, next);
 	            }
 	            have -= copy;
@@ -174658,7 +174430,7 @@ function requireInflate () {
 	            }
 	          } while (len && copy < have);
 
-	          if ((state.flags & 0x0200) && (state.wrap & 4)) {
+	          if (state.flags & 0x0200) {
 	            state.check = crc32(state.check, input, copy, next);
 	          }
 	          have -= copy;
@@ -174683,7 +174455,7 @@ function requireInflate () {
 	              state.head.comment += String.fromCharCode(len);
 	            }
 	          } while (len && copy < have);
-	          if ((state.flags & 0x0200) && (state.wrap & 4)) {
+	          if (state.flags & 0x0200) {
 	            state.check = crc32(state.check, input, copy, next);
 	          }
 	          have -= copy;
@@ -174705,7 +174477,7 @@ function requireInflate () {
 	            bits += 8;
 	          }
 	          //===//
-	          if ((state.wrap & 4) && hold !== (state.check & 0xffff)) {
+	          if (hold !== (state.check & 0xffff)) {
 	            strm.msg = 'header crc mismatch';
 	            state.mode = BAD;
 	            break;
@@ -174850,7 +174622,7 @@ function requireInflate () {
 	          if (copy > left) { copy = left; }
 	          if (copy === 0) { break inf_leave; }
 	          //--- zmemcpy(put, next, copy); ---
-	          output.set(input.subarray(next, next + copy), put);
+	          utils.arraySet(output, input, next, copy, put);
 	          //---//
 	          have -= copy;
 	          next += copy;
@@ -175358,15 +175130,15 @@ function requireInflate () {
 	          _out -= left;
 	          strm.total_out += _out;
 	          state.total += _out;
-	          if ((state.wrap & 4) && _out) {
+	          if (_out) {
 	            strm.adler = state.check =
-	                /*UPDATE_CHECK(state.check, put - _out, _out);*/
+	                /*UPDATE(state.check, put - _out, _out);*/
 	                (state.flags ? crc32(state.check, output, _out, put - _out) : adler32(state.check, output, _out, put - _out));
 
 	          }
 	          _out = left;
 	          // NB: crc32 stored as signed 32-bit int, zswap32 returns signed too
-	          if ((state.wrap & 4) && (state.flags ? hold : zswap32(hold)) !== state.check) {
+	          if ((state.flags ? hold : zswap32(hold)) !== state.check) {
 	            strm.msg = 'incorrect data check';
 	            state.mode = BAD;
 	            break;
@@ -175389,7 +175161,7 @@ function requireInflate () {
 	            bits += 8;
 	          }
 	          //===//
-	          if ((state.wrap & 4) && hold !== (state.total & 0xffffffff)) {
+	          if (hold !== (state.total & 0xffffffff)) {
 	            strm.msg = 'incorrect length check';
 	            state.mode = BAD;
 	            break;
@@ -175444,8 +175216,8 @@ function requireInflate () {
 	  strm.total_in += _in;
 	  strm.total_out += _out;
 	  state.total += _out;
-	  if ((state.wrap & 4) && _out) {
-	    strm.adler = state.check = /*UPDATE_CHECK(state.check, strm.next_out - _out, _out);*/
+	  if (state.wrap && _out) {
+	    strm.adler = state.check = /*UPDATE(state.check, strm.next_out - _out, _out);*/
 	      (state.flags ? crc32(state.check, output, _out, strm.next_out - _out) : adler32(state.check, output, _out, strm.next_out - _out));
 	  }
 	  strm.data_type = state.bits + (state.last ? 64 : 0) +
@@ -175455,47 +175227,45 @@ function requireInflate () {
 	    ret = Z_BUF_ERROR;
 	  }
 	  return ret;
-	};
+	}
 
+	function inflateEnd(strm) {
 
-	const inflateEnd = (strm) => {
-
-	  if (inflateStateCheck(strm)) {
+	  if (!strm || !strm.state /*|| strm->zfree == (free_func)0*/) {
 	    return Z_STREAM_ERROR;
 	  }
 
-	  let state = strm.state;
+	  var state = strm.state;
 	  if (state.window) {
 	    state.window = null;
 	  }
 	  strm.state = null;
 	  return Z_OK;
-	};
+	}
 
-
-	const inflateGetHeader = (strm, head) => {
+	function inflateGetHeader(strm, head) {
+	  var state;
 
 	  /* check state */
-	  if (inflateStateCheck(strm)) { return Z_STREAM_ERROR; }
-	  const state = strm.state;
+	  if (!strm || !strm.state) { return Z_STREAM_ERROR; }
+	  state = strm.state;
 	  if ((state.wrap & 2) === 0) { return Z_STREAM_ERROR; }
 
 	  /* save header structure */
 	  state.head = head;
 	  head.done = false;
 	  return Z_OK;
-	};
+	}
 
+	function inflateSetDictionary(strm, dictionary) {
+	  var dictLength = dictionary.length;
 
-	const inflateSetDictionary = (strm, dictionary) => {
-	  const dictLength = dictionary.length;
-
-	  let state;
-	  let dictid;
-	  let ret;
+	  var state;
+	  var dictid;
+	  var ret;
 
 	  /* check state */
-	  if (inflateStateCheck(strm)) { return Z_STREAM_ERROR; }
+	  if (!strm /* == Z_NULL */ || !strm.state /* == Z_NULL */) { return Z_STREAM_ERROR; }
 	  state = strm.state;
 
 	  if (state.wrap !== 0 && state.mode !== DICT) {
@@ -175521,8 +175291,7 @@ function requireInflate () {
 	  state.havedict = 1;
 	  // Tracev((stderr, "inflate:   dictionary set\n"));
 	  return Z_OK;
-	};
-
+	}
 
 	inflate$2.inflateReset = inflateReset;
 	inflate$2.inflateReset2 = inflateReset2;
@@ -175536,21 +175305,95 @@ function requireInflate () {
 	inflate$2.inflateInfo = 'pako inflate (from Nodeca project)';
 
 	/* Not implemented
-	module.exports.inflateCodesUsed = inflateCodesUsed;
-	module.exports.inflateCopy = inflateCopy;
-	module.exports.inflateGetDictionary = inflateGetDictionary;
-	module.exports.inflateMark = inflateMark;
-	module.exports.inflatePrime = inflatePrime;
-	module.exports.inflateSync = inflateSync;
-	module.exports.inflateSyncPoint = inflateSyncPoint;
-	module.exports.inflateUndermine = inflateUndermine;
-	module.exports.inflateValidate = inflateValidate;
+	exports.inflateCopy = inflateCopy;
+	exports.inflateGetDictionary = inflateGetDictionary;
+	exports.inflateMark = inflateMark;
+	exports.inflatePrime = inflatePrime;
+	exports.inflateSync = inflateSync;
+	exports.inflateSyncPoint = inflateSyncPoint;
+	exports.inflateUndermine = inflateUndermine;
 	*/
 	return inflate$2;
 }
 
 var inflateExports = requireInflate();
 const require$$3$1$1 = /*@__PURE__*/getDefaultExportFromCjs$3(inflateExports);
+
+var constants$2;
+var hasRequiredConstants;
+
+function requireConstants () {
+	if (hasRequiredConstants) return constants$2;
+	hasRequiredConstants = 1;
+
+	// (C) 1995-2013 Jean-loup Gailly and Mark Adler
+	// (C) 2014-2017 Vitaly Puzrin and Andrey Tupitsin
+	//
+	// This software is provided 'as-is', without any express or implied
+	// warranty. In no event will the authors be held liable for any damages
+	// arising from the use of this software.
+	//
+	// Permission is granted to anyone to use this software for any purpose,
+	// including commercial applications, and to alter it and redistribute it
+	// freely, subject to the following restrictions:
+	//
+	// 1. The origin of this software must not be misrepresented; you must not
+	//   claim that you wrote the original software. If you use this software
+	//   in a product, an acknowledgment in the product documentation would be
+	//   appreciated but is not required.
+	// 2. Altered source versions must be plainly marked as such, and must not be
+	//   misrepresented as being the original software.
+	// 3. This notice may not be removed or altered from any source distribution.
+
+	constants$2 = {
+
+	  /* Allowed flush values; see deflate() and inflate() below for details */
+	  Z_NO_FLUSH:         0,
+	  Z_PARTIAL_FLUSH:    1,
+	  Z_SYNC_FLUSH:       2,
+	  Z_FULL_FLUSH:       3,
+	  Z_FINISH:           4,
+	  Z_BLOCK:            5,
+	  Z_TREES:            6,
+
+	  /* Return codes for the compression/decompression functions. Negative values
+	  * are errors, positive values are used for special but normal events.
+	  */
+	  Z_OK:               0,
+	  Z_STREAM_END:       1,
+	  Z_NEED_DICT:        2,
+	  Z_ERRNO:           -1,
+	  Z_STREAM_ERROR:    -2,
+	  Z_DATA_ERROR:      -3,
+	  //Z_MEM_ERROR:     -4,
+	  Z_BUF_ERROR:       -5,
+	  //Z_VERSION_ERROR: -6,
+
+	  /* compression levels */
+	  Z_NO_COMPRESSION:         0,
+	  Z_BEST_SPEED:             1,
+	  Z_BEST_COMPRESSION:       9,
+	  Z_DEFAULT_COMPRESSION:   -1,
+
+
+	  Z_FILTERED:               1,
+	  Z_HUFFMAN_ONLY:           2,
+	  Z_RLE:                    3,
+	  Z_FIXED:                  4,
+	  Z_DEFAULT_STRATEGY:       0,
+
+	  /* Possible values of the data_type field (though see inflate()) */
+	  Z_BINARY:                 0,
+	  Z_TEXT:                   1,
+	  //Z_ASCII:                1, // = Z_TEXT (deprecated)
+	  Z_UNKNOWN:                2,
+
+	  /* The deflate compression method */
+	  Z_DEFLATED:               8
+	  //Z_NULL:                 null // Use -1 or null inline, depending on var type
+	};
+	return constants$2;
+}
 
 var constantsExports = requireConstants();
 const require$$4$1$1 = /*@__PURE__*/getDefaultExportFromCjs$3(constantsExports);
@@ -265259,7 +265102,7 @@ function PrintJobCard({ event, section, elements }) {
   ] });
 }
 
-const {useCallback: useCallback$1,useEffect: useEffect$6,useState: useState$7,useMemo: useMemo$4} = await importShared('react');
+const {useCallback: useCallback$1,useEffect: useEffect$6,useState: useState$7} = await importShared('react');
 function TeiEvents() {
   const { program, tei, stage, evnt } = useParams();
   const [loadingPage, setLoadingPage] = useState$7(true);
@@ -265286,18 +265129,11 @@ function TeiEvents() {
   const [maintenanceCfg, setMaintenanceCfg] = useState$7(null);
   const [maintenanceButtons, setMaintenanceButtons] = useState$7([]);
   const [maintenanceRoles, setMaintenanceRoles] = useState$7([]);
-  const [dataStoreRaw, setDataStoreRaw] = useState$7(null);
   const [workFlow, setWorkFlows] = useState$7();
   const [de, setDe] = useState$7([]);
   useLocation();
-  const maintenanceTriggerAt = useMemo$4(() => {
-    const code = event?.dataValues?.find(
-      (dv) => dv.dataElement === "EbJI5Loxjbl"
-    )?.value;
-    return code || null;
-  }, [event?.dataValues]);
   const [infoCardExpanded, setInfoCardExpanded] = useState$7(false);
-  const { expandedSections, toggleSection, navigateToSection } = useExpandableSections();
+  const [expandedSections, setExpandedSections] = useState$7({});
   const [filePreviewOpen, setFilePreviewOpen] = useState$7(false);
   const [selectedFile, setSelectedFile] = useState$7({
     fileId: null,
@@ -265414,7 +265250,6 @@ function TeiEvents() {
           "dataStore",
           "dataStore"
         );
-        setDataStoreRaw(results);
         const allocationProc = results?.equipmentCollectionProcesses;
         const acknowledgeResult = results?.acknowledgementEquipmentReceiptProcesses;
         const mnt = results?.maintenanceProcesses;
@@ -265522,13 +265357,12 @@ function TeiEvents() {
     return fl;
   };
   const displayVal = (val) => val === null || val === void 0 || val === "" ? "N/A" : val;
-  const wfForSections = appworkFlow();
-  const visibleSections = (pg?.programStageSections || []).filter((section) => {
-    if (wfForSections) {
-      return isMaintenanceSection ? wfForSections?.sections?.includes(section?.id) : true;
-    }
-    return true;
-  });
+  const toggleSection = (id) => {
+    setExpandedSections((prev) => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
   useEffect$6(() => {
     (async () => {
       await getUser();
@@ -265702,16 +265536,15 @@ function TeiEvents() {
           ]
         }
       ),
-      visibleSections.map((section, sectionIndex) => {
-        const wf = wfForSections;
-        const isFirst = sectionIndex === 0;
-        const isLast = sectionIndex === visibleSections.length - 1;
-        const prevSection = !isFirst ? visibleSections[sectionIndex - 1] : null;
-        const nextSection = !isLast ? visibleSections[sectionIndex + 1] : null;
+      pg?.programStageSections?.map((section) => {
+        const wf = appworkFlow();
+        if (wf) {
+          const sectionFlow = isMaintenanceSection ? wf?.sections?.includes(section?.id) : { sections: pg?.programStageSections?.map((s) => s.id) };
+          if (!sectionFlow) return null;
+        }
         return /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
-            id: `section-${section?.id}`,
             className: "form-section-card",
             style: { marginBottom: "20px" },
             children: [
@@ -265746,13 +265579,8 @@ function TeiEvents() {
                   const isFileType = de2?.valueType === "FILE_RESOURCE" || de2?.valueType === "IMAGE";
                   const val = de2?.valueType === "ORGANISATION_UNIT" ? ouNameMap[de2?.id] || ouName : getVal(de2?.id, de2);
                   if (val === void 0) return null;
-                  const fieldLabel = getFieldLabelOverride(
-                    dataStoreRaw,
-                    de2?.id,
-                    maintenanceTriggerAt
-                  ) || de2?.formName;
                   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { marginBottom: 18 }, children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "form-field-label", children: fieldLabel }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "form-field-label", children: de2?.formName }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "form-field-value", children: isFileType && val && val !== "N/A" ? /* @__PURE__ */ jsxRuntimeExports.jsx(
                       IonButton,
                       {
@@ -265892,15 +265720,6 @@ function TeiEvents() {
                     buttonNegativeName: "Cancel",
                     prefillReceiverName: event
                   }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  SectionNavButtons,
-                  {
-                    currentSection: section,
-                    prevSection,
-                    nextSection,
-                    onNavigate: navigateToSection
-                  }
                 )
               ] })
             ]
@@ -265937,9 +265756,9 @@ const MessageView = () => {
   const params = new URLSearchParams(location.search);
   const initialQuery = params.get("q") || "";
   const [search, setSearch] = useState$6(initialQuery);
-  const fetchMessages = async (showLoading = true) => {
+  const fetchMessages = async () => {
     try {
-      if (showLoading) setLoading(true);
+      setLoading(true);
       const data = await dataStore.get(
         `messageConversations?fields=id,subject,messages[id,text,created,sender[id,name]],messageType,read,lastUpdated&filter=messageType:eq:PRIVATE&paging=false`
       );
@@ -265999,12 +265818,6 @@ const MessageView = () => {
   useEffect$5(() => {
     fetchMessages();
   }, [location.search]);
-  useEffect$5(() => {
-    const intervalId = setInterval(() => {
-      fetchMessages(false);
-    }, 6e4);
-    return () => clearInterval(intervalId);
-  }, []);
   useEffect$5(() => {
     const params2 = new URLSearchParams(location.search);
     const q = params2.get("q") || "";
