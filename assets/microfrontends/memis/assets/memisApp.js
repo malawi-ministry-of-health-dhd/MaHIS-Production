@@ -839,6 +839,7 @@ const TrackedEntitiesProvider = ({ children }) => {
             paging: false,
             fields: "trackedEntity,orgUnit,attributes,enrollments[events,program,orgUnit]"
           });
+          const user2 = await LocalForageServiceInstance.getItem("userRes", "user");
           if (parsed) {
             const { startDate, endDate, department } = parsed;
             if (department) {
@@ -855,14 +856,31 @@ const TrackedEntitiesProvider = ({ children }) => {
                 `${options?.filterType}:like:${options?.filterValue}`
               );
             }
-            const user2 = await LocalForageServiceInstance.getItem("userRes", "user");
-            response = await renderListByUserRole({
-              user: user2,
-              programId,
-              orgUnit: department,
-              params: newParams
-            });
-            console.log({ response });
+            if (defaultFilters?.length > 0) {
+              response = await renderListByUserRole({
+                user: user2,
+                programId,
+                orgUnit: department,
+                params: newParams
+              });
+            } else {
+              response = await dataStore.get(
+                `tracker/trackedEntities?${params.toString()}`
+              );
+            }
+          } else {
+            if (defaultFilters?.length > 0) {
+              response = await renderListByUserRole({
+                user: user2,
+                programId,
+                orgUnit: options?.orgUnit,
+                params: newParams
+              });
+            } else {
+              response = await dataStore.get(
+                `tracker/trackedEntities?${params.toString()}`
+              );
+            }
           }
         } else {
           response = await dataStore.get(
