@@ -194,6 +194,73 @@ const runStartSyncCommand = async ({ remoteUrl, auth, locationId, deviceId, useL
     }
 };
 
+// ── Index building (moved off the main thread) ─────────────────────────────
+// PouchDB's createIndex() only writes the _design document; the Mango view is
+// materialised lazily on the first query that uses it. To genuinely keep index
+// work off the UI thread we (1) create the design doc and (2) force the view to
+// build right here with a tiny find() that uses the index. Both steps run in
+// the worker, so the main thread never pays the build cost.
+const warmUpWorkerIndex = async (db, indexDef) => {
+    const field = indexDef && indexDef.index && indexDef.index.fields && indexDef.index.fields[0];
+    if (!field) return false;
+    const useIndex = indexDef.ddoc || indexDef.name;
+    const selectors = [{ [field]: { $gte: null } }, { [field]: { $exists: true } }];
+    for (let i = 0; i < selectors.length; i++) {
+        try {
+            await db.find({ selector: selectors[i], use_index: useIndex, limit: 1 });
+            return true;
+        } catch (error) {
+            // Try the next selector shape. If all fail the design doc still
+            // exists and the view will build lazily on first real query.
+            if (i === selectors.length - 1) {
+                console.warn(`[Index] Warm-up failed for ${indexDef && indexDef.name}:`, (error && error.message) || error);
+            }
+        }
+    }
+    return false;
+};
+
+// createIndex resolves with { result: "created" | "exists" } — it does NOT
+// throw when the index already exists. We surface that so the main thread can
+// distinguish a fresh build from an already-present index honestly.
+const buildWorkerIndex = async (db, indexDef) => {
+    const res = await db.createIndex(indexDef);
+    const built = await warmUpWorkerIndex(db, indexDef);
+    return { result: res && res.result === "exists" ? "exists" : "created", built };
+};
+
+const resolveWorkerDatabase = (dbName, remoteUrl, useLocalStorage, auth) => {
+    if (DatabaseManager.databases && DatabaseManager.databases[dbName]) return DatabaseManager.databases[dbName];
+    return DatabaseManager.getDatabaseHandle(remoteUrl, useLocalStorage, auth, dbName);
+};
+
+// Existence-only probe (cheap _design doc reads) used by the modal to reconcile
+// persisted "ready/verified" status against what is actually on disk.
+const checkWorkerIndexesExist = async (configs, remoteUrl, useLocalStorage, auth) => {
+    const exists = {};
+    for (const [dbName, defs] of Object.entries(configs || {})) {
+        if (dbName === PATIENT_RECORDS_DB && self.SYNC_PATIENTS_LOCALLY !== true) continue;
+        let db;
+        try {
+            db = resolveWorkerDatabase(dbName, remoteUrl, useLocalStorage, auth);
+        } catch (error) {
+            continue;
+        }
+        if (!db) continue;
+        for (const def of defs || []) {
+            const ddocId = def.ddoc && def.ddoc.indexOf("_design/") === 0 ? def.ddoc : `_design/${def.ddoc}`;
+            const fullName = `${dbName}/${def.name}`;
+            try {
+                await db.get(ddocId);
+                exists[fullName] = true;
+            } catch (error) {
+                exists[fullName] = error && (error.status === 404 || error.name === "not_found") ? false : null;
+            }
+        }
+    }
+    return { exists };
+};
+
 // Enhanced Web Worker Message Handler
 self.onmessage = async (event) => {
     const {
@@ -440,9 +507,28 @@ self.onmessage = async (event) => {
                 };
                 break;
 
+            case "buildIndex": {
+                const targetDbName = data && data.dbName;
+                const indexDef = data && data.index;
+                if (!targetDbName || !indexDef) {
+                    throw new Error("buildIndex requires data.dbName and data.index");
+                }
+                if (targetDbName === PATIENT_RECORDS_DB && self.SYNC_PATIENTS_LOCALLY !== true) {
+                    result = { skipped: true, reason: "patient local sync disabled" };
+                    break;
+                }
+                const indexDb = resolveWorkerDatabase(targetDbName, remoteUrl, useLocalStorage, auth);
+                result = await buildWorkerIndex(indexDb, indexDef);
+                break;
+            }
+
+            case "checkIndexes":
+                result = await checkWorkerIndexesExist(data && data.configs, remoteUrl, useLocalStorage, auth);
+                break;
+
             default:
                 sendResponse({
-                    error: `Unknown command: ${command}. Available commands: upsertDocument, get, deleteData, getCount, bulkOperation, getStats, refreshRemoteStats, primeRemoteStats, closeAllDatabases, ping, reinitialize, startSync, stopSync, getSyncStatus, testConnection, getSyncConfiguration`,
+                    error: `Unknown command: ${command}. Available commands: upsertDocument, get, deleteData, getCount, bulkOperation, getStats, refreshRemoteStats, primeRemoteStats, closeAllDatabases, ping, reinitialize, startSync, stopSync, getSyncStatus, testConnection, getSyncConfiguration, buildIndex, checkIndexes`,
                 });
                 return;
         }
