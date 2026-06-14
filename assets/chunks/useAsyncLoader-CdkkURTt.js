@@ -1,0 +1,1 @@
+import{g as a}from"./vendor-0zxfoXSs.js";function s(){const e=a(!1),r=a(null);async function u(o){e.value=!0,r.value=null;try{return await o()}catch(n){r.value=n?.message??"An unexpected error occurred",console.error(n)}finally{e.value=!1}}return{isLoading:e,error:r,run:u}}export{s as u};
