@@ -3,7 +3,9 @@ const currentImports = {};
       let moduleMap = {
 "./memisApp":()=>{
       dynamicLoadingCss(["style.css"], false, './memisApp');
-      return __federation_import('${__federation_expose_./memisApp}').then(module =>Object.keys(module).every(item => exportSet.has(item)) ? () => module.default : () => module)},};
+      return __federation_import("./memisApp.js").then((module) =>
+          Object.keys(module).every((item) => exportSet.has(item)) ? () => module.default : () => module
+      );},};
       const seen = {};
       const dynamicLoadingCss = (cssFilePaths, dontAppendStylesToHead, exposeItemName) => {
         const metaUrl = import.meta.url;
