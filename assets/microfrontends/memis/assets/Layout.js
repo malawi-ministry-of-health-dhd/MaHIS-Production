@@ -21568,6 +21568,30 @@ const Dashboard = () => {
   ] });
 };
 
+const getUsersForAssignment = async () => {
+  try {
+    const org = await LocalForageServiceInstance.getItem("userRes", "user");
+    const units =
+      org?.organisationUnits?.length > 1
+        ? org?.organisationUnits.sort((a, b) => a?.level - b?.level)
+        : org?.organisationUnits;
+    const ouId = units[0]?.id;
+
+    const params = `fields=name,id,username,firstName,surname,organisationUnits,userRoles[id,name]&ou=${ouId}&includeChildren=true&paging=false`;
+    const userResponse = await dataStore?.get(`users?${params}`);
+
+    const usersConsolidated = userResponse?.data?.users?.map((user) => ({
+      ...user,
+      name: `${user?.name}-(${user?.username})`,
+    }));
+
+    return usersConsolidated || [];
+  } catch (error) {
+    console.log({ error });
+    return [];
+  }
+};
+
 const React$N = await importShared('react');
 const {useEffect: useEffect$1q,useState: useState$1r} = React$N;
 function OrganisationUnitsWidget({
@@ -26277,8 +26301,8 @@ function ConfigurableForm({
   const validationConfig = dataStoreData?.formValidations;
   const [canSave, setCanSave] = useState$17(false);
   const [orgUnitsByLevel, setOrgUnitsByLevel] = useState$17({});
+  const [facilityUsers, setFacilityUsers] = useState$17([]);
   useEffect$15(() => {
-    console.log({ lockedFields });
     const loadOrgUnitGroupFields = async () => {
       try {
         const ds = await LocalForageServiceInstance.getItem(
@@ -26311,6 +26335,16 @@ function ConfigurableForm({
       }
     };
     loadOrgUnitGroupFields();
+  }, [programId]);
+  useEffect$15(() => {
+    const load = async () => {
+      try {
+        const res = await getUsersForAssignment();
+        setFacilityUsers(res);
+      } catch (error) {
+      }
+    };
+    load();
   }, [programId]);
   const [wslConfig, setWslConfig] = useState$17(null);
   const [componentInputs, setComponentInputs] = useState$17({});
@@ -26642,11 +26676,15 @@ function ConfigurableForm({
       return "";
     }
   };
+  let attr = null;
   const renderInput = (el, canAddUpdateSection, preFilledValue) => {
     const vt = (el?.valueType || "").toUpperCase();
     const fieldId = el?.id || el?.attribute || el?.dataElement?.id || el;
     const value = formData?.[el?.id] ?? getPreFilled(el?.id, preFilledValue) ?? "";
     const isSparePartIdentifier = el?.name?.toLowerCase().includes("part number") || el?.name?.toLowerCase().includes("spare part") || el?.name?.toLowerCase().includes("equipment id");
+    if (el?.attributeValues?.length > 0) {
+      attr = el?.attributeValues?.find((att) => att?.value === "ALL");
+    }
     const handleIdentifierBlur = async (inputValue) => {
       if (isSparePartIdentifier && inputValue && programId === "kth8UcvwybE") {
         await handleSparePartLookup(fieldId, inputValue);
@@ -26756,6 +26794,21 @@ function ConfigurableForm({
               onChange: (selected) => {
                 const selectedValue = selected.length > 0 ? selected[0]?.code || selected[0] : "";
                 handleChange(el.id, selectedValue);
+              }
+            }
+          );
+        } else if (attr) {
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(
+            SearchableSelect,
+            {
+              data: A$a(facilityUsers),
+              itemTextField: "name",
+              itemValueField: "username",
+              value,
+              placeholder: el?.formName || "Select",
+              onChange: (selected) => {
+                const val = Array.isArray(selected) && selected.length > 0 ? selected[0]?.username : null;
+                handleChange(el.id, val ?? "");
               }
             }
           );
@@ -33285,7 +33338,7 @@ const takeFirstTwoLetters = (value) => {
 
 const randomSixDigits = () => String(Math.floor(Math.random() * 1000000)).padStart(6, "0");
 
-const buildPamValue = (prefix) => `${prefix}${randomSixDigits()}`;
+const buildPamValue = (prefix) => `${randomSixDigits()}`;
 
 const pickFromPamConfig = (store, programId) => {
   const config =
@@ -33369,7 +33422,7 @@ const generateUniquePamAssetNumber = async ({
   }
 
   for (let i = 0; i < maxAttempts; i += 1) {
-    const candidate = buildPamValue(prefix);
+    const candidate = buildPamValue();
     const exists = await existsPamValue({
       programId,
       pamAttributeId: resolvedPamAttributeId,
@@ -33468,12 +33521,12 @@ function FormComponent({
   const getRules = async () => {
     try {
       const rules = await dataStore.get("dataStore/memis/programRules");
-      const r = rules.data.programRule.filter(
-        (pr) => pr.program === program.id && pr.programStage === selectedStage
+      const r = rules?.data?.programRule?.filter(
+        (pr) => pr?.program === program?.id && pr?.programStage === selectedStage
       );
       setRule(r);
-      r.forEach((rule) => {
-        if (rule.action === "assign value" && rule.value === "username") {
+      r?.forEach((rule) => {
+        if (rule?.action === "assign value" && rule?.value === "username") {
           setFormData((prev) => ({
             ...prev,
             [rule.field]: user.username
@@ -33487,7 +33540,7 @@ function FormComponent({
             (a, b) => (b.level || 0) - (a.level || 0)
           );
           let wardOu = null;
-          const wardId = queryParams.get("selectedWard");
+          const wardId = queryParams?.get("selectedWard");
           if (wardId?.trim() !== "" && wardId) {
             wardOu = wardId;
           } else {
@@ -34203,9 +34256,12 @@ function FormComponent({
       getEquipmentAddParam();
     }
   }, [program, user, location.search]);
+  useEffect$12(() => {
+    console.log({ queryParams, selectedStage });
+  }, [location]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonPage, { children: [
     !ackModalOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs(IonContent, { className: "ion-padding", fullscreen: true, children: [
-      queryParams.get("q") === "add" && program?.programType === "WITH_REGISTRATION" && queryParams?.get("taskId")?.trim() === "" && !selectedStage && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      queryParams.get("q") === "add" && program?.programType === "WITH_REGISTRATION" && (!queryParams?.get("taskId")?.trim() || queryParams?.get("taskId")?.trim() === "") && selectedStage && /* @__PURE__ */ jsxRuntimeExports.jsx(
         MultiEntryCheckBox,
         {
           isMultiple,
@@ -64207,7 +64263,7 @@ function StageEvents({
         programStageId,
         programType: res?.data?.programType
       });
-      const cols = pdes.map((de) => {
+      let cols = pdes.map((de) => {
         const attrs = de.dataElement?.attributeValues || [];
         const showAttr = attrs.find((att) => att.attribute.id === showAttrId);
         const orderAttr = attrs.find(
@@ -64255,15 +64311,27 @@ function StageEvents({
           }
         });
       }
-      cols.sort((a, b) => a.order - b.order);
+      cols = cols.map((kk, index) => ({
+        ...kk,
+        order: kk?.order + 2
+      }));
+      if (programStageId === "X3yNvXvB14A") {
+        cols?.push({
+          label: "Equipment",
+          key: "trackedEntity",
+          visible: true,
+          order: 1
+        });
+      }
       cols.push({
         label: "Created At",
         key: "occurredAt",
         visible: true,
-        order: 1
+        order: Math.max(cols?.map((cl) => cl?.order)) + 1
       });
-      setAllColumnsOrdered(cols);
-      setVisibleColumnKeys(new Set(cols.map((c) => c.key)));
+      const sortedData = cols?.filter((c) => c?.visible).sort((a, b) => a?.order - b?.order);
+      setAllColumnsOrdered(sortedData);
+      setVisibleColumnKeys(new Set(sortedData.map((c) => c.key)));
     } catch (error) {
       console.error("[MEMIS] Failed to fetch Program DE:", error);
       showToast("Failed to load program details. Please try again.", "error");
@@ -64609,13 +64677,23 @@ function StageEvents({
             prev: () => {
               const prevPage = (pagination?.page || 1) - 1;
               if (prevPage < 1) return;
-              getEvents(effectiveProgramId, effectiveStageId, user?.organisationUnits, prevPage);
+              getEvents(
+                effectiveProgramId,
+                effectiveStageId,
+                user?.organisationUnits,
+                prevPage
+              );
               setPagination((p) => ({ ...p, page: prevPage }));
             },
             next: () => {
               const nextPage = (pagination?.page || 1) + 1;
               if (nextPage > (pagination?.pageCount || 1)) return;
-              getEvents(effectiveProgramId, effectiveStageId, user?.organisationUnits, nextPage);
+              getEvents(
+                effectiveProgramId,
+                effectiveStageId,
+                user?.organisationUnits,
+                nextPage
+              );
               setPagination((p) => ({ ...p, page: nextPage }));
             },
             priorities
@@ -97529,6 +97607,7 @@ function CollectionModal({
 }) {
   const [collectorDetails, setCollectorDetails] = useState$D(null);
   const formSection = flow?.onApprove?.formSection || flow?.formSection || { fields: [] };
+  const [facilityUsers, setFacilityUsers] = useState$D([]);
   const fields = Array.isArray(formSection?.fields) ? formSection.fields : [];
   const prefillCfg = formSection?.prefill || null;
   const formSectionSparePartFieldId = useMemo$j(
@@ -97940,37 +98019,29 @@ function CollectionModal({
         )
       ] }, f.id);
     }
-    if (osId && f.key === "collectorName") {
-      const opts = collectorDetails?.requireOptionGroup ? collectorDetails?.options || [] : optionsCache.get(f.id) || [];
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
-        label,
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          SearchableSelect,
-          {
-            data: opts,
-            itemTextField: "name",
-            itemValueField: "code",
-            multiple: false,
-            title: labelText,
-            placeholder: `Select ${(labelText).toLowerCase()}`,
-            value,
-            closeOnSignal: !isOpen || saving,
-            disabled: false,
-            onChange: (selected) => {
-              const picked = selected?.[0] || null;
-              setFormData({
-                ...formData,
-                [f.id]: picked?.code || picked?.name || ""
-              });
-            }
+    if (f.key === "collectorName" || f.key === "collectorNameOutside") {
+      return /* @__PURE__ */ jsxRuntimeExports.jsx(IonItem, { lines: "none", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        SearchableSelect,
+        {
+          data: Array.isArray(facilityUsers) && facilityUsers,
+          itemTextField: "name",
+          itemValueField: "username",
+          value,
+          placeholder: f?.formName || "Select collector",
+          onChange: (selected) => {
+            const val = Array.isArray(selected) && selected?.length > 0 ? selected[0]?.username : null;
+            setFormData({
+              ...formData,
+              [f.id]: val ?? ""
+            });
           }
-        )
-      ] }, f.id);
+        }
+      ) }, f.id);
     }
     if (osId) {
       const opts = optionsCache.get(f.id) || [];
       const isDispatchOfficer = f.id === byKey.get("dispatchOfficer")?.id;
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
         label,
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           SearchableSelect,
@@ -97996,7 +98067,7 @@ function CollectionModal({
       ] }, f.id);
     }
     if (vt === "DATE") {
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
         label,
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           IonInput,
@@ -98027,7 +98098,7 @@ function CollectionModal({
           datetimeLocalValue = value.slice(0, 16);
         }
       }
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
         label,
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           IonInput,
@@ -98055,7 +98126,7 @@ function CollectionModal({
     }
     if (NUMERIC_TYPES.has(vt)) {
       const min = vt === "INTEGER_ZERO_OR_POSITIVE" || vt === "INTEGER_POSITIVE" ? 0 : void 0;
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
         label,
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           IonInput,
@@ -98081,7 +98152,7 @@ function CollectionModal({
         )
       ] }, f.id);
     }
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
       label,
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         IonInput,
@@ -98240,13 +98311,23 @@ function CollectionModal({
       }
     })();
   }, [isOpen]);
+  useEffect$A(() => {
+    const load = async () => {
+      try {
+        const res = await getUsersForAssignment();
+        setFacilityUsers(res);
+      } catch (error2) {
+      }
+    };
+    load();
+  }, [isOpen]);
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     CustomModal,
     {
       isOpen,
       onClose,
-      height: "60%",
-      width: "35%",
+      height: "80%",
+      width: "40%",
       onSave: handleSave,
       disabledPositiveButtonController: disablePositive,
       positiveButtonText: saving ? "Saving…" : "Save",
@@ -148941,6 +149022,8 @@ function ProgramAccessGuard({ children, programId }) {
 
 const React$e = await importShared('react');
 const {useContext: useContext$b,useEffect: useEffect$h,useState: useState$i} = React$e;
+const ON_BEHALF_CHECKBOX_ID = "FZ6Ok8cxUAK";
+const ON_BEHALF_FIELDS = ["nqyZpADgXvK", "l9p0GYnmzpm"];
 const A$3 = (x) => Array.isArray(x) ? x : [];
 function UpdateCollectionStatus({
   // program,
@@ -148964,6 +149047,7 @@ function UpdateCollectionStatus({
   const [facilityUsers, setFacilityUsers] = useState$i([]);
   const [currentUsername, setCurrentUsername] = useState$i("");
   const [autofillConfig, setAutofillConfig] = useState$i(null);
+  const [collectingOnBehalf, setCollectingOnBehalf] = useState$i(false);
   useEffect$h(() => {
     const userData = localStorage.getItem("memisCredentials");
     if (userData) {
@@ -149119,6 +149203,29 @@ function UpdateCollectionStatus({
     const value = formData?.[field?.id] ?? "";
     const isDisabled = isFieldDisabled(field?.id);
     const label = field?.formName || field?.name || field?.id;
+    if (field?.id === ON_BEHALF_CHECKBOX_ID) {
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", style: { marginTop: 8 }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          IonCheckbox,
+          {
+            slot: "start",
+            checked: collectingOnBehalf,
+            onIonChange: (e) => {
+              const checked = e.detail.checked;
+              setCollectingOnBehalf(checked);
+              handleChange(field?.id, checked ? "true" : "false");
+              if (!checked) {
+                ON_BEHALF_FIELDS.forEach((id) => handleChange(id, ""));
+              }
+            }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { children: label })
+      ] }, field?.id);
+    }
+    if (ON_BEHALF_FIELDS.includes(field?.id) && !collectingOnBehalf) {
+      return null;
+    }
     let attr = null;
     if (field?.attributeValues?.length > 0) {
       attr = field?.attributeValues?.find(
@@ -149211,6 +149318,22 @@ function UpdateCollectionStatus({
             }
           )
         ] }, field?.id);
+      case "PHONE_NUMBER":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            IonInput,
+            {
+              fill: "outline",
+              placeholder: label,
+              className: "ion-margin-top ion-text-wrap",
+              type: "tel",
+              value,
+              onIonChange: (e) => handleChange(field.id, e.detail.value),
+              clearInput: true
+            }
+          )
+        ] }, field?.id);
       case "DATE":
         return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
@@ -149236,6 +149359,7 @@ function UpdateCollectionStatus({
     setVisibleFields([]);
     setError(null);
     setOpenModal(false);
+    setCollectingOnBehalf(false);
   };
   useEffect$h(() => {
     getFields();
@@ -149266,10 +149390,15 @@ function UpdateCollectionStatus({
         }
       });
       setFormData(initialData);
+      const savedOnBehalf = existingValues.get(ON_BEHALF_CHECKBOX_ID);
+      setCollectingOnBehalf(savedOnBehalf === "true");
       loadEquipmentForFields();
     }
   }, [openModal, fields, currentUsername, event, autofillConfig]);
-  const isSaveDisabled = loading || saving || visibleFields.length === 0 || visibleFields.every(
+  const requiredVisibleFields = visibleFields.filter(
+    (id) => collectingOnBehalf || !ON_BEHALF_FIELDS.includes(id)
+  );
+  const isSaveDisabled = loading || saving || requiredVisibleFields.length === 0 || requiredVisibleFields.filter((id) => id !== ON_BEHALF_CHECKBOX_ID).every(
     (id) => formData[id] === void 0 || formData[id] === "" || formData[id] === null
   );
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -149342,6 +149471,7 @@ function AcknowledgeCollectionStatus({
   const [fields, setFields] = useState$h([]);
   const [formData, setFormData] = useState$h({});
   const [loading, setLoading] = useState$h(true);
+  const [disabledList, setDisabledList] = useState$h([]);
   const [saving, setSaving] = useState$h(false);
   const [error, setError] = useState$h(null);
   const [openModal, setOpenModal] = useState$h(false);
@@ -149404,7 +149534,6 @@ function AcknowledgeCollectionStatus({
         { events: [payload] }
       );
       if (result?.status === 200) {
-        console.log({ event });
         await notificationSendTrigger("EQUIPMENT_COLLECTION_ACKNOWLEDGMENT", {
           program: event?.program,
           tei: event?.trackedEntity,
@@ -149463,17 +149592,11 @@ function AcknowledgeCollectionStatus({
   const renderField = (field) => {
     const type = field?.valueType;
     const value = formData?.[field?.id] ?? "";
+    const isDisabled = disabledList.find((ds) => ds?.id === field?.id);
     switch (type) {
       case "BOOLEAN":
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ion-w-full", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            IonLabel,
-            {
-              className: "ion-margin-bottom ion-text-wrap",
-              position: "stacked",
-              children: field?.name
-            }
-          ),
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", className: "ion-margin-bottom", children: field?.name }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
             IonRadioGroup,
             {
@@ -149495,7 +149618,7 @@ function AcknowledgeCollectionStatus({
       case "TEXT":
       case "USERNAME":
         if (field?.optionSetValue) {
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: field?.formName || field?.name }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               SearchableSelect,
@@ -149505,6 +149628,7 @@ function AcknowledgeCollectionStatus({
                 itemValueField: "code",
                 value,
                 placeholder: field?.formName || "Select",
+                disabled: isDisabled,
                 onChange: (selected) => {
                   const val = Array.isArray(selected) && selected.length > 0 ? selected[0]?.code : null;
                   handleChange(field.id, val ?? "");
@@ -149513,29 +149637,36 @@ function AcknowledgeCollectionStatus({
             )
           ] }, field?.id);
         }
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          IonInput,
-          {
-            fill: "outline",
-            placeholder: field?.formName,
-            className: "ion-margin-bottom ion-text-wrap",
-            type: "text",
-            value,
-            onIonChange: (e) => handleChange(field.id, e.detail.value)
-          }
-        );
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: field?.formName || field?.name }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            IonInput,
+            {
+              fill: "outline",
+              placeholder: field?.formName,
+              className: "ion-margin-top ion-text-wrap",
+              type: "text",
+              disabled: isDisabled,
+              value,
+              onIonChange: (e) => handleChange(field.id, e.detail.value)
+            }
+          )
+        ] }, field?.id);
       case "DATE":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          IonInput,
-          {
-            fill: "outline",
-            placeholder: field?.formName,
-            className: "ion-margin-bottom ion-text-wrap",
-            type: "date",
-            value,
-            onIonChange: (e) => handleChange(field?.id, e.detail?.value)
-          }
-        );
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", className: "ion-margin-top", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", className: "ion-margin-bottom", children: field?.formName || field?.name }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            IonInput,
+            {
+              fill: "outline",
+              placeholder: field?.formName,
+              className: "ion-margin-bottom ion-text-wrap",
+              type: "date",
+              value,
+              onIonChange: (e) => handleChange(field?.id, e.detail?.value)
+            }
+          )
+        ] }, field?.id);
       default:
         return null;
     }
@@ -149554,6 +149685,7 @@ function AcknowledgeCollectionStatus({
       if (openModal && fields.length > 0) {
         const initial = {};
         const rec = await prefillAcknowledgingReceiver(event);
+        setDisabledList([{ id: rec?.value?.id }]);
         fields.forEach((f) => {
           if (rec && f?.id === rec?.value?.id) {
             initial[f.id] = rec?.value?.value;
@@ -149576,12 +149708,12 @@ function AcknowledgeCollectionStatus({
       {
         isOpen: openModal,
         onClose: handleCloseModal,
-        height: "50%",
-        width: "35%",
+        height: "70%",
+        width: "40%",
         onSave: handleSubmit,
         disabledPositiveButtonController: isSaveDisabled,
         positiveButtonText: saving ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: "6px" }, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(IonSpinner, { name: "crescent" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(IonSpinner, { name: "dots" }),
           " ",
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Saving..." })
         ] }) : buttonPositiveName,
@@ -150838,6 +150970,7 @@ function Asseng({
   const [options, setOptions] = useState$e([]);
   const [saving, setSaving] = useState$e(false);
   const [error, setError] = useState$e(null);
+  const [facilityUsers, setFacilityUsers] = useState$e([]);
   let buttonPositiveName = "Save";
   const responsibleEngineer = section?.dataElements.find(
     (e) => e.id === "ikEZkhoaTTU"
@@ -150901,12 +151034,26 @@ function Asseng({
     }
   };
   useEffect$d(() => {
-    setOptions(responsibleEngineer.optionSet.options || []);
+    setOptions(responsibleEngineer?.optionSet?.options || []);
+  }, [responsibleEngineer]);
+  useEffect$d(() => {
+    const load = async () => {
+      try {
+        const res = await getUsersForAssignment();
+        setFacilityUsers(res);
+      } catch (error2) {
+      }
+    };
+    load();
   }, [responsibleEngineer]);
   const renderField = (field) => {
     const type = field?.valueType;
     const value = formData?.[field?.id] || getVal(field?.id) || "";
     const label = field?.formName || field?.name || field?.id;
+    let attr = null;
+    if (field?.attributeValues?.length > 0) {
+      attr = field?.attributeValues?.find((att) => att?.value === "ENGINEERS");
+    }
     switch (type) {
       case "BOOLEAN":
         return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ion-w-full", children: [
@@ -150939,7 +151086,7 @@ function Asseng({
       case "TEXT":
       case "USERNAME":
         if (field?.optionSet) {
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { lines: "none", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               SearchableSelect,
@@ -150951,6 +151098,24 @@ function Asseng({
                 placeholder: field?.formName || "Select",
                 onChange: (selected) => {
                   const val = Array.isArray(selected) && selected.length > 0 ? selected[0]?.code : null;
+                  handleChange(field.id, val ?? "");
+                }
+              }
+            )
+          ] }, field?.id);
+        } else if (attr) {
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonItem, { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { position: "stacked", children: label }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              SearchableSelect,
+              {
+                data: A$1(facilityUsers),
+                itemTextField: "name",
+                itemValueField: "username",
+                value,
+                placeholder: field?.formName || "Select",
+                onChange: (selected) => {
+                  const val = Array.isArray(selected) && selected.length > 0 ? selected[0]?.username : null;
                   handleChange(field.id, val ?? "");
                 }
               }
@@ -151000,6 +151165,8 @@ function Asseng({
         isOpen: openModal,
         onClose: () => setOpenModal(false),
         onSave: handleSubmit,
+        height: "40%",
+        width: "30%",
         positiveButtonText: saving ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: "6px" }, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(IonSpinner, { name: "crescent" }),
           " ",
@@ -151442,8 +151609,8 @@ function ConfirmMaintenance({
         title: "Confirm Maintenance",
         isOpen: openModal,
         onClose: () => setOpenModal(false),
-        height: "80%",
-        width: "60%",
+        height: "50%",
+        width: "40%",
         onSave: handleSubmit,
         positiveButtonText: saving ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: "6px" }, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(IonSpinner, { name: "crescent" }),
@@ -151454,7 +151621,7 @@ function ConfirmMaintenance({
           IonContent,
           {
             className: "ion-padding",
-            style: { position: "relative", minHeight: 600 },
+            style: { position: "relative", minHeight: 300 },
             children: dataElements.map((de) => {
               console.log("de", de?.optionSet?.options);
               if (getVal("EbJI5Loxjbl") === "Corrective_maintenance" && de.id === "rq944zY0g89") {
@@ -265350,6 +265517,14 @@ const JobCardDocument = ({ data }) => {
     /* @__PURE__ */ jsxRuntimeExports.jsxs(View, { style: styles.section, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { style: styles.sectionTitle, children: "Maintenance Information" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs(View, { style: styles.row, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { style: styles.label, children: "Maintenance Type:" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { style: styles.value, children: data["Maintenance Type"] || "N/A" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(View, { style: styles.row, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { style: styles.label, children: "Confirmed:" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { style: styles.value, children: data["Maintenance Confirmed"] || "NO" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(View, { style: styles.row, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { style: styles.label, children: "Requested By (Dept):" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { style: styles.value, children: data["Complaint by"] })
       ] }),
@@ -265373,8 +265548,8 @@ const JobCardDocument = ({ data }) => {
         /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { style: styles.value, children: formatValue(data["Safety"]) })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs(View, { style: styles.row, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { style: styles.label, children: "Down time (Days):" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { style: styles.value, children: data["Down time (Days)"] || "0" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { style: styles.label, children: "Days Open:" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { style: styles.value, children: data["Days Open"] ?? "0" })
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs(View, { style: styles.section, children: [
@@ -265414,6 +265589,13 @@ function PrintJobCard({ event, section, elements }) {
     if (!openModal || !event || !elements || !section?.dataElements) return;
     const prepareData = async () => {
       setLoading(true);
+      const MAINTENANCE_TYPE_DE = "EbJI5Loxjbl";
+      const MAINTENANCE_CONFIRM_DE = "YjhRG2PMTMG";
+      const MAINTENANCE_TYPE_OPTIONS = {
+        Corrective_maintenance: "Corrective maintenance",
+        Preventive_maintenance: "Preventive maintenance",
+        Referral_maintenance: "Referral maintenance"
+      };
       const mapped = {};
       A(elements).forEach((id) => {
         const meta = A(section.dataElements).find((de) => de.id === id);
@@ -265422,6 +265604,19 @@ function PrintJobCard({ event, section, elements }) {
           mapped[meta.formName] = dataValue.value;
         }
       });
+      const mtDv = A(event.dataValues).find((dv) => dv.dataElement === MAINTENANCE_TYPE_DE);
+      if (mtDv?.value) {
+        mapped["Maintenance Type"] = MAINTENANCE_TYPE_OPTIONS[mtDv.value] || mtDv.value;
+      }
+      const confirmDv = A(event.dataValues).find((dv) => dv.dataElement === MAINTENANCE_CONFIRM_DE);
+      mapped["Maintenance Confirmed"] = confirmDv?.value === "true" ? "YES" : "NO";
+      const COMPLETION_DATE_DE = "nuiU4flspbV";
+      const openDate = new Date(event.occurredAt);
+      const isConfirmed = confirmDv?.value === "true";
+      const completionDv = A(event.dataValues).find((dv) => dv.dataElement === COMPLETION_DATE_DE);
+      const closeDate = isConfirmed && completionDv?.value ? new Date(completionDv.value) : /* @__PURE__ */ new Date();
+      const daysOpen = Math.max(0, Math.round((closeDate - openDate) / (1e3 * 60 * 60 * 24)));
+      mapped["Days Open"] = String(daysOpen);
       let resolvedOuName = "N/A";
       if (event.orgUnit) {
         try {
@@ -265537,6 +265732,7 @@ function TeiEvents() {
     eventId: null,
     dataElementId: null
   });
+  const [hasAccess, setHasAccess] = useState$7(false);
   const handleFilePreview = (fileId, valueType, dataElementId, fileName) => {
     setSelectedFile({
       fileId,
@@ -265570,6 +265766,29 @@ function TeiEvents() {
   const userHasMaintenanceRole = () => (user?.userRoles || []).some(
     (r) => (maintenanceRoles || []).some((u) => u.id === r.id)
   );
+  const userCanScheduleMaintenance = (sect) => (user?.userRoles || []).some(
+    (r) => (maintenanceButtons || [])?.find(
+      (mr) => mr?.sectionId === sect && mr?.rolesAllowed?.some((u) => u.id === r.id)
+    )
+  );
+  const userCanConfirmMaintenance = (sect) => {
+    const userRoles = user?.userRoles || [];
+    const orgUnits = user?.organisationUnits || [];
+    const buttons = maintenanceButtons || [];
+    const targetOrgId = event?.dataValues?.find(
+      (dv) => dv?.dataElement === "mxqD92TfUg8"
+    )?.value;
+    const hasRoleAccess = userRoles.some(
+      (role) => buttons.some(
+        (button) => button?.sectionId === sect && (button?.rolesAllowed || []).some(
+          (allowedRole) => allowedRole.id === role.id
+        )
+      )
+    );
+    const belongsToOrg = orgUnits.some((org) => org?.id === targetOrgId);
+    const authorise = hasRoleAccess && belongsToOrg;
+    return { authorise };
+  };
   const setCrmbs = async (obj) => {
     await dataStore.get(`programs/${program}?fields=${PROGRAMS_FIELDS}`).then(async (p) => {
       const nameAttr = p?.data?.programTrackedEntityAttributes?.filter(
@@ -265626,7 +265845,7 @@ function TeiEvents() {
         setEvent(progEvent?.data);
         setOu(progEventOrg);
         const progEventStage = await dataStore.get(
-          `programStages/${stage2}?fields=name,id,programStageDataElements[id,dataElement[*]],programStageSections[id,name,description,dataElements[id,formName,valueType,optionSet[name,options[*]],optionSetValues[*]]],displayName`
+          `programStages/${stage2}?fields=name,id,programStageDataElements[id,dataElement[id,name,formName,displayName,attributeValues[value,attribute[id,code,name]]]],programStageSections[id,name,description,dataElements[id,formName,valueType,optionSet[name,options[*]],attributeValues[value,attribute[id,code,name]],optionSetValues[*]]],displayName`
         );
         const programs = await LocalForageServiceInstance.getItem(
           "programs",
@@ -266057,7 +266276,7 @@ function TeiEvents() {
                     buttonLabel: getConfirmButtonLabel$1(section?.id)
                   }
                 ),
-                isScheduleButtonSection(section?.id) && getVal("ZRmJ2n29bEk") !== "Yes" && !getVal("vXT4KkXeRus") && getVal("ikEZkhoaTTU") && userHasMaintenanceRole() && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                isScheduleButtonSection(section?.id) && getVal("ZRmJ2n29bEk") !== "Yes" && !getVal("vXT4KkXeRus") && getVal("ikEZkhoaTTU") && userHasMaintenanceRole() && userCanScheduleMaintenance(section?.id) && /* @__PURE__ */ jsxRuntimeExports.jsx(
                   Schedule,
                   {
                     event,
@@ -266067,7 +266286,7 @@ function TeiEvents() {
                     getVal
                   }
                 ),
-                getValForButtonGuard() && section?.id === "fdK9OHcaIcV" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                getValForButtonGuard() && section?.id === "fdK9OHcaIcV" && userCanConfirmMaintenance(section?.id)?.authorise && /* @__PURE__ */ jsxRuntimeExports.jsx(
                   ConfirmMaintenance,
                   {
                     event,

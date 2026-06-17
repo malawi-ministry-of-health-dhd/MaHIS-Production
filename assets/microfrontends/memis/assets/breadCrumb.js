@@ -39270,7 +39270,7 @@ const PROGRAMS_FIELDS = [
   "programSections[id,name,formName,trackedEntityAttributes[id,name,formName,valueType,attributeValues[value,attribute[id,code,name]],optionSetValue,optionSet[id,name,code,options[id,name,code]]]]",
 
   // For event & tracker-event forms: stages + their sections/DEs
-  "programStages[id,name,displayName,programStageSections[id,name,programStage[id,name],formName,dataElements[id,name,sortOrder,formName,domainType,valueType,optionSetValue,optionSet[id,name,code,options[id,name,code]]]],programStageDataElements[id,compulsory,programStage[id],dataElement[id,name,code,domainType,formName,valueType,optionSetValue,optionSet[id,name,code,options[id,name,code]],attributeValues[value,attribute[id,name]]]]]",
+  "programStages[id,name,displayName,programStageSections[id,name,programStage[id,name],formName,dataElements[id,name,sortOrder,formName,domainType,valueType,optionSetValue,attributeValues[value,attribute[id,code,name]],optionSet[id,name,code,options[id,name,code]]]],programStageDataElements[id,compulsory,programStage[id],dataElement[id,name,code,domainType,formName,valueType,optionSetValue,attributeValues[value,attribute[id,code,name]],optionSet[id,name,code,options[id,name,code]]]]]",
   "programRules[id,name,displayName,description,condition,priority,programRuleActions[id,programRuleActionType,dataElement[id,name,valueType],trackedEntityAttribute[id,name,valueType],data,content,location,programStageSection[id,name],programStage[id,name]]]",
   "programRuleVariables[id,name,displayName,programRuleVariableSourceType,useCodeForOptionSet,dataElement[id,name,valueType,optionSet[id]],trackedEntityAttribute[id,name,valueType,optionSet[id]],programStage[id,name]]",
 
