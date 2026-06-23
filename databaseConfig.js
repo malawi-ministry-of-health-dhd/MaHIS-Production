@@ -31,6 +31,7 @@ const databaseConfig = {
         "user_properties",
         "beds",
         "sections",
+        "impow_drugs",
     ],
     editablePeriodicSyncDatabases: ["facilities", "printer_configurations"],
     locationFilters: {
