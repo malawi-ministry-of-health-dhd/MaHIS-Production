@@ -33,7 +33,7 @@ const databaseConfig = {
         "sections",
         "impow_drugs",
     ],
-    editablePeriodicSyncDatabases: ["facilities", "printer_configurations"],
+    editablePeriodicSyncDatabases: ["facilities", "printer_configurations", "global_properties"],
     locationFilters: {
         patients_records: true,
         visits: true,
@@ -42,5 +42,6 @@ const databaseConfig = {
         stock: true,
         printer_configurations: true,
         beds: true,
+        global_properties: true,
     },
 };
