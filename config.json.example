@@ -16,7 +16,7 @@
 	"production": {
 		"apiURL": "mahis.health.gov.mw",
 		"apiPort": "443",
-		"apiProtocol": "http",
+		"apiProtocol": "https",
 		"websocketProtocol": "wss",
 		"mahisReportURL": "https://mahisreports.health.gov.mw/home?route=mahis&"
 	}
