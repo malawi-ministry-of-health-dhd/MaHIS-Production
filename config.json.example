@@ -4,20 +4,20 @@
 		"apiPort": "3000",
 		"apiProtocol": "http",
 		"websocketProtocol": "ws",
-		"mahisReportURL": "https://mahistest.health.gov.mw/reports/home"
+		"mahisReportURL": "https://mahisreports.health.gov.mw/home?route=mahisdev&"
 	},
 	"test": {
 		"apiURL": "mahistest.health.gov.mw",
 		"apiPort": "443",
 		"apiProtocol": "https",
 		"websocketProtocol": "wss",
-		"mahisReportURL": "https://mahistest.health.gov.mw/reports/home"
+		"mahisReportURL": "https://mahisreports.health.gov.mw/home?route=mahistest&"
 	},
 	"production": {
 		"apiURL": "mahis.health.gov.mw",
 		"apiPort": "443",
 		"apiProtocol": "http",
 		"websocketProtocol": "wss",
-		"mahisReportURL": "https://mahistest.health.gov.mw/reports/home"
+		"mahisReportURL": "https://mahisreports.health.gov.mw/home?route=mahis&"
 	}
 }
