@@ -3,6 +3,8 @@ importScripts("db.js", "sync_manager.js", "../databaseConfig.js");
 
 // Global vars
 let LOCATION_ID = "";
+let FACILITY_LOCATION_ID = "";
+let DEVICE_ID = "";
 let USE_LOCAL_STORAGE = "";
 let USE_LAN_CONNECTION = "";
 let SYNC_BATCH_SIZE = "";
@@ -119,7 +121,7 @@ const startLocalSyncInBackground = (remoteUrl, auth, syncOptions) => {
     return syncStartupPromise;
 };
 
-const runStartSyncCommand = async ({ remoteUrl, auth, locationId, deviceId, useLocalStorage, useLanConnection, resetCheckpoints = false }) => {
+const runStartSyncCommand = async ({ remoteUrl, auth, locationId, deviceId, apiConfig = {}, useLocalStorage, useLanConnection, resetCheckpoints = false }) => {
     if (!hasOfflineDataSource(useLocalStorage, useLanConnection)) {
         SyncManager.stopAllSync();
         if (DatabaseManager.isInitialized) {
@@ -159,7 +161,7 @@ const runStartSyncCommand = async ({ remoteUrl, auth, locationId, deviceId, useL
             // tears down cleanly; a plain resume now reuses existing DB handles.
         }
 
-        const syncOptions = { ...auth, deviceId: deviceId || locationId, resetCheckpoints: resetCheckpoints === true };
+        const syncOptions = { ...auth, deviceId: deviceId || locationId, apiConfig, resetCheckpoints: resetCheckpoints === true };
         if (useLocalStorage) {
             await DatabaseManager.init(remoteUrl, useLocalStorage, auth);
             SyncManager.init();
@@ -180,6 +182,7 @@ const runStartSyncCommand = async ({ remoteUrl, auth, locationId, deviceId, useL
             await publishLocalStatsBeforeSync(remoteUrl, auth);
             await primeRemoteStatsBeforeSync(remoteUrl, auth, { parallelLimit: 1 });
             await SyncManager.syncPeriodicDde(remoteUrl, syncOptions);
+            await SyncManager.syncLabAccessionNumbers(remoteUrl, syncOptions);
             SyncManager.watchDirectRemoteChanges(remoteUrl, syncOptions);
             refreshRemoteStatsInBackground(remoteUrl, auth, { parallelLimit: 1 });
         }
@@ -267,7 +270,9 @@ self.onmessage = async (event) => {
         requestId,
         command,
         location_id,
+        facilityLocationId,
         deviceId,
+        apiConfig,
         remoteUrl,
         auth,
         storeName,
@@ -280,6 +285,10 @@ self.onmessage = async (event) => {
     } = event.data;
 
     LOCATION_ID = location_id;
+    FACILITY_LOCATION_ID = facilityLocationId || location_id;
+    DEVICE_ID = deviceId || "";
+    self.DEVICE_ID = DEVICE_ID;
+    self.FACILITY_LOCATION_ID = FACILITY_LOCATION_ID;
     USE_LOCAL_STORAGE = useLocalStorage;
     USE_LAN_CONNECTION = useLanConnection;
     SYNC_BATCH_SIZE = Math.max(1, Number(sync_batch_size) || 10);
@@ -316,6 +325,7 @@ self.onmessage = async (event) => {
                 auth,
                 locationId: location_id,
                 deviceId,
+                apiConfig,
                 useLocalStorage,
                 useLanConnection,
                 resetCheckpoints: data?.resetCheckpoints === true,

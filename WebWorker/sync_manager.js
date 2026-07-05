@@ -3,8 +3,7 @@ importScripts(
     "./sync_management/sync-utils.js",
     "./sync_management/initial-sync-manager.js",
     "./sync_management/live-sync-manager.js",
-    "./sync_management/periodic-sync-manager.js",
-    "./sync_management/dde-manager.js"
+    "./sync_management/periodic-sync-manager.js"
 );
 /**
  * Main SyncManager - coordinates all sync operations
@@ -31,8 +30,11 @@ const SyncManager = {
         const filterByLocation = databaseConfig.locationFilters[dbName];
         if (!filterByLocation) return null;
 
+        const idPoolDatabases = new Set(["dde", "lab_accession_numbers"]);
+        const locationId = idPoolDatabases.has(dbName) ? (typeof FACILITY_LOCATION_ID !== "undefined" && FACILITY_LOCATION_ID) || LOCATION_ID : LOCATION_ID;
+
         return {
-            location_id: LOCATION_ID,
+            location_id: locationId,
         };
     },
 
@@ -42,6 +44,181 @@ const SyncManager = {
 
     isEditablePeriodicSyncDatabase(dbName) {
         return this.getPeriodicSyncDirection(dbName) === "bidirectional";
+    },
+
+    getIdPoolTarget(dbName) {
+        return {
+            dde: 10,
+            lab_accession_numbers: 25,
+        }[dbName] || 0;
+    },
+
+    isDeviceIdPoolDatabase(dbName) {
+        return ["dde", "lab_accession_numbers"].includes(dbName);
+    },
+
+    buildApiUrl(path, options = {}, params = {}) {
+        const apiConfig = options.apiConfig || {};
+        const protocol = String(apiConfig.protocol || "http").replace(/:$/, "");
+        const host = String(apiConfig.host || "").trim();
+        const port = apiConfig.port ? `:${String(apiConfig.port).replace(/^:/, "")}` : "";
+        const normalizedPath = String(path || "").replace(/^\/+/, "");
+        const query = Object.entries(params)
+            .filter(([, value]) => value !== undefined && value !== null && value !== "")
+            .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+            .join("&");
+
+        if (!host) throw new Error("API host is not configured for worker ID pool sync");
+
+        return `${protocol}://${host}${port}/api/v1/${normalizedPath}${query ? `?${query}` : ""}`;
+    },
+
+    async apiJson(method, path, options = {}, { params = {}, body = null } = {}) {
+        const apiConfig = options.apiConfig || {};
+        const apiKey = String(apiConfig.apiKey || "");
+        if (!apiKey) throw new Error("API key is not available for worker ID pool sync");
+
+        const response = await fetch(this.buildApiUrl(path, options, params), {
+            method,
+            headers: {
+                Authorization: apiKey,
+                "Content-Type": "application/json",
+            },
+            ...(body ? { body: JSON.stringify(body) } : {}),
+        });
+
+        if (!response.ok) {
+            throw new Error(`API ${method} ${path} failed (${response.status})`);
+        }
+
+        return response.json();
+    },
+
+    async countLocalPoolDocs(dbName) {
+        const target = this.getIdPoolTarget(dbName);
+        const db = DatabaseManager.getDatabaseInstance(dbName);
+
+        const selector =
+            dbName === "dde"
+                ? {
+                      assignedTo: self.DEVICE_ID || "",
+                      status: "used",
+                  }
+                : {
+                      type: "lab_accession_number",
+                      location_id: String((typeof FACILITY_LOCATION_ID !== "undefined" && FACILITY_LOCATION_ID) || LOCATION_ID || ""),
+                      assigned_to_device_id: self.DEVICE_ID || "",
+                      status: "reserved",
+                  };
+
+        const result = await db.find({ selector, limit: target });
+        return result.docs?.length || 0;
+    },
+
+    extractNpids(response) {
+        const source = Array.isArray(response?.npids) ? response.npids : Array.isArray(response) ? response : [];
+        return source
+            .map((npidData) => (typeof npidData === "string" ? npidData : npidData?.npid))
+            .filter(Boolean);
+    },
+
+    async insertPoolDocs(dbName, docs) {
+        if (!docs.length) return [];
+        const db = DatabaseManager.getDatabaseInstance(dbName);
+        const results = await db.bulkDocs(docs);
+        const failures = results.filter((result) => result.error && result.error !== "conflict");
+        if (failures.length) {
+            console.warn(`[SYNC] ${dbName} ID pool insert had errors:`, failures);
+        }
+        return results;
+    },
+
+    async syncDdeDevicePool(remoteBaseUrl, options = {}) {
+        const target = this.getIdPoolTarget("dde");
+        const currentCount = await this.countLocalPoolDocs("dde");
+        const needed = Math.max(0, target - currentCount);
+        if (needed <= 0) return { currentCount, inserted: 0, target };
+
+        const response = await this.apiJson("GET", "dde/patients/sync_npids", options, {
+            params: {
+                count: needed,
+                program_id: options.apiConfig?.programId || 14,
+            },
+        });
+        const locationId = String((typeof FACILITY_LOCATION_ID !== "undefined" && FACILITY_LOCATION_ID) || LOCATION_ID || "");
+        const deviceId = self.DEVICE_ID || "";
+        const assignedAt = new Date().toISOString();
+        const docs = this.extractNpids(response).map((npid) => ({
+            _id: `dde_id_${locationId}_${npid}`,
+            dde_id: npid,
+            location_id: locationId,
+            npid,
+            assigned: true,
+            allocated: true,
+            status: "used",
+            assignedTo: deviceId,
+            assignedAt,
+            reservation_source: "api_worker",
+        }));
+
+        const results = await this.insertPoolDocs("dde", docs);
+        const inserted = results.filter((result) => !result.error).length;
+        return { currentCount: await this.countLocalPoolDocs("dde"), inserted, requested: needed, target };
+    },
+
+    async syncLabAccessionDevicePool(remoteBaseUrl, options = {}) {
+        const target = this.getIdPoolTarget("lab_accession_numbers");
+        const currentCount = await this.countLocalPoolDocs("lab_accession_numbers");
+        const needed = Math.max(0, target - currentCount);
+        if (needed <= 0) return { currentCount, inserted: 0, target };
+
+        const locationId = String((typeof FACILITY_LOCATION_ID !== "undefined" && FACILITY_LOCATION_ID) || LOCATION_ID || "");
+        const deviceId = self.DEVICE_ID || "";
+        const response = await this.apiJson("POST", "lab/accession_numbers/reserve", options, {
+            body: {
+                count: needed,
+                location_id: locationId,
+                device_id: deviceId,
+            },
+        });
+        const docs = Array.isArray(response?.accession_numbers) ? response.accession_numbers : [];
+
+        const results = await this.insertPoolDocs("lab_accession_numbers", docs.map(({ _rev, ...doc }) => doc));
+        const inserted = results.filter((result) => !result.error).length;
+        return { currentCount: await this.countLocalPoolDocs("lab_accession_numbers"), inserted, requested: needed, target };
+    },
+
+    async syncDeviceIdPool(dbName, remoteBaseUrl, options = {}) {
+        if (!DatabaseManager.useLocalStorage || USE_LAN_CONNECTION) {
+            return { skipped: true, reason: "ID pool API sync only runs in local-storage live-server mode" };
+        }
+
+        try {
+            const result =
+                dbName === "dde"
+                    ? await this.syncDdeDevicePool(remoteBaseUrl, options)
+                    : await this.syncLabAccessionDevicePool(remoteBaseUrl, options);
+
+            await DatabaseManager.getStats(remoteBaseUrl, options, dbName, { skipRemote: true, throttleMs: 0 });
+            return result;
+        } catch (error) {
+            const fallbackResult = {
+                currentCount: 0,
+                inserted: 0,
+                target: this.getIdPoolTarget(dbName),
+                error: error.message || String(error),
+            };
+
+            try {
+                fallbackResult.currentCount = await this.countLocalPoolDocs(dbName);
+                await DatabaseManager.getStats(remoteBaseUrl, options, dbName, { skipRemote: true, throttleMs: 0 });
+            } catch (statsError) {
+                fallbackResult.statsError = statsError.message || String(statsError);
+            }
+
+            console.warn(`[SYNC] ${dbName} device ID pool API refill failed:`, error);
+            return fallbackResult;
+        }
     },
 
     getLocationChangeSelector(dbName) {
@@ -174,9 +351,17 @@ const SyncManager = {
                 }
 
                 try {
-                    if (dbName === "dde") {
-                        const deviceId = options.deviceId || LOCATION_ID || `device_not_provided`;
-                        await DdeManager.claimDdeIds(remoteBaseUrl, options, deviceId, 10);
+                    if (this.isDeviceIdPoolDatabase(dbName)) {
+                        const result = await this.syncDeviceIdPool(dbName, remoteBaseUrl, options);
+                        InitialSyncManager.initialSyncComplete[dbName] = true;
+                        self.postMessage({
+                            type: "initialSyncComplete",
+                            dbName,
+                            result,
+                            timestamp: new Date().toISOString(),
+                        });
+                        PeriodicSyncManager.setupPeriodicSync(dbName, remoteBaseUrl, options);
+                        console.log(`[SYNC] ${dbName} device ID pool sync complete`, result);
                         return;
                     }
 
@@ -216,12 +401,11 @@ const SyncManager = {
     },
     // Standalone DDE sync — used when in LAN mode (no full IndexedDB sync)
     async syncPeriodicDde(remoteBaseUrl, options = {}) {
-        try {
-            const deviceId = options.deviceId || LOCATION_ID || `device_not_provided`;
-            await DdeManager.claimDdeIds(remoteBaseUrl, options, deviceId, 10);
-        } catch (error) {
-            console.error("[SYNC] Failed to sync DDE IDs:", error);
-        }
+        console.log("[SYNC] DDE IDs are claimed on demand by DDEService in LAN mode");
+    },
+
+    async syncLabAccessionNumbers(remoteBaseUrl, options = {}) {
+        console.log("[SYNC] Lab accession numbers are claimed on demand by LabAccessionNumberService in LAN mode");
     },
 
     // Stop sync methods

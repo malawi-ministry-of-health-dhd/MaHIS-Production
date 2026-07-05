@@ -15,6 +15,10 @@ const LOCATION_COUNT_VIEW_TIMEOUT_MS = 10000;
 const REMOTE_STATS_CACHE_DB = "mahis_sync_stats";
 const REMOTE_STATS_CACHE_TTL_MS = 10 * 60 * 1000;
 const PATIENT_RECORDS_DB = "patients_records";
+const DEVICE_ID_POOL_TARGETS = {
+    dde: 10,
+    lab_accession_numbers: 25,
+};
 const LOCATION_COUNT_VIEW_MAP = `function (doc) {
   if (doc._id && doc._id.indexOf('_design/') === 0) return;
 
@@ -160,6 +164,37 @@ const DatabaseManager = {
 
     shouldTrackDatabase(name) {
         return name !== PATIENT_RECORDS_DB || self.SYNC_PATIENTS_LOCALLY === true;
+    },
+
+    getDeviceIdPoolTarget(dbName) {
+        return DEVICE_ID_POOL_TARGETS[dbName] || 0;
+    },
+
+    shouldUseDeviceIdPoolTargetStats(dbName) {
+        return this.useLocalStorage === true && USE_LAN_CONNECTION !== true && this.getDeviceIdPoolTarget(dbName) > 0;
+    },
+
+    getDeviceIdPoolRemoteStats(dbName) {
+        return {
+            docCount: this.getDeviceIdPoolTarget(dbName),
+            source: "device_pool_target",
+        };
+    },
+
+    applyDeviceIdPoolRemoteTargets(stats = {}, databaseName = null) {
+        const nextStats = { ...(stats || {}) };
+        const databaseNames = databaseName ? [databaseName] : this.databaseNames;
+
+        databaseNames.forEach((dbName) => {
+            if (this.shouldUseDeviceIdPoolTargetStats(dbName)) {
+                nextStats[dbName] = {
+                    ...(nextStats[dbName] || {}),
+                    ...this.getDeviceIdPoolRemoteStats(dbName),
+                };
+            }
+        });
+
+        return nextStats;
     },
 
     getSkippedStatsForDatabase(name) {
@@ -726,6 +761,38 @@ const DatabaseManager = {
                     const info = await db.info();
                     let docCount = 0;
 
+                    if (name === "dde" && this.useLocalStorage) {
+                        docCount = await this.getCount(name, {
+                            assignedTo: self.DEVICE_ID || "",
+                            status: "used",
+                        });
+                        return [
+                            name,
+                            {
+                                docCount,
+                                syncType: this.isLiveSyncDatabase(name) ? "live" : "periodic",
+                                storageMode,
+                            },
+                        ];
+                    }
+
+                    if (name === "lab_accession_numbers" && this.useLocalStorage) {
+                        docCount = await this.getCount(name, {
+                            type: "lab_accession_number",
+                            location_id: String((typeof FACILITY_LOCATION_ID !== "undefined" && FACILITY_LOCATION_ID) || LOCATION_ID || ""),
+                            assigned_to_device_id: self.DEVICE_ID || "",
+                            status: "reserved",
+                        });
+                        return [
+                            name,
+                            {
+                                docCount,
+                                syncType: this.isLiveSyncDatabase(name) ? "live" : "periodic",
+                                storageMode,
+                            },
+                        ];
+                    }
+
                     if (this.useLocalStorage || name === "dde") {
                         const designDocs = await db.allDocs({
                             startkey: "_design/",
@@ -1009,23 +1076,24 @@ const DatabaseManager = {
                 }
             });
 
-            const hits = Object.keys(snapshot).length;
+            const targetAwareSnapshot = this.applyDeviceIdPoolRemoteTargets(snapshot);
+            const hits = Object.keys(targetAwareSnapshot).length;
             if (hits === 0) {
                 console.log("[DB] mahis_sync_stats: no cached remote counts found yet");
                 return null;
             }
             console.log(`[DB] mahis_sync_stats: loaded ${hits}/${databaseNames.length} cached counts`, {
-                hit: Object.keys(snapshot),
+                hit: Object.keys(targetAwareSnapshot),
             });
 
             // Merge into lastRemoteStats and publish to the main thread so the
             // modal updates without waiting for the per-DB refresh.
-            this.lastRemoteStats = { ...this.lastRemoteStats, ...snapshot };
+            this.lastRemoteStats = { ...this.lastRemoteStats, ...targetAwareSnapshot };
             this.publishStatsSnapshot({
                 isPartialUpdate: false,
                 fromCache: true,
             });
-            return snapshot;
+            return targetAwareSnapshot;
         } catch (error) {
             console.warn("[DB] loadInitialRemoteStatsFromCache failed:", error.message || error);
             return null;
@@ -1305,6 +1373,10 @@ const DatabaseManager = {
         // Limit remote count calls so progress stats do not compete with replication.
         const results = await this.mapWithConcurrency(databasesToProcess, parallelLimit, async (dbName) => {
             try {
+                if (this.shouldUseDeviceIdPoolTargetStats(dbName)) {
+                    return [dbName, this.getDeviceIdPoolRemoteStats(dbName)];
+                }
+
                 const selector = SyncManager.getLocationSelector(dbName);
                 const useMangoLocationCount = selector && options.useMangoLocationCount === true;
 
@@ -1343,7 +1415,7 @@ const DatabaseManager = {
         if (databaseName && this.lastRemoteStats?.[databaseName]) {
             const fetchedAt = this.remoteStatsFetchedAt?.[databaseName] || 0;
             if (!statsOptions.forceRemote && remoteCacheTtlMs > 0 && now - fetchedAt < remoteCacheTtlMs) {
-                return { [databaseName]: this.lastRemoteStats[databaseName] };
+                return this.applyDeviceIdPoolRemoteTargets({ [databaseName]: this.lastRemoteStats[databaseName] }, databaseName);
             }
         }
 
@@ -1453,10 +1525,7 @@ const DatabaseManager = {
             this.getLocalStats(databaseName),
         ]);
 
-        // Apply the hardcoded override for dde database if it exists in the results
-        if (newRemoteStats.dde) {
-            newRemoteStats.dde.docCount = 10;
-        }
+        newRemoteStats = this.applyDeviceIdPoolRemoteTargets(newRemoteStats, databaseName);
 
         // Merge with existing stats to preserve other databases' information
         let finalRemoteStats = { ...this.lastRemoteStats, ...newRemoteStats };

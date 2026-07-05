@@ -36,6 +36,17 @@ const PeriodicSyncManager = {
         const syncDirection = SyncManager.getPeriodicSyncDirection(dbName);
 
         try {
+            if (SyncManager.isDeviceIdPoolDatabase?.(dbName)) {
+                const result = await SyncManager.syncDeviceIdPool(dbName, remoteUrl, options);
+                self.postMessage({
+                    type: "periodicSyncComplete",
+                    dbName,
+                    result,
+                    timestamp: new Date().toISOString(),
+                });
+                return result;
+            }
+
             const localDB = DatabaseManager.getDatabaseInstance(dbName);
             const remoteDB = await SyncUtils.ensureDatabaseExists(remoteUrl, dbName, options);
 
