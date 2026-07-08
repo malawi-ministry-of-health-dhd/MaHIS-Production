@@ -23,7 +23,7 @@ function requireClient () {
 var clientExports = requireClient();
 
 const React$6 = await importShared('react');
-const {useEffect: useEffect$7,useState: useState$7,useCallback: useCallback$7} = React$6;
+const {useEffect: useEffect$6,useState: useState$7,useCallback: useCallback$7} = React$6;
 const UserRolesProvider = ({ children }) => {
   const [userRoles, setUserRoles] = useState$7(null);
   const [user, setUser] = useState$7(null);
@@ -101,7 +101,7 @@ const UserRolesProvider = ({ children }) => {
     }
     return fetchRolesOnline();
   }, [fetchRolesOnline]);
-  useEffect$7(() => {
+  useEffect$6(() => {
     let active = true;
     const init = async () => {
       setLoading(true);
@@ -133,7 +133,7 @@ const UserRolesProvider = ({ children }) => {
   );
 };
 
-const {useContext,useEffect: useEffect$6,useMemo: useMemo$6,useState: useState$6,useCallback: useCallback$6} = await importShared('react');
+const {useContext,useEffect: useEffect$5,useMemo: useMemo$6,useState: useState$6,useCallback: useCallback$6} = await importShared('react');
 const toNum = (v) => {
   const n = Number(v);
   return Number.isFinite(n) ? n : Number.POSITIVE_INFINITY;
@@ -326,7 +326,7 @@ function MenuProvider({ children }) {
     setUserAccessLoaded(true);
   }, [getNavMenu, getUserAccessData]);
   const showErrorState = userAccessLoaded && !userAccessData;
-  useEffect$6(() => {
+  useEffect$5(() => {
     if (!user || !datastoreReady) return;
     (async () => {
       const progr = await LocalForageServiceInstance.getItem("programs", "programs");
@@ -334,7 +334,7 @@ function MenuProvider({ children }) {
       setProgramsLoaded(true);
     })();
   }, [user, datastoreReady]);
-  useEffect$6(() => {
+  useEffect$5(() => {
     const tryLoad = async () => {
       const cached = await LocalForageServiceInstance.getItem("dataStore", "dataStore");
       if (cached && Object.keys(cached).length > 0) {
@@ -373,7 +373,7 @@ function MenuProvider({ children }) {
 }
 
 const React$5 = await importShared('react');
-const {useCallback: useCallback$5,useEffect: useEffect$5,useMemo: useMemo$5,useRef,useState: useState$5} = React$5;
+const {useCallback: useCallback$5,useEffect: useEffect$4,useMemo: useMemo$5,useRef,useState: useState$5} = React$5;
 function readActiveProgramIdFromCookie() {
   try {
     const rawPair = document.cookie.split(";").find((c) => c.trim().startsWith("memis_cookie="));
@@ -409,7 +409,7 @@ function ProgramStageProvider({ children }) {
         "dataStore"
       );
       let data = menu?.navigationLayout?.configuration;
-      data = data.find((sc) => sc?.id === id);
+      data = data?.find((sc) => sc?.id === id);
       if (!data?.isProgram && data?.isSetion) {
       }
       const idValue = data?.isProgram ? data?.id : data?.dependentProgram;
@@ -429,7 +429,7 @@ function ProgramStageProvider({ children }) {
       if (mySeq === reqSeq?.current) setLoading(false);
     }
   }, []);
-  useEffect$5(() => {
+  useEffect$4(() => {
     if (programId) fetchProgramStages(programId);
     else setProgramStages([]);
   }, [programId, fetchProgramStages]);
@@ -460,7 +460,7 @@ function ProgramStageProvider({ children }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(MEMISContext.ProgramStageContext.Provider, { value, children });
 }
 
-const {useCallback: useCallback$4,useEffect: useEffect$4,useState: useState$4,useMemo: useMemo$4} = await importShared('react');
+const {useCallback: useCallback$4,useEffect: useEffect$3,useState: useState$4,useMemo: useMemo$4} = await importShared('react');
 function ProgramProvider({ children }) {
   const [programs, setPrograms] = useState$4([]);
   const [enrollmentPrograms, setEnrollmentPrograms] = useState$4([]);
@@ -568,7 +568,7 @@ function ProgramProvider({ children }) {
       return [];
     }
   }, []);
-  useEffect$4(() => {
+  useEffect$3(() => {
     (async () => {
       await fetchPrograms();
       await fetchEnrollmentPrograms();
@@ -595,7 +595,7 @@ function ProgramProvider({ children }) {
 }
 
 const React$4 = await importShared('react');
-const {useCallback: useCallback$3,useEffect: useEffect$3,useMemo: useMemo$3,useState: useState$3} = React$4;
+const {useCallback: useCallback$3,useEffect: useEffect$2,useMemo: useMemo$3,useState: useState$3} = React$4;
 function UserProvider({ children }) {
   const [userOrganisationUnits, setUserOrganisationUnits] = useState$3([]);
   const [loading, setLoading] = useState$3(true);
@@ -649,7 +649,7 @@ function UserProvider({ children }) {
       setLoading(false);
     }
   }, []);
-  useEffect$3(() => {
+  useEffect$2(() => {
     let mounted = true;
     const load = async () => {
       setLoading(true);
@@ -681,7 +681,7 @@ function UserProvider({ children }) {
 }
 
 const React$3 = await importShared('react');
-const {useEffect: useEffect$2,useState: useState$2,useMemo: useMemo$2,useCallback: useCallback$2} = React$3;
+const {useEffect: useEffect$1,useState: useState$2,useMemo: useMemo$2,useCallback: useCallback$2} = React$3;
 const DashboardProvider = ({ children }) => {
   const [dashboardConfigs, setDashboardConfigs] = useState$2([]);
   const [isLoading, setIsLoading] = useState$2(true);
@@ -717,7 +717,7 @@ const DashboardProvider = ({ children }) => {
       setIsLoading(false);
     }
   }, []);
-  useEffect$2(() => {
+  useEffect$1(() => {
     loadDashboardConfigurations();
   }, [loadDashboardConfigurations]);
   const value = useMemo$2(
@@ -735,6 +735,7 @@ const DashboardProvider = ({ children }) => {
 
 const React$2 = await importShared('react');
 const {useState: useState$1,useMemo: useMemo$1,useCallback: useCallback$1} = React$2;
+let _inFlightProgramId$1 = null;
 const TrackedEntitiesProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState$1(false);
   const [error, setError] = useState$1(null);
@@ -750,6 +751,10 @@ const TrackedEntitiesProvider = ({ children }) => {
   const getEquipmentList = useCallback$1(
     async ({ programId, options = {}, page = 1, pageSize = 50 }) => {
       if (!programId) return [];
+      if (_inFlightProgramId$1 === programId) {
+        return [];
+      }
+      _inFlightProgramId$1 = programId;
       setIsLoading(true);
       setError(null);
       try {
@@ -770,6 +775,9 @@ const TrackedEntitiesProvider = ({ children }) => {
           if (startDate) params.append("updatedAfter", startDate);
           if (endDate) params.append("updatedBefore", endDate);
         }
+        if (options?.startDate)
+          params.append("updatedAfter", options?.startDate);
+        if (options?.endDate) params.append("updatedBefore", options?.endDate);
         const fields = [
           "trackedEntity",
           "orgUnit",
@@ -909,7 +917,7 @@ const TrackedEntitiesProvider = ({ children }) => {
         );
         const navLayout = programAttributesResult;
         const attributesResult = programAttributesResult?.programAttributesDisplay?.configuration;
-        const attributes = attributesResult.find((att) => att?.programId === programId)?.attributes || [];
+        const attributes = attributesResult?.find((att) => att?.programId === programId)?.attributes || [];
         const configArray = navLayout?.navigationLayout?.configuration || [];
         const currentConfig = configArray.find((item) => item.id === programId);
         const excludeStageId = currentConfig?.excludeByStage;
@@ -1009,6 +1017,7 @@ const TrackedEntitiesProvider = ({ children }) => {
         return [];
       } finally {
         setIsLoading(false);
+        _inFlightProgramId$1 = null;
       }
     },
     []
@@ -1037,12 +1046,12 @@ const TrackedEntitiesProvider = ({ children }) => {
 };
 
 const React$1 = await importShared('react');
-const {useState,useMemo,useCallback,useEffect: useEffect$1} = React$1;
+const {useState,useMemo,useCallback} = React$1;
+let _inFlightProgramId = null;
 const EventsProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [eventsList, setEventsList] = useState([]);
-  const [allowedAttributes, setAllowedAttributes] = useState([]);
   const [pagination, setPagination] = useState({
     page: 1,
     pageSize: 50,
@@ -1052,6 +1061,10 @@ const EventsProvider = ({ children }) => {
   const getEventsList = useCallback(
     async ({ programId, options = {}, page = 1, pageSize = 50 }) => {
       if (!programId) return [];
+      if (_inFlightProgramId === programId) {
+        return [];
+      }
+      _inFlightProgramId = programId;
       setIsLoading(true);
       setError(null);
       try {
@@ -1084,27 +1097,22 @@ const EventsProvider = ({ children }) => {
             (dfr) => roles?.some((role) => role === dfr?.id)
           )
         );
-        if (defaultFilters?.length) {
-          for (let index = 0; index < defaultFilters.length; index++) {
-            const element = defaultFilters[index];
-            if (!options?.filterType || options?.filterType !== element?.element) {
-              if (element?.id === "ward" && element?.value === "USER_WARD") {
-                const orgs = user?.organisationUnits?.map((org) => ({
-                  id: org?.id,
-                  level: org?.level
-                }));
-                const sortedOrgs = orgs?.sort((a, b) => b?.level - a?.level);
-                params.append(
-                  "filter",
-                  `${element?.attribute}:like:${sortedOrgs[0]?.id}`
-                );
-              } else {
-                params.append(
-                  "filter",
-                  `${element?.attribute}:like:${element?.value}`
-                );
-              }
-            }
+        const sortedUserOrgs = [...user?.organisationUnits || []].sort(
+          (a, b) => b?.level - a?.level
+        );
+        const wardOuId = sortedUserOrgs.length > 1 ? sortedUserOrgs[0]?.id : null;
+        const userWardFilters = (defaultFilters || []).filter(
+          (f) => f?.value === "USER_WARD"
+        );
+        const regularFilters = (defaultFilters || []).filter(
+          (f) => f?.value !== "USER_WARD"
+        );
+        for (const element of regularFilters) {
+          if (!options?.filterType || options?.filterType !== element?.element) {
+            params.append(
+              "filter",
+              `${element?.attribute}:like:${element?.value}`
+            );
           }
         }
         if (options?.orgUnit) {
@@ -1119,22 +1127,52 @@ const EventsProvider = ({ children }) => {
         if (typeof serial === "string" && serial.trim()) {
           const key = options?.searchKey;
           if (!key) {
-            console.warn("Missing searchKey in options");
-            return;
+            console.warn("[EventsProvider] Missing searchKey in options");
+            return [];
           }
-          const value2 = serial.trim();
-          params.append("filter", `${key}:ilike:${value2}`);
+          params.append("filter", `${key}:ilike:${serial.trim()}`);
         }
-        const response = await dataStore.get(
-          `tracker/events?${params.toString()}`
-        );
-        const events = response?.data?.events || [];
-        setPagination((prev) => ({ ...prev, ...response?.data?.pager }));
+        let events = [];
+        if (userWardFilters.length > 1 && wardOuId) {
+          const orParams = new URLSearchParams(params);
+          orParams.delete("page");
+          orParams.delete("pageSize");
+          orParams.delete("totalPages");
+          orParams.append("paging", "false");
+          const fetches = userWardFilters.map(async (f) => {
+            const p = new URLSearchParams(orParams);
+            p.append("filter", `${f?.attribute}:like:${wardOuId}`);
+            return dataStore.get(`tracker/events?${p.toString()}`).then((r) => r?.data?.events || []).catch(() => []);
+          });
+          const results = await Promise.all(fetches);
+          const seen = /* @__PURE__ */ new Set();
+          for (const batch of results) {
+            for (const ev of batch) {
+              if (!seen.has(ev.event)) {
+                seen.add(ev.event);
+                events.push(ev);
+              }
+            }
+          }
+          setPagination({ page: 1, pageCount: 1, pageSize: events.length, total: events.length });
+        } else {
+          if (userWardFilters.length === 1 && wardOuId) {
+            params.append(
+              "filter",
+              `${userWardFilters[0]?.attribute}:like:${wardOuId}`
+            );
+          }
+          const response = await dataStore.get(
+            `tracker/events?${params.toString()}`
+          );
+          events = response?.data?.events || [];
+          setPagination((prev) => ({ ...prev, ...response?.data?.pager }));
+        }
         const optionSetMap = {};
         const columnsMeta = await dataStore.get(
           `programs/${programId}?fields=name,id,programStages[id,name,displayName,programStageSections[id,name,programStage[id,name],formName,dataElements[id,name,sortOrder,formName,domainType,valueType,optionSetValue,optionSet[id,name,code,options[id,name,code]]]],programStageDataElements[id,compulsory,programStage[id],dataElement[id,name,code,domainType,formName,valueType,optionSetValue,optionSet[id,name,code,options[id,name,code]],attributeValues[value,attribute[id,name]]]]]`
         );
-        const programAttributes = columnsMeta?.data?.programStages[0]?.programStageDataElements || [];
+        const programAttributes = columnsMeta?.data?.programStages?.[0]?.programStageDataElements || [];
         programAttributes.forEach((attr) => {
           const a = attr.dataElement;
           if (a?.optionSetValue && a?.optionSet?.options) {
@@ -1149,7 +1187,7 @@ const EventsProvider = ({ children }) => {
           "dataStore"
         );
         const attributesResult = programAttributesResult?.programAttributesDisplay?.configuration;
-        const attributes = attributesResult.find((att) => att?.programId === programId)?.attributes || [];
+        const attributes = attributesResult?.find((att) => att?.programId === programId)?.attributes || [];
         const transformed = events.map((event) => {
           const obj = {
             event: event.event,
@@ -1180,12 +1218,13 @@ const EventsProvider = ({ children }) => {
         setColumns(dynamicColumns);
         return transformed;
       } catch (e) {
-        console.error("[events] fetch error:", e);
+        console.error("[EventsProvider] fetch error:", e);
         setError(e);
         setEventsList([]);
         return [];
       } finally {
         setIsLoading(false);
+        _inFlightProgramId = null;
       }
     },
     []
@@ -1651,8 +1690,11 @@ function App() {
       url.searchParams.delete("uqp");
       window.history.replaceState({}, "", url);
     }
-    startReminderDaemon();
+    const daemonTimer = setTimeout(() => {
+      startReminderDaemon();
+    }, 1e4);
     return () => {
+      clearTimeout(daemonTimer);
       stopReminderDaemon();
     };
   }, []);
