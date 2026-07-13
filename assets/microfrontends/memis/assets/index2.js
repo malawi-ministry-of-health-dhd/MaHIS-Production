@@ -4,7 +4,7 @@ class DataStore {
   constructor() {
     const savedCreds = localStorage.getItem("memisCredentials");
     this.defaultCredentials = savedCreds ? JSON.parse(savedCreds) : null;
-    this.baseUrl = `${"https://memis.health.gov.mw/api-prod/memis"}`;
+    this.baseUrl = `${"https://memis.health.gov.mw/api-testing/memis"}`;
   }
   buildUrl(endpoint) {
     return `${this.baseUrl}/${endpoint}`;
