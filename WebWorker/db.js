@@ -60,6 +60,53 @@ const normalizePatientSearchText = (value) =>
 
 const firstPresent = (...values) => values.find((value) => value !== null && value !== undefined && String(value).trim() !== "");
 
+const labOrderIdentity = (order) => {
+    if (!order || typeof order !== "object") return "";
+
+    const directId = firstPresent(order.order_id, order.orderId, order.id, order.offline_id, order.accession_number, order.tracking_number);
+    if (directId) return String(directId);
+
+    const tests = Array.isArray(order.tests)
+        ? order.tests.map((test) => firstPresent(test?.concept_id, test?.name, test?.id)).filter(Boolean).join(",")
+        : "";
+    return [order.order_date, order.date, order.specimen?.concept_id, order.specimen?.name, tests].map((value) => String(value || "")).join("|");
+};
+
+const mergeUniqueLabOrderArray = (existing, incoming) => {
+    const merged = new Map();
+
+    [...(Array.isArray(existing) ? existing : []), ...(Array.isArray(incoming) ? incoming : [])].forEach((order, index) => {
+        const key = labOrderIdentity(order) || `index:${index}`;
+        const previous = merged.get(key);
+        merged.set(key, previous && order && typeof order === "object" ? { ...previous, ...order } : order);
+    });
+
+    return Array.from(merged.values());
+};
+
+const mergePatientRecordLabOrders = (existingDoc, outgoingDoc) => {
+    if (!existingDoc?.labOrders && !outgoingDoc?.labOrders) return outgoingDoc;
+
+    const existingLabOrders = existingDoc?.labOrders || {};
+    const outgoingLabOrders = outgoingDoc?.labOrders || {};
+    const saved = mergeUniqueLabOrderArray(existingLabOrders.saved, outgoingLabOrders.saved);
+    const savedKeys = new Set(saved.map(labOrderIdentity).filter(Boolean));
+    const unsaved = mergeUniqueLabOrderArray(existingLabOrders.unsaved, outgoingLabOrders.unsaved).filter((order) => {
+        const key = labOrderIdentity(order);
+        return !key || !savedKeys.has(key);
+    });
+
+    return {
+        ...outgoingDoc,
+        labOrders: {
+            ...existingLabOrders,
+            ...outgoingLabOrders,
+            saved,
+            unsaved,
+        },
+    };
+};
+
 const joinSearchParts = (...parts) => parts.filter(Boolean).join(" ");
 
 const normalizePatientRecordSearchFields = (storeName, doc) => {
@@ -491,9 +538,11 @@ const DatabaseManager = {
                 const existingDocWithoutConflictMetadata = { ...existingDoc };
                 delete existingDocWithoutConflictMetadata._conflicts;
 
+                const mergedData =
+                    storeName === PATIENT_RECORDS_DB ? mergePatientRecordLabOrders(existingDocWithoutConflictMetadata, data) : data;
                 const updatedDoc = {
                     ...existingDocWithoutConflictMetadata,
-                    ...data,
+                    ...mergedData,
                     _rev: existingDoc._rev,
                 };
 
