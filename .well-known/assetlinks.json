@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.get_login_creds",
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mohmw.MAHIS",
+      "sha256_cert_fingerprints": [
+        "84:F9:83:B4:88:AE:80:C9:F7:5E:B4:EC:7F:B3:B7:82:19:87:51:E4:72:D2:C0:D7:A8:11:B3:B8:54:D6:FF:8D"
+      ]
+    }
+  }
+]

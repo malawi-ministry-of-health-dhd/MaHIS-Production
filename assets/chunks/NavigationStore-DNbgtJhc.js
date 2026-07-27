@@ -1,1 +1,0 @@
-import{d as s}from"./pinia-DPpwztDy.js";const d=s("navigationStore",{state:()=>({navigationPayload:{}}),actions:{setNavigationPayload(a,t,i,o,n,e=""){this.navigationPayload={title:a,canGoBack:t,canGoForward:i,backHref:o,previousRoute:n,subTxt:e}},clearNavigationPayload(){this.navigationPayload={}}},persist:!0});export{d as u};

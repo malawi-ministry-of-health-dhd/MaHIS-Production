@@ -97265,6 +97265,15 @@ const getAvailableEquipmentCount = async (event) => {
         // ---- Build query params dynamically ----
         const params = { ...prog.query.params };
 
+        // Scope to the org unit of the requisition event so available count
+        // reflects what is at that facility, not globally.
+        // event.orgUnit is the most reliable scope — it's the facility that
+        // submitted the request, already present on the event object.
+        if (event?.orgUnit) {
+            params.orgUnit = event.orgUnit;
+            params.ouMode = "DESCENDANTS";
+        }
+
         // Replace {{equip_code}} inside filter if present
         Object.keys(params).forEach((key) => {
             if (typeof params[key] === "string") {
@@ -97288,16 +97297,42 @@ const getAvailableEquipmentCount = async (event) => {
             return { equip_code: filter?.value, value: 0, equipment: [] };
         }
 
+        // The API may ignore orgUnit filtering due to user data access level.
+        // Resolve the full set of org unit IDs under the event's facility
+        // and filter client-side.
+        let scopeOuIds = null;
+        if (event?.orgUnit) {
+            try {
+                const ouRes = await dataStore.get(
+                    `organisationUnits/${event.orgUnit}.json?fields=id,children[id]`
+                );
+                const children = ouRes?.data?.children || [];
+                scopeOuIds = new Set([event.orgUnit, ...children.map(c => c.id)]);
+            } catch (e) {
+                console.warn("[availableEquipment] failed to resolve org unit children:", e);
+            }
+        }
+
+        const scopedTeis = scopeOuIds
+            ? trackedEntities.filter(tei => scopeOuIds.has(tei?.orgUnit))
+            : trackedEntities;
+
         // Available = units with no status set.
         // Any status value means the unit is in a managed state.
         const statusAttrId = prog.statusAttributeId;
 
-        const available = trackedEntities.filter(tei => {
+        const available = scopedTeis.filter(tei => {
             const status = tei?.attributes?.find(
                 a => a?.attribute === statusAttrId
             )?.value;
             return !statusAttrId || !status;
         });
+
+        return {
+            equip_code: filter?.value,
+            value: available.length,
+            equipment: available
+        };
 
         return {
             equip_code: filter?.value,
