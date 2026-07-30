@@ -1,5 +1,7 @@
 {
+  "variant": "public",
   "mode": "production",
+  "provider": "github",
   "github": {
     "owner": "malawi-ministry-of-health-dhd",
     "repository": "MaHIS-Production"
