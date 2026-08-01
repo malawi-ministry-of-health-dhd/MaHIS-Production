@@ -1,4 +1,4 @@
-const databaseConfig = {
+var databaseConfig = {
     liveSyncDatabases: ["patients_records", "visits", "stages", "mnh_stats"],
     periodicSyncDatabases: [
         "programs",

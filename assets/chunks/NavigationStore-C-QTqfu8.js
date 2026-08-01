@@ -1,0 +1,1 @@
+import{ah as s}from"./navigation-BglLrznb.js";const g=s("navigationStore",{state:()=>({navigationPayload:{}}),actions:{setNavigationPayload(a,t,i,o,n,e=""){this.navigationPayload={title:a,canGoBack:t,canGoForward:i,backHref:o,previousRoute:n,subTxt:e}},clearNavigationPayload(){this.navigationPayload={}}},persist:!0});export{g as u};

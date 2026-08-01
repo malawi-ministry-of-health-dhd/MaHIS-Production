@@ -80,7 +80,6 @@ const LiveSyncManager = {
                 // freezing every search/query/index build. The previous
                 // implementation kicked off compact on every sync catch-up,
                 // which is precisely when the user is most likely to query.
-                // Use window.mahisCompactNow() to compact on demand.
                 if (err) {
                     console.warn(`[LIVE-SYNC] ${dbName} paused due to error:`, err);
                 } else {
@@ -140,6 +139,200 @@ const LiveSyncManager = {
 
     isLiveSyncActive(dbName) {
         return !!this.syncHandlers[dbName];
+    },
+
+    // ── Multiplexed remote watching (one held connection, not one per database) ──
+    //
+    // A browser allows ~6 persistent connections per origin over HTTP/1.1. One
+    // longpoll _changes feed per watched database held 4 of those 6 open
+    // permanently, leaving ~2 for every query. Measured consequence: four
+    // concept_names/_find requests that CouchDB itself served in 2-3ms each were
+    // reported by the browser as 48,246ms — ~48 SECONDS spent queued client-side
+    // waiting for a free socket, all four completing the instant slots freed.
+    //
+    // Instead hold ONE longpoll connection to /_db_updates (a global feed naming
+    // the databases that changed) and, when a watched database is named, make a
+    // SHORT-LIVED _changes request for just that database, which returns the
+    // socket immediately. 4 held connections -> 1, so 5 of the 6 slots stay
+    // available for queries instead of 2.
+    // `generation` is what actually guarantees a single loop. Clearing a boolean is
+    // not enough: several sync entry points call watchDirectRemoteChanges (worker
+    // init AND syncAll), and if the previous loop's fetch had already resolved when
+    // the next start flipped `running` back to true, the old loop simply carried on
+    // — every extra call leaking another 60s longpoll connection and starving
+    // queries of sockets, the exact problem this design removes. Each loop captures
+    // its generation and exits the moment it is superseded.
+    dbUpdatesState: { generation: 0, running: false, abort: null, watched: new Map(), since: "now", signature: null },
+
+    async startMultiplexedRemoteWatch(remoteUrl, options = {}, watchers = []) {
+        if (!watchers.length) return false;
+
+        // Idempotent: re-requesting the same watch set is a no-op rather than a
+        // restart, so repeated calls cannot churn connections.
+        const signature = `${remoteUrl}|${watchers.map((w) => w.dbName).sort().join(",")}`;
+        if (this.dbUpdatesState.running && this.dbUpdatesState.signature === signature) {
+            console.log("[SYNC] Multiplexed remote watch already running for this set; not restarting");
+            return true;
+        }
+
+        this.stopMultiplexedRemoteWatch();
+
+        // Confirm the endpoint exists before committing to it; older/locked-down
+        // servers may not expose it, in which case the caller falls back to
+        // per-database feeds.
+        try {
+            const probeUrl = `${remoteUrl}/_db_updates?feed=longpoll&timeout=1000`;
+            const probe = await fetch(probeUrl, { headers: buildAuthHeaders(options) });
+            if (!probe.ok) throw new Error(`_db_updates unavailable (${probe.status})`);
+            await probe.json().catch(() => null);
+        } catch (error) {
+            console.warn("[SYNC] /_db_updates not usable; falling back to per-database feeds:", error.message || error);
+            return false;
+        }
+
+        // Anchor each database at its CURRENT update_seq before the loop starts.
+        //
+        // `since: "now"` cannot be used here. Unlike a live feed — which opens at
+        // "now" and then streams — our drain runs AFTER a notification, and "now"
+        // is resolved server-side at drain time, i.e. after the write we were told
+        // about. Measured against a real CouchDB: the drain returned [] for the
+        // very patient that triggered the event, while the same drain from a
+        // sequence captured at watch start returned it. That is why another
+        // device's new patient stopped appearing on the OPD list.
+        await Promise.all(
+            watchers.map(async (watcher) => {
+                try {
+                    const response = await fetch(`${remoteUrl}/${watcher.dbName}`, { headers: buildAuthHeaders(options) });
+                    if (!response.ok) return;
+                    const info = await response.json();
+                    if (info?.update_seq !== undefined && info.update_seq !== null) watcher.since = info.update_seq;
+                } catch (error) {
+                    // Keep "now": we may miss one change rather than watch nothing.
+                    console.warn(`[SYNC] Could not read update_seq for ${watcher.dbName}; first change may be missed:`, error.message || error);
+                }
+            })
+        );
+
+        watchers.forEach((watcher) => this.dbUpdatesState.watched.set(watcher.dbName, watcher));
+        const generation = ++this.dbUpdatesState.generation;
+        // Global sequences belong to one server timeline. Never carry one across
+        // a watcher restart or a change of remote URL.
+        this.dbUpdatesState.since = "now";
+        this.dbUpdatesState.signature = signature;
+        this.dbUpdatesState.running = true;
+        void this.runDbUpdatesLoop(remoteUrl, options, generation);
+        console.log(`[SYNC] Multiplexed remote watch active on 1 connection for: ${watchers.map((w) => w.dbName).join(", ")}`);
+        return true;
+    },
+
+    stopMultiplexedRemoteWatch() {
+        // Bump the generation FIRST so any loop that is mid-await retires itself
+        // even if its fetch resolves after a new watch has started.
+        this.dbUpdatesState.generation += 1;
+        this.dbUpdatesState.running = false;
+        this.dbUpdatesState.signature = null;
+        try {
+            this.dbUpdatesState.abort?.abort();
+        } catch {
+            /* already gone */
+        }
+        this.dbUpdatesState.abort = null;
+        this.dbUpdatesState.watched = new Map();
+    },
+
+    isCurrentDbUpdatesGeneration(generation) {
+        return this.dbUpdatesState.running && this.dbUpdatesState.generation === generation;
+    },
+
+    async runDbUpdatesLoop(remoteUrl, options, generation) {
+        const authHeaders = buildAuthHeaders(options);
+        let backoffMs = 1000;
+
+        while (this.isCurrentDbUpdatesGeneration(generation)) {
+            const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+            this.dbUpdatesState.abort = controller;
+
+            try {
+                const since = encodeURIComponent(this.dbUpdatesState.since || "now");
+                const response = await fetch(`${remoteUrl}/_db_updates?feed=longpoll&timeout=60000&since=${since}`, {
+                    headers: authHeaders,
+                    signal: controller?.signal,
+                });
+                if (!response.ok) throw new Error(`_db_updates failed (${response.status})`);
+
+                const payload = await response.json();
+                if (payload?.last_seq) this.dbUpdatesState.since = payload.last_seq;
+                backoffMs = 1000;
+
+                if (!this.isCurrentDbUpdatesGeneration(generation)) break;
+
+                const changed = new Set(
+                    (payload?.results || [])
+                        .map((row) => row?.db_name)
+                        .filter((name) => name && this.dbUpdatesState.watched.has(name))
+                );
+                // Drain each changed database on its own short-lived request.
+                for (const dbName of changed) {
+                    if (!this.isCurrentDbUpdatesGeneration(generation)) break;
+                    await this.drainRemoteChanges(dbName, remoteUrl, options);
+                }
+            } catch (error) {
+                if (!this.isCurrentDbUpdatesGeneration(generation) || error?.name === "AbortError") break;
+                console.warn(`[SYNC] _db_updates loop error (retrying in ${backoffMs}ms):`, error.message || error);
+                await new Promise((resolve) => setTimeout(resolve, backoffMs));
+                backoffMs = Math.min(backoffMs * 2, 30000);
+                if (!this.isCurrentDbUpdatesGeneration(generation)) break;
+            }
+        }
+    },
+
+    // One-shot changes read for a single database. Uses PouchDB so the selector
+    // filtering and sequence handling stay identical to the per-database feeds
+    // this replaces; `live: false` means the socket is released immediately.
+    async drainRemoteChanges(dbName, remoteUrl, options) {
+        const watcher = this.dbUpdatesState.watched.get(dbName);
+        if (!watcher) return;
+
+        const changeOptions = {
+            since: watcher.since ?? "now",
+            include_docs: true,
+            live: false,
+            limit: 200,
+        };
+        if (watcher.selector && typeof watcher.selector === "object") changeOptions.selector = watcher.selector;
+
+        try {
+            const result = await watcher.db.changes(changeOptions);
+            // Only ever advance to a REAL sequence. If last_seq is missing, keep the
+            // previous one: falling back to "now" would silently skip every change
+            // from here on, which is the failure this watcher is recovering from.
+            if (result?.last_seq !== undefined && result.last_seq !== null) watcher.since = result.last_seq;
+            for (const change of result?.results || []) {
+                this.emitRemoteChange(dbName, change, watcher, remoteUrl, options);
+            }
+        } catch (error) {
+            console.error(`[REMOTE-CHANGE] ${dbName} drain error:`, error);
+        }
+    },
+
+    emitRemoteChange(dbName, change, watcher, remoteUrl, options) {
+        console.log(`[REMOTE-CHANGE] ${dbName}:`, change);
+        if (watcher.refreshStats !== false) {
+            void DatabaseManager.getStats(remoteUrl, options, dbName);
+        }
+        self.postMessage({
+            type: "syncChange",
+            dbName,
+            info: {
+                direction: "pull",
+                change: {
+                    docs: change?.doc ? [change.doc] : [],
+                    docs_written: change?.doc ? 1 : 0,
+                    last_seq: change?.seq,
+                },
+            },
+            timestamp: new Date().toISOString(),
+        });
     },
 
     listenToRemoteChanges(dbName, remoteUrl, options = {}, listenerOptions = {}) {

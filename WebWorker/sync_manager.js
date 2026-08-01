@@ -1,9 +1,10 @@
+const SYNC_MANAGER_ASSET_QUERY = self.location?.search || "";
 importScripts(
-    "./sync_management/sync-config.js",
-    "./sync_management/sync-utils.js",
-    "./sync_management/initial-sync-manager.js",
-    "./sync_management/live-sync-manager.js",
-    "./sync_management/periodic-sync-manager.js"
+    `./sync_management/sync-config.js${SYNC_MANAGER_ASSET_QUERY}`,
+    `./sync_management/sync-utils.js${SYNC_MANAGER_ASSET_QUERY}`,
+    `./sync_management/initial-sync-manager.js${SYNC_MANAGER_ASSET_QUERY}`,
+    `./sync_management/live-sync-manager.js${SYNC_MANAGER_ASSET_QUERY}`,
+    `./sync_management/periodic-sync-manager.js${SYNC_MANAGER_ASSET_QUERY}`
 );
 /**
  * Main SyncManager - coordinates all sync operations
@@ -250,16 +251,20 @@ const SyncManager = {
         if (!remoteBaseUrl) return;
 
         const remoteLiveDatabases = this.getRemoteLiveChangeDatabases();
+        if (remoteLiveDatabases.length === 0) return;
+
+        console.log(`[SYNC] Opening persistent remote change feeds for: ${remoteLiveDatabases.join(", ")}`);
+        LiveSyncManager.stopMultiplexedRemoteWatch();
+
+        // Use the original per-database live feeds. Each feed holds one CouchDB
+        // long-poll socket and only wakes when that database changes (or when its
+        // heartbeat/timeout reconnects), avoiding continuous short polling.
         remoteLiveDatabases.forEach((dbName) => {
             LiveSyncManager.listenToRemoteChanges(dbName, remoteBaseUrl, options, {
                 selector: this.getLocationChangeSelector(dbName),
                 refreshStats: false,
             });
         });
-
-        if (remoteLiveDatabases.length > 0) {
-            console.log(`[SYNC] Watching remote changes for direct CouchDB mode: ${remoteLiveDatabases.join(", ")}`);
-        }
     },
 
     watchDirectPatientRecordChanges(remoteBaseUrl, options = {}) {
@@ -383,9 +388,6 @@ const SyncManager = {
             });
         } finally {
             DatabaseManager.isInitialSyncInProgress = false;
-            if (DatabaseManager.useLocalStorage) {
-                DatabaseManager.autoCompactAll();
-            }
         }
 
         completedLiveSyncDatabases.forEach((dbName) => {

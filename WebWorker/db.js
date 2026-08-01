@@ -200,8 +200,6 @@ const DatabaseManager = {
     syncPatientsLocally: false,
     remoteBaseUrl: null, // Store remote URL for reference
     isInitialSyncInProgress: false,
-    _writeCounts: {}, // Per-database write counters for threshold-based compaction
-    _compactionInterval: null, // Stored so it can be cleared on closeAllDatabases
 
     // Get all database names in order
     get databaseNames() {
@@ -355,48 +353,56 @@ const DatabaseManager = {
         }
     },
 
-    async runBackgroundCompaction(targetDbName = "") {
+    /**
+     * Compact this device's local PouchDB databases on explicit user request.
+     * Databases are processed sequentially to avoid a large IndexedDB I/O
+     * spike on slower devices. This never compacts the remote CouchDB server.
+     */
+    async compactLocalDatabases() {
+        if (!this.isInitialized) {
+            throw new Error("DatabaseManager not initialized");
+        }
+        if (!this.useLocalStorage) {
+            throw new Error("Offline storage is disabled, so there are no local records to compact");
+        }
         if (this.isInitialSyncInProgress) {
-            console.log(`[Compact] Skipping${targetDbName ? ` ${targetDbName}` : ""} — initial sync still in progress`);
-            return;
+            throw new Error("Wait for offline record synchronization to finish before compacting");
         }
 
-        // Guard: skip if already compacting this DB to avoid overlapping runs
-        this._compacting = this._compacting || new Set();
-        if (targetDbName && this._compacting.has(targetDbName)) {
-            console.log(`[Compact] Skipping ${targetDbName} — compaction already in progress`);
-            return;
+        const databaseNames = this.databaseNames.filter(
+            (name) => this.shouldTrackDatabase(name) && this.databases[name] && typeof this.databases[name].compact === "function"
+        );
+        const databases = [];
+        const startedAt = Date.now();
+
+        for (const name of databaseNames) {
+            const databaseStartedAt = Date.now();
+            try {
+                await this.databases[name].compact();
+                databases.push({
+                    name,
+                    success: true,
+                    durationMs: Date.now() - databaseStartedAt,
+                });
+            } catch (error) {
+                databases.push({
+                    name,
+                    success: false,
+                    error: error?.message || String(error),
+                    durationMs: Date.now() - databaseStartedAt,
+                });
+            }
         }
 
-        const dbEntries = Object.entries(this.databases);
-        const filteredEntries = targetDbName ? dbEntries.filter(([name]) => name === targetDbName) : dbEntries;
-
-        if (filteredEntries.length === 0) {
-            console.warn(`[Compact] No database found with name '${targetDbName}'`);
-            return;
-        }
-
-        // Mark all targets as in-progress
-        filteredEntries.forEach(([name]) => this._compacting.add(name));
-
-        try {
-            const compactionPromises = filteredEntries.map(async ([name, db]) => {
-                try {
-                    console.log(`[Compact] Starting compaction for ${name}...`);
-                    await db.compact();
-                    console.log(`[Compact] ✅ Compacted ${name}`);
-                } catch (err) {
-                    console.warn(`[Compact] ⚠️ Failed to compact ${name}:`, err.message);
-                } finally {
-                    this._compacting.delete(name);
-                }
-            });
-
-            await Promise.allSettled(compactionPromises);
-        } catch (err) {
-            console.error("[Compact] Unexpected error during compaction:", err);
-            filteredEntries.forEach(([name]) => this._compacting.delete(name));
-        }
+        const failed = databases.filter((entry) => !entry.success);
+        return {
+            success: failed.length === 0,
+            compacted: databases.length - failed.length,
+            failed: failed.length,
+            total: databases.length,
+            durationMs: Date.now() - startedAt,
+            databases,
+        };
     },
 
     validateDatabase(storeName) {
@@ -579,11 +585,6 @@ const DatabaseManager = {
 
                     console.log(`[DB] ✅ UPDATED in ${storageTarget} - ${storeName}/${data._id}`);
 
-                    // Threshold-based compaction disabled. Compact holds long
-                    // IDB transactions and was firing during index builds /
-                    // foreground queries, causing 50+ second hangs. Use
-                    // window.mahisCompactNow() to compact intentionally.
-                    this._writeCounts[storeName] = (this._writeCounts[storeName] || 0) + 1;
                 } catch (err) {
                     if (err.name === "not_found") {
                         result = await db.put(data);
@@ -730,17 +731,6 @@ const DatabaseManager = {
     },
 
     async closeAllDatabases() {
-        // Stop the scheduled compaction interval so it doesn't fire against closed databases
-        if (this._compactionInterval) {
-            clearInterval(this._compactionInterval);
-            this._compactionInterval = null;
-            console.log("[DB] Compaction interval cleared");
-        }
-
-        // Reset write counters and in-progress tracking
-        this._writeCounts = {};
-        if (this._compacting) this._compacting.clear();
-
         const closePromises = Object.values(this.databases).map((db) => {
             try {
                 return db.close();
@@ -1138,6 +1128,20 @@ const DatabaseManager = {
             // Merge into lastRemoteStats and publish to the main thread so the
             // modal updates without waiting for the per-DB refresh.
             this.lastRemoteStats = { ...this.lastRemoteStats, ...targetAwareSnapshot };
+
+            // Record WHEN each primed count was actually calculated. Without this
+            // the TTL check in getRemoteStatsWithCache saw fetchedAt === 0 for
+            // every database and re-requested all of them one at a time right
+            // after this single batched read had already returned them — ~34
+            // sequential conditional GETs per page load, every one a 304.
+            // Stamping calculatedAt rather than Date.now() keeps the freshness
+            // check honest: this is a deliberately stale-allowed read, so an old
+            // cache doc still falls outside the TTL and gets refreshed.
+            if (!this.remoteStatsFetchedAt) this.remoteStatsFetchedAt = {};
+            Object.keys(targetAwareSnapshot).forEach((dbName) => {
+                const calculatedAt = Date.parse(targetAwareSnapshot[dbName]?.cachedAt || "");
+                if (Number.isFinite(calculatedAt)) this.remoteStatsFetchedAt[dbName] = calculatedAt;
+            });
             this.publishStatsSnapshot({
                 isPartialUpdate: false,
                 fromCache: true,
@@ -1276,7 +1280,36 @@ const DatabaseManager = {
         return stats;
     },
 
+    // Some configured databases are never created on the shared CouchDB (e.g.
+    // "beds" has no sync job on either side). Every location-count refresh then
+    // burned three doomed requests on it — GET the design doc (404), PUT the
+    // design doc (404, because you cannot add a ddoc to a database that does not
+    // exist), then the view query (404) — on every page load, with the failure
+    // swallowed by the caller. Remember the answer per database so a missing one
+    // costs a single HEAD instead of three 404s forever.
+    async remoteDatabaseExists(remoteBaseUrl, dbName, authHeaders) {
+        if (!this.remoteDbExistsCache) this.remoteDbExistsCache = {};
+        if (typeof this.remoteDbExistsCache[dbName] === "boolean") return this.remoteDbExistsCache[dbName];
+
+        try {
+            const response = await fetch(`${remoteBaseUrl}/${dbName}`, { method: "HEAD", headers: authHeaders });
+            if (response.status === 404) {
+                console.warn(`[DB] Remote database "${dbName}" does not exist; skipping its location-count view`);
+                this.remoteDbExistsCache[dbName] = false;
+                return false;
+            }
+            // Only cache a definite yes; transient errors should be retried.
+            if (response.ok) this.remoteDbExistsCache[dbName] = true;
+            return response.ok;
+        } catch (error) {
+            console.warn(`[DB] Could not check remote database "${dbName}":`, error.message || error);
+            return false;
+        }
+    },
+
     async ensureRemoteLocationCountView(remoteBaseUrl, dbName, authHeaders) {
+        if (!(await this.remoteDatabaseExists(remoteBaseUrl, dbName, authHeaders))) return false;
+
         const designDocUrl = `${remoteBaseUrl}/${dbName}/${LOCATION_COUNT_DDOC_ID}`;
         const desiredView = {
             map: LOCATION_COUNT_VIEW_MAP,
@@ -1289,7 +1322,7 @@ const DatabaseManager = {
             const designDoc = await response.json();
             const currentView = designDoc.views?.[LOCATION_COUNT_VIEW_NAME];
             if (currentView?.map === desiredView.map && currentView?.reduce === desiredView.reduce) {
-                return;
+                return true;
             }
 
             const updatedDesignDoc = {
@@ -1309,7 +1342,7 @@ const DatabaseManager = {
             if (!updateResponse.ok && updateResponse.status !== 409) {
                 throw new Error(`Location count view update failed (${updateResponse.status})`);
             }
-            return;
+            return true;
         }
 
         if (response.status !== 404) {
@@ -1330,10 +1363,12 @@ const DatabaseManager = {
         if (!createResponse.ok && createResponse.status !== 409) {
             throw new Error(`Location count view create failed (${createResponse.status})`);
         }
+        return true;
     },
 
     async getRemoteLocationCountFromView(remoteBaseUrl, dbName, locationId, authHeaders) {
-        await this.ensureRemoteLocationCountView(remoteBaseUrl, dbName, authHeaders);
+        const viewReady = await this.ensureRemoteLocationCountView(remoteBaseUrl, dbName, authHeaders);
+        if (!viewReady) throw new Error(`Location count view unavailable for ${dbName}`);
 
         const encodedKey = encodeURIComponent(JSON.stringify(String(locationId)));
         const response = await fetchWithTimeout(
@@ -1604,11 +1639,4 @@ const DatabaseManager = {
         };
     },
 
-    autoCompactAll(_intervalHours = 1) {
-        // Worker-driven periodic compaction disabled. On a 300k-doc DB,
-        // compact() takes 5+ minutes and holds the IDB write queue the
-        // whole time, freezing every search/read. Operators trigger it
-        // intentionally via window.mahisCompactNow().
-        console.log("[DB] Auto-compaction interval disabled (use window.mahisCompactNow() to compact on demand)");
-    },
 };

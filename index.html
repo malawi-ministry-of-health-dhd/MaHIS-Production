@@ -7,25 +7,115 @@
         <meta name="color-scheme" content="light dark" />
         <meta
             name="viewport"
-            content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+            content="viewport-fit=cover, width=device-width, initial-scale=1.0"
+        />
+        <meta
+            name="description"
+            content="MaHIS secure sign-in for Malawi health information services."
         />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
 
         <link rel="shortcut icon" type="image/png" href="/mw.png" />
+        <link rel="preload" as="image" href="/images/mw-login.webp" type="image/webp" fetchpriority="high" />
+        <script>
+            if (location.pathname === "/login" || location.hash.startsWith("#/login")) {
+                document.documentElement.classList.add("login-boot-route");
+            }
+        </script>
+        <style>
+            #login-boot {
+                display: none;
+            }
+            .login-boot-route #login-boot {
+                align-items: center;
+                background: #fff;
+                display: flex;
+                font-family: Arial, sans-serif;
+                inset: 0;
+                justify-content: center;
+                position: fixed;
+                z-index: 2147483647;
+            }
+            .login-boot-card {
+                box-sizing: border-box;
+                text-align: center;
+                width: 330px;
+            }
+            .login-boot-logo {
+                display: block;
+                height: 90px;
+                margin: 0 auto 20px;
+                width: 90px;
+            }
+            .login-boot-title {
+                color: #5f5f5f;
+                font-size: 24px;
+                font-weight: 700;
+                margin-bottom: 30px;
+            }
+            .login-boot-field {
+                border: 1px solid #b6b6b6;
+                border-radius: 4px;
+                box-sizing: border-box;
+                color: #737373;
+                height: 68px;
+                margin-bottom: 35px;
+                padding: 24px 16px;
+                text-align: left;
+            }
+            .login-boot-button {
+                align-items: center;
+                background: #006401;
+                border-radius: 4px;
+                color: #fff;
+                display: flex;
+                font-size: 14px;
+                height: 48px;
+                justify-content: center;
+                margin-top: 30px;
+            }
+            .login-boot-help {
+                color: #737373;
+                font-size: 14px;
+                margin-top: 50px;
+            }
+            .login-boot-links {
+                color: #006401;
+                font-size: 13px;
+                margin-top: 12px;
+                text-decoration: underline;
+            }
+        </style>
 
         <!-- add to homescreen for ios -->
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-title" content="Ionic App" />
+        <meta name="apple-mobile-web-app-title" content="MaHIS" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-      <script type="module" crossorigin src="/assets/index-1gLJeaTV.js"></script>
-      <link rel="stylesheet" crossorigin href="/assets/style.CdUMl_6A.css">
+      <script type="module" crossorigin src="/assets/index-BJn4w4IH.js"></script>
+      <link rel="modulepreload" crossorigin href="/assets/chunks/navigation-BglLrznb.js">
+      <link rel="stylesheet" crossorigin href="/assets/index.CzB-Nywb.css">
     </head>
 
     <body>
+        <div id="login-boot" aria-hidden="true">
+            <div class="login-boot-card">
+                <img
+                    class="login-boot-logo"
+                    src="/images/mw-login.webp"
+                    alt=""
+                    width="90"
+                    height="90"
+                    fetchpriority="high"
+                />
+                <div class="login-boot-title">MaHIS</div>
+                <div class="login-boot-field">Username</div>
+                <div class="login-boot-field">Password</div>
+                <div class="login-boot-button">Login</div>
+                <div class="login-boot-help">For help click <u>Here</u></div>
+                <div class="login-boot-links">Change Password | Download MaHIS</div>
+            </div>
+        </div>
         <div id="app"></div>
-        <script src="/script/pouchdb.min.js"></script>
-        <script src="/script/pouchdb.find.min.js"></script>
-        <script src="/databaseConfig.js"></script>
     </body>
 </html>

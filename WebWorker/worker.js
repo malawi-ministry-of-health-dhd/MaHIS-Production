@@ -1,5 +1,6 @@
 // Updated worker.js with separated DatabaseManager and SyncManager
-importScripts("db.js", "sync_manager.js", "../databaseConfig.js");
+const WORKER_ASSET_QUERY = self.location?.search || "";
+importScripts(`db.js${WORKER_ASSET_QUERY}`, `sync_manager.js${WORKER_ASSET_QUERY}`, `../databaseConfig.js${WORKER_ASSET_QUERY}`);
 
 // Global vars
 let LOCATION_ID = "";
@@ -206,7 +207,11 @@ const runStartSyncCommand = async ({ remoteUrl, auth, locationId, deviceId, apiC
 const warmUpWorkerIndex = async (db, indexDef) => {
     const field = indexDef && indexDef.index && indexDef.index.fields && indexDef.index.fields[0];
     if (!field) return false;
-    const useIndex = indexDef.ddoc || indexDef.name;
+    // ["_design/<ddoc>", "<name>"]: indexes now share design docs, so a bare
+    // name no longer identifies one (it reads as a design doc name). Mirrors
+    // IndexManager.getUseIndexValue.
+    const ddoc = indexDef.ddoc || indexDef.name;
+    const useIndex = [ddoc.startsWith("_design/") ? ddoc : `_design/${ddoc}`, indexDef.name];
     const selectors = [{ [field]: { $gte: null } }, { [field]: { $exists: true } }];
     for (let i = 0; i < selectors.length; i++) {
         try {
@@ -536,9 +541,13 @@ self.onmessage = async (event) => {
                 result = await checkWorkerIndexesExist(data && data.configs, remoteUrl, useLocalStorage, auth);
                 break;
 
+            case "compactLocalDatabases":
+                result = await DatabaseManager.compactLocalDatabases();
+                break;
+
             default:
                 sendResponse({
-                    error: `Unknown command: ${command}. Available commands: upsertDocument, get, deleteData, getCount, bulkOperation, getStats, refreshRemoteStats, primeRemoteStats, closeAllDatabases, ping, reinitialize, startSync, stopSync, getSyncStatus, testConnection, getSyncConfiguration, buildIndex, checkIndexes`,
+                    error: `Unknown command: ${command}. Available commands: upsertDocument, get, deleteData, getCount, bulkOperation, getStats, refreshRemoteStats, primeRemoteStats, closeAllDatabases, ping, reinitialize, startSync, stopSync, getSyncStatus, testConnection, getSyncConfiguration, buildIndex, checkIndexes, compactLocalDatabases`,
                 });
                 return;
         }
