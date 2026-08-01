@@ -21246,7 +21246,7 @@ const Dashboard = () => {
       }
       let data = null;
       const loggedInUser = await LocalForageServiceInstance.getItem("userRes", "user");
-      const useAllocated = loggedInUser.userRoles?.some(
+      const useAllocated = loggedInUser?.userRoles?.some(
         (role) => role?.id === "Ec6TZ5N1QeF"
       );
       if (brand) {
