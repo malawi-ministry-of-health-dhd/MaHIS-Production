@@ -1,38 +1,4 @@
-import { bE as readTask, bF as findClosestIonContent, bG as componentOnReady, bH as writeTask, bI as scrollToTop } from './breadCrumb.js';
-
+import{bE as e,bF as t,bG as n,bH as o,bI as r}from"./breadCrumb.js";
 /*!
  * (C) Ionic http://ionicframework.com - MIT License
- */
-
-const startStatusTap = () => {
-    const win = window;
-    win.addEventListener('statusTap', () => {
-        readTask(() => {
-            const width = win.innerWidth;
-            const height = win.innerHeight;
-            const el = document.elementFromPoint(width / 2, height / 2);
-            if (!el) {
-                return;
-            }
-            const contentEl = findClosestIonContent(el);
-            if (contentEl) {
-                new Promise((resolve) => componentOnReady(contentEl, resolve)).then(() => {
-                    writeTask(async () => {
-                        /**
-                         * If scrolling and user taps status bar,
-                         * only calling scrollToTop is not enough
-                         * as engines like WebKit will jump the
-                         * scroll position back down and complete
-                         * any in-progress momentum scrolling.
-                         */
-                        contentEl.style.setProperty('--overflow', 'hidden');
-                        await scrollToTop(contentEl, 300);
-                        contentEl.style.removeProperty('--overflow');
-                    });
-                });
-            }
-        });
-    });
-};
-
-export { startStatusTap };
+ */const s=()=>{const s=window;s.addEventListener("statusTap",()=>{e(()=>{const e=s.innerWidth,a=s.innerHeight,i=document.elementFromPoint(e/2,a/2);if(!i)return;const d=t(i);d&&new Promise(e=>n(d,e)).then(()=>{o(async()=>{d.style.setProperty("--overflow","hidden"),await r(d,300),d.style.removeProperty("--overflow")})})})})};export{s as startStatusTap};

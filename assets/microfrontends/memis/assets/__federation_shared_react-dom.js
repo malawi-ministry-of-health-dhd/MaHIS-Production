@@ -1,7 +1,1 @@
-import { g as getDefaultExportFromCjs } from './_commonjsHelpers.js';
-import { r as requireReactDom } from './index.js';
-
-var reactDomExports = requireReactDom();
-const index = /*@__PURE__*/getDefaultExportFromCjs(reactDomExports);
-
-export { index as default };
+import{g as o}from"./_commonjsHelpers.js";import{r as s}from"./index.js";const r=o(s());export{r as default};

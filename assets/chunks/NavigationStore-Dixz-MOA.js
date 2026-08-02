@@ -1,0 +1,1 @@
+import{a7 as a}from"../index-8FjoaKHJ.js";const o=a("navigationStore",{state:()=>({navigationPayload:{}}),actions:{setNavigationPayload(a,o,t,i,n,s=""){this.navigationPayload={title:a,canGoBack:o,canGoForward:t,backHref:i,previousRoute:n,subTxt:s}},clearNavigationPayload(){this.navigationPayload={}}},persist:!0});export{o as u};

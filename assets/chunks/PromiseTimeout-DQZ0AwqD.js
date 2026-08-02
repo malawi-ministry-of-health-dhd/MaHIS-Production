@@ -1,0 +1,1 @@
+function e(e,t,r){return new Promise((o,n)=>{const i=setTimeout(()=>n(new Error(`${r} timed out after ${t}ms`)),t);e.then(e=>{clearTimeout(i),o(e)},e=>{clearTimeout(i),n(e)})})}export{e as withTimeout};

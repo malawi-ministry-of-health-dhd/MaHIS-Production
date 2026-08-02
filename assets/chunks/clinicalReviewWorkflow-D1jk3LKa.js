@@ -1,0 +1,1 @@
+const e=e=>(e??"").toString().trim().toUpperCase(),t=(t,r)=>{if(!r.length)return 0;const n=(t=>{if(!t?.length)return new Set;const r=new Set;return t.forEach(t=>r.add(e(t))),r})(t);let o=0;for(const s of r){if(!s.encounterNames.some(t=>n.has(e(t))))break;o+=1}return o};export{t as g};

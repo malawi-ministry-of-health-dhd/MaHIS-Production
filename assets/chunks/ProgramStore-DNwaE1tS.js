@@ -1,1 +1,0 @@
-import{ah as o}from"./navigation-BglLrznb.js";const t={},e=o("programStore",{state:()=>({activeProgram:t,authorizedPrograms:t}),actions:{setActiveProgram(r={}){this.activeProgram=r},setAuthorizedPrograms(r){this.authorizedPrograms=r},resetAuthorizedPrograms(){this.authorizedPrograms=[]},isTargetProgram(r){return this.activeProgram.program_id===r}},persist:!0});export{e as u};
