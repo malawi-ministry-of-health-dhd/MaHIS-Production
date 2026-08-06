@@ -1,1 +1,0 @@
-import{L as a}from"./location_service-i5lRFo5V.js";import{l as r}from"./lodash-B_6FHzFS.js";async function t(t=""){const i=await a.getFacilities({name:t});return(i?.data||i?.records||(Array.isArray(i)?i:[])||[]).filter(a=>!r.isEmpty(a)&&""!=a.name.trim()).map(a=>({label:a.name,value:a.location_id,other:a}))}export{t as g};
