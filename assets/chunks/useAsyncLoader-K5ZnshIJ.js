@@ -1,0 +1,1 @@
+import{f as r}from"../index-i6TnF1S6.js";function e(){const e=r(!1),n=r(null);return{isLoading:e,error:n,run:async function(r){e.value=!0,n.value=null;try{return await r()}catch(u){n.value=u?.message??"An unexpected error occurred",console.error(u)}finally{e.value=!1}}}}export{e as u};
