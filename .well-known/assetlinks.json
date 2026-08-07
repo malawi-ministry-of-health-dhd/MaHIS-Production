@@ -6,9 +6,24 @@
     ],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.mohmw.MAHIS",
+      "package_name": "gov.mw.mahis",
       "sha256_cert_fingerprints": [
-        "84:F9:83:B4:88:AE:80:C9:F7:5E:B4:EC:7F:B3:B7:82:19:87:51:E4:72:D2:C0:D7:A8:11:B3:B8:54:D6:FF:8D"
+        "84:F9:83:B4:88:AE:80:C9:F7:5E:B4:EC:7F:B3:B7:82:19:87:51:E4:72:D2:C0:D7:A8:11:B3:B8:54:D6:FF:8D",
+        "49:0A:60:9A:E3:14:F7:3D:75:B5:92:A3:5D:B6:0C:1B:37:66:3B:76:74:80:6B:7E:14:03:CD:3F:5F:A1:08:79"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.get_login_creds",
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "gov.mw.mahis.vpn",
+      "sha256_cert_fingerprints": [
+        "84:F9:83:B4:88:AE:80:C9:F7:5E:B4:EC:7F:B3:B7:82:19:87:51:E4:72:D2:C0:D7:A8:11:B3:B8:54:D6:FF:8D",
+        "49:0A:60:9A:E3:14:F7:3D:75:B5:92:A3:5D:B6:0C:1B:37:66:3B:76:74:80:6B:7E:14:03:CD:3F:5F:A1:08:79"
       ]
     }
   }

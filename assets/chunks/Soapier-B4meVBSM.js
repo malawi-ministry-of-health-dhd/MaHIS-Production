@@ -1,1 +1,0 @@
-import o from"./Soapier-y5FL_RuP.js";import{d as e,B as t,z as a}from"../index-CR6uIgya.js";const p=e({__name:"Soapier",setup:e=>(e,p)=>(a(),t(o,{"completion-route":"/patient-profile"}))});export{p as default};
