@@ -1,0 +1,1 @@
+import{a6 as r}from"../index-93DrSJB_.js";const t={},a=r("programStore",{state:()=>({activeProgram:t,authorizedPrograms:t}),actions:{setActiveProgram(r={}){this.activeProgram=r},setAuthorizedPrograms(r){this.authorizedPrograms=r},resetAuthorizedPrograms(){this.authorizedPrograms=[]},isTargetProgram(r){return this.activeProgram.program_id===r}},persist:!0});export{a as u};
