@@ -1,0 +1,1 @@
+import{R as o}from"./Registration-BOCmJDZn.js";import{d as s,z as a,B as t}from"../index-Bs0E5-LI.js";const e=s({__name:"personalInformationModal",setup:s=>(s,e)=>(a(),t(o,{editMode:!0}))});export{e as _};
