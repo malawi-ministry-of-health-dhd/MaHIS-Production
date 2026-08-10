@@ -1,0 +1,1 @@
+import{StagesService as s}from"./stages_service-8phpBv6V.js";import{createOfflineVisit as e}from"./visits_service-w-lbdpU2.js";const t=async(t,i={})=>{switch(t){case"visits":return e(i);case"stages":return s.addPatientToStageOffline(i)}};export{t as postOfflineJson};
