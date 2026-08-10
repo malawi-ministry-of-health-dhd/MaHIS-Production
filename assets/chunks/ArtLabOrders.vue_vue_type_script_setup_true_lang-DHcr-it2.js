@@ -1,1 +1,0 @@
-import s from"./LabOrdersList-qliKOVfi.js";import{d as t,z as o,B as r}from"../index-5Vk7NJn_.js";const a=t({__name:"ArtLabOrders",setup:t=>(t,a)=>(o(),r(s,{"show-add-test-button":!0,"show-send-to-lab-button":!1}))});export{a as _};

@@ -1,1 +1,0 @@
-import{_ as t}from"./MonitoringChart.vue_vue_type_script_setup_true_lang-qJ0n9CEi.js";import{d as e,B as o,z as r}from"../index-5Vk7NJn_.js";const a=e({__name:"MonitoringChart",setup:e=>(e,a)=>(r(),o(t,{"completion-route":"/patient-profile"}))});export{a as default};
