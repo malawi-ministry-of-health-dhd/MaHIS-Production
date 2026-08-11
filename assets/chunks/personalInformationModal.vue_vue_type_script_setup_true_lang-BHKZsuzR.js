@@ -1,1 +1,0 @@
-import{R as o}from"./Registration-DOf1cT-Y.js";import{d as s,z as a,B as t}from"../index-C-TuUrP2.js";const e=s({__name:"personalInformationModal",setup:s=>(s,e)=>(a(),t(o,{editMode:!0}))});export{e as _};
