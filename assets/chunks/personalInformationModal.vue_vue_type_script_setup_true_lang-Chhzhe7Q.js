@@ -1,1 +1,0 @@
-import{R as o}from"./Registration-DhScAOBa.js";import{d as s,z as a,B as t}from"../index-DPEBLLM6.js";const e=s({__name:"personalInformationModal",setup:s=>(s,e)=>(a(),t(o,{editMode:!0}))});export{e as _};
