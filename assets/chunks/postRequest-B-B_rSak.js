@@ -1,1 +1,0 @@
-import{StagesService as s}from"./stages_service-cIg-EL80.js";import{createOfflineVisit as e}from"./visits_service-D4Gorpgo.js";const t=async(t,i={})=>{switch(t){case"visits":return e(i);case"stages":return s.addPatientToStageOffline(i)}};export{t as postOfflineJson};

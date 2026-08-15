@@ -1,0 +1,1 @@
+import i from"./Disposition-BbaCOd4M.js";import{d as o,B as s,z as t}from"../index-DQv3NtMu.js";const p=o({__name:"Disposition",setup:o=>(o,p)=>(t(),s(i,{"completion-route":"/ipd/disposition-list","specialty-completion-route":"/ipd/consultation-list"}))});export{p as default};
