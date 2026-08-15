@@ -1707,12 +1707,14 @@ function App() {
 const React = await importShared('react');
 const mount = (el, props) => {
   console.log("Remote: Mounting React app into Shell...");
+  window.__MEMIS_EMBEDDED__ = true;
   const root = clientExports.createRoot(el);
   root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, { ...props }) })
   );
   return () => {
     console.log("Remote: Unmounting React app...");
+    delete window.__MEMIS_EMBEDDED__;
     setTimeout(() => {
       root.unmount();
     }, 0);
