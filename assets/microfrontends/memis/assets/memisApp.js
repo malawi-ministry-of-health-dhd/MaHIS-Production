@@ -1,6 +1,6 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Layout.js","assets/__federation_fn_import.js","assets/breadCrumb.js","assets/index2.js","assets/LocalForageService.js","assets/_commonjsHelpers.js","assets/index3.js"])))=>i.map(i=>d[i]);
 import { importShared } from './__federation_fn_import.js';
-import { j as jsxRuntimeExports, M as MEMISContext, d as documentText, P as PROGRAMS_FIELDS, a as PROGRAM_RULES_FIELDS, U as USER_ORGANISATION_UNITS, O as ORGANISATION_UNITS_DESCENDANTS, u as useLocation, r as renderListByUserRole, D as DataStoreProvider, b as PermissionsProvider, s as sendNotification, c as setupIonicReact, _ as __vitePreload, e as setActiveProgramCookie, B as BrowserRouter, T as ToastItem, S as SuspenseLoader } from './breadCrumb.js';
+import { j as jsxRuntimeExports, M as MEMISContext, d as documentText, P as PROGRAMS_FIELDS, a as PROGRAM_RULES_FIELDS, U as USER_ORGANISATION_UNITS, O as ORGANISATION_UNITS_DESCENDANTS, u as useLocation, r as renderListByUserRole, D as DataStoreProvider, b as PermissionsProvider, s as sendNotification, c as setupIonicReact, _ as __vitePreload, e as setActiveProgramCookie, B as BrowserRouter, T as ToastItem, S as SuspenseLoader, f as clearMemisStorage } from './breadCrumb.js';
 import { r as requireReactDom } from './index.js';
 import dataStore from './index2.js';
 import { L as LocalForageServiceInstance } from './LocalForageService.js';
@@ -1705,9 +1705,24 @@ function App() {
 }
 
 const React = await importShared('react');
+const SESSION_EXPIRED_EVENT = "mahis:session-expired";
 const mount = (el, props) => {
   console.log("Remote: Mounting React app into Shell...");
   window.__MEMIS_EMBEDDED__ = true;
+  const handleSessionExpired = async () => {
+    console.log("Remote: MaHIS session expired; tearing down MEMIS session.");
+    try {
+      stopReminderDaemon();
+    } catch (error) {
+      console.warn("Remote: reminder daemon did not stop cleanly:", error);
+    }
+    try {
+      await clearMemisStorage();
+    } catch (error) {
+      console.warn("Remote: MEMIS storage was not fully cleared:", error);
+    }
+  };
+  window.addEventListener(SESSION_EXPIRED_EVENT, handleSessionExpired);
   const root = clientExports.createRoot(el);
   root.render(
     /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, { ...props }) })
@@ -1715,6 +1730,7 @@ const mount = (el, props) => {
   return () => {
     console.log("Remote: Unmounting React app...");
     delete window.__MEMIS_EMBEDDED__;
+    window.removeEventListener(SESSION_EXPIRED_EVENT, handleSessionExpired);
     setTimeout(() => {
       root.unmount();
     }, 0);

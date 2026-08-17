@@ -1,6 +1,6 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/LocalForageService.js","assets/_commonjsHelpers.js","assets/index2.js","assets/index.es.js"])))=>i.map(i=>d[i]);
 import { importShared } from './__federation_fn_import.js';
-import { u as useLocation, f as useNavigate, i as icons, j as jsxRuntimeExports, I as IonMenuToggle, g as IonItem, h as IonIcon, k as IonLabel, _ as __vitePreload, l as IonRefresher, m as IonRefresherContent, n as isPlatform, M as MEMISContext, o as IonMenu, p as IonHeader, q as IonToolbar, t as IonTitle, L as Link$1, v as IonContent, w as IonList, x as home, y as IonAccordionGroup, z as IonAccordion, A as albumsOutline, e as setActiveProgramCookie, C as IonButtons, E as IonMenuButton, F as IonButton, G as mailOutline, H as notificationsOutline, J as IonBadge, K as personCircleOutline, N as logOutOutline, Q as showToast, R as Outlet, V as closeOutline, W as chevronDownOutline, X as searchOutline, Y as checkmarkOutline, Z as closeCircle, $ as IonGrid, a0 as IonRow, a1 as IonCol, a2 as chevronUpOutline, a3 as IonInput, a4 as IonRadioGroup, a5 as IonRadio, a6 as IonCard, a7 as IonCardContent, a8 as warningOutline, a9 as constructOutline, aa as arrowForward, ab as chevronForwardOutline, ac as IonPage, S as SuspenseLoader, ad as metadataInit, r as renderListByUserRole, ae as hardwareChipOutline, af as settingsOutline, ag as addOutline, ah as y$3, s as sendNotification, ai as IonSpinner, aj as close, d as documentText, ak as imageOutline, al as document$1, am as IonText, an as alertCircleOutline, ao as arrowBackCircleOutline, ap as chevronBackOutline, aq as saveOutline, ar as IonLoading, as as IonCheckbox, at as IonPopover, au as IonDatetime, av as IonTextarea, aw as IonCardHeader, ax as IonCardTitle, ay as useSearchParams, az as ellipsisVertical, aA as arrowUp, aB as arrowDown, aC as removeOutline, aD as IonSearchbar, aE as filterOutline, aF as qrCodeOutline, aG as IonModal, aH as IonSelect, aI as IonSelectOption, aJ as api, aK as businessOutline, aL as usePermissions, aM as removeCircleOutline, aN as addCircleOutline, aO as useDataStore, aP as IonInputPasswordToggle, aQ as checkmarkDoneOutline, aR as timeOutline, aS as createOutline, aT as IonBreadcrumbs, aU as IonBreadcrumb, aV as chevronForward, aW as useParams, aX as IonAvatar, aY as IonActionSheet, P as PROGRAMS_FIELDS, aZ as IonFooter, a_ as downloadOutline, a$ as eyeOutline, b0 as printOutline, b1 as IonCardSubtitle, b2 as PROGRAM_STAGES_FIELDS, b3 as informationCircleOutline, b4 as homeOutline, b5 as arrowBackOutline, b6 as trash, b7 as IonAlert, b8 as addCircle, b9 as refresh, ba as locationOutline, bb as orgUnitGroupsInit, bc as useIonToast, bd as IonToggle, be as IonTabs, bf as IonTabBar, bg as IonTabButton, bh as settings, bi as lockClosed, bj as documentLock, bk as business, bl as informationCircle, bm as barChart, bn as IonTab, bo as checkmarkCircleOutline, bp as chatbubbleOutline, bq as analyticsOutline, br as lockClosedOutline, bs as refreshOutline, bt as peopleOutline, bu as add$1, bv as IonToast, bw as Routes, bx as Route, by as Navigate } from './breadCrumb.js';
+import { u as useLocation, g as useNavigate, i as icons, j as jsxRuntimeExports, I as IonMenuToggle, h as IonItem, k as IonIcon, l as IonLabel, _ as __vitePreload, m as IonRefresher, n as IonRefresherContent, o as isPlatform, M as MEMISContext, p as IonMenu, q as IonHeader, t as IonToolbar, v as IonTitle, L as Link$1, w as IonContent, x as IonList, y as home, z as IonAccordionGroup, A as IonAccordion, C as albumsOutline, e as setActiveProgramCookie, E as IonButtons, F as IonMenuButton, G as IonButton, H as mailOutline, J as notificationsOutline, K as IonBadge, N as personCircleOutline, Q as logOutOutline, R as showToast, V as Outlet, f as clearMemisStorage, W as closeOutline, X as chevronDownOutline, Y as searchOutline, Z as checkmarkOutline, $ as closeCircle, a0 as IonGrid, a1 as IonRow, a2 as IonCol, a3 as chevronUpOutline, a4 as IonInput, a5 as IonRadioGroup, a6 as IonRadio, a7 as IonCard, a8 as IonCardContent, a9 as warningOutline, aa as constructOutline, ab as arrowForward, ac as chevronForwardOutline, ad as IonPage, S as SuspenseLoader, ae as metadataInit, r as renderListByUserRole, af as hardwareChipOutline, ag as settingsOutline, ah as addOutline, ai as y$3, s as sendNotification, aj as IonSpinner, ak as close, d as documentText, al as imageOutline, am as document$1, an as IonText, ao as alertCircleOutline, ap as arrowBackCircleOutline, aq as chevronBackOutline, ar as saveOutline, as as IonLoading, at as IonCheckbox, au as IonPopover, av as IonDatetime, aw as IonTextarea, ax as IonCardHeader, ay as IonCardTitle, az as useSearchParams, aA as ellipsisVertical, aB as arrowUp, aC as arrowDown, aD as removeOutline, aE as IonSearchbar, aF as filterOutline, aG as qrCodeOutline, aH as IonModal, aI as IonSelect, aJ as IonSelectOption, aK as api, aL as businessOutline, aM as usePermissions, aN as removeCircleOutline, aO as addCircleOutline, aP as useDataStore, aQ as IonInputPasswordToggle, aR as checkmarkDoneOutline, aS as timeOutline, aT as createOutline, aU as IonBreadcrumbs, aV as IonBreadcrumb, aW as chevronForward, aX as useParams, aY as IonAvatar, aZ as IonActionSheet, P as PROGRAMS_FIELDS, a_ as IonFooter, a$ as downloadOutline, b0 as eyeOutline, b1 as printOutline, b2 as IonCardSubtitle, b3 as PROGRAM_STAGES_FIELDS, b4 as informationCircleOutline, b5 as homeOutline, b6 as arrowBackOutline, b7 as trash, b8 as IonAlert, b9 as addCircle, ba as refresh, bb as locationOutline, bc as orgUnitGroupsInit, bd as useIonToast, be as IonToggle, bf as IonTabs, bg as IonTabBar, bh as IonTabButton, bi as settings, bj as lockClosed, bk as documentLock, bl as business, bm as informationCircle, bn as barChart, bo as IonTab, bp as checkmarkCircleOutline, bq as chatbubbleOutline, br as analyticsOutline, bs as lockClosedOutline, bt as refreshOutline, bu as peopleOutline, bv as add$1, bw as IonToast, bx as Routes, by as Route, bz as Navigate } from './breadCrumb.js';
 import dataStore, { qrConfigService } from './index2.js';
 import { c as commonjsRequire$1, L as LocalForageServiceInstance } from './LocalForageService.js';
 import { a as getAugmentedNamespace$2, c as commonjsGlobal$2, g as getDefaultExportFromCjs$3 } from './_commonjsHelpers.js';
@@ -8275,107 +8275,6 @@ function requireCryptoJs () {
 
 var cryptoJsExports = requireCryptoJs();
 const CryptoJS = /*@__PURE__*/getDefaultExportFromCjs$3(cryptoJsExports);
-
-const MEMIS_STORAGE_KEYS = [
-  "memisAuthData",
-  "memisAuthPending",
-  "memisCredentials",
-  "memisViewSettings",
-  "memis_events_endpoint_v4",
-  "memis_events_endpoint_v4_oumode",
-  "memis_reminders_autostart",
-  "memis_reminders_debug",
-  "memis_reminders_dedup_v1",
-  "dataStore",
-  "notificationConfigurations",
-  "qrCodesConfig",
-];
-
-const MEMIS_COOKIE_NAMES = ["memis_cookie"];
-
-const isMemisStorageKey = (key) =>
-  key.toLowerCase().includes("memis") ||
-  key.startsWith("localforage/memiscache/") ||
-  MEMIS_STORAGE_KEYS.includes(key);
-
-const removeMatchingStorageKeys = (storage) => {
-  Object.keys(storage).forEach((key) => {
-    if (isMemisStorageKey(key)) {
-      storage.removeItem(key);
-    }
-  });
-
-  MEMIS_STORAGE_KEYS.forEach((key) => storage.removeItem(key));
-};
-
-const clearCookie = (name) => {
-  ["/", "/memis"].forEach((path) => {
-    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=${path};`;
-  });
-};
-
-const deleteIndexedDb = (name) =>
-  new Promise((resolve) => {
-    const request = indexedDB.deleteDatabase(name);
-    request.onsuccess = () => resolve();
-    request.onerror = () => resolve();
-    request.onblocked = () => resolve();
-  });
-
-const clearIndexedDbStores = (name) =>
-  new Promise((resolve) => {
-    const request = indexedDB.open(name);
-
-    request.onerror = () => resolve();
-    request.onupgradeneeded = () => {
-      request.transaction?.abort();
-      resolve();
-    };
-    request.onsuccess = () => {
-      const db = request.result;
-      const storeNames = Array.from(db.objectStoreNames);
-
-      if (!storeNames.length) {
-        db.close();
-        resolve();
-        return;
-      }
-
-      const transaction = db.transaction(storeNames, "readwrite");
-      storeNames.forEach((storeName) => transaction.objectStore(storeName).clear());
-      transaction.oncomplete = () => {
-        db.close();
-        resolve();
-      };
-      transaction.onerror = () => {
-        db.close();
-        resolve();
-      };
-      transaction.onabort = () => {
-        db.close();
-        resolve();
-      };
-    };
-  });
-
-async function clearMemisStorage() {
-  const databaseNames = new Set(["memiscache"]);
-
-  if (indexedDB.databases) {
-    const databases = await indexedDB.databases();
-    databases.forEach((db) => {
-      if (db.name?.toLowerCase().includes("memis")) {
-        databaseNames.add(db.name);
-      }
-    });
-  }
-
-  await Promise.all(Array.from(databaseNames).map(clearIndexedDbStores));
-  await Promise.all(Array.from(databaseNames).map(deleteIndexedDb));
-  removeMatchingStorageKeys(localStorage);
-  removeMatchingStorageKeys(sessionStorage);
-  MEMIS_COOKIE_NAMES.forEach(clearCookie);
-}
 
 const canAccessSettings = async () => {
   try {
