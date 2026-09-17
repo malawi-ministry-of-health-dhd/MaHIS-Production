@@ -53,7 +53,7 @@ class DataStore {
         return { ...response };
       }
     } catch (error) {
-      console.error("Switch user error:", error);
+      console.log("Switch user error:", error);
       return {
         status: error?.status || 500,
         message: error?.message || "Login failed"
@@ -111,7 +111,7 @@ class DataStore {
       const text = await response.text();
       return { status, statusText, data: text };
     } catch (error) {
-      console.error("HTTP Request error:", error);
+      console.log("HTTP Request error:", error);
       return {
         status: error?.status || 500,
         message: error?.message || "Request failed"
@@ -146,7 +146,7 @@ class DataStore {
       if (!response.ok) throw data;
       return data;
     } catch (error) {
-      console.error("Login error:", error);
+      console.log("Login error:", error);
       return {
         status: error?.status || 500,
         message: error?.message || "Login failed"
@@ -166,7 +166,7 @@ class DataStore {
       if (!response.ok) throw new Error("File download failed");
       return await response.blob();
     } catch (error) {
-      console.error("File download error:", error);
+      console.log("File download error:", error);
       throw error;
     }
   }
@@ -184,7 +184,7 @@ class QRConfigService extends DataStore {
       );
       return qr || null;
     } catch (error) {
-      console.error("QR config fetch error:", error);
+      console.log("QR config fetch error:", error);
       return null;
     }
   }
@@ -199,7 +199,7 @@ class QRConfigService extends DataStore {
         [requestedAttributes[k].name]: result[k]
       }));
     } catch (error) {
-      console.error("Attribute extraction error:", error);
+      console.log("Attribute extraction error:", error);
       return [];
     }
   }
@@ -211,7 +211,7 @@ class QRConfigService extends DataStore {
       );
       return searchAttribute?.value || null;
     } catch (error) {
-      console.error("Search key extraction error:", error);
+      console.log("Search key extraction error:", error);
       return null;
     }
   }
@@ -236,7 +236,7 @@ Equipment Details:
       });
       return plainText;
     } catch (error) {
-      console.error("QR payload build error:", error);
+      console.log("QR payload build error:", error);
       return null;
     }
   }

@@ -2866,7 +2866,7 @@ class LocalForageServiceInstance {
           )
         );
       }).catch(err => {
-        // console.error(`[LocalForage] Store "${storeName}" failed to initialize`, err);
+        // console.log(`[LocalForage] Store "${storeName}" failed to initialize`, err);
         return err
       });
     }

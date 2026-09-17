@@ -1,0 +1,1 @@
+import{l as s}from"../index-DtvpqcaK.js";const e={show:async e=>(await s.create({message:e||"Loading...",spinner:"crescent",translucent:!0})).present(),async hide(){s.getTop().then(e=>e?s.dismiss():null)}};export{e as l};

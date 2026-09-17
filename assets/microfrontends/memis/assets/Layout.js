@@ -1,6 +1,6 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/LocalForageService.js","assets/_commonjsHelpers.js","assets/index2.js","assets/index.es.js"])))=>i.map(i=>d[i]);
 import { importShared } from './__federation_fn_import.js';
-import { u as useLocation, g as useNavigate, i as icons, j as jsxRuntimeExports, I as IonMenuToggle, h as IonItem, k as IonIcon, l as IonLabel, _ as __vitePreload, m as IonRefresher, n as IonRefresherContent, o as isPlatform, M as MEMISContext, p as IonMenu, q as IonHeader, t as IonToolbar, v as IonTitle, L as Link$1, w as IonContent, x as IonList, y as home, z as IonAccordionGroup, A as IonAccordion, C as albumsOutline, e as setActiveProgramCookie, E as IonButtons, F as IonMenuButton, G as IonButton, H as mailOutline, J as notificationsOutline, K as IonBadge, N as personCircleOutline, Q as logOutOutline, R as showToast, V as Outlet, f as clearMemisStorage, W as closeOutline, X as chevronDownOutline, Y as searchOutline, Z as checkmarkOutline, $ as closeCircle, a0 as IonGrid, a1 as IonRow, a2 as IonCol, a3 as chevronUpOutline, a4 as IonInput, a5 as IonRadioGroup, a6 as IonRadio, a7 as IonCard, a8 as IonCardContent, a9 as warningOutline, aa as constructOutline, ab as arrowForward, ac as chevronForwardOutline, ad as IonPage, S as SuspenseLoader, ae as metadataInit, r as renderListByUserRole, af as hardwareChipOutline, ag as settingsOutline, ah as addOutline, ai as y$3, s as sendNotification, aj as IonSpinner, ak as close, d as documentText, al as imageOutline, am as document$1, an as IonText, ao as alertCircleOutline, ap as arrowBackCircleOutline, aq as chevronBackOutline, ar as saveOutline, as as IonLoading, at as IonCheckbox, au as IonPopover, av as IonDatetime, aw as IonTextarea, ax as IonCardHeader, ay as IonCardTitle, az as useSearchParams, aA as ellipsisVertical, aB as arrowUp, aC as arrowDown, aD as removeOutline, aE as IonSearchbar, aF as filterOutline, aG as qrCodeOutline, aH as IonModal, aI as IonSelect, aJ as IonSelectOption, aK as api, aL as businessOutline, aM as usePermissions, aN as removeCircleOutline, aO as addCircleOutline, aP as useDataStore, aQ as IonInputPasswordToggle, aR as checkmarkDoneOutline, aS as timeOutline, aT as createOutline, aU as IonBreadcrumbs, aV as IonBreadcrumb, aW as chevronForward, aX as useParams, aY as IonAvatar, aZ as IonActionSheet, P as PROGRAMS_FIELDS, a_ as IonFooter, a$ as downloadOutline, b0 as eyeOutline, b1 as printOutline, b2 as IonCardSubtitle, b3 as PROGRAM_STAGES_FIELDS, b4 as informationCircleOutline, b5 as homeOutline, b6 as arrowBackOutline, b7 as trash, b8 as IonAlert, b9 as addCircle, ba as refresh, bb as locationOutline, bc as orgUnitGroupsInit, bd as useIonToast, be as IonToggle, bf as IonTabs, bg as IonTabBar, bh as IonTabButton, bi as settings, bj as lockClosed, bk as documentLock, bl as business, bm as informationCircle, bn as barChart, bo as IonTab, bp as checkmarkCircleOutline, bq as chatbubbleOutline, br as analyticsOutline, bs as lockClosedOutline, bt as refreshOutline, bu as peopleOutline, bv as add$1, bw as IonToast, bx as Routes, by as Route, bz as Navigate } from './breadCrumb.js';
+import { u as useLocation, g as useNavigate, i as icons, j as jsxRuntimeExports, I as IonMenuToggle, h as IonItem, k as IonIcon, l as IonLabel, _ as __vitePreload, m as IonRefresher, n as IonRefresherContent, o as isPlatform, M as MEMISContext, p as IonMenu, q as IonHeader, t as IonToolbar, v as IonTitle, L as Link$1, w as IonContent, x as IonList, y as home, z as IonAccordionGroup, A as IonAccordion, C as albumsOutline, e as setActiveProgramCookie, E as IonButtons, F as IonMenuButton, G as IonButton, H as mailOutline, J as notificationsOutline, K as IonBadge, N as personCircleOutline, Q as logOutOutline, R as showToast, V as Outlet, f as clearMemisStorage, W as closeOutline, X as chevronDownOutline, Y as searchOutline, Z as checkmarkOutline, $ as closeCircle, a0 as IonGrid, a1 as IonRow, a2 as IonCol, a3 as chevronUpOutline, a4 as IonInput, a5 as IonRadioGroup, a6 as IonRadio, a7 as IonCard, a8 as IonCardContent, a9 as warningOutline, aa as constructOutline, ab as arrowForward, ac as chevronForwardOutline, ad as IonPage, S as SuspenseLoader, ae as metadataInit, r as renderListByUserRole, af as hardwareChipOutline, ag as settingsOutline, ah as addOutline, ai as y$3, s as sendNotification, aj as IonSpinner, ak as close, d as documentText, al as imageOutline, am as document$1, an as IonText, ao as alertCircleOutline, ap as arrowBackCircleOutline, aq as chevronBackOutline, ar as saveOutline, as as IonLoading, at as IonCheckbox, au as IonPopover, av as IonDatetime, aw as IonTextarea, ax as IonCardHeader, ay as IonCardTitle, az as useSearchParams, aA as ellipsisVertical, aB as arrowUp, aC as arrowDown, aD as removeOutline, aE as IonSearchbar, aF as filterOutline, aG as qrCodeOutline, aH as IonModal, aI as IonSelect, aJ as IonSelectOption, aK as api, aL as businessOutline, aM as getAllOptionSetsFromCache, aN as calendarOutline, aO as locationOutline, aP as personOutline, aQ as timeOutline, aR as usePermissions, aS as removeCircleOutline, aT as addCircleOutline, aU as useDataStore, aV as IonInputPasswordToggle, aW as checkmarkDoneOutline, aX as createOutline, aY as IonBreadcrumbs, aZ as IonBreadcrumb, a_ as chevronForward, a$ as useParams, b0 as IonAvatar, b1 as IonActionSheet, P as PROGRAMS_FIELDS, b2 as IonFooter, b3 as downloadOutline, b4 as eyeOutline, b5 as printOutline, b6 as IonCardSubtitle, b7 as PROGRAM_STAGES_FIELDS, b8 as informationCircleOutline, b9 as homeOutline, ba as arrowBackOutline, bb as trash, bc as IonAlert, bd as addCircle, be as refresh, bf as orgUnitGroupsInit, bg as useIonToast, bh as IonToggle, bi as IonTabs, bj as IonTabBar, bk as IonTabButton, bl as settings, bm as lockClosed, bn as documentLock, bo as business, bp as informationCircle, bq as barChart, br as IonTab, bs as checkmarkCircleOutline, bt as chatbubbleOutline, bu as analyticsOutline, bv as lockClosedOutline, bw as refreshOutline, bx as peopleOutline, by as add$1, bz as IonToast, bA as Routes, bB as Route, bC as Navigate } from './breadCrumb.js';
 import dataStore, { qrConfigService } from './index2.js';
 import { c as commonjsRequire$1, L as LocalForageServiceInstance } from './LocalForageService.js';
 import { a as getAugmentedNamespace$2, c as commonjsGlobal$2, g as getDefaultExportFromCjs$3 } from './_commonjsHelpers.js';
@@ -734,7 +734,7 @@ registerPlugin('App', {
     web: () => __vitePreload(() => import('./web.js'),true              ?[]:void 0).then(m => new m.AppWeb()),
 });
 
-const {useEffect: useEffect$1D} = await importShared('react');
+const {useEffect: useEffect$1G} = await importShared('react');
 
 await importShared('react');
 const RefresherWrapper = ({ onRefresh, children }) => {
@@ -8338,30 +8338,30 @@ const dataSetsInit = async (forceRefresh = false) => {
     );
     return null;
   } catch (error) {
-    console.error("dataSets initialization failed:", error);
+    console.log("dataSets initialization failed:", error);
     return error;
   }
 };
 
-const React$W = await importShared('react');
-const {useContext: useContext$I,useEffect: useEffect$1C,useRef: useRef$v,useState: useState$1B,useMemo: useMemo$X,Suspense} = React$W;
+const React$Y = await importShared('react');
+const {useContext: useContext$J,useEffect: useEffect$1F,useRef: useRef$u,useState: useState$1E,useMemo: useMemo$Y,Suspense} = React$Y;
 const MainLayout = ({ menuItems, children }) => {
   const navigate = useNavigate();
-  const [hasAccess, setHasAccess] = useState$1B(null);
+  const [hasAccess, setHasAccess] = useState$1E(null);
   Capacitor.isNativePlatform();
   const isMobile = isPlatform("ios") || isPlatform("android");
   const isWeb = isPlatform("mobileweb") || isPlatform("desktop");
-  const [user, setUser] = useState$1B(null);
+  const [user, setUser] = useState$1E(null);
   const { search } = useLocation();
-  const [superuser, setSuperUser] = useState$1B(null);
-  const [showNotifications, setShowNotifications] = useState$1B(false);
-  const [notifications, setNotifications] = useState$1B([]);
-  const [unReadNotifications, setUnReadNotifications] = useState$1B([]);
-  const [messageCount, setMessageCount] = useState$1B(0);
-  const [showDropdown, setShowDropdown] = useState$1B(false);
-  const [userOrgUnit, setUserOrgUnits] = useState$1B("");
-  const notificationsRef = useRef$v(null);
-  const dropdownRef = useRef$v(null);
+  const [superuser, setSuperUser] = useState$1E(null);
+  const [showNotifications, setShowNotifications] = useState$1E(false);
+  const [notifications, setNotifications] = useState$1E([]);
+  const [unReadNotifications, setUnReadNotifications] = useState$1E([]);
+  const [messageCount, setMessageCount] = useState$1E(0);
+  const [showDropdown, setShowDropdown] = useState$1E(false);
+  const [userOrgUnit, setUserOrgUnits] = useState$1E("");
+  const notificationsRef = useRef$u(null);
+  const dropdownRef = useRef$u(null);
   function bridgeSessionExpired() {
     window.location.replace("/memis/login");
   }
@@ -8458,13 +8458,13 @@ const MainLayout = ({ menuItems, children }) => {
     loading: menuLoading = false,
     refresh: refreshMenu,
     menuError
-  } = useContext$I(MEMISContext.MenuContext) || {};
-  const { isLoading } = useContext$I(MEMISContext.DashboardContext);
+  } = useContext$J(MEMISContext.MenuContext) || {};
+  const { isLoading } = useContext$J(MEMISContext.DashboardContext);
   const {
     programs = [],
     loading: programsLoading = false,
     refresh: refreshPrograms
-  } = useContext$I(MEMISContext.ProgramContext) || {};
+  } = useContext$J(MEMISContext.ProgramContext) || {};
   const getMessages = async () => {
     try {
       const data = await dataStore.get(
@@ -8479,7 +8479,7 @@ const MainLayout = ({ menuItems, children }) => {
       setUnReadNotifications(unread);
       setMessageCount(unread.length);
     } catch (err) {
-      console.error("getMessages error", err);
+      console.log("getMessages error", err);
     }
   };
   const handleNotificationClick = async (notif) => {
@@ -8517,10 +8517,10 @@ const MainLayout = ({ menuItems, children }) => {
       });
       await getMessages();
     } catch (err) {
-      console.error("Error handling notification click", err);
+      console.log("Error handling notification click", err);
     }
   };
-  useEffect$1C(() => {
+  useEffect$1F(() => {
     const handleOutside = (e) => {
       if (notificationsRef.current && !notificationsRef.current.contains(e.target))
         setShowNotifications(false);
@@ -8554,14 +8554,14 @@ const MainLayout = ({ menuItems, children }) => {
       }
       bridgeSessionExpired();
     } catch (err) {
-      console.error("getUser failed:", err);
+      console.log("getUser failed:", err);
       bridgeSessionExpired();
     }
   };
-  useEffect$1C(() => {
+  useEffect$1F(() => {
     getUser();
   }, []);
-  useEffect$1C(() => {
+  useEffect$1F(() => {
     const intervalId = setInterval(() => {
       getMessages();
     }, 6e4);
@@ -8577,13 +8577,13 @@ const MainLayout = ({ menuItems, children }) => {
       window.dispatchEvent(new CustomEvent("mfe:logout-success"));
       if (!window.__MEMIS_EMBEDDED__) {
         setTimeout(() => {
-          window.location.replace("https://mahistest.health.gov.mw/logout");
+          window.location.replace("https://mahis.health.gov.mw/logout");
           window.location.reload();
         }, 300);
       }
     }
   }
-  useEffect$1C(() => {
+  useEffect$1F(() => {
     const loadUser = async () => {
       try {
         await dataSetsInit();
@@ -8600,7 +8600,7 @@ const MainLayout = ({ menuItems, children }) => {
     };
     loadUser();
   }, []);
-  useEffect$1C(() => {
+  useEffect$1F(() => {
     const loadAccess = async () => {
       try {
         const res = await canAccessSettings();
@@ -8898,10 +8898,10 @@ const MainLayout = ({ menuItems, children }) => {
   ] });
 };
 
-const React$V = await importShared('react');
-const {useContext: useContext$H,useEffect: useEffect$1B,useMemo: useMemo$W} = React$V;
+const React$X = await importShared('react');
+const {useContext: useContext$I,useEffect: useEffect$1E,useMemo: useMemo$X} = React$X;
 const WithRoleBasedLayout = () => {
-  const { menuModel, loading } = useContext$H(MEMISContext.MenuContext);
+  const { menuModel, loading } = useContext$I(MEMISContext.MenuContext);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(MainLayout, { menuItems: menuModel, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}),
     " "
@@ -19242,7 +19242,7 @@ class TimeSeriesScale extends TimeScale {
     }
 }
 
-const {forwardRef: forwardRef$1,useRef: useRef$u,useEffect: useEffect$1A} = await importShared('react');
+const {forwardRef: forwardRef$1,useRef: useRef$t,useEffect: useEffect$1D} = await importShared('react');
 
 const defaultDatasetIdKey = 'label';
 function reforwardRef(ref, value) {
@@ -19289,8 +19289,8 @@ function cloneData(data, datasetIdKey = defaultDatasetIdKey) {
 
 function ChartComponent(props, ref) {
     const { height = 150, width = 300, redraw = false, datasetIdKey, type, data, options, plugins = [], fallbackContent, updateMode, ...canvasProps } = props;
-    const canvasRef = useRef$u(null);
-    const chartRef = useRef$u(null);
+    const canvasRef = useRef$t(null);
+    const chartRef = useRef$t(null);
     const renderChart = ()=>{
         if (!canvasRef.current) return;
         chartRef.current = new Chart$1(canvasRef.current, {
@@ -19310,7 +19310,7 @@ function ChartComponent(props, ref) {
             chartRef.current = null;
         }
     };
-    useEffect$1A(()=>{
+    useEffect$1D(()=>{
         if (!redraw && chartRef.current && options) {
             setOptions(chartRef.current, options);
         }
@@ -19318,7 +19318,7 @@ function ChartComponent(props, ref) {
         redraw,
         options
     ]);
-    useEffect$1A(()=>{
+    useEffect$1D(()=>{
         if (!redraw && chartRef.current) {
             setLabels(chartRef.current.config.data, data.labels);
         }
@@ -19326,7 +19326,7 @@ function ChartComponent(props, ref) {
         redraw,
         data.labels
     ]);
-    useEffect$1A(()=>{
+    useEffect$1D(()=>{
         if (!redraw && chartRef.current && data.datasets) {
             setDatasets(chartRef.current.config.data, data.datasets, datasetIdKey);
         }
@@ -19334,7 +19334,7 @@ function ChartComponent(props, ref) {
         redraw,
         data.datasets
     ]);
-    useEffect$1A(()=>{
+    useEffect$1D(()=>{
         if (!chartRef.current) return;
         if (redraw) {
             destroyChart();
@@ -19349,14 +19349,14 @@ function ChartComponent(props, ref) {
         data.datasets,
         updateMode
     ]);
-    useEffect$1A(()=>{
+    useEffect$1D(()=>{
         if (!chartRef.current) return;
         destroyChart();
         setTimeout(renderChart);
     }, [
         type
     ]);
-    useEffect$1A(()=>{
+    useEffect$1D(()=>{
         renderChart();
         return ()=>destroyChart();
     }, []);
@@ -19384,14 +19384,14 @@ const Doughnut = /* #__PURE__ */ createTypedChart('doughnut', DoughnutController
 await importShared('react');
 Chart$1.register(ArcElement, plugin_tooltip, plugin_legend);
 
+const React$W = await importShared('react');
+const {useContext: useContext$H,useEffect: useEffect$1C,useState: useState$1D} = React$W;
+
+const React$V = await importShared('react');
+const {useEffect: useEffect$1B} = React$V;
+
 const React$U = await importShared('react');
-const {useContext: useContext$G,useEffect: useEffect$1z,useState: useState$1A} = React$U;
-
-const React$T = await importShared('react');
-const {useEffect: useEffect$1y} = React$T;
-
-const React$S = await importShared('react');
-const {useState: useState$1z,useEffect: useEffect$1x,useMemo: useMemo$V,useCallback: useCallback$q} = React$S;
+const {useState: useState$1C,useEffect: useEffect$1A,useMemo: useMemo$W,useCallback: useCallback$q} = React$U;
 
 const {createPortal: createPortal$4} = await importShared('react-dom');
 const CHIP_OVERFLOW_THRESHOLD = 3;
@@ -19408,10 +19408,10 @@ const SearchableSelect = ({
   closeOnSignal,
   maxSelections
 }) => {
-  const [isOpen, setIsOpen] = useState$1z(false);
-  const [searchTerm, setSearchTerm] = useState$1z("");
-  const [selectedItems, setSelectedItems] = useState$1z([]);
-  useEffect$1x(() => {
+  const [isOpen, setIsOpen] = useState$1C(false);
+  const [searchTerm, setSearchTerm] = useState$1C("");
+  const [selectedItems, setSelectedItems] = useState$1C([]);
+  useEffect$1A(() => {
     const load = () => {
       try {
         if (value == null) {
@@ -19435,13 +19435,13 @@ const SearchableSelect = ({
     };
     load();
   }, [value, multiple, itemValueField, data, selectedItems]);
-  useEffect$1x(() => {
+  useEffect$1A(() => {
     if (closeOnSignal) {
       setIsOpen(false);
       setSearchTerm("");
     }
   }, [closeOnSignal]);
-  const filteredData = useMemo$V(() => {
+  const filteredData = useMemo$W(() => {
     try {
       const term = searchTerm?.toLowerCase();
       return data?.filter(
@@ -19931,7 +19931,7 @@ const CustomModal = ({
                     style: {
                       flex: "1 1 auto",
                       overflowY: "auto",
-                      minHeight: 0
+                      minHeight: 300
                     },
                     children
                   }
@@ -20091,7 +20091,7 @@ const getDateRangeFromPeriod = (period) => {
   }
 };
 
-const {useEffect: useEffect$1w,useMemo: useMemo$U,useState: useState$1y} = await importShared('react');
+const {useEffect: useEffect$1z,useMemo: useMemo$V,useState: useState$1B} = await importShared('react');
 const RELATIVE_PERIODS = [
   { id: "THIS_MONTH", label: "This Month" },
   { id: "LAST_MONTH", label: "Last Month" },
@@ -20108,17 +20108,17 @@ const FilterFields = ({
   onClear,
   setIsLoading
 }) => {
-  const [departments, setDepartments] = useState$1y([]);
-  const [equipmentList, setEquipmentList] = useState$1y([]);
-  const [showFacilityFility, setShowFacilityFilter] = useState$1y(true);
-  const [showPeriodModal, setShowPeriodModal] = useState$1y(false);
-  const [periodTab, setPeriodTab] = useState$1y("RELATIVE");
-  const [tempPeriod, setTempPeriod] = useState$1y(filters.period);
-  const [tempStartDate, setTempStartDate] = useState$1y(filters.startDate);
-  const [tempEndDate, setTempEndDate] = useState$1y(filters.endDate);
-  const [isMobile, setIsMobile] = useState$1y(window.innerWidth < 768);
-  const [showMobileFilters, setShowMobileFilters] = useState$1y(false);
-  useEffect$1w(() => {
+  const [departments, setDepartments] = useState$1B([]);
+  const [equipmentList, setEquipmentList] = useState$1B([]);
+  const [showFacilityFility, setShowFacilityFilter] = useState$1B(true);
+  const [showPeriodModal, setShowPeriodModal] = useState$1B(false);
+  const [periodTab, setPeriodTab] = useState$1B("RELATIVE");
+  const [tempPeriod, setTempPeriod] = useState$1B(filters.period);
+  const [tempStartDate, setTempStartDate] = useState$1B(filters.startDate);
+  const [tempEndDate, setTempEndDate] = useState$1B(filters.endDate);
+  const [isMobile, setIsMobile] = useState$1B(window.innerWidth < 768);
+  const [showMobileFilters, setShowMobileFilters] = useState$1B(false);
+  useEffect$1z(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -20127,7 +20127,7 @@ const FilterFields = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  useEffect$1w(() => {
+  useEffect$1z(() => {
     const load = async () => {
       const [orgUnits, optionSets] = await Promise.all([
         LocalForageServiceInstance.getItem("userOrganisationUnits", "userOrgUnits"),
@@ -20157,10 +20157,10 @@ const FilterFields = ({
   const clearFilters = () => {
     if (onClear) onClear();
   };
-  const hasActiveFilters = useMemo$U(() => {
+  const hasActiveFilters = useMemo$V(() => {
     return filters.equipment !== "" || filters.department !== defaultDepartment || filters.period !== "NONE";
   }, [filters, defaultDepartment]);
-  useEffect$1w(() => {
+  useEffect$1z(() => {
     if (showPeriodModal) {
       setTempPeriod(filters.period);
       setTempStartDate(filters.startDate);
@@ -20174,7 +20174,8 @@ const FilterFields = ({
         IonButton,
         {
           expand: "block",
-          fill: "outline",
+          color: "primary",
+          className: "dashboard-mobile-filter-toggle",
           onClick: () => setShowMobileFilters((prev) => !prev),
           children: [
             showMobileFilters ? "Hide Filters" : "Show Filters",
@@ -20189,7 +20190,7 @@ const FilterFields = ({
         }
       ) }) }),
       (!isMobile || showMobileFilters) && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        hasActiveFilters && /* @__PURE__ */ jsxRuntimeExports.jsx(IonRow, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonCol, { size: "12", children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { size: "small", onClick: clearFilters, children: "Clear filters" }) }) }),
+        hasActiveFilters && /* @__PURE__ */ jsxRuntimeExports.jsx(IonRow, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonCol, { size: "12", children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { size: "small", onClick: clearFilters, color: "primary", children: "Clear filters" }) }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(IonRow, { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(IonCol, { size: "12", sizeMd: "4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { marginTop: 10 }, children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(IonLabel, { children: "Period" }),
@@ -20197,6 +20198,7 @@ const FilterFields = ({
               IonButton,
               {
                 expand: "full",
+                color: "primary",
                 onClick: () => setShowPeriodModal(true),
                 children: filters.startDate && filters.endDate ? `${new Date(
                   filters.startDate
@@ -20300,6 +20302,7 @@ const FilterFields = ({
               IonButton,
               {
                 expand: "block",
+                color: "primary",
                 fill: periodTab === "RELATIVE" ? "solid" : "outline",
                 onClick: () => setPeriodTab("RELATIVE"),
                 children: "Relative"
@@ -20309,6 +20312,7 @@ const FilterFields = ({
               IonButton,
               {
                 expand: "block",
+                color: "primary",
                 fill: periodTab === "FIXED" ? "solid" : "outline",
                 onClick: () => setPeriodTab("FIXED"),
                 children: "Fixed"
@@ -20694,7 +20698,7 @@ const EquipmentStats = {
       
       return res;
     } catch (error) {
-      console.error("Error fetching equipment data:", error);
+      console.log("Error fetching equipment data:", error);
       return []; // Return empty array on error to prevent crashes
     }
   },
@@ -20703,7 +20707,7 @@ const EquipmentStats = {
       const total = data?.length || 0;
       return total;
     } catch (error) {
-      console.error("Error calculating total equipment:", error);
+      console.log("Error calculating total equipment:", error);
 
       return 0;
     }
@@ -20743,7 +20747,7 @@ const EquipmentStats = {
       });
       return statusCounts;
     } catch (error) {
-      console.error("Error calculating equipment by status:", error);
+      console.log("Error calculating equipment by status:", error);
       return {};
     }
   },
@@ -20828,7 +20832,7 @@ const EquipmentStats = {
   //       };
   //     });
   //   } catch (error) {
-  //     console.error("Error calculating equipment by maintenance type:", error);
+  //     console.log("Error calculating equipment by maintenance type:", error);
   //     return [];
   //   }
   // },
@@ -20907,7 +20911,7 @@ const EquipmentStats = {
         };
       });
     } catch (error) {
-      console.error("Error getting overdue maintenance by type:", error);
+      console.log("Error getting overdue maintenance by type:", error);
 
       return [];
     }
@@ -20964,7 +20968,7 @@ const EquipmentStats = {
         };
       });
     } catch (error) {
-      console.error("Error calculating requisition status stats:", error);
+      console.log("Error calculating requisition status stats:", error);
 
       return [];
     }
@@ -21027,14 +21031,14 @@ const EquipmentStats = {
         };
       });
     } catch (error) {
-      console.error("Error calculating maintenance performance stats:", error);
+      console.log("Error calculating maintenance performance stats:", error);
 
       return [];
     }
   },
 };
 
-const {useContext: useContext$F,useEffect: useEffect$1v,useMemo: useMemo$T,useState: useState$1x} = await importShared('react');
+const {useContext: useContext$G,useEffect: useEffect$1y,useMemo: useMemo$U,useState: useState$1A} = await importShared('react');
 const DEFAULT_FILTERS = {
   startDate: "",
   endDate: "",
@@ -21043,26 +21047,26 @@ const DEFAULT_FILTERS = {
   period: "NONE"
 };
 const Dashboard = () => {
-  const { dashboardConfigs, isLoading, reload, setIsLoading } = useContext$F(
+  const { dashboardConfigs, isLoading, reload, setIsLoading } = useContext$G(
     MEMISContext.DashboardContext
   );
-  const { user } = useContext$F(MEMISContext.UserRolesContext);
+  const { user } = useContext$G(MEMISContext.UserRolesContext);
   const {
     setActiveLink,
     loading: menuLoading = false,
     refresh: refreshMenu,
     menuError
-  } = useContext$F(MEMISContext.MenuContext) || {};
+  } = useContext$G(MEMISContext.MenuContext) || {};
   const {
     programs = [],
     loading: programsLoading = false,
     refresh: refreshPrograms
-  } = useContext$F(MEMISContext.ProgramContext) || {};
-  const [isLoadingFromFilters, setIsLoadingFromFilters] = useState$1x(false);
-  const [defaultDepartment, setDefaultDepartment] = useState$1x("");
-  const [dashboardData, setDashboardData] = useState$1x({});
-  const [selectedFilters, setSelectedFilters] = useState$1x(DEFAULT_FILTERS);
-  useEffect$1v(() => {
+  } = useContext$G(MEMISContext.ProgramContext) || {};
+  const [isLoadingFromFilters, setIsLoadingFromFilters] = useState$1A(false);
+  const [defaultDepartment, setDefaultDepartment] = useState$1A("");
+  const [dashboardData, setDashboardData] = useState$1A({});
+  const [selectedFilters, setSelectedFilters] = useState$1A(DEFAULT_FILTERS);
+  useEffect$1y(() => {
     const loadDefaultDepartment = async () => {
       const orgUnits = await LocalForageServiceInstance.getItem(
         "userOrganisationUnits",
@@ -21116,14 +21120,14 @@ const Dashboard = () => {
       period: "NONE"
     });
   };
-  useMemo$T(() => {
+  useMemo$U(() => {
     return dashboardConfigs?.some(
       (d) => d.access?.some(
         (acc) => user?.userRoles?.some((ur) => ur?.id === acc?.id)
       )
     );
   }, [dashboardConfigs, user]);
-  useEffect$1v(() => {
+  useEffect$1y(() => {
     setIsLoadingFromFilters(true);
     setTimeout(() => {
       setIsLoadingFromFilters(false);
@@ -21197,7 +21201,7 @@ const Dashboard = () => {
         data?.data?.trackedEntities,
         [
           { key: "FULLY_FUNCTIONAL", attribute: "KFZ35H4ZHrk" },
-          { key: "MAINTENANCE", attribute: "rXIdO0bLQvD" },
+          { key: "UNDER_REPAIR", attribute: "KFZ35H4ZHrk" },
           { key: "NON_FUNCTIONAL", attribute: "KFZ35H4ZHrk" }
         ]
       );
@@ -21397,12 +21401,12 @@ const Dashboard = () => {
         },
         {
           title: "Under Maintenance",
-          total: EquipmentStats.compressTotalValue(byStatus?.MAINTENANCE || 0),
-          subtitle: `${totalEquipment ? (byStatus?.MAINTENANCE / totalEquipment * 100).toFixed(1) : 0}% of total`,
-          percentage: totalEquipment ? (byStatus?.MAINTENANCE / totalEquipment * 100).toFixed(1) : 0,
+          total: EquipmentStats.compressTotalValue(byStatus?.UNDER_REPAIR || 0),
+          subtitle: `${totalEquipment ? (byStatus?.UNDER_REPAIR / totalEquipment * 100).toFixed(1) : 0}% of total`,
+          percentage: totalEquipment ? (byStatus?.UNDER_REPAIR / totalEquipment * 100).toFixed(1) : 0,
           color: "#d89b00",
           icon: constructOutline,
-          link: "/memis/program/X8V6omQYuW0?status=MAINTENANCE"
+          link: "/memis/program/X8V6omQYuW0?status=UNDER_REPAIR"
         },
         {
           title: "Not Functional",
@@ -21439,7 +21443,7 @@ const Dashboard = () => {
       setIsLoading(false);
     }
   };
-  useEffect$1v(() => {
+  useEffect$1y(() => {
     const today = /* @__PURE__ */ new Date();
     const format = (date) => date.toISOString().split("T")[0];
     const defaultStart = new Date(today.getFullYear(), today.getMonth(), 1);
@@ -21515,8 +21519,8 @@ const getUsersForAssignment = async () => {
   }
 };
 
-const React$R = await importShared('react');
-const {useEffect: useEffect$1u,useState: useState$1w} = React$R;
+const React$T = await importShared('react');
+const {useEffect: useEffect$1x,useState: useState$1z} = React$T;
 function OrganisationUnitsWidget({
   programOrgUnits = [],
   selectedOrganisationUnit,
@@ -21531,8 +21535,8 @@ function OrganisationUnitsWidget({
   searchParams.get("q");
   searchParams.get("stage");
   searchParams.get("equipmentId");
-  const [facility, setFacility] = useState$1w("Facility");
-  const [orgUnitName, setOrgUnitName] = useState$1w("");
+  const [facility, setFacility] = useState$1z("Facility");
+  const [orgUnitName, setOrgUnitName] = useState$1z("");
   const getTEI = async (teiOu2) => {
     try {
       await dataStore.get(`tracker/trackedEntities/${teiOu2}`).then(async (res) => {
@@ -21544,10 +21548,10 @@ function OrganisationUnitsWidget({
         });
       });
     } catch (error) {
-      console.error("Failed to fetch TEI data:", error);
+      console.log("Failed to fetch TEI data:", error);
     }
   };
-  useEffect$1u(() => {
+  useEffect$1x(() => {
     if (!Array.isArray(programOrgUnits) || programOrgUnits?.length === 0 || !dataStoreData) {
       return;
     }
@@ -21744,28 +21748,28 @@ const ComponentsField = ({
   ] });
 };
 
-const {useEffect: useEffect$1t,useMemo: useMemo$S,useState: useState$1v} = await importShared('react');
+const {useEffect: useEffect$1w,useMemo: useMemo$T,useState: useState$1y} = await importShared('react');
 
 function useSectionVisibilityConfig(programId) {
-    const [tick, setTick] = useState$1v(0);
-    const [config, setConfig] = useState$1v(null);
+    const [tick, setTick] = useState$1y(0);
+    const [config, setConfig] = useState$1y(null);
 
     // Listen for external updates
-    useEffect$1t(() => {
+    useEffect$1w(() => {
         const onUpdate = () => setTick((n) => n + 1);
         window.addEventListener("memis:sectionVisibility:updated", onUpdate);
         return () => window.removeEventListener("memis:sectionVisibility:updated", onUpdate);
     }, []);
 
     // Fetch data asynchronously
-    useEffect$1t(() => {
+    useEffect$1w(() => {
         let mounted = true;
         const fetchConfig = async () => {
             try {
                 const data = await dataStore.get("dataStore/memis/enrollmentFormSectionVisibilityConfig");
                 if (mounted) setConfig(data);
             } catch (e) {
-                console.error("Error fetching section visibility config:", e);
+                console.log("Error fetching section visibility config:", e);
                 if (mounted) setConfig(null);
             }
         };
@@ -21776,7 +21780,7 @@ function useSectionVisibilityConfig(programId) {
     }, [tick]);
 
     // Derive visibility rules for the current program
-    const visibilityRules = useMemo$S(() => {
+    const visibilityRules = useMemo$T(() => {
         if (!programId || !config) return null;
 
         try {
@@ -21800,7 +21804,7 @@ function useSectionVisibilityConfig(programId) {
                     const parsed = JSON.parse(config);
                     sectionsArray = parsed?.data?.formSectionVisibility || parsed.formSectionVisibility || parsed || [];
                 } catch (e) {
-                    console.error("Failed to parse config string");
+                    console.log("Failed to parse config string");
                 }
             }
 
@@ -21825,14 +21829,14 @@ function useSectionVisibilityConfig(programId) {
 
             return {conditionallyHidden, alwaysHidden};
         } catch (e) {
-            console.error("Error computing section visibility:", e);
+            console.log("Error computing section visibility:", e);
             return null;
         }
     }, [programId, config, tick]);
     return visibilityRules;
 }
 
-const {useMemo: useMemo$R} = await importShared('react');
+const {useMemo: useMemo$S} = await importShared('react');
 
 
 const A$b = (x) => (Array.isArray(x) ? x : []);
@@ -21912,20 +21916,20 @@ function useProgramRules({
     formData = {},
     isAddFlow = false,
 }) {
-    const isReportsProgram = useMemo$R(() => {
+    const isReportsProgram = useMemo$S(() => {
         if (!program) return false;
         const programId = program?.id || "";
         const name = normalizeText(program?.name || program?.displayName);
         return programId === "C0ZvPkEFpLt" || name === "reports";
     }, [program]);
 
-    const programRulesList = useMemo$R(() => {
+    const programRulesList = useMemo$S(() => {
         if (Array.isArray(externalRules) && externalRules.length) return externalRules;
         if (Array.isArray(program?.programRules)) return program.programRules;
         return [];
     }, [externalRules, program]);
 
-    const programRuleVariables = useMemo$R(
+    const programRuleVariables = useMemo$S(
         () => A$b(program?.programRuleVariables),
         [program]
     );
@@ -21937,7 +21941,7 @@ function useProgramRules({
         return normalizeText(rule.program.name) === normalizeText(program.name);
     };
 
-    const reviewRule = useMemo$R(
+    const reviewRule = useMemo$S(
         () =>
             programRulesList.find((rule) => {
                 if (!matchesProgram(rule)) return false;
@@ -21950,7 +21954,7 @@ function useProgramRules({
         [programRulesList, program]
     );
 
-    const assignRule = useMemo$R(
+    const assignRule = useMemo$S(
         () =>
             programRulesList.find((rule) => {
                 if (!matchesProgram(rule)) return false;
@@ -21963,12 +21967,12 @@ function useProgramRules({
         [programRulesList, program]
     );
 
-    const fieldMetaById = useMemo$R(
+    const fieldMetaById = useMemo$S(
         () => buildFieldMetaById(sections),
         [sections]
     );
 
-    const referencedVariableNames = useMemo$R(() => {
+    const referencedVariableNames = useMemo$S(() => {
         const names = new Set();
         [reviewRule, assignRule].forEach((rule) => {
             extractVariableNames(rule?.condition).forEach((name) =>
@@ -21978,7 +21982,7 @@ function useProgramRules({
         return Array.from(names);
     }, [reviewRule, assignRule]);
 
-    const reportTypeVariable = useMemo$R(
+    const reportTypeVariable = useMemo$S(
         () =>
             referencedVariableNames
                 .map((name) =>
@@ -22001,14 +22005,14 @@ function useProgramRules({
         : undefined;
     const normalizedReportType = normalizeText(reportTypeLabel || reportTypeValue);
 
-    const reviewTriggerSet = useMemo$R(
+    const reviewTriggerSet = useMemo$S(
         () => (reviewRule?.condition ? extractComparisonValues(reviewRule.condition) : new Set()),
         [reviewRule]
     );
 
     const requiresReview = Boolean(normalizedReportType) && reviewTriggerSet.has(normalizedReportType) && isReportsProgram;
 
-    const approverAssignments = useMemo$R(
+    const approverAssignments = useMemo$S(
         () => (assignRule?.condition ? parseAssignPairs(assignRule.condition) : {}),
         [assignRule]
     );
@@ -22017,12 +22021,12 @@ function useProgramRules({
         ? approverAssignments[normalizedReportType]
         : undefined;
 
-    const autoAssignedApprovers = useMemo$R(
+    const autoAssignedApprovers = useMemo$S(
         () => new Set(Object.values(approverAssignments).filter(Boolean)),
         [approverAssignments]
     );
 
-    const assignAction = useMemo$R(() => {
+    const assignAction = useMemo$S(() => {
         if (!assignRule) return null;
         return (
             A$b(assignRule.programRuleActions).find(
@@ -22035,7 +22039,7 @@ function useProgramRules({
 
     const approvingOfficerFieldId = assignAction?.dataElement?.id || null;
 
-    const approvingSectionId = useMemo$R(() => {
+    const approvingSectionId = useMemo$S(() => {
         if (!approvingOfficerFieldId) return null;
         for (const section of sections) {
             const hasField = A$b(section?.fields).some((field) => {
@@ -22084,7 +22088,7 @@ const DE_TRANSFER_TO_LOCATION = "Hk2JSouuvga";
 const DE_TRANSFER_EQUIPMENT_NAME = "wObkfr29dtK";
 const DE_TRANSFER_EQUIPMENT_TO_BE_TRANSFERRED = "oIEtXbVslFN";
 
-const {useEffect: useEffect$1s,useRef: useRef$t,useState: useState$1u} = await importShared('react');
+const {useEffect: useEffect$1v,useRef: useRef$s,useState: useState$1x} = await importShared('react');
 
 const NO_WARD_ALLOCATED_MESSAGE = "THE USER HAS NO WARD ALLOCATED";
 let facilityOrgUnitsCache = null;
@@ -22137,8 +22141,8 @@ function useTransferDefaults({
     setFormData,
     userOrganisationUnits,
 }) {
-    const transferLocationDefaultAppliedRef = useRef$t(false);
-    const transferToLocationDefaultAppliedRef = useRef$t(false);
+    const transferLocationDefaultAppliedRef = useRef$s(false);
+    const transferToLocationDefaultAppliedRef = useRef$s(false);
 
     const isWardInChargeForTransfer =
         user &&
@@ -22174,7 +22178,7 @@ function useTransferDefaults({
 
     const transferLocationValue = formData?.[DE_TRANSFER_LOCATION_TYPE];
 
-    useEffect$1s(() => {
+    useEffect$1v(() => {
         if (transferLocationDefaultAppliedRef.current) return;
         if (!isWardInChargeForTransfer && !isHospitalAdminForTransfer) return;
         if (isEdit) return;
@@ -22207,7 +22211,7 @@ function useTransferDefaults({
         setFormData,
     ]);
 
-    useEffect$1s(() => {
+    useEffect$1v(() => {
         const shouldPrefill =
             isWardInChargeForTransfer || isHospitalAdminForTransfer;
         if (!shouldPrefill) return;
@@ -22259,16 +22263,16 @@ function useTransferOrganisationUnitOptions({
     isHospitalAdminForTransfer,
     transferLocationValue,
 }) {
-    const [facilityOrgUnits, setFacilityOrgUnits] = useState$1u([]);
-    const [facilityOrgUnitsLoading, setFacilityOrgUnitsLoading] = useState$1u(false);
-    const facilityOrgUnitsLoadedRef = useRef$t(false);
+    const [facilityOrgUnits, setFacilityOrgUnits] = useState$1x([]);
+    const [facilityOrgUnitsLoading, setFacilityOrgUnitsLoading] = useState$1x(false);
+    const facilityOrgUnitsLoadedRef = useRef$s(false);
 
     const shouldUseFacilityGroup =
         isHospitalAdminForTransfer &&
         transferLocationValue &&
         String(transferLocationValue).trim() === OPTION_CODE_OUTSIDE_FACILITY;
 
-    useEffect$1s(() => {
+    useEffect$1v(() => {
         if (!shouldUseFacilityGroup) return;
         if (facilityOrgUnitsLoadedRef.current) return;
 
@@ -22297,7 +22301,7 @@ function useTransferOrganisationUnitOptions({
                         return list;
                     })
                     .catch((err) => {
-                        console.error("Failed to load facility organisation unit group", err);
+                        console.log("Failed to load facility organisation unit group", err);
                         return [];
                     });
 
@@ -22393,7 +22397,7 @@ const EQUIPMENT_PROGRAM_ID = "X8V6omQYuW0";
 /**
  * Helper: safely get attribute value for a TEI attribute.
  */
-const getAttributeValue = (attributes, attributeId) =>
+const getAttributeValue$1 = (attributes, attributeId) =>
     attributes?.find((a) => a?.attribute === attributeId)?.value || "";
 
 /**
@@ -22595,12 +22599,12 @@ async function getSkipLogicConfig(programId) {
 
     return { skipLogicMap, defaultHidden, dependencies, linkedFieldGroups };
   } catch (err) {
-    console.error("[getSkipLogicConfig] Failed to read skip logic from LocalForage:", err);
+    console.log("[getSkipLogicConfig] Failed to read skip logic from LocalForage:", err);
     return null;
   }
 }
 
-const {useMemo: useMemo$Q} = await importShared('react');
+const {useMemo: useMemo$R} = await importShared('react');
 
 /**
  * Hook: compute the primary button label from:
@@ -22621,7 +22625,7 @@ function usePrimaryButtonLabel({
 }) {
     // const cfg = getButtonTextConfig(dataStore);
 
-    return useMemo$Q(() => {
+    return useMemo$R(() => {
         if (loading) return "Saving…";
 
         // Always show "Submit" on last step to make UX explicit.
@@ -22682,11 +22686,11 @@ async function getEquipmentListOnTransferOutside(event) {
             equipment: available
         };
     } catch (error) {
-        console.error("Error in fetching equipment on Transfer Outside: ", error);
+        console.log("Error in fetching equipment on Transfer Outside: ", error);
     }
 }
 
-const {useState: useState$1t,useEffect: useEffect$1r,useRef: useRef$s} = await importShared('react');
+const {useState: useState$1w,useEffect: useEffect$1u,useRef: useRef$r} = await importShared('react');
 
 const ATTR$1 = ATTRIBUTE_FOR_EQUIPMENT_LOOKUP;
 
@@ -22701,9 +22705,9 @@ function useEquipmentOptions(
   selectedOrganisationUnit = null,
   event = null,
 ) {
-  const equipmentCacheRef = useRef$s(new Map());
-  const [equipmentOptions, setEquipmentOptions] = useState$1t([]);
-  const [equipmentLoading, setEquipmentLoading] = useState$1t(false);
+  const equipmentCacheRef = useRef$r(new Map());
+  const [equipmentOptions, setEquipmentOptions] = useState$1w([]);
+  const [equipmentLoading, setEquipmentLoading] = useState$1w(false);
 
   /* ---------------------------------------------------------
        Determine whether outside-facility logic should apply
@@ -22801,13 +22805,13 @@ function useEquipmentOptions(
           const id = tei.trackedEntity || tei.trackedEntityInstance;
 
           const parts = [
-            getAttributeValue(atts, ATTR$1.NAME) || "Unnamed",
-            getAttributeValue(atts, ATTR$1.BRAND) &&
-              `• ${getAttributeValue(atts, ATTR$1.BRAND)}`,
-            getAttributeValue(atts, ATTR$1.MODEL) &&
-              `• ${getAttributeValue(atts, ATTR$1.MODEL)}`,
-            getAttributeValue(atts, ATTR$1.SERIAL) &&
-              `• SN:${getAttributeValue(atts, ATTR$1.SERIAL)}`,
+            getAttributeValue$1(atts, ATTR$1.NAME) || "Unnamed",
+            getAttributeValue$1(atts, ATTR$1.BRAND) &&
+              `• ${getAttributeValue$1(atts, ATTR$1.BRAND)}`,
+            getAttributeValue$1(atts, ATTR$1.MODEL) &&
+              `• ${getAttributeValue$1(atts, ATTR$1.MODEL)}`,
+            getAttributeValue$1(atts, ATTR$1.SERIAL) &&
+              `• SN:${getAttributeValue$1(atts, ATTR$1.SERIAL)}`,
           ].filter(Boolean);
 
           return {
@@ -22822,13 +22826,13 @@ function useEquipmentOptions(
           const id = tei.trackedEntity || tei.trackedEntityInstance;
 
           const parts = [
-            getAttributeValue(atts, ATTR$1.NAME) || "Unnamed",
-            getAttributeValue(atts, ATTR$1.BRAND) &&
-              `• ${getAttributeValue(atts, ATTR$1.BRAND)}`,
-            getAttributeValue(atts, ATTR$1.MODEL) &&
-              `• ${getAttributeValue(atts, ATTR$1.MODEL)}`,
-            getAttributeValue(atts, ATTR$1.SERIAL) &&
-              `• SN:${getAttributeValue(atts, ATTR$1.SERIAL)}`,
+            getAttributeValue$1(atts, ATTR$1.NAME) || "Unnamed",
+            getAttributeValue$1(atts, ATTR$1.BRAND) &&
+              `• ${getAttributeValue$1(atts, ATTR$1.BRAND)}`,
+            getAttributeValue$1(atts, ATTR$1.MODEL) &&
+              `• ${getAttributeValue$1(atts, ATTR$1.MODEL)}`,
+            getAttributeValue$1(atts, ATTR$1.SERIAL) &&
+              `• SN:${getAttributeValue$1(atts, ATTR$1.SERIAL)}`,
           ].filter(Boolean);
 
           return {
@@ -22848,7 +22852,7 @@ function useEquipmentOptions(
   /* ---------------------------------------------------------
        Effect trigger
        --------------------------------------------------------- */
-  useEffect$1r(() => {
+  useEffect$1u(() => {
     let active = true;
 
     const run = async () => {
@@ -22879,18 +22883,18 @@ function useEquipmentOptions(
   };
 }
 
-const {useState: useState$1s,useEffect: useEffect$1q,useRef: useRef$r} = await importShared('react');
+const {useState: useState$1v,useEffect: useEffect$1t,useRef: useRef$q} = await importShared('react');
 
 /**
  * Custom hook to manage status field initialization and tracking
  * Encapsulates status-related state logic
  */
 function useStatusField({ programObj, programKey, selectedStageId, isEdit, formData, setFormData }) {
-    const [statusFieldId, setStatusFieldId] = useState$1s(null);
-    const [statusOptionCodes, setStatusOptionCodes] = useState$1s({});
-    const lastApproverNotificationRef = useRef$r(null);
+    const [statusFieldId, setStatusFieldId] = useState$1v(null);
+    const [statusOptionCodes, setStatusOptionCodes] = useState$1v({});
+    const lastApproverNotificationRef = useRef$q(null);
 
-    useEffect$1q(() => {
+    useEffect$1t(() => {
         if (!programObj || isEdit) return;
 
         let statusDE = null;
@@ -22945,7 +22949,7 @@ function useStatusField({ programObj, programKey, selectedStageId, isEdit, formD
     };
 }
 
-const {useState: useState$1r} = await importShared('react');
+const {useState: useState$1u} = await importShared('react');
 
 
 /**
@@ -22953,8 +22957,8 @@ const {useState: useState$1r} = await importShared('react');
  * Consolidates image-related state
  */
 function useImageState() {
-    const [imageUrls, setImageUrls] = useState$1r({});
-    const [imageLoading, setImageLoading] = useState$1r({});
+    const [imageUrls, setImageUrls] = useState$1u({});
+    const [imageLoading, setImageLoading] = useState$1u({});
 
     return {
         imageUrls,
@@ -22964,7 +22968,7 @@ function useImageState() {
     };
 }
 
-const {useState: useState$1q} = await importShared('react');
+const {useState: useState$1t} = await importShared('react');
 
 
 /**
@@ -22972,7 +22976,7 @@ const {useState: useState$1q} = await importShared('react');
  * Consolidates date picker UI state
  */
 function useDateRangePopover() {
-    const [dateRangePopover, setDateRangePopover] = useState$1q({
+    const [dateRangePopover, setDateRangePopover] = useState$1t({
         from: false,
         to: false,
         fieldId: null,
@@ -22984,14 +22988,14 @@ function useDateRangePopover() {
     };
 }
 
-const {useMemo: useMemo$P} = await importShared('react');
+const {useMemo: useMemo$Q} = await importShared('react');
 
 /**
  * Custom hook to compute sections from program/stage metadata
  * Shape: [{ id, name, fields:[dataElement|trackedEntityAttribute] }]
  */
 function useSections({ programObj, stageObj, programKey, selectedStageId }) {
-    return useMemo$P(() => {
+    return useMemo$Q(() => {
         const mapSectionId = (section) => {
             const sectionName = (section.name || section.formName || "").toLowerCase();
 
@@ -23065,7 +23069,7 @@ function useSections({ programObj, stageObj, programKey, selectedStageId }) {
     }, [programObj, stageObj, programKey, selectedStageId]);
 }
 
-const {useMemo: useMemo$O,useEffect: useEffect$1p,useState: useState$1p} = await importShared('react');
+const {useMemo: useMemo$P,useEffect: useEffect$1s,useState: useState$1s} = await importShared('react');
 
 function useSectionsList({
   sections,
@@ -23074,10 +23078,10 @@ function useSectionsList({
   user,
   formData,
 }) {
-  const [sectionAccessMap, setSectionAccessMap] = useState$1p(null);
+  const [sectionAccessMap, setSectionAccessMap] = useState$1s(null);
 
   // 🔹 1. Load section access asynchronously
-  useEffect$1p(() => {
+  useEffect$1s(() => {
 
     if (!sections || !user || !programId) return;
 
@@ -23099,7 +23103,7 @@ function useSectionsList({
   }, [sections, programId, user]);
 
   // 🔹 2. Compute final visible sections
-  const sectionsList = useMemo$O(() => {
+  const sectionsList = useMemo$P(() => {
     if (!sections || !sectionAccessMap) return [];
 
     // Filter writable sections
@@ -23210,7 +23214,7 @@ const fetchOtherFieldMappings = async () => {
     cachedConfig = responseData.otherFieldMappings || {};
     return cachedConfig;
   } catch (error) {
-    console.error("Failed to fetch other fields config:", error);
+    console.log("Failed to fetch other fields config:", error);
     return {};
   }
 };
@@ -23257,7 +23261,7 @@ const applyOtherFieldRules = ({
   });
 };
 
-const {useState: useState$1o,useEffect: useEffect$1o,useMemo: useMemo$N,useRef: useRef$q} = await importShared('react');
+const {useState: useState$1r,useEffect: useEffect$1r,useMemo: useMemo$O,useRef: useRef$p} = await importShared('react');
 
 /**
  * Hook to manage field visibility based on skip logic and OTHER field rules
@@ -23274,11 +23278,11 @@ function useHiddenFields({
   activeSection,
   setStepIndex,
 }) {
-  const [skipLogicMap, setSkipLogicMap] = useState$1o({});
-  const [defaultHidden, setDefaultHidden] = useState$1o(new Set());
+  const [skipLogicMap, setSkipLogicMap] = useState$1r({});
+  const [defaultHidden, setDefaultHidden] = useState$1r(new Set());
 
   // Load skip logic config from LocalForage whenever programId changes
-  useEffect$1o(() => {
+  useEffect$1r(() => {
     if (!programId) return;
 
     let cancelled = false;
@@ -23300,7 +23304,7 @@ function useHiddenFields({
   }, [programId]);
 
   // Initial hidden fields: Hide OTHER text fields by default in create mode
-  const initialHiddenFields = useMemo$N(() => {
+  const initialHiddenFields = useMemo$O(() => {
     const hidden = new Set(defaultHidden);
 
     if (!isEdit && Array.isArray(otherFieldMappings) && otherFieldMappings.length > 0) {
@@ -23312,17 +23316,17 @@ function useHiddenFields({
     return hidden;
   }, [selectedStage, isEdit, otherFieldMappings, defaultHidden]);
 
-  const [hiddenFields, setHiddenFields] = useState$1o(initialHiddenFields);
-  const hiddenFieldsRef = useRef$q(hiddenFields);
+  const [hiddenFields, setHiddenFields] = useState$1r(initialHiddenFields);
+  const hiddenFieldsRef = useRef$p(hiddenFields);
 
   // Re-seed hiddenFields whenever initialHiddenFields changes
-  useEffect$1o(() => {
+  useEffect$1r(() => {
     hiddenFieldsRef.current = initialHiddenFields;
     setHiddenFields(initialHiddenFields);
   }, [initialHiddenFields]);
 
   // Apply skip-logic whenever relevant formData or skipLogicMap changes
-  useEffect$1o(() => {
+  useEffect$1r(() => {
     const newHidden = new Set(defaultHidden);
 
     // Seed with OTHER fields hidden by default in create mode
@@ -23450,7 +23454,7 @@ function useHiddenFields({
   };
 }
 
-const {useState: useState$1n} = await importShared('react');
+const {useState: useState$1q} = await importShared('react');
 
 
 /**
@@ -23458,10 +23462,10 @@ const {useState: useState$1n} = await importShared('react');
  * Handles loading state for task-based form prefilling
  */
 function useTaskPrefill() {
-    const [taskAvailableInQuery, setTaskAvailableInQuery] = useState$1n(null);
-    const [prefilledValues, setPrefilledValues] = useState$1n([]);
-    const [isCheckingRegistration, setIsCheckingRegistration] = useState$1n(false);
-    const [formLoading, setFormLoading] = useState$1n(false);
+    const [taskAvailableInQuery, setTaskAvailableInQuery] = useState$1q(null);
+    const [prefilledValues, setPrefilledValues] = useState$1q([]);
+    const [isCheckingRegistration, setIsCheckingRegistration] = useState$1q(false);
+    const [formLoading, setFormLoading] = useState$1q(false);
 
     return {
         taskAvailableInQuery,
@@ -23475,7 +23479,7 @@ function useTaskPrefill() {
     };
 }
 
-const {useEffect: useEffect$1n} = await importShared('react');
+const {useEffect: useEffect$1q} = await importShared('react');
 
 /**
  * Hook to handle task prefill logic
@@ -23487,7 +23491,7 @@ function useTaskPrefillLogic({
     setFormLoading,
     setFormData,
 }) {
-    useEffect$1n(() => {
+    useEffect$1q(() => {
         const loadTaskPrefill = async () => {
             const taskId = queryParams.get("taskId");
             if (!taskId) return;
@@ -23512,7 +23516,7 @@ function useTaskPrefillLogic({
                 );
 
                 if (!fieldConfig) {
-                    console.error("No valid prefilled field configuration found.");
+                    console.log("No valid prefilled field configuration found.");
                     return;
                 }
 
@@ -23544,7 +23548,7 @@ function useTaskPrefillLogic({
                     }
                 }
             } catch (err) {
-                console.error("Failed to load task prefill", err);
+                console.log("Failed to load task prefill", err);
             } finally {
                 setFormLoading(false);
             }
@@ -23561,10 +23565,10 @@ function useTaskPrefillLogic({
                     return response?.data.value;
                 }
 
-                console.error("No value found for sourceId:", sourceId);
+                console.log("No value found for sourceId:", sourceId);
                 return null;
             } catch (err) {
-                console.error("Failed to fetch source value from API", err);
+                console.log("Failed to fetch source value from API", err);
                 return null;
             }
         };
@@ -23574,14 +23578,14 @@ function useTaskPrefillLogic({
     }, []);
 }
 
-const {useState: useState$1m} = await importShared('react');
+const {useState: useState$1p} = await importShared('react');
 
 
 /**
  * Hook to manage simple popover visibility state
  */
 function usePopoverState(initialState = false) {
-    const [showPopover, setShowPopover] = useState$1m(initialState);
+    const [showPopover, setShowPopover] = useState$1p(initialState);
 
     return {
         showPopover,
@@ -23589,7 +23593,7 @@ function usePopoverState(initialState = false) {
     };
 }
 
-const {useState: useState$1l,useEffect: useEffect$1m} = await importShared('react');
+const {useState: useState$1o,useEffect: useEffect$1p} = await importShared('react');
 
 
 /**
@@ -23597,14 +23601,14 @@ const {useState: useState$1l,useEffect: useEffect$1m} = await importShared('reac
  */
 function useViewport() {
     // Initialize with actual window width to prevent flash
-    const [isMobile, setIsMobile] = useState$1l(() => {
+    const [isMobile, setIsMobile] = useState$1o(() => {
         if (typeof window !== 'undefined') {
             return window.innerWidth <= 600;
         }
         return false;
     });
 
-    useEffect$1m(() => {
+    useEffect$1p(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 600);
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
@@ -23613,18 +23617,18 @@ function useViewport() {
     return { isMobile };
 }
 
-const {useState: useState$1k,useEffect: useEffect$1l} = await importShared('react');
+const {useState: useState$1n,useEffect: useEffect$1o} = await importShared('react');
 
 /**
  * Hook to manage OTHER field configuration and mappings
  * Handles showing/hiding "Other" text fields based on dropdown selections
  */
 function useOtherFieldLogic({ selectedStageId, programObj }) {
-  const [otherFieldConfig, setOtherFieldConfig] = useState$1k({});
-  const [otherFieldMappings, setOtherFieldMappings] = useState$1k([]);
+  const [otherFieldConfig, setOtherFieldConfig] = useState$1n({});
+  const [otherFieldMappings, setOtherFieldMappings] = useState$1n([]);
 
   // Fetch OTHER field configuration on mount
-  useEffect$1l(() => {
+  useEffect$1o(() => {
     let mounted = true;
 
     const loadConfig = async () => {
@@ -23641,7 +23645,7 @@ function useOtherFieldLogic({ selectedStageId, programObj }) {
   }, []);
 
   // Load OTHER field mappings when stage/program changes
-  useEffect$1l(() => {
+  useEffect$1o(() => {
     const stageIdFromProgram =
       !selectedStageId && Array.isArray(programObj?.programStages) && programObj.programStages.length > 0
         ? programObj.programStages[0]?.id
@@ -23669,9 +23673,9 @@ function useOtherFieldLogic({ selectedStageId, programObj }) {
   };
 }
 
-const {useState: useState$1j,useEffect: useEffect$1k} = await importShared('react');
+const {useState: useState$1m,useEffect: useEffect$1n} = await importShared('react');
 
-const {useEffect: useEffect$1j} = await importShared('react');
+const {useEffect: useEffect$1m} = await importShared('react');
 
 /**
  * Hook to load image URLs for IMAGE type fields when editing
@@ -23720,7 +23724,7 @@ function useImageLoader({
     /**
      * When editing a TEI, load existing IMAGE values for data elements so they can be previewed.
      */
-    useEffect$1j(() => {
+    useEffect$1m(() => {
         const load = async () => {
             if (!trackedEntityUID || !programId) return;
 
@@ -23773,7 +23777,7 @@ function useImageLoader({
     }, [trackedEntityUID, programId, programObj, stageObj, selectedStageId]);
 }
 
-const {useState: useState$1i,useEffect: useEffect$1i} = await importShared('react');
+const {useState: useState$1l,useEffect: useEffect$1l} = await importShared('react');
 
 /**
  * Resolves the equipment program ID and stage configs from the datastore cache.
@@ -23798,16 +23802,16 @@ function useEquipmentContext({
   routeEquipmentId,
   resetTrigger,
 }) {
-  const [contextConfig, setContextConfig] = useState$1i(null);
-  const [selectedEquipment, setSelectedEquipment] = useState$1i(null);
-  const [availableEquipment, setAvailableEquipment] = useState$1i([]);
-  const [showEquipmentPicker, setShowEquipmentPicker] = useState$1i(false);
-  const [loading, setLoading] = useState$1i(false);
-  const [error, setError] = useState$1i(null);
-  const [configLoaded, setConfigLoaded] = useState$1i(false);
+  const [contextConfig, setContextConfig] = useState$1l(null);
+  const [selectedEquipment, setSelectedEquipment] = useState$1l(null);
+  const [availableEquipment, setAvailableEquipment] = useState$1l([]);
+  const [showEquipmentPicker, setShowEquipmentPicker] = useState$1l(false);
+  const [loading, setLoading] = useState$1l(false);
+  const [error, setError] = useState$1l(null);
+  const [configLoaded, setConfigLoaded] = useState$1l(false);
 
   // Reset state when stage/program changes OR when resetTrigger changes (new action)
-  useEffect$1i(() => {
+  useEffect$1l(() => {
     setContextConfig(null);
     setSelectedEquipment(null);
     setAvailableEquipment([]);
@@ -23843,7 +23847,7 @@ function useEquipmentContext({
           setAvailableEquipment(equipment);
         }
       } catch (err) {
-        console.error("Failed to load equipment context:", err);
+        console.log("Failed to load equipment context:", err);
         setError(err.message);
       } finally {
         setLoading(false);
@@ -23992,7 +23996,7 @@ function useEquipmentContext({
       );
       return transformedEquipment;
     } catch (err) {
-      console.error("Failed to fetch available equipment:", err);
+      console.log("Failed to fetch available equipment:", err);
       setError(err.message);
       return [];
     } finally {
@@ -24067,7 +24071,7 @@ function useSparePartLookup({ programId, setFormData, isCheckingRegistration, se
                 trackedEntityId: null,
             };
         } catch (error) {
-            console.error("Error checking spare part registration:", error);
+            console.log("Error checking spare part registration:", error);
             return null;
         } finally {
             setIsCheckingRegistration(false);
@@ -24113,7 +24117,7 @@ function useSparePartLookup({ programId, setFormData, isCheckingRegistration, se
     };
 }
 
-const {useMemo: useMemo$M} = await importShared('react');
+const {useMemo: useMemo$N} = await importShared('react');
 
 /**
  * Hook to compute required fields from program metadata
@@ -24125,7 +24129,7 @@ function useRequiredFields({
     programKey,
     selectedStageId,
 }) {
-    const requiredById = useMemo$M(() => {
+    const requiredById = useMemo$N(() => {
         const out = {};
 
         if (programObj?.programType === "WITH_REGISTRATION") {
@@ -24166,7 +24170,7 @@ function useRequiredFields({
     return { requiredById };
 }
 
-const {useMemo: useMemo$L,useEffect: useEffect$1h,useState: useState$1h} = await importShared('react');
+const {useMemo: useMemo$M,useEffect: useEffect$1k,useState: useState$1k} = await importShared('react');
 
 /**
  * Hook to load custom mandatory fields from datastore and merge with native DHIS2 mandatory
@@ -24185,11 +24189,11 @@ function useCustomMandatoryFields({
     stageObj,
     nativeRequiredById = {},
 }) {
-    const [customConfig, setCustomConfig] = useState$1h([]);
-    const [isLoading, setIsLoading] = useState$1h(true);
+    const [customConfig, setCustomConfig] = useState$1k([]);
+    const [isLoading, setIsLoading] = useState$1k(true);
 
     // Load custom mandatory configuration from datastore
-    useEffect$1h(() => {
+    useEffect$1k(() => {
         let mounted = true;
 
         const loadCustomConfig = async () => {
@@ -24202,7 +24206,7 @@ function useCustomMandatoryFields({
                     setIsLoading(false);
                 }
             } catch (error) {
-                console.error("Error loading custom mandatory config:", error);
+                console.log("Error loading custom mandatory config:", error);
                 if (mounted) {
                     setCustomConfig([]);
                     setIsLoading(false);
@@ -24218,7 +24222,7 @@ function useCustomMandatoryFields({
     }, []);
 
     // Compute custom mandatory fields
-    const customRequiredById = useMemo$L(() => {
+    const customRequiredById = useMemo$M(() => {
         if (!customConfig.length) return {};
 
         const out = {};
@@ -24253,7 +24257,7 @@ function useCustomMandatoryFields({
     }, [customConfig, programObj, selectedStageId, stageObj, programKey]);
 
     // Merge native and custom mandatory fields
-    const requiredById = useMemo$L(() => {
+    const requiredById = useMemo$M(() => {
         return {
             ...nativeRequiredById,
             ...customRequiredById,
@@ -24266,7 +24270,7 @@ function useCustomMandatoryFields({
     };
 }
 
-const {useState: useState$1g,useEffect: useEffect$1g,useMemo: useMemo$K} = await importShared('react');
+const {useState: useState$1j,useEffect: useEffect$1j,useMemo: useMemo$L} = await importShared('react');
 
 /**
  * Hook to manage multi-step wizard navigation
@@ -24279,12 +24283,12 @@ function useStepNavigation({
   sectionsList,
   reviewNavigationLocked,
 }) {
-  const [internalStep, setInternalStep] = useState$1g(0);
+  const [internalStep, setInternalStep] = useState$1j(0);
 
   const stepIndex =
     typeof currentStep === "number" ? currentStep : internalStep;
 
-  const activeSection = useMemo$K(() => {
+  const activeSection = useMemo$L(() => {
     const res = sectionsList[stepIndex] || {
       id: "default",
       name: "Form",
@@ -24323,12 +24327,12 @@ function useStepNavigation({
         );
       }
     } catch (error) {
-      console.error("Error setting step index:", error);
+      console.log("Error setting step index:", error);
     }
   };
 
   // Update current section when active section changes
-  useEffect$1g(() => {
+  useEffect$1j(() => {
     if (typeof setCurrentSection === "function" && activeSection) {
       setCurrentSection(activeSection);
     }
@@ -24361,7 +24365,7 @@ const toDateOrNull = (v) => {
   const d = new Date(v);
   return Number.isNaN(d.getTime()) ? null : d;
 };
-const startOfDay = (d) => {
+const startOfDay$1 = (d) => {
   const x = new Date(d);
   x.setHours(0, 0, 0, 0);
   return x;
@@ -24369,15 +24373,15 @@ const startOfDay = (d) => {
 const daysUntil = (dateValue) => {
   const d = toDateOrNull(dateValue);
   if (!d) return null;
-  const today = startOfDay(new Date());
-  const end = startOfDay(d);
+  const today = startOfDay$1(new Date());
+  const end = startOfDay$1(d);
   return Math.ceil((end.getTime() - today.getTime()) / msPerDay);
 };
 const daysSince = (dateValue) => {
   const d = toDateOrNull(dateValue);
   if (!d) return null;
-  const today = startOfDay(new Date());
-  const start = startOfDay(d);
+  const today = startOfDay$1(new Date());
+  const start = startOfDay$1(d);
   return Math.ceil((today.getTime() - start.getTime()) / msPerDay);
 };
 
@@ -24563,11 +24567,11 @@ const triggerNotifications = async ({
       );
     }
   } catch (err) {
-    console.error("Failed to trigger notifications", err);
+    console.log("Failed to trigger notifications", err);
   }
 };
 
-const {useEffect: useEffect$1f} = await importShared('react');
+const {useEffect: useEffect$1i} = await importShared('react');
 
 /**
  * Hook to manage approval officer assignment and notifications
@@ -24624,7 +24628,7 @@ function useApprovalNotifications({
      * Ensure the "approving officer" TEI is set:
      *   - On new forms when navigation is locked for review.
      */
-    useEffect$1f(() => {
+    useEffect$1i(() => {
         if (!isAddFlow || !approvingOfficerFieldId) return;
 
         setFormData((prev) => {
@@ -24660,7 +24664,7 @@ function useApprovalNotifications({
      *   - On new forms when navigation is locked for review.
      *   - On edits when status transitions to "Feedback required".
      */
-    useEffect$1f(() => {
+    useEffect$1i(() => {
         if (!programObj?.id) return;
         if (!assignedApprover || !approvingOfficerFieldId || !approvingSectionId)
             return;
@@ -24696,7 +24700,7 @@ function useApprovalNotifications({
                 });
             } catch (error) {
                 lastApproverNotificationRef.current = null;
-                console.error("Failed to send approver notification", error);
+                console.log("Failed to send approver notification", error);
             }
         };
 
@@ -24726,7 +24730,7 @@ function useApprovalNotifications({
     };
 }
 
-const {useState: useState$1f,useEffect: useEffect$1e,useRef: useRef$p} = await importShared('react');
+const {useState: useState$1i,useEffect: useEffect$1h,useRef: useRef$o} = await importShared('react');
 
 /**
  * useFilteredOptionSet
@@ -24750,10 +24754,10 @@ const {useState: useState$1f,useEffect: useEffect$1e,useRef: useRef$p} = await i
  * }
  */
 function useFilteredOptionSet(programId) {
-  const [filteredCodesMap, setFilteredCodesMap] = useState$1f({});
-  const fetchedRef = useRef$p(false);
+  const [filteredCodesMap, setFilteredCodesMap] = useState$1i({});
+  const fetchedRef = useRef$o(false);
 
-  useEffect$1e(() => {
+  useEffect$1h(() => {
     if (!programId || fetchedRef.current) return;
 
     let cancelled = false;
@@ -25389,7 +25393,7 @@ const exportBlobWithHostBridge = async (blob, filename) => {
     });
 };
 
-const {useEffect: useEffect$1d,useState: useState$1e} = await importShared('react');
+const {useEffect: useEffect$1g,useState: useState$1h} = await importShared('react');
 function FilePreviewModal({
   isOpen,
   onClose,
@@ -25402,13 +25406,13 @@ function FilePreviewModal({
   dataElementId,
   programId
 }) {
-  const [loading, setLoading] = useState$1e(true);
-  const [imageUrl, setImageUrl] = useState$1e(null);
-  const [fileData, setFileData] = useState$1e(null);
-  const [error, setError] = useState$1e(null);
-  const [mimeType, setMimeType] = useState$1e("application/octet-stream");
-  const [downloading, setDownloading] = useState$1e(false);
-  useEffect$1d(() => {
+  const [loading, setLoading] = useState$1h(true);
+  const [imageUrl, setImageUrl] = useState$1h(null);
+  const [fileData, setFileData] = useState$1h(null);
+  const [error, setError] = useState$1h(null);
+  const [mimeType, setMimeType] = useState$1h("application/octet-stream");
+  const [downloading, setDownloading] = useState$1h(false);
+  useEffect$1g(() => {
     if (isOpen && fileId && (teiId && attributeId || eventId && dataElementId)) {
       fetchFile();
     } else if (!isOpen) {
@@ -25466,7 +25470,7 @@ function FilePreviewModal({
       setMimeType(contentType);
       setLoading(false);
     } catch (err) {
-      console.error("File fetch error:", err);
+      console.log("File fetch error:", err);
       setError(err.message || "Failed to load file");
       showToast(err.message || "Failed to load file", "error");
       setLoading(false);
@@ -25498,7 +25502,7 @@ function FilePreviewModal({
             });
             showToast("File saved successfully to Documents", "success");
           } catch (e) {
-            console.error("Native save error:", e);
+            console.log("Native save error:", e);
             showToast("Failed to save file on device", "danger");
           } finally {
             setDownloading(false);
@@ -25523,7 +25527,7 @@ function FilePreviewModal({
         setDownloading(false);
       }
     } catch (error2) {
-      console.error("Download error:", error2);
+      console.log("Download error:", error2);
       showToast("An error occurred during download", "danger");
       setDownloading(false);
     }
@@ -25783,7 +25787,7 @@ function validateProgramField(programId, fieldId, formData = {}, validationConfi
   }, []);
 }
 
-const {useState: useState$1d,useEffect: useEffect$1c} = await importShared('react');
+const {useState: useState$1g,useEffect: useEffect$1f} = await importShared('react');
 
 /**
  * useParticipantsPerWardConfig
@@ -25817,14 +25821,14 @@ const {useState: useState$1d,useEffect: useEffect$1c} = await importShared('reac
  * participantsPerWardField === null.
  */
 function useParticipantsPerWardConfig(programId) {
-    const [config, setConfig] = useState$1d({
+    const [config, setConfig] = useState$1g({
         wardsField: null,
         participantsPerWardField: null,
         totalParticipantsField: null,
         ready: false,
     });
 
-    useEffect$1c(() => {
+    useEffect$1f(() => {
         if (!programId) {
             setConfig({ wardsField: null, participantsPerWardField: null, totalParticipantsField: null, ready: true });
             return;
@@ -25853,7 +25857,7 @@ function useParticipantsPerWardConfig(programId) {
                     });
                 }
             } catch (err) {
-                console.error("[useParticipantsPerWardConfig] Failed to load config:", err);
+                console.log("[useParticipantsPerWardConfig] Failed to load config:", err);
                 if (!cancelled) {
                     setConfig({ wardsField: null, participantsPerWardField: null, totalParticipantsField: null, ready: true });
                 }
@@ -25867,7 +25871,7 @@ function useParticipantsPerWardConfig(programId) {
     return config;
 }
 
-const {useState: useState$1c,useEffect: useEffect$1b} = await importShared('react');
+const {useState: useState$1f,useEffect: useEffect$1e} = await importShared('react');
 
 /**
  * useSparePartsQuantityConfig
@@ -25896,14 +25900,14 @@ const {useState: useState$1c,useEffect: useEffect$1b} = await importShared('reac
  * }
  */
 function useSparePartsQuantityConfig(programId) {
-    const [config, setConfig] = useState$1c({
+    const [config, setConfig] = useState$1f({
         sparePartsField: null,
         quantityPerPartField: null,
         totalQuantityField: null,
         ready: false,
     });
 
-    useEffect$1b(() => {
+    useEffect$1e(() => {
         const empty = { sparePartsField: null, quantityPerPartField: null, totalQuantityField: null, ready: true };
 
         if (!programId) {
@@ -25934,7 +25938,7 @@ function useSparePartsQuantityConfig(programId) {
                     });
                 }
             } catch (err) {
-                console.error("[useSparePartsQuantityConfig] Failed to load config:", err);
+                console.log("[useSparePartsQuantityConfig] Failed to load config:", err);
                 if (!cancelled) setConfig(empty);
             }
         };
@@ -26017,7 +26021,7 @@ function getSectionFormNameOverride(dataStoreData, context = {}) {
   return match?.overrideText || null;
 }
 
-const {useEffect: useEffect$1a,useMemo: useMemo$J,useRef: useRef$o} = await importShared('react');
+const {useEffect: useEffect$1d,useMemo: useMemo$K,useRef: useRef$n} = await importShared('react');
 function ParticipantsPerWardField({
   value,
   wards = [],
@@ -26025,8 +26029,8 @@ function ParticipantsPerWardField({
   onTotalChange,
   disabled = false
 }) {
-  const lastEmittedTotal = useRef$o(void 0);
-  const parsed = useMemo$J(() => {
+  const lastEmittedTotal = useRef$n(void 0);
+  const parsed = useMemo$K(() => {
     if (!value) return {};
     try {
       const obj = JSON.parse(value);
@@ -26035,7 +26039,7 @@ function ParticipantsPerWardField({
       return {};
     }
   }, [value]);
-  useEffect$1a(() => {
+  useEffect$1d(() => {
     const total2 = wards.reduce((sum, ward) => {
       const n = Number(parsed[ward] ?? 0);
       return sum + (isNaN(n) ? 0 : n);
@@ -26168,7 +26172,7 @@ const styles$2 = {
   }
 };
 
-const {useEffect: useEffect$19,useMemo: useMemo$I,useRef: useRef$n} = await importShared('react');
+const {useEffect: useEffect$1c,useMemo: useMemo$J,useRef: useRef$m} = await importShared('react');
 function SparePartsQuantityField({
   value,
   parts = [],
@@ -26176,8 +26180,8 @@ function SparePartsQuantityField({
   onTotalChange,
   disabled = false
 }) {
-  const lastEmittedTotal = useRef$n(void 0);
-  const parsed = useMemo$I(() => {
+  const lastEmittedTotal = useRef$m(void 0);
+  const parsed = useMemo$J(() => {
     if (!value) return {};
     try {
       const obj = JSON.parse(value);
@@ -26186,7 +26190,7 @@ function SparePartsQuantityField({
       return {};
     }
   }, [value]);
-  useEffect$19(() => {
+  useEffect$1c(() => {
     const total2 = parts.reduce((sum, { name }) => {
       const n = Number(parsed[name] ?? 0);
       return sum + (isNaN(n) ? 0 : n);
@@ -26312,8 +26316,8 @@ const styles$1 = {
   }
 };
 
-const React$Q = await importShared('react');
-const {useEffect: useEffect$18,useMemo: useMemo$H,useState: useState$1b} = React$Q;
+const React$S = await importShared('react');
+const {useEffect: useEffect$1b,useMemo: useMemo$I,useState: useState$1e} = React$S;
 const FREQUENCY_INTERVALS = {
   MONTHLY: 1,
   BIMONTHLY: 2,
@@ -26372,9 +26376,9 @@ function PreventiveMaintenanceScheduleModal({
   onSave,
   equipmentId
 }) {
-  const [dates, setDates] = useState$1b([]);
-  const [saving, setSaving] = useState$1b(false);
-  const params = useMemo$H(() => {
+  const [dates, setDates] = useState$1e([]);
+  const [saving, setSaving] = useState$1e(false);
+  const params = useMemo$I(() => {
     return new URLSearchParams(
       window.location.search
     );
@@ -26383,7 +26387,7 @@ function PreventiveMaintenanceScheduleModal({
     "routineMaintenanceSchedule"
   ) || "").toUpperCase();
   const frequencyLabel = FREQUENCY_LABELS[frequency] || frequency;
-  useEffect$18(() => {
+  useEffect$1b(() => {
     if (!isOpen || !initialDate) {
       return;
     }
@@ -26401,7 +26405,7 @@ function PreventiveMaintenanceScheduleModal({
         }
       }
     } catch (error) {
-      console.error(
+      console.log(
         "Failed to load maintenance schedule:",
         error
       );
@@ -26441,7 +26445,8 @@ function PreventiveMaintenanceScheduleModal({
         equipmentId,
         frequency,
         dates,
-        updatedAt: (/* @__PURE__ */ new Date()).toISOString()
+        updatedAt: (/* @__PURE__ */ new Date()).toISOString(),
+        dateScheduledDE: "vXT4KkXeRus"
       };
       sessionStorage.setItem(
         "preventiveMaintenanceSchedule",
@@ -26452,7 +26457,7 @@ function PreventiveMaintenanceScheduleModal({
       }
       onClose();
     } catch (error) {
-      console.error(
+      console.log(
         "Failed to save maintenance schedule:",
         error
       );
@@ -26478,6 +26483,7 @@ function PreventiveMaintenanceScheduleModal({
         IonContent,
         {
           className: "ion-padding",
+          style: { position: "relative", minHeight: 300 },
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "div",
@@ -26545,7 +26551,7 @@ function PreventiveMaintenanceScheduleModal({
   );
 }
 
-const {useCallback: useCallback$p,useContext: useContext$E,useEffect: useEffect$17,useMemo: useMemo$G,useState: useState$1a} = await importShared('react');
+const {useCallback: useCallback$p,useContext: useContext$F,useEffect: useEffect$1a,useMemo: useMemo$H,useState: useState$1d} = await importShared('react');
 function ConfigurableForm({
   handleSubmit,
   handleCancel,
@@ -26579,21 +26585,21 @@ function ConfigurableForm({
   autoFillFacilityLoading = false,
   lockedFields = /* @__PURE__ */ new Set()
 }) {
-  const [wardData, setWardData] = useState$1a(null);
+  const [wardData, setWardData] = useState$1d(null);
   const location = useLocation();
-  const { userOrganisationUnits } = useContext$E(MEMISContext.UserContext);
-  const { user } = useContext$E(MEMISContext.UserRolesContext) || {};
-  const [futureDateFields, setFutureDateFields] = useState$1a([]);
-  const [dataStoreData, setDataStoreData] = useState$1a({});
-  const [validationErrors, setValidationErrors] = useState$1a({});
-  const [firstStageDe, setfirstDE] = useState$1a([]);
+  const { userOrganisationUnits } = useContext$F(MEMISContext.UserContext);
+  const { user } = useContext$F(MEMISContext.UserRolesContext) || {};
+  const [futureDateFields, setFutureDateFields] = useState$1d([]);
+  const [dataStoreData, setDataStoreData] = useState$1d({});
+  const [validationErrors, setValidationErrors] = useState$1d({});
+  const [firstStageDe, setfirstDE] = useState$1d([]);
   const validationConfig = dataStoreData?.formValidations;
-  const [canSave, setCanSave] = useState$1a(false);
-  const [orgUnitsByLevel, setOrgUnitsByLevel] = useState$1a({});
-  const [facilityUsers, setFacilityUsers] = useState$1a([]);
-  const [showMaintenanceSchedule, setShowMaintenanceSchedule] = useState$1a(false);
-  const [maintenanceSchedule, setMaintenanceSchedule] = useState$1a(null);
-  useEffect$17(() => {
+  const [canSave, setCanSave] = useState$1d(false);
+  const [orgUnitsByLevel, setOrgUnitsByLevel] = useState$1d({});
+  const [facilityUsers, setFacilityUsers] = useState$1d([]);
+  const [showMaintenanceSchedule, setShowMaintenanceSchedule] = useState$1d(false);
+  const [maintenanceSchedule, setMaintenanceSchedule] = useState$1d(null);
+  useEffect$1a(() => {
     const loadOrgUnitGroupFields = async () => {
       try {
         const ds = await LocalForageServiceInstance.getItem(
@@ -26627,7 +26633,7 @@ function ConfigurableForm({
     };
     loadOrgUnitGroupFields();
   }, [programId]);
-  useEffect$17(() => {
+  useEffect$1a(() => {
     const load = async () => {
       try {
         const res = await getUsersForAssignment();
@@ -26637,13 +26643,13 @@ function ConfigurableForm({
     };
     load();
   }, [programId]);
-  const [wslConfig, setWslConfig] = useState$1a(null);
-  const [componentInputs, setComponentInputs] = useState$1a({});
+  const [wslConfig, setWslConfig] = useState$1d(null);
+  const [componentInputs, setComponentInputs] = useState$1d({});
   const { showPopover, setShowPopover } = usePopoverState();
   const { setDateRangePopover } = useDateRangePopover();
   const { imageUrls, setImageUrls, imageLoading, setImageLoading } = useImageState();
   const { isMobile } = useViewport();
-  const [previewModal, setPreviewModal] = useState$1a({
+  const [previewModal, setPreviewModal] = useState$1d({
     isOpen: false,
     fileId: null,
     fileName: null,
@@ -26680,8 +26686,8 @@ function ConfigurableForm({
   );
   const { getOptions: getFilteredOptions } = useFilteredOptionSet(programId);
   const sectionVisibilityRules = useSectionVisibilityConfig(programId);
-  const { programs } = useContext$E(MEMISContext.ProgramContext);
-  const programObj = useMemo$G(() => {
+  const { programs } = useContext$F(MEMISContext.ProgramContext);
+  const programObj = useMemo$H(() => {
     if (!programId) return null;
     const list = Array.isArray(programs) ? programs : programs?.programs || [];
     return list.find((p) => p?.id === programId) || null;
@@ -26968,7 +26974,7 @@ function ConfigurableForm({
       return "";
     }
   };
-  useEffect$17(() => {
+  useEffect$1a(() => {
     try {
       const stored = sessionStorage.getItem(
         "preventiveMaintenanceSchedule"
@@ -26979,7 +26985,7 @@ function ConfigurableForm({
         );
       }
     } catch (error) {
-      console.error(
+      console.log(
         "Failed to load maintenance schedule:",
         error
       );
@@ -28085,7 +28091,7 @@ function ConfigurableForm({
     isLast: isFinalStep,
     dataStore: dataStoreData
   });
-  useMemo$G(
+  useMemo$H(
     () => sections?.map((s) => s.id).join(","),
     [sections]
   );
@@ -28122,7 +28128,7 @@ function ConfigurableForm({
       console.log({ error });
     }
   };
-  useEffect$17(() => {
+  useEffect$1a(() => {
     let cancelled = false;
     const fetchWslConfig = async () => {
       try {
@@ -28137,7 +28143,7 @@ function ConfigurableForm({
           setWslConfig(config);
         }
       } catch (error) {
-        console.error("Failed to load WSL config", error);
+        console.log("Failed to load WSL config", error);
       }
     };
     if (programId && selectedStage) {
@@ -28147,7 +28153,7 @@ function ConfigurableForm({
       cancelled = true;
     };
   }, [programId, selectedStage]);
-  useEffect$17(() => {
+  useEffect$1a(() => {
     const loadTaskPrefill = async () => {
       const taskId = queryParams.get("taskId");
       if (!taskId) return;
@@ -28189,7 +28195,7 @@ function ConfigurableForm({
         setPrefilledValues(values);
         setTaskAvailableInQuery("taskId");
       } catch (err) {
-        console.error("Failed to load task prefill", err);
+        console.log("Failed to load task prefill", err);
       } finally {
         setFormLoading(false);
       }
@@ -28197,7 +28203,7 @@ function ConfigurableForm({
     loadTaskPrefill();
     prefillWard();
   }, [programObj]);
-  useEffect$17(() => {
+  useEffect$1a(() => {
     if (!wardData?.use || !wardData?.field) return;
     const targetId = wardData.field;
     setFormData((prev) => {
@@ -28210,7 +28216,7 @@ function ConfigurableForm({
       };
     });
   }, [wardData, setFormData]);
-  useEffect$17(() => {
+  useEffect$1a(() => {
     let mounted = true;
     const loadFutureDateConfig = async () => {
       const dataStore2 = await LocalForageServiceInstance.getItem(
@@ -28225,7 +28231,7 @@ function ConfigurableForm({
       mounted = false;
     };
   }, [programObj, sectionsList]);
-  useEffect$17(() => {
+  useEffect$1a(() => {
     let mounted = true;
     const loadFutureDateConfig = async () => {
       const dataStore2 = await LocalForageServiceInstance.getItem(
@@ -28249,7 +28255,7 @@ function ConfigurableForm({
     stageObj,
     activeSection
   ]);
-  useEffect$17(() => {
+  useEffect$1a(() => {
     let cancelled = false;
     const loadFutureDateConfig = async () => {
       try {
@@ -28282,7 +28288,7 @@ function ConfigurableForm({
       cancelled = true;
     };
   }, [programId, selectedStage, formData]);
-  useEffect$17(() => {
+  useEffect$1a(() => {
     let mounted = true;
     if (mounted) {
       const config = dataStoreData?.reportGenerationDatePrefill?.configurations;
@@ -28301,7 +28307,7 @@ function ConfigurableForm({
       mounted = false;
     };
   }, [dataStoreData, programId]);
-  const isInitiallyLoading = useMemo$G(
+  const isInitiallyLoading = useMemo$H(
     () => formLoading || autoFillFacilityLoading,
     [formLoading, autoFillFacilityLoading]
   );
@@ -28327,7 +28333,7 @@ function ConfigurableForm({
     const selectedSection = result?.sections?.find((s) => s.id === actSect);
     setCanSave(selectedSection?.canSave ?? false);
   };
-  useEffect$17(() => {
+  useEffect$1a(() => {
     if (!workflow) return;
     const wf = workflow?.workflows?.find((e) => e.value === pM);
     const w = wf?.firstStage;
@@ -28337,7 +28343,7 @@ function ConfigurableForm({
       getDe(j);
     }
   }, [workflow, pM]);
-  useEffect$17(() => {
+  useEffect$1a(() => {
     const loadUser = async () => {
       const us = await LocalForageServiceInstance.getItem("userRes", "user");
       const { userShowOrgUnit } = await LocalForageServiceInstance.getItem(
@@ -28362,7 +28368,7 @@ function ConfigurableForm({
     };
     loadUser();
   }, [user, selectedOrganisationUnit]);
-  useEffect$17(() => {
+  useEffect$1a(() => {
     if (activeSection?.id) {
       getActiveSectionCanSave(activeSection?.id, programId);
     }
@@ -28787,7 +28793,7 @@ const getUsers$l = async ({ targetOrgUnitId, userRoleId, username }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -29008,7 +29014,7 @@ const getUsers$k = async ({ targetOrgUnitId, userRoleId, username }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -29096,7 +29102,7 @@ const getUsers$j = async ({ targetOrgUnitId, userRoleId, username }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -29200,7 +29206,7 @@ const getUsers$i = async ({ targetOrgUnitId, userRoleId }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -29265,7 +29271,7 @@ const getUsers$h = async ({ targetOrgUnitId, userRoleId }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -29339,7 +29345,7 @@ const getUsers$g = async ({ targetOrgUnitId, userRoleId, mode }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -29423,7 +29429,7 @@ const getUsers$f = async ({ targetOrgUnitId, userRoleId }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -29538,7 +29544,7 @@ const getUsers$e = async ({ targetOrgUnitId, userRoleId, username }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -29626,7 +29632,7 @@ const getUsers$d = async ({ userRoleId, facilityLevel }) => {
       );
     }
   } catch (e) {
-    console.error("User role search failed:", e);
+    console.log("User role search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -29694,7 +29700,7 @@ const equipmentTransferOutsideSubmitNotification = async (config, options) => {
 
     sendNotificationHandler(subject, body, usersId);
   } catch (error) {
-    console.error("Outside transfer submit notification error:", error);
+    console.log("Outside transfer submit notification error:", error);
   }
 };
 
@@ -29718,7 +29724,7 @@ const getUsers$c = async ({ targetOrgUnitId, userRoleId, isPermanent, facilityLe
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -29849,7 +29855,7 @@ const getUsers$b = async ({ targetOrgUnitId, userRoleId, facilityLevel }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -29967,7 +29973,7 @@ const equipmentTransferOutsideApprovalNotification = async (config, options) => 
 
     sendNotificationHandler(subject, body, usersId);
   } catch (error) {
-    console.error("Outside transfer approval notification error:", error);
+    console.log("Outside transfer approval notification error:", error);
   }
 };
 
@@ -29985,7 +29991,7 @@ const getUsers$a = async ({ targetOrgUnitId, userRoleId }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -30109,7 +30115,7 @@ const equipmentTransferApprovalNotification = async (config, options) => {
     const usersId = users?.map((id) => id?.id);
     sendNotificationHandler(subject, body, usersId);
   } catch (error) {
-    console.error("Transfer approval notification error:", error);
+    console.log("Transfer approval notification error:", error);
   }
 };
 
@@ -30129,7 +30135,7 @@ const getUsers$9 = async ({ targetOrgUnitId, userRoleId, facilityLevel }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -30218,7 +30224,7 @@ const equipmentTransferOutsideAcknowledgmentNotification = async (config, option
     sendNotificationHandler(subject, body, usersId);
   } catch (error) {
 
-    console.error("Outside transfer acknowledgment notification error:", error);
+    console.log("Outside transfer acknowledgment notification error:", error);
   }
 };
 
@@ -30235,7 +30241,7 @@ const getUsers$8 = async ({ targetOrgUnitId, userRoleId }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -30334,7 +30340,7 @@ const equipmentTransferAcknowledgmentNotification = async (config, options) => {
     const usersId = users?.map((id) => id?.id);
     sendNotificationHandler(subject, body, usersId);
   } catch (error) {
-    console.error("Transfer acknowledgment notification error:", error);
+    console.log("Transfer acknowledgment notification error:", error);
   }
 };
 
@@ -30361,7 +30367,7 @@ const getUsers$7 = async ({ targetOrgUnitId, userRoleId, mode }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
 };
@@ -30428,7 +30434,7 @@ const managingUserTrainingNotification = async (config, options) => {
               users.push(...wardUsers);
             }
           } catch (wardError) {
-            console.error(`Failed to find ward users for ${wardName}:`, wardError);
+            console.log(`Failed to find ward users for ${wardName}:`, wardError);
           }
         }
       }
@@ -30482,7 +30488,7 @@ const getUsers$6 = async ({ targetOrgUnitId, userRoleId }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -30720,7 +30726,7 @@ const maintenanceAssignNotification = async (config, options) => {
           engineerUserId = user.id;
         }
       } catch (error) {
-        console.error(`Failed to resolve engineer ${engineerCode}:`, error);
+        console.log(`Failed to resolve engineer ${engineerCode}:`, error);
       }
     }
 
@@ -30760,7 +30766,7 @@ const maintenanceAssignNotification = async (config, options) => {
         serialNumber = serialNumberAttr.value;
       }
     } catch (error) {
-      console.error("Failed to fetch equipment details:", error);
+      console.log("Failed to fetch equipment details:", error);
     }
 
     // Get ward from event data (where the request was made)
@@ -30776,7 +30782,7 @@ const maintenanceAssignNotification = async (config, options) => {
         );
         wardName = wardData?.data?.name || wardName;
       } catch (error) {
-        console.error("Failed to fetch ward details:", error);
+        console.log("Failed to fetch ward details:", error);
       }
     }
 
@@ -30805,7 +30811,7 @@ const maintenanceAssignNotification = async (config, options) => {
     }
 
   } catch (error) {
-    console.error("Maintenance assignment notification failed:", error);
+    console.log("Maintenance assignment notification failed:", error);
   }
 };
 
@@ -30871,7 +30877,7 @@ const maintenanceScheduleNotification = async (config, options) => {
         serialNumber = serialNumberAttr.value;
       }
     } catch (error) {
-      console.error("Failed to fetch equipment details:", error);
+      console.log("Failed to fetch equipment details:", error);
     }
 
     // Format the date for display
@@ -30895,7 +30901,7 @@ const maintenanceScheduleNotification = async (config, options) => {
     // Send notification to creator (ward incharge)
     await sendNotificationHandler(subject, body, [creatorUserId]);
   } catch (error) {
-    console.error("Maintenance schedule notification failed:", error);
+    console.log("Maintenance schedule notification failed:", error);
   }
 };
 
@@ -30924,7 +30930,7 @@ const getUsers$5 = async ({ targetOrgUnitId, userRoleId, mode }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -30979,7 +30985,7 @@ const getUsers$4 = async ({ targetOrgUnitId, userRoleId }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -31169,7 +31175,7 @@ const getUsers$3 = async ({ targetOrgUnitId, userRoleId, username }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -31275,7 +31281,7 @@ const getUsers$2 = async ({ targetOrgUnitId, userRoleId, username }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -31426,7 +31432,7 @@ const getUsers$1 = async ({ targetOrgUnitId, userRoleId }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -31496,7 +31502,7 @@ const trainingFeedbackNotification = async (config, options) => {
               });
               users.push(...wardUsers);
             } catch (wardError) {
-              console.error(
+              console.log(
                 `Failed to find ward users for ${wardId}:`,
                 wardError
               );
@@ -31729,7 +31735,7 @@ async function resolveEquipmentStateMaintenance(
     );
     console.log({ result });
   } catch (error) {
-    console.error("resolveEquipmentStateMaintenance error:", error);
+    console.log("resolveEquipmentStateMaintenance error:", error);
     return null;
   }
 }
@@ -32013,7 +32019,7 @@ async function registerMultipleTEI(
     }
     return response;
   } catch (error) {
-    console.error("Error registering multiple TEIs:", error);
+    console.log("Error registering multiple TEIs:", error);
   }
 }
 
@@ -32143,6 +32149,7 @@ async function programWithRegistrationEvent(
   isEdit = false,
   existingEventId = null,
   options = {},
+  sectionData
 ) {
   try {
 
@@ -32172,86 +32179,95 @@ async function programWithRegistrationEvent(
       //   };
       //   importStrategy = "UPDATE";
     } else {
+
       // Create new event
-      payload = {
-        enrollment: equipmentDetails?.data?.enrollments?.[0]?.enrollment,
-        programStage,
-        program: program?.id,
-        orgUnit: selectedOrgUnit || null, // safe fallback
-        eventDate,
-        occurredAt: eventDate,
-        trackedEntity,
-        status: "ACTIVE",
-        dataValues: values, // must be an array of { dataElement, value }
-      };
-      const buildMaintenanceSchedulePayload = ({
-        equipmentDetails,
-        program,
-        programStage,
-        selectedOrgUnit,
-      }) => {
-        const storedSchedule =
-          sessionStorage.getItem(
-            "preventiveMaintenanceSchedule"
-          );
+      let buildMaintenanceSchedulePayload = null;
+      console.log({ programStage, sectionData });
 
-        if (!storedSchedule) {
-          return {
-            events: [],
-          };
-        }
-
-        const schedule =
-          JSON.parse(storedSchedule);
-
-        const enrollment =
-          equipmentDetails?.data
-            ?.enrollments?.[0]
-            ?.enrollment;
-
-        if (!enrollment) {
-          throw new Error(
-            "Equipment enrollment was not found."
-          );
-        }
-
-        const events =
-          (schedule?.dates || [])
-            .filter(
-              (item) => item?.date
-            )
-            .map((item) => ({
-              enrollment,
-
-              programStage,
-
-              program:
-                program?.id,
-
-              orgUnit:
-                selectedOrgUnit || null,
-
-              status: "SCHEDULE",
-
-              scheduledAt:
-                item.date,
-
-              dataValues: [],
-            }));
-
-        return {
-          events,
-        };
-      };
-      const schedulePayload =
-        buildMaintenanceSchedulePayload({
+      if (programStage === "VlwQGgBvd9i" && sectionData === "EAfmOCCCBwY") {
+        buildMaintenanceSchedulePayload = ({
           equipmentDetails,
           program,
           programStage,
           selectedOrgUnit,
-        });
-      payload = schedulePayload;
+        }) => {
+          const storedSchedule =
+            sessionStorage.getItem(
+              "preventiveMaintenanceSchedule"
+            );
 
+          if (!storedSchedule) {
+            return {
+              events: [],
+            };
+          }
+
+          const schedule =
+            JSON.parse(storedSchedule);
+
+          const enrollment =
+            equipmentDetails?.data
+              ?.enrollments?.[0]
+              ?.enrollment;
+
+          if (!enrollment) {
+            throw new Error(
+              "Equipment enrollment was not found."
+            );
+          }
+
+          const events =
+            (schedule?.dates || [])
+              .filter(
+                (item) => item?.date
+              )
+              .map((item) => ({
+                enrollment,
+
+                programStage,
+
+                program:
+                  program?.id,
+
+                orgUnit:
+                  selectedOrgUnit,
+
+                status: "SCHEDULE",
+
+                scheduledAt:
+                  item.date,
+
+                dataValues: [],
+              }));
+
+          return {
+            events,
+          };
+        };
+        const schedulePayload =
+          buildMaintenanceSchedulePayload({
+            equipmentDetails,
+            program,
+            programStage,
+            selectedOrgUnit,
+          });
+        payload = schedulePayload;
+      } else {
+
+        payload = {
+          events: [{
+            enrollment: equipmentDetails?.data?.enrollments?.[0]?.enrollment,
+            programStage,
+            program: program?.id,
+            orgUnit: selectedOrgUnit || null, // safe fallback
+            eventDate,
+            occurredAt: eventDate,
+            trackedEntity,
+            status: "ACTIVE",
+            dataValues: values, // must be an array of { dataElement, value }
+          }]
+        };
+      }
     }
 
     const response = await dataStore.post(
@@ -32327,7 +32343,14 @@ async function programWithRegistrationEvent(
             ),
           equipmentDetails: equipmentDetails?.data,
         });
+
+
       }
+    }
+    if (programStage === "VlwQGgBvd9i" && sectionData === "EAfmOCCCBwY") {
+      console.log({ programStage, sectionData });
+
+      sessionStorage.removeItem("preventiveMaintenanceSchedule");
     }
     return response;
   } catch (error) {
@@ -32342,8 +32365,8 @@ const CreateDataItemsController = {
   programWithRegistrationEvent,
 };
 
-const React$P = await importShared('react');
-const {useContext: useContext$D,useEffect: useEffect$16,useMemo: useMemo$F,useState: useState$19} = React$P;
+const React$R = await importShared('react');
+const {useContext: useContext$E,useEffect: useEffect$19,useMemo: useMemo$G,useState: useState$1c} = React$R;
 const A$9 = (x) => Array.isArray(x) ? x : [];
 function MultiEntryForm({
   dataElements = null,
@@ -32353,19 +32376,19 @@ function MultiEntryForm({
   worklow,
   onClose
 }) {
-  const [numEntries, setNumEntries] = useState$19(2);
-  const [step, setStep] = useState$19("count");
-  const [commonData, setCommonData] = useState$19({});
-  const [entries, setEntries] = useState$19([]);
-  const [loading, setLoading] = useState$19(false);
-  const [selectedCommonFields, setSelectedCommonFields] = useState$19([]);
-  const [showPopover, setShowPopover] = useState$19(false);
-  const [imageUrls, setImageUrls] = useState$19({});
-  const [imageLoading, setImageLoading] = useState$19({});
-  const [componentInputs, setComponentInputs] = useState$19({});
+  const [numEntries, setNumEntries] = useState$1c(2);
+  const [step, setStep] = useState$1c("count");
+  const [commonData, setCommonData] = useState$1c({});
+  const [entries, setEntries] = useState$1c([]);
+  const [loading, setLoading] = useState$1c(false);
+  const [selectedCommonFields, setSelectedCommonFields] = useState$1c([]);
+  const [showPopover, setShowPopover] = useState$1c(false);
+  const [imageUrls, setImageUrls] = useState$1c({});
+  const [imageLoading, setImageLoading] = useState$1c({});
+  const [componentInputs, setComponentInputs] = useState$1c({});
   const navigate = useNavigate();
-  const { userOrganisationUnits } = useContext$D(MEMISContext.UserContext);
-  const { user } = useContext$D(MEMISContext.UserRolesContext);
+  const { userOrganisationUnits } = useContext$E(MEMISContext.UserContext);
+  const { user } = useContext$E(MEMISContext.UserRolesContext);
   const {
     sparePartsField,
     quantityPerPartField,
@@ -32386,11 +32409,11 @@ function MultiEntryForm({
     stageObj: null,
     nativeRequiredById
   });
-  const [skipLogicMap, setSkipLogicMap] = useState$19({});
-  const [defaultHiddenFields, setDefaultHiddenFields] = useState$19(/* @__PURE__ */ new Set());
-  const [linkedFieldGroups, setLinkedFieldGroups] = useState$19([]);
-  const [otherFieldMappings, setOtherFieldMappings] = useState$19([]);
-  useEffect$16(() => {
+  const [skipLogicMap, setSkipLogicMap] = useState$1c({});
+  const [defaultHiddenFields, setDefaultHiddenFields] = useState$1c(/* @__PURE__ */ new Set());
+  const [linkedFieldGroups, setLinkedFieldGroups] = useState$1c([]);
+  const [otherFieldMappings, setOtherFieldMappings] = useState$1c([]);
+  useEffect$19(() => {
     if (!program?.id) return;
     getSkipLogicConfig(program.id).then((cfg) => {
       if (cfg) {
@@ -32482,7 +32505,7 @@ function MultiEntryForm({
     if (partners.length === 0) return null;
     return `linked with: ${partners.join(", ")}`;
   };
-  const commonFields = useMemo$F(() => {
+  const commonFields = useMemo$G(() => {
     if (!dataElements) return [];
     const program2 = dataElements?.program;
     if (!program2) return [];
@@ -32491,7 +32514,7 @@ function MultiEntryForm({
     }
     return [];
   }, [dataElements]);
-  const entryFields = useMemo$F(() => {
+  const entryFields = useMemo$G(() => {
     if (!commonFields?.length) return [];
     return commonFields.filter((f) => !selectedCommonFields.includes(f.id));
   }, [commonFields, selectedCommonFields]);
@@ -32662,15 +32685,12 @@ ${lines.join("\n")}`,
         navigate(window.location.pathname, { replace: true });
       }
     } catch (err) {
-      console.error("Batch submit error:", err);
+      console.log("Batch submit error:", err);
       showToast("Failed to save", "warning");
     } finally {
       setLoading(false);
     }
   };
-  useEffect$16(() => {
-    console.log(worklow);
-  }, []);
   const renderInput = (el, canAddUpdateSection, idx, isCommonField) => {
     const vt = (el?.valueType || "").toUpperCase();
     const value = isCommonField ? commonData[el.id] : entries[idx]?.[el.id] ?? "";
@@ -33227,7 +33247,7 @@ const calculateDeregistrationAutofill = async (teiAttributes, isolationDate = nu
         );
         fieldLockingConfig = deregistrationConfig?.lockingRules || [];
     } catch (error) {
-        console.error("Error loading field locking configuration:", error);
+        console.log("Error loading field locking configuration:", error);
         fieldLockingConfig = [];
     }
 
@@ -33297,7 +33317,7 @@ const calculateDeregistrationAutofill = async (teiAttributes, isolationDate = nu
     return autofillValues;
 };
 
-const {useState: useState$18,useEffect: useEffect$15,useContext: useContext$C,useMemo: useMemo$E,useRef: useRef$m} = await importShared('react');
+const {useState: useState$1b,useEffect: useEffect$18,useContext: useContext$D,useMemo: useMemo$F,useRef: useRef$l} = await importShared('react');
 
 /**
  * Hook to automatically fill facility/org unit based on DataStore configuration
@@ -33314,27 +33334,27 @@ function useFacilityAutoFill(
   isEdit,
 ) {
   const location = useLocation();
-  const { userOrganisationUnits } = useContext$C(MEMISContext.UserContext);
-  const { user } = useContext$C(MEMISContext.UserRolesContext) || {};
+  const { userOrganisationUnits } = useContext$D(MEMISContext.UserContext);
+  const { user } = useContext$D(MEMISContext.UserRolesContext) || {};
 
-  const [autoFilledOrgUnit, setAutoFilledOrgUnit] = useState$18(null);
-  const [loading, setLoading] = useState$18(false);
+  const [autoFilledOrgUnit, setAutoFilledOrgUnit] = useState$1b(null);
+  const [loading, setLoading] = useState$1b(false);
 
   // Track if we've already loaded to prevent re-fetching
-  const hasLoadedRef = useRef$m(false);
-  const configCacheRef = useRef$m(null);
+  const hasLoadedRef = useRef$l(false);
+  const configCacheRef = useRef$l(null);
 
   // Stable reference to user org units
-  useMemo$E(() => {
+  useMemo$F(() => {
     return JSON.stringify(userOrganisationUnits?.map((ou) => ou.id) || []);
   }, [userOrganisationUnits]);
 
   // Stable reference to user info
-  useMemo$E(() => {
+  useMemo$F(() => {
     return user?.id || "";
   }, [user?.id]);
 
-  useEffect$15(() => {
+  useEffect$18(() => {
     // Skip if we're in edit mode
     if (isEdit) {
       setAutoFilledOrgUnit(null);
@@ -33454,7 +33474,7 @@ function useFacilityAutoFill(
 
         setAutoFilledOrgUnit(orgUnitId);
       } catch (error) {
-        console.error("Error loading facility auto-fill config:", error);
+        console.log("Error loading facility auto-fill config:", error);
         setAutoFilledOrgUnit(null);
       } finally {
         setLoading(false);
@@ -33686,7 +33706,7 @@ const getUsers = async ({ targetOrgUnitId, userRoleId, mode }) => {
       );
     }
   } catch (e) {
-    console.error("User role/orgUnit search failed:", e);
+    console.log("User role/orgUnit search failed:", e);
   }
 
   return usersResp?.data?.users?.map((u) => ({ id: u.id })) || [];
@@ -34061,7 +34081,7 @@ async function getOptionSetIdFromDataElement(deId) {
 }
 
 /** Resolve an option value using the optionSet map */
-async function resolveOptionValue(optionSetId, value) {
+async function resolveOptionValue$1(optionSetId, value) {
     if (!value && value !== false && value !== 0) return value;
     const map = await getOptionSetMap(optionSetId);
     if (!map) return value;
@@ -34131,7 +34151,7 @@ async function enrichTransferRows(rows, columns = [], cfg = {}) {
 
                 for (const [dataElement, optionSetId] of Object.entries(optionSetByKey)) {
                     if (enriched[dataElement] != null) {
-                        enriched[dataElement] = await resolveOptionValue(optionSetId, enriched[dataElement]);
+                        enriched[dataElement] = await resolveOptionValue$1(optionSetId, enriched[dataElement]);
                     }
                 }
 
@@ -34263,7 +34283,7 @@ const generateUniquePamAssetNumber = async ({
   throw new Error("PAM_GENERATION_EXHAUSTED");
 };
 
-const {useContext: useContext$B,useEffect: useEffect$14,useState: useState$17,useMemo: useMemo$D,useRef: useRef$l} = await importShared('react');
+const {useContext: useContext$C,useEffect: useEffect$17,useState: useState$1a,useMemo: useMemo$E,useRef: useRef$k} = await importShared('react');
 const A$8 = (x) => Array.isArray(x) ? x : [];
 function collectBundleUids(value, seen = /* @__PURE__ */ new Set()) {
   if (!value || typeof value !== "object") return [];
@@ -34306,39 +34326,40 @@ function FormComponent({
   editData,
   onSaveSuccess
 }) {
-  const [isMultiple, setIsMultiple] = useState$17(false);
+  const [isMultiple, setIsMultiple] = useState$1a(false);
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const [query, setQuery] = useState$17(queryParams.get("query") || "");
-  const [formData, setFormData] = useState$17({});
-  const [maintainanceTye, setMaintenancetype] = useState$17();
-  const [currentSection, setCurrentSection] = useState$17(0);
-  const [fieldMultiText, setFieldMultiText] = useState$17([]);
-  const [lockedFields, setLockedFields] = useState$17(/* @__PURE__ */ new Set());
-  const [pM, setPM] = useState$17();
-  const [ranKey, setKey] = useState$17(
+  const [query, setQuery] = useState$1a(queryParams.get("query") || "");
+  const [formData, setFormData] = useState$1a({});
+  const [maintainanceTye, setMaintenancetype] = useState$1a();
+  const [currentSection, setCurrentSection] = useState$1a(0);
+  const [fieldMultiText, setFieldMultiText] = useState$1a([]);
+  const [lockedFields, setLockedFields] = useState$1a(/* @__PURE__ */ new Set());
+  const [pM, setPM] = useState$1a();
+  const [ranKey, setKey] = useState$1a(
     Math.random().toString(36).substring(2, 10).toUpperCase()
   );
-  const [triggerAt, setTriggerAt] = useState$17(queryParams.get("triggerAt"));
-  const [loading, setLoading] = useState$17(false);
-  const [eventDate, setEventDate] = useState$17((/* @__PURE__ */ new Date()).toISOString());
+  const [triggerAt, setTriggerAt] = useState$1a(queryParams.get("triggerAt"));
+  const [sectionIdData, setSectionIdData] = useState$1a(queryParams.get("sectionId"));
+  const [loading, setLoading] = useState$1a(false);
+  const [eventDate, setEventDate] = useState$1a((/* @__PURE__ */ new Date()).toISOString());
   const navigate = useNavigate();
-  const { user } = useContext$B(MEMISContext.UserRolesContext);
-  const [pgRules, setRule] = useState$17([]);
-  const [selectedOrganisationUnit, setSelectedOrganisationUnit] = useState$17(null);
-  const [equip, setEquipment] = useState$17();
-  const [enrollmentDate, setEnrollmentDate] = useState$17(
+  const { user } = useContext$C(MEMISContext.UserRolesContext);
+  const [pgRules, setRule] = useState$1a([]);
+  const [selectedOrganisationUnit, setSelectedOrganisationUnit] = useState$1a(null);
+  const [equip, setEquipment] = useState$1a();
+  const [enrollmentDate, setEnrollmentDate] = useState$1a(
     editData?.enrollmentDate || Date.now()
   );
-  const [incidentDate, setIncidentDate] = useState$17(
+  const [incidentDate, setIncidentDate] = useState$1a(
     editData?.incidentDate || Date.now()
   );
-  const [entityId, setEntityId] = useState$17(
+  const [entityId, setEntityId] = useState$1a(
     editData?.trackedEntity || editData?.id || null
   );
-  const [ackModalOpen, setAckModalOpen] = useState$17(false);
-  const autoFillFacilityAppliedRef = useRef$l(false);
-  const isEditMode = useMemo$D(() => {
+  const [ackModalOpen, setAckModalOpen] = useState$1a(false);
+  const autoFillFacilityAppliedRef = useRef$k(false);
+  const isEditMode = useMemo$E(() => {
     return query === "edit" || !!editData;
   }, [query, editData]);
   const { autoFilledOrgUnit, loading: autoFillLoading } = useFacilityAutoFill(
@@ -34385,10 +34406,10 @@ function FormComponent({
         }
       });
     } catch (error) {
-      console.error("Failed to fetch deregistration autofill rules:", error);
+      console.log("Failed to fetch deregistration autofill rules:", error);
     }
   };
-  useEffect$14(() => {
+  useEffect$17(() => {
     if (autoFillFacilityAppliedRef.current) return;
     if (isEditMode) return;
     if (!autoFilledOrgUnit) return;
@@ -34396,7 +34417,7 @@ function FormComponent({
     if (autoFillLoading) return;
     autoFillFacilityAppliedRef.current = true;
   }, [autoFilledOrgUnit, autoFillLoading, isEditMode]);
-  useEffect$14(() => {
+  useEffect$17(() => {
     autoFillFacilityAppliedRef.current = false;
     getRules();
   }, [program?.id]);
@@ -34452,10 +34473,10 @@ function FormComponent({
         }
       }
     } catch (err) {
-      console.error("Failed to fetch warrant data:", err);
+      console.log("Failed to fetch warrant data:", err);
     }
   };
-  useEffect$14(() => {
+  useEffect$17(() => {
     getRules();
     const q = queryParams.get("triggerAt");
     if (q === "Corrective Maintenance") {
@@ -34527,7 +34548,7 @@ function FormComponent({
     if (v instanceof File) return false;
     return v == null || typeof v === "string" && v.trim() === "";
   };
-  const requiredTrackerAttrIds = useMemo$D(() => {
+  const requiredTrackerAttrIds = useMemo$E(() => {
     if (!program) return [];
     const progReq = program?.programTrackedEntityAttributes?.filter((ptea) => ptea?.mandatory)?.map(
       (ptea) => ptea?.trackedEntityAttribute?.id || ptea?.trackedEntityAttribute
@@ -34537,7 +34558,7 @@ function FormComponent({
     ) || [];
     return Array.from(/* @__PURE__ */ new Set([...progReq || [], ...tetReq || []]));
   }, [program]);
-  const requiredTrackerAttrNames = useMemo$D(() => {
+  const requiredTrackerAttrNames = useMemo$E(() => {
     if (!program) return {};
     const map = {};
     (program?.programTrackedEntityAttributes || []).forEach((ptea) => {
@@ -34734,6 +34755,7 @@ function FormComponent({
             (de?.valueType || "").toUpperCase()
           )
         ).map((de) => de?.id) || [];
+        const sectionId = queryParams?.get("sectionId");
         response = await CreateDataItemsController.programWithRegistrationEvent(
           selectedData,
           fileDataElements,
@@ -34744,7 +34766,9 @@ function FormComponent({
           eventDate,
           enrollment,
           isEditMode2,
-          editData?.event || editData?.id
+          editData?.event || editData?.id,
+          {},
+          sectionIdData || sectionId
         );
         saveKind = isEditMode2 ? "tracker-event-update" : "tracker-event-create";
       } else {
@@ -34856,32 +34880,60 @@ function FormComponent({
       const okLike = rawStatus === "OK" || rawStatus === "ok" || rawStatus === 200 || rawStatus === 201 || rawStatus === "200" || rawStatus === "201";
       if (okLike) {
         if (queryDataTaskId) {
-          const resu = await LocalForageServiceInstance.getItem(
-            "dataStore",
-            "dataStore"
-          );
-          const fetchTask = resu?.registrationTaskStatusUpdate;
-          if (fetchTask?.task?.programTrigger === program?.id) {
-            const task = queryDataTaskId.split(".")[1];
-            const fetchEvent = await dataStore.get(
-              `tracker/events/${task}.json`
+          try {
+            const dataStoreConfig = await LocalForageServiceInstance.getItem(
+              "dataStore",
+              "dataStore"
             );
-            const payload = {
-              event: fetchEvent?.data?.event,
-              orgUnit: fetchEvent?.data?.orgUnit,
-              program: fetchEvent?.data?.program,
-              occurredAt: fetchEvent?.data?.occurredAt,
-              dataValues: [
-                {
-                  dataElement: fetchTask.task.onSuccess.fieldToUpdate,
-                  value: fetchTask.task.onSuccess.value
-                }
-              ]
-            };
-            const importStrategy = "UPDATE";
-            await dataStore.post(
-              `tracker?async=false&importStrategy=${importStrategy}`,
-              { events: [payload] }
+            const taskStatusUpdateConfig = dataStoreConfig?.registrationTaskStatusUpdate?.task;
+            const taskProgramTrigger = taskStatusUpdateConfig?.programTrigger;
+            const taskProgramId = taskStatusUpdateConfig?.programId || queryDataTaskId.split(".")[0];
+            const taskEventId = queryDataTaskId.split(".")[1];
+            const fieldToUpdate = taskStatusUpdateConfig?.onSuccess?.fieldToUpdate;
+            const valueToSet = taskStatusUpdateConfig?.onSuccess?.value;
+            const shouldUpdateTaskStatus = taskProgramTrigger === program?.id && taskProgramId && taskEventId && fieldToUpdate && valueToSet;
+            if (shouldUpdateTaskStatus) {
+              const fetchEvent = await dataStore.get(
+                `tracker/events/${taskEventId}.json?program=${taskProgramId}`
+              );
+              const taskEvent = fetchEvent?.data || fetchEvent;
+              if (!taskEvent?.event) {
+                throw new Error("Assigned registration task event was not found.");
+              }
+              const payload = {
+                event: taskEvent.event,
+                enrollment: taskEvent.enrollment || null,
+                programStage: taskEvent.programStage,
+                program: taskEvent.program || taskProgramId,
+                orgUnit: taskEvent.orgUnit,
+                occurredAt: taskEvent.occurredAt,
+                scheduledAt: taskEvent.scheduledAt,
+                trackedEntity: taskEvent.trackedEntity,
+                status: taskEvent.status || "ACTIVE",
+                dataValues: [
+                  {
+                    dataElement: fieldToUpdate,
+                    value: valueToSet
+                  }
+                ]
+              };
+              const taskStatusUpdateResponse = await dataStore.post(
+                "tracker?async=false&importStrategy=UPDATE",
+                { events: [payload] }
+              );
+              const taskStatusUpdateOk = taskStatusUpdateResponse?.status === 200 || taskStatusUpdateResponse?.status === 201 || taskStatusUpdateResponse?.data?.status === "OK" || taskStatusUpdateResponse?.data?.status === "ok";
+              if (taskStatusUpdateOk) {
+                showToast("Assigned task status updated successfully.", "success");
+              }
+            }
+          } catch (taskStatusUpdateError) {
+            console.log(
+              "Equipment registered, but task status update failed:",
+              taskStatusUpdateError
+            );
+            showToast(
+              "Equipment was registered, but the assigned task status could not be updated.",
+              "warning"
             );
           }
         }
@@ -34906,7 +34958,7 @@ function FormComponent({
     onClose?.();
     navigate(window.location.pathname, { replace: true });
   };
-  useEffect$14(() => {
+  useEffect$17(() => {
     if (editData && Object.keys(editData).length > 0 && program) {
       setQuery("edit");
       const getFieldMetadata = (fieldId) => {
@@ -35009,7 +35061,7 @@ function FormComponent({
     const name = await resolveEquipmentName(id);
     setEquipment(name);
   };
-  useEffect$14(() => {
+  useEffect$17(() => {
     const queryParams2 = new URLSearchParams(location.search);
     const equipmentId = trackedEntity || queryParams2.get("equipmentId");
     getEquip(equipmentId);
@@ -35049,13 +35101,13 @@ function FormComponent({
             }
           }
         } catch (error) {
-          console.error("Error prefilling deregistration form:", error);
+          console.log("Error prefilling deregistration form:", error);
         }
       };
       fetchEquipmentDataAndPrefill();
     }
   }, [selectedStage, trackedEntity, program, editData, user, location.search]);
-  useEffect$14(() => {
+  useEffect$17(() => {
     const queryId = queryParams.get("q");
     if (queryId === "add") {
       const taskId = queryParams.get("taskId");
@@ -35085,7 +35137,7 @@ function FormComponent({
       getEquipmentAddParam();
     }
   }, [program, user, location.search]);
-  useEffect$14(() => {
+  useEffect$17(() => {
   }, [location]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(IonPage, { children: [
     !ackModalOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs(IonContent, { className: "ion-padding", fullscreen: true, children: [
@@ -35558,7 +35610,7 @@ const createFormatter = (date = null, timezone = null) => {
     return new DateTimeFormatter(date, timezone);
 };
 
-const formatDate = (date, pattern = 'date', timezone = null) => {
+const formatDate$2 = (date, pattern = 'date', timezone = null) => {
     return createFormatter(date, timezone).format(pattern);
 };
 
@@ -35566,7 +35618,7 @@ const formatRelative = (date) => {
     return createFormatter(date).fromNow();
 };
 
-const parseDate$1 = (dateString, format = null) => {
+const parseDate$2 = (dateString, format = null) => {
     return format
         ? new DateTimeFormatter(dayjs(dateString, format))
         : new DateTimeFormatter(dayjs(dateString));
@@ -35612,9 +35664,9 @@ const now = (timezone = null) => {
 
 const dateTime = {
     create: createFormatter,
-    format: formatDate,
+    format: formatDate$2,
     formatRelative,
-    parse: parseDate$1,
+    parse: parseDate$2,
     getDuration,
     formatDuration,
     isValid: isValidDate,
@@ -35625,7 +35677,7 @@ const dateTime = {
     FORMAT_PRESETS,
 };
 
-const {useState: useState$16,useMemo: useMemo$C,useEffect: useEffect$13} = await importShared('react');
+const {useState: useState$19,useMemo: useMemo$D,useEffect: useEffect$16} = await importShared('react');
 const DataTable = ({
   columns,
   rows,
@@ -35652,16 +35704,16 @@ const DataTable = ({
   priorities,
   approvalStatusColors
 }) => {
-  const [localSortKey, setLocalSortKey] = useState$16("");
-  const [localSortOrder, setLocalSortOrder] = useState$16("asc");
-  const [isMobile, setIsMobile] = useState$16(() => {
+  const [localSortKey, setLocalSortKey] = useState$19("");
+  const [localSortOrder, setLocalSortOrder] = useState$19("asc");
+  const [isMobile, setIsMobile] = useState$19(() => {
     if (typeof window !== "undefined") {
       return window.innerWidth < 768;
     }
     return false;
   });
-  const [resolvedRows, setResolvedRows] = useState$16(rows);
-  const correctedColumns = useMemo$C(() => {
+  const [resolvedRows, setResolvedRows] = useState$19(rows);
+  const correctedColumns = useMemo$D(() => {
     if (!Array.isArray(columns)) return [];
     const keyCorrections = {
       // Transfer Type
@@ -35686,13 +35738,13 @@ const DataTable = ({
       return correctedKey !== col.key ? { ...col, key: correctedKey } : col;
     });
   }, [columns]);
-  useEffect$13(() => {
+  useEffect$16(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-  useEffect$13(() => {
+  useEffect$16(() => {
     let mounted = true;
     (async () => {
       try {
@@ -35724,7 +35776,7 @@ const DataTable = ({
       setLocalSortOrder(newOrder);
     }
   };
-  const sortedRows = useMemo$C(() => {
+  const sortedRows = useMemo$D(() => {
     if (!clientSideSort || !localSortKey) return resolvedRows;
     return [...resolvedRows].sort((a, b) => {
       const aVal = a[localSortKey];
@@ -36031,86 +36083,100 @@ const DataTable = ({
               );
             })
           ] }),
-          !loading && displayRows?.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(IonToolbar, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { padding: "8px 16px" }, children: [
-            selectable && selectedIds.size > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              IonText,
-              {
-                className: "text-sm",
-                color: "primary",
-                style: {
-                  display: "block",
-                  marginBottom: "8px",
-                  textAlign: "center"
-                },
-                children: [
-                  selectedIds.size,
-                  " selected"
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "div",
-              {
-                style: {
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  marginBottom: "8px"
-                },
-                children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonText, { style: { fontSize: "13px" }, children: [
-                  "Page",
-                  " ",
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { style: { color: "var(--ion-color-primary)" }, children: page }),
-                  " ",
-                  "of ",
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: pageCount }),
-                  totalCount && ` (${totalCount})`
-                ] })
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              "div",
-              {
-                style: {
-                  display: "flex",
-                  gap: "8px",
-                  justifyContent: "center"
-                },
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    IonButton,
-                    {
-                      fill: "outline",
-                      size: "small",
-                      color: "primary",
-                      disabled: page === 1,
-                      onClick: () => {
-                        if (prev) prev();
-                        else if (onPageChange) onPageChange(page - 1);
-                      },
-                      style: { flex: 1 },
-                      children: "Previous"
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    IonButton,
-                    {
-                      fill: "outline",
-                      size: "small",
-                      color: "primary",
-                      disabled: page === pageCount,
-                      onClick: () => {
-                        if (next) next();
-                        else if (onPageChange) onPageChange(page + 1);
-                      },
-                      style: { flex: 1 },
-                      children: "Next"
-                    }
-                  )
-                ]
-              }
-            )
-          ] }) })
+          !loading && displayRows?.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "datatable-pagination-toolbar datatable-mobile-pagination",
+              style: {
+                padding: "12px 16px",
+                backgroundColor: "#ffffff",
+                color: "#1f2937",
+                borderTop: "1px solid #e5e7eb"
+              },
+              children: [
+                selectable && selectedIds.size > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  IonText,
+                  {
+                    className: "text-sm",
+                    color: "primary",
+                    style: {
+                      display: "block",
+                      marginBottom: "8px",
+                      textAlign: "center"
+                    },
+                    children: [
+                      selectedIds.size,
+                      " selected"
+                    ]
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    style: {
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      marginBottom: "8px"
+                    },
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonText, { style: { fontSize: "13px", color: "#1f2937" }, children: [
+                      "Page",
+                      " ",
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-primary pagination-current-page", children: page }),
+                      " ",
+                      "of ",
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: pageCount }),
+                      totalCount && ` (${totalCount})`
+                    ] })
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    style: {
+                      display: "flex",
+                      gap: "8px",
+                      justifyContent: "center"
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        IonButton,
+                        {
+                          fill: "outline",
+                          size: "small",
+                          color: "primary",
+                          className: "pagination-btn pagination-btn-outline",
+                          disabled: page === 1,
+                          onClick: () => {
+                            if (prev) prev();
+                            else if (onPageChange) onPageChange(page - 1);
+                          },
+                          style: { flex: 1 },
+                          children: "Previous"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        IonButton,
+                        {
+                          fill: "outline",
+                          size: "small",
+                          color: "primary",
+                          className: "pagination-btn pagination-btn-outline",
+                          disabled: page === pageCount,
+                          onClick: () => {
+                            if (next) next();
+                            else if (onPageChange) onPageChange(page + 1);
+                          },
+                          style: { flex: 1 },
+                          children: "Next"
+                        }
+                      )
+                    ]
+                  }
+                )
+              ]
+            }
+          )
         ]
       }
     );
@@ -36300,50 +36366,55 @@ const DataTable = ({
         ]
       }
     ),
-    !loading && displayRows?.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
-      IonToolbar,
+    !loading && displayRows?.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
       {
-        className: "ion-padding-vertical custom-toolbar-data",
-        style: { backgroundColor: "#fff" },
-        children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "div",
-          {
-            style: {
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              width: "100%",
-              flexWrap: "wrap",
-              gap: "10px",
-              padding: "0 16px",
-              backgroundColor: "#fff"
-            },
-            children: [
-              selectable && selectedIds.size > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(IonText, { className: "text-sm", color: "primary", children: [
-                selectedIds.size,
-                " selected"
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                IonText,
-                {
-                  className: "text-sm",
-                  style: { flex: 1, textAlign: "center" },
-                  children: [
-                    "Page ",
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-primary", children: page }),
-                    " of",
-                    " ",
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: pageCount }),
-                    totalCount && ` (${totalCount} total)`
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(IonButtons, { children: [
+        className: "datatable-pagination-toolbar datatable-desktop-pagination",
+        style: {
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          width: "100%",
+          flexWrap: "wrap",
+          gap: "10px",
+          padding: "12px 16px",
+          backgroundColor: "#ffffff",
+          color: "#1f2937",
+          borderTop: "1px solid #e5e7eb"
+        },
+        children: [
+          selectable && selectedIds.size > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(IonText, { className: "text-sm", color: "primary", children: [
+            selectedIds.size,
+            " selected"
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            IonText,
+            {
+              className: "text-sm pagination-page-info",
+              style: { flex: 1, textAlign: "center", color: "#1f2937" },
+              children: [
+                "Page",
+                " ",
+                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-primary pagination-current-page", children: page }),
+                " ",
+                "of ",
+                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: pageCount }),
+                totalCount && ` (${totalCount} total)`
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "datatable-pagination-buttons",
+              style: { display: "flex", gap: "8px", alignItems: "center" },
+              children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   IonButton,
                   {
                     fill: "clear",
                     color: "primary",
+                    className: "pagination-btn pagination-btn-clear",
                     disabled: page === 1,
                     onClick: () => {
                       if (prev) prev();
@@ -36357,6 +36428,7 @@ const DataTable = ({
                   {
                     fill: "clear",
                     color: "primary",
+                    className: "pagination-btn pagination-btn-clear",
                     disabled: page === pageCount,
                     onClick: () => {
                       if (next) next();
@@ -36365,42 +36437,42 @@ const DataTable = ({
                     children: "Next"
                   }
                 )
-              ] })
-            ]
-          }
-        )
+              ]
+            }
+          )
+        ]
       }
     )
   ] });
 };
 
-const React$O = await importShared('react');
-const {useCallback: useCallback$o,useContext: useContext$A,useEffect: useEffect$12,useRef: useRef$k,useState: useState$15} = React$O;
+const React$Q = await importShared('react');
+const {useCallback: useCallback$o,useContext: useContext$B,useEffect: useEffect$15,useRef: useRef$j,useState: useState$18} = React$Q;
 function Event({ id }) {
-  const { eventsList, reload, isLoading, columns, pagination } = useContext$A(
+  const { eventsList, reload, isLoading, columns, pagination } = useContext$B(
     MEMISContext.EventsContext
   );
-  const { user } = useContext$A(MEMISContext.UserRolesContext) || {};
+  const { user } = useContext$B(MEMISContext.UserRolesContext) || {};
   const navigate = useNavigate();
-  const [rows, setRows] = useState$15([]);
-  const [searchValue, setSearchValue] = useState$15("");
-  const [search, setSearch] = useState$15("");
-  const [organisationUnits, setOrganisationUnits] = useState$15([]);
-  const [selectedLocation, setSelectedLocation] = useState$15("");
-  const [optionFilters, setOptionFilters] = useState$15([]);
-  const [showSearchField, setShowSearchField] = useState$15(false);
-  const [optionSets, setOptionSets] = useState$15([]);
-  const [filterType, setFilterType] = useState$15([]);
-  const [filterValue, setFilterValue] = useState$15([]);
-  const [filterOpen, setFilterOpen] = useState$15(false);
-  const [filterValueOpen, setFilterValueOpen] = useState$15(null);
-  const [activePicker, setActivePicker] = useState$15(null);
-  const locationRef = useRef$k("");
-  const filterValueRef = useRef$k([]);
-  const filterTypesRef = useRef$k([]);
-  const optionFiltersRef = useRef$k([]);
-  const runQueryRef = useRef$k(null);
-  useEffect$12(() => {
+  const [rows, setRows] = useState$18([]);
+  const [searchValue, setSearchValue] = useState$18("");
+  const [search, setSearch] = useState$18("");
+  const [organisationUnits, setOrganisationUnits] = useState$18([]);
+  const [selectedLocation, setSelectedLocation] = useState$18("");
+  const [optionFilters, setOptionFilters] = useState$18([]);
+  const [showSearchField, setShowSearchField] = useState$18(false);
+  const [optionSets, setOptionSets] = useState$18([]);
+  const [filterType, setFilterType] = useState$18([]);
+  const [filterValue, setFilterValue] = useState$18([]);
+  const [filterOpen, setFilterOpen] = useState$18(false);
+  const [filterValueOpen, setFilterValueOpen] = useState$18(null);
+  const [activePicker, setActivePicker] = useState$18(null);
+  const locationRef = useRef$j("");
+  const filterValueRef = useRef$j([]);
+  const filterTypesRef = useRef$j([]);
+  const optionFiltersRef = useRef$j([]);
+  const runQueryRef = useRef$j(null);
+  useEffect$15(() => {
     filterValueRef.current = filterValue;
     filterTypesRef.current = filterType;
     optionFiltersRef.current = optionFilters;
@@ -36423,10 +36495,10 @@ function Event({ id }) {
     },
     [id, reload, buildOptions]
   );
-  useEffect$12(() => {
+  useEffect$15(() => {
     runQueryRef.current = runQuery;
   }, [runQuery]);
-  useEffect$12(() => {
+  useEffect$15(() => {
     const load = async () => {
       try {
         const orgs = await LocalForageServiceInstance.getItem(
@@ -36441,8 +36513,8 @@ function Event({ id }) {
     };
     load();
   }, []);
-  const userIdRef = useRef$k(null);
-  useEffect$12(() => {
+  const userIdRef = useRef$j(null);
+  useEffect$15(() => {
     if (!user?.userRoles?.length) return;
     const userId = user?.id || user?.username || JSON.stringify(user?.userRoles?.map((r) => r.id).sort());
     if (userIdRef.current === userId) return;
@@ -36470,7 +36542,7 @@ function Event({ id }) {
     };
     resolveLocation();
   }, [id, user]);
-  useEffect$12(() => {
+  useEffect$15(() => {
     const load = async () => {
       const dataStore = await LocalForageServiceInstance.getItem(
         "dataStore",
@@ -36489,13 +36561,13 @@ function Event({ id }) {
     };
     load();
   }, [id]);
-  useEffect$12(() => {
+  useEffect$15(() => {
     if (id && selectedLocation) runQueryRef.current?.();
   }, [id]);
-  useEffect$12(() => {
+  useEffect$15(() => {
     setRows(eventsList || []);
   }, [eventsList]);
-  useEffect$12(() => {
+  useEffect$15(() => {
     const timer = setTimeout(() => {
       if (id && searchValue.trim() !== search.trim()) {
         const trimmed = searchValue.trim();
@@ -36506,14 +36578,14 @@ function Event({ id }) {
     }, 400);
     return () => clearTimeout(timer);
   }, [searchValue, id, search]);
-  const [isSearching, setIsSearching] = useState$15(false);
-  useEffect$12(() => {
+  const [isSearching, setIsSearching] = useState$18(false);
+  useEffect$15(() => {
     if (id && search.trim()) {
       setIsSearching(true);
       runQueryRef.current?.();
     }
   }, [search, id]);
-  useEffect$12(() => {
+  useEffect$15(() => {
     if (!isLoading) {
       setIsSearching(false);
     }
@@ -36559,7 +36631,7 @@ function Event({ id }) {
     });
     setFilterOpen(false);
   };
-  useEffect$12(() => {
+  useEffect$15(() => {
     const handleClick = (e) => {
       const path = e.composedPath?.() || [];
       for (let el of path) {
@@ -62951,8 +63023,8 @@ class CapacitorBarcodeScanner {
     }
 }
 
-const React$N = await importShared('react');
-const {useEffect: useEffect$11,useContext: useContext$z,useState: useState$14,useCallback: useCallback$n} = React$N;
+const React$P = await importShared('react');
+const {useEffect: useEffect$14,useContext: useContext$A,useState: useState$17,useCallback: useCallback$n} = React$P;
 const Tracker = ({ id }) => {
   const {
     equipmentList,
@@ -62961,41 +63033,41 @@ const Tracker = ({ id }) => {
     columns,
     pagination,
     setPagination
-  } = useContext$z(MEMISContext.TrackedEntitiesContext);
-  const { user } = useContext$z(MEMISContext.UserRolesContext) || {};
+  } = useContext$A(MEMISContext.TrackedEntitiesContext);
+  const { user } = useContext$A(MEMISContext.UserRolesContext) || {};
   const location = useLocation();
   const navigate = useNavigate();
-  const [rows, setRows] = useState$14([]);
-  const [search, setSearch] = useState$14("");
-  const [searchValue, setSearchValue] = useState$14("");
-  const [organisationUnits, setOrganisationUnits] = useState$14([]);
-  const [equipmentNamesOptions, setEquipmentNamesOptions] = useState$14([]);
-  const [selectedLocation, setSelectedLocation] = useState$14("");
-  const [optionFilters, setOptionFilters] = useState$14([]);
-  const [searchFilter, setSearchFilter] = useState$14(null);
-  const [filterType, setFilterType] = useState$14("");
-  const [filterValue, setFilterValue] = useState$14("");
-  const [appliedFilter, setAppliedFilter] = useState$14({
+  const [rows, setRows] = useState$17([]);
+  const [search, setSearch] = useState$17("");
+  const [searchValue, setSearchValue] = useState$17("");
+  const [organisationUnits, setOrganisationUnits] = useState$17([]);
+  const [equipmentNamesOptions, setEquipmentNamesOptions] = useState$17([]);
+  const [selectedLocation, setSelectedLocation] = useState$17("");
+  const [optionFilters, setOptionFilters] = useState$17([]);
+  const [searchFilter, setSearchFilter] = useState$17(null);
+  const [filterType, setFilterType] = useState$17("");
+  const [filterValue, setFilterValue] = useState$17("");
+  const [appliedFilter, setAppliedFilter] = useState$17({
     type: null,
     value: null
   });
-  const [filterOpen, setFilterOpen] = useState$14(false);
-  const filterRef = React$N.useRef({
+  const [filterOpen, setFilterOpen] = useState$17(false);
+  const filterRef = React$P.useRef({
     type: "",
     value: ""
   });
-  const filterByLocationRef = React$N.useRef({
+  const filterByLocationRef = React$P.useRef({
     type: "",
     value: ""
   });
-  const optionFiltersRef = React$N.useRef([]);
-  const searchFiltersRef = React$N.useRef([]);
+  const optionFiltersRef = React$P.useRef([]);
+  const searchFiltersRef = React$P.useRef([]);
   const getEquipmentNamesOptions = useCallback$n(async () => {
     const options = await LocalForageServiceInstance.getItem("optionSets", "metadata");
     const equipmentOptions = options?.find((opt) => opt?.id === "VuKFOqg584G") || [];
     return equipmentOptions?.options || [];
   });
-  useEffect$11(() => {
+  useEffect$14(() => {
     const loadOptions = async () => {
       const options = await getEquipmentNamesOptions();
       setEquipmentNamesOptions(options || []);
@@ -63049,11 +63121,11 @@ const Tracker = ({ id }) => {
     },
     [id, reload, buildOptions]
   );
-  const runQueryRef = React$N.useRef(runQuery);
-  useEffect$11(() => {
+  const runQueryRef = React$P.useRef(runQuery);
+  useEffect$14(() => {
     runQueryRef.current = runQuery;
   }, [runQuery]);
-  useEffect$11(() => {
+  useEffect$14(() => {
     const loadOrgUnits = async () => {
       try {
         const orgUnits = await LocalForageServiceInstance.getItem(
@@ -63063,13 +63135,13 @@ const Tracker = ({ id }) => {
         const sorted = Array.isArray(orgUnits) ? orgUnits.sort((a, b) => a?.level - b?.level) : [];
         setOrganisationUnits(sorted);
       } catch (e) {
-        console.error("Failed to load organisation units:", e);
+        console.log("Failed to load organisation units:", e);
         setOrganisationUnits([]);
       }
     };
     loadOrgUnits();
   }, []);
-  useEffect$11(() => {
+  useEffect$14(() => {
     if (!organisationUnits.length || !user?.userRoles?.length) return;
     const resolveDefaultLocation = async () => {
       try {
@@ -63100,10 +63172,10 @@ const Tracker = ({ id }) => {
     };
     resolveDefaultLocation();
   }, [organisationUnits, id, user]);
-  useEffect$11(() => {
+  useEffect$14(() => {
     setRows(equipmentList || []);
   }, [equipmentList]);
-  useEffect$11(() => {
+  useEffect$14(() => {
     const timeout = setTimeout(() => {
       if (id && searchValue.trim() !== search.trim()) {
         const trimmed = searchValue.trim();
@@ -63114,14 +63186,14 @@ const Tracker = ({ id }) => {
     }, 400);
     return () => clearTimeout(timeout);
   }, [searchValue, id, search]);
-  const [isSearching, setIsSearching] = useState$14(false);
-  useEffect$11(() => {
+  const [isSearching, setIsSearching] = useState$17(false);
+  useEffect$14(() => {
     if (id && search.trim()) {
       setIsSearching(true);
       runQueryRef.current();
     }
   }, [search, id]);
-  useEffect$11(() => {
+  useEffect$14(() => {
     if (!isLoading) {
       setIsSearching(false);
     }
@@ -63215,10 +63287,10 @@ const Tracker = ({ id }) => {
       }
       console.warn("Use in-app scanner UI for web");
     } catch (err) {
-      console.error("QR Scan failed:", err);
+      console.log("QR Scan failed:", err);
     }
   };
-  useEffect$11(() => {
+  useEffect$14(() => {
     const load = async () => {
       const programAttributesResult = await LocalForageServiceInstance.getItem(
         "dataStore",
@@ -63237,7 +63309,7 @@ const Tracker = ({ id }) => {
     };
     load();
   }, [id]);
-  useEffect$11(() => {
+  useEffect$14(() => {
     optionFiltersRef.current = optionFilters || [];
     searchFiltersRef.current = searchFilter || null;
   }, [optionFilters, searchFilter]);
@@ -63396,7 +63468,7 @@ const Tracker = ({ id }) => {
   ] });
 };
 
-const {useEffect: useEffect$10,useRef: useRef$j} = await importShared('react');
+const {useEffect: useEffect$13,useRef: useRef$i} = await importShared('react');
 
 const GeneralCustomModal = ({
   isOpen,
@@ -63412,7 +63484,7 @@ const GeneralCustomModal = ({
   showCloseButton = true,
   onDidDismiss
 }) => {
-  useEffect$10(() => {
+  useEffect$13(() => {
     const handleClick = (e) => {
       const path = e.composedPath?.() || [];
       for (let el of path) {
@@ -63490,8 +63562,8 @@ const GeneralCustomModal = ({
   );
 };
 
-const React$M = await importShared('react');
-const {useState: useState$13,useEffect: useEffect$$,useMemo: useMemo$B,useRef: useRef$i,useCallback: useCallback$m} = React$M;
+const React$O = await importShared('react');
+const {useState: useState$16,useEffect: useEffect$12,useMemo: useMemo$C,useRef: useRef$h,useCallback: useCallback$m} = React$O;
 const SearchFilterCard = ({
   children,
   searchText,
@@ -63512,39 +63584,39 @@ const SearchFilterCard = ({
   onScanSearch,
   programId
 }) => {
-  const [popoverEvent, setPopoverEvent] = useState$13(null);
-  const [filterPopoverEvent, setFilterPopoverEvent] = useState$13(null);
-  const [localApproval, setLocalApproval] = useState$13(
+  const [popoverEvent, setPopoverEvent] = useState$16(null);
+  const [filterPopoverEvent, setFilterPopoverEvent] = useState$16(null);
+  const [localApproval, setLocalApproval] = useState$16(
     filterOptions?.approval ?? ""
   );
-  const lastExternalApprovalRef = useRef$i(filterOptions?.approval ?? "");
-  const [scanOpen, setScanOpen] = useState$13(false);
-  const [scanError, setScanError] = useState$13("");
-  const videoRef = useRef$i(null);
-  const streamRef = useRef$i(null);
-  const rafRef = useRef$i(null);
-  const detectorRef = useRef$i(null);
-  const [optionFilters, setOptionFilters] = useState$13([]);
-  const [searchFilter, setSearchFilter] = useState$13(null);
-  const [organisationUnits, setOrganisationUnits] = useState$13([]);
-  const [selectedLocation, setSelectedLocation] = useState$13("");
-  const [filterType, setFilterType] = useState$13("");
-  const [filterValue, setFilterValue] = useState$13("");
-  const [appliedFilter, setAppliedFilter] = useState$13({
+  const lastExternalApprovalRef = useRef$h(filterOptions?.approval ?? "");
+  const [scanOpen, setScanOpen] = useState$16(false);
+  const [scanError, setScanError] = useState$16("");
+  const videoRef = useRef$h(null);
+  const streamRef = useRef$h(null);
+  const rafRef = useRef$h(null);
+  const detectorRef = useRef$h(null);
+  const [optionFilters, setOptionFilters] = useState$16([]);
+  const [searchFilter, setSearchFilter] = useState$16(null);
+  const [organisationUnits, setOrganisationUnits] = useState$16([]);
+  const [selectedLocation, setSelectedLocation] = useState$16("");
+  const [filterType, setFilterType] = useState$16("");
+  const [filterValue, setFilterValue] = useState$16("");
+  const [appliedFilter, setAppliedFilter] = useState$16({
     type: null,
     value: null
   });
-  const [filterOpen, setFilterOpen] = useState$13(false);
-  const filterRef = React$M.useRef({
+  const [filterOpen, setFilterOpen] = useState$16(false);
+  const filterRef = React$O.useRef({
     type: "",
     value: ""
   });
-  const filterByLocationRef = React$M.useRef({
+  const filterByLocationRef = React$O.useRef({
     type: "",
     value: ""
   });
-  const optionFiltersRef = React$M.useRef([]);
-  const searchFiltersRef = React$M.useRef([]);
+  const optionFiltersRef = React$O.useRef([]);
+  const searchFiltersRef = React$O.useRef([]);
   const isScanDebug = typeof window !== "undefined" && (window.localStorage?.getItem("memis_qr_scan_debug") === "1" || window.__MEMIS_QR_SCAN_DEBUG__ === true) || false;
   const scanDebug = useCallback$m(
     (...args) => {
@@ -63553,7 +63625,7 @@ const SearchFilterCard = ({
     },
     [isScanDebug]
   );
-  useEffect$$(() => {
+  useEffect$12(() => {
     const onUnhandledRejection = (event) => {
       const reason = String(
         event?.reason?.message || event?.reason || ""
@@ -63579,7 +63651,7 @@ const SearchFilterCard = ({
       window.removeEventListener("error", onWindowError);
     };
   }, [scanDebug]);
-  const placeHolder = useMemo$B(() => {
+  const placeHolder = useMemo$C(() => {
     if (searchPlaceholder) return searchPlaceholder;
     const labels = (filterColumns || []).map((c) => c.label).filter(Boolean);
     if (!labels.length) return "Search...";
@@ -63587,7 +63659,7 @@ const SearchFilterCard = ({
     const shownWords = labels.slice(0, max).join(", ");
     return `Search by ${shownWords}${labels.length > max ? "..." : ""}`;
   }, [searchPlaceholder, filterColumns]);
-  useEffect$$(() => {
+  useEffect$12(() => {
     const external = filterOptions?.approval ?? "";
     if (lastExternalApprovalRef.current !== external) {
       lastExternalApprovalRef.current = external;
@@ -63625,7 +63697,7 @@ const SearchFilterCard = ({
       setTimeout(finish, 600);
     });
   }, []);
-  useEffect$$(() => {
+  useEffect$12(() => {
     return () => {
       stopScanner();
     };
@@ -63752,7 +63824,7 @@ const SearchFilterCard = ({
     setScanOpen(false);
     stopScanner();
   }, [stopScanner]);
-  useEffect$$(() => {
+  useEffect$12(() => {
     if (!scanOpen) return;
     let cancelled = false;
     const start = async () => {
@@ -63847,7 +63919,7 @@ const SearchFilterCard = ({
   };
   const resetFilters = () => {
   };
-  useEffect$$(() => {
+  useEffect$12(() => {
     const load = async () => {
       const programAttributesResult = await LocalForageServiceInstance.getItem(
         "dataStore",
@@ -63868,7 +63940,7 @@ const SearchFilterCard = ({
     };
     load();
   }, [programId]);
-  useEffect$$(() => {
+  useEffect$12(() => {
     optionFiltersRef.current = optionFilters || [];
     searchFiltersRef.current = searchFilter || null;
   }, [optionFilters, searchFilter]);
@@ -64092,13 +64164,13 @@ const SearchFilterCard = ({
   ] });
 };
 
-const {useCallback: useCallback$l,useMemo: useMemo$A} = await importShared('react');
+const {useCallback: useCallback$l,useMemo: useMemo$B} = await importShared('react');
 
 const unwrap = (res) => res?.data ?? res;
 
 function useTeiSearch(columns = []) {
  
-  const colKeySet = useMemo$A(() => {
+  const colKeySet = useMemo$B(() => {
     return new Set((columns || []).map((c) => c.key));
   }, [columns]);
 
@@ -64363,7 +64435,7 @@ const eventSearchFilter = async (programId, data) => {
   return { filter: "&filter=" + filterString };
 };
 
-const {useCallback: useCallback$k,useEffect: useEffect$_,useMemo: useMemo$z,useRef: useRef$h,useState: useState$12} = await importShared('react');
+const {useCallback: useCallback$k,useEffect: useEffect$11,useMemo: useMemo$A,useRef: useRef$g,useState: useState$15} = await importShared('react');
 function ItemSearch({
   programId,
   programStageId,
@@ -64377,23 +64449,23 @@ function ItemSearch({
   onResults,
   onLoadingChange
 }) {
-  const [debounced, setDebounced] = useState$12((searchText || "").trim());
-  const [programType, setProgramType] = useState$12(null);
-  const mountedRef = useRef$h(true);
-  const onResultsRef = useRef$h(onResults);
-  const onLoadingRef = useRef$h(onLoadingChange);
-  useEffect$_(() => {
+  const [debounced, setDebounced] = useState$15((searchText || "").trim());
+  const [programType, setProgramType] = useState$15(null);
+  const mountedRef = useRef$g(true);
+  const onResultsRef = useRef$g(onResults);
+  const onLoadingRef = useRef$g(onLoadingChange);
+  useEffect$11(() => {
     onResultsRef.current = onResults;
   }, [onResults]);
-  useEffect$_(() => {
+  useEffect$11(() => {
     onLoadingRef.current = onLoadingChange;
   }, [onLoadingChange]);
-  const keySet = useMemo$z(
+  const keySet = useMemo$A(
     () => new Set((visibleColumns || []).map((c) => c.key)),
     [visibleColumns]
   );
-  const colKeys = useMemo$z(() => Array.from(keySet), [keySet]);
-  const eventSearchKeys = useMemo$z(() => {
+  const colKeys = useMemo$A(() => Array.from(keySet), [keySet]);
+  const eventSearchKeys = useMemo$A(() => {
     const nonEventKeys = /* @__PURE__ */ new Set([
       "id",
       "event",
@@ -64406,16 +64478,16 @@ function ItemSearch({
     ]);
     return colKeys.filter((k) => !nonEventKeys.has(k));
   }, [colKeys]);
-  const colKeysKey = useMemo$z(() => colKeys.join(","), [colKeys]);
-  const orgUnitsKey = useMemo$z(
+  const colKeysKey = useMemo$A(() => colKeys.join(","), [colKeys]);
+  const orgUnitsKey = useMemo$A(
     () => (orgUnits || []).map((o) => o.id).join(","),
     [orgUnits]
   );
-  const [searchSets, setSearchSets] = useState$12({ equipment: [], spare: [] });
-  const EQUIP_SET = useMemo$z(() => searchSets?.equipment || [], [searchSets]);
-  const SPARE_SET = useMemo$z(() => searchSets?.spare || [], [searchSets]);
+  const [searchSets, setSearchSets] = useState$15({ equipment: [], spare: [] });
+  const EQUIP_SET = useMemo$A(() => searchSets?.equipment || [], [searchSets]);
+  const SPARE_SET = useMemo$A(() => searchSets?.spare || [], [searchSets]);
   const teiSearch = useTeiSearch(visibleColumns);
-  const eventFieldMapRef = useRef$h({ key: null, map: /* @__PURE__ */ new Map() });
+  const eventFieldMapRef = useRef$g({ key: null, map: /* @__PURE__ */ new Map() });
   const resolveDisplayValue = (field, rawValue) => {
     if (!field || rawValue == null || rawValue === "") return rawValue;
     const valueType = String(field.valueType || "").toUpperCase();
@@ -64480,29 +64552,29 @@ function ItemSearch({
     },
     [colKeys]
   );
-  useEffect$_(() => {
+  useEffect$11(() => {
     mountedRef.current = true;
     return () => {
       mountedRef.current = false;
     };
   }, []);
-  useEffect$_(() => {
+  useEffect$11(() => {
     const t = setTimeout(() => setDebounced((searchText || "").trim()), 250);
     return () => clearTimeout(t);
   }, [searchText]);
-  useEffect$_(() => {
+  useEffect$11(() => {
     if (!programId) return;
     const fetchProgramType = async () => {
       try {
         const res = await dataStore.get(`programs/${programId}.json?fields=programType`);
         setProgramType(res?.data?.programType);
       } catch (e) {
-        console.error("[DEBUG] Failed to fetch program type", e);
+        console.log("[DEBUG] Failed to fetch program type", e);
       }
     };
     fetchProgramType();
   }, [programId]);
-  useEffect$_(() => {
+  useEffect$11(() => {
     let cancelled = false;
     (async () => {
       const sets = await getSearchAttributeSets(programId);
@@ -64514,7 +64586,7 @@ function ItemSearch({
       cancelled = true;
     };
   }, [programId]);
-  useEffect$_(() => {
+  useEffect$11(() => {
     let cancelled = false;
     const runTei = async () => {
       const attributeUids = pickTeiScope();
@@ -64548,7 +64620,7 @@ function ItemSearch({
         });
         return attributeMap;
       } catch (err) {
-        console.error("Error fetching TEI attributes:", err);
+        console.log("Error fetching TEI attributes:", err);
         return {};
       }
     };
@@ -64653,7 +64725,7 @@ function ItemSearch({
           await runTei();
         }
       } catch (err) {
-        console.error("[DEBUG] run() Error:", err);
+        console.log("[DEBUG] run() Error:", err);
       } finally {
         if (!cancelled && mountedRef.current) {
           onLoadingRef.current?.(false);
@@ -64873,16 +64945,16 @@ const sortRowsByApproval = (rows, approvalFieldKey) => {
   return copy;
 };
 
-const {useEffect: useEffect$Z,useState: useState$11} = await importShared('react');
+const {useEffect: useEffect$10,useState: useState$14} = await importShared('react');
 
 function useQrScanEnabled({
   menuItems,
   currentNavigationId,
   scanProgramId,
 }) {
-  const [qrScanEnabled, setQrScanEnabled] = useState$11(false);
+  const [qrScanEnabled, setQrScanEnabled] = useState$14(false);
 
-  useEffect$Z(() => {
+  useEffect$10(() => {
     let cancelled = false;
 
     (async () => {
@@ -64988,7 +65060,7 @@ function getBlankPlaceholderForDataElement(dataElements = [], deId) {
   );
 }
 
-const {useCallback: useCallback$j,useContext: useContext$y,useEffect: useEffect$Y,useMemo: useMemo$y,useRef: useRef$g,useState: useState$10} = await importShared('react');
+const {useCallback: useCallback$j,useContext: useContext$z,useEffect: useEffect$$,useMemo: useMemo$z,useRef: useRef$f,useState: useState$13} = await importShared('react');
 function StageEvents({
   id,
   programId: programIdProp,
@@ -64998,40 +65070,40 @@ function StageEvents({
 }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user } = useContext$y(MEMISContext.UserRolesContext);
-  const { menuItems } = useContext$y(MEMISContext.MenuContext);
-  const [rows, setRows] = useState$10([]);
-  const [priorities, setPriorities] = useState$10(null);
-  const [loading, setLoading] = useState$10(false);
-  const [loadingColumns, setLoadingColumns] = useState$10(false);
-  const [loadingRows, setLoadingRows] = useState$10(false);
-  const [searchText, setSearchText] = useState$10("");
-  const [rawRows, setRawRows] = useState$10([]);
-  const [filterOptions, setFilterOptions] = useState$10({ approval: null });
-  const [approvalFieldKey, setApprovalFieldKey] = useState$10(null);
-  const [approvalConfig, setApprovalConfig] = useState$10(null);
-  const orgUnitCacheRef = useRef$g(/* @__PURE__ */ new Map());
-  const [allColumnsOrdered, setAllColumnsOrdered] = useState$10([]);
-  const [visibleColumnKeys, setVisibleColumnKeys] = useState$10(/* @__PURE__ */ new Set());
-  const visibleColumns = useMemo$y(
+  const { user } = useContext$z(MEMISContext.UserRolesContext);
+  const { menuItems } = useContext$z(MEMISContext.MenuContext);
+  const [rows, setRows] = useState$13([]);
+  const [priorities, setPriorities] = useState$13(null);
+  const [loading, setLoading] = useState$13(false);
+  const [loadingColumns, setLoadingColumns] = useState$13(false);
+  const [loadingRows, setLoadingRows] = useState$13(false);
+  const [searchText, setSearchText] = useState$13("");
+  const [rawRows, setRawRows] = useState$13([]);
+  const [filterOptions, setFilterOptions] = useState$13({ approval: null });
+  const [approvalFieldKey, setApprovalFieldKey] = useState$13(null);
+  const [approvalConfig, setApprovalConfig] = useState$13(null);
+  const orgUnitCacheRef = useRef$f(/* @__PURE__ */ new Map());
+  const [allColumnsOrdered, setAllColumnsOrdered] = useState$13([]);
+  const [visibleColumnKeys, setVisibleColumnKeys] = useState$13(/* @__PURE__ */ new Set());
+  const visibleColumns = useMemo$z(
     () => allColumnsOrdered.filter((c) => visibleColumnKeys.has(c.key)),
     [allColumnsOrdered, visibleColumnKeys]
   );
-  const searchPlaceholder = useMemo$y(() => {
+  const searchPlaceholder = useMemo$z(() => {
     const labels = visibleColumns.map((c) => c.label).filter(Boolean);
     if (!labels.length) return "Search events...";
     const max = 10;
     const shown = labels.slice(0, max).join(", ");
     return `Search by ${shown}${labels.length > max ? "..." : ""}`;
   }, [visibleColumns]);
-  const [selectedRow, setSelectedRow] = useState$10(null);
-  const [selectedRowId, setSelectedRowId] = useState$10(null);
-  const [showActions, setShowActions] = useState$10(false);
-  const [pendingDelete, setPendingDelete] = useState$10(null);
-  const [deletingId, setDeletingId] = useState$10(null);
-  const [fallbackStageId, setFallbackStageId] = useState$10(null);
+  const [selectedRow, setSelectedRow] = useState$13(null);
+  const [selectedRowId, setSelectedRowId] = useState$13(null);
+  const [showActions, setShowActions] = useState$13(false);
+  const [pendingDelete, setPendingDelete] = useState$13(null);
+  const [deletingId, setDeletingId] = useState$13(null);
+  const [fallbackStageId, setFallbackStageId] = useState$13(null);
   const getRowId = (row) => row?.id || row?.event || row?.enrollment || row?.trackedEntity || null;
-  const { resolvedProgramId, resolvedStageId } = useMemo$y(() => {
+  const { resolvedProgramId, resolvedStageId } = useMemo$z(() => {
     const match = menuItems?.find((m) => m?.id === (stageIdProp || id)) || null;
     const stage = stageIdProp || match?.dependentStage || match?.id || id;
     const program = programIdProp || match?.dependentProgram || (match?.isProgram ? match?.id : null) || id;
@@ -65040,7 +65112,7 @@ function StageEvents({
       resolvedStageId: stage
     };
   }, [id, menuItems, programIdProp, stageIdProp]);
-  const effectiveProgramId = useMemo$y(
+  const effectiveProgramId = useMemo$z(
     () => resolvedProgramId || programIdProp || id || null,
     [id, programIdProp, resolvedProgramId]
   );
@@ -65049,16 +65121,16 @@ function StageEvents({
     currentNavigationId: id,
     scanProgramId: effectiveProgramId
   });
-  const effectiveStageId = useMemo$y(() => {
+  const effectiveStageId = useMemo$z(() => {
     const rawStage = stageIdProp || resolvedStageId;
     if (rawStage && rawStage !== effectiveProgramId) return rawStage;
     if (fallbackStageId) return fallbackStageId;
     return rawStage || null;
   }, [stageIdProp, resolvedStageId, fallbackStageId, effectiveProgramId]);
-  useEffect$Y(() => {
+  useEffect$$(() => {
     setFallbackStageId(null);
   }, [effectiveProgramId, stageIdProp, resolvedStageId]);
-  useEffect$Y(() => {
+  useEffect$$(() => {
     const needsLookup = !effectiveStageId || effectiveProgramId && effectiveStageId === effectiveProgramId;
     if (!effectiveProgramId || !needsLookup) return;
     (async () => {
@@ -65069,7 +65141,7 @@ function StageEvents({
         const firstStageId = meta?.data?.programStages?.[0]?.id || null;
         if (firstStageId) setFallbackStageId(firstStageId);
       } catch (error) {
-        console.error(
+        console.log(
           "[MEMIS] Failed to resolve program stage from metadata:",
           error
         );
@@ -65161,13 +65233,13 @@ function StageEvents({
       setAllColumnsOrdered(sortedData);
       setVisibleColumnKeys(new Set(sortedData.map((c) => c.key)));
     } catch (error) {
-      console.error("[MEMIS] Failed to fetch Program DE:", error);
+      console.log("[MEMIS] Failed to fetch Program DE:", error);
       showToast("Failed to load program details. Please try again.", "error");
     } finally {
       setLoadingColumns(false);
     }
   };
-  const [pagination, setPagination] = useState$10({
+  const [pagination, setPagination] = useState$13({
     page: 1,
     pageCount: 1,
     pageSize: 100,
@@ -65252,7 +65324,7 @@ function StageEvents({
             teiAttributeMap[tei.trackedEntity] = tei.attributes || [];
           });
         } catch (err) {
-          console.error(
+          console.log(
             "[MEMIS] Failed to fetch TEI attributes in getEvents:",
             err
           );
@@ -65361,7 +65433,7 @@ function StageEvents({
         onClick(list);
       }
     } catch (error) {
-      console.error("[MEMIS] getEvents failed:", error);
+      console.log("[MEMIS] getEvents failed:", error);
     } finally {
       setLoading(false);
     }
@@ -65394,7 +65466,7 @@ function StageEvents({
     );
     setPriorities(res);
   };
-  useEffect$Y(() => {
+  useEffect$$(() => {
     setAllColumnsOrdered([]);
     setVisibleColumnKeys(/* @__PURE__ */ new Set());
     setRawRows([]);
@@ -65415,7 +65487,7 @@ function StageEvents({
       setPagination((prev) => ({ ...prev, page: 1 }));
     }
   }, [user, effectiveProgramId, effectiveStageId, location.pathname]);
-  useEffect$Y(() => {
+  useEffect$$(() => {
     const filtered = filterRowsByApproval(
       rawRows,
       filterOptions.approval,
@@ -65428,7 +65500,7 @@ function StageEvents({
     const v = value || null;
     setFilterOptions((prev) => ({ ...prev, approval: v }));
   };
-  useEffect$Y(() => {
+  useEffect$$(() => {
     if (!effectiveProgramId || !effectiveStageId || !user?.organisationUnits || allColumnsOrdered.length === 0)
       return;
     if ((searchText ?? "").trim().length < 2) {
@@ -65565,7 +65637,7 @@ function StageEvents({
   ] });
 }
 
-const {useCallback: useCallback$i,useContext: useContext$x,useEffect: useEffect$X,useMemo: useMemo$x,useRef: useRef$f,useState: useState$$} = await importShared('react');
+const {useCallback: useCallback$i,useContext: useContext$y,useEffect: useEffect$_,useMemo: useMemo$y,useRef: useRef$e,useState: useState$12} = await importShared('react');
 function StageSectionsEvents({
   id,
   programId: programIdProp,
@@ -65575,41 +65647,41 @@ function StageSectionsEvents({
 }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user } = useContext$x(MEMISContext.UserRolesContext);
-  const { menuItems } = useContext$x(MEMISContext.MenuContext);
+  const { user } = useContext$y(MEMISContext.UserRolesContext);
+  const { menuItems } = useContext$y(MEMISContext.MenuContext);
   const queryParams = new URLSearchParams(location.search);
-  const [rows, setRows] = useState$$([]);
-  const [priorities, setPriorities] = useState$$(null);
-  const [loading, setLoading] = useState$$(false);
-  const [loadingColumns, setLoadingColumns] = useState$$(false);
-  const [loadingRows, setLoadingRows] = useState$$(false);
-  const [searchText, setSearchText] = useState$$("");
-  const [rawRows, setRawRows] = useState$$([]);
-  const [filterOptions, setFilterOptions] = useState$$({ approval: null });
-  const [approvalFieldKey, setApprovalFieldKey] = useState$$(null);
-  const [approvalConfig, setApprovalConfig] = useState$$(null);
-  const orgUnitCacheRef = useRef$f(/* @__PURE__ */ new Map());
-  const [allColumnsOrdered, setAllColumnsOrdered] = useState$$([]);
-  const [visibleColumnKeys, setVisibleColumnKeys] = useState$$(/* @__PURE__ */ new Set());
-  const visibleColumns = useMemo$x(
+  const [rows, setRows] = useState$12([]);
+  const [priorities, setPriorities] = useState$12(null);
+  const [loading, setLoading] = useState$12(false);
+  const [loadingColumns, setLoadingColumns] = useState$12(false);
+  const [loadingRows, setLoadingRows] = useState$12(false);
+  const [searchText, setSearchText] = useState$12("");
+  const [rawRows, setRawRows] = useState$12([]);
+  const [filterOptions, setFilterOptions] = useState$12({ approval: null });
+  const [approvalFieldKey, setApprovalFieldKey] = useState$12(null);
+  const [approvalConfig, setApprovalConfig] = useState$12(null);
+  const orgUnitCacheRef = useRef$e(/* @__PURE__ */ new Map());
+  const [allColumnsOrdered, setAllColumnsOrdered] = useState$12([]);
+  const [visibleColumnKeys, setVisibleColumnKeys] = useState$12(/* @__PURE__ */ new Set());
+  const visibleColumns = useMemo$y(
     () => allColumnsOrdered?.filter((c) => visibleColumnKeys?.has(c?.key)),
     [allColumnsOrdered, visibleColumnKeys]
   );
-  const searchPlaceholder = useMemo$x(() => {
+  const searchPlaceholder = useMemo$y(() => {
     const labels = visibleColumns.map((c) => c.label).filter(Boolean);
     if (!labels.length) return "Search events...";
     const max = 10;
     const shown = labels.slice(0, max).join(", ");
     return `Search by ${shown}${labels.length > max ? "..." : ""}`;
   }, [visibleColumns]);
-  const [selectedRow, setSelectedRow] = useState$$(null);
-  const [selectedRowId, setSelectedRowId] = useState$$(null);
-  const [showActions, setShowActions] = useState$$(false);
-  const [pendingDelete, setPendingDelete] = useState$$(null);
-  const [deletingId, setDeletingId] = useState$$(null);
-  const [fallbackStageId, setFallbackStageId] = useState$$(null);
+  const [selectedRow, setSelectedRow] = useState$12(null);
+  const [selectedRowId, setSelectedRowId] = useState$12(null);
+  const [showActions, setShowActions] = useState$12(false);
+  const [pendingDelete, setPendingDelete] = useState$12(null);
+  const [deletingId, setDeletingId] = useState$12(null);
+  const [fallbackStageId, setFallbackStageId] = useState$12(null);
   const getRowId = (row) => row?.id || row?.event || row?.enrollment || row?.trackedEntity || null;
-  const { resolvedProgramId, resolvedStageId } = useMemo$x(() => {
+  const { resolvedProgramId, resolvedStageId } = useMemo$y(() => {
     const match = menuItems?.find((m) => m?.id === (stageIdProp || id)) || null;
     const stage = stageIdProp || match?.dependentStage || match?.id || id;
     const program = programIdProp || match?.dependentProgram || (match?.isProgram ? match?.id : null) || id;
@@ -65618,7 +65690,7 @@ function StageSectionsEvents({
       resolvedStageId: stage
     };
   }, [id, menuItems, programIdProp, stageIdProp]);
-  const effectiveProgramId = useMemo$x(
+  const effectiveProgramId = useMemo$y(
     () => resolvedProgramId || programIdProp || id || null,
     [id, programIdProp, resolvedProgramId]
   );
@@ -65627,16 +65699,16 @@ function StageSectionsEvents({
     currentNavigationId: id,
     scanProgramId: effectiveProgramId
   });
-  const effectiveStageId = useMemo$x(() => {
+  const effectiveStageId = useMemo$y(() => {
     const rawStage = stageIdProp || resolvedStageId;
     if (rawStage && rawStage !== effectiveProgramId) return rawStage;
     if (fallbackStageId) return fallbackStageId;
     return rawStage || null;
   }, [stageIdProp, resolvedStageId, fallbackStageId, effectiveProgramId]);
-  useEffect$X(() => {
+  useEffect$_(() => {
     setFallbackStageId(null);
   }, [effectiveProgramId, stageIdProp, resolvedStageId]);
-  useEffect$X(() => {
+  useEffect$_(() => {
     const needsLookup = !effectiveStageId || effectiveProgramId && effectiveStageId === effectiveProgramId;
     if (!effectiveProgramId || !needsLookup) return;
     (async () => {
@@ -65647,7 +65719,7 @@ function StageSectionsEvents({
         const firstStageId = meta?.data?.programStages?.[0]?.id || null;
         if (firstStageId) setFallbackStageId(firstStageId);
       } catch (error) {
-        console.error(
+        console.log(
           "[MEMIS] Failed to resolve program stage from metadata:",
           error
         );
@@ -65700,12 +65772,12 @@ function StageSectionsEvents({
       setAllColumnsOrdered(sortedData || []);
       setVisibleColumnKeys(new Set(sortedData?.map((c) => c?.key)));
     } catch (error) {
-      console.error("[MEMIS] Failed to fetch Program DE:", error);
+      console.log("[MEMIS] Failed to fetch Program DE:", error);
     } finally {
       setLoadingColumns(false);
     }
   };
-  const [pagination, setPagination] = useState$$({
+  const [pagination, setPagination] = useState$12({
     page: 1,
     pageCount: 1,
     pageSize: 50,
@@ -65934,7 +66006,7 @@ function StageSectionsEvents({
       const sorted = sortRowsByApproval(filteredRows, keyFromConfig);
       setRows(sorted);
     } catch (error) {
-      console.error("[MEMIS] getEvents failed:", error);
+      console.log("[MEMIS] getEvents failed:", error);
     } finally {
       setLoading(false);
     }
@@ -65967,7 +66039,7 @@ function StageSectionsEvents({
     );
     setPriorities(res);
   };
-  useEffect$X(() => {
+  useEffect$_(() => {
     if (effectiveProgramId && effectiveStageId) {
       getProgramDE(effectiveProgramId, effectiveStageId);
       getPriorityColors(effectiveProgramId);
@@ -65986,7 +66058,7 @@ function StageSectionsEvents({
     const v = value || null;
     setFilterOptions((prev) => ({ ...prev, approval: v }));
   };
-  useEffect$X(() => {
+  useEffect$_(() => {
     if (!effectiveProgramId || !effectiveStageId || !user?.organisationUnits || allColumnsOrdered.length === 0)
       return;
     if ((searchText ?? "").trim().length < 2) {
@@ -66093,8 +66165,8 @@ function StageSectionsEvents({
   ] });
 }
 
-const React$L = await importShared('react');
-const {useState: useState$_,useMemo: useMemo$w,useEffect: useEffect$W} = React$L;
+const React$N = await importShared('react');
+const {useState: useState$11,useMemo: useMemo$x,useEffect: useEffect$Z} = React$N;
 
 const {createPortal: createPortal$3} = await importShared('react-dom');
 function EquipmentPicker({
@@ -66107,13 +66179,13 @@ function EquipmentPicker({
   loading = false,
   error = null
 }) {
-  const [searchTerm, setSearchTerm] = useState$_("");
-  const [selectedItem, setSelectedItem] = useState$_(null);
-  const [wardsList, setWardsList] = useState$_([]);
-  const [selectedWard, setSelectedWard] = useState$_(null);
-  const [isLoading, setLoading] = useState$_(loading);
-  const [avEquipment, setAvailableEquipment] = useState$_(availableEquipment);
-  const filteredEquipment = useMemo$w(() => {
+  const [searchTerm, setSearchTerm] = useState$11("");
+  const [selectedItem, setSelectedItem] = useState$11(null);
+  const [wardsList, setWardsList] = useState$11([]);
+  const [selectedWard, setSelectedWard] = useState$11(null);
+  const [isLoading, setLoading] = useState$11(loading);
+  const [avEquipment, setAvailableEquipment] = useState$11(availableEquipment);
+  const filteredEquipment = useMemo$x(() => {
     if (!searchTerm.trim()) return avEquipment;
     const term = searchTerm.toLowerCase();
     return avEquipment.filter(
@@ -66163,7 +66235,7 @@ function EquipmentPicker({
       const secondaryAttrId = stageCfg.displayFields?.find((f) => f.secondary)?.attributeId || config?.displayFields?.find((f) => f.secondary)?.attributeId;
       const statusAttrId = stageCfg.equipmentFilter?.attributes?.statusAttribute || config?.equipmentFilter?.attributes?.statusAttribute;
       if (!allocationStageId || !wardFieldId || !equipmentProgramId) {
-        console.error(
+        console.log(
           "[EquipmentPicker] Missing config — allocationStageId, wardFieldId or equipmentProgramId not found in datastore"
         );
         setAvailableEquipment([]);
@@ -66191,7 +66263,7 @@ function EquipmentPicker({
         return rawValue;
       };
       const evRes = await dataStore.get(
-        `tracker/events?programStage=${allocationStageId}&filter=${wardFieldId}:eq:${ward.id}&fields=trackedEntity,occurredAt,createdAt,updatedAt,&order=occurredAt:desc`
+        `tracker/events?program=${equipmentProgramId}&programStage=${allocationStageId}&filter=${wardFieldId}:eq:${ward.id}&fields=trackedEntity,occurredAt,createdAt,updatedAt,&order=occurredAt:desc`
       );
       const teiList = [
         ...new Set(
@@ -66237,19 +66309,19 @@ function EquipmentPicker({
       setAvailableEquipment(formattedEquipment);
       setSelectedWard(ward);
     } catch (error2) {
-      console.error("[EquipmentPicker] Error fetching ward equipment:", error2);
+      console.log("[EquipmentPicker] Error fetching ward equipment:", error2);
     } finally {
       setLoading(false);
     }
   };
-  useEffect$W(() => {
+  useEffect$Z(() => {
     getWards();
   }, []);
-  useEffect$W(() => {
+  useEffect$Z(() => {
     setLoading(loading);
     console.log({ availableEquipment });
   }, [loading]);
-  useEffect$W(() => {
+  useEffect$Z(() => {
     setAvailableEquipment(availableEquipment);
     console.log({ availableEquipment });
   }, [availableEquipment]);
@@ -66781,7 +66853,7 @@ function EquipmentPicker({
   );
 }
 
-const {useEffect: useEffect$V,useState: useState$Z} = await importShared('react');
+const {useEffect: useEffect$Y,useState: useState$10} = await importShared('react');
 
 const A$7 = (x) => Array.isArray(x) ? x : [];
 const RequiredLabel = ({ label, required }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(IonLabel, { position: "stacked", className: "ion-text-wrap", children: [
@@ -66794,8 +66866,8 @@ function RenderField({ field, required, missing, formData, handleChange, getVal,
   const type = field?.valueType;
   const value = formData?.[field?.id] || getVal(field?.id) || "";
   const label = field?.formName || field?.name || field?.id;
-  const [options, setOptions] = useState$Z([]);
-  useEffect$V(() => {
+  const [options, setOptions] = useState$10([]);
+  useEffect$Y(() => {
     if (!field?.optionSet) return;
     setOptions(field?.optionSet?.options || []);
   }, []);
@@ -66885,7 +66957,7 @@ function RenderField({ field, required, missing, formData, handleChange, getVal,
   }
 }
 
-const {useCallback: useCallback$h,useEffect: useEffect$U,useRef: useRef$e,useState: useState$Y} = await importShared('react');
+const {useCallback: useCallback$h,useEffect: useEffect$X,useRef: useRef$d,useState: useState$$} = await importShared('react');
 const JOB_CARD_SOURCE_DE_ID = "GeM9XLFWC7d";
 const MAINTENANCE_TYPE_DE_ID = "EbJI5Loxjbl";
 const REQUESTER_DE_ID$1 = "M074NJAYjb6";
@@ -66903,20 +66975,20 @@ function MaintenanceEvents({
   program,
   user
 }) {
-  const [loading, setLoading] = useState$Y(false);
-  const [loadingMessage, setLoadingMessage] = useState$Y(
+  const [loading, setLoading] = useState$$(false);
+  const [loadingMessage, setLoadingMessage] = useState$$(
     "Fetching maintenance activities"
   );
-  const [events, setEvents] = useState$Y([]);
-  const [page, setPage] = useState$Y(1);
-  const [rows, setRows] = useState$Y([]);
-  const [formData, setFormData] = useState$Y();
-  const [tei, setTei] = useState$Y([]);
-  const [selected, setSelected] = useState$Y();
-  const [section, setSection] = useState$Y();
-  const [programMeta, setProgramMeta] = useState$Y({ id: program, name: "" });
-  const [standaloneRequest, setStandaloneRequest] = useState$Y(null);
-  const standaloneCreateRef = useRef$e(null);
+  const [events, setEvents] = useState$$([]);
+  const [page, setPage] = useState$$(1);
+  const [rows, setRows] = useState$$([]);
+  const [formData, setFormData] = useState$$();
+  const [tei, setTei] = useState$$([]);
+  const [selected, setSelected] = useState$$();
+  const [section, setSection] = useState$$();
+  const [programMeta, setProgramMeta] = useState$$({ id: program, name: "" });
+  const [standaloneRequest, setStandaloneRequest] = useState$$(null);
+  const standaloneCreateRef = useRef$d(null);
   const {
     contextConfig,
     selectedEquipment,
@@ -66962,13 +67034,17 @@ function MaintenanceEvents({
       programStage: stage,
       totalPages: true,
       orgUnitMode: "DESCENDANTS",
+      status: "ACTIVE",
       fields: "event,enrollment,occurredAt,orgUnit,trackedEntity[id,attributes[*]],program,programStage,dataValues[dataElement,value]",
       orgUnit: sortedOrgUnits[0]?.id
     });
     await dataStore.get(`tracker/events?${params}`).then(async (res) => {
       const teiIds = res.data.events.map((ev) => ev.trackedEntity);
       const filteredEv = res.data.events.filter(
-        (e) => e.dataValues.some((dv) => dv.dataElement === "YjhRG2PMTMG") && !e.dataValues.some((dv) => dv.dataElement === JOB_CARD_NUMBER_DE_ID)
+        (e) => (
+          // e.dataValues.some((dv) => dv.dataElement === "YjhRG2PMTMG") && //only needed when agreed to confirm before job card
+          !e.dataValues.some((dv) => dv.dataElement === JOB_CARD_NUMBER_DE_ID)
+        )
       );
       setEvents(filteredEv);
       const uniq = [...new Set(teiIds)].join(",");
@@ -67128,7 +67204,7 @@ function MaintenanceEvents({
         throw new Error("Failed to create maintenance activity");
       }
       const eventRes = await dataStore.get(
-        `tracker/events/${createdEventId}?fields=event,enrollment,occurredAt,orgUnit,trackedEntity,program,programStage,status,dataValues[dataElement,value]`
+        `tracker/events/${createdEventId}?program=${program}&fields=event,enrollment,occurredAt,orgUnit,trackedEntity,program,programStage,status,dataValues[dataElement,value]`
       );
       const createdEvent = eventRes?.data || eventRes;
       if (!createdEvent?.event) {
@@ -67142,7 +67218,7 @@ function MaintenanceEvents({
       setSelected(createdEvent);
       showToast("Standalone maintenance activity created.", "success");
     } catch (error) {
-      console.error(error);
+      console.log(error);
       showToast(
         error?.message || "Failed to generate job card without maintenance activity.",
         "danger"
@@ -67166,7 +67242,7 @@ function MaintenanceEvents({
     setLoading(true);
     setLoadingMessage("Saving job card");
     try {
-      if (!selected) return console.error("Event data missing");
+      if (!selected) return console.log("Event data missing");
       const baseValues = new Map(
         (selected?.dataValues || []).map((item) => [
           item.dataElement,
@@ -67184,25 +67260,76 @@ function MaintenanceEvents({
           value
         })
       );
+      const teiId = typeof selected?.trackedEntity === "object" ? selected?.trackedEntity?.id || selected?.trackedEntity?.trackedEntity : selected?.trackedEntity;
+      const orgUnitId = typeof selected?.orgUnit === "object" ? selected?.orgUnit?.id : selected?.orgUnit;
       const payload = {
         event: selected?.event,
         enrollment: selected?.enrollment || null,
         programStage: selected?.programStage,
         program: selected?.program,
-        orgUnit: selected?.orgUnit,
+        orgUnit: orgUnitId,
         eventDate: selected?.occurredAt,
         occurredAt: selected?.occurredAt,
-        trackedEntity: selected?.trackedEntity,
+        trackedEntity: teiId,
         status: "ACTIVE",
         dataValues: values
       };
-      await dataStore.post("tracker?async=false&importStrategy=UPDATE", {
+      const res = await dataStore.post("tracker?async=false&importStrategy=UPDATE", {
         events: [payload]
-      }).then(async (res) => {
-        if (res?.status === 200) {
-          showToast("Saved", "success");
-        }
       });
+      if (res?.status === 200 || res?.status === "OK" || res?.data?.status === "OK" || res?.status >= 200 && res?.status < 300) {
+        const JOB_CARD_FUNCTION = "GzItPqhKIUO";
+        const functionVal = String(
+          baseValues.get(JOB_CARD_FUNCTION) ?? ""
+        ).trim().toLowerCase();
+        const isFunctional = functionVal === "true" || functionVal === "yes" || functionVal === "1" || baseValues.get(JOB_CARD_FUNCTION) === true;
+        if (isFunctional) {
+          const teiRes = await dataStore.get(
+            `tracker/trackedEntities/${teiId}?program=${selected?.program}&fields=trackedEntityType,orgUnit,attributes[*]`
+          );
+          const {
+            trackedEntityType,
+            orgUnit,
+            attributes: existingAttributes = []
+          } = teiRes?.data || {};
+          const updatedAttributes = [...existingAttributes];
+          const attrIndex = updatedAttributes.findIndex(
+            (a) => a.attribute === "KFZ35H4ZHrk"
+          );
+          if (attrIndex !== -1) {
+            updatedAttributes[attrIndex] = {
+              ...updatedAttributes[attrIndex],
+              value: "FULLY_FUNCTIONAL"
+            };
+          } else {
+            updatedAttributes.push({
+              attribute: "KFZ35H4ZHrk",
+              value: "FULLY_FUNCTIONAL"
+            });
+          }
+          const tePayload = {
+            trackedEntities: [
+              {
+                trackedEntity: teiId,
+                trackedEntityType,
+                orgUnit,
+                attributes: updatedAttributes
+              }
+            ]
+          };
+          const teUpdateRes = await dataStore.post(
+            "tracker?async=false&importStrategy=UPDATE",
+            tePayload
+          );
+          if (teUpdateRes?.status === 200 || teUpdateRes?.status === "OK" || teUpdateRes?.data?.status === "OK" || teUpdateRes?.status >= 200 && teUpdateRes?.status < 300) {
+          } else {
+            showToast("Failed to update equipment status", "danger");
+          }
+        }
+        showToast("Saved", "success");
+      } else {
+        showToast("Failed to save job card", "danger");
+      }
       setLoading(false);
       onClose();
     } catch (err) {
@@ -67227,12 +67354,12 @@ function MaintenanceEvents({
     setStandaloneRequest(null);
     handlePickerCancel();
   };
-  useEffect$U(() => {
+  useEffect$X(() => {
     getMetadata();
     getEvents();
     getProgramMeta();
   }, [getEvents, getMetadata, getProgramMeta, page]);
-  useEffect$U(() => {
+  useEffect$X(() => {
     if (!selectedEquipment || !standaloneRequest) return;
     createStandaloneEvent(selectedEquipment);
   }, [createStandaloneEvent, selectedEquipment, standaloneRequest]);
@@ -67258,6 +67385,7 @@ function MaintenanceEvents({
         height: "70%",
         width: "70%",
         showFooter: false,
+        title: "Generate Job Card",
         onSave: () => {
           if (selected && formData) {
             handleSubmit();
@@ -67276,7 +67404,9 @@ function MaintenanceEvents({
               justifyContent: "center",
               alignItems: "center",
               height: "100%",
-              textAlign: "center"
+              textAlign: "center",
+              position: "relative",
+              minHeight: 300
             },
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(IonSpinner, { name: "lines-sharp", color: "success" }),
@@ -67344,11 +67474,16 @@ function MaintenanceEvents({
               maxHeight: "85vh",
               height: "100%",
               display: "flex",
-              flexDirection: "column"
+              flexDirection: "column",
+              position: "relative",
+              minHeight: 300
             },
             onClick: (e) => e.stopPropagation(),
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { marginBottom: 16 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { style: { margin: 0 }, children: "Select Maintenance activity" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: {
+                marginBottom: 16,
+                marginLeft: 16
+              }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { style: { margin: 0 }, children: "Select Maintenance activity" }) }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "div",
                 {
@@ -67381,7 +67516,7 @@ function MaintenanceEvents({
                   },
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { fill: "clear", color: "medium", onClick: onClose, children: "Cancel" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { fill: "outline", onClick: handleStandaloneJobCard, children: "Generate without maintenance activity" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { fill: "outline", onClick: handleStandaloneJobCard, children: "Generate with no maintenance activity" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
                       IonButton,
                       {
@@ -70821,6 +70956,2313 @@ function toLowerLabel(label) {
   return raw ? raw.toLowerCase() : DEFAULT_ENTITY_LABEL.toLowerCase();
 }
 
+// src/hooks/useOptionSets.js
+const {useState: useState$_,useEffect: useEffect$W} = await importShared('react');
+
+/**
+ * Hook to get all optionSets from cache
+ * @returns {object} { optionSets, loading, error }
+ */
+const useAllOptionSets = () => {
+  const [optionSets, setOptionSets] = useState$_([]);
+  const [loading, setLoading] = useState$_(true);
+  const [error, setError] = useState$_(null);
+
+  useEffect$W(() => {
+    const fetchAllOptionSets = async () => {
+      setLoading(true);
+      try {
+        const cached = await getAllOptionSetsFromCache();
+        setOptionSets(cached);
+        setError(null);
+      } catch (err) {
+        setError(err);
+        setOptionSets([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAllOptionSets();
+  }, []);
+
+  return { optionSets, loading, error };
+};
+
+/**
+ * Resolve optionSet value (code) to display name
+ * @param {object} optionSet - The optionSet object with options array
+ * @param {string} value - The code/id to resolve
+ * @returns {string} The display name or original value if not found
+ */
+const resolveOptionValue = (optionSet, value) => {
+  if (!optionSet?.options || !value) return value;
+
+  const option = optionSet.options.find(
+    opt => opt.code === value || opt.id === value || opt.name === value
+  );
+
+  return option?.name || value;
+};
+
+const React$M = await importShared('react');
+const {useEffect: useEffect$V,useState: useState$Z} = React$M;
+const todayYMD$1 = () => {
+  const date = /* @__PURE__ */ new Date();
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+};
+const formatDate$1 = (date) => {
+  if (!date) return "Not specified";
+  try {
+    return new Date(date).toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric"
+    });
+  } catch {
+    return date;
+  }
+};
+function MarkMaintenanceDoneModal({
+  isOpen,
+  equipment,
+  event,
+  onClose,
+  onConfirm,
+  data,
+  enrollmentDate
+}) {
+  const [completionDate, setCompletionDate] = useState$Z(todayYMD$1());
+  const [remarks, setRemarks] = useState$Z("");
+  const [saving, setSaving] = useState$Z(false);
+  const [completionStatus, setCompletionStatus] = useState$Z("YES");
+  const [consolidatedName, setConsolidatedName] = useState$Z(null);
+  const [orgUnitName, setOrgUnitName] = useState$Z(null);
+  const [users, setUsers] = useState$Z([]);
+  const [selectedUser, setSelectedUser] = useState$Z(null);
+  const [ward, setWard] = useState$Z(null);
+  const allocationStage = "X3yNvXvB14A";
+  const allocationProgram = "X8V6omQYuW0";
+  const wardDataElementId = "PpO3Iz7xRFR";
+  useEffect$V(() => {
+    if (isOpen) {
+      setCompletionDate(todayYMD$1());
+      setRemarks("");
+      setSaving(false);
+    }
+  }, [isOpen]);
+  const handleConfirm = async () => {
+    if (!equipment || !event) {
+      showToast(
+        "Unable to identify the maintenance schedule.",
+        "warning"
+      );
+      return;
+    }
+    if (!completionDate) {
+      showToast(
+        "Please select the maintenance completion date.",
+        "warning"
+      );
+      return;
+    }
+    if (!selectedUser) {
+      showToast(
+        "Please select the responsible engineer.",
+        "warning"
+      );
+      return;
+    }
+    try {
+      setSaving(true);
+      await onConfirm({
+        equipment,
+        enrollment: data?.enrollment,
+        ...event,
+        completionDate,
+        completionStatus,
+        responsibleEngineer: selectedUser,
+        ward: ward?.name
+      });
+    } catch (error) {
+      showToast(
+        "Failed to mark preventive maintenance as completed.",
+        "danger"
+      );
+    } finally {
+      setSaving(false);
+    }
+  };
+  const handleClose = () => {
+    if (saving) return;
+    setCompletionDate(todayYMD$1());
+    setRemarks("");
+    onClose();
+  };
+  const getUsers = async () => {
+    if (!isOpen) return;
+    try {
+      const resp = await dataStore.get(
+        `users?fields=*&ou=${data?.event?.orgUnit}&includeChildren=true&paging=false`
+      );
+      const organisedUsers = resp?.data?.users && resp?.data?.users?.map((uss) => ({
+        ...uss,
+        name: `${uss?.name}(${uss?.username})`,
+        id: uss?.id
+      }));
+      setUsers(organisedUsers || []);
+    } catch (error) {
+      console.log({ error });
+    }
+  };
+  data?.name || "Unknown equipment";
+  equipment?.orgUnit?.name || equipment?.location?.name || event?.orgUnitName || event?.orgUnit || "Not specified";
+  const scheduledDate = event?.date || event?.scheduledDate || event?.dueDate;
+  const maintenanceType = event?.maintenanceType || event?.type || "Preventive Maintenance";
+  const getEquipmentName = async () => {
+    const dStore = await LocalForageServiceInstance.getItem("optionSets", "metadata");
+    const equip = dStore?.find((ds) => ds?.id === "VuKFOqg584G");
+    const actualNAme = equip?.options?.find((opt) => opt?.code === data?.name);
+    setConsolidatedName(actualNAme?.name);
+  };
+  const getOrgUnitName = async (org) => {
+    const dStore = await LocalForageServiceInstance.getItem("organisationUnits", "organisationUnits");
+    if (org) {
+      const orgUnit2 = dStore?.find((ds) => ds?.id === org);
+      return orgUnit2;
+    }
+    const orgUnit = dStore?.find((ds) => ds?.id === event?.orgUnit);
+    setOrgUnitName(orgUnit?.name);
+  };
+  const getWardAllocated = async () => {
+    if (!isOpen || !event?.trackedEntity) return;
+    try {
+      const resp = await dataStore.get(
+        `tracker/events?trackedEntity=${event.trackedEntity}&program=${allocationProgram}&programStage=${allocationStage}&order=occurredAt:desc&fields=*&paging=false`
+      );
+      const events = resp?.data?.events || [];
+      if (events.length === 0) {
+        setWard(null);
+        return;
+      }
+      const latestEvent = events[0];
+      const wardDataValue = latestEvent?.dataValues?.find(
+        (dv) => dv.dataElement === wardDataElementId
+      );
+      const wardData = await getOrgUnitName(wardDataValue?.value);
+      setWard(wardData || null);
+    } catch (error) {
+      console.log({ error });
+    }
+  };
+  useEffect$V(() => {
+    getWardAllocated();
+    getEquipmentName();
+    getOrgUnitName();
+    getUsers();
+  }, [isOpen]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    CustomModal,
+    {
+      isOpen,
+      onClose: handleClose,
+      onSave: handleConfirm,
+      title: "Preventive Maintenance",
+      positiveButtonText: saving ? "Saving..." : "Save",
+      cancelButton: "Cancel",
+      disabledPositiveButtonController: saving || !completionDate,
+      height: "70%",
+      width: "50%",
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        IonContent,
+        {
+          className: "ion-padding",
+          style: { position: "relative", minHeight: 300 },
+          children: [
+            saving && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                style: {
+                  position: "absolute",
+                  inset: 0,
+                  zIndex: 100,
+                  background: "rgba(255, 255, 255, 0.85)",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 12
+                },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(IonSpinner, { name: "crescent" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { style: { margin: 0 }, children: "Recording maintenance activation..." }) })
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                style: {
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: 10,
+                  padding: 14,
+                  marginBottom: 20,
+                  borderRadius: 8,
+                  background: "var(--ion-color-warning-tint)"
+                },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    IonIcon,
+                    {
+                      icon: warningOutline,
+                      color: "warning",
+                      style: {
+                        fontSize: 22,
+                        marginTop: 2
+                      }
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(IonText, { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Has this maintenance activity started?" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "p",
+                      {
+                        style: {
+                          margin: "5px 0 0",
+                          fontSize: 13,
+                          lineHeight: 1.5
+                        },
+                        children: "Only mark this schedule as activated if the required preventive maintenance activity has started."
+                      }
+                    )
+                  ] })
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                style: {
+                  border: "1px solid var(--ion-color-light-shade)",
+                  borderRadius: 10,
+                  padding: 16,
+                  marginBottom: 20
+                },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "p",
+                    {
+                      style: {
+                        margin: "0 0 12px",
+                        fontSize: 12,
+                        fontWeight: 600,
+                        textTransform: "uppercase",
+                        letterSpacing: 0.5
+                      },
+                      children: "Maintenance Details"
+                    }
+                  ) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "div",
+                    {
+                      style: {
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 12,
+                        marginBottom: 14
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          IonIcon,
+                          {
+                            icon: constructOutline,
+                            color: "primary",
+                            style: { fontSize: 21 }
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 12 }, children: "Equipment" }) }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "div",
+                            {
+                              style: {
+                                fontSize: 15,
+                                fontWeight: 600
+                              },
+                              children: consolidatedName
+                            }
+                          ) })
+                        ] })
+                      ]
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "div",
+                    {
+                      style: {
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 12,
+                        marginBottom: 14
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          IonIcon,
+                          {
+                            icon: constructOutline,
+                            color: "primary",
+                            style: { fontSize: 21 }
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 12 }, children: "Maintenance Type" }) }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "div",
+                            {
+                              style: {
+                                fontSize: 15,
+                                fontWeight: 500
+                              },
+                              children: maintenanceType
+                            }
+                          ) })
+                        ] })
+                      ]
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "div",
+                    {
+                      style: {
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 12,
+                        marginBottom: 14
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          IonIcon,
+                          {
+                            icon: calendarOutline,
+                            color: "primary",
+                            style: { fontSize: 21 }
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 12 }, children: "Scheduled Date" }) }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "div",
+                            {
+                              style: {
+                                fontSize: 15,
+                                fontWeight: 500
+                              },
+                              children: formatDate$1(scheduledDate)
+                            }
+                          ) })
+                        ] })
+                      ]
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "div",
+                    {
+                      style: {
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 12,
+                        marginBottom: 14
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          IonIcon,
+                          {
+                            icon: locationOutline,
+                            color: "primary",
+                            style: { fontSize: 21 }
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 12 }, children: "Location" }) }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                            "div",
+                            {
+                              style: {
+                                fontSize: 15,
+                                fontWeight: 500
+                              },
+                              children: [
+                                orgUnitName,
+                                " - ",
+                                ward && ward?.name
+                              ]
+                            }
+                          ) })
+                        ] })
+                      ]
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        className: "",
+                        style: {
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 12
+                        },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            IonIcon,
+                            {
+                              icon: personOutline,
+                              color: "primary",
+                              style: { fontSize: 21 }
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 12 }, children: "Responsible Engineer" }) })
+                        ]
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      SearchableSelect,
+                      {
+                        title: "User",
+                        placeholder: "Select user",
+                        itemTextField: "name",
+                        itemValueField: "username",
+                        data: users,
+                        value: selectedUser,
+                        onChange: (e) => setSelectedUser(Array.isArray(e) && e.length > 0 ? e[0]?.username : null)
+                      }
+                    )
+                  ] })
+                ]
+              }
+            )
+          ]
+        }
+      )
+    }
+  );
+}
+
+const React$L = await importShared('react');
+const {useContext: useContext$x,useEffect: useEffect$U,useMemo: useMemo$w,useState: useState$Y} = React$L;
+function PreventiveMaintenanceView({
+  id,
+  programId: programIdProp,
+  stageId: stageIdProp
+}) {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { user } = useContext$x(
+    MEMISContext.UserRolesContext
+  );
+  const { menuItems } = useContext$x(
+    MEMISContext.MenuContext
+  );
+  const [activeTab, setActiveTab] = useState$Y("maintenance");
+  const [showMarkDoneModal, setShowMarkDoneModal] = useState$Y(false);
+  const [selectedMaintenance, setSelectedMaintenance] = useState$Y(null);
+  const { optionSets } = useAllOptionSets();
+  const equipmentOptionSet = useMemo$w(
+    () => optionSets?.find((os) => os.id === "VuKFOqg584G"),
+    [optionSets]
+  );
+  const [refreshKey, setRefreshKey] = useState$Y(0);
+  const queryParams = useMemo$w(
+    () => new URLSearchParams(location.search),
+    [location.search]
+  );
+  const menu = useMemo$w(
+    () => menuItems?.find(
+      (item) => item?.id === id
+    ),
+    [id, menuItems]
+  );
+  const programId = useMemo$w(
+    () => programIdProp || menu?.dependentProgram || id,
+    [id, menu, programIdProp]
+  );
+  const programStageId = useMemo$w(
+    () => stageIdProp || menu?.dependentStage || menu?.id || null,
+    [menu, stageIdProp]
+  );
+  const orgUnit = queryParams.get("selectedWard") || user?.organisationUnits?.[0]?.id;
+  const frequency = queryParams.get(
+    "routineMaintenanceSchedule"
+  ) || "MONTHLY";
+  const equipmentAttributeId = "RiiMQRa0S8v";
+  const serialNumberAttributeId = "W5SNKqBFLgb";
+  const equipmentId = queryParams.get("equipmentId");
+  const onMarkAsDoneMaintenance = async (data) => {
+    const ppmDone = "bsGmW8bE9PZ";
+    const ppmDateScheduled = "vXT4KkXeRus";
+    const payload = {
+      events: [
+        {
+          event: data?.event,
+          enrollment: data?.enrollment,
+          programStage: data?.programStage,
+          orgUnit: data?.orgUnit,
+          status: "ACTIVE",
+          scheduledAt: data?.date,
+          occurredAt: data?.completionDate,
+          dataValues: [
+            {
+              dataElement: ppmDateScheduled,
+              value: data?.date
+            },
+            {
+              dataElement: "EbJI5Loxjbl",
+              value: "Preventive_maintenance"
+            },
+            {
+              dataElement: "rq944zY0g89",
+              value: data?.responsibleEngineer
+            },
+            {
+              dataElement: "bGiXZlgMgQU",
+              //ward
+              value: data?.ward
+            },
+            {
+              dataElement: ppmDone,
+              value: data?.completionStatus === "YES" ? true : false
+            }
+          ]
+        }
+      ]
+    };
+    try {
+      const result = await dataStore.post(
+        "tracker?async=false&importStrategy=UPDATE",
+        payload
+      );
+      if (result?.status === 200) {
+        await dataStore.post("tracker?async=false&importStrategy=UPDATE", {
+          trackedEntities: [
+            {
+              trackedEntity: data?.equipment,
+              trackedEntityType: "Pfts5eJeX1M",
+              orgUnit: data?.orgUnit,
+              attributes: [
+                {
+                  //TEA for Equipment status
+                  attribute: "KFZ35H4ZHrk",
+                  value: "UNDER_REPAIR"
+                }
+              ]
+            }
+          ]
+        });
+      }
+      setShowMarkDoneModal(false);
+      setSelectedMaintenance(null);
+      setRefreshKey(
+        (previous) => previous + 1
+      );
+    } catch (error) {
+      console.log(
+        "Failed to mark maintenance as done:",
+        error
+      );
+      throw error;
+    }
+  };
+  const onView = (data, a, b) => {
+    navigate(`/memis/program/${a?.program}/${a?.trackedEntity}/${a?.programStage}/${a?.event}`);
+  };
+  const requestKey = [
+    programId,
+    programStageId,
+    orgUnit,
+    frequency,
+    location.search,
+    refreshKey
+  ].join("|");
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ion-padding", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        style: {
+          marginBottom: 20
+        },
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "h2",
+            {
+              style: {
+                margin: 0,
+                fontSize: 22,
+                fontWeight: 700
+              },
+              children: "Preventive Maintenance"
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "p",
+            {
+              style: {
+                marginTop: 6,
+                marginBottom: 0
+              },
+              children: "View active maintenance activities and scheduled preventive maintenance by equipment."
+            }
+          ) })
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      MaintenanceTabs,
+      {
+        activeTab,
+        onChange: setActiveTab,
+        programId,
+        programStageId,
+        orgUnit,
+        frequency,
+        equipmentId,
+        equipmentAttributeId,
+        serialNumberAttributeId,
+        onView: (data, d, c) => {
+          setSelectedMaintenance(data, c, d);
+          onView(data, c);
+        },
+        requestKey,
+        equipmentOptionSet,
+        onMarkAsDone: (data) => {
+          setSelectedMaintenance(data);
+          setShowMarkDoneModal(true);
+        }
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      MarkMaintenanceDoneModal,
+      {
+        isOpen: showMarkDoneModal,
+        equipment: selectedMaintenance?.equipment,
+        event: selectedMaintenance?.event,
+        onClose: () => {
+          setShowMarkDoneModal(false);
+          setSelectedMaintenance(null);
+        },
+        onConfirm: onMarkAsDoneMaintenance,
+        data: selectedMaintenance
+      }
+    )
+  ] });
+}
+function MaintenanceTabs({
+  activeTab,
+  onChange,
+  programId,
+  programStageId,
+  orgUnit,
+  frequency,
+  equipmentId,
+  equipmentAttributeId,
+  serialNumberAttributeId,
+  requestKey,
+  onMarkAsDone,
+  onView,
+  equipmentOptionSet
+}) {
+  const [scheduleCount, setScheduleCount] = useState$Y(0);
+  const [activeCount, setActiveCount] = useState$Y(0);
+  const [isIncharge, setIsIncharge] = useState$Y(false);
+  const [ward, setWard] = useState$Y(null);
+  const getIncharge = async () => {
+    try {
+      const dStore = await LocalForageServiceInstance.getItem("userRes", "user");
+      const incharge = dStore?.userRoles?.find((ds) => ds?.id === "Ec6TZ5N1QeF");
+      if (incharge) {
+        const w = dStore?.organisationUnits?.length > 1 ? dStore?.organisationUnits[1] : dStore?.organisationUnits[0];
+        setWard(w);
+        setIsIncharge(true);
+      }
+      return incharge;
+    } catch (error) {
+    }
+  };
+  useEffect$U(() => {
+    getIncharge();
+  }, [activeTab]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        style: {
+          display: "flex",
+          gap: 4,
+          padding: 4,
+          marginBottom: 20,
+          borderRadius: 10,
+          background: "var(--ion-color-light)"
+        },
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            TabButton,
+            {
+              active: activeTab === "maintenance",
+              onClick: () => onChange("maintenance"),
+              label: "Active / Previous Maintenances",
+              count: activeCount
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            TabButton,
+            {
+              active: activeTab === "schedule",
+              onClick: () => onChange("schedule"),
+              label: "Schedule Maintenances",
+              count: scheduleCount
+            }
+          )
+        ]
+      }
+    ),
+    activeTab === "maintenance" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ActiveMaintenances,
+      {
+        programId,
+        programStageId,
+        orgUnit,
+        frequency,
+        equipmentId,
+        equipmentAttributeId,
+        serialNumberAttributeId,
+        equipmentOptionSet,
+        requestKey,
+        onCountChange: setActiveCount,
+        onView,
+        isIncharge,
+        ward,
+        activeTab
+      }
+    ),
+    activeTab === "schedule" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ScheduleMaintenances,
+      {
+        programId,
+        programStageId,
+        orgUnit,
+        frequency,
+        equipmentId,
+        equipmentAttributeId,
+        serialNumberAttributeId,
+        equipmentOptionSet,
+        requestKey,
+        onMarkAsDone,
+        onCountChange: setScheduleCount,
+        isIncharge,
+        ward,
+        isIncharge
+      }
+    )
+  ] });
+}
+function ActiveMaintenances({
+  programId,
+  orgUnit,
+  frequency,
+  equipmentId,
+  equipmentAttributeId,
+  serialNumberAttributeId,
+  equipmentOptionSet,
+  requestKey,
+  onView,
+  onCountChange,
+  programStageId,
+  isIncharge,
+  ward,
+  activeTab
+}) {
+  const [equipment, setEquipment] = useState$Y([]);
+  const [loading, setLoading] = useState$Y(false);
+  const [search, setSearch] = useState$Y("");
+  const [expanded, setExpanded] = useState$Y({});
+  const wardDataElementId = "PpO3Iz7xRFR";
+  useEffect$U(() => {
+    let mounted = true;
+    const loadActiveMaintenances = async () => {
+      if (!programId || !orgUnit || !programStageId) {
+        return;
+      }
+      setLoading(true);
+      try {
+        const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
+        const eventOccurredAfter = `${currentYear}-01-01`;
+        const eventOccurredBefore = `${currentYear}-12-31`;
+        const response = await dataStore.get(
+          `tracker/trackedEntities?orgUnits=${orgUnit}&program=${programId}&programStage=${programStageId}&fields=trackedEntity,attributes,enrollments[enrollment,events[event,dataValues,trackedEntity,programStage,orgUnit,program,updatedAt,createdAt,scheduledAt,status]]&eventStatus=ACTIVE&eventOccurredAfter=${eventOccurredAfter}&eventOccurredBefore=${eventOccurredBefore}`
+        );
+        if (!mounted) return;
+        const trackedEntities = (response?.data?.trackedEntities || []).map((te) => ({
+          ...te,
+          enrollments: te.enrollments?.map((enrollment) => ({
+            ...enrollment,
+            events: enrollment.events?.filter(
+              (event) => event.programStage === programStageId
+            ) || []
+          })) || []
+        }));
+        const allocatedTrackedEntities = (response?.data?.trackedEntities || []).filter(
+          (te) => te?.enrollments?.some(
+            (en) => en?.events?.some(
+              (event) => event?.dataValues?.some(
+                (dv) => dv?.dataElement == wardDataElementId && dv?.value !== null && dv?.value !== void 0
+              )
+            )
+          )
+        );
+        const allocated = allocatedTrackedEntities?.filter(
+          (te) => te?.enrollments?.some(
+            (en) => en?.events?.some(
+              (event) => event?.dataValues?.some(
+                (dv) => dv?.dataElement == wardDataElementId && dv?.value === ward?.id
+              )
+            )
+          )
+        );
+        const listItems = isIncharge ? trackedEntities?.filter((tei) => allocated?.some((t) => t?.trackedEntity === tei?.trackedEntity)) : trackedEntities;
+        const grouped = buildEquipment(
+          listItems,
+          {
+            equipmentId,
+            equipmentAttributeId,
+            serialNumberAttributeId,
+            frequency,
+            equipmentOptionSet
+          },
+          "ACTIVE"
+        );
+        setEquipment(grouped);
+        onCountChange(
+          grouped.reduce(
+            (total, item) => total + item.events.length,
+            0
+          )
+        );
+      } catch (error) {
+        console.log(
+          "Failed to load active maintenance:",
+          error
+        );
+        if (mounted) {
+          setEquipment([]);
+          onCountChange(0);
+        }
+      } finally {
+        if (mounted) {
+          setLoading(false);
+        }
+      }
+    };
+    loadActiveMaintenances();
+    return () => {
+      mounted = false;
+    };
+  }, [requestKey, activeTab]);
+  const toggle = (key) => {
+    setExpanded((prev) => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
+  const filteredEquipment = equipment.filter(
+    (item) => {
+      const query = search.trim().toLowerCase();
+      if (!query) {
+        return true;
+      }
+      const searchableText = [
+        item.equipmentName,
+        item.serialNumber
+      ].filter(Boolean).join(" ").toLowerCase();
+      return searchableText.includes(query);
+    }
+  );
+  if (loading) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      LoadingState,
+      {
+        message: "Loading active maintenances..."
+      }
+    );
+  }
+  if (!equipment.length) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      EmptyState,
+      {
+        icon: constructOutline,
+        title: "No active maintenances",
+        message: "There are currently no active preventive maintenance activities for this selection."
+      }
+    );
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IonSearchbar,
+      {
+        value: search,
+        placeholder: "Search equipment...",
+        debounce: 300,
+        onIonInput: (event) => setSearch(
+          event.detail.value || ""
+        ),
+        onIonClear: () => setSearch("")
+      }
+    ) }),
+    !filteredEquipment.length ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+      EmptyState,
+      {
+        icon: constructOutline,
+        title: "No equipment found",
+        message: `No active maintenance equipment matches "${search}".`
+      }
+    ) : filteredEquipment.map((item) => {
+      const key = item.enrollment || item.trackedEntity;
+      return /* @__PURE__ */ jsxRuntimeExports.jsx(
+        ActiveMaintenanceCard,
+        {
+          equipment: item,
+          expanded: expanded[key],
+          onToggle: () => toggle(key),
+          onView,
+          isIncharge
+        },
+        key
+      );
+    })
+  ] });
+}
+function ActiveMaintenanceCard({
+  equipment,
+  expanded,
+  onToggle,
+  onView,
+  isIncharge
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      style: {
+        border: "1px solid var(--ion-color-light)",
+        borderRadius: 12,
+        marginBottom: 14,
+        overflow: "hidden",
+        background: "var(--ion-background-color)",
+        boxShadow: "0 1px 3px rgba(0,0,0,0.06)"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            onClick: onToggle,
+            style: {
+              padding: 16,
+              cursor: "pointer"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  style: {
+                    display: "flex",
+                    alignItems: "flex-start",
+                    justifyContent: "space-between",
+                    gap: 12
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      EquipmentIdentity,
+                      {
+                        equipment
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      IonButton,
+                      {
+                        fill: "clear",
+                        size: "small",
+                        onClick: (event) => {
+                          event.stopPropagation();
+                          onToggle();
+                        },
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          IonIcon,
+                          {
+                            icon: expanded ? chevronUpOutline : chevronDownOutline
+                          }
+                        )
+                      }
+                    )
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  style: {
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))",
+                    gap: 16,
+                    marginTop: 16,
+                    paddingTop: 14,
+                    borderTop: "1px solid var(--ion-color-light)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      InfoItem,
+                      {
+                        label: "Status",
+                        value: "Active"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      InfoItem,
+                      {
+                        label: "Maintenance History",
+                        value: equipment.events.length
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      InfoItem,
+                      {
+                        label: "Latest Maintenance Activity",
+                        value: formatDate(
+                          equipment.events[0]?.date
+                        )
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      InfoItem,
+                      {
+                        label: "Frequency",
+                        value: formatFrequency(
+                          equipment.frequency
+                        )
+                      }
+                    )
+                  ]
+                }
+              )
+            ]
+          }
+        ),
+        expanded && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            style: {
+              borderTop: "1px solid var(--ion-color-light)",
+              background: "var(--ion-color-light-tint)",
+              padding: 16
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  style: {
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    marginBottom: 8
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "h4",
+                      {
+                        style: {
+                          margin: 0,
+                          fontSize: 15,
+                          fontWeight: 700
+                        },
+                        children: "Active Maintenance"
+                      }
+                    ) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(IonBadge, { color: "primary", children: equipment.events.length })
+                  ]
+                }
+              ),
+              [...equipment.events ?? []].sort((a, b) => b.date - a.date).map((event, index, events) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                ActiveMaintenanceRow,
+                {
+                  event,
+                  isLast: index === events.length - 1,
+                  onView: (d) => onView(equipment, event, d),
+                  isIncharge
+                },
+                event.event
+              ))
+            ]
+          }
+        )
+      ]
+    }
+  );
+}
+function ActiveMaintenanceRow({
+  event,
+  isLast,
+  onView
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 12,
+        padding: "12px 0",
+        borderBottom: isLast ? "none" : "1px solid var(--ion-color-light)"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          DateBox,
+          {
+            date: event.date
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            style: {
+              flex: 1,
+              minWidth: 0
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "strong",
+                {
+                  style: {
+                    display: "block",
+                    fontSize: 14
+                  },
+                  children: formatDate(event.date)
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "span",
+                {
+                  style: {
+                    fontSize: 12
+                  },
+                  children: "Maintenance"
+                }
+              ) })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(IonBadge, { color: "primary", children: event?.status }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          IonButton,
+          {
+            size: "small",
+            fill: "solid",
+            color: "light",
+            onClick: (data) => onView(event),
+            children: "View"
+          }
+        )
+      ]
+    }
+  );
+}
+function ScheduleMaintenances({
+  programId,
+  orgUnit,
+  frequency,
+  equipmentId,
+  equipmentAttributeId,
+  serialNumberAttributeId,
+  equipmentOptionSet,
+  requestKey,
+  onMarkAsDone,
+  onCountChange,
+  isIncharge,
+  ward
+}) {
+  const [equipment, setEquipment] = useState$Y([]);
+  const [loading, setLoading] = useState$Y(false);
+  const [search, setSearch] = useState$Y("");
+  const [expanded, setExpanded] = useState$Y({});
+  const wardDataElementId = "PpO3Iz7xRFR";
+  useEffect$U(() => {
+    let mounted = true;
+    const loadSchedules = async () => {
+      if (!programId || !orgUnit) {
+        return;
+      }
+      setLoading(true);
+      try {
+        const currentDate = /* @__PURE__ */ new Date();
+        const currentYear = currentDate.getFullYear();
+        const currentMonth = currentDate.getMonth();
+        const eventOccurredAfter = `${currentYear}-01-01`;
+        const eventOccurredBefore = `${currentYear}-12-31`;
+        const response = await dataStore.get(
+          `tracker/trackedEntities?orgUnit=${orgUnit}&program=${programId}&fields=trackedEntity,program,attributes,enrollments[enrollment,events[event,dataValues,programStage,orgUnit,scheduledAt,status]]&eventStatus=SCHEDULE&eventOccurredAfter=${eventOccurredAfter}&eventOccurredBefore=${eventOccurredBefore}`
+        );
+        if (!mounted) return;
+        const trackedEntities = response?.data?.trackedEntities || [];
+        const allocatedTrackedEntities = (trackedEntities || []).filter(
+          (te) => te?.enrollments?.some(
+            (en) => en?.events?.some(
+              (event) => (
+                // event?.dataValues?.some(
+                //   (dv) =>
+                //     dv?.dataElement == wardDataElementId &&
+                //     dv?.value !== null &&
+                //     dv?.value !== undefined
+                // ) && 
+                event?.status === "ACTIVE"
+              )
+            )
+          )
+        );
+        const allocated = allocatedTrackedEntities?.filter(
+          (te) => te?.enrollments?.some(
+            (en) => en?.events?.some(
+              (event) => event?.dataValues?.some(
+                (dv) => dv?.dataElement == wardDataElementId && dv?.value === ward?.id
+              )
+            )
+          )
+        );
+        const listItems = isIncharge ? trackedEntities?.filter((tei) => allocated?.some((t) => t?.trackedEntity === tei?.trackedEntity)) : trackedEntities;
+        console.log({ ward, wardDataElementId, listItems, trackedEntities, allocated, allocatedTrackedEntities });
+        const grouped = buildEquipment(
+          trackedEntities,
+          {
+            equipmentId,
+            equipmentAttributeId,
+            serialNumberAttributeId,
+            frequency,
+            equipmentOptionSet
+          },
+          "SCHEDULE"
+        );
+        grouped.forEach((item) => {
+          item.thisMonthDates = item.events.filter(
+            (event) => {
+              const date = parseDate$1(
+                event.date
+              );
+              return date && date.getFullYear() === currentYear && date.getMonth() === currentMonth;
+            }
+          );
+          item.upcomingDates = item.events.filter(
+            (event) => !item.thisMonthDates.includes(
+              event
+            )
+          );
+          const today = startOfDay(
+            currentDate
+          );
+          item.nextDate = item.events.find(
+            (event) => {
+              const date = parseDate$1(
+                event.date
+              );
+              return date && date >= today;
+            }
+          )?.date || item.events[0]?.date || null;
+          item.thisMonthCount = item.thisMonthDates.length;
+        });
+        grouped.sort((a, b) => {
+          if (a.thisMonthCount > 0 && b.thisMonthCount === 0) {
+            return -1;
+          }
+          if (a.thisMonthCount === 0 && b.thisMonthCount > 0) {
+            return 1;
+          }
+          if (!a.nextDate) return 1;
+          if (!b.nextDate) return -1;
+          return new Date(
+            a.nextDate
+          ) - new Date(
+            b.nextDate
+          );
+        });
+        setEquipment(grouped);
+        onCountChange(
+          grouped.reduce(
+            (total, item) => total + item.events.length,
+            0
+          )
+        );
+      } catch (error) {
+        console.log(
+          "Failed to load scheduled maintenance:",
+          error
+        );
+        if (mounted) {
+          setEquipment([]);
+          onCountChange(0);
+        }
+      } finally {
+        if (mounted) {
+          setLoading(false);
+        }
+      }
+    };
+    loadSchedules();
+    return () => {
+      mounted = false;
+    };
+  }, [requestKey]);
+  const toggle = (key) => {
+    setExpanded((prev) => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
+  const filteredEquipment = equipment.filter((item) => {
+    const query = search.trim().toLowerCase();
+    if (!query) {
+      return true;
+    }
+    const searchableText = [
+      item.equipmentName,
+      item.serialNumber,
+      item.equipmentId,
+      item.trackedEntity,
+      item.enrollment
+    ].filter(
+      (value) => value !== null && value !== void 0
+    ).map(
+      (value) => String(value).toLowerCase()
+    ).join(" ");
+    return searchableText.includes(
+      query
+    );
+  });
+  if (loading) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      LoadingState,
+      {
+        message: "Loading maintenance schedules..."
+      }
+    );
+  }
+  if (!equipment.length) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      EmptyState,
+      {
+        icon: calendarOutline,
+        title: "No maintenance schedules",
+        message: "There are currently no scheduled preventive maintenance activities for this selection."
+      }
+    );
+  }
+  const thisMonthCount = equipment.reduce(
+    (total, item) => total + item.thisMonthCount,
+    0
+  );
+  const totalCount = equipment.reduce(
+    (total, item) => total + item.events.length,
+    0
+  );
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      IonSearchbar,
+      {
+        value: search,
+        onIonInput: (event) => setSearch(
+          event.detail.value || ""
+        ),
+        placeholder: "Search equipment...",
+        debounce: 200,
+        showClearButton: "focus"
+      }
+    ) }),
+    search.trim() && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-2 pb-3 text-sm text-muted-foreground", children: [
+      "Showing",
+      " ",
+      /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: filteredEquipment.length }),
+      " ",
+      "of",
+      " ",
+      /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: equipment.length }),
+      " ",
+      "scheduled equipment"
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        style: {
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+          gap: 10,
+          marginBottom: 20
+        },
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            SummaryCard,
+            {
+              icon: constructOutline,
+              label: "Equipment",
+              value: equipment.length
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            SummaryCard,
+            {
+              icon: calendarOutline,
+              label: "This Month",
+              value: thisMonthCount,
+              highlight: thisMonthCount > 0
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            SummaryCard,
+            {
+              icon: calendarOutline,
+              label: "Scheduled",
+              value: totalCount
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            SummaryCard,
+            {
+              icon: timeOutline,
+              label: "Frequency",
+              value: formatFrequency(
+                frequency
+              )
+            }
+          )
+        ]
+      }
+    ),
+    !filteredEquipment.length ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+      EmptyState,
+      {
+        icon: calendarOutline,
+        title: "No matching schedules",
+        message: `No scheduled maintenance matches "${search}". Try searching by equipment name or serial number.`
+      }
+    ) : (
+      /* ================================================================ */
+      /* EQUIPMENT                                                        */
+      /* ================================================================ */
+      filteredEquipment.map((item) => {
+        const key = item.enrollment || item.trackedEntity;
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(
+          ScheduleEquipmentCard,
+          {
+            equipment: item,
+            expanded: expanded[key],
+            onToggle: () => toggle(key),
+            onMarkAsDone,
+            isIncharge
+          },
+          key
+        );
+      })
+    )
+  ] });
+}
+function ScheduleEquipmentCard({
+  equipment,
+  expanded,
+  onToggle,
+  onMarkAsDone,
+  isIncharge
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      style: {
+        border: "1px solid var(--ion-color-light)",
+        borderRadius: 12,
+        marginBottom: 14,
+        overflow: "hidden",
+        background: "var(--ion-background-color)",
+        boxShadow: "0 1px 3px rgba(0,0,0,0.06)"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            onClick: onToggle,
+            style: {
+              padding: 16,
+              cursor: "pointer"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  style: {
+                    display: "flex",
+                    alignItems: "flex-start",
+                    justifyContent: "space-between",
+                    gap: 12
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      EquipmentIdentity,
+                      {
+                        equipment
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      IonButton,
+                      {
+                        fill: "clear",
+                        size: "small",
+                        onClick: (event) => {
+                          event.stopPropagation();
+                          onToggle();
+                        },
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          IonIcon,
+                          {
+                            icon: expanded ? chevronUpOutline : chevronDownOutline
+                          }
+                        )
+                      }
+                    )
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  style: {
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
+                    gap: 16,
+                    marginTop: 16,
+                    paddingTop: 14,
+                    borderTop: "1px solid var(--ion-color-light)"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      InfoItem,
+                      {
+                        label: "Frequency",
+                        value: formatFrequency(
+                          equipment.frequency
+                        )
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      InfoItem,
+                      {
+                        label: "Next Maintenance",
+                        value: formatDate(
+                          equipment.nextDate
+                        )
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      InfoItem,
+                      {
+                        label: "This Month",
+                        value: equipment.thisMonthCount ? `${equipment.thisMonthCount} ${equipment.thisMonthCount === 1 ? "schedule" : "schedules"}` : "None"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      InfoItem,
+                      {
+                        label: "Total Scheduled",
+                        value: equipment.events.length
+                      }
+                    )
+                  ]
+                }
+              )
+            ]
+          }
+        ),
+        expanded && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            style: {
+              borderTop: "1px solid var(--ion-color-light)",
+              background: "var(--ion-color-light-tint)",
+              padding: 16
+            },
+            children: [
+              equipment.thisMonthDates.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                ScheduleSection,
+                {
+                  title: `This Month — ${formatMonth(
+                    /* @__PURE__ */ new Date()
+                  )}`,
+                  count: equipment.thisMonthDates.length,
+                  dates: equipment.thisMonthDates,
+                  onMarkAsDone: (event) => {
+                    onMarkAsDone(
+                      {
+                        ...event,
+                        equipment: equipment?.trackedEntity,
+                        name: equipment?.equipmentName,
+                        enrollment: equipment?.enrollment
+                      }
+                    );
+                  },
+                  isIncharge,
+                  thisMonth: true
+                }
+              ),
+              equipment.upcomingDates.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                ScheduleSection,
+                {
+                  title: "Upcoming",
+                  count: equipment.upcomingDates.length,
+                  dates: equipment.upcomingDates,
+                  onMarkAsDone: (event) => onMarkAsDone(
+                    {
+                      ...event,
+                      equipment: equipment?.trackedEntity,
+                      name: equipment?.equipmentName,
+                      enrollment: equipment?.enrollment
+                    }
+                  ),
+                  thisMonth: false,
+                  isIncharge,
+                  showTopBorder: equipment.thisMonthDates.length > 0
+                }
+              )
+            ]
+          }
+        )
+      ]
+    }
+  );
+}
+function EquipmentIdentity({
+  equipment
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      style: {
+        display: "flex",
+        gap: 12,
+        minWidth: 0,
+        flex: 1
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            style: {
+              width: 44,
+              height: 44,
+              minWidth: 44,
+              borderRadius: 10,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "var(--ion-color-light)"
+            },
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              IonIcon,
+              {
+                icon: constructOutline,
+                style: {
+                  fontSize: 22
+                }
+              }
+            )
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            style: {
+              minWidth: 0
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "h3",
+                {
+                  style: {
+                    margin: 0,
+                    fontSize: 16,
+                    fontWeight: 700
+                  },
+                  children: equipment.equipmentName
+                }
+              ) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  style: {
+                    fontSize: 12,
+                    marginTop: 4
+                  },
+                  children: [
+                    "SN:",
+                    " ",
+                    equipment.serialNumber || "-"
+                  ]
+                }
+              ) })
+            ]
+          }
+        )
+      ]
+    }
+  );
+}
+function ScheduleSection({
+  title,
+  count,
+  dates,
+  onMarkAsDone,
+  thisMonth,
+  showTopBorder = false,
+  isIncharge
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      style: {
+        paddingTop: showTopBorder ? 16 : 0,
+        marginTop: showTopBorder ? 8 : 0,
+        borderTop: showTopBorder ? "1px solid var(--ion-color-light)" : "none"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            style: {
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              marginBottom: 8
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "h4",
+                {
+                  style: {
+                    margin: 0,
+                    fontSize: 15,
+                    fontWeight: 700
+                  },
+                  children: title
+                }
+              ) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                IonBadge,
+                {
+                  color: thisMonth ? "primary" : "medium",
+                  children: count
+                }
+              )
+            ]
+          }
+        ),
+        dates.map(
+          (event, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+            ScheduleRow,
+            {
+              event,
+              isLast: index === dates.length - 1,
+              thisMonth,
+              onMarkAsDone: (data) => onMarkAsDone({ data, event }),
+              isIncharge
+            },
+            event.event
+          )
+        )
+      ]
+    }
+  );
+}
+function ScheduleRow({
+  event,
+  isLast,
+  thisMonth,
+  onMarkAsDone,
+  data,
+  isIncharge
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 12,
+        padding: "12px 0",
+        borderBottom: isLast ? "none" : "1px solid var(--ion-color-light)"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          DateBox,
+          {
+            date: event.date,
+            highlight: thisMonth
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            style: {
+              flex: 1,
+              minWidth: 0
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "strong",
+                {
+                  style: {
+                    display: "block",
+                    fontSize: 14
+                  },
+                  children: formatDate(event.date)
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 12 }, children: "Preventive maintenance" }) })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          IonBadge,
+          {
+            color: thisMonth ? "primary" : "warning",
+            children: thisMonth ? "This Month" : "Scheduled"
+          }
+        ),
+        !isIncharge && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          IonButton,
+          {
+            size: "small",
+            fill: "outline",
+            color: "success",
+            onClick: () => onMarkAsDone({ ...event, data }),
+            children: "Activate Maintenance"
+          }
+        )
+      ]
+    }
+  );
+}
+function DateBox({
+  date,
+  highlight = false
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      style: {
+        width: 46,
+        height: 46,
+        minWidth: 46,
+        borderRadius: 9,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        border: highlight ? "1px solid var(--ion-color-primary)" : "1px solid var(--ion-color-medium)",
+        background: "var(--ion-background-color)"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "strong",
+          {
+            style: {
+              fontSize: 16,
+              lineHeight: 1
+            },
+            children: getDay(date)
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "span",
+          {
+            style: {
+              fontSize: 9,
+              textTransform: "uppercase",
+              marginTop: 3
+            },
+            children: getMonth(date)
+          }
+        ) })
+      ]
+    }
+  );
+}
+function TabButton({
+  active,
+  onClick,
+  label,
+  count
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "button",
+    {
+      type: "button",
+      onClick,
+      style: {
+        flex: 1,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 8,
+        minHeight: 44,
+        padding: "8px 12px",
+        border: "none",
+        borderRadius: 8,
+        cursor: "pointer",
+        background: active ? "var(--ion-background-color)" : "transparent",
+        color: active ? "var(--ion-color-primary)" : "var(--ion-color-medium)",
+        fontWeight: active ? 700 : 500,
+        boxShadow: active ? "0 1px 4px rgba(0,0,0,0.08)" : "none"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: label }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          IonBadge,
+          {
+            color: active ? "primary" : "medium",
+            children: count
+          }
+        )
+      ]
+    }
+  );
+}
+function SummaryCard({
+  icon,
+  label,
+  value,
+  highlight = false
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 10,
+        padding: 12,
+        border: "1px solid var(--ion-color-light)",
+        borderRadius: 10,
+        background: highlight ? "var(--ion-color-light-tint)" : "var(--ion-background-color)"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            style: {
+              width: 36,
+              height: 36,
+              minWidth: 36,
+              borderRadius: 8,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "var(--ion-color-light)"
+            },
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              IonIcon,
+              {
+                icon,
+                style: {
+                  fontSize: 19
+                }
+              }
+            )
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              style: {
+                fontSize: 11
+              },
+              children: label
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "strong",
+            {
+              style: {
+                fontSize: 15
+              },
+              children: value
+            }
+          )
+        ] })
+      ]
+    }
+  );
+}
+function InfoItem({
+  label,
+  value
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        style: {
+          fontSize: 11,
+          marginBottom: 3
+        },
+        children: label
+      }
+    ) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "strong",
+      {
+        style: {
+          fontSize: 13
+        },
+        children: value
+      }
+    )
+  ] });
+}
+function LoadingState({
+  message
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      style: {
+        padding: "48px 20px",
+        textAlign: "center"
+      },
+      children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: message })
+    }
+  );
+}
+function EmptyState({
+  icon = calendarOutline,
+  title = "No schedules found",
+  message = "There are currently no preventive maintenance records for this selection."
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      style: {
+        border: "1px solid var(--ion-color-light)",
+        borderRadius: 12,
+        padding: "48px 20px",
+        textAlign: "center",
+        background: "var(--ion-background-color)"
+      },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          IonIcon,
+          {
+            icon,
+            style: {
+              fontSize: 42,
+              color: "var(--ion-color-medium)",
+              marginBottom: 12
+            }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "h3",
+          {
+            style: {
+              margin: 0,
+              fontWeight: 600
+            },
+            children: title
+          }
+        ) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "medium", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "p",
+          {
+            style: {
+              maxWidth: 460,
+              margin: "8px auto 0"
+            },
+            children: message
+          }
+        ) })
+      ]
+    }
+  );
+}
+function buildEquipment(trackedEntities = [], {
+  equipmentId,
+  equipmentAttributeId,
+  serialNumberAttributeId,
+  frequency,
+  equipmentOptionSet
+}, eventType) {
+  const equipmentMap = /* @__PURE__ */ new Map();
+  trackedEntities.forEach((tei) => {
+    const enrollment = tei?.enrollments?.[0];
+    if (!enrollment) {
+      return;
+    }
+    const trackedEntity = tei?.trackedEntity;
+    if (!trackedEntity) {
+      return;
+    }
+    let equipment = equipmentMap.get(trackedEntity);
+    if (!equipment) {
+      const serialNumber = getAttributeValue(
+        tei?.attributes,
+        serialNumberAttributeId
+      );
+      const equipmentName = resolveOptionValue(
+        equipmentOptionSet,
+        getAttributeValue(
+          tei?.attributes,
+          equipmentAttributeId
+        )
+      ) || (equipmentId ? getAttributeValue(
+        tei?.attributes,
+        equipmentId
+      ) : null) || "Unnamed Equipment";
+      equipment = {
+        trackedEntity,
+        // Enrollment UID
+        enrollment: enrollment.enrollment,
+        equipmentId,
+        equipmentName,
+        serialNumber: serialNumber || "-",
+        frequency,
+        program: enrollment?.program,
+        programStage: enrollment?.programStage,
+        // Store all events here
+        events: [],
+        thisMonthDates: [],
+        upcomingDates: [],
+        nextDate: null,
+        thisMonthCount: 0
+      };
+    }
+    equipmentMap.set(trackedEntity, equipment);
+    const events = enrollment?.events ?? [];
+    events.forEach((event) => {
+      if (!event?.event) {
+        return;
+      }
+      if (event.status !== eventType) {
+        return;
+      }
+      const exists = equipment.events.some(
+        (item) => item.event === event.event
+      );
+      if (exists) {
+        return;
+      }
+      equipment.events.push({
+        program: event?.program,
+        trackedEntity: event?.trackedEntity || trackedEntity,
+        event: event?.event,
+        date: event.status === "ACTIVE" ? event?.createdAt || event.updatedAt : event?.scheduledAt,
+        status: event.status,
+        programStage: event.programStage,
+        orgUnit: event.orgUnit
+      });
+    });
+    equipment.events.sort(
+      (a, b) => eventType === "SCHEDULE" ? new Date(a.date) - new Date(b.date) : new Date(b.date) - new Date(a.date)
+    );
+  });
+  return Array.from(equipmentMap.values());
+}
+function getAttributeValue(attributes = [], attributeId) {
+  if (!attributeId) {
+    return null;
+  }
+  const attribute = attributes.find(
+    (item) => item?.attribute === attributeId || item?.attribute?.id === attributeId
+  );
+  return attribute?.value || null;
+}
+function parseDate$1(value) {
+  if (!value) {
+    return null;
+  }
+  const date = new Date(value);
+  if (Number.isNaN(
+    date.getTime()
+  )) {
+    return null;
+  }
+  return date;
+}
+function startOfDay(date) {
+  const result = new Date(date);
+  result.setHours(
+    0,
+    0,
+    0,
+    0
+  );
+  return result;
+}
+function formatDate(value) {
+  const date = parseDate$1(value);
+  if (!date) {
+    return "-";
+  }
+  return date.toLocaleDateString(
+    "en-GB",
+    {
+      day: "2-digit",
+      month: "short",
+      year: "numeric"
+    }
+  );
+}
+function formatMonth(date) {
+  if (!date) {
+    return "";
+  }
+  return date.toLocaleDateString(
+    "en-GB",
+    {
+      month: "long",
+      year: "numeric"
+    }
+  );
+}
+function getDay(value) {
+  const date = parseDate$1(value);
+  if (!date) {
+    return "-";
+  }
+  return date.getDate();
+}
+function getMonth(value) {
+  const date = parseDate$1(value);
+  if (!date) {
+    return "";
+  }
+  return date.toLocaleDateString(
+    "en-GB",
+    {
+      month: "short"
+    }
+  );
+}
+function formatFrequency(value) {
+  if (!value) {
+    return "-";
+  }
+  return value.toLowerCase().replace(
+    /^\w/,
+    (character) => character.toUpperCase()
+  );
+}
+
 const {useCallback: useCallback$g,useContext: useContext$w,useEffect: useEffect$T,useMemo: useMemo$v,useState: useState$X} = await importShared('react');
 const BUTTON_ICON_MAP = {
   addCircleOutline,
@@ -71264,6 +73706,7 @@ function GeneralComponent({ programProp }) {
     if (!program) {
       return null;
     }
+    console.log({ program });
     const commonProps = {
       id: program?.id,
       onEdit: handleQuery,
@@ -71276,6 +73719,7 @@ function GeneralComponent({ programProp }) {
       return /* @__PURE__ */ jsxRuntimeExports.jsx(StageEvents, { ...commonProps, id: program._stageId });
     }
     if (program?._isSection) {
+      if (program?._sectionId === "EAfmOCCCBwY") return /* @__PURE__ */ jsxRuntimeExports.jsx(PreventiveMaintenanceView, { ...commonProps, programId: program?.id, id: program?._sectionId, stageId: program?._dependentStage });
       return /* @__PURE__ */ jsxRuntimeExports.jsx(StageSectionsEvents, { ...commonProps, id: program._sectionId });
     }
     if (program?.programType === "WITHOUT_REGISTRATION") {
@@ -71283,6 +73727,7 @@ function GeneralComponent({ programProp }) {
     }
     if (program?.programType === "WITH_REGISTRATION") {
       if (program?.isStage) return /* @__PURE__ */ jsxRuntimeExports.jsx(StageEvents, { ...commonProps });
+      if (program?.isSection && program?._sectionId === "EAfmOCCCBwY") return /* @__PURE__ */ jsxRuntimeExports.jsx(PreventiveMaintenanceView, { ...commonProps });
       if (program?.isSection) return /* @__PURE__ */ jsxRuntimeExports.jsx(StageSectionsEvents, { ...commonProps });
       return /* @__PURE__ */ jsxRuntimeExports.jsx(Tracker, { ...commonProps });
     }
@@ -72107,7 +74552,7 @@ function DeregistrationStage({
       );
       setEquipmentState(stateAttribute?.value || null);
     } catch (error) {
-      console.error("Error fetching equipment state:", error);
+      console.log("Error fetching equipment state:", error);
       setEquipmentState(null);
     }
   };
@@ -74660,13 +77105,13 @@ await importShared('react');
 
 const {useContext: useContext$s} = await importShared('react');
 
-const {useState: useState$T,useEffect: useEffect$P,useRef: useRef$d,useDebugValue: useDebugValue$1} = await importShared('react');
+const {useState: useState$T,useEffect: useEffect$P,useRef: useRef$c,useDebugValue: useDebugValue$1} = await importShared('react');
 
-const {useState: useState$S,useCallback: useCallback$e,useRef: useRef$c,useEffect: useEffect$O} = await importShared('react');
+const {useState: useState$S,useCallback: useCallback$e,useRef: useRef$b,useEffect: useEffect$O} = await importShared('react');
 
 const {useCallback: useCallback$d} = await importShared('react');
 
-const {useState: useState$R,useRef: useRef$b,useCallback: useCallback$c,useDebugValue} = await importShared('react');
+const {useState: useState$R,useRef: useRef$a,useCallback: useCallback$c,useDebugValue} = await importShared('react');
 
 await importShared('react');
 
@@ -74677,7 +77122,7 @@ const {useState: useState$Q} = React$J;
 
 const {useContext: useContext$r} = await importShared('react');
 
-const {useContext: useContext$q,useRef: useRef$a,useCallback: useCallback$b} = await importShared('react');
+const {useContext: useContext$q,useRef: useRef$9,useCallback: useCallback$b} = await importShared('react');
 
 var propTypes = {exports: {}};
 
@@ -95168,7 +97613,7 @@ if (shouldLog) {
 const {useCallback: useCallback$8} = await importShared('react');
 
 const React$F = await importShared('react');
-const {useCallback: useCallback$7,useState: useState$O,useRef: useRef$9,useMemo: useMemo$r,useEffect: useEffect$L,useContext: useContext$n} = React$F;
+const {useCallback: useCallback$7,useState: useState$O,useRef: useRef$8,useMemo: useMemo$r,useEffect: useEffect$L,useContext: useContext$n} = React$F;
 ({
   children: PropTypes.node
 });
@@ -95600,7 +98045,7 @@ const {useState: useState$M,useEffect: useEffect$J,useCallback: useCallback$5,us
 
 await importShared('react');
 
-const {useEffect: useEffect$I,useMemo: useMemo$o,useState: useState$L,useRef: useRef$8} = await importShared('react');
+const {useEffect: useEffect$I,useMemo: useMemo$o,useState: useState$L,useRef: useRef$7} = await importShared('react');
 const {createPortal: createPortal$2} = await importShared('react-dom');
 function TrackerPgStages() {
   const { program, id } = useParams();
@@ -95609,7 +98054,7 @@ function TrackerPgStages() {
   const [crumbs, setCrumbs] = useState$L([]);
   const [showActions, setShowActions] = useState$L(false);
   const [printOpen, setPrintOpen] = useState$L(false);
-  const canvasRef = useRef$8(null);
+  const canvasRef = useRef$7(null);
   const [qrBusy, setQrBusy] = useState$L(false);
   const [qrDataUrl, setQrDataUrl] = useState$L(null);
   const [ev, setEvents] = useState$L([]);
@@ -95924,7 +98369,7 @@ function TrackerPgStages() {
       }
       return JSON.stringify(payload);
     } catch (e) {
-      console.error("Config/payload failed:", e?.response?.status, e?.message);
+      console.log("Config/payload failed:", e?.response?.status, e?.message);
       showToast("Failed to prepare QR code.", "error");
       return null;
     }
@@ -95994,7 +98439,7 @@ function TrackerPgStages() {
         showToast("QR code downloaded.", "success");
       }
     } catch (e) {
-      console.error("download failed:", e);
+      console.log("download failed:", e);
       const message = String(e?.message || "").toLowerCase();
       if (message.includes("storage permission denied")) {
         showToast("Storage permission denied. QR was not saved.", "warning");
@@ -96019,7 +98464,7 @@ function TrackerPgStages() {
       setQrDataUrl(dataUrl);
       setPrintOpen(true);
     } catch (e) {
-      console.error(" preview failed:", e);
+      console.log(" preview failed:", e);
       showToast("Failed to open QR preview.", "error");
     } finally {
       setQrBusy(false);
@@ -96690,7 +99135,7 @@ const printJobCard = async ({ maintenanceCfg, programId, event, title = "Mainten
     };
     if (doc.readyState === "complete") onReady(); else iframe.onload = onReady;
   } catch (e) {
-    console.error("[MEMIS] printJobCard failed:", e);
+    console.log("[MEMIS] printJobCard failed:", e);
     window.print?.();
   }
 };
@@ -96914,7 +99359,7 @@ function ApproveModal({
                 optionSet: optionSet || field.optionSet
               };
             } catch (err) {
-              console.error(
+              console.log(
                 `Failed to load optionSet ${field.optionSet.id}:`,
                 err
               );
@@ -96957,7 +99402,6 @@ function ApproveModal({
         return;
       }
       const me = await LocalForageServiceInstance.getItem("userRes", "user");
-      console.log({ me });
       const currentUsername = String(me?.username || "").toLowerCase();
       const requesterCandidates = [
         event?.storedBy,
@@ -97018,7 +99462,6 @@ function ApproveModal({
           try {
             const programId = program?.id || event?.program;
             const configData = await getNotificationEvent(programId, "APPROVAL");
-            console.log({ configData });
             if (configData?.event) {
               await notificationSendTrigger(configData.event, {
                 orgUnit: event.orgUnit,
@@ -97029,7 +99472,7 @@ function ApproveModal({
               });
             }
           } catch (notificationError) {
-            console.error("Failed to send notification:", notificationError);
+            console.log("Failed to send notification:", notificationError);
           }
           handleCloseModal();
           await getEventDetails(event?.event);
@@ -97198,7 +99641,7 @@ function ApproveModal({
         showToast("Failed to update approval. Please try again.", "danger");
       }
     } catch (err) {
-      console.error("Failed to update event:", err);
+      console.log("Failed to update event:", err);
       showToast(
         "Something went wrong while saving the approval.",
         "danger"
@@ -97677,7 +100120,7 @@ const getAvailableEquipmentCount = async (event) => {
     }
 };
 
-const {useEffect: useEffect$G,useRef: useRef$7} = await importShared('react');
+const {useEffect: useEffect$G,useRef: useRef$6} = await importShared('react');
 
 const AllocationCustomModal = ({
   isOpen,
@@ -97745,7 +100188,7 @@ const AllocationCustomModal = ({
 };
 
 const React$B = await importShared('react');
-const {useEffect: useEffect$F,useRef: useRef$6,useState: useState$J} = React$B;
+const {useEffect: useEffect$F,useRef: useRef$5,useState: useState$J} = React$B;
 const A$6 = (x) => Array.isArray(x) ? x : [];
 function MultiSelectField({
   field,
@@ -97754,8 +100197,8 @@ function MultiSelectField({
   handleChange,
   maxSelectQuantity
 }) {
-  const selectRef = useRef$6(null);
-  const selectAllBtnRef = useRef$6(null);
+  const selectRef = useRef$5(null);
+  const selectAllBtnRef = useRef$5(null);
   const [isRemounting, setIsRemounting] = useState$J(false);
   const optionsList = equipmentOptions[field?.id] || [];
   const currentSelected = A$6(formData[field?.id]);
@@ -98222,7 +100665,7 @@ const SPARE_PART_ATTRIBUTE_IDS = {
 
 const SPARE_PART_PROGRAM_ID = "kth8UcvwybE";
 
-const {useEffect: useEffect$D,useRef: useRef$5,useState: useState$H} = await importShared('react');
+const {useEffect: useEffect$D,useRef: useRef$4,useState: useState$H} = await importShared('react');
 
 const ATTR = SPARE_PART_ATTRIBUTE_IDS;
 
@@ -98234,9 +100677,9 @@ const buildSparePartLabel = ({ name, brand, partNumber }) => {
 const mapSparePartFromTei = (tei) => {
   const atts = tei?.attributes || [];
   const id = tei?.trackedEntity || tei?.trackedEntityInstance || "";
-  const name = getAttributeValue(atts, ATTR.NAME);
-  const brand = getAttributeValue(atts, ATTR.BRAND);
-  const partNumber = getAttributeValue(atts, ATTR.PART_NUMBER);
+  const name = getAttributeValue$1(atts, ATTR.NAME);
+  const brand = getAttributeValue$1(atts, ATTR.BRAND);
+  const partNumber = getAttributeValue$1(atts, ATTR.PART_NUMBER);
 
   return {
     id,
@@ -98253,7 +100696,7 @@ function useSparePartOptions({
   programId,
   selectedOrganisationUnit,
 } = {}) {
-  const cacheRef = useRef$5(new Map());
+  const cacheRef = useRef$4(new Map());
   const [sparePartOptions, setSparePartOptions] = useState$H([]);
   const [sparePartLoading, setSparePartLoading] = useState$H(false);
 
@@ -98791,7 +101234,7 @@ function CollectionModal({
         setFormData(initial);
         setSparePartSelectedId(null);
       } catch (err) {
-        console.error(err);
+        console.log(err);
         setError("Failed to prepare form.");
       } finally {
         setLoading(false);
@@ -99115,7 +101558,7 @@ function CollectionModal({
               payload: event
             });
           } catch (notificationError) {
-            console.error(
+            console.log(
               "Equipment transfer acknowledgment notification failed:",
               notificationError
             );
@@ -141972,7 +144415,7 @@ const ReportActionButtons = ({
 };
 
 var define_process_env_default$1 = {};
-const {useState: useState$D,useContext: useContext$k,useCallback: useCallback$4,useEffect: useEffect$z,useMemo: useMemo$l,useRef: useRef$4} = await importShared('react');
+const {useState: useState$D,useContext: useContext$k,useCallback: useCallback$4,useEffect: useEffect$z,useMemo: useMemo$l,useRef: useRef$3} = await importShared('react');
 const DHIS_UID_REGEX$1 = /^[A-Za-z0-9]{11}$/;
 const TRACKER_PROGRAM_FIELDS = PROGRAM_STAGES_FIELDS + ",programTrackedEntityAttributes[mandatory,trackedEntityAttribute[id,name,formName,displayName,code,valueType,optionSetValue,optionSet[id,name,code,options[id,name,code]]]]";
 const PROGRAM_STAGE_FIELDS_PARAM = encodeURIComponent(TRACKER_PROGRAM_FIELDS);
@@ -142173,7 +144616,7 @@ const ReportExportButtons = ({
           setReportRequiresApproval(false);
         }
       } catch (error2) {
-        console.error("Error checking report approval requirement:", error2);
+        console.log("Error checking report approval requirement:", error2);
         setReportRequiresApproval(false);
       }
     };
@@ -142247,7 +144690,7 @@ const ReportExportButtons = ({
     reportData?.programId,
     reportData?.programCode
   ]);
-  const programMetadataCacheRef = useRef$4(/* @__PURE__ */ new Map());
+  const programMetadataCacheRef = useRef$3(/* @__PURE__ */ new Map());
   const programList = useMemo$l(() => {
     if (Array.isArray(programs?.programs)) return programs.programs;
     if (Array.isArray(programs)) return programs;
@@ -143855,7 +146298,7 @@ const ReportExportButtons = ({
         printWindow.close();
       }
     } catch (err) {
-      console.error("Print failed:", err);
+      console.log("Print failed:", err);
     }
   };
   const exportToExcelXlsx = async () => {
@@ -144764,7 +147207,7 @@ function useEventSectionVisibility(programId) {
                     setConfig(visibilityConfig);
                 }
             } catch (e) {
-                console.error("Error fetching event section visibility config:", e);
+                console.log("Error fetching event section visibility config:", e);
                 if (mounted) {
                     setConfig(null);
                 }
@@ -144790,7 +147233,7 @@ function useEventSectionVisibility(programId) {
             
             return programConfig?.rules || [];
         } catch (e) {
-            console.error("Error computing section visibility rules:", e);
+            console.log("Error computing section visibility rules:", e);
             return [];
         }
     }, [programId, config, tick]);
@@ -145141,7 +147584,7 @@ function EventPage() {
           });
         }
       } catch (e) {
-        console.error("Failed to resolve ORGANISATION_UNIT values", e);
+        console.log("Failed to resolve ORGANISATION_UNIT values", e);
       }
       const names = buildFieldNames(result);
       setFieldNames(names);
@@ -145226,7 +147669,7 @@ function EventPage() {
       }
       setIsApproved(!!approvedYes2);
     } catch (err) {
-      console.error("Error fetching event details:", err);
+      console.log("Error fetching event details:", err);
       setError("Failed to load event details. Please try again later.");
     } finally {
       setLoading(false);
@@ -146387,7 +148830,7 @@ const ViewProgramSectionsAccess = ({ onEdit }) => {
       ) || [];
       setSharingSettings(rows);
     } catch (e) {
-      console.error(e);
+      console.log(e);
       setSharingSettings([]);
     } finally {
       setLoading(false);
@@ -146421,7 +148864,7 @@ const ViewProgramSectionsAccess = ({ onEdit }) => {
       await LocalForageServiceInstance.setItem("dataStore", dd, "dataStore");
       await getSharingSettings();
     } catch (err) {
-      console.error(err);
+      console.log(err);
       showToast("An error occurred while deleting", "error");
     } finally {
       setDeleting(false);
@@ -146554,15 +148997,29 @@ const ViewProgramSectionsAccess = ({ onEdit }) => {
       },
       item.key || `${item.id}-${idx}`
     )) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(IonToolbar, { className: "ion-padding-vertical", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", justifyContent: "center", width: "100%" }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(IonButtons, { style: { flexWrap: "wrap" }, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(IonText, { className: "ion-text-center mx-4 text-lg font-medium", children: [
-        "Page ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-primary", children: "1" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { fill: "clear", color: "primary", children: "Previous" }),
-      "|",
-      /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { fill: "clear", color: "primary", children: "Next" })
-    ] }) }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "datatable-pagination-toolbar ion-padding-vertical",
+        style: {
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
+          backgroundColor: "#ffffff",
+          padding: "12px 16px",
+          borderTop: "1px solid #e5e7eb"
+        },
+        children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", justifyContent: "center", alignItems: "center", width: "100%", flexWrap: "wrap", gap: "8px" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(IonText, { className: "ion-text-center mx-4 text-lg font-medium", style: { color: "#1f2937" }, children: [
+            "Page ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-primary pagination-current-page", children: "1" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { fill: "clear", color: "primary", className: "pagination-btn pagination-btn-clear", children: "Previous" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#d1d5db" }, children: "|" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { fill: "clear", color: "primary", className: "pagination-btn pagination-btn-clear", children: "Next" })
+        ] })
+      }
+    ),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       IonAlert,
       {
@@ -146703,7 +149160,7 @@ function SectionAccessUserRoles() {
         );
         if (res) showToast(isUpdate ? "Access rights updated successfully" : "Access rights saved successfully", "success");
       } catch (err) {
-        console.error("Error saving sharing settings: ", err);
+        console.log("Error saving sharing settings: ", err);
         showToast(isUpdate ? "Failed to update access rights" : "Failed to save access rights", "error");
       } finally {
         setFormActive(false);
@@ -146715,7 +149172,7 @@ function SectionAccessUserRoles() {
         setSelectedRights([]);
       }
     } catch (error) {
-      console.error("Error updating datastore: ", error);
+      console.log("Error updating datastore: ", error);
       showToast("Error updating DataStore", "error");
     } finally {
       setIsLoading(false);
@@ -147204,7 +149661,6 @@ function EnrollmentAccessSettings() {
       showToast("Refreshed", "success");
       broadcastChange(remote);
     } catch (e) {
-      console.error(e);
       showToast("Failed to refresh", "error");
     } finally {
       setLoading(false);
@@ -147244,7 +149700,7 @@ function EnrollmentAccessSettings() {
       showToast("Enrollment access saved", "success");
       broadcastChange(next);
     } catch (e) {
-      console.error(e);
+      console.log(e);
       showToast("Failed to save enrollment access", "error");
     } finally {
       setEditorOpen(false);
@@ -147264,7 +149720,7 @@ function EnrollmentAccessSettings() {
       showToast("Enrollment access deleted", "success");
       broadcastChange(next);
     } catch (e) {
-      console.error(e);
+      console.log(e);
       showToast("Failed to delete", "error");
     } finally {
       setConfirmIdx(null);
@@ -147514,7 +149970,7 @@ const WardsSettings = () => {
       setAvailableFacilities(available);
       setWards(userFacilities);
     } catch (error) {
-      console.error("Error fetching organisation units:", error);
+      console.log("Error fetching organisation units:", error);
     } finally {
       setIsLoading(false);
     }
@@ -147643,7 +150099,7 @@ const WardsSettings = () => {
         showToast("Ward reassigned successfully", "success");
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
       showToast("Failed to update ward assignment", "error");
     } finally {
       setOpenModal(false);
@@ -147704,7 +150160,7 @@ const WardsSettings = () => {
         longitude: String(lng)
       }));
     } catch (error) {
-      console.error("Location error:", error);
+      console.log("Location error:", error);
     } finally {
       setLocating(false);
     }
@@ -147888,7 +150344,7 @@ const WardsSettings = () => {
       );
       setWardUsers(orgUnit?.data?.users ?? []);
     } catch (error) {
-      console.error("Failed to load ward users:", error);
+      console.log("Failed to load ward users:", error);
       setWardUsers([]);
     }
   };
@@ -148738,7 +151194,7 @@ const MetadataSettings = () => {
         setOptionSets([]);
       }
     } catch (error) {
-      console.error("Error loading metadata:", error);
+      console.log("Error loading metadata:", error);
     } finally {
       setIsLoading(false);
     }
@@ -148750,7 +151206,7 @@ const MetadataSettings = () => {
     try {
       await LocalForageServiceInstance.setItem("optionSets", data, "metadata");
     } catch (error) {
-      console.error("Error saving metadata:", error);
+      console.log("Error saving metadata:", error);
       showToast("Failed to save metadata", "danger");
     }
   };
@@ -148830,7 +151286,7 @@ const MetadataSettings = () => {
       setShowAddModal(false);
       showToast("Option added successfully");
     } catch (error) {
-      console.error(error);
+      console.log(error);
       showToast("Failed to add option", "danger");
     } finally {
       setIsSubmitting(false);
@@ -149580,7 +152036,7 @@ const StockThresholdSettings = () => {
       setUserFacility(user?.organisationUnits || []);
       setDataSets(data || []);
     } catch (e) {
-      console.error("Failed to load stock threshold data", e);
+      console.log("Failed to load stock threshold data", e);
       showToast("Failed to load datasets", "danger");
     } finally {
       setLoading(false);
@@ -149781,7 +152237,7 @@ const UsersSettings = () => {
       const roleFromQuery = queryParams.get("role");
       setSelectedRoleId(roleFromQuery || roles?.[0]?.id || null);
     } catch (error) {
-      console.error("Error loading users:", error);
+      console.log("Error loading users:", error);
     } finally {
       setIsLoading(false);
     }
@@ -149873,7 +152329,7 @@ const UsersSettings = () => {
         showToast("Failed to update user", "warning");
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
       showToast("Failed to assign transfer access", "danger");
     }
   };
@@ -150236,7 +152692,7 @@ function UpdateCollectionStatus({
         const parsedUser = JSON.parse(userData);
         setCurrentUsername(parsedUser?.username || "");
       } catch (err) {
-        console.error("Error parsing user data:", err);
+        console.log("Error parsing user data:", err);
       }
     }
   }, []);
@@ -150276,7 +152732,7 @@ function UpdateCollectionStatus({
   const handleSubmit = async () => {
     setSaving(true);
     try {
-      if (!evnt) return console.error("Event data missing");
+      if (!evnt) return console.log("Event data missing");
       const values = formData ? Object.keys(formData).map((key) => ({
         dataElement: key,
         value: formData[key]
@@ -150320,7 +152776,7 @@ function UpdateCollectionStatus({
         showToast("Save failed", "danger");
       }
     } catch (err) {
-      console.error("Failed to update event:", err);
+      console.log("Failed to update event:", err);
       showToast("Error occurred while saving", "danger");
     } finally {
       setSaving(false);
@@ -150339,7 +152795,7 @@ function UpdateCollectionStatus({
       setProgramDataTEI(result?.data?.trackedEntities || []);
       return result?.data?.trackedEntities || [];
     } catch (error2) {
-      console.error("Error fetching equipment:", error2);
+      console.log("Error fetching equipment:", error2);
       return [];
     }
   };
@@ -150702,7 +153158,7 @@ function AcknowledgeCollectionStatus({
     setSaving(true);
     try {
       if (!event) {
-        console.error("Event data missing");
+        console.log("Event data missing");
         return;
       }
       const values = formData ? Object.keys(formData).map((key) => ({
@@ -150744,7 +153200,7 @@ function AcknowledgeCollectionStatus({
         showToast("Save failed", "danger");
       }
     } catch (err) {
-      console.error("Failed to update event:", err);
+      console.log("Failed to update event:", err);
       showToast("Error occurred while saving", "danger");
     } finally {
       setSaving(false);
@@ -150763,7 +153219,7 @@ function AcknowledgeCollectionStatus({
       setProgramDataTEI(result?.data?.trackedEntities || []);
       return result?.data?.trackedEntities || [];
     } catch (error2) {
-      console.error("Error fetching equipment:", error2);
+      console.log("Error fetching equipment:", error2);
       return [];
     }
   };
@@ -151034,12 +153490,12 @@ function DeregistrationEventView() {
         return [...prev, ...filtered];
       });
     } catch (error) {
-      console.error("Error building breadcrumbs:", error);
+      console.log("Error building breadcrumbs:", error);
     }
   };
   const getEventDetails = async (id, stage2) => {
     try {
-      const progEvent = await dataStore.get(`tracker/events/${id}`);
+      const progEvent = await dataStore.get(`tracker/events/${id}?program=${program}`);
       const progEventOrg = userOrganisationUnits?.find((org) => org?.id === progEvent?.data?.orgUnit);
       setEvent(progEvent?.data);
       setOu(progEventOrg);
@@ -151053,7 +153509,7 @@ function DeregistrationEventView() {
         ref: `/memis/program/${program}/${tei}/${stage2}/${evnt}`
       });
     } catch (error) {
-      console.error("Error fetching event details:", error);
+      console.log("Error fetching event details:", error);
     }
   };
   const getVal = (id, dataElement) => {
@@ -151097,7 +153553,7 @@ function DeregistrationEventView() {
             const res = await dataStore.get(`organisationUnits/${ouId}`);
             setName(res?.data?.name);
           } catch (e) {
-            console.error(e);
+            console.log(e);
           }
         }
       }
@@ -151108,14 +153564,14 @@ function DeregistrationEventView() {
       const me = await dataStore.get(`me?fields=id,username,firstName,surname,userRoles[id,name]`);
       setCurrentUser(me?.data);
     } catch (error) {
-      console.error("Error fetching current user:", error);
+      console.log("Error fetching current user:", error);
       try {
         const localUserData = JSON.parse(localStorage.getItem("memisCredentials") || "{}");
         if (localUserData.username) {
           setCurrentUser({ username: localUserData.username });
         }
       } catch (localError) {
-        console.error("Error getting user from localStorage:", localError);
+        console.log("Error getting user from localStorage:", localError);
       }
     }
   };
@@ -151317,7 +153773,7 @@ function DeregistrationEventView() {
                 showToast("Equipment state updated to DEREGISTERED", "success");
               }
             } catch (stateError) {
-              console.error("Failed to update equipment state:", stateError);
+              console.log("Failed to update equipment state:", stateError);
               showToast("Approval saved but failed to update equipment state", "warning");
             }
           } else if (isDeclined && currentState === DEREGISTRATION_CONFIG.DEREGISTERED_STATE) {
@@ -151345,7 +153801,7 @@ function DeregistrationEventView() {
                 showToast("Approval declined. Equipment state reverted to LOCKED", "info");
               }
             } catch (stateError) {
-              console.error("Failed to revert equipment state:", stateError);
+              console.log("Failed to revert equipment state:", stateError);
               showToast("Approval saved but failed to revert equipment state", "warning");
             }
           } else {
@@ -151359,7 +153815,7 @@ function DeregistrationEventView() {
         throw new Error("Failed to save data");
       }
     } catch (error) {
-      console.error("Error saving section data:", error);
+      console.log("Error saving section data:", error);
       alert("Failed to save data. Please try again.");
     } finally {
       setSavingSectionData(false);
@@ -151528,7 +153984,7 @@ function DeregistrationEventView() {
       );
       setEquipmentState(stateAttribute?.value || null);
     } catch (error) {
-      console.error("Error fetching equipment state:", error);
+      console.log("Error fetching equipment state:", error);
       setEquipmentState(null);
     }
   };
@@ -151562,7 +154018,7 @@ function DeregistrationEventView() {
         throw new Error("Failed to update equipment state");
       }
     } catch (error) {
-      console.error("Error confirming completion:", error);
+      console.log("Error confirming completion:", error);
       let errorMessage = "Failed to confirm completion. Please try again.";
       if (error?.response?.data?.message) {
         errorMessage = `Error: ${error.response.data.message}`;
@@ -152028,7 +154484,7 @@ function ConfirmMaintenanceModal({ program, event, section, getEventDetails, but
         await printJobCard({ maintenanceCfg, programId: program?.id, event: mergedEvent });
       }
     } catch (e) {
-      console.error(e);
+      console.log(e);
       showToast("Error while saving", "danger");
     } finally {
       setSaving(false);
@@ -152197,7 +154653,7 @@ function Asseng({
   const handleSubmit = async () => {
     setSaving(true);
     try {
-      if (!event) return console.error("Event data missing");
+      if (!event) return console.log("Event data missing");
       const values = formData ? Object.keys(formData).map((key) => ({
         dataElement: key,
         value: formData[key]
@@ -152234,7 +154690,7 @@ function Asseng({
             });
           }
         } catch (notifError) {
-          console.error("Notification error:", notifError);
+          console.log("Notification error:", notifError);
         }
         setOpenModal(false);
         getEventDetails(event?.event, event?.programStage);
@@ -152414,7 +154870,7 @@ function Schedule({
   const handleSubmit = async () => {
     setSaving(true);
     try {
-      if (!event) return console.error("Event data missing");
+      if (!event) return console.log("Event data missing");
       const values = formData ? Object.keys(formData).map((key) => ({ dataElement: key, value: formData[key] })) : [];
       const payload = {
         event: event?.event,
@@ -152446,7 +154902,7 @@ function Schedule({
             console.log("MAINTENANCE_SCHEDULE event not found in datastore");
           }
         } catch (notifError) {
-          console.error("Notification error:", notifError);
+          console.log("Notification error:", notifError);
         }
         setOpenModal(false);
         getEventDetails(event?.event, event?.programStage);
@@ -152541,7 +154997,7 @@ function JobCardGenerate({
     setSaving(true);
     try {
       if (!event) {
-        console.error("Event data missing");
+        console.log("Event data missing");
         return;
       }
       const values = formData ? Object.keys(formData).map((key) => ({ dataElement: key, value: formData[key] })) : [];
@@ -152557,16 +155013,40 @@ function JobCardGenerate({
         status: "ACTIVE",
         dataValues: values
       };
-      await dataStore.post("tracker?async=false&importStrategy=UPDATE", { events: [payload] }).then(async (res) => {
-        if (res?.status === 200) {
-          getEventDetails(event?.event, event?.programStage);
-          showToast("Saved", "success");
-          setOpenModal(false);
+      const res = await dataStore.post("tracker?async=false&importStrategy=UPDATE", { events: [payload] });
+      if (res?.status === 200 || res?.status === "OK" || res?.data?.status === "OK") {
+        getEventDetails(event?.event, event?.programStage);
+        const JOB_CARD_FUNCTION = "GzItPqhKIUO";
+        const functionVal = String(formData[JOB_CARD_FUNCTION] || getVal(JOB_CARD_FUNCTION) || "").trim().toLowerCase();
+        const isFunctional = functionVal === "true" || functionVal === "yes" || functionVal === "1" || formData[JOB_CARD_FUNCTION] === true;
+        if (isFunctional) {
+          const teiRes = await dataStore.get(`tracker/trackedEntities/${event.trackedEntity}?program=${event.program}&fields=trackedEntityType,orgUnit,attributes[*]`);
+          if (teiRes?.data) {
+            const { trackedEntityType, orgUnit, attributes: existingAttributes = [] } = teiRes.data;
+            const updatedAttributes = [...existingAttributes];
+            const attrIndex = updatedAttributes.findIndex((a) => a.attribute === "KFZ35H4ZHrk");
+            if (attrIndex !== -1) {
+              updatedAttributes[attrIndex] = { ...updatedAttributes[attrIndex], value: "FULLY_FUNCTIONAL" };
+            } else {
+              updatedAttributes.push({ attribute: "KFZ35H4ZHrk", value: "FULLY_FUNCTIONAL" });
+            }
+            const tePayload = {
+              trackedEntities: [{
+                trackedEntity: event.trackedEntity,
+                trackedEntityType,
+                orgUnit,
+                attributes: updatedAttributes
+              }]
+            };
+            const teUpdateRes = await dataStore.post("tracker?async=false&importStrategy=UPDATE", tePayload);
+          }
         }
-      });
-      {
-        setSaving(false);
+        showToast("Saved", "success");
+        setOpenModal(false);
+      } else {
+        showToast("Failed to save job card", "danger");
       }
+      setSaving(false);
     } catch (err) {
       setError(err.message || "An error occurred");
       showToast(err.message || "An error occurred", "danger");
@@ -152685,7 +155165,7 @@ function Approve({
   const handleSubmit = async () => {
     setSaving(true);
     try {
-      if (!event) return console.error("Event data missing");
+      if (!event) return console.log("Event data missing");
       const values = formData ? Object.keys(formData).map((key) => ({ dataElement: key, value: formData[key] })) : [];
       const payload = {
         event: event?.event,
@@ -152699,7 +155179,6 @@ function Approve({
         status: "ACTIVE",
         dataValues: values
       };
-      console.log("Payload to be sent:", payload);
       const result = await dataStore.post("tracker?async=false&importStrategy=UPDATE", { events: [payload] });
       if (result?.status === 200) {
         showToast("Saved", "success");
@@ -152719,7 +155198,7 @@ function Approve({
             console.warn("REFERRAL_MAINTENANCE_APPROVAL config not found in datastore");
           }
         } catch (notifError) {
-          console.error("Failed to send approval notification:", notifError);
+          console.log("Failed to send approval notification:", notifError);
         }
         setOpenModal(false);
         getEventDetails(event?.event, event?.programStage);
@@ -152810,7 +155289,7 @@ function ConfirmMaintenance({
   const handleSubmit = async () => {
     setSaving(true);
     try {
-      if (!event) return console.error("Event data missing");
+      if (!event) return console.log("Event data missing");
       const values = formData ? Object.keys(formData).map((key) => ({ dataElement: key, value: formData[key] })) : [];
       const payload = {
         event: event?.event,
@@ -152838,7 +155317,7 @@ function ConfirmMaintenance({
     }
   };
   useEffect$a(() => {
-    setDataElements(section?.dataElements.filter((de) => elements.some((el) => el === de.id)));
+    setDataElements(section?.dataElements?.filter((de) => elements?.some((el) => el === de?.id)));
   }, [openModal]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(IonButton, { onClick: () => setOpenModal(true), children: "Confirm Maintenance" }),
@@ -266332,7 +268811,7 @@ else {
 }
 var renderer$1$1 = renderer$1;
 
-const {useRef: useRef$3,useState: useState$b,useEffect: useEffect$9,useCallback: useCallback$2,forwardRef} = await importShared('react');
+const {useRef: useRef$2,useState: useState$b,useEffect: useEffect$9,useCallback: useCallback$2,forwardRef} = await importShared('react');
 const omitNils = (object) => Object.fromEntries(Object.entries(object).filter((_ref) => {
   let [, value] = _ref;
   return value !== void 0;
@@ -266578,7 +269057,7 @@ const usePDF = function(_temp) {
   let {
     document
   } = _temp === void 0 ? {} : _temp;
-  const pdfInstance = useRef$3(null);
+  const pdfInstance = useRef$2(null);
   const [state, setState] = useState$b({
     url: null,
     blob: null,
@@ -266659,40 +269138,6 @@ const PDFViewer = (_ref) => {
     ...props
   });
 };
-const PDFDownloadLinkBase = (_ref, ref) => {
-  let {
-    fileName = "document.pdf",
-    document: doc,
-    children,
-    onClick,
-    href,
-    ...rest
-  } = _ref;
-  const [instance, updateInstance] = usePDF();
-  useEffect$9(() => updateInstance(doc), [doc]);
-  if (!doc) {
-    console.warn("You should pass a valid document to PDFDownloadLink");
-    return null;
-  }
-  const handleDownloadIE = () => {
-    if (instance && window.navigator.msSaveBlob) {
-      window.navigator.msSaveBlob(instance.blob, fileName);
-    }
-  };
-  const handleClick = (event) => {
-    handleDownloadIE();
-    if (typeof onClick === "function") onClick(event, instance);
-  };
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("a", {
-    href: instance.url,
-    download: fileName,
-    onClick: handleClick,
-    ref,
-    ...rest,
-    children: typeof children === "function" ? children(instance) : children
-  });
-};
-const PDFDownloadLink = /* @__PURE__ */ forwardRef(PDFDownloadLinkBase);
 
 await importShared('react');
 const styles = StyleSheet.create({
@@ -266817,13 +269262,15 @@ const JobCardDocument = ({ data }) => {
 };
 
 const React$7 = await importShared('react');
-const {useEffect: useEffect$8,useState: useState$a,useRef: useRef$2} = React$7;
+const {useEffect: useEffect$8,useState: useState$a} = React$7;
 const A = (x) => Array.isArray(x) ? x : [];
 function PrintJobCard({ event, section, elements }) {
   const [openModal, setOpenModal] = useState$a(false);
   const [formData, setFormData] = useState$a(null);
   const [loading, setLoading] = useState$a(false);
-  const pdfLinkRef = useRef$2(null);
+  const [downloading, setDownloading] = useState$a(false);
+  const [presentToast] = useIonToast();
+  const isNative = () => typeof Capacitor?.isNativePlatform === "function" ? Capacitor.isNativePlatform() : false;
   useEffect$8(() => {
     if (!openModal || !event || !elements || !section?.dataElements) return;
     const prepareData = async () => {
@@ -266889,12 +269336,58 @@ function PrintJobCard({ event, section, elements }) {
     };
     prepareData();
   }, [openModal, event, elements, section]);
-  const handleDownload = () => {
-    const link = pdfLinkRef.current?.querySelector("a");
-    if (link) {
-      link.click();
-    } else {
-      console.error("PDF is still generating.");
+  const handleDownload = async () => {
+    if (!formData) return;
+    setDownloading(true);
+    try {
+      const blob = await pdf(/* @__PURE__ */ jsxRuntimeExports.jsx(JobCardDocument, { data: formData })).toBlob();
+      const filename = `JobCard_${formData["Job Card Number"] || event.event}.pdf`;
+      if (isNative()) {
+        const bridgeResult = await exportBlobWithHostBridge(blob, filename);
+        if (!bridgeResult) {
+          const base64 = await new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onerror = reject;
+            reader.onload = () => {
+              const result = typeof reader.result === "string" ? reader.result : "";
+              resolve(result.includes(",") ? result.split(",")[1] : result);
+            };
+            reader.readAsDataURL(blob);
+          });
+          await Filesystem.writeFile({
+            path: filename,
+            data: base64,
+            directory: Directory.Documents,
+            recursive: true
+          });
+        }
+      } else {
+        await shareOrDownloadFile(blob, filename, () => {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = filename;
+          a.click();
+          URL.revokeObjectURL(url);
+        });
+      }
+      handleClose();
+      presentToast({
+        message: isNative() ? "Job card saved to Documents folder." : "Job card downloaded.",
+        duration: 3e3,
+        color: "success",
+        position: "bottom"
+      });
+    } catch (err) {
+      console.log("Job card download failed", err);
+      presentToast({
+        message: "Download failed. Please try again.",
+        duration: 3e3,
+        color: "danger",
+        position: "bottom"
+      });
+    } finally {
+      setDownloading(false);
     }
   };
   const handleClose = () => {
@@ -266911,30 +269404,20 @@ function PrintJobCard({ event, section, elements }) {
         onSave: handleDownload,
         height: "90%",
         width: "60%",
-        positiveButtonText: "Download PDF",
+        positiveButtonText: downloading ? "Downloading..." : "Download PDF",
         negativeButtonText: "Close",
         children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonContent, { scrollY: false, children: loading ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { textAlign: "center", padding: "40px" }, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(IonSpinner, { name: "crescent" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Generating Preview..." })
-        ] }) : formData ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexDirection: "column", height: "100%" }, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            PDFViewer,
-            {
-              height: "100%",
-              style: { border: "none", borderRadius: "8px" },
-              showToolbar: false,
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(JobCardDocument, { data: formData })
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "none" }, ref: pdfLinkRef, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            PDFDownloadLink,
-            {
-              document: /* @__PURE__ */ jsxRuntimeExports.jsx(JobCardDocument, { data: formData }),
-              fileName: `JobCard_${formData["Job Card Number"] || event.event}.pdf`,
-              children: ({ loading: pdfLoading }) => pdfLoading ? "..." : "Download"
-            }
-          ) })
-        ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { textAlign: "center", padding: "20px" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "danger", children: "Failed to load data elements." }) }) })
+        ] }) : formData ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { display: "flex", flexDirection: "column", height: "100%" }, children: !isNative() ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+          PDFViewer,
+          {
+            height: "100%",
+            style: { border: "none", borderRadius: "8px" },
+            showToolbar: false,
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(JobCardDocument, { data: formData })
+          }
+        ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { textAlign: "center", padding: "40px" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { children: 'Job card ready. Tap "Download PDF" to save.' }) }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { textAlign: "center", padding: "20px" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(IonText, { color: "danger", children: "Failed to load data elements." }) }) })
       }
     )
   ] });
@@ -267033,6 +269516,7 @@ function TeiEvents() {
     const targetOrgId = event?.dataValues?.find(
       (dv) => dv?.dataElement === "mxqD92TfUg8"
     )?.value;
+    console.log({ orgUnits, event, targetOrgId });
     const hasRoleAccess = userRoles.some(
       (role) => buttons.some(
         (button) => button?.sectionId === sect && (button?.rolesAllowed || []).some(
@@ -267165,6 +269649,7 @@ function TeiEvents() {
     try {
       const val = event?.dataValues?.filter((d) => d?.dataElement === id);
       const value = val[0]?.value;
+      console.log({ id, value });
       if (value === "true") return "Yes";
       if (value === "false") return "No";
       if (dataElement?.optionSet?.options && value) {
@@ -267212,7 +269697,7 @@ function TeiEvents() {
               newOuValues[de2.id] = res?.data?.name || ouId;
             }
           } catch (e) {
-            console.error(e);
+            console.log(e);
             newOuValues[de2.id] = ouId;
           }
         }
@@ -267541,7 +270026,8 @@ function TeiEvents() {
                     getVal
                   }
                 ),
-                getValForButtonGuard() && getVal("AnJ695Tt41W") && section?.id === "fdK9OHcaIcV" && userCanConfirmMaintenance(section?.id)?.authorise && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                getValForButtonGuard() && getVal("AnJ695Tt41W") && // section?.id === "fdK9OHcaIcV" &&
+                userCanConfirmMaintenance(section?.id)?.authorise && /* @__PURE__ */ jsxRuntimeExports.jsx(
                   ConfirmMaintenance,
                   {
                     event,
@@ -267661,7 +270147,7 @@ const MessageView = () => {
       });
       setMessages(sortedConversations);
     } catch (err) {
-      console.error("Error fetching messages:", err);
+      console.log("Error fetching messages:", err);
       setError("Failed to load messages");
     } finally {
       setLoading(false);
@@ -267691,7 +270177,7 @@ const MessageView = () => {
       }
       await fetchMessages();
     } catch (err) {
-      console.error("Error marking notification:", err);
+      console.log("Error marking notification:", err);
     }
   };
   const filteredMessages = messages.filter((conv) => {
@@ -270546,6 +273032,7 @@ function ReportDetailPage() {
       if (format === "pdf") await exportReportToPDF(params);
       else if (format === "excel") await exportReportToExcel(params);
       else if (format === "word") await exportReportToWord(params);
+      showToast("Report downloaded successfully.", "success");
     } catch (err) {
       showToast(err.message || "Export failed", "error");
     } finally {
@@ -271114,7 +273601,7 @@ const ViewWardSettingsDetails = () => {
         longitude: String(lng)
       }));
     } catch (error) {
-      console.error("Location error:", error);
+      console.log("Location error:", error);
     } finally {
       setLocating(false);
     }
@@ -271912,7 +274399,6 @@ function ImportExportDetailPage() {
         params.append("programStage", prog.stage);
       }
       const res = await dataStore.get(`tracker/events?${params.toString()}`);
-      console.log({ res });
       const events = res?.data?.events || [];
       const elementMap = Object.fromEntries(
         (prog?.stageDataElements || []).map((item) => [
@@ -271971,9 +274457,11 @@ function ImportExportDetailPage() {
         if (format === "pdf") await exportReportToPDF(params);
         else if (format === "excel") await exportReportToExcel(params);
         else if (format === "word") await exportReportToWord(params);
+        showToast("Export downloaded successfully.", "success");
       }
     } catch (error) {
       console.log({ error });
+      showToast(error?.message || "Export failed.", "error");
     } finally {
       setLoading(false);
     }

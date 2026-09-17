@@ -39346,7 +39346,7 @@ const dataStoreInit = async (forceRefresh = false) => {
     console.log("DataStore initialized but 'memis' namespace missing");
     return null;
   } catch (error) {
-    console.error("DataStore initialization failed:", error);
+    console.log("DataStore initialization failed:", error);
     return error;
   }
 };
@@ -39384,8 +39384,21 @@ const metadataInit = async (forceRefresh = false) => {
     return null;
 
   } catch (error) {
-    console.error("Metadata initialization failed:", error);
+    console.log("Metadata initialization failed:", error);
     return error;
+  }
+};
+
+/**
+ * Get all cached optionSets
+ */
+const getAllOptionSetsFromCache = async () => {
+  try {
+    const cachedOptionSets = await LocalForageServiceInstance.getItem("optionSets", "metadata");
+    return cachedOptionSets || [];
+  } catch (error) {
+    console.log("Error getting all optionSets from cache:", error);
+    return [];
   }
 };
 
@@ -39436,7 +39449,7 @@ const programsMetadata = async (forceRefresh = false) => {
     return null;
 
   } catch (error) {
-    console.error("Metadata initialization failed:", error);
+    console.log("Metadata initialization failed:", error);
     return error;
   }
 };
@@ -39474,7 +39487,7 @@ const optionsGroupsInit = async (forceRefresh = false) => {
     return null;
 
   } catch (error) {
-    console.error("optionGroups initialization failed:", error);
+    console.log("optionGroups initialization failed:", error);
     return error;
   }
 };
@@ -39530,7 +39543,7 @@ const orgUnitGroupsInit = async (forceRefresh = false) => {
     );
     return null;
   } catch (error) {
-    console.error("orgUnitGroups initialization failed:", error);
+    console.log("orgUnitGroups initialization failed:", error);
     return error;
   }
 };
@@ -39605,7 +39618,7 @@ function DataStoreProvider({ children }) {
         window.dispatchEvent(new CustomEvent("memis:datastore-ready"));
       }
     } catch (err) {
-      console.error("Initialization error:", err);
+      console.log("Initialization error:", err);
       setError(err);
       setIsReady(false);
     } finally {
@@ -39939,7 +39952,7 @@ const sendNotification = async (
           );
         }
       } catch (e) {
-        console.error("User role/orgUnit search failed:", e);
+        console.log("User role/orgUnit search failed:", e);
       }
 
       userIds = usersResp?.users?.map((u) => ({ id: u.id })) || [];
@@ -40213,4 +40226,4 @@ async function clearMemisStorage() {
   MEMIS_COOKIE_NAMES.forEach(clearCookie);
 }
 
-export { closeCircle as $, IonAccordion as A, BrowserRouter as B, albumsOutline as C, DataStoreProvider as D, IonButtons as E, IonMenuButton as F, IonButton as G, mailOutline as H, IonMenuToggle as I, notificationsOutline as J, IonBadge as K, Link as L, MEMISContext as M, personCircleOutline as N, ORGANISATION_UNITS_DESCENDANTS as O, PROGRAMS_FIELDS as P, logOutOutline as Q, showToast as R, SuspenseLoader as S, ToastItem as T, USER_ORGANISATION_UNITS as U, Outlet as V, closeOutline as W, chevronDownOutline as X, searchOutline as Y, checkmarkOutline as Z, __vitePreload as _, PROGRAM_RULES_FIELDS as a, downloadOutline as a$, IonGrid as a0, IonRow as a1, IonCol as a2, chevronUpOutline as a3, IonInput as a4, IonRadioGroup as a5, IonRadio as a6, IonCard as a7, IonCardContent as a8, warningOutline as a9, ellipsisVertical as aA, arrowUp as aB, arrowDown as aC, removeOutline as aD, IonSearchbar as aE, filterOutline as aF, qrCodeOutline as aG, IonModal as aH, IonSelect as aI, IonSelectOption as aJ, api as aK, businessOutline as aL, usePermissions as aM, removeCircleOutline as aN, addCircleOutline as aO, useDataStore as aP, IonInputPasswordToggle as aQ, checkmarkDoneOutline as aR, timeOutline as aS, createOutline as aT, IonBreadcrumbs as aU, IonBreadcrumb as aV, chevronForward as aW, useParams as aX, IonAvatar as aY, IonActionSheet as aZ, IonFooter as a_, constructOutline as aa, arrowForward as ab, chevronForwardOutline as ac, IonPage as ad, metadataInit as ae, hardwareChipOutline as af, settingsOutline as ag, addOutline as ah, y as ai, IonSpinner as aj, close as ak, imageOutline as al, document$1 as am, IonText as an, alertCircleOutline as ao, arrowBackCircleOutline as ap, chevronBackOutline as aq, saveOutline as ar, IonLoading as as, IonCheckbox as at, IonPopover as au, IonDatetime as av, IonTextarea as aw, IonCardHeader as ax, IonCardTitle as ay, useSearchParams as az, PermissionsProvider as b, eyeOutline as b0, printOutline as b1, IonCardSubtitle as b2, PROGRAM_STAGES_FIELDS as b3, informationCircleOutline as b4, homeOutline as b5, arrowBackOutline as b6, trash as b7, IonAlert as b8, addCircle as b9, isRTL$1 as bA, createGesture as bB, clamp as bC, doc as bD, pointerCoord as bE, readTask as bF, findClosestIonContent as bG, componentOnReady as bH, writeTask$1 as bI, scrollToTop as bJ, Keyboard as bK, addEventListener$1 as bL, removeEventListener as bM, KeyboardResize as bN, win$2 as bO, raf as bP, getScrollElement as bQ, scrollByPoint as bR, createAnimation as bS, getIonPageElement as bT, refresh as ba, locationOutline as bb, orgUnitGroupsInit as bc, useIonToast as bd, IonToggle as be, IonTabs as bf, IonTabBar as bg, IonTabButton as bh, settings as bi, lockClosed as bj, documentLock as bk, business as bl, informationCircle as bm, barChart as bn, IonTab as bo, checkmarkCircleOutline as bp, chatbubbleOutline as bq, analyticsOutline as br, lockClosedOutline as bs, refreshOutline as bt, peopleOutline as bu, add as bv, IonToast as bw, Routes as bx, Route as by, Navigate as bz, setupIonicReact as c, documentText as d, setActiveProgramCookie as e, clearMemisStorage as f, useNavigate as g, IonItem as h, icons as i, jsxRuntimeExports as j, IonIcon as k, IonLabel as l, IonRefresher as m, IonRefresherContent as n, isPlatform as o, IonMenu as p, IonHeader as q, renderListByUserRole as r, sendNotification as s, IonToolbar as t, useLocation as u, IonTitle as v, IonContent as w, IonList as x, home as y, IonAccordionGroup as z };
+export { closeCircle as $, IonAccordion as A, BrowserRouter as B, albumsOutline as C, DataStoreProvider as D, IonButtons as E, IonMenuButton as F, IonButton as G, mailOutline as H, IonMenuToggle as I, notificationsOutline as J, IonBadge as K, Link as L, MEMISContext as M, personCircleOutline as N, ORGANISATION_UNITS_DESCENDANTS as O, PROGRAMS_FIELDS as P, logOutOutline as Q, showToast as R, SuspenseLoader as S, ToastItem as T, USER_ORGANISATION_UNITS as U, Outlet as V, closeOutline as W, chevronDownOutline as X, searchOutline as Y, checkmarkOutline as Z, __vitePreload as _, PROGRAM_RULES_FIELDS as a, useParams as a$, IonGrid as a0, IonRow as a1, IonCol as a2, chevronUpOutline as a3, IonInput as a4, IonRadioGroup as a5, IonRadio as a6, IonCard as a7, IonCardContent as a8, warningOutline as a9, ellipsisVertical as aA, arrowUp as aB, arrowDown as aC, removeOutline as aD, IonSearchbar as aE, filterOutline as aF, qrCodeOutline as aG, IonModal as aH, IonSelect as aI, IonSelectOption as aJ, api as aK, businessOutline as aL, getAllOptionSetsFromCache as aM, calendarOutline as aN, locationOutline as aO, personOutline as aP, timeOutline as aQ, usePermissions as aR, removeCircleOutline as aS, addCircleOutline as aT, useDataStore as aU, IonInputPasswordToggle as aV, checkmarkDoneOutline as aW, createOutline as aX, IonBreadcrumbs as aY, IonBreadcrumb as aZ, chevronForward as a_, constructOutline as aa, arrowForward as ab, chevronForwardOutline as ac, IonPage as ad, metadataInit as ae, hardwareChipOutline as af, settingsOutline as ag, addOutline as ah, y as ai, IonSpinner as aj, close as ak, imageOutline as al, document$1 as am, IonText as an, alertCircleOutline as ao, arrowBackCircleOutline as ap, chevronBackOutline as aq, saveOutline as ar, IonLoading as as, IonCheckbox as at, IonPopover as au, IonDatetime as av, IonTextarea as aw, IonCardHeader as ax, IonCardTitle as ay, useSearchParams as az, PermissionsProvider as b, IonAvatar as b0, IonActionSheet as b1, IonFooter as b2, downloadOutline as b3, eyeOutline as b4, printOutline as b5, IonCardSubtitle as b6, PROGRAM_STAGES_FIELDS as b7, informationCircleOutline as b8, homeOutline as b9, Routes as bA, Route as bB, Navigate as bC, isRTL$1 as bD, createGesture as bE, clamp as bF, doc as bG, pointerCoord as bH, readTask as bI, findClosestIonContent as bJ, componentOnReady as bK, writeTask$1 as bL, scrollToTop as bM, Keyboard as bN, addEventListener$1 as bO, removeEventListener as bP, KeyboardResize as bQ, win$2 as bR, raf as bS, getScrollElement as bT, scrollByPoint as bU, createAnimation as bV, getIonPageElement as bW, arrowBackOutline as ba, trash as bb, IonAlert as bc, addCircle as bd, refresh as be, orgUnitGroupsInit as bf, useIonToast as bg, IonToggle as bh, IonTabs as bi, IonTabBar as bj, IonTabButton as bk, settings as bl, lockClosed as bm, documentLock as bn, business as bo, informationCircle as bp, barChart as bq, IonTab as br, checkmarkCircleOutline as bs, chatbubbleOutline as bt, analyticsOutline as bu, lockClosedOutline as bv, refreshOutline as bw, peopleOutline as bx, add as by, IonToast as bz, setupIonicReact as c, documentText as d, setActiveProgramCookie as e, clearMemisStorage as f, useNavigate as g, IonItem as h, icons as i, jsxRuntimeExports as j, IonIcon as k, IonLabel as l, IonRefresher as m, IonRefresherContent as n, isPlatform as o, IonMenu as p, IonHeader as q, renderListByUserRole as r, sendNotification as s, IonToolbar as t, useLocation as u, IonTitle as v, IonContent as w, IonList as x, home as y, IonAccordionGroup as z };

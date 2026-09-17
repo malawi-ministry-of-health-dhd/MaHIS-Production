@@ -158,7 +158,7 @@ function MenuProvider({ children }) {
       setUserAccessData(userData);
       setUserAccessLoaded(true);
     } catch (error) {
-      console.error("Error loading user access data from IndexedDB", error);
+      console.log("Error loading user access data from IndexedDB", error);
       setUserAccessData(null);
       setUserAccessLoaded(true);
     }
@@ -172,7 +172,7 @@ function MenuProvider({ children }) {
       setNavigationMenu(menu || []);
       setMenuLoaded(true);
     } catch (error) {
-      console.error("Error loading navigation layout", error);
+      console.log("Error loading navigation layout", error);
       setNavigationMenu([]);
       setMenuError(error);
       setMenuLoaded(true);
@@ -711,7 +711,7 @@ const DashboardProvider = ({ children }) => {
         setDashboardConfigs([]);
       }
     } catch (err) {
-      console.error("Failed to load dashboard configurations:", err);
+      console.log("Failed to load dashboard configurations:", err);
       setError(err);
     } finally {
       setIsLoading(false);
@@ -1011,7 +1011,7 @@ const TrackedEntitiesProvider = ({ children }) => {
         setColumns(dynamicColumns);
         return transformed;
       } catch (e) {
-        console.error("[TrackedEntities] fetch error:", e);
+        console.log("[TrackedEntities] fetch error:", e);
         setError(e);
         setEquipmentList([]);
         return [];
@@ -1218,7 +1218,7 @@ const EventsProvider = ({ children }) => {
         setColumns(dynamicColumns);
         return transformed;
       } catch (e) {
-        console.error("[EventsProvider] fetch error:", e);
+        console.log("[EventsProvider] fetch error:", e);
         setError(e);
         setEventsList([]);
         return [];
@@ -1594,8 +1594,8 @@ async function tickOnce() {
 function startReminderDaemon() {
     if (_running) return;
     _running = true;
-    tickOnce().catch((e) => console.error("reminderDaemon initial tick error", e));
-    _timer = setInterval(() => { tickOnce().catch((e) => console.error("reminderDaemon tick error", e)); }, POLL_EVERY_MS);
+    tickOnce().catch((e) => console.log("reminderDaemon initial tick error", e));
+    _timer = setInterval(() => { tickOnce().catch((e) => console.log("reminderDaemon tick error", e)); }, POLL_EVERY_MS);
 }
 function stopReminderDaemon() { if (_timer) clearInterval(_timer); _timer = null; _running = false; }
 async function __reminderTickOnceDebug() { return tickOnce(); }
