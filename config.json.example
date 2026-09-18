@@ -25,6 +25,6 @@
         "apiPort": "443",
         "apiProtocol": "https",
         "websocketProtocol": "wss",
-        "mahisReportURL": "https://mahis.health.gov.mw/reports/home?route=mahis&"
+        "mahisReportURL": "https://mahis.health.gov.mw/home?route=mahis&"
     }
 }

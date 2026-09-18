@@ -1,19 +1,17 @@
 {
 	"development": {
 		"apiURL": "mahisdev.health.gov.mw",
-		"apiPort": "433",
+		"apiPort": "443",
 		"apiProtocol": "https",
 		"websocketProtocol": "wss",
-		"mahisReportURL": "https://mahisreports.health.gov.mw/home?route=mahisdev&",
-		"miumURL": "https://mahisdev.health.gov.mw/memis2/api"
+		"mahisReportURL": "https://mahisreports.health.gov.mw/home?route=mahisdev&"
 	},
 	"test": {
 		"apiURL": "mahistest.health.gov.mw",
 		"apiPort": "443",
 		"apiProtocol": "https",
 		"websocketProtocol": "wss",
-		"mahisReportURL": "https://mahisreports.health.gov.mw/home?route=mahistest&",
-		"miumURL": "https://mahistest.health.gov.mw/memis2/api"
+		"mahisReportURL": "https://mahisreports.health.gov.mw/home?route=mahistest&"
 	},
 	"uat": {
 		"apiURL": "mahisuat.health.gov.mw",
@@ -27,7 +25,7 @@
 		"apiPort": "443",
 		"apiProtocol": "https",
 		"websocketProtocol": "wss",
-		"mahisReportURL": "https://mahis.health.gov.mw/reports/home?route=mahis&",
+		"mahisReportURL": "https://mahisreports.health.gov.mw/reports/home?route=mahis&",
 		"miumURL": "https://mahis.health.gov.mw/memis2/api"
 	}
 }
