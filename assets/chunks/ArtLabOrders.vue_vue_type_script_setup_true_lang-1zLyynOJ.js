@@ -1,0 +1,1 @@
+import s from"./LabOrdersList-DSeT0cmO.js";import{d as t,j as o,q as r}from"../index-B4uX36wM.js";const a=t({__name:"ArtLabOrders",setup:t=>(t,a)=>(o(),r(s,{"show-add-test-button":!0,"show-send-to-lab-button":!1}))});export{a as _};
